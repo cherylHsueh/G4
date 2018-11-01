@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,shrink-to-fit=no">
-	<title>果然配</title>
+	<title>Page Title</title>
 	<link rel="stylesheet" href="css/member.css">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -32,25 +32,21 @@
 				</svg>
 				<div class="ph_nav">
 					<label for="hb_control" class="hb"><span></span></label>
-					<a href="index.html">
-						<h1 class="phone_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
-					</a>
+					<h1 class="phone_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
 				</div>
 					
 				<div class="menu">
 					<ul>
 						<li class="menu_item"><a href="diy.html">果汁DIY</a></li>
 						<li class="menu_item"><a href="product.html">果然特調</a></li>
-						<li><a href="index.html">
-							<h1 class="menu_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
-						</a> </li>
+						<li><h1 class="menu_logo"><img src="images/logo.png" alt="果然配">果然配</h1> </li>
 						<li class="menu_item"><a href="blog.html">果然私藏</a></li>
 						<li class="menu_item"><a href="about.html">關於果然</a></li>
 					</ul>
 				</div>
 				<div class="nav_mem">
-					<p><a href="login.html">登入</a></p>
-					<div class="mem_pic"><a href="member.html"><img src="images/user.png" alt="會員中心"></a></div>
+					<p><a href="javascript:;">登入</a></p>
+					<div class="mem_pic"><a href="javascript:;"><img src="images/user.png" alt="會員中心"></a></div>
 					<div class="mem_pic"><a href="cart.html"><img src="images/cart.png" alt="購物車"></a></div>
 				</div>
 			</nav>
@@ -64,15 +60,14 @@
 			<div class="member_memberInfo_box">
 				<div class="member_memberInfo_profile_photo">
 						<div class="member_memberInfo_photo_box">
-							<img src="images/member/profile.png" alt="profilePhoto">
+							<img id="imgPreview" src="images/member/profile.png" alt="profilePhoto">
 
 							<label class="btn member_memberInfo_photo_change">
-								<input id="upload_img" style="display:none;" type="file">
+								<input id="upload_img" style="display:none;" type="file" accept="image/*">
 								<i class="fa fa-photo"></i> 上傳圖片
 							</label>
 
-							<!-- <input type="file" class="member_memberInfo_photo_change" value="變更大頭照"> -->
-							<!-- <div class="member_memberInfo_photo_change">更變大頭照</div> -->
+					
 						</div>
 						<div class="member_memberInfo_Points_block">
 							<p>可使用點數</p>
@@ -260,7 +255,21 @@
         </div>
     </footer>
 
-
+	<script type="text/javascript">
+		window.addEventListener("load",function(){
+			document.getElementById("upload_img").onchange =function(e){
+				var file = e.target.files[0];//HTML5 的屬性files[0]->陣列方式
+				var reader = new FileReader();//新增一個讀取檔案的FileReader() method
+				reader.onload = function(){
+					document.getElementById("imgPreview").src = reader.result;
+				}
+				reader.readAsDataURL(file);
+			};
+		
+		},false);
+		
+		</script>
+		
 	<script src="js/orderDetailLightbox.js"></script>
 
 
