@@ -1,0 +1,82 @@
+
+
+svg {
+  width: 32%;
+  height: 100vh;
+  position: absolute;
+  bottom: 12%;
+}
+
+.forcast h4{
+  padding:5% 0;
+}
+
+body {
+  background-color:#00B5BD;
+}
+
+path {
+  stroke: white;
+  fill: transparent;
+  transition: 0.5s;
+  cursor: pointer;
+}
+path:hover {
+  fill: #B99362;
+  -webkit-transform: translate(-5px, -5px);
+          transform: translate(-5px, -5px);
+}
+
+.title_area {
+  width: 25%;
+  position: absolute;
+  left: 35%;
+  top: 20%;
+  color: white;
+  font-size: 30px;
+  padding: 2%;
+}
+
+
+.taiwan1{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.forcast h2, .forcast h4, .forcast h5 {
+  margin: 0;
+}
+/* .forcast h2 {
+  margin-top: 20px;
+} */
+
+#e468a7aa-2bdf-4501-b48d-35483b7c8ccc,
+#ae9239f1-7686-4c40-a5f8-f322391c7328{
+  fill:red;
+}
+#f8107e5f-0c12-4631-aed9-d525f4e8558d,
+#a66958373-17e2-4fab-8b83-b16e2d323782,
+#a1e48e0bb-8964-4121-b347-b900162cf771,
+#a21535635-db1e-4831-a63f-263ab3ed4b79,
+#a65175d47-0a21-4bf1-abfb-b58e4d3069a0,
+#ea41be52-3728-49f2-aa36-b90633ee55f6,
+#a350fa9bc-d25e-4c61-ae4b-b5c60b1a74b6
+{
+  fill:orange;
+}
+#a7ed22330-8901-4fc6-a351-206f6b2daf2b,
+#ffd01e75-6ce2-4cfa-af98-bc61479c68ed,
+#a30e45b59-571b-4340-a006-0ba62460619a,
+#d5701392-fc06-4411-bf79-2703f225ab2e,
+#a4eed8214-870d-46ff-b77b-49234479d430{
+  fill:green;
+}
+
+
+#a2b6aac2d-ce2d-4c48-89d5-ff2a81000e07,
+#ae28d47a-650c-43d9-aedc-c1d11a068993,
+#a0ce2847a-4f9c-4ff7-8c51-6b0fa24ba8b7,
+#e1806d87-d003-48dd-b8d3-3f99b3759340,
+#a21c4ba33-d057-42c1-9c71-be6061fc73cf{
+   fill:#36BF36
+}

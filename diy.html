@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>果然配</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0,shrink-to-fit=no">
+	<!-- <link rel="stylesheet" type="text/css" href="css/fullpage.css" /> -->
+	<link rel="stylesheet" href="css/diy.css">
+	<!-- 以下行是可选的。 只有在使用选项css3:false，并且您希望使用其他缓动效果，而非“linear”、“swing”或“easeInOutCubic”时才有必要。 -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/vendors/easings.min.js"></script> -->
+	<!-- 以下行仅在使用选项scrollOverflow:true的情况下是必需的 -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/vendors/scrolloverflow.min.js"></script> -->
+	<!-- <script type="text/javascript" src="js/fullpage.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+
+
+</head>
+
+<body>
+
+	<header>
+		<input type="checkbox" name="" id="hb_control">
+		<nav>
+			<svg preserveAspectRatio="none" id="svg-2" viewBox="0 0 100 80" enable-background="new 0 0 100 80">
+				<animate dur="2s" attributeName="x" repeatCount="indefinite" from="0" to="100" xlink:href="#wave"></animate>
+				<defs>
+					<filter id="f4" x="0" y="0" width="100%" height="100%">
+						<feOffset result="offOut" in="SourceGraphic" dx="0" dy="0"></feOffset>
+						<feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"></feColorMatrix>
+						<feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="2"></feGaussianBlur>
+						<feBlend in="SourceGraphic" in2="blurOut" mode="normal"></feBlend>
+					</filter>
+				</defs>
+				<path x="0" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)" id="wave"></path>
+				<path x="30" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)" id="wave2"></path>
+			</svg>
+			<div class="ph_nav">
+				<label for="hb_control" class="hb"><span></span></label>
+				<a href="index.html">
+					<h1 class="phone_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
+				</a>
+			</div>
+
+			<div class="menu">
+				<ul>
+					<li class="menu_item"><a href="diy.html">果汁DIY</a></li>
+					<li class="menu_item"><a href="product.html">果然特調</a></li>
+					<li><a href="index.html">
+							<h1 class="menu_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
+						</a>
+					</li>
+					<li class="menu_item"><a href="blog.html">果然私藏</a></li>
+					<li class="menu_item"><a href="about.html">關於果然</a></li>
+				</ul>
+			</div>
+			<div class="nav_mem">
+				<p><a href="login.html">登入</a></p>
+				<div class="mem_pic"><a href="member.html"><img src="images/user.png" alt="會員中心"></a></div>
+				<div class="mem_pic"><a href="cart.html"><img src="images/cart.png" alt="購物車"></a></div>
+			</div>
+		</nav>
+		<!-- <div class="coupon"><img src="images/coupon.png" alt="優惠小遊戲"></div>
+	<div class="robot"><img src="images/robot.png" alt="果然配客服機器人"></div> -->
+	</header>
+		<!-- DIY挑選水果 -->
+		<div class="space"></div>
+		<section class="section active diy_pickFruit">
+			<div class="space"></div>
+			<div class="wrapper diy_pickFruit_wrapper">
+				<div class="diy_pickFruit_stepBlock clearfix">
+					<div class="diy_pickFruit_stepFirstBox">
+						<img src="images/diy/stepBg1.png" alt="挑選水果">
+						<div class="diy_pickFruit_stepFirstTitle">
+							<p>STEP1</p>
+							<h3>挑選水果</h3>
+						</div>
+					</div>
+
+					<div class="diy_pickFruit_stepSecondBox">
+						<img src="images/diy/stepBg.png" alt="設計瓶身">
+						<div class="diy_pickFruit_stepSecondTitle">
+							<p>STEP2</p>
+							<h3>設計瓶身</h3>
+						</div>
+					</div>
+				</div>
+
+				<div class="diy_pickFruit_title">
+					<h4>為你的DIY果汁，挑三種水果吧</h4>
+				</div>
+
+				<div class="diy_pickFruit_allWrapper clearfix">
+					<div class="diy_pickFruit_leftBlock cl-md-4 clearfix">
+						<div class="diy_pickFruit_leftBox clearfix">
+
+							<div class="diy_pickFruit_leftPic clearfix">
+								<div id="apple" class="diy_pickFruit_leftItem diy_pickFruit_leftItem1 cl-md-4">
+									<span class="fruitnamef1">我是蘋果</span>
+									<img id="f1" class="fruiticon" src="images/apple.png" alt="蘋果">
+								</div>
+
+								<div id="guava" class="diy_pickFruit_leftItem diy_pickFruit_leftItem2 cl-md-4">
+									<span class="fruitnamef2">我是芭樂</span>
+									<img id="f2" class="fruiticon" src="images/guava.png" alt="芭樂">
+								</div>
+								<div id="grape" class="diy_pickFruit_leftItem diy_pickFruit_leftItem3 cl-md-4">
+									<span class="fruitnamef3">我是葡萄</span>
+									<img id="f3" class="fruiticon" src="images/grape.png" alt="葡萄">
+								</div>
+								<div id="cantaloupe" class="diy_pickFruit_leftItem diy_pickFruit_leftItem4 cl-md-4">
+									<span class="fruitnamef4">我是哈密瓜</span>
+									<img id="f4" class="fruiticon" src="images/cantaloupe.png" alt="哈密瓜">
+								</div>
+								<div id="pineapple" class="diy_pickFruit_leftItem diy_pickFruit_leftItem5 cl-md-4">
+									<span class="fruitnamef5">我是鳳梨</span>
+									<img id="f5" class="fruiticon" src="images/pineapple.png" alt="鳳梨">
+								</div>
+								<div id="tomato" class="diy_pickFruit_leftItem diy_pickFruit_leftItem6 cl-md-4">
+									<span class="fruitnamef6">我是番茄</span>
+									<img id="f6" class="fruiticon" src="images/tomato.png" alt="番茄">
+								</div>
+								<div id="watermelon" class="diy_pickFruit_leftItem diy_pickFruit_leftItem7 cl-md-4">
+									<span class="fruitnamef7">我是西瓜</span>
+									<img id="f7" class="fruiticon" src="images/watermelon.png" alt="西瓜">
+								</div>
+								<div id="banana" class="diy_pickFruit_leftItem diy_pickFruit_leftItem8 cl-md-4">
+									<span class="fruitnamef8">我是香蕉</span>
+									<img id="f8" class="fruiticon" src="images/banana.png" alt="香蕉">
+								</div>
+								<div id="orange" class="diy_pickFruit_leftItem diy_pickFruit_leftItem9 cl-md-4">
+									<span class="fruitnamef9">我是柳丁</span>
+									<img id="f9" class="fruiticon" src="images/orange.png" alt="柳丁">
+								</div>
+							</div>
+
+						</div>
+						<div class="diy_pickFruit_leftArrow">
+							<img src="images/left01.png" alt="左箭頭">
+						</div>
+						<div class="diy_pickFruit_rightArrow">
+							<img src="images/right01.png" alt="右箭頭">
+						</div>
+						<div class="diy_pickFruit_resetButton">
+							<a href="javascript:;" id="resetButton">重新挑選</a>
+						</div>
+					</div>
+
+					<div class="diy_pickFruit_rightBlock clearfix cl-md-8">
+						<div class="diy_pickFruit_leftBox cl-s-6 cl-md-5">
+							<div class="diy_pickFruit_wrapperBottleBox">
+								<div class="diy_pickFruit_bottleBox">
+									<div class="diy_pickFruit_bottle diy_pickFruit_bottle3" id="diy_pickFruit_bottle3"></div>
+									<div class="diy_pickFruit_bottle diy_pickFruit_bottle2" id="diy_pickFruit_bottle2"></div>
+									<div class="diy_pickFruit_bottle diy_pickFruit_bottle1" id="diy_pickFruit_bottle1"></div>
+									<!-- <img src="images/diy/emptyBottle.png" alt="空瓶"> -->
+								</div>
+								<img src="images/bottle.png" alt="空瓶">
+							</div>
+						</div>
+						<div id="chart" class="diy_pickFruit_rightBox cl-s-6 cl-md-7">
+							<canvas id="myChart" height="300"></canvas>
+							<div class="diy_pickFruit_rightItem">
+								<p class="diy_pickFruit_rightItemTitle">
+									水果功效
+								</p>
+								<!-- <p class="diy_pickFruit_righItemContent">
+									蘋果:養顏美容
+								</p>
+								<p class="diy_pickFruit_righItemContent">
+									蘋果:養顏美容
+								</p>
+								<p class="diy_pickFruit_righItemContent">
+									蘋果:養顏美容
+								</p> -->
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+
+				<div class="diy_pickFruit_nextButton">
+					<a href="diyDesignBottle.html" id="nextButton">
+						下一步
+					</a>
+				</div>
+
+			</div>
+			<footer>
+                <div class="footer_wrapper">
+                    <div class="footer_block clearfix">
+                        <div class="footer_rightBox">
+                            <div class="footer_rightContent">
+                                <p class="desc">地址:桃園市中壢區中大路111號</p>
+                                <p class="desc">電話:(03)49111853</p>
+                                <p class="copyright">Copyright © All Rights Reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+		</section>
+
+	<script type="text/javascript" src="js/diy.js"></script>
+
+</body>
+
+</html>

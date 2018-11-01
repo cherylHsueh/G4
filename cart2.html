@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>果然配</title>
+    <link rel="stylesheet" href="css/cart2.css">
+</head>
+
+<body>
+    <header>
+        <input type="checkbox" name="" id="hb_control">
+        <nav>
+            <svg preserveAspectRatio="none" id="svg-2" viewBox="0 0 100 80" enable-background="new 0 0 100 80">
+                <animate dur="2s" attributeName="x" repeatCount="indefinite" from="0" to="100" xlink:href="#wave"></animate>
+                <defs>
+                    <filter id="f4" x="0" y="0" width="100%" height="100%">
+                        <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0"></feOffset>
+                        <feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"></feColorMatrix>
+                        <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="2"></feGaussianBlur>
+                        <feBlend in="SourceGraphic" in2="blurOut" mode="normal"></feBlend>
+                    </filter>
+                </defs>
+                <path x="0" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)"
+                    id="wave"></path>
+                <path x="30" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)"
+                    id="wave2"></path>
+            </svg>
+            <div class="ph_nav">
+                <label for="hb_control" class="hb"><span></span></label>
+                <a href="index.html">
+                    <h1 class="phone_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
+                </a>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li class="menu_item"><a href="diy.html">果汁DIY</a></li>
+                    <li class="menu_item"><a href="product.html">果然特調</a></li>
+                    <li><a href="index.html">
+                        <h1 class="menu_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
+                    </a> </li>
+                    <li class="menu_item"><a href="blog.html">果然私藏</a></li>
+                    <li class="menu_item"><a href="about.html">關於果然</a></li>
+                </ul>
+            </div>
+            <div class="nav_mem">
+                <p><a href="login.html">登入</a></p>
+                <div class="mem_pic"><a href="member.html"><img src="images/user.png" alt="會員中心"></a></div>
+                <div class="mem_pic"><a href="cart.html"><img src="images/cart.png" alt="購物車"></a></div>
+            </div>
+        </nav>
+    </header>
+    <div class="space"></div>
+    <div class="cart_shoppingProcess_control clearfix">
+        <div class="cart_shoppingProcess_step">
+            <span>STEP1</span>
+            <img src="images/cart/cart.png" alt="">
+            <!-- <p>購物車清單</p> -->
+        </div>
+        <img src="images/cart/right01.png" alt="">
+        <div class="cart_shoppingProcess_step2">
+            <span>STEP2</span>
+            <img src="images/cart/note.png" alt="">
+            <!-- <p>填寫寄送資料</p> -->
+        </div>
+        <img src="images/cart/right01.png" alt="">
+        <div class="cart_shoppingProcess_step">
+            <span>STEP3</span>
+            <img src="images/cart/pass.png" alt="">
+            <!-- <p>完成訂單</p> -->
+        </div>
+    </div>
+    <div class="cart_shoppingProcess_box">
+        <p>購物車清單</p>
+        <p class="p_p">填寫寄送資料</p>
+        <p>完成訂單</p>
+    </div>
+    <div class="cart_fillInData_title_control">
+          <div class="cart_fillInData_title">
+            <h2>填寫寄送資料</h2>
+        </div>
+    </div>
+    <div class="cart_fillInData">
+        <div class="cart_fillInData_control">
+            <div class="cart_fillInData_content">
+                <h4>收件人</h4>
+                <input type="text">
+            </div>
+            <div class="cart_fillInData_content">
+                <h4>連絡電話</h4>
+                <input type="text">
+            </div>
+            <div class="cart_fillInData_content">
+                <h4>付款方式</h4>
+                <div class="cart_fillInData_paymentMethod_comtrol">
+                    <p class="cart_fillInData_paymentMethod">1.信用卡付款</p>
+                    <img src="images/cart/credictcard.png" alt="">
+                    <input type="radio" name="paymentMethod" id="paymentMethod">
+                </div>
+                <div class="cart_fillInData_paymentMethod_comtrol">
+                    <p class="cart_fillInData_paymentMethod">2.貨到付款</p>
+                    <img src="images/cart/noteBox.png" alt="">
+                    <input type="radio" name="paymentMethod" id="paymentMethod">
+                </div>
+            </div>
+            <div class="cart_fillInData_content">
+                <h4>郵寄地址</h4>
+                <input type="text" id="cart_address">
+            </div>
+            <div class="cart_fillInData_content">
+                <h4>備註</h4>
+                <textarea name="" id="cart_remarks" cols="30" rows="6"></textarea>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cart_nextstepBox">
+        <a href="cart.html" class="cart_nextstep2">
+            <button>上一步</button>
+        </a>
+        <a href="cart3.html" class="cart_nextstep2">
+            <button>下一步</button>
+        </a>
+    </div>
+    <div class="cart_cart2Background">
+        <img src="images/cart/City(02).png" alt="">
+        <img src="images/cart/City(01).png" alt="">
+    </div>
+    <footer>
+        <div class="footer_wrapper">
+            <div class="footer_block clearfix">
+                <div class="footer_rightBox">
+                    <div class="footer_rightContent">
+                        <p class="desc">地址:桃園市中壢區中大路111號</p>
+                        <p class="desc">電話:(03)49111853</p>
+                        <p class="copyright">Copyright © All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
