@@ -1,0 +1,103 @@
+.common_btn {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    padding: 14px;
+    width: 160px;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: .1rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 11px;
+    overflow: hidden;
+}
+.common_btn .common_btn_blobs {
+    height: 100%;
+    -webkit-filter: url(#goo);
+    filter: url(#goo);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: -3px;
+    right: -1px;
+    border-radius: 11px;
+    width: 110%;
+}
+
+.common_btn .common_btn_blobs div:nth-child(1) {
+    left: -5%;
+}
+.common_btn .common_btn_blobs div:nth-child(2) {
+    left: 30%;
+    -webkit-transition-delay: 60ms;
+    transition-delay: 60ms;
+}
+.common_btn .common_btn_blobs div:nth-child(3) {
+    left: 66%;
+    -webkit-transition-delay: 25ms;
+    transition-delay: 25ms;
+}
+.common_btn .common_btn_blobs div {
+    background-color: #90a30b;
+    width: 34%;
+    height: 100%;
+    border-radius: 100%;
+    position: absolute;
+    -webkit-transform: scale(1.4) translateY(125%) translateZ(0);
+    transform: scale(1.4) translateY(125%) translateZ(0);
+    -webkit-transition: all 700ms ease;
+    transition: all 700ms ease;
+}
+.common_btn .common_btn_txt {
+    position: relative;
+    z-index: 1;
+    -webkit-transition: color .3s;
+    transition: color .3s;
+    -webkit-transition-delay: .2s;
+    transition-delay: .2s;
+}
+.common_btn:hover .common_btn_blobs div {
+    -webkit-transform: scale(1.5) translateY(0) translateZ(0);
+    transform: scale(1.5) translateY(0) translateZ(0);
+}
+
+
+
+/* 一級按鈕背景文字 */
+.common_btn_first{
+    background-color: #ffd700;
+}
+.common_btn_first .common_btn_txt {
+    color:#603813;
+}
+
+/* 一級按鈕hover過去的背景和文字顏色 */
+.common_btn_first .common_btn_blobs div {
+    background-color: #90A30B;
+}
+.common_btn_first:hover .common_btn_txt{
+    color: #fff;
+}
+/* 二級按鈕背景文字 */
+.common_btn_second{
+    background-color: #fff;
+    border: 2px solid #603813;
+}
+.common_btn_second .common_btn_txt {
+    color:#603813;
+}
+
+/* 二級按鈕hover過去的背景和文字顏色 */
+.common_btn_second .common_btn_blobs div {
+    background-color: #ffd700;
+}
+.common_btn_second:hover .common_btn_txt{
+    color: #603813;
+}
+
+.homepage_diy .common_btn{
+    /* width: ; */
+    padding: 20px;
+}
