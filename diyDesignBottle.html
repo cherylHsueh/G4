@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>果然配_果汁Diy</title>
+	<title>果然配ohya測試</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/diyDesignBottle.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
@@ -35,26 +35,23 @@
 		</svg>
 		<div class="ph_nav">
 			<label for="hb_control" class="hb"><span></span></label>
-			<a href="index.html">
-				<h1 class="phone_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
-			</a>
+			<h1 class="phone_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
 		</div>
 
 		<div class="menu">
 			<ul>
 				<li class="menu_item"><a href="diy.html">果汁DIY</a></li>
 				<li class="menu_item"><a href="product.html">果然特調</a></li>
-				<li><a href="index.html">
-					<h1 class="menu_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
-				</a>
-			</li>
+				<li>
+					<h1 class="menu_logo"><a href="index.html"><img src="images/logo.png" alt="果然配"></a>果然配</h1>
+				</li>
 				<li class="menu_item"><a href="blog.html">果然私藏</a></li>
 				<li class="menu_item"><a href="about.html">關於果然</a></li>
 			</ul>
 		</div>
 		<div class="nav_mem">
-			<p><a href="login.html">登入</a></p>
-			<div class="mem_pic"><a href="member.html"><img src="images/user.png" alt="會員中心"></a></div>
+			<p><a href="javascript:;">登入</a></p>
+			<div class="mem_pic"><a href="javascript:;"><img src="images/user.png" alt="會員中心"></a></div>
 			<div class="mem_pic"><a href="cart.html"><img src="images/cart.png" alt="購物車"></a></div>
 		</div>
 	</nav>
@@ -72,8 +69,12 @@
 </header>
 
 <body>
+		<section class="section active diy_pickFruitBlock">
+			<div class="wrapper">
+			</div>
+		</section>
 		<!-- SCR2--設計瓶身文字敘述 -->
-		<section class="section diy_designBottleBlock">
+		<section class="section active diy_designBottleBlock">
 			<div class="wrapper">
 				<div class="diy_designBottle_stepBlock ">
 					<div class="diy_designBottle_stepFirstBox">
@@ -149,7 +150,7 @@
 				<div class="diy_designBottle_container cl-s-5 cl-md-6 cl-xl-6">
 					<div id="diy_containmentBlock" class="diy_designBottle_pic cl-s-11 cl-md-9 cl-xl-9">
 						<div id="diy_designBottle_wrapper" class="diy_designBottle_bottleItem">
-							<img src="images/bottle.png" alt="空瓶">
+							<img src="images/diy/emptyBottle.png" id="dragRange">
 						</div>
 						<img id="diy_designBottle_diyImg" class="diy_designBottle_changePic draggable  ui-draggable ui-widget-header"
 						 style="top:300px;right:35%;">
@@ -169,21 +170,16 @@
 					<button class="diy_designBottle_btnNext" id="diy_copyPicButton">製作完成</button>
 				</div>
 			</div>
-			<!-- <footer>
-				<div class="footer_wrapper">
-					<div class="footer_block clearfix">
-						<div class="footer_rightBox">
-							<div class="footer_rightContent">
-								<p class="desc">地址:桃園市中壢區中大路111號</p>
-								<p class="desc">電話:(03)49111853</p>
-								<p class="copyright">Copyright © All Rights Reserved.</p>
-							</div>
+			<footer>
+					<div class="footer_wrapper">
+						<div class="footer_block clearfix">
+								<div >
+									<p class="copyright">Copyright © All Rights Reserved.</p>
+								</div>
 						</div>
+			
 					</div>
-		
-				</div>
-		
-			</footer> -->
+				</footer>
 			<!-- 客製完成跳出蓋滿視窗 -->
 			<div class="wrapper">
 				<div class=" diy_customizePopUp" id="center">
@@ -207,21 +203,6 @@
 					</div>
 				</div>
 			</div>
-			<footer>
-				<div class="footer_wrapper">
-					<div class="footer_block clearfix">
-						<div class="footer_rightBox">
-							<div class="footer_rightContent">
-								<p class="desc">地址:桃園市中壢區中大路111號</p>
-								<p class="desc">電話:(03)49111853</p>
-								<p class="copyright">Copyright © All Rights Reserved.</p>
-							</div>
-						</div>
-					</div>
-		
-				</div>
-		
-			</footer>
 		</section>
 
 	<script>
@@ -229,6 +210,7 @@
 			html2canvas($("#diy_containmentBlock")[0]).then(function (canvas) {
 				var $div = $(".diy_customizeBox_finishPic");
 				$div.empty();
+
 				$("<img />", { src: canvas.toDataURL("image/png") }).appendTo($div);
 			});
 		});						
