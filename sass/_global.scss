@@ -1,0 +1,220 @@
+.clearfix{
+    &:after{
+        display: block;
+        content: '';
+        clear: both;
+    }
+}
+
+body{
+    font-family: "Microsoft JhengHei";
+}
+
+$mainfontcolor : #5e4909;
+$blogtextcolor : #ccc;
+$buttoncolor : rgb(255,241,0);
+
+$mobile : 767px; //手機斷點
+$medium:  768px; //平板斷點
+$desktop : 1024px; //桌機斷點
+
+//RWD斷點判斷函數
+@mixin rwd ($breakpoint) {
+    @if $breakpoint == mobile {
+        @media only screen and (max-width: $mobile) {
+            @content;
+        }
+    }
+    @else if $breakpoint== medium {
+        @media all and (min-width: $medium) {
+            @content;
+        }
+    }
+    @else if $breakpoint == desktop {
+        @media all and (min-width: $desktop) {
+            @content;
+        }
+    }
+}
+//創造格線系統迴圈函數
+@mixin grid($attr , $num) {
+    .cl-#{$attr}-#{1},.cl-#{$attr}-#{2},.cl-#{$attr}-#{3},.cl-#{$attr}-#{4},.cl-#{$attr}-#{5},.cl-#{$attr}-#{6},
+    .cl-#{$attr}-#{7},.cl-#{$attr}-#{8},.cl-#{$attr}-#{9},.cl-#{$attr}-#{10},.cl-#{$attr}-#{11},.cl-#{$attr}-#{12}{
+        float: left;
+        box-sizing: border-box;
+    };
+    @for $i from 1 through $num {
+       .cl-#{$attr}-#{$i}{
+          width: ($i / $num) * 100%;
+        }
+    }
+}
+
+%m-auto{
+ margin: 0 auto;   
+}
+
+//wrapper容器變更函數
+// @mixin wrapper($wrapperwidth){
+//     .wrapper{
+//     max-width: $wrapperwidth;
+//     width: 100%;
+//     }
+// }
+.wrapper{
+    @extend %m-auto;
+    max-width: 1200px;
+    width: 100%;   
+}
+
+@mixin fontsize($h2size,$h3size,$h4size,$psize){
+    h2{
+        font-size:$h2size;
+    }
+    h3{
+        font-size:$h3size;
+    }
+    h4{
+        font-size:$h4size;
+    }
+    p{
+        font-size:$psize;
+    }
+}
+
+//RWD判斷 <- 格線與容器
+@include rwd(mobile){
+    @include grid(s,12);
+    @include fontsize(26px,20px,18px,16px);
+   }
+@include rwd(medium){
+    @include grid(md,12);
+    @include fontsize(32px,24px,18px,16px);
+    }
+@include rwd(desktop){
+    @include grid(xl,12);
+ }
+
+// ----------------------------可能共用
+img{
+    width:100%;
+    vertical-align: middle;
+}
+a{
+    text-decoration:none;
+    color: $mainfontcolor;
+}
+
+//按鈕
+
+
+.common_btn {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    padding: 14px;
+    width: 160px;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: .1rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 11px;
+    overflow: hidden;
+    .common_btn_blobs {
+        height: 100%;
+        -webkit-filter: url(#goo);
+        filter: url(#goo);
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: -3px;
+        right: -1px;
+        border-radius: 11px;
+        width: 110%;
+        div {
+            width: 34%;
+            height: 100%;
+            border-radius: 100%;
+            position: absolute;
+            -webkit-transform: scale(1.4) translateY(125%) translateZ(0);
+            transform: scale(1.4) translateY(125%) translateZ(0);
+            -webkit-transition: all 700ms ease;
+            transition: all 700ms ease;
+        }
+        div:nth-child(1) {
+            left: -5%;
+        }
+        div:nth-child(2) {
+            left: 30%;
+            -webkit-transition-delay: 60ms;
+            transition-delay: 60ms;
+        }
+        div:nth-child(3) {
+            left: 66%;
+            -webkit-transition-delay: 25ms;
+            transition-delay: 25ms;
+        }
+    }
+    .common_btn_txt {
+        position: relative;
+        z-index: 1;
+        -webkit-transition: color .3s;
+        transition: color .3s;
+        -webkit-transition-delay: .2s;
+        transition-delay: .2s;
+    }
+    &:hover .common_btn_blobs div {
+        -webkit-transform: scale(1.5) translateY(0) translateZ(0);
+        transform: scale(1.5) translateY(0) translateZ(0);
+    }
+}
+
+
+$firstButtonBac:#ffd700;
+$firstButtonText:#603813;
+$firstButtonHoverBac: #90A30B;
+$firstButtonHoverText:#fff;
+// $secondButtonBac:#fff;
+// $secondButtonText:#603813;
+// $secondButtonHoverBac:#ffd700;
+// $secondButtonHoverText:#603813;
+$secondButtonBac:#90A30B;
+$secondButtonText:#fff;
+$secondButtonHoverBac:#ffd700;
+$secondButtonHoverText:#603813;
+/* 一級按鈕背景文字 */
+.common_btn_first{
+    background-color:$firstButtonBac;
+    .common_btn_txt {
+        color:$firstButtonText;
+    }
+ /* 一級按鈕hover過去的背景和文字顏色 */
+    .common_btn_blobs div {
+        background-color: $firstButtonHoverBac;
+    }
+    &:hover .common_btn_txt{
+        color: $firstButtonHoverText;
+    }
+}
+/* 二級按鈕背景文字 */
+.common_btn_second{
+    background-color: $secondButtonBac;
+    // border: 2px solid #603813;
+    .common_btn_txt {
+    color:$secondButtonText;
+    }
+/* 二級按鈕hover過去的背景和文字顏色 */
+    .common_btn_blobs div {
+        background-color: $secondButtonHoverBac;
+    }
+    &:hover .common_btn_txt{
+        color: $secondButtonHoverText;
+    }
+}
+
+.homepage_diy .common_btn{
+    /* width: ; */
+    padding: 20px;
+}

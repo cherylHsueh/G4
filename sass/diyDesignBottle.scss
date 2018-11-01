@@ -1,0 +1,464 @@
+@import "reset";
+@import "global";
+@import "nav";
+@import "footer";
+
+// * {
+//   outline: 1px solid red;
+// }
+footer{
+  position: relative;
+}
+.footer_block {
+  background-color: #dde4b7;
+}
+//把nav擋到的高度往下挪
+.navSpace {
+  margin-top: 130px;
+}
+%displayNon {
+  display: none;
+}
+%btnStyle {
+  border-radius: 5px;
+  width: 180px;
+  height: 30px;
+  background-color: $buttoncolor;
+}
+%center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+
+//共用區域
+.diy_designBottle {
+  &_title {
+    text-align: center;
+    margin-top: 25px;
+    color: $mainfontcolor;
+  }
+
+  &_uploadBtn {
+    input {
+      display: none;
+    }
+  }
+  &_logoPic {
+    img {
+      width: 60px;
+    }
+  }
+  &_stepBlock {
+    text-align: center;
+    margin: 0 auto;
+  }
+  &_stepFirstBox {
+    display: inline-block;
+    position: relative;
+  }
+  &_stepFirstTitle {
+    color: #978656;
+    p,
+    h3 {
+      font-size: 15px;
+      padding-top: 1px;
+    }
+  }
+  &_stepSecondBox {
+    display: inline-block;
+    position: relative;
+  }
+  &_stepSecondTitle {
+    color: #fefefe;
+    p,
+    h3 {
+      padding-top: 1px;
+      font-size: 15px;
+    }
+  }
+  &_stepFirstTitle,
+  &_stepSecondTitle {
+    @extend %center;
+  }
+  &_bottleItem {
+    img {
+      width: 120px;
+    }
+  }
+  &_changePic {
+    position: absolute;
+    width: 140px;
+  }
+  &_createBlock {
+    width: 100px;
+  }
+  &_controlBlock {
+    i {
+      margin-top: 20px;
+      display: inline-block;
+      font-size: 30px;
+      cursor: pointer;
+      color: $mainfontcolor;
+    }
+  }
+  &_uploadBtn {
+    margin: 5px 5px 15px;
+    p {
+      width: 80px;
+      height: 20px;
+      line-height: 20px;
+      outline: 1px dashed #f09824;
+      padding: 8px;
+      color: $mainfontcolor;
+      cursor: pointer;
+      &:hover {
+        color: #db7e7e;
+        background: #fff4c1;
+        border-color: #fff4c1;
+        transition: all 0.4s ease 0s;
+      }
+    }
+  }
+  &_picBlock {
+    position: relative;
+    margin: 10px;
+  }
+  &_pics {
+    &:after {
+      content: "";
+      display: block;
+      border: 1px solid #aeaeae;
+      width: 100%;
+      position: absolute;
+      bottom: 100px;
+      left: 0;
+    }
+  }
+  &_officalPicBlock {
+    margin: 10px 5px;
+    border: 1px solid brown;
+    border-radius: 5px;
+  }
+  &_officalPic {
+    border: none;
+    cursor: pointer;
+    img {
+      width: 100%;
+    }
+  }
+  &_textLength {
+    margin: 5px 0 15px;
+    width: 160px;
+  }
+  &_btnBlock {
+    text-align: center;
+    margin-top: -10px;
+    button {
+      width: 120px;
+      background-color: $buttoncolor;
+      margin: 0 10px;
+      padding: 10px 30px;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      color: $mainfontcolor;
+      transition: 1s;
+
+      &:hover {
+          background-color: #f1900f;
+          color: #fefefe;
+      }
+
+    }
+  }
+  &_bottleItem {
+    img {
+      width: 180px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  &_createTextBlock {
+    margin-left: 5px;
+    p {
+      margin-top: 10px;
+    }
+    & input:nth-child(3) {
+      width: 100px;
+      display: block;
+      background: none;
+      border: none;
+      outline: 1px dashed #f09824;
+      padding: 5px 15px;
+      color: $mainfontcolor;
+      font-size: 16px;
+      cursor: pointer;
+      &:hover {
+        color: #db7e7e;
+        background: #fff4c1;
+        border-color: #fff4c1;
+        transition: all 0.4s ease 0s;
+      }
+    }
+  }
+  &_officalPic {
+    padding: 10px;
+  }
+}
+
+//客製完成燈箱
+body {
+  // overflow: hidden;
+}
+.diy {
+  &_customizePopUp {
+    width: 100%;
+    position: absolute;
+    padding: 2px;
+    margin: 5px;
+    display: none;
+  }
+  &_customizeBox {
+    &_item {
+      position: relative;
+      i {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        color: #fa0;
+        font-size: 55px;
+        top: -25px;
+        right: 10px;
+        text-align: center;         
+      }
+    }
+    &_content {
+      width: 300px;
+      height: 350px;
+      background-color: #fedfe1;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -45%);
+      margin: auto;
+      text-align: center;
+    }
+    &_finishPic{
+      width: 100px;
+      height: 250px;
+      margin: 0 auto;   
+      // img{
+      //   display:block;
+      //   margin-right:20px;
+      //   // width: 160px;
+      // }   
+    }
+  }
+  &_customizeFinishBox {
+    position: fixed;
+    top: 0px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    overflow-x: hidden;
+    z-index: 2;
+    &_btns {
+      position: relative;
+      top: 73%;
+      right: 0;
+    }
+    button {
+      width: 150px;
+      background-color: $buttoncolor;
+      margin: 0 10px;
+      padding: 10px 10px;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      color: $mainfontcolor;
+      transition: 1s;
+
+      &:hover {
+          background-color: #f1900f;
+          color: #fefefe;
+      }
+    }
+  }
+  &_proToCartBtns{
+    text-align: center;
+    // margin:auto 10px;
+    button{
+      width: 120px;
+      padding: 10px 10px;
+      display: inline-block;
+    }
+    // margin-top: 20px;
+  }
+}
+footer{
+  position: static;
+  padding-top: 50px;
+
+}
+.robot{
+  z-index:1;
+}
+//行動版
+@include rwd(mobile) {
+  .diy_customizeBox_finishPic{
+    width: 100px;
+  }
+  .diy_customizeBox_content  h3{
+    margin: 10px 0;
+  }
+  .diy_customizeBox_finishPic{
+    // width: 50px;
+  }
+  .diy_designBottle_bottleItem img{
+    width: 100px;
+    margin: 35px auto;
+  }
+  .diy_designBottle {
+    &_stepFirstBox {
+      img {
+        width: 120px;
+      }
+    }
+    &_stepSecondBox {
+      img {
+        width: 120px;
+      }
+    }
+    &_disNone {
+      display: none;
+    }
+  }
+  #diy_designBottle_wrapper {
+    width: 100%;
+  }
+}
+
+//平板
+@include rwd(medium) {
+  .diy_customizeBox_finishPic{
+    width: 230px;
+  }
+  .diy_proToCartBtns{
+    margin-top: 20px;
+  }
+  .diy_designBottle_bottleItem img{
+    width: 140px;
+    margin: 30px auto;
+  }
+  .diy_designBottle {
+    &_stepFirstBox {
+      img {
+        width: 180px;
+      }
+    }
+    &_stepSecondBox {
+      img {
+        width: 180px;
+      }
+    }
+    &_logoPic {
+      display: inline-block;
+      img {
+        width: 90px;
+        margin: 5px;
+      }
+    }
+    &_bottleItem {
+      position: relative;
+      padding-left: 50px;
+    }
+
+    &_stepFirstTitle {
+      p,
+      h3 {
+        font-size: 18px;
+      }
+    }
+    &_stepSecondTitle {
+      p,
+      h3 {
+        font-size: 18px;
+      }
+    }
+    &_controlBlock {
+      i {
+        font-size: 30px;
+        display: inline-block;
+        margin: 20px 30px;
+      }
+    }
+    &_textBlock {
+      margin-top: 20px;
+      position: relative;
+    }
+  
+  &_officalPic {
+    border: none;
+    img {
+      width: 90px;
+    }
+  }
+  &_textForm {
+    & :nth-child(2) {
+      width: 200px;
+    }
+  }
+  }
+
+  //客製完成跳窗尺寸
+  .diy_customizeBox_content  h3{
+    margin: 10px 0 ;
+  }
+  .diy_customizeBox_finishPic{
+   img{
+      width: 250px;
+   }
+  }
+  .diy {
+    &_customizeBox {
+      &_content {
+        width: 600px;
+        height: 400px;
+        background-color: #fedfe1;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -45%);
+        margin: auto;
+      }
+    }
+    &_customizeFinishBox {
+      &_btns {
+        position: relative;
+        top: 80%;
+        right: 0;
+      }
+    }
+  }
+}
+//桌機
+@include rwd(desktop) {
+  .diy_designBottle {
+    &_controlBlock {
+      i {
+        font-size: 40px;
+        display: inline-block;
+        margin: 20px 30px;
+      }
+    }
+    &_officalPic {
+      border: none;
+      img {
+        width: 90px;
+      }
+    }
+  }
+}

@@ -1,0 +1,685 @@
+@import "global";
+@import "reset";
+@import "nav";
+@import "footer";
+*{
+	// outline: 1px solid red;
+}
+footer{
+	position: relative;
+}
+.footer_wrapper .footer_block {
+    background-color: #dde4b7;;
+}
+
+.brick{
+	width: 100%;
+	height: 130px;
+	background-color:#00B5BD;
+	
+}
+.member_memberInfo{
+	width: 100%;
+	background-color:#00B5BD;
+	// padding-bottom:20px;
+}
+
+.member_memberInfo_Features_box_item{
+	text-align: center;
+		a{
+			text-decoration: none;
+		}
+		li{
+			padding:10px 0;
+			color:#000;
+		}
+}
+
+.member_memberInfo_box{
+	width: 50%;
+	border:1px solid #ccc;
+	border-radius: 50px;
+	margin:auto;
+	padding: 10px 0;
+}
+.member_orderSearch_wrpaper{
+	display: none;
+}
+.member_coupon_wrpaper{
+	display: none;
+}
+@include rwd(mobile){
+	.member_memberInfo_wrapper{
+		padding-top:10px;
+	}
+
+	.member_memberInfo_profile_photo{
+		width: 200px;
+		padding-top:20px; 
+		margin: auto;
+		
+	}
+	.member_memberInfo_photo_box{
+		width: 100px;
+		height: 100px;
+		background-color: orange;
+		border-radius: 50%;
+		margin:auto;
+			img{
+				width: 100%;
+			}
+	}
+	// .member_memberInfo_photo_change{
+	// 	width: 100px;
+	// 	height: 20px;
+	// 	background-color: #ccc;
+	// 	margin-top: 10px;
+	// 	text-align:  center;
+	// 	line-height: 20px;
+		
+	// }
+
+	.member_memberInfo_photo_change {
+		display: block;
+		color: #000;
+		background-color: yellow;
+		border-radius: 5px;
+		padding:3%;
+		margin: auto;
+		margin-top: 15%;
+		cursor: pointer;
+		}
+	#upload_img{
+		display: none;
+		}
+
+
+	.member_memberInfo_Points_block{
+		width: 200px;
+		background-color: aaa;
+		margin-top:60px;
+		text-align: center;
+				p{
+					display:inline-block;
+					font-size:18px;
+					width: 90px;
+					
+				}
+				.member_memberInfo_Points{
+					font-size:18px;
+					display: inline-block;
+					width: 100px;
+				}
+	}
+	.member_memberInfo_Features_box{
+		width: 200px;
+		margin-top:20px;
+	}
+	.member_personalInfo_basicInfo_block{
+		text-align: center;	
+		font-size: 18px;
+			#submit{
+				margin-top: 20px;
+				width: 120px;
+				height: 20px;
+				background-color: #aaa;
+			}	
+	}
+	
+	.member_personalInfo_basicInfo_block_item{
+		margin-top:20px; 
+			span{
+				line-height: 20px;
+				margin-right:10px;
+				font-size:16px;
+			}
+	}
+	.member_personalInfo{
+		width: 300px;
+		border-radius: 50px;
+		margin:20px auto 0;
+		padding-bottom:20px;
+	}
+	.member_personalInfo_basicInfo_block{
+		width: 300px;
+		margin: 20px auto 0;
+		border:1px solid #ccc;
+		border-radius: 50px;
+		text-align: center;
+		padding:20px 0;
+		font-size: 18px;
+			#submit{
+				margin-top: 20px;
+				width: 120px;
+				height: 20px;
+				background-color: #aaa;
+			}	
+	}
+
+	.member_personalInfo_password_block{
+		width: 300px;
+		border:1px solid #ccc;
+		border-radius: 50px;
+		text-align: center;
+		margin:20px auto;
+		padding: 20px 0;
+		font-size: 18px;
+			#submit{
+				margin-top: 20px;
+				width: 120px;
+				height: 20px;
+				background-color: #aaa;
+			}	
+	}
+	.member_personalInfo_password_block_item{
+		margin-top:20px; 
+		font-size: 16px;
+		line-height: 20px;
+			span{
+				margin-right:10px;
+			}
+	}
+	.member_background_bottom_grass{
+		width: 100%;
+		height: 50px;
+		margin-top:200px;
+		background-color:#D9E021;
+		z-index: 0;
+		position: relative;
+		.member_background_bottom_car{
+				width: 50%;
+				position: absolute;
+				bottom: 20px;
+				left:20px;
+			}
+		.member_background_bottom_tree{
+			width: 50%;
+			position: absolute;
+			bottom: 50px;
+			right:0px;
+			z-index: -1;
+		}
+		.member_background_bottom_cloud{
+			width: 50%;
+			position: absolute;
+			bottom: 120px;
+			right: 30px;
+		}
+		.member_background_bottom_orchard{
+			display: none;
+		}
+	}
+	.member_background_bottom_road{
+		width: 100%;
+		height: 30px;
+		background-color:#8C6239;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		z-index: -1;
+}
+//手機版 訂單查詢
+.member_orderSearch_title{
+	width: 300px;
+	margin: 0 auto 10px;
+	text-align: center;
+	font-size: 18px;
+}
+.member_orderSearch_block{
+	width: 300px;
+	border:1px solid #ccc;
+	border-radius: 50px;
+	margin: 5% auto;
+	padding: 20px 0;
+	text-align: center;
+	font-size: 18px;
+	
+	.member_orderSearch_block_box{
+		width: 200px;
+		border: 1px solid #ccc;
+		padding: 20px;
+		margin: 30px auto;
+	}
+}
+
+	.member_orderSearch_block_box_item_orderDetail_button{
+		width: 50%;
+		height: 35px;
+		line-height: 35px;
+		margin: 5% auto 0;
+		font-size: 16px;
+		color:#000;
+		background-color: #ccc;
+	}
+
+.member_orderSearch_block_box_item{
+	span{
+		font-size: 16px;
+		line-height: 2;
+	}
+	#member_orderSearch_block_box_item_orderNo{
+		display: inline-block;
+	}
+	#member_orderSearch_block_box_item_memName{
+		display: inline-block;
+	}
+	#member_orderSearch_block_box_item_orderPrice{
+		display: inline-block;
+	}
+	#member_orderSearch_block_box_item_orderDate{
+		display: inline-block;
+	}
+}
+//手機版 訂單詳情跳窗
+.member_orderSearch_block_lightbox{
+	width: 100vw;
+	height: 100vh;
+	// background-color:yellow;
+	display:none;
+	text-align: center;
+	position: relative;
+	.member_orderSearch_block_lightbox_box{
+		width: 90%;
+		background-color:rgba(0,0,0,0.5 );; 
+		position: fixed;
+		right: 0;
+		left: 0;
+		margin: 13% auto;
+	
+	}
+}
+
+.member_orderSearch_block_lightbox_box table{
+	// border:1px solid #ccc;
+	margin: auto;
+
+}
+.member_orderSearch_block_lightbox_title th{
+	border:1px solid #ccc;
+	color: #fff;
+	width: 17%;
+	line-height: 2;
+}
+.member_orderSearch_block_lightbox_content td{
+	font-size: 16px;
+	color:#fff;
+	border:1px solid #ccc;
+}
+.member_orderSearch_block_lightbox_picture {
+	img{
+		width: 42%;
+		vertical-align: middle;
+		padding: 20%;
+	}
+}
+
+
+
+//手機版我的優惠卷
+.member_coupon_title{
+	width: 300px;
+	margin: 50px auto 0;
+	text-align: center;
+	font-size: 18px;
+}
+.member_coupon_block{
+	width: 80%;
+	// border:1px solid #ccc;
+	border-radius: 50px;
+	margin: auto;
+}
+.member_coupon_block_box{
+	width: 60%;
+	border:1px solid #ccc;
+	border-radius: 50px;
+	margin:20px auto;
+	padding: 20px 0;
+	text-align: center;
+	font-size: 18px;
+		img{
+			width: 50%;
+			display: block;
+			margin: auto;
+		}
+		span{
+			display: inline-block;
+			margin-top: 20px;
+		}
+		.member_coupon_block_box_quantity{
+			display: inline-block;
+			margin-top: 20px;
+			width: 60px;
+			height: 20px;
+			background-color: #ccc;
+		}
+}
+
+
+}
+
+@include rwd(medium){
+	.member_memberInfo_box{
+		width: 300px;
+		margin: 50px auto 40px;
+		float:right;
+		padding-bottom: 50px;
+	}
+	.member_memberInfo_photo_box{
+		width: 100px;
+		margin: auto;
+		border-radius: 100%;
+		padding: 40px 0;
+			img{
+				border:1px solid #ccc;
+				border-radius:50%; 
+				width: 100%;
+			}
+
+			.member_memberInfo_photo_change {
+				display: block;
+				color: #000;
+				background-color: yellow;
+				border-radius: 5px;
+				padding:3%;
+				margin: auto;
+				margin-top: 15%;
+				cursor: pointer;
+				}
+			#upload_img{
+				display: none;
+				}
+	
+	}
+x
+	.member_memberInfo_profile_photo{
+		width: 200px;
+		margin: auto;
+		padding:50px 0; 
+	}
+	.member_memberInfo_Features_box_item{
+		text-align: center;
+			a{
+				text-decoration: none;
+			}
+			li{
+				padding:5px 0;
+				color:#000;
+			}
+	}
+	.member_memberInfo_Points_block{
+		margin:20px 0;
+		text-align: center;
+				p{
+					display:inline-block;
+					font-size:18px;
+					width: 90px;	
+				}
+				.member_memberInfo_Points{
+					font-size:18px;
+					display: inline-block;
+					width: 100px;
+				}
+	}
+	.member_personalInfo_basicInfo_block_item{
+		// margin-top:20px; 
+			span{
+				margin-right:10px;
+				font-size:16px;
+			}
+	}
+
+	.member_personalInfo_basicInfo_block{
+		width: 30%;
+		border-radius: 50px;
+		border:1px solid #ccc;
+		margin:20px auto;
+		text-align: center;
+		padding:20px ;
+		font-size: 18px;
+		line-height: 3;
+		position: relative;
+		top: 50px;
+			#submit{
+				margin-top: 20px;
+				width: 120px;
+				height: 35px;
+				background-color: yellow;
+				cursor: pointer;
+			}	
+	}
+	.member_memberInfo_wrapper{
+		padding:20px 0; 
+		line-height: 20px;
+	}
+
+	//桌機版 變更密碼
+	.member_personalInfo_password_block{
+		width: 30%;
+		border-radius: 50px;
+		border:1px solid #ccc;
+		margin:20px auto;
+		text-align: center;
+		padding:20px ;
+		font-size: 18px;
+		line-height: 3;
+		position: relative;
+		top: 50px;
+			#submit{
+				margin-top: 20px;
+				width: 120px;
+				height: 35px;
+				background-color: yellow;
+				cursor: pointer;
+			}	
+	}
+	.member_personalInfo_password_block_item{
+		margin-top:20px; 
+		font-size: 16px;
+		line-height: 20px;
+			span{
+				margin-right:10px;
+			}
+	}
+	//桌機版訂單查詢
+	.member_orderSearch_wrpaper{
+		position: relative;
+		top: 80px;
+	}
+	.member_orderSearch_block{
+		width: 60%;
+		border:1px solid #ccc;
+		border-radius: 50px;
+		margin: auto;
+		padding: 0px 10px 50px;
+		text-align: center;
+		font-size: 18px;
+		.member_orderSearch_block_box{
+			width: 200px;
+			border: 1px solid #ccc;
+			padding: 20px;
+			margin: 2% ;
+			display: inline-block;
+		}
+	}
+	.member_orderSearch_block_box_item{
+		span{
+			font-size: 16px;
+			line-height: 2;
+		}
+		#member_orderSearch_block_box_item_orderNo{
+			display: inline-block;
+		}
+		#member_orderSearch_block_box_item_memName{
+			display: inline-block;
+		}
+		#member_orderSearch_block_box_item_orderPrice{
+			display: inline-block;
+		}
+		#member_orderSearch_block_box_item_orderDate{
+			display: inline-block;
+		}
+	}
+	.member_orderSearch_title{
+		width: 300px;
+		margin: 10px auto;
+		text-align: center;
+		font-size: 18px;
+	}
+
+		.member_orderSearch_block_box_item_orderDetail_button{
+			width: 50%;
+			height: 35px;
+			line-height: 35px;
+			margin: 5% auto 0;
+			font-size: 16px;
+			color:#000;
+			background-color: #ccc;
+		}
+//桌機版 訂單詳情跳窗
+.member_orderSearch_block_lightbox{
+	width: 100vw;
+	height: 100vh;
+	// background-color:yellow;
+	display:none;
+	text-align: center;
+	position: relative;
+	.member_orderSearch_block_lightbox_box{
+		width: 55%;
+		background-color:rgba(0,0,0,0.5 );; 
+		position: fixed;
+		right: 0;
+		left: 0;
+		margin: 15% auto;
+	
+	}
+}
+
+.member_orderSearch_block_lightbox_box table{
+	// border:1px solid #ccc;
+	margin: auto;
+
+}
+.member_orderSearch_block_lightbox_title th{
+	border:1px solid #ccc;
+	color: #fff;
+	width: 17%;
+	line-height: 2;
+}
+.member_orderSearch_block_lightbox_content td{
+	font-size: 16px;
+	color:#fff;
+	border:1px solid #ccc;
+}
+.member_orderSearch_block_lightbox_picture {
+	img{
+		width: 20%;
+		vertical-align: middle;
+		padding: 8%;
+	}
+}
+
+	
+	//桌機版 我的優惠卷
+	.member_coupon_title{
+		margin: 5% auto 0;
+		text-align: center;
+		font-size: 18px;
+	}
+	.member_coupon_block{
+		width: 80%;
+		border:1px solid #ccc;
+		border-radius: 50px;
+		margin: auto;
+		text-align: center;
+		position: relative;
+		top: 70px;
+	}
+	.member_coupon_block_box{
+		width: 300px;
+		border:1px solid #ccc;
+		border-radius: 50px;
+		display: inline-block;
+		margin:20px 20px; 
+		padding: 20px 0;
+		text-align: center;
+		font-size: 18px;
+			img{
+				width: 50%;
+				display: block;
+				margin: auto;
+			}
+			span{
+				display: inline-block;
+				margin-top: 20px;
+			}
+			.member_coupon_block_box_quantity{
+				display: inline-block;
+				margin-top: 20px;
+				width: 60px;
+				height: 20px;
+				background-color: #ccc;
+			}
+	}
+	
+
+	// 桌機版 會員中心裝飾
+.member_background_bottomPart{
+	margin-top: 5%;
+}
+	.member_background_bottom_road{
+		width: 100%;
+		height: 30px;
+		background-color:#8C6239;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		z-index: -1;
+}
+
+	.member_background_bottom_grass{
+		width: 100%;
+		height: 50px;
+		margin-top:200px;
+		background-color:#D9E021;
+		z-index: 0;
+		position: relative;
+		.member_background_bottom_car{
+				width: 30%;
+				max-width: 576px;
+				position: absolute;
+				bottom: 20px;
+				left:650px;
+			}
+		.member_background_bottom_tree{
+			width: 30%;
+			position: absolute;
+			bottom: 50px;
+			right:0px;
+			z-index: -1;
+		}
+		.member_background_bottom_cloud{
+			width: 20%;
+			position: absolute;
+			bottom: 500px;
+			left: 10px;
+		}
+		.member_background_bottom_orchard{
+			width: 30%;
+			position: absolute;
+			bottom: 0;
+			z-index: -1;
+		}
+	}
+
+
+
+
+
+
+}

@@ -1,0 +1,162 @@
+@import "reset";
+@import "global";
+@import "nav";
+@import "footer";
+*{
+	// outline: 1px solid red;
+}
+
+footer{
+ position: relative;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+}
+   
+@include rwd(mobile){
+	.nav_space{
+		margin-top:95px;
+	}
+	.cloud{
+		text-align: right;
+		padding: 5%;
+	}
+	.cloud img{
+       width:20%;
+	}
+	.signUp{
+		background-color: #00B5BD;
+		width: 100%;
+		// height: calc(100vh - 110px);
+	}
+	
+	.signUp_newmem_box{
+		text-align: center;
+		background-color: white;
+		width:80%;
+		box-sizing: border-box;
+		padding:5% 3%;
+		margin: auto;
+		div{
+			margin:15px;
+		}
+	}
+	.signUp_explain_box{
+		width:80%;
+		margin: 10% auto 0 auto;
+	}
+
+	
+	.signUp_newmem_box > p,
+	.signUp_explain_box > p{
+	    margin: auto;
+    	padding: 1% 0;
+     	line-height: 1.6;
+	}
+	
+	.btn{
+		background-color: rgb(255,241,0);
+		width:120px;
+		height: 35px;
+	}
+	.orchard img,
+	.orchard2 img{
+		display:none;
+	}
+	.confirm{
+		position: relative;
+		right:14px;
+	}
+	input{
+		margin: 4px 2px;
+		padding: 5px 0px;
+		display: inline-block;
+	}
+
+
+}
+@include rwd(medium){
+	.nav_space{
+		margin-top:110px;
+	}
+	.signUp{
+		background-color: #00B5BD;
+	}
+	.cloud{
+		text-align: right;
+		padding: 5%;
+	}
+	.cloud img{
+       width:20%;
+	}
+	input{
+		width: 50%;
+        padding: 5px 20px;
+        margin: 8px 8px;
+        display: inline-block;
+	}
+	.signUp_newmem{
+		position:relative;
+		left:58%;
+	}
+	.signUp_newmem_box h2{
+		position: relative;
+		top: -30px;
+	}
+	.confirm{
+		position: relative;
+		right:14px;
+	}
+	.signUp_explain{
+		position: relative;
+		right: 42%;
+		height: calc(100vh - 163px);
+	}
+	.signUp_explain_box{
+		width:60%;
+		margin: auto;
+	}
+	.signUp_explain_box >p{
+		line-height: 1.6;
+	}
+	.signUp_explain_box >h2{
+		line-height: 1.6;
+	}
+	// .signUp_newmem_box > p,
+	// .signUp_explain_box > p{
+	// 	margin:5px auto;
+	// }
+	.signUp_newmem_box{
+		text-align: center;
+		background-color: white;
+		width:60%;
+		box-sizing: border-box;
+		padding:8% 3%;
+		margin: auto;
+	}
+	.btn{
+		background-color: rgb(255,241,0);
+		width:120px;
+		height: 35px;
+		margin-top: 18px;
+	}
+	.orchard{
+		text-align: center;
+		padding:3%;
+	}
+	.orchard img{
+		width:20%;
+	}
+	.orchard2{
+		position: absolute;
+		bottom: 0;
+		left: 25%;
+		width: 38%;
+		img{
+			width: 100%;
+		}
+	}
+	
+	
+}

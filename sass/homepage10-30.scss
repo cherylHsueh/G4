@@ -1,0 +1,1203 @@
+@import "reset";
+@import "global";
+@import "nav";
+
+
+section{
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+.homepage_title{
+    background-image: url('../images/homepage/title.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 106px;
+    position: relative;
+    top:150px;
+    h2{
+        position: relative;
+        top:40px;
+        left:57px;
+        color: $mainfontcolor;
+    }
+}
+.homepage_btn{
+    display: inline-block;
+    background-color: $buttoncolor ;
+    border-radius: 7px;
+}
+//第一屏
+.homepage_header_bottleBlock{
+    height: 20vh;
+    width: 100%;
+    position: absolute;
+    bottom:-30px;
+
+    .homepage_header_bottlePic{
+        width: 20%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin:auto;
+    }
+}
+.homepage_header_waterPic{
+    position: absolute;
+    left:50%;
+    transform: translateX(-54%);
+    opacity:0;
+}
+.homepage_header_waterPic-active{
+    opacity:1;
+}
+.homepage_header_textBlock{
+    position: absolute;  
+    left:0;
+    right: 0;
+    margin:auto;
+    line-height: 1.8;
+    text-align: center;   
+}
+.homepage_header_textBox {
+    position: relative;
+    font-weight: 900;
+    font-size: 3.3em;
+    span{
+        color: $mainfontcolor;
+    }
+  }
+  
+.homepage_header_textBox .homepage_header_textWrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+    opacity: 0;
+  }
+  
+.homepage_header_textBox .homepage_header_text{
+    display: inline-block;
+    line-height: 1em;
+}
+
+//第一屏水果
+$fruit_timeX:.5s;
+$fruit_timeY:1.5s;
+.homepage_header_fruitBox{
+    position: absolute;
+    .homepage_header_fruitContent{
+        position: absolute;
+        width: 130px;
+        opacity: 0;
+        display: none;
+
+        // box-shadow: 0px 0px  2px 2px #ddd;
+        // border-radius: 2px;
+        // padding: 5px;
+        p{
+            color:$mainfontcolor;
+            text-align: justify;
+            line-height: 1.4;
+        }   
+    }
+    &.homepage_header_appleBox{
+        transform: rotate(-20deg);
+        animation: fruit_x 2s $fruit_timeX - 0.3 linear backwards, fruit_y 1s $fruit_timeY - 0.3  cubic-bezier(.06,1.27,.49,1.24) backwards;
+    }
+    &.homepage_header_pineappleBox{
+        transform: rotate(20deg);
+        animation: fruit_x 2s $fruit_timeX+.7 linear backwards, fruit_y 1s $fruit_timeY+.7  cubic-bezier(.06,1.27,.49,1.24) backwards;
+    }
+    &.homepage_header_watermalonBox{
+        transform: rotate(20deg);
+        animation: fruit_x 2s $fruit_timeX + 1.3 linear backwards, fruit_y 1s $fruit_timeY + 1.3  cubic-bezier(.06,1.27,.49,1.24) backwards;
+    }
+    &.homepage_header_grapeBox{
+        animation: fruit_x 2s $fruit_timeX+.5 linear backwards, fruit_y 1s $fruit_timeY+.5  cubic-bezier(.06,1.27,.49,1.24) backwards;
+    }
+    &.homepage_header_cantaloupeBox{
+        transform: rotate(-30deg);
+        animation: fruit_x 2s $fruit_timeX + 0.4 linear backwards, fruit_y 1s $fruit_timeY + 0.4  cubic-bezier(.06,1.27,.49,1.24) backwards;
+    }
+    &.homepage_header_tomatoBox{
+        transform: rotate(10deg);
+        animation: fruit_x 2s $fruit_timeX + 1 linear backwards, fruit_y 1s $fruit_timeY + 1  cubic-bezier(.06,1.27,.49,1.24) backwards;
+    }
+    @keyframes fruit_x{
+        0%{
+    
+        }
+        50%{
+            left:50%;
+            transform: translate(-50%,0);
+        }
+        100%{}
+    }
+    @keyframes fruit_y{
+        0%{
+            top:100%;
+        }
+        100%{}
+    }
+    @-webkit-keyframes fruit_x{
+        0%{
+    
+        }
+        50%{
+            left:50%;
+            transform: translate(-50%,0);
+        }
+        100%{}
+    }
+    @keyframes fruit_y{
+        0%{
+            top:100%;
+        }
+        100%{}
+    }
+}
+.homepage_header_drop{
+    display: none;
+}
+
+
+
+
+
+//第二屏
+.homepage_diy_arrowBox,.homepage_diy_fruitContent{
+     display: none;
+ }
+ .homepage_diy{
+    .homepage_title h2{
+        left:63px;
+    }
+ }
+ .homepage_diy_btn{
+     position: absolute;
+     right: 2%;
+ }
+//第三屏
+.homepage_test{
+    background-image: url('../images/homepage/test_background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.homepage_test_boardContainer{
+    background-color: rgb(133, 90, 47);
+    position: relative;
+    top:135px;
+    right: 0;
+    left: 0;
+    margin:auto;
+    .homepage_test_boardBlock{
+        background-image: url('../images/homepage/board.png');
+        background-repeat: repeat;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        color:#fff;
+        line-height: 81vh;
+        height: 100%;
+    }
+    .homepage_test_questionPic{
+        margin-right: 4px;
+    }
+    .homepage_test_questionPic,.homepage_test_questionContent{
+        display: inline-block;
+    }
+}
+.homepage_test_questionContainer{
+    display: inline-block;
+    line-height: 13;
+    .homepage_test_questionBlock{
+        line-height: 1.5;
+    }
+    .homepage_test_answerBlock{
+        display: inline-block;
+        text-align: left;
+        color: hsl(50, 80%, 60%);
+        line-height: 1.3;
+    }
+}
+
+
+
+
+
+
+
+@include rwd(mobile){
+    .homepage_title{
+    background-size: inherit;
+    }
+    .homepage_btn{
+        padding:10px 20px;
+    }
+//手機橫第一屏
+    .homepage_header_bottleBlock{
+        .homepage_header_bottlePic{
+            width: 30%;
+        }
+    }
+    .homepage_header_waterPic{
+        width:120%;
+        top: 40%;
+    }
+    .homepage_header_textBlock{
+        top: 160px;    
+        font-size: 7px;
+    }
+    .homepage_header_fruitBox{
+        &.homepage_header_appleBox{
+            width: 15%;
+            top:50%;
+            left: 10%;
+        }
+        &.homepage_header_cantaloupeBox{
+            display:none;
+        }
+        &.homepage_header_grapeBox{
+            width: 15%;
+            top:67%;
+            left: 30%;
+            transform: rotate(-20deg);
+        }
+        &.homepage_header_pineappleBox{
+            width: 19%;
+            top:45%;
+            left: 60%;
+        }
+        &.homepage_header_tomatoBox{
+            display:none;
+        }
+        &.homepage_header_watermalonBox{
+            width: 18%;
+            top:65%;
+            left: 70%;
+        }
+    }
+    
+//手機橫第二屏
+    .homepage_title,.homepage_diy_container{
+        top:130px;
+     }
+    .homepage_title h2{
+        top:40px;
+        left:65px;
+    }
+    .homepage_diy_container{
+        height: 80vh;
+        display: flex;
+        flex-direction: column-reverse; 
+    }
+    .homepage_diy_fruitBlock{
+        position: relative;
+        .homepage_diy_arrowRight,
+        .homepage_diy_arrowLeft{
+            position: absolute;
+            transform: scale(0.5);
+            background-color: #fff;
+            opacity: .5;
+            top:0;
+            bottom: 0;
+            margin:auto;
+            img{
+                transform:translateY(100%); 
+            }
+        }
+        .homepage_diy_arrowRight{
+            right:0;
+        }
+        .homepage_diy_fruitPic{
+            width: 80px;
+            padding:15px;
+            line-height: 86px;
+            vertical-align: middle;
+            // height: 10px;
+        }
+        .homepage_diy_Box{
+            width: 300%;
+        }
+        .homepage_diy_fruitBox{
+            float: left;
+            margin-top:10px;
+        }
+        .homepage_diy_labaPhone{
+            float: left;
+            width: 80px;
+        }
+    }
+    .homepage_diy_buttleBlock{
+        width:25%;
+        margin:-15px auto;
+    }
+    .homepage_diy_labaBox{
+        display: none;
+    }
+    .homepage_diy_btn{
+        bottom:23%;
+    }
+    //手機橫第三屏
+    .homepage_test_boardContainer{
+        width: 90%;
+        height:55vh;
+        .homepage_test_boardBlock{
+            width: 88%;
+            vertical-align: middle;
+            text-align: center;
+            // line-height: 81vh;
+        }
+    }
+    .homepage_test_questionBlock{
+       font-size: 20px;
+    }
+    .homepage_test_questionPic{
+        width: 15%;
+    }
+//手機第四屏
+    
+}
+@include rwd(medium){
+    .homepage_btn{
+        padding:20px 50px;
+    }
+//平板第一屏
+    .homepage_header_waterPic{
+        width:150%;
+        top: 10%;
+    }
+    .homepage_header_textBlock{
+        top: 190px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    .homepage_header_fruitBox{
+            width: 11%;
+        &.homepage_header_appleBox{
+            width:9%;
+            top:50%;
+            left: 8%;
+        }
+        &.homepage_header_cantaloupeBox{
+            width: 14%;
+            left: 20%;
+            top:71%;
+        }
+        &.homepage_header_grapeBox{
+            top:24%;
+            left: 5%;
+        }
+        &.homepage_header_pineappleBox{
+            width: 13%;
+            top:45%;
+            left: 40%;
+        }
+        &.homepage_header_tomatoBox{
+            left: 70%;
+            top:40%;
+        }
+        &.homepage_header_watermalonBox{
+            width: 16%;
+            top:65%;
+            left: 80%;
+        }
+    }
+//平板第二屏
+    .homepage_diy_container{
+        position: relative;
+        top:150px;
+        height: 80vh;
+        display: flex;
+        flex-direction: column-reverse; 
+    }
+    .homepage_diy_arrowRight,.homepage_diy_arrowLeft{
+        display: none;
+    }
+    .homepage_diy_Box{
+        box-sizing: border-box;
+        padding:40px;
+        margin-top: -54px;
+        background-image: url('../images/homepage/hightlight.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        
+        .homepage_diy_fruitPic{
+            height: 100px;
+            width: 30%;
+            margin:20% auto;
+        }
+        .homepage_diy_labaPhone{
+            display: none;
+        }
+        
+        .homepage_diy_grapePic img,.homepage_diy_bananaPic img{
+            position: relative;
+            top:30px;
+            transform: scale(1.2);
+        }
+    }
+    .homepage_diy_labaBox{
+        position: absolute;
+        left: 0;
+        bottom:0;
+        display: flex;
+        align-items: flex-end;
+
+        .homepage_diy_labaPic{
+            width: 25%;
+        }
+        .homepage_diy_labaContent{
+            margin-left:10px;
+            box-sizing: border-box;
+            padding-bottom:20px;
+            white-space:nowrap;
+        }
+    }
+    .homepage_diy_buttleBlock{
+        width: 15%;
+        margin: auto;
+    }
+    .homepage_diy_btn{
+        right: 7%;
+        bottom:47%;
+    }
+//平板直第三屏
+    .homepage_test_boardContainer{
+        top:170px;
+        width: 90%;
+        height:69vh;
+        .homepage_test_boardBlock{
+            width: 91%;
+            line-height: 99vh;
+        }
+    }
+    .homepage_test_questionContainer{
+        line-height: 13;
+        font-size: 40px;
+        .homepage_test_questionBlock{
+            h3{
+                font-size: 40px;
+            }
+        }
+        .homepage_test_answerBlock{
+            line-height: 3;
+            h4{
+                font-size: 30px;
+                padding:0 30px;
+                display: inline-block;
+            }
+        }
+    }
+
+    
+}
+@include rwd(desktop){
+//平板橫第一屏
+    .homepage_header_bottleBlock{
+        height: 22vh;
+        .homepage_header_bottlePic{
+            width: 14%;
+        }
+    }
+    .homepage_header_waterPic{
+        width:82%;
+        top: 8%;
+    }
+    .homepage_header_textBlock{
+        display: flex;
+        justify-content: space-around;
+        top:auto;
+        bottom:6%;
+        font-size: 7vw;
+        line-height:1 ;
+        .homepage_header_textWrapper{
+            opacity: 0;
+            // display: inline-block;
+            font-size: 3vw;
+            line-height: 1.8;  
+        }
+        .homepage_header_text1{
+            margin-left:-10px;
+        }
+        .homepage_header_text2{
+            margin-left:200px;
+
+        }
+    }
+    .homepage_header_fruitBox{
+        width: 7%;
+        .homepage_header_fruitContent{
+            display: block;
+        }
+        &.homepage_header_appleBox{
+            width: 8%;
+            .homepage_header_fruitContent{
+                top:80%;
+                transform: rotate(20deg);
+                right:-160px;
+            }
+        }
+        &.homepage_header_cantaloupeBox{
+            width: 8%;
+            left:31%;
+            top:65%;
+            .homepage_header_fruitContent{
+                transform: rotate(30deg) ;
+                top:100%;
+                right:-140px;   
+            }
+        }
+        &.homepage_header_grapeBox{
+            top:30%;
+            left:13%;
+            .homepage_header_fruitContent{
+                right:-160px;
+                top:35%;
+            }
+        }
+        &.homepage_header_pineappleBox{
+            width: 9%;
+            top:29%;
+            left: 43%;
+            .homepage_header_fruitContent{
+                top:80%;
+                left:-140px;
+                transform: rotate(-20deg);
+            }
+        }
+        &.homepage_header_tomatoBox{
+            top:24%;
+            left:65%;
+            .homepage_header_fruitContent{
+                top:110%;
+                left:50%;
+                transform: translateX(-50%);
+            }
+        }
+        &.homepage_header_watermalonBox{
+            width:10%;
+            top:55%;
+            .homepage_header_fruitContent{
+                left:-160px;
+                transform: rotate(-20deg);
+                top:70%;
+            }
+        }
+    }
+    .homepage_header_drop{
+        display: block;
+        position: absolute;
+        opacity: 0;
+        &.homepage_header_drop1{
+            top:28%;
+            left:5%;
+            width: 80px;
+        }
+        &.homepage_header_drop2{
+            top:29%;
+            right:5%;
+            width: 97px;
+        }
+    }
+    
+//平板橫第二屏
+    .homepage_diy_container{
+        flex-direction: row;
+        position: relative;
+        top:10%;
+        .homepage_diy_fruitContent{
+            display: block;
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            left:0;
+            right: 0;
+            margin:auto;
+            line-height: 36px;
+            text-align: center;
+        }
+    }
+    .homepage_diy_fruitBlock {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 4%;
+        .homepage_diy_Box{
+            position: relative;
+            margin:0px;
+            .homepage_diy_fruitPic{
+                width: 30%;
+                max-width: 80px;
+            }
+            .homepage_diy_grapePic{
+                margin-top:30%;
+                margin-left:74%;
+            }
+            .homepage_diy_cantaloupePic{
+                margin-top:10%;
+                margin-left:35%;
+            }
+            .homepage_diy_tomatoPic{
+                margin-top:-4%;
+                margin-left:44%;
+            }
+            .homepage_diy_guavaPic{
+                width: 28%;
+
+                max-width: 75px;
+                margin-top:30%;
+            }
+            .homepage_diy_pineapplePic{
+                position: absolute;
+                top:50%;
+                width: 9%;
+                left:37%;
+
+            }
+            .homepage_diy_watermelonPic{
+                margin-top:140%;
+                margin-left:70%;
+            }
+            .homepage_diy_bananaPic{
+                margin-top:42%;
+                margin-left:10%;
+            }
+            .homepage_diy_applePic{
+                margin-top:-4%;
+                margin-left:40%;
+            }
+            .homepage_diy_orangePic{
+                margin-top:-10%;
+                margin-left:23%;
+            }
+        }
+        
+    }
+    .homepage_diy_buttleBlock{
+        width: 14%;
+        margin-left: 5%;
+    }
+    .homepage_diy_arrowBox{
+        position: absolute;
+        display: block;
+        left:52%;
+        padding-top:60px;
+        h4{
+            position: relative;
+            left:80px;
+            transform: rotate(20deg);
+        }
+    }
+    .homepage_diy_labaBox{
+        .homepage_diy_labaPic{
+        width: 90px;
+        }
+    }
+    .homepage_diy_btn{
+        right: .5%;
+        bottom:23%;
+    }
+//平板橫第三屏
+    .homepage_test_boardContainer{
+        top:161px;
+        width: 90%;
+        height:55vh;
+        max-width: 1400px;
+        .homepage_test_boardBlock{
+            width: 99%;
+            height: 51vh;
+            transform: translate(-49.5%,-50%);
+            line-height: 82vh;
+        }
+    }
+    .homepage_test_questionContainer{
+        line-height: 10;
+    }
+
+
+}
+//果汁DIY1440px以上
+@media all and (min-width: 1440px) {
+//桌機第一屏
+    .homepage_header_waterPic{
+        width:78%;
+        top:auto;
+        bottom: 9%;
+    }
+    .homepage_header_fruitBox{
+        width: 7%;
+        &.homepage_header_appleBox{
+            width: 6%;
+            width: 90px;
+        }
+        &.homepage_header_cantaloupeBox{
+            width: 6%;
+            // width: 100px;
+            left:31%;
+            top:61%;
+        }
+        &.homepage_header_grapeBox{
+            top:20%;
+        }
+        &.homepage_header_pineappleBox{
+            width: 7%;
+            // max-width:120px ;
+            top:29%;
+            left: 43%;
+        }
+        &.homepage_header_tomatoBox{
+            top:24%;
+        }
+        &.homepage_header_watermalonBox{
+            width:8%;
+            // max-width:140px ;
+            top:55%;
+        }
+    }
+//桌機第二屏
+    .homepage_diy_fruitBlock {
+        .homepage_diy_Box{
+            background-size: 60%;
+            padding:40px;
+            // margin-top: -54px;
+            .homepage_diy_fruitPic{
+                width: 30%;
+                max-width: 80px;
+            }
+            .homepage_diy_grapePic{
+                margin-top:34%;
+                margin-left:85%;
+            }
+            .homepage_diy_cantaloupePic{
+                margin-top:-5%;
+                margin-left:56%;
+            }
+            .homepage_diy_tomatoPic{
+                margin-top:0%;
+                margin-left:65%;
+            }
+            .homepage_diy_guavaPic{
+                margin-top:12%;
+            }
+            .homepage_diy_pineapplePic{
+                top:44%;
+
+            }
+            .homepage_diy_watermelonPic{
+                margin-top:130%;
+                margin-left:70%;
+            }
+            .homepage_diy_bananaPic{
+                // margin-top:42%;
+                margin-left:0%;
+            }
+            .homepage_diy_applePic{
+                // margin-top:-4%;
+                margin-left:18%;
+            }
+            .homepage_diy_orangePic{
+                margin-top:-4%;
+                margin-left:10%;
+            }
+        }
+    }
+    .homepage_diy_buttleBlock{
+        width: 12%;
+    }
+    .homepage_diy_btn{
+        right: 4%;
+    }
+    //桌機第三屏
+    .homepage_test_boardContainer{
+        .homepage_test_boardBlock{
+            line-height: 80vh;
+        }
+    }
+
+}
+
+
+
+//第四屏
+#homepage_blog_ribbon{ 
+    width: 100%; 
+    height: 100%; 
+    top: 100px;
+    overflow: hidden; 
+    position: absolute; 
+}
+#snowflake { width: 100%; 
+    height: 100%; 
+    position: 
+    absolute; 
+    top: 0; 
+    left: 0; 
+    overflow: hidden; 
+}
+.snowRoll { 
+    position: absolute; 
+    opacity: 0; 
+    -webkit-animation-name: mysnow; 
+    -webkit-animation-duration: 10s;
+     -moz-animation-name: mysnow; 
+     -moz-animation-duration: 10s; 
+     height: 80px; 
+}
+@-webkit-keyframes mysnow { 
+    0% {bottom: 100%;}
+    50% {-webkit-transform: rotate(80deg);}
+    100% {// -webkit-transform: rotate(0deg) translate3d(50px, 50px, 50px);
+    }
+}
+@-moz-keyframes mysnow { 
+    0% {bottom: 100%;}
+    50% {-moz-transform: rotate(80deg); }
+    100% {// -moz-transform: rotate(0deg) translate3d(50px, 50px, 50px);
+    }
+}
+.homepage_blog{
+    background-image: url('../images/homepage/blog_backgroung4.jpg');
+    background-size: cover;
+    background-position: bottom center;
+    height:100vh;
+}
+.homepage_blog_spotlightBox{
+    display: none;
+}
+.homepage_blog_platBlock{
+    position: absolute;
+    bottom:0px;
+    box-sizing: border-box;
+    width:60%;
+    margin-left:3%;
+    z-index: 4;
+    .homepage_blog_personsBox{
+        position: absolute;
+        width: 100%;
+        div{
+            position: relative;
+            transition: 2s;
+        }
+        .homepage_blog_person1{
+            margin-top:-15%;
+        }
+        .homepage_blog_person2{
+            left:7%;
+        }
+        .homepage_blog_person3{
+            margin-top:20%;
+        }
+    }
+    .homepage_blog_platBox{
+        margin-top:35%;
+    }
+}
+.homepage_blog_person-active{
+    // top:-30px;
+    // transform: rotate(-5deg) scale(1.3);
+}
+.homepage_blog_btnBlock{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom:15%;
+    right:3%;
+    div{
+        margin-bottom:10px;
+    }   
+}
+.homepage_blog_contentAndMessage{
+    display: none;
+}
+.homepage_blog_papperBlock{
+    box-sizing: border-box;
+    position: relative;
+    .homepage_blog_plate{
+        position: absolute;
+    }
+}
+.homepage_blog_papperBox{
+    background-color: hsla(50, 100%, 100%,.8);
+    h3{
+        color:rgb(234,133,35);
+    }
+}
+.homepage_blog_picBox{
+    position: relative;
+    box-sizing: border-box;
+    padding:6px 57px 35px;
+    .homepage_blog_goodBox{
+        position: absolute;
+        display: inline;
+        top:5%;
+        border-radius: 0  3px 3px 0;
+        background-color:  hsla(50, 100%, 100%,1);
+        .homepage_blog_goodPic{
+            display: inline-block;
+            box-sizing: border-box;
+            padding:3px;
+            width: 50%;
+            vertical-align: middle;
+        }
+        p{
+            display: inline-block;
+            color:rgb(234,133,35);
+            height: 100%;
+            vertical-align: middle;
+        }
+    }
+}
+@include rwd(mobile){
+ 
+    .homepage_blog_papperBlock{
+        position: relative;
+        top: 115px;
+    }
+    .homepage_blog_titleBox{
+        padding:7px 25px 1px;
+        h3{
+            margin:7% 0;
+        }
+        .homepage_blog_fruit{
+            padding-left: 5px;
+        }
+    }
+    .homepage_blog_picBox{
+        padding:0px 37px 23px;
+        .homepage_blog_goodBox{
+            width: 20%;
+            p{
+                line-height: 1.7;
+
+            }
+        }
+    }
+    .homepage_blog_papperBlock{
+        padding:10px 20px;
+        .homepage_blog_plate{
+            width: 15%;
+            top:21%;
+            right: 10%;
+        }
+    }
+}
+@include rwd(medium){
+    //平板第四屏
+    
+    .homepage_blog_papperBlock{
+        top: 130px;
+    }
+    .homepage_blog_titleBox{
+        padding:12px 25px 2px;
+        h3{
+            margin:7% 5%;
+            font-size: 2.5em;
+        }
+        .homepage_blog_fruit{
+            padding: 5px 10px;
+        }
+    }
+    .homepage_blog_picBox{
+        .homepage_blog_goodBox{
+            width: 13%;
+            p{
+                font-size: 1.2em;
+            }
+        }
+    }
+    .homepage_blog_papperBlock{
+        padding:10px 20px;
+        .homepage_blog_plate{
+            width: 12%;
+            top:20%;
+            right: 4%;
+        }
+    }
+    
+}
+@include rwd(desktop){
+    //平板橫的第四屏
+   
+    .homepage_blog_container{
+        max-width:1200px;
+        .cl-xl-4{
+            width: 33.33333%;
+        }
+        .cl-xl-8{
+            width: 66.66667%;
+        }
+    } 
+    .homepage_blog_papperBlock{
+        background-image: url('../images/homepage/papper.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        top:auto;
+        width: 72%;
+        max-width: 1200px;
+        position: absolute;
+        bottom: 11%;
+        right:2%;
+        padding:2% 2% 5%;
+
+        // padding: 20px 25px 32px;
+        .homepage_blog_plate{
+            top:auto;
+            bottom:-9%;
+        }
+        .homepage_blog_papperBox{
+            background-color: transparent;
+            box-sizing:border-box;
+            margin: 6% 3% 1%;
+        }
+    }
+    .homepage_blog_platBlock{
+        .homepage_blog_personsBox{
+            .homepage_blog_person1{
+                margin-top:-15%;
+            }
+            .homepage_blog_person2{
+                left:7%;
+            }
+            .homepage_blog_person3{
+                margin-top:20%;
+            }
+        }
+    }
+    .homepage_blog_picBox .homepage_blog_goodBox{
+        top:auto;
+        bottom:20%;
+        width: 18%;
+    }
+    .homepage_blog_spotlightBox{
+        position: absolute;
+        display: block;
+        left: 0;
+        top:-100%;
+        right: 0;
+        margin:auto;
+        z-index: -1;
+        .homepage_blog_spotlight1{
+            // display:none;
+            perspective-origin: top;
+            transform: rotate(10deg);
+            opacity: 1;
+        }
+        .homepage_blog_spotlight2{
+            // display: none;
+            position: absolute;
+        }
+        .homepage_blog_spotlight3{
+            // display:none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 1;
+            top:-90%;
+    }
+        .homepage_blog_spotlight-active{
+            opacity: 1;
+        }
+
+    }
+    .homepage_blog_titleAndPic{
+        box-sizing: border-box;
+        padding:0 20px;
+        .homepage_blog_titleBox h3{
+            font-size: 26px;
+            // margin:10% 13%;
+            position: relative;
+        }
+        .homepage_blog_fruits{
+            margin:2% 0;
+        }
+        .homepage_blog_title{
+
+            h3{
+               margin: 10% 5%;
+            }
+        }
+        
+        .homepage_blog_picBox{
+            padding:0;
+            margin:0 30px;
+        }
+    }
+    
+    .homepage_blog_btnBlock{
+        display: flex;
+        flex-direction: row;
+        bottom:10px;
+        right:15%;
+        div{
+            margin-right:20px;
+        }   
+    }
+    .homepage_blog_contentAndMessage{
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        right: 0;
+        top:50%;
+        transform: translateY(-50%);
+        .homepage_blog_authorPic{
+            display: inline-block;
+            width: 24%;
+            img{
+                border-radius: 50%;
+            }
+        }
+        p{
+            display: inline-block;
+            color:#888;
+        }
+        h4{
+            color:#555;
+            line-height: 1.4;
+            padding:10px 0;
+        }
+        .homepage_blog_messageBox{
+            margin:15px 0;
+            position: relative;
+            .homepage_blog_messageAuthor{
+                float: left;
+                img{
+                    border-radius: 50%;
+                }
+            }
+            .homepage_blog_messageText{
+                height: 100%;
+                position: absolute;
+                right: 0;
+                &:before{
+                    content: '';
+                    height: 100%;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+            p{
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 14px;
+                padding-left:10px;
+            }
+        }
+    }
+}
+@media all and (min-width: 1440px) {
+    //桌機第四屏
+
+
+    .homepage_blog_container{
+        max-width:1400px;
+    }
+}

@@ -1,0 +1,455 @@
+@import "reset";
+@import "global";
+@import "nav";
+* {
+  // outline: 1px solid red;
+}
+
+.nav_space {
+  width: 100%;
+  height: 90px;
+}
+
+h3 {
+  color: #009245;
+  padding: 10px;
+  font-weight: bold;
+}
+
+@include rwd(mobile) {
+  // 我們的故事
+  .about_story_container {
+    font-size: 0;
+    background-color: #d9e021;
+    position: relative;
+  }
+  .about_story_block {
+    width: 75%;
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 16px;
+    margin: 5% 2.5%;
+  }
+  .about_story_box {
+    background-color: white;
+  }
+  .about_story_item {
+    font-size: 0;
+    margin-top: 3%;
+    img {
+      width: 20%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    p {
+      width: 70%;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1.3;
+      margin: 5px 10px;
+    }
+  } // 工廠房子
+  .about_story_factory_box {
+    width: 100%;
+    text-align: right; // background-color: red;
+  }
+  .item {
+    margin-top: 15%;
+    width: 30%;
+    display: inline-block;
+    position: relative;
+    img {
+      width: 100%;
+    }
+  }
+  .item2 {
+    width: 10%;
+    display: inline-block;
+    position: absolute;
+    right: 22%;
+    bottom: 19%;
+    img {
+      width: 100%;
+    }
+  } // 台灣部分
+  .about_taiwan_container {
+    font-size: 0;
+    position: relative;
+    background-color: #d9e021;
+  }
+  .about_taiwan_block {
+    width: 80%;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  .about_story_box {
+    margin-top: 5%;
+  }
+  .about_desktop_ifo_box {
+    display: none;
+  } // 手機板台灣資訊
+  .about_mobile_ifo_container {
+    font-size: 0;
+    background-color: #d9e021;
+    position: relative;
+  }
+  .about_mobile_ifo_block {
+    width: 80%;
+    display: inline-block;
+    margin: 5% auto;
+  }
+  .about_mobile_ifo_box {
+    background-color: white;
+    width: 80%;
+    margin: auto;
+    border-radius: 20px;
+    border: 5px solid;
+    border-color: white #603813 #603813 white;
+    p {
+      padding: 3px;
+      color: #f7931e;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    span {
+        color: #009245;
+        font-weight: 700;
+      }
+
+  }
+  .about_desktop_ifo_container,.about_taiwan_item_sheep {
+    display: none;
+  }
+
+  .twmap_end_road {
+    width: 10%;
+    display: inline-block;
+    vertical-align: bottom;
+    position: absolute;
+  }
+  .story_end_road {
+    width: 10%;
+    display: inline-block;
+    vertical-align: bottom;
+    position: absolute;
+  }
+  .story_end_road2 {
+    width: 10%;
+    display: inline-block;
+    vertical-align: bottom;
+    position: absolute;
+    bottom: -7%;
+  }
+  .tw_end_road {
+    width: 10%;
+    display: inline-block;
+    vertical-align: bottom;
+    img {
+      height: 35vh;
+    }
+  } // 最後一屏消費者
+  .about_end {
+    width: 100%;
+    position: relative;
+    font-size: 0;
+    padding-top: 23%;
+    background-color: #fbb03b;
+  }
+  .tw_end_road2 {
+    width: 10%;
+    display: inline-block;
+    vertical-align: bottom;
+    background-color: #666666;
+    img {
+      /* height: 50vh; */
+      position: absolute;
+      right: 5%;
+      width: 10%;
+      top: -77%;
+    }
+  }
+  .about_end_shadow {
+    position: relative;
+    width: 80%;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  .about_end_road {
+    width: 10%;
+    display: inline-block;
+    vertical-align: bottom;
+    background-color: #666666;
+    img {
+      position: absolute;
+      right: 5%;
+      width: 10%;
+      top: -77%;
+    }
+  }
+  .house_end_road {
+    width: 10%;
+    display: inline-block;
+    vertical-align: bottom;
+    background-color: #666666;
+    img {
+      /* height: 50vh; */
+      position: absolute;
+      right: 5%;
+      width: 10%;
+      top: -77%;
+    }
+  }
+  .road {
+    height: 10%;
+    background-color: #666666;
+  }
+  .fake_space {
+    width: 5%;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  .house {
+    position: absolute;
+    top: 32%;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+  }
+  .buyer {
+    width: 20%;
+    position: absolute;
+    top: -35%;
+    left: 19.5%;
+    right: 0;
+    img {
+      width: 50%;
+      display: block;
+    }
+  }
+}
+
+@include rwd(medium) {
+  // 電腦
+  // 我們的故事
+  .about_story_container {
+    font-size: 0;
+    background-color: #d9e021;
+    position: relative;
+  }
+  .about_story_block {
+    width: 75%;
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 16px;
+    margin: 5% 0% 5% 5%;
+  }
+  .about_story_box {
+    background-color: white;
+  }
+  .about_story_item {
+    font-size: 0;
+    margin-top: 1%;
+    img {
+      width: 10%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    p {
+      width: 70%;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1.3;
+      margin: 5px 10px;
+    }
+  } // 我們的故事工廠房子
+  .about_story_factory_box {
+    position: absolute;
+    bottom: 0;
+    right: 15%;
+    margin-bottom: 5%;
+    width: 100%;
+    text-align: right; 
+  }
+  .item {
+    margin-top: 12%;
+    width: 20%;
+    display: inline-block;
+    img {
+      width: 100%;
+    }
+  }
+  .item2 {
+    width: 10%;
+    display: inline-block;
+    position: absolute;
+    right: 1%;
+    top: -15%;
+    img {
+      width: 100%;
+    }
+  }
+  .fake_space {
+    display: none;
+  } 
+  // 台灣
+  .about_taiwan_container {
+    font-size: 0;
+    background-color: #d9e021;
+    position: relative;
+  }
+  .about_taiwan_block {
+    width: 80%;
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 0;
+  } // 手機板台灣資訊
+  .about_mobile_ifo_container {
+    font-size: 0;
+    display: none;
+  }
+  .about_taiwan_item {
+    position: relative;
+    font-size: 0;
+    width: 100%;
+  }
+  .about_desktop_ifo_box {
+    background-color: white;
+    width: 28%;
+    margin: auto;
+    position: absolute;
+    top: 15%;
+    left: 8%;
+    border-radius: 25px;
+    box-sizing: border-box;
+    padding: 15px;
+    border: 5px solid;
+    border-color: white #603813 #603813 white;
+    p {
+      padding: 10px;
+      color: #f7931e;
+      font-weight: 800;
+    }
+    span {
+      color: #009245;
+      font-weight: 700;
+    }
+  }
+  .about_taiwan_item_map img {
+    width: 40%;
+    position: relative;
+    left: 43%;
+  }
+  .about_taiwan_item_sheep {
+    position: absolute;
+    width: 20%;
+    bottom: 0%;
+    right: -4%;
+  }
+  .about_taiwan_item_sheep img {
+    width: 94%;
+    vertical-align: bottom;
+  }
+  .twmap_end_road {
+    width: 10%;
+    display: inline-block;
+    vertical-align: bottom;
+    img {
+      height: 110vh;
+    }
+  }
+  .story_end_road {
+    width: 10%;
+    display: inline-block;
+    vertical-align: bottom;
+    img {
+      height: 100vh;
+    }
+  }
+  .story_end_road2 {
+    display: none;
+  }
+  .about_taiwan_btn {
+    background-color: #fbb03b;
+    width: 130px;
+    border-radius: 10px;
+    border: 2.5px solid;
+    border-color: white black black white;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    float: right;
+    img {
+      width: 45px;
+      height: 50px;
+    }
+  }
+  .about_end_road {
+    width: 10%;
+    display: inline-block;
+    vertical-align: bottom;
+    img {
+      height: 100vh;
+    }
+  }
+  .tw_end_road2 {
+    width: 10%;
+    display: inline-block;
+    vertical-align: bottom;
+    img {
+      height: 100vh;
+    }
+  }
+ //房子部分
+  .fake_space {
+    width: 5%;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  .about_end {
+    font-size: 0;
+    background-color: #fbb03b; // margin: auto;
+  }
+  .about_orange {
+    background-color: #fbb03b;
+  }
+  .fake {
+    width: 100%;
+    height: 20vh;
+    background-color: pink;
+  }
+  .about_end_shadow {
+    position: relative;
+    width: 80%;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  .road {
+    height: 10%;
+    background-color: #666666;
+  }
+  .house {
+    position: absolute;
+    top: 29%;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+  }
+  .house_end_road {
+    width: 10%;
+    display: inline-block;
+    vertical-align: bottom;
+    img {
+      height: 100vh;
+    }
+  }
+  .buyer {
+    width: 20%;
+    position: absolute;
+    top: -35%;
+    right: 60.2%;
+    img {
+      width: 50%;
+      display: block;
+    }
+  }
+}

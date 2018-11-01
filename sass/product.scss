@@ -1,0 +1,125 @@
+@import "reset";
+@import "global";
+@import "nav";
+@import "footer";
+
+*{
+    // outline: 1px solid #f00;
+    text-align: center;
+    color: $mainfontcolor;
+}
+input{
+    cursor: pointer;
+}
+.footer_block {
+    background-color: #dde4b7;
+}
+input{
+    border:none;
+}
+
+section{
+    width: 100%;
+}
+
+section div{
+   box-sizing: border-box;
+ }
+
+.pdcate{
+    // background-image: url('../images/pd/pdcate_bgimg.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.pdcate{
+    padding-top: 200px;
+}
+
+.pd{
+    padding-bottom: 50px;
+    background: linear-gradient(180deg, white 0%,rgb(244, 214, 109) 10%);
+}
+.pd_cate{
+    h2{
+        padding: 50px 0;
+    }
+}
+
+.pdcate_item{
+    padding: 20px;
+    .item{
+        border:5px white solid;
+        box-shadow: 2px 2px;
+        transition: 0.3s;
+    }
+    &:hover .item{
+        border:5px orange solid;
+    }
+}
+
+.pd_cate_item{
+    padding: 20px;
+    .item{
+        background-color: #fff;
+        padding: 20px 0;
+        // border: 4px #ccc dotted;
+        border-radius: 20px;
+        box-shadow: 2px 2px 2px 0px #ccc;
+    }
+    h3{
+        padding:14px;
+        font-weight: bold;
+    }
+}
+
+.pd_cate_item_itemimg{
+    overflow: hidden;
+    &:hover{
+        img{
+            transform:scale(1.2);
+            transition: 0.3s;
+        }
+    }
+}
+
+.btn{
+    display: inline-block;
+    padding: 6px;
+    background-color: $buttoncolor;
+    vertical-align: middle;
+    font-size: 16px;
+    border-radius: 10px;
+    box-shadow: 1px 2px;
+}
+
+.btn2{
+    display: inline-block;
+    padding: 6px;
+    border:$mainfontcolor solid 1px;
+    background-color: #fff;
+    vertical-align: middle;
+    font-size: 16px;
+    border-radius: 10px;
+    box-shadow: 1px 2px;
+}
+footer{
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+@include rwd(mobile){
+    .pdcate_item{
+        padding: 5px;
+    }
+    .pdcate{
+        .wrapper{
+            padding:0;
+        }
+    }
+
+    .pd_cate_item{
+        padding: 5px;
+    }
+}

@@ -1,0 +1,66 @@
+// @import 'global';
+
+* {
+    // outline: 1px solid red;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+@include rwd(mobile) {
+    .footer_wrapper {
+        text-align: center;
+
+        .footer_block {
+            margin: 0 auto;
+            // padding: 10px 0;
+            // background-color: #dde4b7;
+
+            .footer_rightBox {
+                .footer_rightContent {
+                    padding: 8px 0;
+                    .desc {
+                        display: inline-block;
+                        padding: 5px;
+                        font-size: 2vw;
+                    }
+                    .copyright{
+                        font-size: 1vw;
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+@include rwd(medium) {
+    .footer_wrapper {
+        position: relative;
+        text-align: center;
+        margin: 0 auto;
+        .footer_block {
+            margin: 0 auto;
+            // padding: 20px 0;
+            // background-color: #dde4b7;
+
+            .footer_rightBox {
+                .footer_rightContent {
+                    padding: 8px 0;
+                    .desc {
+                        display: inline-block;
+                        padding: 5px;
+                    }
+                    .copyright{
+                        font-size: 12px;
+                    }
+                }
+
+            }
+        }
+    }
+}
