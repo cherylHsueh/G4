@@ -261,6 +261,7 @@ $(document).ready(function () {
         } else {
             bgc = '.diy_pickFruit_leftItem' + $(this).attr('id');
             $(bgc).css('background-color', "rgb(233, 201, 165)");
+            // $(bgc).css('background-color', "#bd6308");
             // $('.highlightUnclick').remove();
             // alert('no');
         }
@@ -282,6 +283,7 @@ $(document).ready(function () {
 
         //REMOVE HIGHTLIGHT
         $('.diy_pickFruit_leftItem').css('background-color', "rgb(233, 201, 165)");
+        // $('.diy_pickFruit_leftItem').css('background-color', "#bd6308");
 
         //REMOVE BOTTLEFILL
         $("#diy_pickFruit_bottle1").remove();
