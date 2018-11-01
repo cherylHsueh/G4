@@ -6,8 +6,15 @@
 * {
   // outline: 1px solid red;
 }
+
+body{
+  background: #f7fdbc;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #ffd194, #f7fdbc);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #ffd194, #f7fdbc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
 footer{
-  position: static;
+  position: relative;
   padding-top: 50px;
 
 }
@@ -18,9 +25,9 @@ footer{
 
 
 //把nav擋到的高度往下挪
-// .navSpace {
-//   margin-top: 130px;
-// }
+.navSpace {
+  margin-top: 140px;
+}
 
 //每屏高度
 // .diy_picFruit_wrapper {
@@ -31,19 +38,17 @@ footer{
 //挑選水果
 .diy_pickFruit {
   position: relative;
-
-  .space {
-    height: 130px;
-  }
-}
-
-.diy_pickBottle {
-  position: relative;
   width: 100%;
-  height: calc(100vh - 150px);
-  // overflow: hidden;
-  background-color: rgb(0, 255, 170);
+  // height: 100vh;
 }
+
+// .diy_pickBottle {
+//   position: relative;
+//   width: 100%;
+//   height: calc(100vh - 150px);
+//   // overflow: hidden;
+//   background-color: rgb(0, 255, 170);
+// }
 
 .diy_pickFruit_rightItem {
   display: none;
@@ -149,12 +154,20 @@ footer{
       width: 400%;
 
       .diy_pickFruit_leftItem {
+        width: 100px;
         display: inline-block;
-        // img {
-        //   width: 40%;
-        //   cursor: pointer;
-        //   // margin: 0 20%;
-        // }
+        .fruitnameBox{
+          // display: none;
+          position: absolute;
+          bottom: -20px;
+          left: -25px;
+          // z-index: -1;
+          width: 75px;
+          height: 30px;
+          border-radius: 10px;
+          background-color:rgb(227, 253, 112);
+          
+        }
       }
     }
   }
@@ -211,21 +224,9 @@ footer{
     .fruitnamef#{$i} {
       display: none;
       position: absolute;
-      left: 0%;
-      bottom: -40%;
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: -10px;
-        left: -8px;
-        z-index: -1;
-        display: block;
-        width: 120%;
-        height: 30px;
-        border-radius: 10%;
-        background-color:orange;
-      }
+      left: -20px;
+      bottom: -15px;
+      z-index: 1;
     }
   }
 
@@ -444,6 +445,13 @@ footer{
 
   //水果區 
 
+  .diy_pickFruit_titleAllWrapper{
+    margin-top:10px;
+    padding: 20px 0;
+    border: 1px solid $mainfontcolor;
+    border-radius: 100px;
+    // background-color: rgb(231, 235, 202);
+  }
 
   .diy_pickFruit_leftBlock {
     margin: 2% 0;
@@ -453,6 +461,18 @@ footer{
 
       .diy_pickFruit_leftItem {
         text-align: center;
+
+        .fruitnameBox{
+          // display: none;
+          position: absolute;
+          top: -10px;
+          left: -15px;
+          // z-index: -1;
+          width: 75px;
+          height: 30px;
+          border-radius: 10px;
+          background-color:rgb(227, 253, 112);
+        }
       }
     }
   }
@@ -507,21 +527,11 @@ footer{
     .fruitnamef#{$i} {
       display: none;
       position: absolute;
-      left: 0%;
-      top: -10px;
+      left: -10px;
+      top: -5px;
+      z-index: 1;
 
-      &::before {
-        content: '';
-        position: absolute;
-        top: -8px;
-        left: -10px;
-        z-index: -1;
-        display: block;
-        width: 120%;
-        height: 30px;
-        border-radius: 10%;
-        background-color:orange;
-      }
+      
     }
   }
 
@@ -655,15 +665,15 @@ footer{
     // display: none;
   }
 
-  .diy_pickFruit_wrapper {
-    // position: absolute;
-    // top: 25%;
-    // bottom: 50%;
-    // margin: 0 auto;
-    // left: 50%;
-    // margin-left: -600px;
-    // margin-top: -15%;
-  }
+  // .diy_pickFruit {
+  //   position: absolute;
+  //   top: 50%;
+  //   bottom: 50%;
+  //   margin: 0 auto;
+  //   left: 50%;
+  //   margin-left: -600px;
+  //   margin-top: -15%;
+  // }
 
   // 步驟
   // 挑選水果標題
