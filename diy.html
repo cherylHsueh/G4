@@ -8,14 +8,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0,shrink-to-fit=no">
 	<!-- <link rel="stylesheet" type="text/css" href="css/fullpage.css" /> -->
 	<link rel="stylesheet" href="css/diy.css">
-	<!-- 以下行是可选的。 只有在使用选项css3:false，并且您希望使用其他缓动效果，而非“linear”、“swing”或“easeInOutCubic”时才有必要。 -->
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/vendors/easings.min.js"></script> -->
-	<!-- 以下行仅在使用选项scrollOverflow:true的情况下是必需的 -->
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/vendors/scrolloverflow.min.js"></script> -->
-	<!-- <script type="text/javascript" src="js/fullpage.js"></script> -->
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/slick-theme.css">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<!-- <script type="text/javascript" src="js/slick.min.js"></script> -->
 
 
 </head>
@@ -63,79 +64,106 @@
 				<div class="mem_pic"><a href="cart.html"><img src="images/cart.png" alt="購物車"></a></div>
 			</div>
 		</nav>
-		<!-- <div class="coupon"><img src="images/coupon.png" alt="優惠小遊戲"></div>
-	<div class="robot"><img src="images/robot.png" alt="果然配客服機器人"></div> -->
+		<div class="coupon"><img src="images/coupon.png" alt="優惠小遊戲"></div>
+		<div class="robot"><img src="images/robot.png" alt="果然配客服機器人"></div>
 	</header>
-		<!-- DIY挑選水果 -->
-		<div class="space"></div>
-		<section class="section active diy_pickFruit">
-			<div class="space"></div>
-			<div class="wrapper diy_pickFruit_wrapper">
-				<div class="diy_pickFruit_stepBlock clearfix">
-					<div class="diy_pickFruit_stepFirstBox">
-						<img src="images/diy/stepBg1.png" alt="挑選水果">
-						<div class="diy_pickFruit_stepFirstTitle">
-							<p>STEP1</p>
-							<h3>挑選水果</h3>
-						</div>
-					</div>
-
-					<div class="diy_pickFruit_stepSecondBox">
-						<img src="images/diy/stepBg.png" alt="設計瓶身">
-						<div class="diy_pickFruit_stepSecondTitle">
-							<p>STEP2</p>
-							<h3>設計瓶身</h3>
-						</div>
+	<!-- DIY挑選水果 -->
+	<div class="navSpace"></div>
+	<section class="section active diy_pickFruit">
+		<!-- <div class="space"></div> -->
+		<div class="wrapper diy_pickFruit_wrapper">
+			<div class="diy_pickFruit_stepBlock clearfix">
+				<div class="diy_pickFruit_stepFirstBox">
+					<img src="images/diy/stepBg1.png" alt="挑選水果">
+					<div class="diy_pickFruit_stepFirstTitle">
+						<p>STEP1</p>
+						<h3>挑選水果</h3>
 					</div>
 				</div>
 
+				<div class="diy_pickFruit_stepSecondBox">
+					<img src="images/diy/stepBg.png" alt="設計瓶身">
+					<div class="diy_pickFruit_stepSecondTitle">
+						<p>STEP2</p>
+						<h3>設計瓶身</h3>
+					</div>
+				</div>
+			</div>
+			<div class="diy_pickFruit_titleAllWrapper">
 				<div class="diy_pickFruit_title">
 					<h4>為你的DIY果汁，挑三種水果吧</h4>
 				</div>
 
 				<div class="diy_pickFruit_allWrapper clearfix">
-					<div class="diy_pickFruit_leftBlock cl-md-4 clearfix">
+					<div class="diy_pickFruit_leftBlock cl-md-4 cl-xl-4 clearfix">
 						<div class="diy_pickFruit_leftBox clearfix">
 
 							<div class="diy_pickFruit_leftPic clearfix">
-								<div id="apple" class="diy_pickFruit_leftItem diy_pickFruit_leftItem1 cl-md-4">
-									<span class="fruitnamef1">我是蘋果</span>
-									<img id="f1" class="fruiticon" src="images/apple.png" alt="蘋果">
+								<div id="apple" class="diy_pickFruit_leftItem diy_pickFruit_leftItem1 diy_pickFruit_leftItemf1 cl-md-4">
+									<div class="diy_pickFruit_leftItem1 diy_pickFruit_leftItemf1"></div>
+										<span class="fruitnamef1">我是蘋果</span>
+										<!-- <div class="fruitnameBox"></div> -->
+										<img id="f1" class="fruiticon" src="images/apple.png" alt="蘋果">
 								</div>
 
-								<div id="guava" class="diy_pickFruit_leftItem diy_pickFruit_leftItem2 cl-md-4">
+								<div id="guava" class="diy_pickFruit_leftItem diy_pickFruit_leftItem2 diy_pickFruit_leftItemf2 cl-md-4">
 									<span class="fruitnamef2">我是芭樂</span>
+									<!-- <div class="fruitnameBox"></div> -->
 									<img id="f2" class="fruiticon" src="images/guava.png" alt="芭樂">
 								</div>
-								<div id="grape" class="diy_pickFruit_leftItem diy_pickFruit_leftItem3 cl-md-4">
+								<div id="grape" class="diy_pickFruit_leftItem diy_pickFruit_leftItem3 diy_pickFruit_leftItemf3 cl-md-4">
 									<span class="fruitnamef3">我是葡萄</span>
+									<!-- <div class="fruitnameBox"></div> -->
 									<img id="f3" class="fruiticon" src="images/grape.png" alt="葡萄">
 								</div>
-								<div id="cantaloupe" class="diy_pickFruit_leftItem diy_pickFruit_leftItem4 cl-md-4">
-									<span class="fruitnamef4">我是哈密瓜</span>
+								<div id="cantaloupe" class="diy_pickFruit_leftItem diy_pickFruit_leftItem4 diy_pickFruit_leftItemf4 cl-md-4">
+									<span class="fruitnamef4">我是甜瓜</span>
+									<!-- <div class="fruitnameBox"></div> -->
 									<img id="f4" class="fruiticon" src="images/cantaloupe.png" alt="哈密瓜">
 								</div>
-								<div id="pineapple" class="diy_pickFruit_leftItem diy_pickFruit_leftItem5 cl-md-4">
+								<div id="pineapple" class="diy_pickFruit_leftItem diy_pickFruit_leftItem5 diy_pickFruit_leftItemf5 cl-md-4">
 									<span class="fruitnamef5">我是鳳梨</span>
 									<img id="f5" class="fruiticon" src="images/pineapple.png" alt="鳳梨">
 								</div>
-								<div id="tomato" class="diy_pickFruit_leftItem diy_pickFruit_leftItem6 cl-md-4">
+								<div id="tomato" class="diy_pickFruit_leftItem diy_pickFruit_leftItem6 diy_pickFruit_leftItemf6 cl-md-4">
 									<span class="fruitnamef6">我是番茄</span>
 									<img id="f6" class="fruiticon" src="images/tomato.png" alt="番茄">
 								</div>
-								<div id="watermelon" class="diy_pickFruit_leftItem diy_pickFruit_leftItem7 cl-md-4">
+								<div id="watermelon" class="diy_pickFruit_leftItem diy_pickFruit_leftItem7 diy_pickFruit_leftItemf7 cl-md-4">
 									<span class="fruitnamef7">我是西瓜</span>
 									<img id="f7" class="fruiticon" src="images/watermelon.png" alt="西瓜">
 								</div>
-								<div id="banana" class="diy_pickFruit_leftItem diy_pickFruit_leftItem8 cl-md-4">
+								<div id="banana" class="diy_pickFruit_leftItem diy_pickFruit_leftItem8 diy_pickFruit_leftItemf8 cl-md-4">
 									<span class="fruitnamef8">我是香蕉</span>
 									<img id="f8" class="fruiticon" src="images/banana.png" alt="香蕉">
 								</div>
-								<div id="orange" class="diy_pickFruit_leftItem diy_pickFruit_leftItem9 cl-md-4">
+								<div id="orange" class="diy_pickFruit_leftItem diy_pickFruit_leftItem9 diy_pickFruit_leftItemf9 cl-md-4">
 									<span class="fruitnamef9">我是柳丁</span>
 									<img id="f9" class="fruiticon" src="images/orange.png" alt="柳丁">
 								</div>
 							</div>
+
+
+							<!-- <script>
+
+								$(document).ready(function () {
+									if ($(window).width() <= 768) {
+										carousel();
+									}
+
+									if ($(window).width() <= 768) {
+										carousel();
+									}
+								});
+
+								function carousel(){
+									$('.diy_pickFruit_leftPic').slick({
+									infinite: true,
+									slidesToShow: 3,
+									slidesToScroll: 3
+								});
+								};
+							</script> -->
 
 						</div>
 						<div class="diy_pickFruit_leftArrow">
@@ -190,20 +218,24 @@
 				</div>
 
 			</div>
-			<footer>
-                <div class="footer_wrapper">
-                    <div class="footer_block clearfix">
-                        <div class="footer_rightBox">
-                            <div class="footer_rightContent">
-                                <p class="desc">地址:桃園市中壢區中大路111號</p>
-                                <p class="desc">電話:(03)49111853</p>
-                                <p class="copyright">Copyright © All Rights Reserved.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-		</section>
+
+		</div>
+
+
+	</section>
+	<footer>
+		<div class="footer_wrapper">
+			<div class="footer_block clearfix">
+				<div class="footer_rightBox">
+					<div class="footer_rightContent">
+						<p class="desc">地址:桃園市中壢區中大路111號</p>
+						<p class="desc">電話:(03)49111853</p>
+						<p class="copyright">Copyright © All Rights Reserved.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 	<script type="text/javascript" src="js/diy.js"></script>
 
