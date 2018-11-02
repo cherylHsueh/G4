@@ -6,16 +6,11 @@
   // outline: 1px solid red;
 }
 
-// body{
-//   background: #f7fdbc;  /* fallback for old browsers */
-//   background: -webkit-linear-gradient(to top, #ffd194, #f7fdbc);  /* Chrome 10-25, Safari 5.1-6 */
-//   background: linear-gradient(to top, #ffd194, #f7fdbc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-// }
-// section{
-//   width: 100%;
-//   height: 100vh;
-// }
+section{
+  width: 100%;
+  height: 100vh;
+}
 
 
 //把nav擋到的高度往下挪
@@ -147,29 +142,30 @@
     .diy_pickFruit_leftBox {
       width: 400%;
 
-      .diy_pickFruit_leftItem {
+      .diy_pickFruit_picBox {
         // width: 100px;
         display: inline-block;
 
-        .fruitnameBox {
-          // display: none;
-          position: absolute;
-          bottom: -20px;
-          left: -25px;
-          // z-index: -1;
-          width: 75px;
-          height: 30px;
-          border-radius: 10px;
-          background-color: rgb(227, 253, 112);
+        // .fruitnameBox {
+        //   // display: none;
+        //   position: absolute;
+        //   bottom: -20px;
+        //   left: -25px;
+        //   // z-index: -1;
+        //   width: 75px;
+        //   height: 30px;
+        //   border-radius: 10px;
+        //   background-color: rgb(227, 253, 112);
 
-        }
+        // }
       }
+
       .fruitbgc {
         background-color: rgb(119, 73, 21);
       }
     }
-  }  
-  
+  }
+
   .diy_pickFruit_leftItem {
     // width: 33.33333%;
 
@@ -177,9 +173,9 @@
     // margin: 0 0px 1% 1%;
     border: 2px solid #593100;
     border-radius: 10px;
-    background-color: #c96e0d;
+    background-color: rgb(233, 201, 165);
     box-sizing: border-box;
-    
+
     // &:before{
     //   content:'';
     //   position: absolute;
@@ -201,7 +197,12 @@
       margin-left: 10px;
       cursor: pointer;
     }
+    #f1{
+      width: 80%;
+      // max-width: 90px;
+    }
   }
+
   //spotlight
   // %highlightphone {
   //   // display: none;
@@ -228,21 +229,6 @@
   @for $i from 1 through 9 {
     .diy_pickFruit_leftItem#{$i} {
       position: relative;
-
-      &:before{
-        content:'';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        display: inline-block;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background-color: #bd6308;
-      }
       // .fruiticon {
       //   width: 40%;
       //   position: relative;
@@ -311,7 +297,7 @@
       font-size: 12px;
       color: rgb(240, 152, 36);
 
-      &:hover{
+      &:hover {
         background-color: rgb(240, 152, 36);
         color: #fefefe;
       }
@@ -411,35 +397,37 @@
     }
   }
 
-  .tree1{
+  .tree1 {
     width: 100px;
     position: absolute;
     bottom: 0;
     z-index: -1;
-    
+
     // img{
     //   position: absolute;
     //   top: -290px;
     // }
   }
-  .tree2{
+
+  .tree2 {
     width: 50px;
     position: absolute;
     bottom: 0;
     z-index: -1;
-    
+
     // img{
     //   position: absolute;
     //   top: -290px;
     // }
   }
-  .tree3{
+
+  .tree3 {
     width: 70px;
     position: absolute;
     bottom: 0;
     right: 0;
     z-index: -1;
-    
+
     // img{
     //   position: absolute;
     //   top: -290px;
@@ -448,31 +436,33 @@
 
   //footer
   .footer_wrapper {
-    position: relative;
+    // position: relative;
     bottom: 0;
     text-align: center;
 
     .footer_block {
-        margin: 0 auto;
-        // padding: 10px 0;
-        background-color: #f4d66d;
+      margin: 0 auto;
+      // padding: 10px 0;
+      background-color: #f4d66d;
 
-        .footer_rightBox {
-            .footer_rightContent {
-                padding: 8px 0;
-                .desc {
-                    display: inline-block;
-                    // padding: 5px;
-                    font-size: 2vw;
-                }
-                .copyright{
-                    font-size: 1vw;
-                }
-            }
+      .footer_rightBox {
+        .footer_rightContent {
+          padding: 8px 0;
 
+          .desc {
+            display: inline-block;
+            // padding: 5px;
+            font-size: 2vw;
+          }
+
+          .copyright {
+            font-size: 1vw;
+          }
         }
+
+      }
     }
-}
+  }
 
 
 }
@@ -576,18 +566,19 @@
       .diy_pickFruit_leftItem {
         text-align: center;
 
-        .fruitnameBox {
-          // display: none;
-          position: absolute;
-          top: -10px;
-          left: -15px;
-          // z-index: -1;
-          width: 75px;
-          height: 30px;
-          border-radius: 10px;
-          background-color: rgb(227, 253, 112);
-        }
+        // .fruitnameBox {
+        //   // display: none;
+        //   position: absolute;
+        //   // top: -10px;
+        //   left: -15px;
+        //   // z-index: 1;
+        //   width: 75px;
+        //   height: 30px;
+        //   border-radius: 10px;
+        //   background-color: rgb(88, 107, 5);
+        // }
       }
+
       .fruitbgc {
         background-color: rgb(199, 129, 50);
       }
@@ -605,10 +596,16 @@
     background-color: rgb(233, 201, 165);
     box-sizing: border-box;
 
+
     .fruiticon {
       width: 80%;
       max-width: 80px;
       cursor: pointer;
+    }
+
+    #f1{
+      width: 91%;
+      max-width: 90px;
     }
   }
 
@@ -660,16 +657,132 @@
     }
   }
 
+  .diy_pickFruit_picBox {
+    position: relative;
+  }
+
   @for $i from 1 through 9 {
     .fruitnamef#{$i} {
-      display: none;
+      // display: none;
       position: absolute;
-      left: -10px;
-      top: -5px;
-      z-index: 1;
-
+      left: -40px;
+      top: -10px;
+      z-index: 2;
+      font-size: 1.6vw;
+      color: #fefefe;
 
     }
+  }
+
+  %fruitname_medium {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    color: #000;
+  }
+
+  .fruitnamef1 {
+    left: -40px;
+    top: -10px;
+    @extend %fruitname_medium;
+  }
+  .fruitnamef2 {
+    left: 50px;
+    top: -10px;
+    @extend %fruitname_medium;
+  }
+  .fruitnamef3 {
+    left: 140px;
+    top: -10px;
+    @extend %fruitname_medium;
+  }
+  .fruitnamef4 {
+    left: -40px;
+    top: 80px;
+    @extend %fruitname_medium;
+  }
+  .fruitnamef5 {
+    left: 50px;
+    top: 80px;
+    @extend %fruitname_medium;
+  }
+  .fruitnamef6 {
+    left: 140px;
+    top: 80px;
+    @extend %fruitname_medium;
+  }
+  .fruitnamef7 {
+    left: -40px;
+    top: 160px;
+    @extend %fruitname_medium;
+  }
+  .fruitnamef8 {
+    left: 50px;
+    top: 160px;
+    @extend %fruitname_medium;
+  }
+  .fruitnamef9 {
+    left: 140px;
+    top: 160px;
+    @extend %fruitname_medium;
+  }
+
+
+
+
+  %fruitbox_medium {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 30%;
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgb(137, 160, 36);
+  }
+  .fruitnameBoxf1 {
+    top: -15px;
+    left: -45px;
+    @extend %fruitbox_medium;
+  }
+  .fruitnameBoxf2 {
+    top: -15px;
+    left: 50px;
+    @extend %fruitbox_medium;
+  }
+  .fruitnameBoxf3 {
+    top: -15px;
+    left: 135px;
+    @extend %fruitbox_medium;
+  }
+  .fruitnameBoxf4 {
+    top: 75px;
+    left: -45px;
+    @extend %fruitbox_medium;
+  }
+  .fruitnameBoxf5 {
+    top: 75px;
+    left: 50px;
+    @extend %fruitbox_medium;
+  }
+  .fruitnameBoxf6 {
+    top: 75px;
+    left: 135px;
+    @extend %fruitbox_medium;
+  }
+  .fruitnameBoxf7 {
+    top: 155px;
+    left: -45px;
+    @extend %fruitbox_medium;
+  }
+  .fruitnameBoxf8 {
+    top: 155px;
+    left: 50px;
+    @extend %fruitbox_medium;
+  }
+  .fruitnameBoxf9 {
+    top: 155px;
+    left: 135px;
+    @extend %fruitbox_medium;
   }
 
 
@@ -693,8 +806,8 @@
       font-size: 12px;
       color: rgb(240, 152, 36);
 
-      
-      &:hover{
+
+      &:hover {
         background-color: rgb(240, 152, 36);
         color: #fefefe;
       }
@@ -801,72 +914,64 @@
     }
   }
 
-.tree1{
-  width: 150px;
-  position: absolute;
-  bottom: 0;
-  z-index: -1;
-}
-.tree2{
-  width: 100px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-}
-.tree3{
-  width: 80px;
-  position: absolute;
-  bottom: 0;
-  right: 30px;
-  z-index: -1;
-}
+  .tree1 {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .tree2 {
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  .tree3 {
+    width: 80px;
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    z-index: -1;
+  }
 
   //footer
   .footer_wrapper {
     // width: 100%;
-    position: relative;
-    bottom: 0;
+    // position: absolute;
+    // bottom: 0;
     text-align: center;
     margin: 0 auto;
+
     .footer_block {
-        margin: 0 auto;
-        // padding: 20px 0;
-        background-color: #f4d66d;
+      margin: 0 auto;
+      // padding: 20px 0;
+      background-color: #f4d66d;
 
-        .footer_rightBox {
-            .footer_rightContent {
-                padding: 8px 0;
-                .desc {
-                    display: inline-block;
-                    padding: 5px;
-                }
-                .copyright{
-                    font-size: 12px;
-                }
-            }
+      .footer_rightBox {
+        .footer_rightContent {
+          padding: 8px 0;
 
+          .desc {
+            display: inline-block;
+            padding: 5px;
+          }
+
+          .copyright {
+            font-size: 12px;
+          }
         }
+
+      }
     }
-}
+  }
 }
 
 //桌機板
 
 @include rwd(desktop) {
-  .space {
-    // display: none;
-  }
-
-  // .diy_pickFruit {
-  //   position: absolute;
-  //   top: 50%;
-  //   bottom: 50%;
-  //   margin: 0 auto;
-  //   left: 50%;
-  //   margin-left: -600px;
-  //   margin-top: -15%;
-  // }
 
   // 步驟
   // 挑選水果標題
@@ -929,8 +1034,123 @@
       max-width: 80px;
       cursor: pointer;
     }
+    #f1{
+      width: 91%;
+      max-width: 90px;
+    }
   }
 
+  %fruitname {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    font-size: 16px;
+    color: #000;
+  }
+
+  .fruitnamef1 {
+    left: -40px;
+    top: -10px;
+    @extend %fruitname;
+  }
+  .fruitnamef2 {
+    left: 65px;
+    top: -10px;
+    @extend %fruitname;
+  }
+  .fruitnamef3 {
+    left: 170px;
+    top: -10px;
+    @extend %fruitname;
+  }
+  .fruitnamef4 {
+    left: -40px;
+    top: 80px;
+    @extend %fruitname;
+  }
+  .fruitnamef5 {
+    left: 60px;
+    top: 80px;
+    @extend %fruitname;
+  }
+  .fruitnamef6 {
+    left: 170px;
+    top: 80px;
+    @extend %fruitname;
+  }
+  .fruitnamef7 {
+    left: -40px;
+    top: 170px;
+    @extend %fruitname;
+  }
+  .fruitnamef8 {
+    left: 60px;
+    top: 170px;
+    @extend %fruitname;
+  }
+  .fruitnamef9 {
+    left: 170px;
+    top: 170px;
+    @extend %fruitname;
+  }
+
+
+
+
+  %fruitbox {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 75px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgb(137, 160, 36);
+  }
+  .fruitnameBoxf1 {
+    top: -15px;
+    left: -45px;
+    @extend %fruitbox;
+  }
+  .fruitnameBoxf2 {
+    top: -15px;
+    left: 60px;
+    @extend %fruitbox;
+  }
+  .fruitnameBoxf3 {
+    top: -15px;
+    left: 165px;
+    @extend %fruitbox;
+  }
+  .fruitnameBoxf4 {
+    top: 75px;
+    left: -45px;
+    @extend %fruitbox;
+  }
+  .fruitnameBoxf5 {
+    top: 75px;
+    left: 60px;
+    @extend %fruitbox;
+  }
+  .fruitnameBoxf6 {
+    top: 75px;
+    left: 165px;
+    @extend %fruitbox;
+  }
+  .fruitnameBoxf7 {
+    top: 165px;
+    left: -45px;
+    @extend %fruitbox;
+  }
+  .fruitnameBoxf8 {
+    top: 165px;
+    left: 60px;
+    @extend %fruitbox;
+  }
+  .fruitnameBoxf9 {
+    top: 165px;
+    left: 165px;
+    @extend %fruitbox;
+  }
 
   // //spotlight
   // %highlightdesktop {

@@ -205,13 +205,15 @@ $(document).ready(function () {
         _index = $(this).index();
         // $(this).after('<img class="highlight" src="images/hightlight.png" alt="已選到">');
         // $(this).wrap('<div class="fruitbgc"></div>');
-        $(this).after('<div class="fruitnameBox"></div>');
+        // $(this).after('<div class="fruitnameBox"></div>');
         // bgc = '.diy_pickFruit_leftItem' + $(this).attr('id');
         // $(bgc).css('background-color', "rgb(199, 129, 50)");
         // $(this).parent().parent().addClass('fruitbgc');
-        $(this).parent().addClass('fruitbgc');
+        // $(this).parent().addClass('fruitbgc');
         name = '.fruitname' + $(this).attr('id');
         $(name).show();
+        namebgc = '.fruitnameBox' + $(this).attr('id');
+        $(namebgc).show();
 
 
     })
@@ -224,10 +226,28 @@ $(document).ready(function () {
         $(this).parent().removeClass('fruitbgc');
         // bgc = '.diy_pickFruit_leftItem' + $(this).attr('id');
         // $(bgc).css('background-color', "rgb(233, 201, 165)");
-        $('.fruitnameBox').remove();
+        // $('.fruitnameBox').remove();
         name = '.fruitname' + $(this).attr('id');
         $(name).hide();
+        namebgc = '.fruitnameBox' + $(this).attr('id');
+        $(namebgc).hide();
     })
+
+    $(function () {
+      
+            if ($(window).width() < 768) {
+                $('.diy_pickFruit_leftItem').removeClass('hvr-radial-out');
+            } else {
+                $('.diy_pickFruit_leftItem').addClass('hvr-radial-out');
+            }
+
+            // if ($(window).resize() < 768) {
+            //     $('.diy_pickFruit_leftItem').removeClass('hvr-radial-out');
+            // } else {
+            //     $('.diy_pickFruit_leftItem').addClass('hvr-radial-out');
+            // }
+        
+    });
 
     $('.fruiticon').click(function () {
         // if($('.diy_pickFruit_rightItem > p').length < 4){
