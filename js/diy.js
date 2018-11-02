@@ -36,7 +36,7 @@ function chart() {
             // toggle();
             if ($('.diy_pickFruit_rightItem > p').length < 4) {
                 $('.diy_pickFruit_rightItem').append('<p class="diy_pickFruit_righItemContent">蘋果：養顏美容</p>');
-                alert($('.diy_pickFruit_righItemContent').length);
+                // alert($('.diy_pickFruit_righItemContent').length);
             } else {
                 // alert('已超過容量');
             }

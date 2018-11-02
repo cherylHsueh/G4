@@ -478,6 +478,10 @@ section {
 .navSpace {
   margin-top: 140px; }
 
+body {
+  background: #a4ddfa;
+  background: linear-gradient(0deg, #a4ddfa 1%, #73c9f5 36%, #6ec9f7 71%, #45b0e6 100%); }
+
 .diy_pickFruit {
   position: relative;
   width: 100%; }
@@ -486,6 +490,19 @@ section {
   display: none; }
 
 @media only screen and (max-width: 767px) {
+  .diy_pickFruit_wrapper {
+    position: relative; }
+    .diy_pickFruit_wrapper .cloud1 {
+      width: 25%;
+      position: absolute;
+      top: 0;
+      right: 30px; }
+    .diy_pickFruit_wrapper .cloud2 {
+      position: absolute;
+      top: -10px;
+      left: 20px; }
+      .diy_pickFruit_wrapper .cloud2 img {
+        width: 20%; }
   .diy_pickFruit_stepBlock {
     text-align: center;
     margin: 0 auto; }
@@ -534,7 +551,10 @@ section {
       color: #5e4909; }
   .diy_pickFruit_allWrapper {
     display: flex;
-    flex-direction: column-reverse; }
+    flex-direction: column-reverse;
+    border-radius: 20px;
+    background-color: #fff;
+    margin: 20px 10px; }
   .diy_pickFruit_leftBlock {
     position: relative;
     width: 90%;
@@ -545,8 +565,6 @@ section {
       width: 400%; }
       .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .diy_pickFruit_picBox {
         display: inline-block; }
-      .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .fruitbgc {
-        background-color: #774915; }
   .diy_pickFruit_leftItem {
     max-width: 100px;
     border: 2px solid #593100;
@@ -582,56 +600,56 @@ section {
   .fruitnamef1 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .fruitnamef2 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .fruitnamef3 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .fruitnamef4 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .fruitnamef5 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .fruitnamef6 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .fruitnamef7 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .fruitnamef8 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .fruitnamef9 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .diy_pickFruit_leftArrow {
     position: absolute;
@@ -664,7 +682,9 @@ section {
   .diy_pickFruit_rightBlock {
     margin-top: -23px; }
   .diy_pickFruit_leftBox {
-    padding: 0 13%; }
+    padding: 0 13%;
+    position: relative;
+    z-index: 1; }
     .diy_pickFruit_leftBox .diy_pickFruit_wrapperBottleBox {
       position: relative; }
       .diy_pickFruit_leftBox .diy_pickFruit_wrapperBottleBox .diy_pickFruit_bottleBox {
@@ -701,6 +721,7 @@ section {
     flex-grow: 0;
     transition: 1s; }
   .diy_pickFruit_rightBox {
+    margin: 10px 0;
     padding: 3% 6%; }
   .diy_pickFruit_nextButton {
     margin: 20px 0;
@@ -720,16 +741,23 @@ section {
     bottom: 0;
     z-index: -1; }
   .tree2 {
-    width: 50px;
+    width: 30px;
     position: absolute;
     bottom: 0;
+    right: 100px;
     z-index: -1; }
   .tree3 {
     width: 70px;
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     right: 0;
-    z-index: -1; }
+    z-index: -2; }
+  .house {
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    z-index: -2; }
   .footer_wrapper {
     bottom: 0;
     text-align: center; }
@@ -745,6 +773,19 @@ section {
           font-size: 1vw; } }
 
 @media all and (min-width: 768px) {
+  .diy_pickFruit_wrapper {
+    position: relative; }
+    .diy_pickFruit_wrapper .cloud1 {
+      width: 200px;
+      position: absolute;
+      top: 0;
+      right: 30px; }
+    .diy_pickFruit_wrapper .cloud2 {
+      position: absolute;
+      top: -10px;
+      left: 20px; }
+      .diy_pickFruit_wrapper .cloud2 img {
+        width: 250px; }
   .diy_pickFruit_stepBlock {
     text-align: center;
     margin: 0 auto; }
@@ -792,6 +833,10 @@ section {
   .diy_pickFruit_titleAllWrapper {
     margin-top: 10px;
     padding: 20px 0; }
+  .diy_pickFruit_allWrapper {
+    background-color: #fefefe;
+    margin: 30px;
+    border-radius: 20px; }
   .diy_pickFruit_leftBlock {
     margin: 2% 0; }
     .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .diy_pickFruit_leftItem {
@@ -979,6 +1024,8 @@ section {
         background-color: #f09824;
         color: #fefefe; }
   .diy_pickFruit_leftBox {
+    position: relative;
+    z-index: 1;
     max-width: 500px;
     margin: 5% 0;
     padding: 0 9% 0 17%; }
@@ -1044,11 +1091,17 @@ section {
     right: 0;
     z-index: -1; }
   .tree3 {
-    width: 80px;
+    width: 50px;
     position: absolute;
     bottom: 0;
-    right: 30px;
+    right: 180px;
     z-index: -1; }
+  .house {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+    z-index: -2; }
   .footer_wrapper {
     text-align: center;
     margin: 0 auto; }

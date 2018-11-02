@@ -7,7 +7,7 @@
 }
 
 
-section{
+section {
   width: 100%;
   height: 100vh;
 }
@@ -16,6 +16,15 @@ section{
 //把nav擋到的高度往下挪
 .navSpace {
   margin-top: 140px;
+}
+
+body {
+
+  background: rgb(164, 221, 250);
+  background: linear-gradient(0deg, rgba(164, 221, 250, 1) 1%,
+    rgba(115, 201, 245, 1) 36%,
+    rgba(110, 201, 247, 1) 71%,
+    rgba(69, 176, 230, 1) 100%);
 }
 
 //每屏高度
@@ -46,6 +55,25 @@ section{
 
 //手機開始
 @include rwd(mobile) {
+
+  .diy_pickFruit_wrapper{
+    position: relative;
+    .cloud1{
+      width: 25%;
+      position: absolute;
+      top: 0;
+      right: 30px;
+    }
+    .cloud2{
+      // width: 80px
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      img{
+        width: 20%;
+      }
+    }
+  }
 
   //步驟
   .diy_pickFruit_stepBlock {
@@ -130,6 +158,9 @@ section{
   .diy_pickFruit_allWrapper {
     display: flex;
     flex-direction: column-reverse;
+    border-radius: 20px;
+    background-color: #fff;
+    margin: 20px 10px;
   }
 
   .diy_pickFruit_leftBlock {
@@ -161,7 +192,7 @@ section{
       }
 
       .fruitbgc {
-        background-color: rgb(119, 73, 21);
+        // background-color: rgb(119, 73, 21);
       }
     }
   }
@@ -197,7 +228,8 @@ section{
       margin-left: 10px;
       cursor: pointer;
     }
-    #f1{
+
+    #f1 {
       width: 80%;
       // max-width: 90px;
     }
@@ -254,8 +286,8 @@ section{
     .fruitnamef#{$i} {
       display: none;
       position: absolute;
-      left: -20px;
-      bottom: -15px;
+      left: 0px;
+      bottom: -30px;
       z-index: 1;
     }
   }
@@ -314,6 +346,8 @@ section{
 
   .diy_pickFruit_leftBox {
     padding: 0 13%;
+    position: relative;
+    z-index: 1;
 
     .diy_pickFruit_wrapperBottleBox {
       position: relative;
@@ -374,6 +408,7 @@ section{
   //水果功效
   .diy_pickFruit_rightBox {
     // width: 0%;
+    margin: 10px 0;
     padding: 3% 6%;
   }
 
@@ -402,36 +437,30 @@ section{
     position: absolute;
     bottom: 0;
     z-index: -1;
-
-    // img{
-    //   position: absolute;
-    //   top: -290px;
-    // }
   }
 
   .tree2 {
-    width: 50px;
+    width: 30px;
     position: absolute;
     bottom: 0;
+    right: 100px;
     z-index: -1;
-
-    // img{
-    //   position: absolute;
-    //   top: -290px;
-    // }
   }
 
   .tree3 {
     width: 70px;
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     right: 0;
-    z-index: -1;
+    z-index: -2;
+  }
 
-    // img{
-    //   position: absolute;
-    //   top: -290px;
-    // }
+  .house {
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    z-index: -2;
   }
 
   //footer
@@ -471,6 +500,25 @@ section{
 
 //平板開始
 @include rwd(medium) {
+
+  .diy_pickFruit_wrapper{
+    position: relative;
+    .cloud1{
+      width: 200px;
+      position: absolute;
+      top: 0;
+      right: 30px;
+    }
+    .cloud2{
+      // width: 80px
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      img{
+        width: 250px;
+      }
+    }
+  }
 
   // 步驟
   .diy_pickFruit_stepBlock {
@@ -557,6 +605,12 @@ section{
     // background-color: rgb(231, 235, 202);
   }
 
+  .diy_pickFruit_allWrapper {
+    background-color: #fefefe;
+    margin: 30px;
+    border-radius: 20px;
+  }
+
   .diy_pickFruit_leftBlock {
     margin: 2% 0;
 
@@ -603,7 +657,7 @@ section{
       cursor: pointer;
     }
 
-    #f1{
+    #f1 {
       width: 91%;
       max-width: 90px;
     }
@@ -686,41 +740,49 @@ section{
     top: -10px;
     @extend %fruitname_medium;
   }
+
   .fruitnamef2 {
     left: 50px;
     top: -10px;
     @extend %fruitname_medium;
   }
+
   .fruitnamef3 {
     left: 140px;
     top: -10px;
     @extend %fruitname_medium;
   }
+
   .fruitnamef4 {
     left: -40px;
     top: 80px;
     @extend %fruitname_medium;
   }
+
   .fruitnamef5 {
     left: 50px;
     top: 80px;
     @extend %fruitname_medium;
   }
+
   .fruitnamef6 {
     left: 140px;
     top: 80px;
     @extend %fruitname_medium;
   }
+
   .fruitnamef7 {
     left: -40px;
     top: 160px;
     @extend %fruitname_medium;
   }
+
   .fruitnamef8 {
     left: 50px;
     top: 160px;
     @extend %fruitname_medium;
   }
+
   .fruitnamef9 {
     left: 140px;
     top: 160px;
@@ -739,46 +801,55 @@ section{
     border-radius: 10px;
     background-color: rgb(137, 160, 36);
   }
+
   .fruitnameBoxf1 {
     top: -15px;
     left: -45px;
     @extend %fruitbox_medium;
   }
+
   .fruitnameBoxf2 {
     top: -15px;
     left: 50px;
     @extend %fruitbox_medium;
   }
+
   .fruitnameBoxf3 {
     top: -15px;
     left: 135px;
     @extend %fruitbox_medium;
   }
+
   .fruitnameBoxf4 {
     top: 75px;
     left: -45px;
     @extend %fruitbox_medium;
   }
+
   .fruitnameBoxf5 {
     top: 75px;
     left: 50px;
     @extend %fruitbox_medium;
   }
+
   .fruitnameBoxf6 {
     top: 75px;
     left: 135px;
     @extend %fruitbox_medium;
   }
+
   .fruitnameBoxf7 {
     top: 155px;
     left: -45px;
     @extend %fruitbox_medium;
   }
+
   .fruitnameBoxf8 {
     top: 155px;
     left: 50px;
     @extend %fruitbox_medium;
   }
+
   .fruitnameBoxf9 {
     top: 155px;
     left: 135px;
@@ -825,7 +896,8 @@ section{
   }
 
   .diy_pickFruit_leftBox {
-    // position: relative;
+    position: relative;
+    z-index: 1;
     max-width: 500px;
     margin: 5% 0;
     padding: 0 9% 0 17%;
@@ -930,11 +1002,19 @@ section{
   }
 
   .tree3 {
-    width: 80px;
+    width: 50px;
     position: absolute;
     bottom: 0;
-    right: 30px;
+    right: 180px;
     z-index: -1;
+  }
+
+  .house {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+    z-index: -2;
   }
 
   //footer
@@ -1034,7 +1114,8 @@ section{
       max-width: 80px;
       cursor: pointer;
     }
-    #f1{
+
+    #f1 {
       width: 91%;
       max-width: 90px;
     }
@@ -1053,41 +1134,49 @@ section{
     top: -10px;
     @extend %fruitname;
   }
+
   .fruitnamef2 {
     left: 65px;
     top: -10px;
     @extend %fruitname;
   }
+
   .fruitnamef3 {
     left: 170px;
     top: -10px;
     @extend %fruitname;
   }
+
   .fruitnamef4 {
     left: -40px;
     top: 80px;
     @extend %fruitname;
   }
+
   .fruitnamef5 {
     left: 60px;
     top: 80px;
     @extend %fruitname;
   }
+
   .fruitnamef6 {
     left: 170px;
     top: 80px;
     @extend %fruitname;
   }
+
   .fruitnamef7 {
     left: -40px;
     top: 170px;
     @extend %fruitname;
   }
+
   .fruitnamef8 {
     left: 60px;
     top: 170px;
     @extend %fruitname;
   }
+
   .fruitnamef9 {
     left: 170px;
     top: 170px;
@@ -1106,46 +1195,55 @@ section{
     border-radius: 10px;
     background-color: rgb(137, 160, 36);
   }
+
   .fruitnameBoxf1 {
     top: -15px;
     left: -45px;
     @extend %fruitbox;
   }
+
   .fruitnameBoxf2 {
     top: -15px;
     left: 60px;
     @extend %fruitbox;
   }
+
   .fruitnameBoxf3 {
     top: -15px;
     left: 165px;
     @extend %fruitbox;
   }
+
   .fruitnameBoxf4 {
     top: 75px;
     left: -45px;
     @extend %fruitbox;
   }
+
   .fruitnameBoxf5 {
     top: 75px;
     left: 60px;
     @extend %fruitbox;
   }
+
   .fruitnameBoxf6 {
     top: 75px;
     left: 165px;
     @extend %fruitbox;
   }
+
   .fruitnameBoxf7 {
     top: 165px;
     left: -45px;
     @extend %fruitbox;
   }
+
   .fruitnameBoxf8 {
     top: 165px;
     left: 60px;
     @extend %fruitbox;
   }
+
   .fruitnameBoxf9 {
     top: 165px;
     left: 165px;
