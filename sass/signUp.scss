@@ -2,161 +2,222 @@
 @import "global";
 @import "nav";
 @import "footer";
-*{
-	// outline: 1px solid red;
+* {
+    // outline: 1px solid red;
 }
 
-footer{
- position: relative;
+footer {
+    position: relative;
     bottom: 0;
     right: 0;
     left: 0;
-
 }
-   
-@include rwd(mobile){
-	.nav_space{
-		margin-top:95px;
-	}
-	.cloud{
-		text-align: right;
-		padding: 5%;
-	}
-	.cloud img{
-       width:20%;
-	}
-	.signUp{
-		background-color: #00B5BD;
-		width: 100%;
-		// height: calc(100vh - 110px);
-	}
-	
-	.signUp_newmem_box{
-		text-align: center;
-		background-color: white;
-		width:80%;
-		box-sizing: border-box;
-		padding:5% 3%;
-		margin: auto;
-		div{
-			margin:15px;
-		}
-	}
-	.signUp_explain_box{
-		width:80%;
+
+@include rwd(mobile) {
+    .nav_space {
+        margin-top: 95px;
+    }
+    .cloud {
+        text-align: right;
+        padding: 5%;
+    }
+    .cloud img {
+        width: 20%;
+    }
+    .signUp {
+        background-color: #00B5BD;
+        width: 100%; // height: calc(100vh - 110px);
+    }
+    .signUp_newmem_box {
+        text-align: center;
+        background-color: white;
+        width: 80%;
+        box-sizing: border-box;
+        padding: 5% 3%;
+        margin: auto;
+        div {
+            margin: 15px;
+        }
+    }
+    .signUp_explain_box {
+        width: 80%;
 		margin: 10% auto 0 auto;
-	}
-
-	
-	.signUp_newmem_box > p,
-	.signUp_explain_box > p{
-	    margin: auto;
-    	padding: 1% 0;
-     	line-height: 1.6;
-	}
-	
-	.btn{
-		background-color: rgb(255,241,0);
-		width:120px;
-		height: 35px;
-	}
-	.orchard img,
-	.orchard2 img{
-		display:none;
-	}
-	.confirm{
-		position: relative;
-		right:14px;
-	}
-	input{
-		margin: 4px 2px;
-		padding: 5px 0px;
-		display: inline-block;
-	}
-
-
-}
-@include rwd(medium){
-	.nav_space{
-		margin-top:110px;
-	}
-	.signUp{
-		background-color: #00B5BD;
-	}
-	.cloud{
-		text-align: right;
-		padding: 5%;
-	}
-	.cloud img{
-       width:20%;
-	}
-	input{
-		width: 50%;
-        padding: 5px 20px;
-        margin: 8px 8px;
+    }
+    .signUp_newmem_box>p,
+    .signUp_explain_box>p {
+        margin: auto;
+        padding: 1% 0;
+        line-height: 1.6;
+    }
+    .btn {
+        background-color: rgb(255, 241, 0);
+        width: 120px;
+        height: 35px;
+    }
+    .orchard img,
+    .orchard2 img {
+        display: none;
+    }
+    .confirm {
+        position: relative;
+        right: 14px;
+    }
+    input {
+        margin: 4px 2px;
+        padding: 5px 0px;
         display: inline-block;
-	}
-	.signUp_newmem{
+    }
+}
+
+@include rwd(medium) {
+    .nav_space {
+        height: 110px;
+    }
+    .signUp {
+        // background-color: #a4ddfa;
+    }
+    .signUp_section {
+		background-color: $sky;
+		overflow: hidden;
+        height: 100vh;
+    }
+    .cloud {
+        text-align: left;
+		padding: 5%;
+		position: relative;
 		position:relative;
-		left:58%;
+		animation: mymove 70s infinite;
+		-webkit-animation:mymove 70s infinite;
+    }
+    .cloud img {
+        width: 20%;
+    }
+    input {
+        width: 50%;
+        padding: 2% 4%;
+        margin: 3% 3.5%;
+        display: inline-block;
+    }
+    .signUp_newmem {
+        position: relative;
+        left: 58%;
+    }
+    .signUp_newmem_box h2 {
+        position: relative;
+        top: -30px;
+    }
+    .confirm {
+        position: relative;
+        right: 14px;
+    }
+    .signUp_explain {
+        position: relative;
+        right: 42%;
+    }
+    .signUp_explain_box {
+        width: 66%;
+        margin: auto;
+    }
+    .signUp_explain_box>p {
+        line-height: 1.6;
+    }
+    .signUp_explain_box>h2 {
+        line-height: 1.6;
+    } 
+    .signUp_newmem_box {
+        text-align: center;
+        background-color: white;
+        width: 60%;
+        box-sizing: border-box;
+        padding: 8% 3%;
+        margin: auto;
+    }
+    .btn {
+		background-color: rgb(255, 241, 0);
+        width: 120px;
+        height: 35px;
+        margin-top: 18px;
 	}
-	.signUp_newmem_box h2{
-		position: relative;
-		top: -30px;
+	.btn:hover{
+		color:#fff;
 	}
-	.confirm{
-		position: relative;
-		right:14px;
+    .cloud2 {
+		position:relative;
+		animation: mymove 80s infinite;
+		-webkit-animation:mymove 80s infinite;
+    }
+    .cloud2 img {
+        width: 20%;
+    }
+    @keyframes mymove {
+        from {
+            left: 0px;
+        }
+        to {
+			left: 100%;
+			top:5%;
+        }
+    }
+    .windmill {
+		width: 20%;
+    	position: relative;
+		margin: 5% auto;
+		z-index: 1;
+        img {
+            width: 100%;
+        }
 	}
-	.signUp_explain{
-		position: relative;
-		right: 42%;
-		height: calc(100vh - 163px);
-	}
-	.signUp_explain_box{
-		width:60%;
-		margin: auto;
-	}
-	.signUp_explain_box >p{
-		line-height: 1.6;
-	}
-	.signUp_explain_box >h2{
-		line-height: 1.6;
-	}
-	// .signUp_newmem_box > p,
-	// .signUp_explain_box > p{
-	// 	margin:5px auto;
-	// }
-	.signUp_newmem_box{
-		text-align: center;
-		background-color: white;
-		width:60%;
-		box-sizing: border-box;
-		padding:8% 3%;
-		margin: auto;
-	}
-	.btn{
-		background-color: rgb(255,241,0);
-		width:120px;
-		height: 35px;
-		margin-top: 18px;
-	}
-	.orchard{
-		text-align: center;
-		padding:3%;
-	}
-	.orchard img{
-		width:20%;
-	}
-	.orchard2{
+	.fan{
 		position: absolute;
-		bottom: 0;
-		left: 25%;
-		width: 38%;
+		top: -20%;
+		left: -14%;
+		width: 140%;
 		img{
-			width: 100%;
+			width:100%;
 		}
+		animation: wind 1.25s linear infinite;
 	}
+	@keyframes wind {
+		0% {
+		  transform: rotate(0deg);
+		}
+		25% {
+		  transform: rotate(90deg);
+		}
+		50% {
+		  transform: rotate(180deg);
+		}
+		75% {
+		  transform: rotate(270deg);
+		}
+		100% {
+		  transform: rotate(360deg);
+		}
+	  }
+	//   草
+	.grass{
+		display: block;
+		max-width: 350px;
+		max-height: 350px;
+		margin: auto;
+		position: absolute;
+	    bottom: -15%;
+    	left: 56%;
+		z-index: 0;
+	  }
+	.grass2{
+		display: block;
+		max-width: 350px;
+		max-height: 350px;
+		margin: auto;
+		position: absolute;
+	    bottom: -15%;
+    	left: 20%;
+		z-index: 0;
 	
+	  }
+	  footer{
+         background-color: #dde4b7; 
+      } 
 	
 }
