@@ -11,27 +11,36 @@
     <script type="text/javascript" src="js/plugin/masonry.pkgd.min.js"></script>
     <script src="js/plugin/jquery.gallery.js"></script>
     <script src="js/plugin/modernizr.custom.53451.js"></script>
+    <script src='js/global.js'></script>
 </head>
 
 <body>
     <header>
         <input type="checkbox" name="" id="hb_control">
         <nav>
-            <svg preserveAspectRatio="none" id="svg-2" viewBox="0 0 100 80" enable-background="new 0 0 100 80">
-                <animate dur="2s" attributeName="x" repeatCount="indefinite" from="0" to="100" xlink:href="#wave"></animate>
-                <defs>
-                    <filter id="f4" x="0" y="0" width="100%" height="100%">
-                        <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0"></feOffset>
-                        <feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"></feColorMatrix>
-                        <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="2"></feGaussianBlur>
-                        <feBlend in="SourceGraphic" in2="blurOut" mode="normal"></feBlend>
-                    </filter>
-                </defs>
-                <path x="0" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)"
-                    id="wave"></path>
-                <path x="30" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)"
-                    id="wave2"></path>
-            </svg>
+            <!-- <svg preserveAspectRatio="none" id="svg-2" viewBox="0 0 100 80" enable-background="new 0 0 100 80">
+                        <animate dur="2s" attributeName="x" repeatCount="indefinite" from="0" to="100" xlink:href="#wave"></animate>
+                        <defs>
+                            <filter id="f4" x="0" y="0" width="100%" height="100%">
+                                <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0"></feOffset>
+                                <feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"></feColorMatrix>
+                                <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="2"></feGaussianBlur>
+                                <feBlend in="SourceGraphic" in2="blurOut" mode="normal"></feBlend>
+                            </filter>
+                        </defs>
+                        <path x="0" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)"
+                            id="wave"></path>
+                        <path x="30" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)"
+                            id="wave2"></path>
+                    </svg> -->
+            <div id="svg-2">
+                <canvas id="wave" width="1000" height="400">
+                    Hopefully you don't see this. If you do, get Google Chrome.
+                </canvas>
+                <canvas id="wave2" width="1000" height="400">
+                    Hopefully you don't see this. If you do, get Google Chrome.
+                </canvas>
+            </div>
             <div class="ph_nav">
                 <label for="hb_control" class="hb"><span></span></label>
                 <a href="index.html">
@@ -66,14 +75,17 @@
     <section class="blog_Rank clearfix">
         <div class="wrapper">
             <div class="blog_Headingbox">
-                <img class="num1" src="images/homepage/NUM1.png" alt="第一名">
-                <img class="num2" src="images/homepage/NUM2.png" alt="第二名">
-                <img class="num3" src="images/homepage/NUM3.png" alt="第三名">
-                <h2 class="blog_Heading">熱門文章TOP3</h2>
+                <div class="blog_Heading_pic">
+                    <h2 class="blog_Heading">熱門文章TOP3
+                        <img class="num1" src="images/homepage/NUM1.png" alt="第一名">
+                        <img class="num2" src="images/homepage/NUM2.png" alt="第二名">
+                        <img class="num3" src="images/homepage/NUM3.png" alt="第三名">
+                    </h2>
+                </div>
                 <h3 class="blog_Subheading">為你喜愛的文章按讚留言</h3>
             </div>
             <!-- 手機輪播 -->
-            <section id="phone" class="phone">
+            <section id="phone" class="phone clearfix">
                 <a class="blog_Rank_Container blog_Rank_Container1  cl-s-12" data-rank="1">
                     <div class="blog_Rank_Block cl-s-12 clearfix">
                         <div class="blog_Rank_Prize">
@@ -307,262 +319,288 @@
 
 
             <!-- 桌機輪播 -->
-            <section id="dg-container" class="dg-container">
-                <div class="dg-wrapper">
-                    <a href="blogIn.html" class="blog_Rank_Container blog_Rank_Container1 cl-s-12">
-                        <div class="blog_Rank_Block cl-md-12 clearfix">
-                            <div class="blog_Rank_Prize">
-                                <img src="images/tag1.png" alt="第一名">
-                            </div>
-                            <div class="blog_Rank_LeftBox cl-md-6">
-                                <div class="blog_Rank_Name">
-                                    <p>哆啦A夢</p>
+            <div class="blog_Rank_bg">
+                <section id="dg-container" class="dg-container">
+                    <div class="dg-wrapper">
+                        <a href="blogIn.html" class="blog_Rank_Container blog_Rank_Container1 cl-s-12">
+                            <div class="blog_Rank_Block cl-md-12 clearfix">
+                                <div class="blog_Rank_Prize">
+                                    <img src="images/tag1.png" alt="第一名">
                                 </div>
-                                <div class="blog_Rank_Date">
-                                    <span>2018-10-21</span>
-                                </div>
-                                <div class="blog_Rank_Pic">
-                                    <img src="images/blogImg/blogPic6.jpg" alt="熱門文章排名第三名" class="blog_Rank_Img">
-                                </div>
+                                <div class="blog_Rank_LeftBox cl-md-6">
+                                    <div class="blog_Rank_Name">
+                                        <p>哆啦A夢</p>
+                                    </div>
+                                    <div class="blog_Rank_Date">
+                                        <span>2018-10-21</span>
+                                    </div>
+                                    <div class="blog_Rank_Pic">
+                                        <img src="images/blogImg/blogPic6.jpg" alt="熱門文章排名第三名" class="blog_Rank_Img">
+                                    </div>
 
-                                <div class="blog_Rank_Score clearfix">
-                                    <div class="blog_Score_Pic">
-                                        <img src="images/blogImg/Score.png" alt="按讚總數" class="blog_Score_Img">
-                                    </div>
-                                    <div class="blog_Score_Num">
-                                        <p> 99</p>
+                                    <div class="blog_Rank_Score clearfix">
+                                        <div class="blog_Score_Pic">
+                                            <img src="images/blogImg/Score.png" alt="按讚總數" class="blog_Score_Img">
+                                        </div>
+                                        <div class="blog_Score_Num">
+                                            <p> 99</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="blog_Rank_RightBox cl-md-6">
+                                <div class="blog_Rank_RightBox cl-md-6">
 
-                                <div class="blog_Rank_Content">
-                                    <div class="blog_Rank_Title cl-md-6 clearfix">
-                                        <h4>晶瑩剔透</h4>
-                                    </div>
-                                    <div class="blog_Rank_Item cl-md-6 clearfix">
-                                        <div class="blog_Rank_ItemPic">
-                                            <img src="images/apple.png" alt="蘋果" class="blog_Rank_FruitIcon">
+                                    <div class="blog_Rank_Content">
+                                        <div class="blog_Rank_Title cl-md-6 clearfix">
+                                            <h4>晶瑩剔透</h4>
                                         </div>
-                                        <div class="blog_Rank_ItemPic">
-                                            <img src="images/grape.png" alt="葡萄" class="blog_Rank_FruitIcon">
-                                        </div>
-                                        <div class="blog_Rank_ItemPic">
-                                            <img src="images/pineapple.png" alt="鳳梨" class="blog_Rank_FruitIcon">
-                                        </div>
-                                    </div>
-                                    <div class="blog_Rank_Desc">
-                                        <p>超級清爽解渴，還可以吃到果肉，很適合夏天喝。</p>
-                                    </div>
-                                    <div class="blog_Rank_ContentBox cl-md-12 clearfix">
-                                        <div class="blog_Rank_ContentBox_Block clearfix">
-                                            <div class="blog_Rank_ContentBox_Box">
-                                                <div class="blog_Rank_ContentBox_Item">
-                                                    <div class="blog_Rank_ContentBox_Container">
-                                                        <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar1"></div>
-                                                    </div>
-                                                    <p class="blog_Rank_BottomBox_Title">維他命C</p>
-                                                </div>
-                                                <div class="blog_Rank_ContentBox_Item">
-                                                    <div class="blog_Rank_ContentBox_Container">
-                                                        <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar2"></div>
-                                                    </div>
-                                                    <p class="blog_Rank_BottomBox_Title">鐵質</p>
-                                                </div>
-                                                <div class="blog_Rank_ContentBox_Item">
-                                                    <div class="blog_Rank_ContentBox_Container">
-                                                        <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar3"></div>
-                                                    </div>
-                                                    <div class="blog_Rank_BottomBox_Title">膳食纖維</div>
-                                                </div>
+                                        <div class="blog_Rank_Item cl-md-6 clearfix">
+                                            <div class="blog_Rank_ItemPic">
+                                                <img src="images/apple.png" alt="蘋果" class="blog_Rank_FruitIcon">
+                                            </div>
+                                            <div class="blog_Rank_ItemPic">
+                                                <img src="images/grape.png" alt="葡萄" class="blog_Rank_FruitIcon">
+                                            </div>
+                                            <div class="blog_Rank_ItemPic">
+                                                <img src="images/pineapple.png" alt="鳳梨" class="blog_Rank_FruitIcon">
                                             </div>
                                         </div>
-                                        <div class="blog_Rank_ContentBox_Desc">
-                                            <p>熱量共50Cals</p>
+                                        <div class="blog_Rank_Desc">
+                                            <p>超級清爽解渴，還可以吃到果肉，很適合夏天喝。</p>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="blogIn.html" class="blog_Rank_Container blog_Rank_Container2 cl-s-12">
-                        <div class="blog_Rank_Block cl-md-12 clearfix">
-                            <div class="blog_Rank_Prize">
-                                <img src="images/tag2.png" alt="第二名">
-                            </div>
-                            <div class="blog_Rank_LeftBox cl-md-6">
-                                <div class="blog_Rank_Name">
-                                    <p>哆啦A夢</p>
-                                </div>
-                                <div class="blog_Rank_Date">
-                                    <span>2018-10-21</span>
-                                </div>
-                                <div class="blog_Rank_Pic">
-                                    <img src="images/blogImg/blogPic8.jpg" alt="熱門文章排名第三名" class="blog_Rank_Img">
-                                </div>
-
-                                <div class="blog_Rank_Score clearfix">
-                                    <div class="blog_Score_Pic">
-                                        <img src="images/blogImg/Score.png" alt="按讚總數" class="blog_Score_Img">
-                                    </div>
-                                    <div class="blog_Score_Num">
-                                        <p> 99</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="blog_Rank_RightBox cl-md-6">
-
-                                <div class="blog_Rank_Content">
-                                    <div class="blog_Rank_Title cl-md-6 clearfix">
-                                        <h4>晶瑩剔透</h4>
-                                    </div>
-                                    <div class="blog_Rank_Item cl-md-6 clearfix">
-                                        <div class="blog_Rank_ItemPic">
-                                            <img src="images/apple.png" alt="蘋果" class="blog_Rank_FruitIcon">
-                                        </div>
-                                        <div class="blog_Rank_ItemPic">
-                                            <img src="images/grape.png" alt="葡萄" class="blog_Rank_FruitIcon">
-                                        </div>
-                                        <div class="blog_Rank_ItemPic">
-                                            <img src="images/pineapple.png" alt="鳳梨" class="blog_Rank_FruitIcon">
-                                        </div>
-                                    </div>
-                                    <div class="blog_Rank_Desc">
-                                        <p>超級清爽解渴，還可以吃到果肉，很適合夏天喝。</p>
-                                    </div>
-                                    <div class="blog_Rank_ContentBox cl-s-12 clearfix">
-                                        <div class="blog_Rank_ContentBox_Block clearfix">
-                                            <div class="blog_Rank_ContentBox_Box">
-                                                <div class="blog_Rank_ContentBox_Item">
-                                                    <div class="blog_Rank_ContentBox_Container">
-                                                        <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar1"></div>
+                                        <div class="blog_Rank_ContentBox cl-md-12 clearfix">
+                                            <div class="blog_Rank_ContentBox_Block clearfix">
+                                                <div class="blog_Rank_ContentBox_Box">
+                                                    <div class="blog_Rank_ContentBox_Item">
+                                                        <div class="blog_Rank_ContentBox_Container">
+                                                            <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar1"></div>
+                                                        </div>
+                                                        <p class="blog_Rank_BottomBox_Title">維他命C</p>
                                                     </div>
-                                                    <p class="blog_Rank_BottomBox_Title">維他命C</p>
-                                                </div>
-                                                <div class="blog_Rank_ContentBox_Item">
-                                                    <div class="blog_Rank_ContentBox_Container">
-                                                        <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar2"></div>
+                                                    <div class="blog_Rank_ContentBox_Item">
+                                                        <div class="blog_Rank_ContentBox_Container">
+                                                            <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar2"></div>
+                                                        </div>
+                                                        <p class="blog_Rank_BottomBox_Title">鐵質</p>
                                                     </div>
-                                                    <p class="blog_Rank_BottomBox_Title">鐵質</p>
-                                                </div>
-                                                <div class="blog_Rank_ContentBox_Item">
-                                                    <div class="blog_Rank_ContentBox_Container">
-                                                        <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar3"></div>
+                                                    <div class="blog_Rank_ContentBox_Item">
+                                                        <div class="blog_Rank_ContentBox_Container">
+                                                            <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar3"></div>
+                                                        </div>
+                                                        <div class="blog_Rank_BottomBox_Title">膳食纖維</div>
                                                     </div>
-                                                    <div class="blog_Rank_BottomBox_Title">膳食纖維</div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="blog_Rank_ContentBox_Desc">
-                                            <p>熱量共50Cals</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="blogIn.html" class="blog_Rank_Container blog_Rank_Container3 cl-s-12">
-                        <div class="blog_Rank_Block cl-md-12 clearfix">
-                            <div class="blog_Rank_Prize">
-                                <img src="images/tag3.png" alt="第三名">
-                            </div>
-                            <div class="blog_Rank_LeftBox cl-md-6">
-                                <div class="blog_Rank_Name">
-                                    <p>哆啦A夢</p>
-                                </div>
-                                <div class="blog_Rank_Date">
-                                    <span>2018-10=21</span>
-                                </div>
-                                <div class="blog_Rank_Pic">
-                                    <img src="images/blogImg/blogPic9.jpg" alt="熱門文章排名第三名" class="blog_Rank_Img">
-                                </div>
-
-                                <div class="blog_Rank_Score clearfix">
-                                    <div class="blog_Score_Pic">
-                                        <img src="images/blogImg/Score.png" alt="按讚總數" class="blog_Score_Img">
-                                    </div>
-                                    <div class="blog_Score_Num">
-                                        <p> 99</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog_Rank_RightBox cl-md-6">
-
-                                <div class="blog_Rank_Content">
-                                    <div class="blog_Rank_Title cl-md-6 clearfix">
-                                        <h4>晶瑩剔透</h4>
-                                    </div>
-                                    <div class="blog_Rank_Item cl-md-6 clearfix">
-                                        <div class="blog_Rank_ItemPic">
-                                            <img src="images/apple.png" alt="蘋果" class="blog_Rank_FruitIcon">
-                                        </div>
-                                        <div class="blog_Rank_ItemPic">
-                                            <img src="images/grape.png" alt="葡萄" class="blog_Rank_FruitIcon">
-                                        </div>
-                                        <div class="blog_Rank_ItemPic">
-                                            <img src="images/pineapple.png" alt="鳳梨" class="blog_Rank_FruitIcon">
-                                        </div>
-                                    </div>
-                                    <div class="blog_Rank_Desc">
-                                        <p>超級清爽解渴，還可以吃到果肉，很適合夏天喝。</p>
-                                    </div>
-                                    <div class="blog_Rank_ContentBox cl-s-12 clearfix">
-                                        <div class="blog_Rank_ContentBox_Block clearfix">
-                                            <div class="blog_Rank_ContentBox_Box">
-                                                <div class="blog_Rank_ContentBox_Item">
-                                                    <div class="blog_Rank_ContentBox_Container">
-                                                        <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar1"></div>
-                                                    </div>
-                                                    <p class="blog_Rank_BottomBox_Title">維他命C</p>
-                                                </div>
-                                                <div class="blog_Rank_ContentBox_Item">
-                                                    <div class="blog_Rank_ContentBox_Container">
-                                                        <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar2"></div>
-                                                    </div>
-                                                    <p class="blog_Rank_BottomBox_Title">鐵質</p>
-                                                </div>
-                                                <div class="blog_Rank_ContentBox_Item">
-                                                    <div class="blog_Rank_ContentBox_Container">
-                                                        <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar3"></div>
-                                                    </div>
-                                                    <div class="blog_Rank_BottomBox_Title">膳食纖維</div>
-                                                </div>
+                                            <div class="blog_Rank_ContentBox_Desc">
+                                                <p>熱量共50Cals</p>
                                             </div>
                                         </div>
-                                        <div class="blog_Rank_ContentBox_Desc">
-                                            <p>熱量共50Cals</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="blogIn.html" class="blog_Rank_Container blog_Rank_Container2 cl-s-12">
+                            <div class="blog_Rank_Block cl-md-12 clearfix">
+                                <div class="blog_Rank_Prize">
+                                    <img src="images/tag2.png" alt="第二名">
+                                </div>
+                                <div class="blog_Rank_LeftBox cl-md-6">
+                                    <div class="blog_Rank_Name">
+                                        <p>哆啦A夢</p>
+                                    </div>
+                                    <div class="blog_Rank_Date">
+                                        <span>2018-10-21</span>
+                                    </div>
+                                    <div class="blog_Rank_Pic">
+                                        <img src="images/blogImg/blogPic8.jpg" alt="熱門文章排名第三名" class="blog_Rank_Img">
+                                    </div>
+
+                                    <div class="blog_Rank_Score clearfix">
+                                        <div class="blog_Score_Pic">
+                                            <img src="images/blogImg/Score.png" alt="按讚總數" class="blog_Score_Img">
+                                        </div>
+                                        <div class="blog_Score_Num">
+                                            <p> 99</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="blog_Rank_RightBox cl-md-6">
+
+                                    <div class="blog_Rank_Content">
+                                        <div class="blog_Rank_Title cl-md-6 clearfix">
+                                            <h4>晶瑩剔透</h4>
+                                        </div>
+                                        <div class="blog_Rank_Item cl-md-6 clearfix">
+                                            <div class="blog_Rank_ItemPic">
+                                                <img src="images/apple.png" alt="蘋果" class="blog_Rank_FruitIcon">
+                                            </div>
+                                            <div class="blog_Rank_ItemPic">
+                                                <img src="images/grape.png" alt="葡萄" class="blog_Rank_FruitIcon">
+                                            </div>
+                                            <div class="blog_Rank_ItemPic">
+                                                <img src="images/pineapple.png" alt="鳳梨" class="blog_Rank_FruitIcon">
+                                            </div>
+                                        </div>
+                                        <div class="blog_Rank_Desc">
+                                            <p>超級清爽解渴，還可以吃到果肉，很適合夏天喝。</p>
+                                        </div>
+                                        <div class="blog_Rank_ContentBox cl-s-12 clearfix">
+                                            <div class="blog_Rank_ContentBox_Block clearfix">
+                                                <div class="blog_Rank_ContentBox_Box">
+                                                    <div class="blog_Rank_ContentBox_Item">
+                                                        <div class="blog_Rank_ContentBox_Container">
+                                                            <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar1"></div>
+                                                        </div>
+                                                        <p class="blog_Rank_BottomBox_Title">維他命C</p>
+                                                    </div>
+                                                    <div class="blog_Rank_ContentBox_Item">
+                                                        <div class="blog_Rank_ContentBox_Container">
+                                                            <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar2"></div>
+                                                        </div>
+                                                        <p class="blog_Rank_BottomBox_Title">鐵質</p>
+                                                    </div>
+                                                    <div class="blog_Rank_ContentBox_Item">
+                                                        <div class="blog_Rank_ContentBox_Container">
+                                                            <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar3"></div>
+                                                        </div>
+                                                        <div class="blog_Rank_BottomBox_Title">膳食纖維</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="blog_Rank_ContentBox_Desc">
+                                                <p>熱量共50Cals</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <nav>
-                    <span class="dg-prev"><img src="images/left01.png" alt="左箭頭"></span>
-                    <span class="dg-next"><img src="images/right01.png" alt="右箭頭"></span>
-                </nav>
-            </section>
+                        </a>
+                        <a href="blogIn.html" class="blog_Rank_Container blog_Rank_Container3 cl-s-12">
+                            <div class="blog_Rank_Block cl-md-12 clearfix">
+                                <div class="blog_Rank_Prize">
+                                    <img src="images/tag3.png" alt="第三名">
+                                </div>
+                                <div class="blog_Rank_LeftBox cl-md-6">
+                                    <div class="blog_Rank_Name">
+                                        <p>哆啦A夢</p>
+                                    </div>
+                                    <div class="blog_Rank_Date">
+                                        <span>2018-10=21</span>
+                                    </div>
+                                    <div class="blog_Rank_Pic">
+                                        <img src="images/blogImg/blogPic9.jpg" alt="熱門文章排名第三名" class="blog_Rank_Img">
+                                    </div>
 
+                                    <div class="blog_Rank_Score clearfix">
+                                        <div class="blog_Score_Pic">
+                                            <img src="images/blogImg/Score.png" alt="按讚總數" class="blog_Score_Img">
+                                        </div>
+                                        <div class="blog_Score_Num">
+                                            <p> 99</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="blog_Rank_RightBox cl-md-6">
 
+                                    <div class="blog_Rank_Content">
+                                        <div class="blog_Rank_Title cl-md-6 clearfix">
+                                            <h4>晶瑩剔透</h4>
+                                        </div>
+                                        <div class="blog_Rank_Item cl-md-6 clearfix">
+                                            <div class="blog_Rank_ItemPic">
+                                                <img src="images/apple.png" alt="蘋果" class="blog_Rank_FruitIcon">
+                                            </div>
+                                            <div class="blog_Rank_ItemPic">
+                                                <img src="images/grape.png" alt="葡萄" class="blog_Rank_FruitIcon">
+                                            </div>
+                                            <div class="blog_Rank_ItemPic">
+                                                <img src="images/pineapple.png" alt="鳳梨" class="blog_Rank_FruitIcon">
+                                            </div>
+                                        </div>
+                                        <div class="blog_Rank_Desc">
+                                            <p>超級清爽解渴，還可以吃到果肉，很適合夏天喝。</p>
+                                        </div>
+                                        <div class="blog_Rank_ContentBox cl-s-12 clearfix">
+                                            <div class="blog_Rank_ContentBox_Block clearfix">
+                                                <div class="blog_Rank_ContentBox_Box">
+                                                    <div class="blog_Rank_ContentBox_Item">
+                                                        <div class="blog_Rank_ContentBox_Container">
+                                                            <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar1"></div>
+                                                        </div>
+                                                        <p class="blog_Rank_BottomBox_Title">維他命C</p>
+                                                    </div>
+                                                    <div class="blog_Rank_ContentBox_Item">
+                                                        <div class="blog_Rank_ContentBox_Container">
+                                                            <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar2"></div>
+                                                        </div>
+                                                        <p class="blog_Rank_BottomBox_Title">鐵質</p>
+                                                    </div>
+                                                    <div class="blog_Rank_ContentBox_Item">
+                                                        <div class="blog_Rank_ContentBox_Container">
+                                                            <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar3"></div>
+                                                        </div>
+                                                        <div class="blog_Rank_BottomBox_Title">膳食纖維</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="blog_Rank_ContentBox_Desc">
+                                                <p>熱量共50Cals</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <nav>
+                        <span class="dg-prev"><img src="images/left01.png" alt="左箭頭"></span>
+                        <span class="dg-next"><img src="images/right01.png" alt="右箭頭"></span>
+                    </nav>
 
-            <!-- <img class='cloudBr' src="images/blogImg/bgcloud.png" alt="雲"> -->
+                </section>
+                <img class='cloudBr' src="images/cloudBg(02).png" alt="雲">
+                <img class='cloud1' src="images/blogImg/cloud(01)white.png" alt="雲">
+                <img class='cloud2' src="images/blogImg/cloud(05)white.png" alt="雲">
+                <img class='cloud3' src="images/blogImg/cloud(01)white.png" alt="雲">
+                <img class='cloud4' src="images/blogImg/cloud(05)white.png" alt="雲">
+            </div>
+
         </div>
+
     </section>
 
 
 
     <!-- BLOG_FORUM -->
-    <section class="blog_Forum">
-        <div class="wrapper">
+    <section class="blog_Forum clearfix">
+        <div class="blog_Forum_wrapper wrapper">
             <div class="blog_Headingbox">
+                <div id="blog_cloud5_active" class="blog_Headingbox_cloud5">
+                    <img id="blog_cloud5_fruit1" class="fruit1" src="images/apple.png" alt="蘋果">
+                    <img class="fruit2" src="images/guava.png" alt="芭樂">
+                    <img id="blog_cloud5_paused" class="cloud5" src="images/cloud(02).png" alt="雲">
+                </div>
 
                 <h2 class="blog_Heading">寫下我的獨特配方</h2>
                 <h3 class="blog_Subheading">#水果混搭MIX</h3>
+
+                <div class="blog_Headingbox_cloud6">
+                    <img id="blog_cloud6_fruit3" class="fruit3" src="images/watermelon.png" alt="西瓜">
+                    <img class="fruit4" src="images/orange.png" alt="橘子">
+                    <img id="blog_cloud6_paused" class="cloud6" src="images/cloud(03).png" alt="雲">
+                </div>
+
+
             </div>
             <div class="blog_Forum_ButtonContainer">
-                <a href="blogSubmit.html" class="blog_Forum_Button">分享配方</a>
+                <a class="common_btn common_btn_first" href="blogSubmit.html">
+                    <span class="common_btn_txt">分享配方</span>
+                    <div class="common_btn_blobs">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </a>
             </div>
             <div class="blog_Forum_OptionContainer clearfix">
                 <div class="blog_Forum_OptionRightBox">
@@ -632,7 +670,7 @@
                                             </div>
                                             <span class="blog_Forum_SubButton">按讚</span>
                                         </a>
-                                        <a href="javascript:;" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
+                                        <a href="blogIn.html" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
                                             <div class="blog_Forum_SubButtonContainer_Pic">
                                                 <img src="images/blogImg/messagewhite.png" alt="留言圖示" class="blog_Score_Img">
                                             </div>
@@ -689,7 +727,7 @@
                                             </div>
                                             <span class="blog_Forum_SubButton">按讚</span>
                                         </a>
-                                        <a href="javascript:;" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
+                                        <a href="blogIn.html" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
                                             <div class="blog_Forum_SubButtonContainer_Pic">
                                                 <img src="images/blogImg/messagewhite.png" alt="留言圖示" class="blog_Score_Img">
                                             </div>
@@ -746,7 +784,7 @@
                                             </div>
                                             <span class="blog_Forum_SubButton">按讚</span>
                                         </a>
-                                        <a href="javascript:;" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
+                                        <a href="blogIn.html" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
                                             <div class="blog_Forum_SubButtonContainer_Pic">
                                                 <img src="images/blogImg/messagewhite.png" alt="留言圖示" class="blog_Score_Img">
                                             </div>
@@ -803,7 +841,7 @@
                                             </div>
                                             <span class="blog_Forum_SubButton">按讚</span>
                                         </a>
-                                        <a href="javascript:;" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
+                                        <a href="blogIn.html" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
                                             <div class="blog_Forum_SubButtonContainer_Pic">
                                                 <img src="images/blogImg/messagewhite.png" alt="留言圖示" class="blog_Score_Img">
                                             </div>
@@ -860,7 +898,7 @@
                                             </div>
                                             <span class="blog_Forum_SubButton">按讚</span>
                                         </a>
-                                        <a href="javascript:;" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
+                                        <a href="blogIn.html" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
                                             <div class="blog_Forum_SubButtonContainer_Pic">
                                                 <img src="images/blogImg/messagewhite.png" alt="留言圖示" class="blog_Score_Img">
                                             </div>
@@ -917,7 +955,7 @@
                                             </div>
                                             <span class="blog_Forum_SubButton">按讚</span>
                                         </a>
-                                        <a href="javascript:;" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
+                                        <a href="blogIn.html" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
                                             <div class="blog_Forum_SubButtonContainer_Pic">
                                                 <img src="images/blogImg/messagewhite.png" alt="留言圖示" class="blog_Score_Img">
                                             </div>
@@ -974,7 +1012,7 @@
                                             </div>
                                             <span class="blog_Forum_SubButton">按讚</span>
                                         </a>
-                                        <a href="javascript:;" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
+                                        <a href="blogIn.html" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
                                             <div class="blog_Forum_SubButtonContainer_Pic">
                                                 <img src="images/blogImg/messagewhite.png" alt="留言圖示" class="blog_Score_Img">
                                             </div>
@@ -1031,7 +1069,7 @@
                                             </div>
                                             <span class="blog_Forum_SubButton">按讚</span>
                                         </a>
-                                        <a href="javascript:;" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
+                                        <a href="blogIn.html" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
                                             <div class="blog_Forum_SubButtonContainer_Pic">
                                                 <img src="images/blogImg/messagewhite.png" alt="留言圖示" class="blog_Score_Img">
                                             </div>
@@ -1088,7 +1126,7 @@
                                             </div>
                                             <span class="blog_Forum_SubButton">按讚</span>
                                         </a>
-                                        <a href="javascript:;" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
+                                        <a href="blogIn.html" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
                                             <div class="blog_Forum_SubButtonContainer_Pic">
                                                 <img src="images/blogImg/messagewhite.png" alt="留言圖示" class="blog_Score_Img">
                                             </div>
@@ -1145,7 +1183,7 @@
                                             </div>
                                             <span class="blog_Forum_SubButton">按讚</span>
                                         </a>
-                                        <a href="javascript:;" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
+                                        <a href="blogIn.html" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
                                             <div class="blog_Forum_SubButtonContainer_Pic">
                                                 <img src="images/blogImg/messagewhite.png" alt="留言圖示" class="blog_Score_Img">
                                             </div>
@@ -1202,7 +1240,7 @@
                                             </div>
                                             <span class="blog_Forum_SubButton">按讚</span>
                                         </a>
-                                        <a href="javascript:;" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
+                                        <a href="blogIn.html" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
                                             <div class="blog_Forum_SubButtonContainer_Pic">
                                                 <img src="images/blogImg/messagewhite.png" alt="留言圖示" class="blog_Score_Img">
                                             </div>
@@ -1259,7 +1297,7 @@
                                             </div>
                                             <span class="blog_Forum_SubButton">按讚</span>
                                         </a>
-                                        <a href="javascript:;" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
+                                        <a href="blogIn.html" class="blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6">
                                             <div class="blog_Forum_SubButtonContainer_Pic">
                                                 <img src="images/blogImg/messagewhite.png" alt="留言圖示" class="blog_Score_Img">
                                             </div>
@@ -1273,6 +1311,12 @@
                 </div>
             </div>
         </div>
+        <div class="blog_Forum_bg">
+            <img class="city" src="images/about/City(02).png" alt="城市">
+            <img class="grass1" src="images/about/Grass(01).png" alt="草叢">
+            <img class="grass2" src="images/about/Grass(02).png" alt="草叢">
+            <img class="grass3" src="images/about/Grass(01).png" alt="草叢">
+        </div>
     </section>
 
     <footer>
@@ -1280,8 +1324,6 @@
             <div class="footer_block clearfix">
                 <div class="footer_rightBox">
                     <div class="footer_rightContent">
-                        <p class="desc">地址:桃園市中壢區中大路111號</p>
-                        <p class="desc">電話:(03)49111853</p>
                         <p class="copyright">Copyright © All Rights Reserved.</p>
                     </div>
                 </div>

@@ -163,3 +163,23 @@ $(".blog_Rank_Container").click(function () {
 
     }
 })
+
+
+//cloud animation
+
+function cloudAnimation(){
+    var paused1 = document.getElementById('blog_cloud5_paused');
+    var fruit1 = document.getElementById('blog_cloud5_fruit1');
+    var paused2 = document.getElementById('blog_cloud6_paused');
+    var fruit3 = document.getElementById('blog_cloud6_fruit3');
+
+    paused1.addEventListener('click',function(){
+        // alert('ok');
+        fruit1.classList.add('fruit1_active');
+    });
+    paused2.addEventListener('click',function(){
+        // alert('ok');
+        fruit3.classList.add('fruit3_active');
+    })
+}
+window.addEventListener('load',cloudAnimation);
