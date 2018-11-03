@@ -472,6 +472,7 @@ header {
     transform: translate(0%, 0%); } }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 footer {
   position: absolute;
   bottom: 0;
@@ -515,6 +516,15 @@ header nav  li:nth-child(2) > a:after {
 header nav li:nth-child(4) > a:after {
   transform: scaleX(1); }
 >>>>>>> blog
+=======
+/*分頁做法
+header nav  li:nth-child(2) > a:after {
+    transform: scaleX(1);
+}
+*/
+header nav li:nth-child(4) > a:after {
+  transform: scaleX(1); }
+>>>>>>> 6a047bf83ca6a4f5d20759417a9bec51470ac612
 
 body {
   background: #a4ddfa;
