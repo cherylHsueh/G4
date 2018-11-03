@@ -480,6 +480,13 @@ header nav  li:nth-child(2) > a:after {
 }
 */
 >>>>>>> blog
+=======
+/*分頁做法
+header nav  li:nth-child(2) > a:after {
+    transform: scaleX(1);
+}
+*/
+>>>>>>> 6a047bf83ca6a4f5d20759417a9bec51470ac612
 .navSpace {
   margin-top: 140px; }
 =======
