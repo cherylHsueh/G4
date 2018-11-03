@@ -472,6 +472,14 @@ header {
     transform: translate(0%, 0%); } }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+/*分頁做法
+header nav  li:nth-child(2) > a:after {
+    transform: scaleX(1);
+}
+*/
+>>>>>>> diy
 footer {
   position: absolute;
   bottom: 0;

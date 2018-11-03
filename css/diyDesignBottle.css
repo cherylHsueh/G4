@@ -471,49 +471,27 @@ header {
   100% {
     transform: translate(0%, 0%); } }
 
+<<<<<<< HEAD
+=======
+/*分頁做法
+header nav  li:nth-child(2) > a:after {
+    transform: scaleX(1);
+}
+*/
+>>>>>>> diy
 footer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0; }
+  width: 100%;
+  line-height: 25px;
+  height: 25px;
+  background-color: #f4d66d;
+  text-align: center; }
 
-@media only screen and (max-width: 767px) {
-  .footer_wrapper {
-    text-align: center; }
-    .footer_wrapper .footer_block {
-      margin: 0 auto; }
-      .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
-        padding: 8px 0; }
-        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
-          display: inline-block;
-          padding: 5px;
-          font-size: 2vw; }
-        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
-          font-size: 1vw; } }
+body {
+  background-color: #a4ddfa;
+  overflow-x: hidden; }
 
-@media all and (min-width: 768px) {
-  .footer_wrapper {
-    position: relative;
-    text-align: center;
-    margin: 0 auto; }
-    .footer_wrapper .footer_block {
-      margin: 0 auto; }
-      .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
-        padding: 8px 0; }
-        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
-          display: inline-block;
-          padding: 5px; }
-        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
-          font-size: 12px; } }
-
-footer {
-  position: relative; }
-
-.footer_block {
-  background-color: #dde4b7; }
-
-.navSpace {
-  margin-top: 130px; }
+.displayBlock {
+  display: block; }
 
 .diy_designBottle_stepFirstTitle, .diy_designBottle_stepSecondTitle {
   position: absolute;
@@ -582,13 +560,13 @@ footer {
     width: 80px;
     height: 20px;
     line-height: 20px;
-    outline: 1px dashed #f09824;
+    outline: 1px solid #f09824;
     padding: 8px;
-    color: #5e4909;
+    color: #f09824;
     cursor: pointer; }
     .diy_designBottle_uploadBtn p:hover {
-      color: #db7e7e;
-      background: #fff4c1;
+      color: #fefefe;
+      background: #f09824;
       border-color: #fff4c1;
       transition: all 0.4s ease 0s; }
 
@@ -650,25 +628,29 @@ footer {
     display: block;
     background: none;
     border: none;
-    outline: 1px dashed #f09824;
+    outline: 1px solid #f09824;
     padding: 5px 15px;
-    color: #5e4909;
+    color: #f09824;
     font-size: 16px;
     cursor: pointer; }
     .diy_designBottle_createTextBlock input:nth-child(3):hover {
-      color: #db7e7e;
-      background: #fff4c1;
-      border-color: #fff4c1;
+      color: #fefefe;
+      background: #f09824;
       transition: all 0.4s ease 0s; }
 
 .diy_designBottle_officalPic {
   padding: 10px; }
 
+.diy_designBottle_bgcBox {
+  margin: auto;
+  border-radius: 10px;
+  width: 380px;
+  height: 350px;
+  background-color: #fff; }
+
 .diy_customizePopUp {
   width: 100%;
   position: absolute;
-  padding: 2px;
-  margin: 5px;
   display: none; }
 
 .diy_customizeBox_item {
@@ -681,12 +663,13 @@ footer {
     font-size: 55px;
     top: -25px;
     right: 10px;
-    text-align: center; }
+    text-align: center;
+    cursor: pointer; }
 
 .diy_customizeBox_content {
   width: 300px;
   height: 350px;
-  background-color: #fedfe1;
+  background-color: #fafafa;
   position: absolute;
   top: 40%;
   left: 50%;
@@ -701,13 +684,14 @@ footer {
 
 .diy_customizeFinishBox {
   position: fixed;
+  width: 100%;
   top: 0px;
   right: 1px;
   bottom: 1px;
   left: 1px;
   background-color: rgba(0, 0, 0, 0.4);
   text-align: center;
-  overflow-x: hidden;
+  overflow: hidden;
   z-index: 2; }
   .diy_customizeFinishBox_btns {
     position: relative;
@@ -733,14 +717,12 @@ footer {
     padding: 10px 10px;
     display: inline-block; }
 
-footer {
-  position: static;
-  padding-top: 50px; }
-
 .robot {
-  z-index: 1; }
+  z-index: 10; }
 
 @media only screen and (max-width: 767px) {
+  .navSpace {
+    margin-top: 110px; }
   .diy_customizeBox_finishPic {
     width: 100px; }
   .diy_customizeBox_content h3 {
@@ -757,11 +739,31 @@ footer {
   #diy_designBottle_wrapper {
     width: 100%; } }
 
+footer img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 120px; }
+
+.common_btn_first {
+  width: 90px; }
+
 @media all and (min-width: 768px) {
+  body {
+    overflow-x: hidden; }
+  @keyframes bottleMove {
+    0% {
+      left: 0; }
+    100% {
+      left: 100%; } }
+  .navSpace {
+    margin-top: 140px; }
   .diy_customizeBox_finishPic {
     width: 230px; }
   .diy_proToCartBtns {
-    margin-top: 20px; }
+    margin-top: 130px; }
+    .diy_proToCartBtns a {
+      margin: 0  30px; }
   .diy_designBottle_bottleItem img {
     width: 140px;
     margin: 30px auto; }
@@ -769,14 +771,35 @@ footer {
     width: 180px; }
   .diy_designBottle_stepSecondBox img {
     width: 180px; }
+  .diy_designBottle_bgCloud {
+    position: absolute; }
+    .diy_designBottle_bgCloud img {
+      position: relative;
+      top: -50px;
+      width: 200px; }
+      .diy_designBottle_bgCloud img:nth-child(1) {
+        top: -40px;
+        left: -300px;
+        width: 150px; }
+      .diy_designBottle_bgCloud img:nth-child(2) {
+        left: -150px;
+        top: -80px;
+        width: 200px; }
+      .diy_designBottle_bgCloud img:nth-child(3) {
+        top: -40px;
+        left: 450px;
+        width: 100px; }
+      .diy_designBottle_bgCloud img:nth-child(4) {
+        top: -50px;
+        left: 600px;
+        width: 200px; }
   .diy_designBottle_logoPic {
     display: inline-block; }
     .diy_designBottle_logoPic img {
       width: 90px;
       margin: 5px; }
   .diy_designBottle_bottleItem {
-    position: relative;
-    padding-left: 50px; }
+    position: relative; }
   .diy_designBottle_stepFirstTitle p,
   .diy_designBottle_stepFirstTitle h3 {
     font-size: 18px; }
@@ -796,23 +819,87 @@ footer {
       width: 90px; }
   .diy_designBottle_textForm :nth-child(2) {
     width: 200px; }
-  .diy_customizeBox_content h3 {
-    margin: 10px 0; }
-  .diy_customizeBox_finishPic img {
-    width: 250px; }
-  .diy_customizeBox_content {
-    width: 600px;
-    height: 400px;
-    background-color: #fedfe1;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -45%);
-    margin: auto; }
-  .diy_customizeFinishBox_btns {
+  .diy_designBottle_bgcBox {
     position: relative;
-    top: 80%;
-    right: 0; } }
+    top: 80px;
+    box-sizing: border-box;
+    padding: 30px;
+    width: 900px;
+    height: 600px; }
+  .diy_designBottle_moveBlock {
+    position: absolute; }
+    .diy_designBottle_moveBlock ul {
+      width: 100%;
+      height: 0;
+      position: relative; }
+    .diy_designBottle_moveBlock li {
+      display: inline-block;
+      position: absolute;
+      left: -80px; }
+      .diy_designBottle_moveBlock li img {
+        width: 30px; }
+  .diy_designBottle_itemBottleBlock {
+    position: absolute;
+    top: -50px; }
+    .diy_designBottle_itemBottleBlock .item1 {
+      animation: bottleMove 7s linear 0s infinite; }
+    .diy_designBottle_itemBottleBlock .item2 {
+      animation: bottleMove 7s linear 1s infinite; }
+    .diy_designBottle_itemBottleBlock .item3 {
+      animation: bottleMove 7s linear 2s infinite; }
+    .diy_designBottle_itemBottleBlock .item4 {
+      animation: bottleMove 7s linear 3s infinite; }
+    .diy_designBottle_itemBottleBlock .item5 {
+      animation: bottleMove 7s linear 4s infinite; }
+    .diy_designBottle_itemBottleBlock .item6 {
+      animation: bottleMove 7s linear 5s infinite; }
+    .diy_designBottle_itemBottleBlock .item7 {
+      animation: bottleMove 7s linear 6s infinite; } }
+
+footer {
+  position: absolute;
+  bottom: -240px;
+  left: 0;
+  z-index: 5; }
+  footer .factory {
+    position: absolute;
+    top: -255px;
+    left: -5px;
+    width: 300px; }
+  footer .conveyor {
+    position: absolute;
+    top: -73px;
+    width: 98%;
+    z-index: -1; }
+  footer .car {
+    width: 350px;
+    position: absolute;
+    left: 82%;
+    top: -150px;
+    z-index: -1; }
+
+.diy_customizeBox_content h3 {
+  margin: 10px 0; }
+
+.diy_customizeBox_finishPic img {
+  width: 250px; }
+
+.diy_customizeBox_content {
+  width: 600px;
+  height: 500px;
+  background-color: #fefefe;
+  position: absolute;
+  border-radius: 20px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  margin: auto; }
+
+.diy_customizeFinishBox_btns {
+  display: none;
+  position: relative;
+  top: 80%;
+  right: 0; }
 
 @media all and (min-width: 1024px) {
   .diy_designBottle_controlBlock i {
@@ -822,4 +909,12 @@ footer {
   .diy_designBottle_officalPic {
     border: none; }
     .diy_designBottle_officalPic img {
-      width: 90px; } }
+      width: 90px; }
+  .diy_designBottle_moveBlock {
+    left: 100px;
+    width: 1510px;
+    z-index: -1; }
+  .diy_designBottle_btnBlock {
+    margin-top: 10px; }
+    .diy_designBottle_btnBlock a {
+      margin: 10px 20px; } }
