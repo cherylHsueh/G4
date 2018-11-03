@@ -316,7 +316,7 @@ header {
   top: 0;
   height: 140px;
   width: 300%;
-  fill: rgba(255, 255, 255, 0.5);
+  fill: white;
   -webkit-animation: move 5s 1s linear infinite alternate;
   animation: move 5s .5s linear infinite alternate; }
 
@@ -341,10 +341,10 @@ header {
 
 .coupon {
   position: fixed;
-  width: 110px;
-  top: 20%;
+  width: 100px;
+  top: 110px;
   right: 2%;
-  z-index: 50; }
+  z-index: 100; }
 
 @media only screen and (max-width: 767px) {
   .robot {
@@ -354,7 +354,11 @@ header {
     width: 70px; }
   #svg-2 {
     transition: height 1.3s 0.5s ,width 2s; }
-  #wave, #wave2 {
+  #wave {
+    height: 95px;
+    transition: 1s; }
+  #wave2 {
+    height: 100px;
     transition: 1s; }
   .menu {
     text-align: center;
@@ -376,12 +380,12 @@ header {
     width: 100%;
     margin-top: 7px; }
     .ph_nav .phone_logo {
-      width: 80px;
+      width: 60px;
       margin: auto; }
     .ph_nav .hb {
       padding: 20px 15px;
       float: left;
-      margin: 20px 0 0 5%; }
+      margin: 14px 0 0 5%; }
       .ph_nav .hb span {
         display: block;
         height: 2px;
@@ -408,6 +412,7 @@ header {
 #hb_control:checked ~ nav #wave {
   transition: 2s;
   width: 900%;
+  height: 107vh;
   animation: move2 3s 1s linear infinite alternate; }
 
 #hb_control:checked ~ nav #wave2 {
@@ -444,7 +449,7 @@ header {
 
 @keyframes move {
   0% {
-    transform: translate(-40%, 0%); }
+    transform: translate(-30%, 0%); }
   100% {
     transform: translate(0%, 0%); } }
 
@@ -466,63 +471,12 @@ header {
   100% {
     transform: translate(0%, 0%); } }
 
-/*分頁做法
-header nav  li:nth-child(2) > a:after {
-    transform: scaleX(1);
-}
-*/
-footer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0; }
-
-@media only screen and (max-width: 767px) {
-  .footer_wrapper {
-    text-align: center; }
-    .footer_wrapper .footer_block {
-      margin: 0 auto; }
-      .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
-        padding: 8px 0; }
-        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
-          display: inline-block;
-          padding: 5px;
-          font-size: 2vw; }
-        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
-          font-size: 1vw; } }
-
-@media all and (min-width: 768px) {
-  .footer_wrapper {
-    position: relative;
-    text-align: center;
-    margin: 0 auto; }
-    .footer_wrapper .footer_block {
-      margin: 0 auto; }
-      .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
-        padding: 8px 0; }
-        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
-          display: inline-block;
-          padding: 5px; }
-        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
-          font-size: 12px; } }
-
-footer {
-  position: static;
-  padding-top: 50px; }
-
-.footer_block {
-  background-color: #dde4b7; }
+.navSpace {
+  margin-top: 140px; }
 
 .diy_pickFruit {
-  position: relative; }
-  .diy_pickFruit .space {
-    height: 130px; }
-
-.diy_pickBottle {
   position: relative;
-  width: 100%;
-  height: calc(100vh - 150px);
-  background-color: #00ffaa; }
+  width: 100%; }
 
 .diy_pickFruit_rightItem {
   display: none; }
@@ -587,216 +541,217 @@ footer {
       width: 400%; }
       .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .diy_pickFruit_leftItem {
         display: inline-block; }
-  .diy_pickFruit_leftItem1 img.highlight, .diy_pickFruit_leftItem1 img.highlightClick, .diy_pickFruit_leftItem1 img.highlightUnclick, .diy_pickFruit_leftItem2 img.highlight, .diy_pickFruit_leftItem2 img.highlightClick, .diy_pickFruit_leftItem2 img.highlightUnclick, .diy_pickFruit_leftItem3 img.highlight, .diy_pickFruit_leftItem3 img.highlightClick, .diy_pickFruit_leftItem3 img.highlightUnclick, .diy_pickFruit_leftItem4 img.highlight, .diy_pickFruit_leftItem4 img.highlightClick, .diy_pickFruit_leftItem4 img.highlightUnclick, .diy_pickFruit_leftItem5 img.highlight, .diy_pickFruit_leftItem5 img.highlightClick, .diy_pickFruit_leftItem5 img.highlightUnclick, .diy_pickFruit_leftItem6 img.highlight, .diy_pickFruit_leftItem6 img.highlightClick, .diy_pickFruit_leftItem6 img.highlightUnclick, .diy_pickFruit_leftItem7 img.highlight, .diy_pickFruit_leftItem7 img.highlightClick, .diy_pickFruit_leftItem7 img.highlightUnclick, .diy_pickFruit_leftItem8 img.highlight, .diy_pickFruit_leftItem8 img.highlightClick, .diy_pickFruit_leftItem8 img.highlightUnclick, .diy_pickFruit_leftItem9 img.highlight, .diy_pickFruit_leftItem9 img.highlightClick, .diy_pickFruit_leftItem9 img.highlightUnclick {
-    position: absolute;
-    z-index: -1;
-    top: -20%;
-    left: -20%;
-    width: 80%;
-    animation: scale .6s; }
-  @keyframes scale {
-    from {
-      transform: scale(0.6); }
-    to {
-      transform: scale(1); } }
+        .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .diy_pickFruit_leftItem .fruitnameBox {
+          position: absolute;
+          bottom: -20px;
+          left: -25px;
+          width: 75px;
+          height: 30px;
+          border-radius: 10px;
+          background-color: #e3fd70; }
+      .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .fruitbgc {
+        background-color: #774915; }
+  .diy_pickFruit_leftItem {
+    max-width: 100px;
+    border: 2px solid #593100;
+    border-radius: 10px;
+    background-color: #c96e0d;
+    box-sizing: border-box; }
+    .diy_pickFruit_leftItem .fruiticon {
+      position: relative;
+      width: 70%;
+      max-width: 80px;
+      margin-left: 10px;
+      cursor: pointer; }
   .diy_pickFruit_leftItem1 {
     position: relative; }
-    .diy_pickFruit_leftItem1 .fruiticon {
-      width: 40%;
-      position: relative;
-      cursor: pointer; }
+    .diy_pickFruit_leftItem1:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #bd6308; }
   .diy_pickFruit_leftItem2 {
     position: relative; }
-    .diy_pickFruit_leftItem2 .fruiticon {
-      width: 40%;
-      position: relative;
-      cursor: pointer; }
+    .diy_pickFruit_leftItem2:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #bd6308; }
   .diy_pickFruit_leftItem3 {
     position: relative; }
-    .diy_pickFruit_leftItem3 .fruiticon {
-      width: 40%;
-      position: relative;
-      cursor: pointer; }
+    .diy_pickFruit_leftItem3:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #bd6308; }
   .diy_pickFruit_leftItem4 {
     position: relative; }
-    .diy_pickFruit_leftItem4 .fruiticon {
-      width: 40%;
-      position: relative;
-      cursor: pointer; }
+    .diy_pickFruit_leftItem4:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #bd6308; }
   .diy_pickFruit_leftItem5 {
     position: relative; }
-    .diy_pickFruit_leftItem5 .fruiticon {
-      width: 40%;
-      position: relative;
-      cursor: pointer; }
+    .diy_pickFruit_leftItem5:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #bd6308; }
   .diy_pickFruit_leftItem6 {
     position: relative; }
-    .diy_pickFruit_leftItem6 .fruiticon {
-      width: 40%;
-      position: relative;
-      cursor: pointer; }
+    .diy_pickFruit_leftItem6:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #bd6308; }
   .diy_pickFruit_leftItem7 {
     position: relative; }
-    .diy_pickFruit_leftItem7 .fruiticon {
-      width: 40%;
-      position: relative;
-      cursor: pointer; }
+    .diy_pickFruit_leftItem7:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #bd6308; }
   .diy_pickFruit_leftItem8 {
     position: relative; }
-    .diy_pickFruit_leftItem8 .fruiticon {
-      width: 40%;
-      position: relative;
-      cursor: pointer; }
+    .diy_pickFruit_leftItem8:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #bd6308; }
   .diy_pickFruit_leftItem9 {
     position: relative; }
-    .diy_pickFruit_leftItem9 .fruiticon {
-      width: 40%;
-      position: relative;
-      cursor: pointer; }
+    .diy_pickFruit_leftItem9:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #bd6308; }
   .fruitnamef1 {
     display: none;
     position: absolute;
-    left: 0%;
-    bottom: -40%; }
-    .fruitnamef1::after {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -8px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -20px;
+    bottom: -15px;
+    z-index: 1; }
   .fruitnamef2 {
     display: none;
     position: absolute;
-    left: 0%;
-    bottom: -40%; }
-    .fruitnamef2::after {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -8px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -20px;
+    bottom: -15px;
+    z-index: 1; }
   .fruitnamef3 {
     display: none;
     position: absolute;
-    left: 0%;
-    bottom: -40%; }
-    .fruitnamef3::after {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -8px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -20px;
+    bottom: -15px;
+    z-index: 1; }
   .fruitnamef4 {
     display: none;
     position: absolute;
-    left: 0%;
-    bottom: -40%; }
-    .fruitnamef4::after {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -8px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -20px;
+    bottom: -15px;
+    z-index: 1; }
   .fruitnamef5 {
     display: none;
     position: absolute;
-    left: 0%;
-    bottom: -40%; }
-    .fruitnamef5::after {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -8px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -20px;
+    bottom: -15px;
+    z-index: 1; }
   .fruitnamef6 {
     display: none;
     position: absolute;
-    left: 0%;
-    bottom: -40%; }
-    .fruitnamef6::after {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -8px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -20px;
+    bottom: -15px;
+    z-index: 1; }
   .fruitnamef7 {
     display: none;
     position: absolute;
-    left: 0%;
-    bottom: -40%; }
-    .fruitnamef7::after {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -8px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -20px;
+    bottom: -15px;
+    z-index: 1; }
   .fruitnamef8 {
     display: none;
     position: absolute;
-    left: 0%;
-    bottom: -40%; }
-    .fruitnamef8::after {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -8px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -20px;
+    bottom: -15px;
+    z-index: 1; }
   .fruitnamef9 {
     display: none;
     position: absolute;
-    left: 0%;
-    bottom: -40%; }
-    .fruitnamef9::after {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -8px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -20px;
+    bottom: -15px;
+    z-index: 1; }
   .diy_pickFruit_leftArrow {
     position: absolute;
     top: 20%;
@@ -822,6 +777,9 @@ footer {
       border: 1px solid #f09824;
       font-size: 12px;
       color: #f09824; }
+      .diy_pickFruit_resetButton a:hover {
+        background-color: #f09824;
+        color: #fefefe; }
   .diy_pickFruit_rightBlock {
     margin-top: -23px; }
   .diy_pickFruit_leftBox {
@@ -874,7 +832,37 @@ footer {
       transition: 1s; }
       .diy_pickFruit_nextButton a:hover {
         background-color: #f1900f;
-        color: #fefefe; } }
+        color: #fefefe; }
+  .tree1 {
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    z-index: -1; }
+  .tree2 {
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    z-index: -1; }
+  .tree3 {
+    width: 70px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1; }
+  .footer_wrapper {
+    position: relative;
+    bottom: 0;
+    text-align: center; }
+    .footer_wrapper .footer_block {
+      margin: 0 auto;
+      background-color: #f4d66d; }
+      .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
+        padding: 8px 0; }
+        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
+          display: inline-block;
+          font-size: 2vw; }
+        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
+          font-size: 1vw; } }
 
 @media all and (min-width: 768px) {
   .diy_pickFruit_stepBlock {
@@ -921,211 +909,105 @@ footer {
     .diy_pickFruit_title h4 {
       font-size: 16px;
       color: #5e4909; }
+  .diy_pickFruit_titleAllWrapper {
+    margin-top: 10px;
+    padding: 20px 0; }
   .diy_pickFruit_leftBlock {
     margin: 2% 0; }
     .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .diy_pickFruit_leftItem {
       text-align: center; }
-  .diy_pickFruit_leftItem1 img.highlight, .diy_pickFruit_leftItem1 img.highlightClick, .diy_pickFruit_leftItem1 img.highlightUnclick, .diy_pickFruit_leftItem2 img.highlight, .diy_pickFruit_leftItem2 img.highlightClick, .diy_pickFruit_leftItem2 img.highlightUnclick, .diy_pickFruit_leftItem3 img.highlight, .diy_pickFruit_leftItem3 img.highlightClick, .diy_pickFruit_leftItem3 img.highlightUnclick, .diy_pickFruit_leftItem4 img.highlight, .diy_pickFruit_leftItem4 img.highlightClick, .diy_pickFruit_leftItem4 img.highlightUnclick, .diy_pickFruit_leftItem5 img.highlight, .diy_pickFruit_leftItem5 img.highlightClick, .diy_pickFruit_leftItem5 img.highlightUnclick, .diy_pickFruit_leftItem6 img.highlight, .diy_pickFruit_leftItem6 img.highlightClick, .diy_pickFruit_leftItem6 img.highlightUnclick, .diy_pickFruit_leftItem7 img.highlight, .diy_pickFruit_leftItem7 img.highlightClick, .diy_pickFruit_leftItem7 img.highlightUnclick, .diy_pickFruit_leftItem8 img.highlight, .diy_pickFruit_leftItem8 img.highlightClick, .diy_pickFruit_leftItem8 img.highlightUnclick, .diy_pickFruit_leftItem9 img.highlight, .diy_pickFruit_leftItem9 img.highlightClick, .diy_pickFruit_leftItem9 img.highlightUnclick {
-    position: absolute;
-    z-index: -1;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    animation: scale .6s; }
-  @keyframes scale {
-    from {
-      transform: scale(0.6); }
-    to {
-      transform: scale(1); } }
+      .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .diy_pickFruit_leftItem .fruitnameBox {
+        position: absolute;
+        top: -10px;
+        left: -15px;
+        width: 75px;
+        height: 30px;
+        border-radius: 10px;
+        background-color: #e3fd70; }
+    .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .fruitbgc {
+      background-color: #c78132; }
+  .diy_pickFruit_leftItem {
+    max-width: 100px;
+    border: 2px solid #593100;
+    border-radius: 10px;
+    background-color: #e9c9a5;
+    box-sizing: border-box; }
+    .diy_pickFruit_leftItem .fruiticon {
+      width: 80%;
+      max-width: 80px;
+      cursor: pointer; }
   .diy_pickFruit_leftItem1 {
     position: relative; }
-    .diy_pickFruit_leftItem1 .fruiticon {
-      width: 80%;
-      cursor: pointer; }
   .diy_pickFruit_leftItem2 {
     position: relative; }
-    .diy_pickFruit_leftItem2 .fruiticon {
-      width: 80%;
-      cursor: pointer; }
   .diy_pickFruit_leftItem3 {
     position: relative; }
-    .diy_pickFruit_leftItem3 .fruiticon {
-      width: 80%;
-      cursor: pointer; }
   .diy_pickFruit_leftItem4 {
     position: relative; }
-    .diy_pickFruit_leftItem4 .fruiticon {
-      width: 80%;
-      cursor: pointer; }
   .diy_pickFruit_leftItem5 {
     position: relative; }
-    .diy_pickFruit_leftItem5 .fruiticon {
-      width: 80%;
-      cursor: pointer; }
   .diy_pickFruit_leftItem6 {
     position: relative; }
-    .diy_pickFruit_leftItem6 .fruiticon {
-      width: 80%;
-      cursor: pointer; }
   .diy_pickFruit_leftItem7 {
     position: relative; }
-    .diy_pickFruit_leftItem7 .fruiticon {
-      width: 80%;
-      cursor: pointer; }
   .diy_pickFruit_leftItem8 {
     position: relative; }
-    .diy_pickFruit_leftItem8 .fruiticon {
-      width: 80%;
-      cursor: pointer; }
   .diy_pickFruit_leftItem9 {
     position: relative; }
-    .diy_pickFruit_leftItem9 .fruiticon {
-      width: 80%;
-      cursor: pointer; }
   .fruitnamef1 {
     display: none;
     position: absolute;
-    left: 0%;
-    top: -10px; }
-    .fruitnamef1::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: -10px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -10px;
+    top: -5px;
+    z-index: 1; }
   .fruitnamef2 {
     display: none;
     position: absolute;
-    left: 0%;
-    top: -10px; }
-    .fruitnamef2::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: -10px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -10px;
+    top: -5px;
+    z-index: 1; }
   .fruitnamef3 {
     display: none;
     position: absolute;
-    left: 0%;
-    top: -10px; }
-    .fruitnamef3::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: -10px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -10px;
+    top: -5px;
+    z-index: 1; }
   .fruitnamef4 {
     display: none;
     position: absolute;
-    left: 0%;
-    top: -10px; }
-    .fruitnamef4::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: -10px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -10px;
+    top: -5px;
+    z-index: 1; }
   .fruitnamef5 {
     display: none;
     position: absolute;
-    left: 0%;
-    top: -10px; }
-    .fruitnamef5::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: -10px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -10px;
+    top: -5px;
+    z-index: 1; }
   .fruitnamef6 {
     display: none;
     position: absolute;
-    left: 0%;
-    top: -10px; }
-    .fruitnamef6::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: -10px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -10px;
+    top: -5px;
+    z-index: 1; }
   .fruitnamef7 {
     display: none;
     position: absolute;
-    left: 0%;
-    top: -10px; }
-    .fruitnamef7::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: -10px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -10px;
+    top: -5px;
+    z-index: 1; }
   .fruitnamef8 {
     display: none;
     position: absolute;
-    left: 0%;
-    top: -10px; }
-    .fruitnamef8::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: -10px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -10px;
+    top: -5px;
+    z-index: 1; }
   .fruitnamef9 {
     display: none;
     position: absolute;
-    left: 0%;
-    top: -10px; }
-    .fruitnamef9::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: -10px;
-      z-index: -1;
-      display: block;
-      width: 120%;
-      height: 30px;
-      border-radius: 10%;
-      background-color: orange; }
+    left: -10px;
+    top: -5px;
+    z-index: 1; }
   .diy_pickFruit_leftArrow {
     display: none; }
   .diy_pickFruit_rightArrow {
@@ -1140,6 +1022,9 @@ footer {
       border: 1px solid #f09824;
       font-size: 12px;
       color: #f09824; }
+      .diy_pickFruit_resetButton a:hover {
+        background-color: #f09824;
+        color: #fefefe; }
   .diy_pickFruit_leftBox {
     max-width: 500px;
     margin: 5% 0;
@@ -1193,96 +1078,80 @@ footer {
       transition: 1s; }
       .diy_pickFruit_nextButton a:hover {
         background-color: #f1900f;
-        color: #fefefe; } }
+        color: #fefefe; }
+  .tree1 {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+    z-index: -1; }
+  .tree2 {
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1; }
+  .tree3 {
+    width: 80px;
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    z-index: -1; }
+  .footer_wrapper {
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    margin: 0 auto; }
+    .footer_wrapper .footer_block {
+      margin: 0 auto;
+      background-color: #f4d66d; }
+      .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
+        padding: 8px 0; }
+        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
+          display: inline-block;
+          padding: 5px; }
+        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
+          font-size: 12px; } }
 
 @media all and (min-width: 1024px) {
   .diy_pickFruit_title h4 {
     font-size: 20px; }
   .diy_pickFruit_leftBlock {
     max-width: 400px;
-    margin: 2% 0;
-    padding: 0px; }
+    padding: 3% 0 0 10%;
+    box-sizing: border-box; }
     .diy_pickFruit_leftBlock .diy_pickFruit_leftBox {
       margin: 0;
       padding: 0; }
-      .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .diy_pickFruit_leftItem {
-        margin-bottom: 10px;
-        padding: 0; }
-  .diy_pickFruit_leftItem1 img.highlight, .diy_pickFruit_leftItem1 img.highlightClick, .diy_pickFruit_leftItem1 img.highlightUnclick, .diy_pickFruit_leftItem2 img.highlight, .diy_pickFruit_leftItem2 img.highlightClick, .diy_pickFruit_leftItem2 img.highlightUnclick, .diy_pickFruit_leftItem3 img.highlight, .diy_pickFruit_leftItem3 img.highlightClick, .diy_pickFruit_leftItem3 img.highlightUnclick, .diy_pickFruit_leftItem4 img.highlight, .diy_pickFruit_leftItem4 img.highlightClick, .diy_pickFruit_leftItem4 img.highlightUnclick, .diy_pickFruit_leftItem5 img.highlight, .diy_pickFruit_leftItem5 img.highlightClick, .diy_pickFruit_leftItem5 img.highlightUnclick, .diy_pickFruit_leftItem6 img.highlight, .diy_pickFruit_leftItem6 img.highlightClick, .diy_pickFruit_leftItem6 img.highlightUnclick, .diy_pickFruit_leftItem7 img.highlight, .diy_pickFruit_leftItem7 img.highlightClick, .diy_pickFruit_leftItem7 img.highlightUnclick, .diy_pickFruit_leftItem8 img.highlight, .diy_pickFruit_leftItem8 img.highlightClick, .diy_pickFruit_leftItem8 img.highlightUnclick, .diy_pickFruit_leftItem9 img.highlight, .diy_pickFruit_leftItem9 img.highlightClick, .diy_pickFruit_leftItem9 img.highlightUnclick {
-    position: absolute;
-    z-index: -1;
-    top: -10%;
-    left: 0%;
-    width: 100%;
-    animation: scale .6s; }
-  @keyframes scale {
-    from {
-      transform: scale(0.6); }
-    to {
-      transform: scale(1); } }
+      .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .fruitbgc {
+        background-color: #c78132; }
+  .diy_pickFruit_leftItem {
+    max-width: 100px;
+    border: 2px solid #593100;
+    border-radius: 10px;
+    background-color: #e9c9a5;
+    box-sizing: border-box; }
+    .diy_pickFruit_leftItem .fruiticon {
+      width: 80%;
+      max-width: 80px;
+      cursor: pointer; }
   .diy_pickFruit_leftItem1 {
     position: relative; }
-    .diy_pickFruit_leftItem1 .fruiticon {
-      max-width: 80px;
-      cursor: pointer; }
-    .diy_pickFruit_leftItem1 img.highlight {
-      transition: 5s; }
   .diy_pickFruit_leftItem2 {
     position: relative; }
-    .diy_pickFruit_leftItem2 .fruiticon {
-      max-width: 80px;
-      cursor: pointer; }
-    .diy_pickFruit_leftItem2 img.highlight {
-      transition: 5s; }
   .diy_pickFruit_leftItem3 {
     position: relative; }
-    .diy_pickFruit_leftItem3 .fruiticon {
-      max-width: 80px;
-      cursor: pointer; }
-    .diy_pickFruit_leftItem3 img.highlight {
-      transition: 5s; }
   .diy_pickFruit_leftItem4 {
     position: relative; }
-    .diy_pickFruit_leftItem4 .fruiticon {
-      max-width: 80px;
-      cursor: pointer; }
-    .diy_pickFruit_leftItem4 img.highlight {
-      transition: 5s; }
   .diy_pickFruit_leftItem5 {
     position: relative; }
-    .diy_pickFruit_leftItem5 .fruiticon {
-      max-width: 80px;
-      cursor: pointer; }
-    .diy_pickFruit_leftItem5 img.highlight {
-      transition: 5s; }
   .diy_pickFruit_leftItem6 {
     position: relative; }
-    .diy_pickFruit_leftItem6 .fruiticon {
-      max-width: 80px;
-      cursor: pointer; }
-    .diy_pickFruit_leftItem6 img.highlight {
-      transition: 5s; }
   .diy_pickFruit_leftItem7 {
     position: relative; }
-    .diy_pickFruit_leftItem7 .fruiticon {
-      max-width: 80px;
-      cursor: pointer; }
-    .diy_pickFruit_leftItem7 img.highlight {
-      transition: 5s; }
   .diy_pickFruit_leftItem8 {
     position: relative; }
-    .diy_pickFruit_leftItem8 .fruiticon {
-      max-width: 80px;
-      cursor: pointer; }
-    .diy_pickFruit_leftItem8 img.highlight {
-      transition: 5s; }
   .diy_pickFruit_leftItem9 {
     position: relative; }
-    .diy_pickFruit_leftItem9 .fruiticon {
-      max-width: 80px;
-      cursor: pointer; }
-    .diy_pickFruit_leftItem9 img.highlight {
-      transition: 5s; }
   .diy_pickFruit_rightBlock {
     max-width: 800px;
     margin: 17px 0;
