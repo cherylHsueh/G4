@@ -18,6 +18,7 @@ $mobile : 767px; //手機斷點
 $medium:  768px; //平板斷點
 $desktop : 1024px; //桌機斷點
 
+
 //RWD斷點判斷函數
 @mixin rwd ($breakpoint) {
     @if $breakpoint == mobile {
