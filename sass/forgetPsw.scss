@@ -9,10 +9,13 @@ footer{
 .footer_block {
     background-color: #dde4b7;
 }
+*{
+    // outline: 1px solid red;
+}
 @include rwd(mobile) {
     .nav_space {
         margin-top: 95px;
-        background-color: #00B5BD;
+        background-color: $sky;
     }
     .cloud {
         text-align: right;
@@ -22,7 +25,7 @@ footer{
         width: 20%;
     }
     .forgetPsw {
-        background-color: #00B5BD;
+        background-color: $sky;
     }
     .forgetPsw_newPsw_box {
         text-align: center;
@@ -98,9 +101,9 @@ footer{
     }
     input {
         width: 50%;
-        padding: 8px 20px;
-        margin: 8px 0;
-        display: inline-block;
+        padding: 2% 4%;
+        margin: 3% 3.5%;
+        display: inline-block
 	}
 	.psw_inner{
 		margin-top:5%;
@@ -110,24 +113,25 @@ footer{
         height: 95px;
     }
     .forgetPsw {
-        background-color: #00B5BD;
+        background-color: $sky;
         position: relative;
         top:15%;
     }
     .forgetPsw_session {
-        background-color: #00B5BD;
-        height: 100vh;
+        background-color: $sky;
+        // height: 100vh;
+        overflow: hidden;
     }
     .cloud {
         text-align: right;
-        padding: 5%;
+        padding: 8%;
     }
     .cloud img {
         width: 20%;
     }
     .forgetPsw_explain_box {
-        width: 60%;
-        padding-top: 22%;
+        width: 63%;
+        padding-top: 10%;
         margin: auto;
     }
     .forgetPsw_newPsw_box>p,
@@ -147,6 +151,88 @@ footer{
             margin: 0 5px;
         }
     }
+    .psw_store{
+        margin:4% auto 0 auto;;
+        width:43%;
+        position: relative;
+        img{
+            width:100%;
+        }
+    }
+    .guava{
+        position: absolute;
+        width: 13.5%;
+        top: 42%;
+        left: 11%;
+        img{
+            widtH:100%;
+        }
+    }
+    .banana{
+        position: absolute;
+        width: 14.5%;
+        top: 51%;
+        left: 24%;
+        img{
+            widtH:100%;
+        }
+    }
+    .banana2{
+        position: absolute;
+        width: 14.5%;
+        top: 48%;
+        left: 24%;
+        img{
+            widtH:100%;
+        }
+    }
+    .apple{
+        position: absolute;
+        width: 10%;
+        top: 45%;
+        left: 37%;
+        img{
+            widtH:100%;
+        }
+    }
+    .cantaloupe{
+        position: absolute;
+        width: 14.5%;
+        top: 41%;
+        left: 57%;
+        transform: rotate(-8deg);
+        img{
+            widtH:100%;
+        }  
+    }
+    .grape{
+        position: absolute;
+        width: 11%;
+        top: 45%;
+        left: 47%;
+    
+        img{
+            widtH:100%;
+        }    
+    }
+    .pineapple{
+        position: absolute;
+        width: 11%;
+        top: 45%;
+        left: 70%;
+        img{
+            widtH:100%;
+        }   
+    }
+    .watermelon{
+        position: absolute;
+        width: 14%;
+        top: 43%;
+        left: 80%;
+        img{
+            widtH:100%;
+        }   
+    }
     .btn {
         background-color: rgb(255, 241, 0);
         width: 120px;
@@ -154,11 +240,13 @@ footer{
 	}
 	.btn{
 		color:#5e4909;
-	}
+    }
+    .psw_btn{
+        margin-top:8%;
+    }
     .forgetPsw_newmem:after {
         content: '';
         width: 100%;
-        height: 20vh;
         display: block;
     }
     .apply a {
@@ -172,4 +260,122 @@ footer{
     .city img {
         width: 30%;
     }
+    // 小鳥
+    @-webkit-keyframes flap-r {
+        0%,10%   { 	border-top-width: 60px; }
+        40%,60%  { 	border-top-width: 10px; }
+        100%     { 	border-top-width: 60px; }
+      }
+      
+      @-webkit-keyframes flap-l {
+        0%       { 	border-bottom-width: 0px; }
+        40%,60%  { 	border-bottom-width: 40px; }
+        100%     { 	border-bottom-width: 0px; }
+      }
+      
+      @-webkit-keyframes fly {
+        0%   { 	left: 0%; top:100px;-webkit-transform:scale3d(0.5,0.5,1) }
+        100% { 	left: 100%; top:100px; -webkit-transform:scale3d(1,1,1) }
+      }
+      
+      @-webkit-keyframes bob {
+        0%   { 	top: 25px; }
+        50%   { 	top: 0px; }
+        100% { 	top: 25px; }
+      }
+      
+      #pictureframe {
+        position:relative;
+        width:100px;
+        z-index: 1;
+        -webkit-animation: fly 10s infinite linear;
+      }
+      
+      #shadow {
+        position:absolute;
+        width: 0px; height: 0px; 
+        top: 140px; left: 00px;
+        border-width: 10px;
+        border-left-width:50px;
+        border-top-width:0px;
+        border-right-width: 40px;
+        border-color: transparent;
+        border-bottom-color: rgba(210,210,210,0.6);
+        border-style:solid;
+        -webkit-filter: blur(5px);
+      }
+      
+      #shadow:after {
+        content: " ";
+        position:absolute;
+        width: 00px; height: 0px; 
+        top: 10px; left: -50px;
+        border-width: 10px;
+        border-left-width:50px;
+        border-bottom-width:0px;
+        border-right-width: 40px;
+        border-color: transparent;
+        border-top-color: rgba(210,210,210,0.6);
+        border-style:solid;
+      }
+      
+      #bird div {
+        position:absolute;
+      }
+      
+      #bird { 
+        position:absolute;
+        -webkit-animation: bob 0.7s infinite cubic-bezier(0.7, 0.7, 0.1, 0.4);
+       }
+      
+      
+      #body1,#body2,#wing-l,#wing-r {
+            width: 0px; height: 0px;
+          border-color: transparent;
+          border-style: solid;
+      }
+      #body1 {
+          border-width: 15px; 
+        border-left-width:25px;
+        border-top-width:15px;
+        border-right-width: 55px;
+        border-top-color: #333;
+      }
+      
+      #body2 { 
+        left: 50px; bottom: 0px;
+          border-width: 10px; 
+        border-left-width:5px;
+        border-top-width:0px;
+        border-right-width: 15px;
+        border-bottom-color: #777;
+      }
+      
+      #wing-l {
+        left: 22px; bottom: 0px; 
+          border-width: 60px; 
+        border-left-width:20px;
+        border-top-width:0px;
+        border-right-width: 6px;
+        border-bottom-color: #444;
+        -webkit-animation: flap-l 0.7s infinite; 
+      }
+      
+      #wing-r {
+        left: 22px; top:0px;
+          border-width: 60px; 
+        border-left-width:20px;
+        border-bottom-width:0px;
+        border-right-width: 6px;
+        border-top-color: #777;
+        -webkit-animation: flap-r 0.7s infinite; 
+      }
+      
+      
+      #caption a {
+        position:absolute;
+        font-family: courier;
+        left:10px; bottom:10px;
+        color: #444;
+      }
 }
