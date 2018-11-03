@@ -514,14 +514,18 @@ footer {
 
 @media only screen and (max-width: 767px) {
   .nav_space {
-    margin-top: 95px; }
+    height: 110px;
+    background-color: #a4ddfa; }
   .cloud {
-    text-align: right;
-    padding: 5%; }
-  .cloud img {
+    position: relative;
+    right: 71%;
+    animation: mymoveright 80s infinite;
+    -webkit-animation: mymoveright 80s infinite;
     width: 20%; }
+  .cloud img {
+    width: 100%; }
   .signUp {
-    background-color: #00B5BD;
+    background-color: #a4ddfa;
     width: 100%; }
   .signUp_newmem_box {
     text-align: center;
@@ -544,8 +548,54 @@ footer {
     background-color: #fff100;
     width: 120px;
     height: 35px; }
-  .orchard img,
-  .orchard2 img {
+  .cloud2 {
+    position: relative;
+    animation: mymove 80s infinite;
+    -webkit-animation: mymove 80s infinite;
+    width: 25%; }
+    .cloud2 img {
+      width: 100%; }
+  @keyframes mymove {
+    from {
+      left: 0px; }
+    to {
+      left: 100%;
+      top: 5%; } }
+  @keyframes mymoveright {
+    from {
+      left: 80%; }
+    to {
+      left: 5%;
+      top: 5%; } }
+  .windmill {
+    width: 50%;
+    position: relative;
+    margin: 15% auto 0 auto;
+    z-index: 1; }
+    .windmill img {
+      width: 100%; }
+  .fan {
+    position: absolute;
+    top: -20%;
+    left: -16%;
+    width: 140%;
+    animation: wind 1.25s linear infinite; }
+    .fan img {
+      width: 100%; }
+  @keyframes wind {
+    0% {
+      transform: rotate(0deg); }
+    25% {
+      transform: rotate(90deg); }
+    50% {
+      transform: rotate(180deg); }
+    75% {
+      transform: rotate(270deg); }
+    100% {
+      transform: rotate(360deg); } }
+  .grass {
+    display: none; }
+  .orchard img {
     display: none; }
   .confirm {
     position: relative;
@@ -553,26 +603,35 @@ footer {
   input {
     margin: 4px 2px;
     padding: 5px 0px;
-    display: inline-block; } }
+    display: inline-block; }
+  footer {
+    background-color: #dde4b7; } }
 
 @media all and (min-width: 768px) {
   .nav_space {
-    margin-top: 110px; }
-  .signUp {
-    background-color: #00B5BD; }
+    height: 110px; }
+  .signUp_section {
+    background-color: #a4ddfa;
+    overflow: hidden;
+    height: 100vh; }
   .cloud {
-    text-align: right;
-    padding: 5%; }
+    text-align: left;
+    padding: 5%;
+    position: relative;
+    position: relative;
+    animation: mymove 70s infinite;
+    -webkit-animation: mymove 70s infinite; }
   .cloud img {
     width: 20%; }
   input {
     width: 50%;
-    padding: 5px 20px;
-    margin: 8px 8px;
+    padding: 2% 4%;
+    margin: 3% 3.5%;
     display: inline-block; }
   .signUp_newmem {
     position: relative;
-    left: 58%; }
+    left: 58%;
+    z-index: 1; }
   .signUp_newmem_box h2 {
     position: relative;
     top: -30px; }
@@ -581,10 +640,9 @@ footer {
     right: 14px; }
   .signUp_explain {
     position: relative;
-    right: 42%;
-    height: calc(100vh - 163px); }
+    right: 42%; }
   .signUp_explain_box {
-    width: 60%;
+    width: 66%;
     margin: auto; }
   .signUp_explain_box > p {
     line-height: 1.6; }
@@ -602,15 +660,63 @@ footer {
     width: 120px;
     height: 35px;
     margin-top: 18px; }
-  .orchard {
-    text-align: center;
-    padding: 3%; }
-  .orchard img {
+  .btn:hover {
+    color: #fff; }
+  .cloud2 {
+    position: relative;
+    animation: mymove 80s infinite;
+    -webkit-animation: mymove 80s infinite; }
+  .cloud2 img {
     width: 20%; }
-  .orchard2 {
+  @keyframes mymove {
+    from {
+      left: 0px; }
+    to {
+      left: 100%;
+      top: 5%; } }
+  .windmill {
+    width: 20%;
+    position: relative;
+    margin: 5% auto;
+    z-index: 1; }
+    .windmill img {
+      width: 100%; }
+  .fan {
     position: absolute;
-    bottom: 0;
-    left: 25%;
-    width: 38%; }
-    .orchard2 img {
-      width: 100%; } }
+    top: -20%;
+    left: -14%;
+    width: 140%;
+    animation: wind 1.25s linear infinite; }
+    .fan img {
+      width: 100%; }
+  @keyframes wind {
+    0% {
+      transform: rotate(0deg); }
+    25% {
+      transform: rotate(90deg); }
+    50% {
+      transform: rotate(180deg); }
+    75% {
+      transform: rotate(270deg); }
+    100% {
+      transform: rotate(360deg); } }
+  .grass {
+    display: block;
+    max-width: 350px;
+    max-height: 350px;
+    margin: auto;
+    position: absolute;
+    bottom: -15%;
+    left: 56%;
+    z-index: 0; }
+  .grass2 {
+    display: block;
+    max-width: 350px;
+    max-height: 350px;
+    margin: auto;
+    position: absolute;
+    bottom: -15%;
+    left: 20%;
+    z-index: 0; }
+  footer {
+    background-color: #dde4b7; } }
