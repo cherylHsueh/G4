@@ -30,10 +30,10 @@ path:hover {
 .title_area {
   width: 25%;
   position: absolute;
-  left: 35%;
-  top: 20%;
+  left: 50%;
+  top: 19%;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   padding: 2%;
 }
 
