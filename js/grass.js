@@ -5,6 +5,7 @@ function strToHex(str){
 
 var Color = net.brehaut.Color;
 
+// 抓右邊的草
 
 canvas  = document.getElementById("canvas");
 ctx = canvas.getContext('2d');
@@ -40,10 +41,10 @@ var osc1=0;
 var grass=new Array();
 
 for(var i=0;i<9;i++)
-grass.push(new Blade(185+i*30,300,40+Math.random()*10,60+Math.random()*40,"#00644d"));
+grass.push(new Blade(185+i*30,300,40+Math.random()*10,60+Math.random()*40,"#009e52"));
 
 for(var i=0;i<10;i++){
-grass.push(new Blade(170+i*30,300,30+Math.random()*10,60+Math.random()*30,"#009e52"));
+grass.push(new Blade(170+i*30,300,30+Math.random()*10,60+Math.random()*30,"yellowgreen"));
 }
 
 draw = function(){
@@ -59,6 +60,7 @@ update=function(){
     for(i=0;i<grass.length;i++)
       grass[i].update();
 }
+console.log('canvas');
 
 setInterval( draw, 1000/60);
 setInterval( update, 1000/60);
