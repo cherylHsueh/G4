@@ -943,10 +943,6 @@ body {
 
     //BLOGSUBMIT
 
-    .blogSubmit_bgc {
-        // background: linear-gradient(180deg, rgb(244, 214, 109), white);
-    }
-
     .blogSubmit_Headingbox {
         .blog_Heading {
             @extend %blog_title;
@@ -1006,17 +1002,6 @@ body {
                     line-height: 4;
                     font-size: 5vw;
                 }
-            }
-        }
-    }
-
-    .blogSubmit_RightBox {
-        // padding: 1% 0;
-
-        // background-color: rgb(145, 243, 53);
-        .blog_Rank_ContentBox {
-            .blog_Rank_BottomBox_Title {
-                // font-size: vw;
             }
         }
     }
@@ -1756,7 +1741,6 @@ body {
         .blog_Forum_SubButtonContainer_Pic {
             display: block;
             width: 20px;
-            vertical-align: middle;
             @extend %float_L_desk;
 
             img {
@@ -2493,9 +2477,6 @@ body {
 
     //BLOGSUBMIT
 
-    .blogSubmit_bgc {
-        // background: linear-gradient(180deg, rgb(244, 214, 109), white);
-    }
 
     .blogSubmit_Headingbox {
         .blog_Heading {
