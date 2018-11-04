@@ -56,20 +56,23 @@ body {
 //手機開始
 @include rwd(mobile) {
 
-  .diy_pickFruit_wrapper{
+  .diy_pickFruit_wrapper {
     position: relative;
-    .cloud1{
+
+    .cloud1 {
       width: 25%;
       position: absolute;
       top: 0;
       right: 30px;
     }
-    .cloud2{
+
+    .cloud2 {
       // width: 80px
       position: absolute;
       top: -10px;
       left: 20px;
-      img{
+
+      img {
         width: 20%;
       }
     }
@@ -417,19 +420,6 @@ body {
   .diy_pickFruit_nextButton {
     margin: 20px 0;
     text-align: center;
-
-    a {
-      background-color: $buttoncolor;
-      padding: 10px 30px;
-      border-radius: 5px;
-      color: $mainfontcolor;
-      transition: 1s;
-
-      &:hover {
-        background-color: #f1900f;
-        color: #fefefe;
-      }
-    }
   }
 
   .tree1 {
@@ -501,20 +491,23 @@ body {
 //平板開始
 @include rwd(medium) {
 
-  .diy_pickFruit_wrapper{
+  .diy_pickFruit_wrapper {
     position: relative;
-    .cloud1{
+
+    .cloud1 {
       width: 200px;
       position: absolute;
       top: 0;
       right: 30px;
     }
-    .cloud2{
+
+    .cloud2 {
       // width: 80px
       position: absolute;
       top: -10px;
       left: 20px;
-      img{
+
+      img {
         width: 250px;
       }
     }
@@ -971,19 +964,6 @@ body {
   .diy_pickFruit_nextButton {
     margin: 10px 0;
     text-align: center;
-
-    a {
-      background-color: $buttoncolor;
-      padding: 10px 30px;
-      border-radius: 5px;
-      color: $mainfontcolor;
-      transition: 1s;
-
-      &:hover {
-        background-color: #f1900f;
-        color: #fefefe;
-      }
-    }
   }
 
   .tree1 {
