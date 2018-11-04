@@ -1,7 +1,17 @@
 function doFirst() {
+//第一屏地球放大，字出現的動畫
+	document.querySelector('.homepage_header_ballBox').style.transform="scale(1)";
+	setTimeout(function(){
+		document.querySelector('.homepage_header_titleBlock').style.opacity=1;
+		document.querySelector('.homepage_header_carBox').style.opacity=1;
+	},3500);
+
+	setTimeout(typeAnimation, 2000);
+
 //初始化卷軸
+
 	var controller = new ScrollMagic.Controller();
-	
+//果汁DIY
 	var sceneDiy =new ScrollMagic.Scene({
 		triggerElement:'#homepageDiy',
 		duration: 200,    
@@ -19,28 +29,132 @@ function doFirst() {
 
 		},1200);
 	})
-	.addIndicators({
-        name: 'diy',
-        colorStart: '#f20',
-        colorEnd: '#000'
-    })
+	// .addIndicators({
+    //     name: 'diy',
+    //     colorStart: '#f20',
+    //     colorEnd: '#000'
+    // })
 	.addTo(controller);
+//果然特調	
+	var windowWidth = window.screen.width;
+	var ship = document.getElementById('homepageTestShip');
+	if(windowWidth<768){
+		var cloud2 = TweenMax.to('.homepage_test_animatePic2',2,{x:30});
+		var cloud3 = TweenMax.to('.homepage_test_animatePic3',2,{x:-60});
+		var fruit5 = TweenMax.to('.homepage_test_animatePic5',2.5,{y:50});
+		var fruit8 = TweenMax.to('.homepage_test_animatePic8',3.5,{y:90});
+		var cloud4 = TweenMax.to('.homepage_test_animatePic4',2,{x:-60});
 
-	// var sceneBlog =new ScrollMagic.Scene({
-	// 	triggerElement:'#homepageBlog',
-	// 	duration: 200,    
-	// })
-	// .on('enter',header_blog)
+		var sceneTest1 =new ScrollMagic.Scene({
+			triggerElement:'#homepageTest',
+			offset:150,
+		})
+		.setTween([cloud2,cloud3])
+		// .addIndicators({
+		//     name: 'test',
+		//     colorStart: '#f20',
+		//     colorEnd: '#000'
+		// })
+		.addTo(controller);
+
+		var sceneTest =new ScrollMagic.Scene({
+			triggerElement:'#homepageTest',
+			offset:250,
+		})
+		.setTween([fruit5,fruit8,cloud4])
+		// .addIndicators({
+		//     name: 'test',
+		//     colorStart: '#f20',
+		//     colorEnd: '#000'
+		// })
+		.addTo(controller);
+	}else{
+		if(windowWidth>=768 && windowWidth<1024){
+			var ship = TweenMax.to('#homepageTestShip',6,{
+				x:-windowWidth-50,
+			});
+		}else if(windowWidth>=1024 && windowWidth<1440){
+			var ship = TweenMax.to('#homepageTestShip',6,{
+				x:-windowWidth*3/4,
+			});
+		}else if(windowWidth>=1440){
+			var ship = TweenMax.to('#homepageTestShip',6,{
+				x:-windowWidth/2,
+			});
+		}
+		var sceneTest =new ScrollMagic.Scene({
+			triggerElement:'#homepageTest',
+			duration: 200,    
+			reverse:false,
+			offset:150,
+		})
+		// .on('enter',function(){
+		// 	ship.style.left="10%";
+			
+		// })
+		.setTween(ship)
+		.addIndicators({
+		    name: 'test',
+		    colorStart: '#f20',
+		    colorEnd: '#000'
+		})
+		.addTo(controller);
+	}
+	
+
+//果粉私藏
+	header_blog();
+	var sceneBlog =new ScrollMagic.Scene({
+		triggerElement:'#homepageBlog',
+		
+		duration: 200,
+		reverse:false,
+		offset:window.screen.width/300,    
+		
+	})
+	.on('enter',function(){
+		var blogPerson = document.querySelector('.homepage_blog_platBlock');
+		blogPerson.style.opacity="1";
+		var t1 = TweenMax.to('.homepage_blog_platBlock',3,{
+			scale:"1.5",
+		})
+		setTimeout(function(){
+			var t1 = TweenMax.to('.homepage_blog_platBlock',3,{
+				scale:"1",
+			})
+			var blogButon = document.querySelector('.homepage_blog_btnBlock');
+			var blogPepper = document.querySelector('.homepage_blog_papperBlock');
+			var blogPerson = document.querySelector('.homepage_blog_platBlock');
+			
+			blogButon.style.opacity="1";
+			blogPepper.style.opacity="1";
+			blogPepper.style.bottom=0;
+			blogPerson.style.left=0;
+			blogPerson.style.bottom=0;
+			
+			
+
+			var t1 = TweenMax.set('.homepage_blog_platBlock',{
+				scale:"1",
+			})
+			
+		},3000);
+		setTimeout(function(){
+				document.querySelector('.homepage_blog_person2').className+=" homepage_blog_person-active";
+			},6500);
+	})
 	// .addIndicators({
     //     name: 'blog',
     //     colorStart: '#f20',
     //     colorEnd: '#000'
     // })
-	// .addTo(controller);
-
+	.addTo(controller);
+//關於果然
 	var sceneAbout =new ScrollMagic.Scene({
 		triggerElement:'#homepageAbout',
 		duration: '100%',    
+		reverse:false,
+		offset:window.screen.width/300,  
 	})
 	.on('enter',function(){
 		$("#illustration_france").find("div");
@@ -75,47 +189,15 @@ function doFirst() {
 					ease: "Back.easeOut"
 				})
 			})
-		}, 400);
+		}, 300);
 	})
-	.addIndicators({
-        name: 'about',
-        colorStart: '#f20',
-        colorEnd: '#000'
-    })
+	// .addIndicators({
+    //     name: 'about',
+    //     colorStart: '#f20',
+    //     colorEnd: '#000'
+    // })
 	.addTo(controller);
-//滿屏一頁效果
-	// new fullpage('#fullpage', {
-	// 	//options here
-	// 	anchors: ['homepage_header', 'homepage_diy', 'homepage_test', 'homepage_blog', 'homepage_about'],
-	// 	//autoScrolling:true,//手動滾動時，無法停留在頁面與頁面中間
-	// 	fitToSection: true, //手動滾動時，在頁面與頁面中間停留，會強制移到下一頁面
-	// 	navigation: true, //顯示導行列
-	// 	css3: true,
-	// 	easing: 3,
-	// 	controlArrow: false,
-	// 	// scrollBar:true,
-	// 	afterLoad: function (anchorLink, index) {
-	// 		var loadedSection = $(this);
 
-	// 		//using index
-	// 		//把開場動畫放進來
-	// 		if (index.index == 1) {
-	// 			setTimeout(lightRotation,10);
-	// 		} else if (index.index == 3) {
-	// 			//私藏的彩帶動畫
-	// 			header_blog();
-
-	// 		} else if (index.index == 4) {
-	// 			//("父層ID")
-	// 			animate_illustration("illustration_france", "div.aaa,div.mountain,div.tree,div.grass");
-	// 			// setTimeOut('animate_illustration("illustration_france")',1000);
-
-	// 		}
-
-
-	// 	}
-	// });
-	//第一屏動畫
 
 	setTimeout(function () {
 		var homepageHeaderItems = document.querySelectorAll('.homepage_header_box');
@@ -123,23 +205,9 @@ function doFirst() {
 			homepageHeaderItems[i].style.opacity = '1';
 		};
 	}, 1);
-	setTimeout(typeAnimation, 0);
-	//第一屏水果滾動動畫
-
 	
 
 	
-
-};
-
-
-
-//第一屏的Parallax
-function headerParallax() {
-	var homepageHeaderItems = document.querySelectorAll('.homepage_header_fruitPic');
-	for (var i = 0; i < homepageHeaderItems.length; i++) {
-		var parallax = new Parallax(homepageHeaderItems[i]);
-	};
 
 };
 
@@ -158,17 +226,13 @@ function typeAnimation() {
 			targets: '.homepage_header_textBox .homepage_header_text',
 			translateY: ["1.8em", 0],
 			translateZ: 14,
-			duration: 1200,
+			duration: 1500,
 			delay: function (el, i) {
 				return 110 * i;
 			}
 		});
 };
-
-function lightRotation(){
-	
-	
-}
+// 雪花
 function header_blog() {
 	var snowflakeURl = [
 		'images/homepage/red.png',
@@ -193,7 +257,7 @@ function header_blog() {
 		// 创建一个雪花元素
 		function createSnowBox() {
 			var url = getImagesName();
-			visualWidth = container.width();
+			visualWidth = window.screen.width;
 			if (visualWidth < 1024) {
 				return $('<div class="snowbox" />').css({
 					'width': visualWidth / 30,
