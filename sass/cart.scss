@@ -7,14 +7,12 @@
 //         outline: 1px solid #F00;
 //     }
 
-footer{
+footer {
     position: relative;
 }
-.footer_block {
-    background-color: #dde4b7;
-}
+
 @include rwd(mobile) {
- 
+
     .space {
         height: 130px;
         width: 100%;
@@ -23,6 +21,7 @@ footer{
     .cart_shoppingProcess_control {
         width: 100%;
         text-align: center;
+
         img {
             width: 5%;
         }
@@ -166,7 +165,7 @@ footer{
             line-height: 22px;
             padding: 10px 15px;
             margin: 0 auto;
-            font-weight: bold;       
+            font-weight: bold;
         }
     }
 
@@ -206,6 +205,7 @@ footer{
             width: 40%;
             text-align: center;
             vertical-align: middle;
+
             img {
                 width: 30%;
                 height: 7.5vh;
@@ -230,11 +230,13 @@ footer{
 
         .cart_productQuantity {
             width: 10%;
-            select{
+
+            select {
                 width: 80%;
                 color: #6a3906;
                 font-weight: bold;
-                option{
+
+                option {
                     font-weight: bold;
                     color: #6a3906;
                     border: 1px solid #6a3906;
@@ -244,6 +246,7 @@ footer{
 
         .cart_productPrice {
             width: 30%;
+
             p {
                 color: #6a3906;
                 font-weight: bold;
@@ -294,10 +297,11 @@ footer{
             font-weight: bold;
             color: #6a3906;
             border: 1px solid #6a3906;
-            option{
+
+            option {
                 font-weight: bold;
                 color: #6a3906;
-                border: 1px solid #6a3906;    
+                border: 1px solid #6a3906;
             }
         }
 
@@ -459,11 +463,13 @@ footer{
             padding: 10px 0;
         }
     }
+
     .space2 {
         height: 50px;
         width: 100%;
     }
-    .cart_shoppingNotes{
+
+    .cart_shoppingNotes {
         max-width: 1000px;
         width: 80%;
         margin: 0 auto;
@@ -542,10 +548,11 @@ footer{
         .cart_productName {
             width: 50%;
             text-align: center;
+
             img {
                 width: 120px;
                 float: left;
-                text-align: center;           
+                text-align: center;
             }
 
             p {
@@ -564,12 +571,14 @@ footer{
 
         .cart_productQuantity {
             width: 20%;
-            select{
+
+            select {
                 font-weight: bold;
                 width: 30%;
                 height: 2vh;
-                border:2px solid #6a3906;
-                option{
+                border: 2px solid #6a3906;
+
+                option {
                     font-weight: bold;
                     color: #6a3906;
                     border: 1px solid #6a3906;
@@ -582,7 +591,7 @@ footer{
 
             p {
                 font-size: 20px;
-                color:#6a3906;
+                color: #6a3906;
                 width: 35px;
                 display: inline-block;
                 vertical-align: middle;
@@ -600,6 +609,7 @@ footer{
 
         .cart_productCancel {
             width: 10%;
+
             img {
                 width: 20%;
             }
@@ -609,16 +619,18 @@ footer{
     .cart_priceCalculation {
         width: 1200px;
         margin: 0 auto;
-        .cart_priceCalculation_content{
+
+        .cart_priceCalculation_content {
             width: 1000px;
             margin: 0 auto;
+
             p {
                 font-size: 20px;
                 font-weight: bold;
                 color: #6a3906;
                 margin: 5px auto;
             }
-    
+
             span {
                 font-size: 20px;
                 display: inline-block;
@@ -626,35 +638,19 @@ footer{
                 font-weight: bold;
                 margin: 5px auto;
             }
-    
+
             select {
                 font-weight: bold;
                 font-size: 18px;
                 color: #6a3906;
                 border: 2px solid #6a3906;
-                option{
+
+                option {
                     font-weight: bold;
                     color: #6a3906;
                     border: 1px solid #6a3906;
                 }
             }
-    
-            .cart_nextstep {
-                width: 100%;
-                margin: 0 auto;
-                button {
-                    width: 120px;
-                    height: 4vh;
-                    border-radius: 10px;
-                    background-color: rgb(255, 241, 0);
-                    color: $mainfontcolor;
-                    font-weight: bold;
-                    font-size: 18px;
-                    display: block;
-                    margin: 0 auto;
-                }
-            }
-    
             img {
                 width: 300px;
                 float: right;
@@ -662,8 +658,5 @@ footer{
                 padding: 30px;
             }
         }
-       
-
     }
-
 }
