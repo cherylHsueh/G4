@@ -8,6 +8,7 @@
     <title>果然配</title>
     <link rel="stylesheet" href="css/blog.css">
     <script src='js/global.js'></script>
+    <script src="js/plugin/jquery-3.3.1.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -65,17 +66,30 @@
         <div class="robot"><img src="images/robot.png" alt="果然配客服機器人"></div>
     </header>
 
-    <div class="blogIn_bgc">
+    <div class="umbrellaApple">
+        <img src="images/blogImg/umbrellaApple.png" alt="降落傘蘋果">
+    </div>
 
+    <div class="blogIn_bgc">
+        <!-- <div class="umbrellaApple">
+            <img src="images/blogImg/umbrellaApple.png" alt="降落傘蘋果">
+        </div> -->
         <div class="space"></div>
 
         <!-- SHARE_ARTICAL -->
-        <div class="blogIn_Headingbox">
-            <h2 class="blog_Heading">分享配方</h2>
-        </div>
+
+
         <section class="blogIn_Share">
             <div class="wrapper">
-
+                <div class="blogIn_Headingbox">
+                    <div class="blogIn_umbrellaguava">
+                        <img src="images/blogImg/umbrellaGuava.png" alt="熱氣球芭樂">
+                    </div>
+                    <h2 class="blog_Heading">分享配方</h2>
+                    <div class="blogIn_cloud">
+                        <img src="images/cloud(03).png" alt="雲">
+                    </div>
+                </div>
                 <div class="blogIn_Container clearfix">
                     <div class="blogIn_LeftBox cl-md-6">
                         <div class="blogIn_LeftBox_Pic">
@@ -174,6 +188,9 @@
         </section>
 
         <section class="blogIn_Msg">
+            <div class="umbrellaOrange">
+                <img src="images/blogImg/umbrellaOrange.png" alt="降落傘柳橙">
+            </div>
             <div class="wrapper">
                 <div class="blogIn_Msg_sendContainer">
                     <div id="blogIn_Msg_SendBlock" class="blogIn_Msg_SendBlock clearfix">
@@ -256,20 +273,40 @@
                         </div>
                     </form>
                 </div>
+                <div class="umbrellaMandarin">
+                    <img id="blogIn_umbrellaMandarin" src="images/blogImg/umbrellaMandarin.png" alt="熱氣球橘子">
+                </div>
         </section>
 
         <section class="blogIn_ButtonContainer">
-            <a href="blog.html" class="blogIn_ButtonItem">看看別人怎麼做</a>
-            <a href="diy.html" class="blogIn_ButtonItem">試試他的配方</a>
+            <a class="common_btn common_btn_first" href="blog.html">
+                <span class="common_btn_txt">看看別人怎麼做</span>
+                <div class="common_btn_blobs">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </a>
+            <a class="common_btn common_btn_second" href="diy.html">
+                <span class="common_btn_txt">試試他的配方</span>
+                <div class="common_btn_blobs">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </a>
         </section>
     </div>
+
+    <!-- <div class="umbrellaMandarin">
+        <img id="blogIn_umbrellaMandarin" src="images/blogImg/umbrellaMandarin.png" alt="熱氣球橘子">
+    </div> -->
+
     <footer>
         <div class="footer_wrapper">
             <div class="footer_block clearfix">
                 <div class="footer_rightBox">
                     <div class="footer_rightContent">
-                        <p class="desc">地址:桃園市中壢區中大路111號</p>
-                        <p class="desc">電話:(03)49111853</p>
                         <p class="copyright">Copyright © All Rights Reserved.</p>
                     </div>
                 </div>
@@ -278,6 +315,7 @@
         </div>
 
     </footer>
+
     <script src="js/blog.js"></script>
 
 
