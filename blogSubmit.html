@@ -67,15 +67,17 @@
 
     <div class="blogSubmit_bgc">
         <div class="space"></div>
-
-        <!-- SUBMIT_ARTICAL -->
-        <div class="blogSubmit_Headingbox">
-            <h2 class="blog_Heading">分享配方</h2>
+        <div class="blogSubmit_board">
+            <img src="images/blogImg/board.png" alt="布告欄">
         </div>
+        <!-- SUBMIT_ARTICAL -->
+
         <section class="blogSubmit_Share">
             <div class="wrapper">
-
-                <form method="get" action="">
+                <div class="blogSubmit_Headingbox">
+                    <h2 class="blog_Heading">分享配方</h2>
+                </div>
+                <form id="blogSubmit_form" method="get" action="">
                     <div class="blogSubmit_Container clearfix">
                         <div class="blogSubmit_LeftBox cl-md-6">
                             <input id="picture" type="file" style="display: none">
@@ -184,19 +186,28 @@
                         </div>
 
                     </div>
-                    <a href="javascript:;" id="blogSubmit_ButtonItem" class="blogSubmit_ButtonItem">上傳文章</a>
+                    <a class="common_btn common_btn_first" href="javascript:;">
+                        <span class="common_btn_txt">上傳文章</span>
+                        <div class="common_btn_blobs">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </a>
                 </form>
+
             </div>
 
         </section>
     </div>
+    <!-- <div class="blogSubmit_board">
+        <img src="images/blogImg/board.png" alt="布告欄">
+    </div> -->
     <footer>
         <div class="footer_wrapper">
             <div class="footer_block clearfix">
                 <div class="footer_rightBox">
                     <div class="footer_rightContent">
-                        <p class="desc">地址:桃園市中壢區中大路111號</p>
-                        <p class="desc">電話:(03)49111853</p>
                         <p class="copyright">Copyright © All Rights Reserved.</p>
                     </div>
                 </div>
