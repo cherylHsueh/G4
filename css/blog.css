@@ -592,6 +592,7 @@ body {
   .blog_Heading {
     width: 90%;
 <<<<<<< HEAD
+<<<<<<< HEAD
     margin: 10px auto 0; }
 =======
     margin: 10px auto 0;
@@ -599,6 +600,9 @@ body {
     border-top-left-radius: 10px;
     background-color: #f5ba5b; }
 >>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+    margin: 10px auto 0; }
+>>>>>>> commit blog 微修
   .blog_Subheading {
     margin-bottom: 20px; }
   .blog_Rank {
@@ -1005,6 +1009,7 @@ body {
       opacity: 0; } }
   .blogIn_Share {
 <<<<<<< HEAD
+<<<<<<< HEAD
     margin: 5% 0; }
     .blogIn_Share .blogIn_Headingbox {
       margin: 0 5%;
@@ -1017,6 +1022,15 @@ body {
     .blogIn_Share .blogIn_Headingbox {
       position: relative; }
 >>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+    margin: 5% 0; }
+    .blogIn_Share .blogIn_Headingbox {
+      margin: 0 5%;
+      position: relative;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      background-color: #f5ba5b; }
+>>>>>>> commit blog 微修
       .blogIn_Share .blogIn_Headingbox .blogIn_umbrellaguava {
         width: 20%;
         position: absolute;
@@ -1343,12 +1357,17 @@ body {
   form {
     text-align: center; }
 <<<<<<< HEAD
+<<<<<<< HEAD
     form .common_btn_first {
       margin-bottom: 50px; }
 =======
   .common_btn_first {
     margin-bottom: 50px; }
 >>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
+=======
+    form .common_btn_first {
+      margin-bottom: 50px; }
+>>>>>>> commit blog 微修
   .footer_wrapper {
     text-align: center; }
     .footer_wrapper .footer_block {
@@ -2406,6 +2425,9 @@ body {
     text-align: center; }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit blog 微修
     form .common_btn_first {
       max-width: 300px;
       position: absolute;
@@ -2413,6 +2435,7 @@ body {
       left: 10%;
       transform: rotate(10deg);
       animation: buttonscale 2s infinite alternate-reverse; }
+<<<<<<< HEAD
   @keyframes buttonscale {
     from {
       transform: rotate(20deg); }
@@ -2441,6 +2464,8 @@ body {
     left: 10%;
     transform: rotate(10deg);
     animation: buttonscale 2s infinite alternate-reverse; }
+=======
+>>>>>>> commit blog 微修
   @keyframes buttonscale {
     from {
       transform: rotate(20deg); }
