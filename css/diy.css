@@ -316,7 +316,7 @@ header {
   top: 0;
   height: 140px;
   width: 300%;
-  fill: rgba(255, 255, 255, 0.5);
+  fill: white;
   -webkit-animation: move 5s 1s linear infinite alternate;
   animation: move 5s .5s linear infinite alternate; }
 
@@ -341,10 +341,10 @@ header {
 
 .coupon {
   position: fixed;
-  width: 110px;
-  top: 20%;
+  width: 100px;
+  top: 110px;
   right: 2%;
-  z-index: 50; }
+  z-index: 100; }
 
 @media only screen and (max-width: 767px) {
   .robot {
@@ -354,7 +354,11 @@ header {
     width: 70px; }
   #svg-2 {
     transition: height 1.3s 0.5s ,width 2s; }
-  #wave, #wave2 {
+  #wave {
+    height: 95px;
+    transition: 1s; }
+  #wave2 {
+    height: 100px;
     transition: 1s; }
   .menu {
     text-align: center;
@@ -376,12 +380,12 @@ header {
     width: 100%;
     margin-top: 7px; }
     .ph_nav .phone_logo {
-      width: 80px;
+      width: 60px;
       margin: auto; }
     .ph_nav .hb {
       padding: 20px 15px;
       float: left;
-      margin: 20px 0 0 5%; }
+      margin: 14px 0 0 5%; }
       .ph_nav .hb span {
         display: block;
         height: 2px;
@@ -408,6 +412,7 @@ header {
 #hb_control:checked ~ nav #wave {
   transition: 2s;
   width: 900%;
+  height: 107vh;
   animation: move2 3s 1s linear infinite alternate; }
 
 #hb_control:checked ~ nav #wave2 {
@@ -444,7 +449,7 @@ header {
 
 @keyframes move {
   0% {
-    transform: translate(-40%, 0%); }
+    transform: translate(-30%, 0%); }
   100% {
     transform: translate(0%, 0%); } }
 
@@ -466,13 +471,16 @@ header {
   100% {
     transform: translate(0%, 0%); } }
 
-/*分頁做法
-header nav  li:nth-child(2) > a:after {
-    transform: scaleX(1);
-}
-*/
+section {
+  width: 100%;
+  height: 100vh; }
+
 .navSpace {
   margin-top: 140px; }
+
+body {
+  background: #a4ddfa;
+  background: linear-gradient(0deg, #a4ddfa 1%, #73c9f5 36%, #6ec9f7 71%, #45b0e6 100%); }
 
 .diy_pickFruit {
   position: relative;
@@ -482,6 +490,19 @@ header nav  li:nth-child(2) > a:after {
   display: none; }
 
 @media only screen and (max-width: 767px) {
+  .diy_pickFruit_wrapper {
+    position: relative; }
+    .diy_pickFruit_wrapper .cloud1 {
+      width: 25%;
+      position: absolute;
+      top: 0;
+      right: 30px; }
+    .diy_pickFruit_wrapper .cloud2 {
+      position: absolute;
+      top: -10px;
+      left: 20px; }
+      .diy_pickFruit_wrapper .cloud2 img {
+        width: 20%; }
   .diy_pickFruit_stepBlock {
     text-align: center;
     margin: 0 auto; }
@@ -530,7 +551,10 @@ header nav  li:nth-child(2) > a:after {
       color: #5e4909; }
   .diy_pickFruit_allWrapper {
     display: flex;
-    flex-direction: column-reverse; }
+    flex-direction: column-reverse;
+    border-radius: 20px;
+    background-color: #fff;
+    margin: 20px 10px; }
   .diy_pickFruit_leftBlock {
     position: relative;
     width: 90%;
@@ -539,23 +563,13 @@ header nav  li:nth-child(2) > a:after {
     margin-top: -15px; }
     .diy_pickFruit_leftBlock .diy_pickFruit_leftBox {
       width: 400%; }
-      .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .diy_pickFruit_leftItem {
+      .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .diy_pickFruit_picBox {
         display: inline-block; }
-        .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .diy_pickFruit_leftItem .fruitnameBox {
-          position: absolute;
-          bottom: -20px;
-          left: -25px;
-          width: 75px;
-          height: 30px;
-          border-radius: 10px;
-          background-color: #e3fd70; }
-      .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .fruitbgc {
-        background-color: #774915; }
   .diy_pickFruit_leftItem {
     max-width: 100px;
     border: 2px solid #593100;
     border-radius: 10px;
-    background-color: #c96e0d;
+    background-color: #e9c9a5;
     box-sizing: border-box; }
     .diy_pickFruit_leftItem .fruiticon {
       position: relative;
@@ -563,194 +577,79 @@ header nav  li:nth-child(2) > a:after {
       max-width: 80px;
       margin-left: 10px;
       cursor: pointer; }
+    .diy_pickFruit_leftItem #f1 {
+      width: 80%; }
   .diy_pickFruit_leftItem1 {
     position: relative; }
-    .diy_pickFruit_leftItem1:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      display: inline-block;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: #bd6308; }
   .diy_pickFruit_leftItem2 {
     position: relative; }
-    .diy_pickFruit_leftItem2:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      display: inline-block;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: #bd6308; }
   .diy_pickFruit_leftItem3 {
     position: relative; }
-    .diy_pickFruit_leftItem3:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      display: inline-block;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: #bd6308; }
   .diy_pickFruit_leftItem4 {
     position: relative; }
-    .diy_pickFruit_leftItem4:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      display: inline-block;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: #bd6308; }
   .diy_pickFruit_leftItem5 {
     position: relative; }
-    .diy_pickFruit_leftItem5:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      display: inline-block;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: #bd6308; }
   .diy_pickFruit_leftItem6 {
     position: relative; }
-    .diy_pickFruit_leftItem6:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      display: inline-block;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: #bd6308; }
   .diy_pickFruit_leftItem7 {
     position: relative; }
-    .diy_pickFruit_leftItem7:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      display: inline-block;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: #bd6308; }
   .diy_pickFruit_leftItem8 {
     position: relative; }
-    .diy_pickFruit_leftItem8:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      display: inline-block;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: #bd6308; }
   .diy_pickFruit_leftItem9 {
     position: relative; }
-    .diy_pickFruit_leftItem9:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      display: inline-block;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: #bd6308; }
   .fruitnamef1 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .fruitnamef2 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .fruitnamef3 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .fruitnamef4 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .fruitnamef5 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .fruitnamef6 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .fruitnamef7 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .fruitnamef8 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .fruitnamef9 {
     display: none;
     position: absolute;
-    left: -20px;
-    bottom: -15px;
+    left: 0px;
+    bottom: -30px;
     z-index: 1; }
   .diy_pickFruit_leftArrow {
     position: absolute;
@@ -783,7 +682,9 @@ header nav  li:nth-child(2) > a:after {
   .diy_pickFruit_rightBlock {
     margin-top: -23px; }
   .diy_pickFruit_leftBox {
-    padding: 0 13%; }
+    padding: 0 13%;
+    position: relative;
+    z-index: 1; }
     .diy_pickFruit_leftBox .diy_pickFruit_wrapperBottleBox {
       position: relative; }
       .diy_pickFruit_leftBox .diy_pickFruit_wrapperBottleBox .diy_pickFruit_bottleBox {
@@ -820,6 +721,7 @@ header nav  li:nth-child(2) > a:after {
     flex-grow: 0;
     transition: 1s; }
   .diy_pickFruit_rightBox {
+    margin: 10px 0;
     padding: 3% 6%; }
   .diy_pickFruit_nextButton {
     margin: 20px 0;
@@ -839,18 +741,24 @@ header nav  li:nth-child(2) > a:after {
     bottom: 0;
     z-index: -1; }
   .tree2 {
-    width: 50px;
+    width: 30px;
     position: absolute;
     bottom: 0;
+    right: 100px;
     z-index: -1; }
   .tree3 {
     width: 70px;
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     right: 0;
-    z-index: -1; }
+    z-index: -2; }
+  .house {
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    z-index: -2; }
   .footer_wrapper {
-    position: relative;
     bottom: 0;
     text-align: center; }
     .footer_wrapper .footer_block {
@@ -865,6 +773,19 @@ header nav  li:nth-child(2) > a:after {
           font-size: 1vw; } }
 
 @media all and (min-width: 768px) {
+  .diy_pickFruit_wrapper {
+    position: relative; }
+    .diy_pickFruit_wrapper .cloud1 {
+      width: 200px;
+      position: absolute;
+      top: 0;
+      right: 30px; }
+    .diy_pickFruit_wrapper .cloud2 {
+      position: absolute;
+      top: -10px;
+      left: 20px; }
+      .diy_pickFruit_wrapper .cloud2 img {
+        width: 250px; }
   .diy_pickFruit_stepBlock {
     text-align: center;
     margin: 0 auto; }
@@ -912,18 +833,14 @@ header nav  li:nth-child(2) > a:after {
   .diy_pickFruit_titleAllWrapper {
     margin-top: 10px;
     padding: 20px 0; }
+  .diy_pickFruit_allWrapper {
+    background-color: #fefefe;
+    margin: 30px;
+    border-radius: 20px; }
   .diy_pickFruit_leftBlock {
     margin: 2% 0; }
     .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .diy_pickFruit_leftItem {
       text-align: center; }
-      .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .diy_pickFruit_leftItem .fruitnameBox {
-        position: absolute;
-        top: -10px;
-        left: -15px;
-        width: 75px;
-        height: 30px;
-        border-radius: 10px;
-        background-color: #e3fd70; }
     .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .fruitbgc {
       background-color: #c78132; }
   .diy_pickFruit_leftItem {
@@ -936,6 +853,9 @@ header nav  li:nth-child(2) > a:after {
       width: 80%;
       max-width: 80px;
       cursor: pointer; }
+    .diy_pickFruit_leftItem #f1 {
+      width: 91%;
+      max-width: 90px; }
   .diy_pickFruit_leftItem1 {
     position: relative; }
   .diy_pickFruit_leftItem2 {
@@ -954,60 +874,138 @@ header nav  li:nth-child(2) > a:after {
     position: relative; }
   .diy_pickFruit_leftItem9 {
     position: relative; }
+  .diy_pickFruit_picBox {
+    position: relative; }
   .fruitnamef1 {
-    display: none;
     position: absolute;
-    left: -10px;
-    top: -5px;
-    z-index: 1; }
+    left: -40px;
+    top: -10px;
+    z-index: 2;
+    font-size: 1.6vw;
+    color: #fefefe; }
   .fruitnamef2 {
-    display: none;
     position: absolute;
-    left: -10px;
-    top: -5px;
-    z-index: 1; }
+    left: -40px;
+    top: -10px;
+    z-index: 2;
+    font-size: 1.6vw;
+    color: #fefefe; }
   .fruitnamef3 {
-    display: none;
     position: absolute;
-    left: -10px;
-    top: -5px;
-    z-index: 1; }
+    left: -40px;
+    top: -10px;
+    z-index: 2;
+    font-size: 1.6vw;
+    color: #fefefe; }
   .fruitnamef4 {
-    display: none;
     position: absolute;
-    left: -10px;
-    top: -5px;
-    z-index: 1; }
+    left: -40px;
+    top: -10px;
+    z-index: 2;
+    font-size: 1.6vw;
+    color: #fefefe; }
   .fruitnamef5 {
-    display: none;
     position: absolute;
-    left: -10px;
-    top: -5px;
-    z-index: 1; }
+    left: -40px;
+    top: -10px;
+    z-index: 2;
+    font-size: 1.6vw;
+    color: #fefefe; }
   .fruitnamef6 {
-    display: none;
     position: absolute;
-    left: -10px;
-    top: -5px;
-    z-index: 1; }
+    left: -40px;
+    top: -10px;
+    z-index: 2;
+    font-size: 1.6vw;
+    color: #fefefe; }
   .fruitnamef7 {
-    display: none;
     position: absolute;
-    left: -10px;
-    top: -5px;
-    z-index: 1; }
+    left: -40px;
+    top: -10px;
+    z-index: 2;
+    font-size: 1.6vw;
+    color: #fefefe; }
   .fruitnamef8 {
-    display: none;
     position: absolute;
-    left: -10px;
-    top: -5px;
-    z-index: 1; }
+    left: -40px;
+    top: -10px;
+    z-index: 2;
+    font-size: 1.6vw;
+    color: #fefefe; }
   .fruitnamef9 {
+    position: absolute;
+    left: -40px;
+    top: -10px;
+    z-index: 2;
+    font-size: 1.6vw;
+    color: #fefefe; }
+  .fruitnamef1, .fruitnamef2, .fruitnamef3, .fruitnamef4, .fruitnamef5, .fruitnamef6, .fruitnamef7, .fruitnamef8, .fruitnamef9 {
     display: none;
     position: absolute;
-    left: -10px;
-    top: -5px;
-    z-index: 1; }
+    z-index: 2;
+    color: #000; }
+  .fruitnamef1 {
+    left: -40px;
+    top: -10px; }
+  .fruitnamef2 {
+    left: 50px;
+    top: -10px; }
+  .fruitnamef3 {
+    left: 140px;
+    top: -10px; }
+  .fruitnamef4 {
+    left: -40px;
+    top: 80px; }
+  .fruitnamef5 {
+    left: 50px;
+    top: 80px; }
+  .fruitnamef6 {
+    left: 140px;
+    top: 80px; }
+  .fruitnamef7 {
+    left: -40px;
+    top: 160px; }
+  .fruitnamef8 {
+    left: 50px;
+    top: 160px; }
+  .fruitnamef9 {
+    left: 140px;
+    top: 160px; }
+  .fruitnameBoxf1, .fruitnameBoxf2, .fruitnameBoxf3, .fruitnameBoxf4, .fruitnameBoxf5, .fruitnameBoxf6, .fruitnameBoxf7, .fruitnameBoxf8, .fruitnameBoxf9 {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 30%;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #89a024; }
+  .fruitnameBoxf1 {
+    top: -15px;
+    left: -45px; }
+  .fruitnameBoxf2 {
+    top: -15px;
+    left: 50px; }
+  .fruitnameBoxf3 {
+    top: -15px;
+    left: 135px; }
+  .fruitnameBoxf4 {
+    top: 75px;
+    left: -45px; }
+  .fruitnameBoxf5 {
+    top: 75px;
+    left: 50px; }
+  .fruitnameBoxf6 {
+    top: 75px;
+    left: 135px; }
+  .fruitnameBoxf7 {
+    top: 155px;
+    left: -45px; }
+  .fruitnameBoxf8 {
+    top: 155px;
+    left: 50px; }
+  .fruitnameBoxf9 {
+    top: 155px;
+    left: 135px; }
   .diy_pickFruit_leftArrow {
     display: none; }
   .diy_pickFruit_rightArrow {
@@ -1026,6 +1024,8 @@ header nav  li:nth-child(2) > a:after {
         background-color: #f09824;
         color: #fefefe; }
   .diy_pickFruit_leftBox {
+    position: relative;
+    z-index: 1;
     max-width: 500px;
     margin: 5% 0;
     padding: 0 9% 0 17%; }
@@ -1091,14 +1091,18 @@ header nav  li:nth-child(2) > a:after {
     right: 0;
     z-index: -1; }
   .tree3 {
-    width: 80px;
+    width: 50px;
     position: absolute;
     bottom: 0;
-    right: 30px;
+    right: 180px;
     z-index: -1; }
-  .footer_wrapper {
-    position: relative;
+  .house {
+    width: 150px;
+    position: absolute;
     bottom: 0;
+    right: 50px;
+    z-index: -2; }
+  .footer_wrapper {
     text-align: center;
     margin: 0 auto; }
     .footer_wrapper .footer_block {
@@ -1134,6 +1138,77 @@ header nav  li:nth-child(2) > a:after {
       width: 80%;
       max-width: 80px;
       cursor: pointer; }
+    .diy_pickFruit_leftItem #f1 {
+      width: 91%;
+      max-width: 90px; }
+  .fruitnamef1, .fruitnamef2, .fruitnamef3, .fruitnamef4, .fruitnamef5, .fruitnamef6, .fruitnamef7, .fruitnamef8, .fruitnamef9 {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    font-size: 16px;
+    color: #000; }
+  .fruitnamef1 {
+    left: -40px;
+    top: -10px; }
+  .fruitnamef2 {
+    left: 65px;
+    top: -10px; }
+  .fruitnamef3 {
+    left: 170px;
+    top: -10px; }
+  .fruitnamef4 {
+    left: -40px;
+    top: 80px; }
+  .fruitnamef5 {
+    left: 60px;
+    top: 80px; }
+  .fruitnamef6 {
+    left: 170px;
+    top: 80px; }
+  .fruitnamef7 {
+    left: -40px;
+    top: 170px; }
+  .fruitnamef8 {
+    left: 60px;
+    top: 170px; }
+  .fruitnamef9 {
+    left: 170px;
+    top: 170px; }
+  .fruitnameBoxf1, .fruitnameBoxf2, .fruitnameBoxf3, .fruitnameBoxf4, .fruitnameBoxf5, .fruitnameBoxf6, .fruitnameBoxf7, .fruitnameBoxf8, .fruitnameBoxf9 {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 75px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #89a024; }
+  .fruitnameBoxf1 {
+    top: -15px;
+    left: -45px; }
+  .fruitnameBoxf2 {
+    top: -15px;
+    left: 60px; }
+  .fruitnameBoxf3 {
+    top: -15px;
+    left: 165px; }
+  .fruitnameBoxf4 {
+    top: 75px;
+    left: -45px; }
+  .fruitnameBoxf5 {
+    top: 75px;
+    left: 60px; }
+  .fruitnameBoxf6 {
+    top: 75px;
+    left: 165px; }
+  .fruitnameBoxf7 {
+    top: 165px;
+    left: -45px; }
+  .fruitnameBoxf8 {
+    top: 165px;
+    left: 60px; }
+  .fruitnameBoxf9 {
+    top: 165px;
+    left: 165px; }
   .diy_pickFruit_leftItem1 {
     position: relative; }
   .diy_pickFruit_leftItem2 {

@@ -1,39 +1,120 @@
 function doFirst() {
-
+//初始化卷軸
+	var controller = new ScrollMagic.Controller();
 	
-	
-//滿屏一頁效果
-	new fullpage('#fullpage', {
-		//options here
-		anchors: ['homepage_header', 'homepage_diy', 'homepage_test', 'homepage_blog', 'homepage_about'],
-		//autoScrolling:true,//手動滾動時，無法停留在頁面與頁面中間
-		fitToSection: true, //手動滾動時，在頁面與頁面中間停留，會強制移到下一頁面
-		navigation: true, //顯示導行列
-		css3: true,
-		easing: 3,
-		controlArrow: false,
-		// scrollBar:true,
-		afterLoad: function (anchorLink, index) {
-			var loadedSection = $(this);
-
-			//using index
-			//把開場動畫放進來
-			if (index.index == 1) {
-				setTimeout(lightRotation,10);
-			} else if (index.index == 3) {
-				//私藏的彩帶動畫
-				header_blog();
-
-			} else if (index.index == 4) {
-				//("父層ID")
-				animate_illustration("illustration_france", "div.aaa,div.mountain,div.tree,div.grass");
-				// setTimeOut('animate_illustration("illustration_france")',1000);
-
+	var sceneDiy =new ScrollMagic.Scene({
+		triggerElement:'#homepageDiy',
+		duration: 200,    
+		offset:400,
+	})
+	.on('enter',function(){
+		document.getElementById('lightRotation').className += " homepage_diy_Box-active";
+		setTimeout(function(){
+			var fruits = document.querySelectorAll(".homepage_diy_fruitPic");
+			var diyText = document.querySelector(".homepage_diy_fruitContent");
+			for(var i =0 ; i<fruits.length ; i++){
+				fruits[i].className += " homepage_diy_fruitPic-active";
 			}
+			diyText.className += " homepage_diy_fruitContent-active";
+
+		},1200);
+	})
+	.addIndicators({
+        name: 'diy',
+        colorStart: '#f20',
+        colorEnd: '#000'
+    })
+	.addTo(controller);
+
+	// var sceneBlog =new ScrollMagic.Scene({
+	// 	triggerElement:'#homepageBlog',
+	// 	duration: 200,    
+	// })
+	// .on('enter',header_blog)
+	// .addIndicators({
+    //     name: 'blog',
+    //     colorStart: '#f20',
+    //     colorEnd: '#000'
+    // })
+	// .addTo(controller);
+
+	var sceneAbout =new ScrollMagic.Scene({
+		triggerElement:'#homepageAbout',
+		duration: '100%',    
+	})
+	.on('enter',function(){
+		$("#illustration_france").find("div");
+		TweenMax.killTweensOf($("#illustration_france"));
+		setTimeout(function () {
+			$("#illustration_france").find("div.aaa,div.mountain,div.tree,div.grass").each(function (a) {
+				TweenMax.fromTo($(this), .5, {
+					rotationX: -90,
+					visibility: "hidden",
+					opacity: 0,
+	
+				}, {
+					delay: .2 * a,
+					rotationX: 0,
+					opacity: 1,
+					ease: "Back.easeOut",
+					visibility: "visible"
+				})
+			})
+		}, 100);
+		setTimeout(function () {
+			$("#illustration_france").find("div.cloud").each(function (a) {
+				TweenMax.fromTo($(this), .5, {
+					scale: 2,
+					opacity: 0,
+					rotationX: 0,
+					visibility: "visible"
+				}, {
+					delay: .15 * a,
+					scale: 1,
+					opacity: 1,
+					ease: "Back.easeOut"
+				})
+			})
+		}, 400);
+	})
+	.addIndicators({
+        name: 'about',
+        colorStart: '#f20',
+        colorEnd: '#000'
+    })
+	.addTo(controller);
+//滿屏一頁效果
+	// new fullpage('#fullpage', {
+	// 	//options here
+	// 	anchors: ['homepage_header', 'homepage_diy', 'homepage_test', 'homepage_blog', 'homepage_about'],
+	// 	//autoScrolling:true,//手動滾動時，無法停留在頁面與頁面中間
+	// 	fitToSection: true, //手動滾動時，在頁面與頁面中間停留，會強制移到下一頁面
+	// 	navigation: true, //顯示導行列
+	// 	css3: true,
+	// 	easing: 3,
+	// 	controlArrow: false,
+	// 	// scrollBar:true,
+	// 	afterLoad: function (anchorLink, index) {
+	// 		var loadedSection = $(this);
+
+	// 		//using index
+	// 		//把開場動畫放進來
+	// 		if (index.index == 1) {
+	// 			setTimeout(lightRotation,10);
+	// 		} else if (index.index == 3) {
+	// 			//私藏的彩帶動畫
+	// 			header_blog();
+
+	// 		} else if (index.index == 4) {
+	// 			//("父層ID")
+	// 			animate_illustration("illustration_france", "div.aaa,div.mountain,div.tree,div.grass");
+	// 			// setTimeOut('animate_illustration("illustration_france")',1000);
+
+	// 		}
 
 
-		}
-	});
+	// 	}
+	// });
 	//第一屏動畫
 
 	setTimeout(function () {
@@ -42,11 +123,8 @@ function doFirst() {
 			homepageHeaderItems[i].style.opacity = '1';
 		};
 	}, 1);
-	setTimeout(homepageHeader, 1000);
 	setTimeout(typeAnimation, 0);
-	setTimeout(fruitText, 500);
 	//第一屏水果滾動動畫
-	window.onresize = homepageHeader;
 
 	
 
@@ -55,33 +133,6 @@ function doFirst() {
 };
 
 
-
-function homepageHeader() {
-	var windowHeight = window.screen.height;
-	var windowWidth = window.screen.width;
-
-	document.querySelector('.homepage_header_waterPic').className += ' homepage_header_waterPic-active';
-	TweenMax.from('.homepage_header_waterPic', .9, {
-		scale: 0.0000000000000001,
-		y: windowHeight * 0.6 + 'px',
-		ease: Power4.easeIn,
-		opacity: 0,
-	});
-	setTimeout(function () {
-		var drop = new TimelineMax({});
-		drop.to('.homepage_header_drop', .5, {
-			opacity: 1,
-			scale: 1.6,
-		}).to('.homepage_header_drop', .5, {
-			scale: 1,
-		});
-
-	}, 800);
-
-	setTimeout(headerParallax, 3000);
-
-
-};
 
 //第一屏的Parallax
 function headerParallax() {
@@ -94,7 +145,6 @@ function headerParallax() {
 
 //第一瓶字的動畫
 function typeAnimation() {
-	// 可愛版
 	$('.homepage_header_textWrapper').css('opacity', '1');
 
 	$('.homepage_header_textBox .homepage_header_texts').each(function () {
@@ -115,59 +165,8 @@ function typeAnimation() {
 		});
 };
 
-function fruitText() {
-	var texts = document.querySelectorAll('.homepage_header_fruitContent');
-	var fruits = document.querySelectorAll('.homepage_header_fruitPic');
-	var time = 5;
-	var index = 0;
-	setInterval(function () {
-		if (index < 5) {
-			var text = new TimelineMax({});
-			text.to(texts[index], 2.7, {
-				opacity: 1,
-				scale: 1.2,
-			}).to(texts[index], .9, {
-				opacity: 0,
-				scale: .2,
-			});
-			var fruit = new TimelineMax({});
-			fruit.to(fruits[index], 2.7, {
-				scale: 1.1,
-			}).to(fruits[index], .9, {
-				scale: 1,
-			});
-			index++;
-
-		} else {
-			var text = new TimelineMax({});
-			text.to(texts[index], 2.7, {
-				opacity: 1,
-				scale: 1.2,
-			}).to(texts[index], .9, {
-				opacity: 0,
-				scale: .2,
-			});
-			var fruit = new TimelineMax({});
-			fruit.to(fruits[index], 2.7, {
-				scale: 1.1,
-			}).to(fruits[index], .9, {
-				scale: 1,
-			});
-			index = 0;
-		}
-	}, 2900);
-}
 function lightRotation(){
-	document.getElementById('lightRotation').className += " homepage_diy_Box-active";
-	setTimeout(function(){
-		var fruits = document.querySelectorAll(".homepage_diy_fruitPic");
-		var diyText = document.querySelector(".homepage_diy_fruitContent");
-		for(var i =0 ; i<fruits.length ; i++){
-			fruits[i].className += " homepage_diy_fruitPic-active";
-		}
-		diyText.className += " homepage_diy_fruitContent-active";
-
-	},1200);
+	
 	
 }
 function header_blog() {
@@ -256,39 +255,7 @@ function header_blog() {
 
 //關於果然
 function animate_illustration(a, b) {
-	$("#" + a).find("div");
-	TweenMax.killTweensOf($("#" + a));
-	setTimeout(function () {
-		$("#" + a).find(b).each(function (a) {
-			TweenMax.fromTo($(this), .5, {
-				rotationX: -90,
-				visibility: "hidden",
-				opacity: 0,
 
-			}, {
-				delay: .2 * a,
-				rotationX: 0,
-				opacity: 1,
-				ease: "Back.easeOut",
-				visibility: "visible"
-			})
-		})
-	}, 100);
-	setTimeout(function () {
-		$("#" + a).find("div.cloud").each(function (a) {
-			TweenMax.fromTo($(this), .5, {
-				scale: 2,
-				opacity: 0,
-				rotationX: 0,
-				visibility: "visible"
-			}, {
-				delay: .15 * a,
-				scale: 1,
-				opacity: 1,
-				ease: "Back.easeOut"
-			})
-		})
-	}, 400);
 }
 
 

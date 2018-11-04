@@ -7,15 +7,15 @@
     <title>果然配</title>
     <script src="js/plugin/TweenMax.min.js"></script>
     <script src="js/plugin/jquery-3.3.1.min.js"></script>
-    <script src="js/plugin/fullpage.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/vendors/scrolloverflow.min.js"></script> -->
     <script src="js/plugin/parallax.min.js"></script>
     <script src="js/plugin/typed.min.js"></script>
     <script src="js/plugin/anime.min.js"></script>
     <script src="js/plugin/jquery.transit.js"></script>
+    <script src="js/plugin/scrollMagic/ScrollMagic.min.js"></script>
+    <script src="js/plugin/scrollMagic/animation.gsap.min.js"></script>
+    <script src="js/plugin/scrollMagic/debug.addIndicators.min.js"></script>
     <script src="js/global.js"></script>
     <script src="js/homepage.js"></script>
-    <link rel="stylesheet" href="css/fullpage.css">
     <link rel="stylesheet" href="css/tweenmax.css">
     <link rel="stylesheet" href="css/parallax.css">
     <link rel="stylesheet" href="css/homepage.css">
@@ -25,28 +25,9 @@
     <header>
         <input type="checkbox" name="" id="hb_control">
         <nav>
-            <!-- <svg preserveAspectRatio="none" id="svg-2" viewBox="0 0 100 80" enable-background="new 0 0 100 80">
-                <animate dur="2s" attributeName="x" repeatCount="indefinite" from="0" to="100" xlink:href="#wave"></animate>
-                <defs>
-                    <filter id="f4" x="0" y="0" width="100%" height="100%">
-                        <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0"></feOffset>
-                        <feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"></feColorMatrix>
-                        <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="2"></feGaussianBlur>
-                        <feBlend in="SourceGraphic" in2="blurOut" mode="normal"></feBlend>
-                    </filter>
-                </defs>
-                <path x="0" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)"
-                    id="wave"></path>
-                <path x="30" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)"
-                    id="wave2"></path>
-            </svg> -->
             <div id="svg-2">
-                <canvas id="wave" width="1000" height="400">
-                    Hopefully you don't see this. If you do, get Google Chrome.
-                </canvas>
-                <canvas id="wave2" width="1000" height="400">
-                    Hopefully you don't see this. If you do, get Google Chrome.
-                </canvas>
+                <canvas id="wave" width="1000" height="400"></canvas>
+                <canvas id="wave2" width="1000" height="400"></canvas>
              </div>
             <div class="ph_nav">
                 <label for="hb_control" class="hb"><span></span></label>
@@ -76,105 +57,59 @@
         <div class="robot"><img src="images/robot.png" alt="果然配客服機器人"></div>
     </header>
     <article id="fullpage">
-        <!-- 第一屏 -->
+<!-- 第一屏 -->
         <section class="section active homepage_header" data-hover-only="false">
-            <div class="homepage_header_waterPic">
-                <img src="images/homepage/splash1.png" alt="">
-            </div>
-            <div class="homepage_header_textBlock">
-                <div class="homepage_header_textBox">
-                    <span class="homepage_header_textWrapper homepage_header_text1">
-                        <span class="homepage_header_texts ">小農契作直送果物</span>
-                    </span>
-                </div>
-                <div class="homepage_header_textBox">
-                    <span class="homepage_header_textWrapper homepage_header_text2">
-                        <span class="homepage_header_texts ">天然客製冷壓果汁</span>
-                    </span>
-                </div>
-            </div>
-            <div class="homepage_header_fruitBox homepage_header_watermalonBox">
-                <div class="homepage_header_fruitContent">
-                    <!-- <div class="homepage_header_textPic">
-                        <img src="" alt="">
-                    </div> -->
-                    <p class="homepage_header_fruitText">我具有美白抗皺、抗癌、消脂減肥等功效～</p>
-                </div>
-                <div class="homepage_header_fruitPic" data-hover-only="false">
-                    <img src="images//watermelon.png" alt="" data-depth=".9">
-                </div>
-            </div>
-            <div class="homepage_header_fruitBox homepage_header_tomatoBox">
-                <div class="homepage_header_fruitContent">
-                    <!-- <div class="homepage_header_textPic">
-                        <img src="" alt="">
-                    </div> -->
-                    <p class="homepage_header_fruitText">豐富的茄紅素，有助養顏美容～</p>
-                </div>
-                <div class="homepage_header_fruitPic" data-hover-only="false">
-                    <img src="images//tomato.png" alt="" data-depth=".9">
-                </div>
-            </div>
-            <div class="homepage_header_fruitBox homepage_header_pineappleBox">
-                <div class="homepage_header_fruitContent">
-                    <!-- <div class="homepage_header_textPic">
-                        <img src="" alt="">
-                    </div> -->
-                    <p class="homepage_header_fruitText">我是鳳梨，有助於腸胃蠕動、清腸解毒！</p>
-                </div>
-                <div class="homepage_header_fruitPic" data-hover-only="false">
-                    <img src="images/pineapple.png" alt="" data-depth=".9">
-                </div>
-            </div>
-            <div class="homepage_header_fruitBox homepage_header_grapeBox">
-                <div class="homepage_header_fruitContent">
-                    <!-- <div class="homepage_header_textPic">
-                        <img src="" alt="">
-                    </div> -->
-                    <p class="homepage_header_fruitText">我能幫著神經衰弱和過度疲勞者哦！</p>
-                </div>
-                <div class="homepage_header_fruitPic" data-hover-only="false">
-                    <img src="images//grape.png" alt="" data-depth=".9">
-                </div>
-            </div>
-            <div class="homepage_header_fruitBox homepage_header_appleBox">
-                <div class="homepage_header_fruitContent">
-                    <!-- <div class="homepage_header_textPic">
-                        <img src="" alt="">
-                    </div> -->
-                    <p class="homepage_header_fruitText">我能幫助你防治高血壓、老化哦！</p>
-                </div>
-                <div class="homepage_header_fruitPic" data-hover-only="false">
-                    <img src="images/apple.png" alt="" data-depth=".9">
-                </div>
-            </div>
-            <div class="homepage_header_fruitBox homepage_header_cantaloupeBox">
-                <div class="homepage_header_fruitContent">
-                    <!-- <div class="homepage_header_textPic">
-                        <img src="" alt="">
-                    </div> -->
-                    <p class="homepage_header_fruitText">我是哈密瓜，能幫助預防冠心病哦！</p>
-                </div>
-                <div class="homepage_header_fruitPic" data-hover-only="false">
-                    <img src="images/cantaloupe.png" alt="" data-depth=".9">
-                </div>
-            </div>
-            <div class="homepage_header_drop homepage_header_drop1">
-                <img src="images/homepage/drop.png" alt="">
-            </div>
-            <div class="homepage_header_drop homepage_header_drop2">
-                <img src="images/homepage/drop1.png" alt="">
-            </div>
+            <div class="homepage_header_fixedBg">
+                <div class="homepage_header_container">
+                    <div class="homepage_header_cloudsPic"><img src="images/homepage/clouds.png" alt=""></div>
+                    <div class="homepage_header_ballBox">
+                        <div class="homepage_header_ballPic"><img src="images/homepage/ball.png" alt=""></div>
+                        <div class="homepage_header_animatePic homepage_header_customerPic"><img src="images/homepage/custom.png" alt=""></div>
+                        <div class="homepage_header_animatePic homepage_header_farmerPic"><img src="images/homepage/farmer.png" alt=""></div>
+                        <div class="homepage_header_animatePic homepage_header_makerPic"><img src="images/homepage/mader.png" alt=""></div>
+                        
 
-            <div class="homepage_header_bottleBlock">
-                <div class="homepage_header_bottlePic">
-                    <img src="images/homepage/bottleYellow.png" alt="">
+
+                    </div>
+                    <div class="homepage_header_carBox">
+                        <div class="homepage_header_carPic"><img src="images/homepage/car2.png" alt=""></div>
+                        <div class="homepage_header_carPart"><img src="images/homepage/car3.png" alt=""></div>
+                        <div class="homepage_header_carPart2"><img src="images/homepage/car4.png" alt=""></div>
+                    </div>
+                    <div class="homepage_header_titleBlock">
+                        <div class="homepage_header_textBox">
+                            <span class="homepage_header_textWrapper homepage_header_text1">
+                                <span class="homepage_header_texts ">果汁天然自由配</span>
+                            </span>
+                        </div>
+                        <div class="homepage_header_contentBox">
+                            <div class="homepage_header_content1">
+                                <div class="homepage_header_contentPic1"><img src="images/homepage/headTitle1.png" alt=""></div>
+                                <h3>挑選水果</h3>
+                            </div>
+                            <div class="homepage_header_markPic"><img src="images/homepage/headPlus.png" alt=""></div>
+                            <div class="homepage_header_content2 cl-s-3">
+                                <div class="homepage_header_contentPic2"><img src="images/homepage/headTitle2.png" alt=""></div>
+                                <h3>客製瓶身</h3>
+                            </div>
+                            <div class="homepage_header_markPic"><img src="images/homepage/headBe.png" alt=""></div>
+                            <div class="homepage_header_content3">
+                                <div class="homepage_header_contentPic3"><img src="images/homepage/headTitle3.png" alt=""></div>
+                                <h3>果然配為您<br>打造專屬果汁</h3>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
+            
+            
+
         </section>
         <!-- 果汁DIY -->
-        <section class="section homepage_diy">
+        <section class="section homepage_diy" id="homepageDiy">
             <div class="homepage_title">
+                <a href="diy.html"><img src="images/homepage/title-2.png" alt="果汁DIY"></a>
                 <h2>果汁DIY</h2>
             </div>
             <div class="homepage_diy_container clearfix">
@@ -247,7 +182,8 @@
         <!-- 果然特調 -->
         <section class="section homepage_test">
             <div class="homepage_title">
-                <h2>官方特調</h2>
+                <a href="product.html"><img src="images/homepage/title-3.png" alt="果然特調"></a>
+                <h2>果然特調</h2>
             </div>
             <div class="homepage_test_Container">
                 <div class="homepage_test_boardContainer">
@@ -255,8 +191,8 @@
                         <div class="homepage_test_questionContainer">
                             <div class="homepage_test_questionBlock">
                                 <div class="homepage_test_questionPic">
-                                    <img src="images/homepage/question.png" alt="測驗問題">
-                                </div>:
+                                    <img src="images/homepage/question.png" alt="測驗問題">：
+                                </div>
                                 <div class="homepage_test_questionContent">
                                     <h3>你最近有沒有這種情況呢？</h3>
                                 </div>
@@ -277,8 +213,11 @@
             </div>
         </section>
         <!-- 果粉私藏 -->
-        <section class="section clearfix homepage_blog">
-            <div class="homepage_title"><h2>熱門文章</h2></div>
+        <section class="section clearfix homepage_blog" id="homepageBlog">
+            <div class="homepage_title">
+                <img src="images/homepage/title-4.png" alt="">
+                <h2>熱門文章</h2>
+            </div>
              <div id='homepage_blog_ribbon'>
             <!-- 飘花 -->
                 <div id="snowflake"></div>
@@ -387,7 +326,11 @@
         </section>
 
         <!-- 關於果然 -->
-        <section class="section homepage_about">
+        <section class="section homepage_about" id="homepageAbout">
+            <div class="homepage_title">
+                <img src="images/homepage/title-5.png" alt="">
+                <h2>關於果然</h2>
+            </div>
             <div class="homepage_about_underGround">
                 <img src="images/About_Png/ground.png" alt="" id="homepage_about_ground">
                 <img src="images/About_Png/roud01.png" alt="" id="homepage_about_roud01">
@@ -481,7 +424,6 @@
 
                     </div>
                 </div>
-                <div data-posx="37" class="aaa" style="left: 20%; opacity: 0;">France</div>
             </div>
 
             <footer>

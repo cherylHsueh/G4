@@ -1,6 +1,6 @@
 function doFirst() {
     //canvus導覽列	
-        wave("#wave", "#ddd");
+        wave("#wave", "rgba(250,250,250, .7)");
         wave("#wave2", "rgba(244, 214, 109, 1)");
         function wave(a, b) {
             var a = document.querySelector(a);
