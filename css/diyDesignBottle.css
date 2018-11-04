@@ -471,14 +471,6 @@ header {
   100% {
     transform: translate(0%, 0%); } }
 
-<<<<<<< HEAD
-=======
-/*分頁做法
-header nav  li:nth-child(2) > a:after {
-    transform: scaleX(1);
-}
-*/
->>>>>>> diy
 footer {
   width: 100%;
   line-height: 25px;
