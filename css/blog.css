@@ -475,6 +475,7 @@ header {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 * {
   outline: 1px solid red; }
@@ -559,6 +560,10 @@ header nav li:nth-child(4) > a:after {
 header nav li:nth-child(4) > a:after {
   transform: scaleX(1); }
 >>>>>>> cart
+=======
+header nav li:nth-child(4) > a:after {
+  transform: scaleX(1); }
+>>>>>>> 1105homepage(having about)
 
 body {
   background: #a4ddfa;

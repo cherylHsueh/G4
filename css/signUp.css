@@ -473,6 +473,7 @@ header {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -499,6 +500,8 @@ header nav  li:nth-child(2) > a:after {
 >>>>>>> member
 =======
 >>>>>>> cart
+=======
+>>>>>>> 1105homepage(having about)
 footer {
   position: absolute;
   bottom: 0;
@@ -583,6 +586,7 @@ footer {
     padding: 5px 0px;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     display: inline-block; } }
 =======
     display: inline-block; }
@@ -596,6 +600,9 @@ footer {
 =======
     display: inline-block; } }
 >>>>>>> cart
+=======
+    display: inline-block; } }
+>>>>>>> 1105homepage(having about)
 
 @media all and (min-width: 768px) {
   .nav_space {
