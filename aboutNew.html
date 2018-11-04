@@ -363,17 +363,17 @@
 						</div>
 					</div>
 			</div>
-		</div>
-		<div class="about_end_background_soil">
-			<div class="about_end_background_soil_road1">
-				<img src="images/about/Asphaltroad01.png" alt="road">
-			</div>
-			<div class="about_end_background_soil_road2">
-				<img src="images/about/Asphaltroad01.png" alt="road">
-			</div>
-			<div class="about_end_background_soil_road3">
-				<img src="images/about/Asphaltroad01.png" alt="road">
-			</div> 
+			<div class="about_end_background_soil">
+					<div class="about_end_background_soil_road1">
+						<img src="images/about/Asphaltroad01.png" alt="road">
+					</div>
+					<div class="about_end_background_soil_road2">
+						<img src="images/about/Asphaltroad01.png" alt="road">
+					</div>
+					<div class="about_end_background_soil_road3">
+						<img src="images/about/Asphaltroad01.png" alt="road">
+					</div> 
+				</div>
 		</div>
 	</section>
 	</div>
@@ -390,7 +390,7 @@
 				  .to(".about_bigwrapper_content", 1, { x: "-20%" })
 				  .to(".about_bigwrapper_content", 1, { x: "-40%" })
 				  .to(".about_bigwrapper_content", 1, { x: "-60%" })
-				  .to(".about_bigwrapper_content", 1, { x: "-80%" });
+				  .to(".about_bigwrapper_content", 1, { x: "-70%" });
 				
 				  // create scene to pin and link animation
 				  new ScrollMagic.Scene({
@@ -398,7 +398,7 @@
 					triggerHook: "onLeave",
 					duration: "400%"
 				  })
-					.setPin("#js-wrapper")
+					.setPin(".about_bigwrapper")
 					.setTween(horizontalSlide)
 				  //.addIndicators() // add indicators (requires plugin)
 					.addTo(controller);

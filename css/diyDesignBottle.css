@@ -471,6 +471,24 @@ header {
   100% {
     transform: translate(0%, 0%); } }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+/*分頁做法
+header nav  li:nth-child(2) > a:after {
+    transform: scaleX(1);
+}
+*/
+<<<<<<< HEAD
+>>>>>>> diy
+=======
+>>>>>>> 6a047bf83ca6a4f5d20759417a9bec51470ac612
+>>>>>>> blog
+=======
+>>>>>>> 280a4a4c1247a2dea80405e899b323e7ca4b1a49
+>>>>>>> member
 footer {
   position: relative;
   bottom: -200px;

@@ -1,5 +1,6 @@
 @charset "UTF-8";
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -8,6 +9,11 @@
    v2.0 | 20110126
    License: none (public domain)
 >>>>>>> blog
+=======
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+>>>>>>> member
 */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -483,7 +489,11 @@ p {
 .about_start {
   width: 25%;
   height: 100vh;
+<<<<<<< HEAD
   background-color: #00B5BD;
+=======
+  background-color: #00b5bd;
+>>>>>>> member
   float: left; }
 
 .about_start_background_block {
@@ -492,13 +502,21 @@ p {
 .about_factory {
   width: 25%;
   height: 100vh;
+<<<<<<< HEAD
   background-color: #00B5BD;
+=======
+  background-color: #00b5bd;
+>>>>>>> member
   float: left; }
 
 .about_end {
   width: 25%;
   height: 100vh;
+<<<<<<< HEAD
   background-color: #00B5BD;
+=======
+  background-color: #00b5bd;
+>>>>>>> member
   float: left; }
 
 .about_factory_background_block {
@@ -508,11 +526,20 @@ p {
   width: 100%;
   height: 100vh;
   position: absolute;
+<<<<<<< HEAD
   background-color: #00B5BD; }
 
 .about_bigwrapper {
   width: 5000px;
   height: 100vh; }
+=======
+  background-color: #00b5bd; }
+
+.about_bigwrapper {
+  width: 5000px;
+  height: 100vh;
+  overflow: hidden; }
+>>>>>>> member
 
 #app {
   position: relative;
@@ -523,10 +550,13 @@ p {
 .forcast h4 {
   padding: 5% 0; }
 
+<<<<<<< HEAD
 #section4 {
   background-color: #00B5BD;
   height: 100vh; }
 
+=======
+>>>>>>> member
 path {
   stroke: white;
   fill: transparent;
@@ -534,7 +564,11 @@ path {
   cursor: pointer; }
 
 path:hover {
+<<<<<<< HEAD
   fill: #B99362;
+=======
+  fill: #b99362;
+>>>>>>> member
   -webkit-transform: translate(-5px, -5px);
   transform: translate(-5px, -5px); }
 
@@ -543,7 +577,13 @@ path:hover {
   height: 100vh;
   position: absolute; }
 
+<<<<<<< HEAD
 .forcast h2, .forcast h4, .forcast h5 {
+=======
+.forcast h2,
+.forcast h4,
+.forcast h5 {
+>>>>>>> member
   margin: 0; }
 
 #e468a7aa-2bdf-4501-b48d-35483b7c8ccc,
@@ -571,7 +611,11 @@ path:hover {
 #a0ce2847a-4f9c-4ff7-8c51-6b0fa24ba8b7,
 #e1806d87-d003-48dd-b8d3-3f99b3759340,
 #a21c4ba33-d057-42c1-9c71-be6061fc73cf {
+<<<<<<< HEAD
   fill: #36BF36; }
+=======
+  fill: #36bf36; }
+>>>>>>> member
 
 @keyframes shake {
   0% {
@@ -610,14 +654,20 @@ h3 {
     transform: translateY(-20px); } }
 
 .bounce {
+<<<<<<< HEAD
   animation: bounce .5s infinite alternate;
   -webkit-animation: bounce .8s infinite alternate; }
+=======
+  animation: bounce 0.5s infinite alternate;
+  -webkit-animation: bounce 0.8s infinite alternate; }
+>>>>>>> member
 
 @media only screen and (max-width: 767px) {
   header nav {
     position: fixed;
     width: 100vw;
     z-index: 100; }
+<<<<<<< HEAD
   .about_start_background_block {
     position: relative;
     height: 100vh; }
@@ -625,6 +675,47 @@ h3 {
     width: 50%;
     position: absolute;
     max-width: 245px;
+=======
+  .about_bigwrapper {
+    width: 1600px;
+    height: 100vh;
+    overflow: hidden; }
+  .about_start_background_block {
+    position: relative;
+    height: 100vh; }
+  .about_start_info_blcok {
+    width: 69%;
+    background-color: #00ac6f;
+    position: absolute;
+    top: 17%;
+    left: 13%;
+    margin: auto;
+    padding: 1% 0;
+    border-radius: 10px;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 15px #00ac6f;
+    z-index: 6; }
+  .about_start_info_blcok_border {
+    width: 85%;
+    margin: auto;
+    text-align: center; }
+  .about_start_formInfo {
+    margin: 2% auto 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; }
+    .about_start_formInfo .about_start_formInfo_content {
+      line-height: 1.4;
+      margin: auto;
+      color: #fff;
+      padding: 1%;
+      border-radius: 10px; }
+  .about_start_background_clould01 {
+    width: 50%;
+    top: 17%;
+    position: absolute;
+    max-width: 190px;
+>>>>>>> member
     animation: flutter 5s linear infinite; }
   .about_start_background_clould02 {
     width: 54%;
@@ -634,6 +725,19 @@ h3 {
     animation: flutter 5s linear infinite; }
   .about_start_background_clould03 {
     display: none; }
+<<<<<<< HEAD
+=======
+  .about_start_content_bounce {
+    width: 14%;
+    position: absolute;
+    bottom: 15%;
+    left: 15%;
+    z-index: 7; }
+    .about_start_content_bounce img {
+      width: 100%;
+      margin: 10% 0 0;
+      animation: bounce 0.5s infinite alternate; }
+>>>>>>> member
   .farmerLocationIcon img {
     width: 30%;
     margin: 1% 0;
@@ -641,6 +745,7 @@ h3 {
     bottom: 0;
     top: 30%;
     left: 10%; }
+<<<<<<< HEAD
   .about_start_content_orchard {
     width: 40%;
     max-width: 250px;
@@ -665,6 +770,142 @@ h3 {
     right: -17%; }
     .about_start_content_mountain03 img {
       width: 100%; }
+=======
+  .about_start_info_item_title {
+    width: 70%;
+    margin: auto; }
+    .about_start_info_item_title img {
+      width: 100%;
+      margin-bottom: 10%; }
+  .about_start_content_orchard {
+    width: 40%;
+    max-width: 150px;
+    position: absolute;
+    bottom: 5px;
+    left: 6px;
+    z-index: 3; }
+    .about_start_content_orchard img {
+      width: 100%; }
+  .about_start_content_fence1 {
+    width: 43%;
+    position: absolute;
+    bottom: 14%;
+    left: 0%;
+    z-index: 1; }
+    .about_start_content_fence1 img {
+      width: 100%; }
+  .about_start_content_fence2 {
+    width: 43%;
+    position: absolute;
+    bottom: 15%;
+    right: 3%;
+    z-index: 1; }
+    .about_start_content_fence2 img {
+      width: 100%; }
+  .about_start_content_barn {
+    width: 44%;
+    position: absolute;
+    bottom: 11%;
+    left: 24%;
+    z-index: 2; }
+    .about_start_content_barn img {
+      width: 100%; }
+  .about_start_content_mountain01 {
+    width: 140%;
+    position: absolute;
+    left: -15%;
+    bottom: 17%;
+    z-index: 0; }
+    .about_start_content_mountain01 img {
+      width: 100%; }
+  .about_start_content_mountain02 {
+    position: absolute;
+    width: 124%;
+    left: 32.5%;
+    bottom: 16%;
+    z-index: 0; }
+    .about_start_content_mountain02 img {
+      width: 100%; }
+  .about_start_content_flower1 {
+    width: 17%;
+    position: absolute;
+    bottom: 14%;
+    /* right: 0%; */
+    left: 1%;
+    z-index: 2; }
+    .about_start_content_flower1 img {
+      width: 100%; }
+  .about_start_content_flower2 {
+    width: 16%;
+    position: absolute;
+    bottom: 13%;
+    /* right: 71%; */
+    left: 63%;
+    z-index: 5;
+    transform: rotate(4deg); }
+    .about_start_content_flower2 img {
+      width: 100%; }
+  .about_start_content_flower3 {
+    width: 16%;
+    /* width: 10%; */
+    position: absolute;
+    bottom: 11%;
+    right: 7%;
+    z-index: 5; }
+    .about_start_content_flower3 img {
+      width: 100%; }
+  .about_start_content_mountain03 {
+    width: 100%;
+    position: absolute;
+    bottom: 13%;
+    right: -7%; }
+    .about_start_content_mountain03 img {
+      width: 100%; }
+  .about_start_grass .about_start_road01 {
+    width: 28%;
+    position: absolute;
+    bottom: 2%;
+    left: 2%; }
+  .about_start_grass {
+    width: 100%;
+    height: 16%;
+    background-color: #d9e021;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    line-height: 140px; }
+  .about_factory_content_mountain01 {
+    width: 96%;
+    position: absolute;
+    bottom: 14%;
+    left: -1%;
+    z-index: 1; }
+    .about_factory_content_mountain01 img {
+      width: 100%; }
+  .about_factory_content_mountain02 {
+    width: 102%;
+    position: absolute;
+    bottom: 14%;
+    left: -16%;
+    z-index: 0; }
+    .about_factory_content_mountain02 img {
+      width: 100%; }
+  .about_factory_grass {
+    width: 99%;
+    height: 14%;
+    background-color: #d9e021;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    line-height: 109px; }
+  .about_factory_road1 {
+    width: 52%;
+    position: absolute;
+    bottom: 5%;
+    display: none; }
+    .about_factory_road1 img {
+      width: 100%; }
+>>>>>>> member
   .about_start_content_car01 {
     width: 36%;
     position: absolute;
@@ -673,7 +914,11 @@ h3 {
     z-index: 3; }
     .about_start_content_car01 img {
       width: 100%;
+<<<<<<< HEAD
       animation: shake .3s  alternate  infinite; }
+=======
+      animation: shake 0.3s alternate infinite; }
+>>>>>>> member
   .about_start_content_car01_tire1 {
     width: 8%;
     position: absolute;
@@ -698,8 +943,13 @@ h3 {
   .about_factory_background_clould01 {
     width: 50%;
     position: absolute;
+<<<<<<< HEAD
     max-width: 80px;
     top: 8%;
+=======
+    max-width: 143px;
+    top: 16%;
+>>>>>>> member
     z-index: 1; }
   .about_factory_background_clould03 {
     display: none; }
@@ -714,8 +964,13 @@ h3 {
     width: 18%;
     max-width: 100px;
     position: absolute;
+<<<<<<< HEAD
     bottom: 48%;
     left: 17%;
+=======
+    bottom: 31%;
+    left: 67%;
+>>>>>>> member
     z-index: 2; }
     .about_factory_content_factoryTitle img {
       width: 100%; }
@@ -732,6 +987,7 @@ h3 {
     width: 40%;
     max-width: 250px;
     position: absolute;
+<<<<<<< HEAD
     bottom: 28%;
     left: 1%;
     z-index: 2; }
@@ -751,6 +1007,54 @@ h3 {
     z-index: 1;
     position: absolute;
     bottom: 20%; }
+=======
+    bottom: 14%;
+    left: 44%;
+    z-index: 2; }
+    .about_factory_content_factory img {
+      width: 100%; }
+  .about_factory_content_grass1 {
+    width: 17%;
+    position: absolute;
+    bottom: 10%;
+    right: 47%;
+    z-index: 4; }
+    .about_factory_content_grass1 img {
+      width: 100%; }
+  .about_factory_content_streetlamp1 {
+    width: 13%;
+    position: absolute;
+    left: 5%;
+    bottom: 9%;
+    z-index: 3; }
+    .about_factory_content_streetlamp1 img {
+      width: 100%; }
+  .about_factory_content_streetlamp2 {
+    width: 14%;
+    position: absolute;
+    left: 30%;
+    bottom: 9%;
+    z-index: 3; }
+    .about_factory_content_streetlamp2 img {
+      width: 100%; }
+  .about_factory_content_streetlamp3 {
+    width: 14%;
+    position: absolute;
+    right: 0%;
+    bottom: 9%;
+    z-index: 4; }
+    .about_factory_content_streetlamp3 img {
+      width: 100%; }
+  .about_factory_content_roadsign {
+    width: 15%;
+    position: absolute;
+    left: 12%;
+    bottom: 9%;
+    z-index: 3; }
+    .about_factory_content_roadsign img {
+      width: 100%;
+      margin: -5% 0; }
+>>>>>>> member
   .about_factory_content_car01 {
     width: 35%;
     position: absolute;
@@ -760,11 +1064,20 @@ h3 {
     .about_factory_content_car01 img {
       width: 100%; }
   .about_factory_info_blcok {
+<<<<<<< HEAD
     width: 40%;
     background-color: #00ac6f;
     position: absolute;
     top: 1%;
     left: 0%;
+=======
+    width: 46%;
+    background-color: #00ac6f;
+    position: absolute;
+    top: 19%;
+    left: 0%;
+    z-index: 2;
+>>>>>>> member
     right: 0;
     margin: 0% auto;
     border: 5px solid #fff;
@@ -807,12 +1120,96 @@ h3 {
   .about_factory_info_item_truck_horizontal,
   .about_factory_info_item_cart_horizontal {
     display: none; }
+<<<<<<< HEAD
   #section3 {
     background-color: #00B5BD;
+=======
+  .about_taiwan_background_mountain3 {
+    width: 100%;
+    position: absolute;
+    bottom: 14%;
+    right: 9%; }
+    .about_taiwan_background_mountain3 img {
+      width: 100%; }
+  .about_taiwan_background_mountain {
+    width: 61%;
+    position: absolute;
+    bottom: 14%;
+    left: 3%;
+    z-index: 1; }
+    .about_taiwan_background_mountain img {
+      width: 100%; }
+  .about_taiwan_background_windmill {
+    width: 26%;
+    position: absolute;
+    bottom: 14%;
+    left: 2%;
+    z-index: 1; }
+    .about_taiwan_background_windmill img {
+      width: 100%; }
+  .about_taiwan_background_grassflowr {
+    width: 11%;
+    position: absolute;
+    bottom: 13%;
+    left: -3%;
+    z-index: 3; }
+    .about_taiwan_background_grassflowr img {
+      width: 100%; }
+  .about_taiwan_background_grass {
+    width: 99;
+    height: 14%;
+    background-color: #d9e021;
+    position: absolute;
+    bottom: 0;
+    left: -2%;
+    z-index: 2;
+    line-height: 109px; }
+  .about_taiwan_background_road1 {
+    display: none; }
+    .about_taiwan_background_road1 img {
+      width: 100%; }
+  .about_taiwan_background_sheep {
+    width: 75%;
+    position: absolute;
+    bottom: 52%;
+    left: 9%; }
+    .about_taiwan_background_sheep img {
+      width: 100%; }
+  .about_taiwan_background_tree {
+    width: 14%;
+    position: absolute;
+    right: 5%;
+    bottom: 49%; }
+    .about_taiwan_background_tree img {
+      width: 100%; }
+  .about_taiwan_background_treeflower {
+    width: 8%;
+    position: absolute;
+    right: 1%;
+    bottom: 21%; }
+    .about_taiwan_background_treeflower img {
+      width: 100%; }
+  .about_taiwan_background_smallgrass {
+    width: 8%;
+    position: absolute;
+    bottom: 22%;
+    right: 18%; }
+    .about_taiwan_background_smallgrass img {
+      width: 100%; }
+  #cf503461-00bd-459a-aeb5-062ebc913211 {
+    width: 80%;
+    height: 100vh;
+    position: absolute;
+    bottom: 8%;
+    left: -14%; }
+  #section3 {
+    background-color: #00b5bd;
+>>>>>>> member
     height: 100vh; }
   .about_end_background {
     position: absolute;
     width: 100%;
+<<<<<<< HEAD
     height: 100vh;
     bottom: 140px; }
   .about_end_background_shadow {
@@ -844,6 +1241,108 @@ h3 {
     .about_end_background_truck img {
       width: 100%;
       animation: shake .3s  alternate  infinite; }
+=======
+    height: 100vh; }
+  .about_end_background_flowerpot {
+    width: 4%;
+    position: absolute;
+    bottom: 12%;
+    left: 0%;
+    z-index: 3; }
+    .about_end_background_flowerpot img {
+      width: 100%; }
+  .about_end_background_shadow {
+    width: 22%;
+    position: absolute;
+    left: 2%;
+    bottom: 16%; }
+    .about_end_background_shadow img {
+      width: 100%; }
+  .about_end_background_house1 {
+    width: 24%;
+    position: absolute;
+    bottom: 14%; }
+    .about_end_background_house1 img {
+      width: 100%; }
+  .about_end_background_house2 {
+    width: 20%;
+    position: absolute;
+    bottom: 0%;
+    right: -40%; }
+    .about_end_background_house2 img {
+      width: 100%; }
+  .about_end_background_bounce {
+    width: 4%;
+    position: absolute;
+    bottom: 30%;
+    left: 4%;
+    z-index: 7; }
+    .about_end_background_bounce img {
+      width: 100%;
+      margin: 10% 0 0;
+      animation: bounce 0.5s infinite alternate; }
+  .about_end_background_streetlight1 {
+    width: 3%;
+    position: absolute;
+    left: 2%;
+    bottom: 13%;
+    z-index: 2; }
+    .about_end_background_streetlight1 img {
+      width: 100%; }
+  .about_end_background_streetlight2 {
+    display: none; }
+  .about_end_background_streetlight3 {
+    display: none; }
+  .about_end_background_truck {
+    width: 10%;
+    position: absolute;
+    bottom: 6%;
+    left: 7%;
+    z-index: 5; }
+    .about_end_background_truck img {
+      width: 100%;
+      animation: shake 0.3s alternate infinite; }
+  .about_end_background_tree1 {
+    width: 2.5%;
+    position: absolute;
+    left: 5%;
+    bottom: 11%;
+    z-index: 3; }
+    .about_end_background_tree1 img {
+      width: 100%; }
+  .about_end_background_tree2 {
+    width: 2.5%;
+    position: absolute;
+    left: 11%;
+    bottom: 11%;
+    z-index: 4; }
+    .about_end_background_tree2 img {
+      width: 100%; }
+  .about_end_background_tree3 {
+    width: 2.5%;
+    position: absolute;
+    left: 18%;
+    bottom: 11%;
+    z-index: 0; }
+    .about_end_background_tree3 img {
+      width: 100%; }
+  .about_end_background_soil {
+    width: 24%;
+    height: 18%;
+    background-color: #c69c6d;
+    position: absolute;
+    bottom: -4%;
+    z-index: 2;
+    line-height: 110px; }
+  .about_end_background_soil_road1 {
+    width: 52%;
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    display: none; }
+    .about_end_background_soil_road1 img {
+      width: 100%; }
+>>>>>>> member
   .about_end_background_truckTire1 {
     width: 6%;
     position: absolute;
@@ -860,12 +1359,17 @@ h3 {
     .about_end_background_truckTire2 img {
       width: 100%;
       animation: rotate 5s linear infinite; }
+<<<<<<< HEAD
   #cf503461-00bd-459a-aeb5-062ebc913211 {
     width: 80%;
     height: 100vh;
     position: absolute;
     bottom: 12%;
     left: -14%; }
+=======
+  .about_end_background_house2 {
+    display: none; }
+>>>>>>> member
   .title_area {
     width: 45%;
     height: 30%;
@@ -880,6 +1384,7 @@ h3 {
     height: 77%; }
     .forcast h5 {
       font-size: 18px; }
+<<<<<<< HEAD
   .about_taiwan_background_mountain {
     width: 79%;
     position: absolute;
@@ -887,6 +1392,8 @@ h3 {
     left: 7%; }
     .about_taiwan_background_mountain img {
       width: 100%; }
+=======
+>>>>>>> member
   .about_taiwan_background_cloud {
     width: 20%;
     position: absolute;
@@ -903,6 +1410,7 @@ h3 {
     .about_taiwan_background_cloud2 img {
       width: 100%;
       animation: flutter 5s linear infinite; }
+<<<<<<< HEAD
   .about_taiwan_background_mountain2,
   .about_taiwan_background_grass {
     display: none; }
@@ -915,6 +1423,19 @@ h3 {
     right: 0;
     margin: 1% auto;
     padding: 5% 0;
+=======
+  .about_taiwan_background_mountain2 {
+    display: none; }
+  .about_cooperation_info_blcok {
+    width: 17%;
+    background-color: #00ac6f;
+    position: absolute;
+    top: 18%;
+    left: -76%;
+    right: 0;
+    margin: 0% auto;
+    padding: 1% 0;
+>>>>>>> member
     border: 5px solid #fff;
     box-shadow: 0 0 0 20px #00ac6f;
     z-index: 6;
@@ -922,6 +1443,20 @@ h3 {
   .about_cooperation_info_blcok_border {
     width: 80%;
     margin: auto; }
+<<<<<<< HEAD
+=======
+  .about_end_formInfo {
+    margin: 1% auto 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; }
+  .about_end_formInfo_content {
+    line-height: 1.5;
+    margin: auto;
+    color: #fff;
+    padding: 1%;
+    border-radius: 10px; }
+>>>>>>> member
   .about_cooperation_info_item_title {
     width: 80%;
     margin: auto; }
@@ -986,7 +1521,11 @@ h3 {
     .about_start_content_bounce img {
       width: 100%;
       margin: 10% 0 0;
+<<<<<<< HEAD
       animation: bounce .5s infinite alternate; }
+=======
+      animation: bounce 0.5s infinite alternate; }
+>>>>>>> member
   .about_start_content_orchard {
     width: 30%;
     position: absolute;
@@ -1070,7 +1609,11 @@ h3 {
   .about_start_grass {
     width: 100%;
     height: 18%;
+<<<<<<< HEAD
     background-color: #D9E021;
+=======
+    background-color: #d9e021;
+>>>>>>> member
     position: absolute;
     bottom: 0;
     z-index: 2;
@@ -1097,7 +1640,11 @@ h3 {
     z-index: 4; }
     .about_start_content_car01 img {
       width: 100%;
+<<<<<<< HEAD
       animation: shake .3s  alternate  infinite; }
+=======
+      animation: shake 0.3s alternate infinite; }
+>>>>>>> member
   .about_start_content_car01_tire1 {
     width: 5%;
     position: absolute;
@@ -1166,11 +1713,19 @@ h3 {
     .about_factory_content_pine img {
       width: 100%; }
   .about_factory_content_mountain01 {
+<<<<<<< HEAD
     width: 85%;
     position: absolute;
     bottom: 18%;
     left: 0%;
     z-index: 1; }
+=======
+    width: 100%;
+    position: absolute;
+    bottom: 18%;
+    left: 0%;
+    z-index: 2; }
+>>>>>>> member
     .about_factory_content_mountain01 img {
       width: 100%; }
   .about_factory_content_mountain02 {
@@ -1181,17 +1736,28 @@ h3 {
     .about_factory_content_mountain02 img {
       width: 100%; }
   .about_factory_content_grass1 {
+<<<<<<< HEAD
     width: 14%;
     position: absolute;
     bottom: 18%;
     right: 38%;
+=======
+    width: 17%;
+    position: absolute;
+    bottom: 13%;
+    right: 47%;
+>>>>>>> member
     z-index: 4; }
     .about_factory_content_grass1 img {
       width: 100%; }
   .about_factory_grass {
     width: 100%;
     height: 18%;
+<<<<<<< HEAD
     background-color: #D9E021;
+=======
+    background-color: #d9e021;
+>>>>>>> member
     position: absolute;
     bottom: 0;
     z-index: 2;
@@ -1299,6 +1865,7 @@ h3 {
     margin: 3% auto; }
     .about_factory_info_item_cart_horizontal img {
       width: 100%; }
+<<<<<<< HEAD
   .about_factory_info_item_cart_straight, .about_factory_info_item_truck_straight {
     display: none; }
   .about_end {
@@ -1461,6 +2028,11 @@ h3 {
       padding: 5%;
       border: 1px solid #fff;
       border-radius: 10px; }
+=======
+  .about_factory_info_item_cart_straight,
+  .about_factory_info_item_truck_straight {
+    display: none; }
+>>>>>>> member
   #cf503461-00bd-459a-aeb5-062ebc913211 {
     width: 25%;
     height: 100vh;
@@ -1468,6 +2040,7 @@ h3 {
     bottom: 5%;
     z-index: 2;
     left: 25%; }
+<<<<<<< HEAD
   .title_area {
     width: 25%;
     position: absolute;
@@ -1476,6 +2049,8 @@ h3 {
     color: white;
     font-size: 30px;
     padding: 2%; }
+=======
+>>>>>>> member
   .about_taiwan_background_mountain {
     width: 70%;
     position: absolute;
@@ -1517,7 +2092,11 @@ h3 {
   .about_taiwan_background_grass {
     width: 100%;
     height: 18%;
+<<<<<<< HEAD
     background-color: #D9E021;
+=======
+    background-color: #d9e021;
+>>>>>>> member
     position: absolute;
     bottom: 0;
     z-index: 2;
@@ -1592,7 +2171,11 @@ h3 {
     left: 5%; }
     .about_taiwan_background_truck img {
       width: 100%;
+<<<<<<< HEAD
       animation: shake .3s  alternate  infinite; }
+=======
+      animation: shake 0.3s alternate infinite; }
+>>>>>>> member
   .about_taiwan_background_truckTire1 {
     width: 5%;
     position: absolute;
@@ -1630,4 +2213,166 @@ h3 {
     margin: auto; }
     .about_cooperation_info_item_title img {
       width: 100%;
+<<<<<<< HEAD
       margin-bottom: 10%; } }
+=======
+      margin-bottom: 10%; }
+  .about_end_background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    bottom: 140px; }
+  .about_end_background_shadow {
+    width: 100%;
+    position: absolute;
+    bottom: -8%;
+    left: 5%; }
+    .about_end_background_shadow img {
+      width: 100%; }
+  .about_end_background_house1 {
+    width: 70%;
+    position: absolute;
+    bottom: 0%;
+    left: 5%; }
+    .about_end_background_house1 img {
+      width: 100%; }
+  .about_end_background_house2 {
+    width: 70%;
+    position: absolute;
+    bottom: 0%;
+    right: -4%; }
+    .about_end_background_house2 img {
+      width: 100%; }
+  .about_end_background_flowerpot {
+    width: 10%;
+    position: absolute;
+    bottom: 0%;
+    left: 0%; }
+    .about_end_background_flowerpot img {
+      width: 100%; }
+  .about_end_background_bounce {
+    width: 8%;
+    position: absolute;
+    bottom: 35%;
+    left: 20%; }
+    .about_end_background_bounce img {
+      width: 100%;
+      margin: 10% 0 0;
+      animation: bounce 0.5s infinite alternate; }
+  .about_end_background_streetlight1 {
+    width: 11%;
+    position: absolute;
+    left: 10%;
+    bottom: -7%;
+    z-index: 2; }
+    .about_end_background_streetlight1 img {
+      width: 100%; }
+  .about_end_background_streetlight2 {
+    width: 11%;
+    position: absolute;
+    left: 60%;
+    bottom: -7%;
+    z-index: 2; }
+    .about_end_background_streetlight2 img {
+      width: 100%; }
+  .about_end_background_streetlight3 {
+    width: 11%;
+    position: absolute;
+    left: 80%;
+    bottom: -7%;
+    z-index: 2; }
+    .about_end_background_streetlight3 img {
+      width: 100%; }
+  .about_end_background_tree1 {
+    width: 8%;
+    position: absolute;
+    left: 20%;
+    bottom: -6%;
+    z-index: 3; }
+    .about_end_background_tree1 img {
+      width: 100%; }
+  .about_end_background_tree2 {
+    width: 8%;
+    position: absolute;
+    left: 40%;
+    bottom: -6%;
+    z-index: 4; }
+    .about_end_background_tree2 img {
+      width: 100%; }
+  .about_end_background_tree3 {
+    width: 8%;
+    position: absolute;
+    left: 65%;
+    bottom: -6%;
+    z-index: 4; }
+    .about_end_background_tree3 img {
+      width: 100%; }
+  .about_end_background_truck {
+    width: 25%;
+    position: absolute;
+    bottom: -11%;
+    left: 10%;
+    z-index: 3; }
+    .about_end_background_truck img {
+      width: 100%;
+      animation: shake 0.3s alternate infinite; }
+  .about_end_background_truckTire1 {
+    width: 5%;
+    position: absolute;
+    bottom: -13%;
+    left: 18%;
+    z-index: 3; }
+    .about_end_background_truckTire1 img {
+      width: 100%;
+      animation: rotate 5s linear infinite; }
+  .about_end_background_truckTire2 {
+    width: 5%;
+    position: absolute;
+    bottom: -13%;
+    left: 28%;
+    z-index: 3; }
+    .about_end_background_truckTire2 img {
+      width: 100%;
+      animation: rotate 5s linear infinite; }
+  .about_end_background_soil {
+    width: 100%;
+    height: 18%;
+    background-color: #c69c6d;
+    position: absolute;
+    bottom: -18%;
+    z-index: 2;
+    line-height: 110px; }
+    .about_end_background_soil .about_end_background_soil_road1 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      left: 0; }
+      .about_end_background_soil .about_end_background_soil_road1 img {
+        width: 100%; }
+    .about_end_background_soil .about_end_background_soil_road2 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      left: 46%; }
+      .about_end_background_soil .about_end_background_soil_road2 img {
+        width: 100%; }
+    .about_end_background_soil .about_end_background_soil_road3 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      right: 0%; }
+      .about_end_background_soil .about_end_background_soil_road3 img {
+        width: 100%; }
+  .about_end_formInfo {
+    margin: 2% auto 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; }
+    .about_end_formInfo .about_end_formInfo_content {
+      line-height: 1.6;
+      margin: auto;
+      color: #fff;
+      padding: 5%;
+      border: 1px solid #fff;
+      border-radius: 10px; } }
+>>>>>>> member

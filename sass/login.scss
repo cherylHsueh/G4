@@ -1,6 +1,7 @@
 @import "reset";
 *{
 	// outline:1px solid red;
+	box-sizing: border-box;
 }
 
 #lightbox_section{
@@ -106,7 +107,354 @@ input[type=text], input[type=password]{
 	clear:both;
 }
 
-
 .orange img{
 width:15%;
 }
+// 西瓜
+html {
+	box-sizing: border-box;
+  }
+  *, *:before, *:after {
+	box-sizing: inherit;
+  }
+  
+  @import url(https://fonts.googleapis.com/css?family=Varela+Round);
+  
+  @mixin bg-gradient {
+	/* fallback */
+	background-color: #79d0da;
+	background-image: linear-gradient(#79d0da, #00ADB5);
+	background-size: cover;
+  }
+  
+  @mixin clearfix {
+	&:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+  }
+  
+  /* Ingredient: orange */
+  @mixin orange($right, $top, $rotate, $animation) {
+	position: absolute;
+	right: $right;
+	top: $top;
+	transform: $rotate;
+	overflow: hidden;
+	width: $orange-w;
+	height: $orange-h;
+	animation: $animation;
+  
+	&:before {
+	  content: "";
+	  position: absolute;
+	  background-color: orange;
+	  width: 100%;
+	  height: 200%;
+	  border-radius: 50%;
+	  box-shadow: inset 0 0 0 2px #ffc04d, inset 0 0 0 10px #ffdb99;
+	}
+  }
+  
+  /* Ingredient ice */
+  @mixin icecube($ice-num) {
+	
+	.ice__cube {
+		background: lighten($tom-collins, 80%);
+		width:$ice__cube-w;
+		height:$ice__cube-w;
+		border: 1px solid $ice-boder-color;
+		border-radius: 4px;
+		position: absolute;
+		bottom: 0;
+		@for $item from 1 through ($ice-num){
+		  &:nth-child(#{$item}) {
+			left:($item - 1) * $ice__cube-w ;
+			transform: rotate($item * 20deg) translate3d(0,0,0);
+		  }
+		}
+		&.cube-#{$ice-num} {
+		  transform: rotate($ice-num * 20deg) translate3d(-18px, 9px, 0);
+		}
+	  }
+	
+  }
+  
+  $font: 'Varela Round', sans-serif;
+  $main-bg: #79D1DA;
+  //$main-bg: #00ADB5;
+  
+  $glass-boder-color: rgba(255, 255, 255, 0.8);
+  $glass-long-w: 32px;
+  $glass-long-h: 65px;
+  $glass-short-w: 38px;
+  $glass-short-h: 32px;
+  $glass-classic-w: 25px;
+  
+  $ice-num: 3;
+  $ice-boder-color: rgba(255, 255, 255, 0.1);
+  $ice__cube-w: 14px;
+  
+  $orange-w: 28px;
+  $orange-h: 14px;
+  
+  $cherry_r: 10px;
+  $cherry-color: #C40000;
+  
+  $olive-r: 10px;
+  $olive-color: rgba(128,128,0, 0.5);
+  $toothpick-color: #dEb887;
+  
+  /* cocktails */
+  $tom-collins: rgba(255, 255, 255, 0.2);
+  $negroni: rgba(230, 45, 13, 0.7);
+  $martini: rgba(255, 255, 255, 0.3);
+  
+  html{min-height:100%;height:100%;}
+  
+  .bar {padding-top:40px;max-width: 900px; margin: 0 auto;@include clearfix;}
+  
+  .title {
+	font-size: 66px;
+	line-height: 100px;
+	text-align: center;
+	border-bottom: 1px solid #fff;
+  }
+  
+  .cocktail {
+	float: left;
+	min-width: 200px;
+	padding: 80px 60px 0;
+	width: 33%;
+	@media all and (max-width: 600px) {
+	   width: 50%;
+	}
+	@media all and (max-width: 400px) {
+	   width: 100%;
+	}
+	
+	
+	.description {
+	  text-align: center;
+	  padding-top: 10px;
+	  font-size:14px;
+	  line-height: 20px;
+	  .ingredient {
+		display:block;
+		font-size: 12px;
+		line-height: 16px;
+		text-align:left;
+		color: rgba(255,255,255,0.5);
+		&.top {padding-top: 15px;}
+	  }
+	 }
+	.cocktail__glass {
+	  margin: 0 auto;
+	}
+	
+	&.negroni {padding-top: 113px;}
+	&.martini {
+	  padding-top: 89px;
+	  .description {padding-top:42px;}
+	}
+	
+	.ice {
+	  .ice__cube {
+		background: lighten($tom-collins, 80%);
+		width:$ice__cube-w;
+		height:$ice__cube-w;
+		border: 1px solid $ice-boder-color;
+		border-radius: 4px;
+		position: absolute;
+		bottom: 0;
+		@for $item from 1 through ($ice-num){
+		  &:nth-child(#{$item}) {
+			left:($item - 1) * $ice__cube-w ;
+			transform: rotate($item * 20deg) translate3d(0,0,0);
+		  }
+		}
+		&.cube-#{$ice-num} {
+		  transform: rotate($ice-num * 20deg) translate3d(-18px, 9px, 0);
+		}
+	  }
+	}
+	
+	.orange {
+	  @include orange(8px, 2px, rotate(250deg), float 3s infinite alternate linear);
+	}
+	
+	.cherry {
+	  width: $cherry_r;
+	  height: $cherry_r;
+	  border-radius: 50%;
+	  background: $cherry-color;
+	  position: relative;
+	  left:17px;
+	  top: 3px;
+	  animation: float-simple 5s infinite alternate linear;
+	  &:before {
+		content: '';
+		background-color: transparent;
+		width: 23px;
+		height: 17px;
+		border-radius: 50% / 100%;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		border: 1px solid #C40000;
+		border-right: none;
+		border-top: none;
+		border-bottom: none;
+		display: block;
+		position: absolute;
+		top: -11px;
+		left: 3px;
+		transform: rotate(15deg);
+	  }
+	}
+	
+	.olive {
+	  width: $olive_r;
+	  height: $olive_r;
+	  border-radius: 50%;
+	  background: $olive-color;
+	  position: relative;
+	  left: -2px;
+	  top: -20px;
+	  animation: float-simple 5s infinite alternate linear;
+	  &:before {
+		content: '';
+		background-color: transparent;
+		width: 23px;
+		height: 15px;
+		border: 1px solid $toothpick-color;
+		border-right: none;
+		border-top: none;
+		border-bottom: none;
+		display: block;
+		position: absolute;
+		top: -15px;
+		left: 5px;
+	  }
+	}
+	
+	
+	.cocktail__glass-long {
+	  position: relative;
+	  width: $glass-long-w;
+	  height: $glass-long-h;
+	  border: 1px solid $glass-boder-color;
+	  border-top: 0;
+	  border-bottom-left-radius: 5px;
+	  border-bottom-right-radius: 5px;
+	  &:after {
+		content:'';
+		background: $tom-collins;
+		position: absolute;
+		left: 0; right: 0;
+		bottom:0;
+		height: 0;
+		animation: fill-long 0.6s forwards ease;
+		
+	  }
+	}
+	
+	.cocktail__glass-short {
+	  position: relative;
+	  width: $glass-short-w;
+	  height: $glass-short-h;
+	  border: 1px solid $glass-boder-color;
+	  border-top: 0;
+	  border-bottom-left-radius: 5px;
+	  border-bottom-right-radius: 5px;
+	  &:after {
+		content:'';
+		background: $negroni;
+		position: absolute;
+		left: 0; right: 0;
+		bottom:0;
+		height: 0;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+		animation: fill-short 0.6s forwards ease;
+		/*
+		@include keyframes( "fill") {
+		  100% {height: ($glass-long-h - 10px);}
+		}
+		*/
+	  }
+	  .orange {
+		@include orange(6px,-4px, rotate(15deg), float-simple 3s infinite alternate linear);
+	  }
+	}
+	
+	.cocktail__glass-classic {
+	  position: relative;
+	  width:0;
+	  height:0;
+	  border-left: $glass-classic-w solid transparent;
+		border-right: $glass-classic-w solid transparent;
+		border-top: $glass-classic-w solid rgba(255, 255, 255, 0.3);
+	  
+	  /* fill */
+	  &:before {
+		content: '';
+		width: 0;
+		height: 0;
+		border-left: ($glass-classic-w - 7) solid transparent;
+		border-right: ($glass-classic-w - 7) solid transparent;
+		border-top: ($glass-classic-w - 7) solid lighten($martini, 50%);
+		position: absolute;
+		top: -20px;
+		left: #{-($glass-classic-w - 7)};
+		animation: fill-classic 0.6s forwards ease;
+		transform: translate3d(0,0,0) scale(0);
+		transform-origin: 50% bottom;
+	  }
+	  
+	  /* gambo */
+	  &:after {
+		content:'';
+		position: absolute;
+		left: -1px;
+		bottom:-27px;
+		height: 28px;
+		width:2px;
+		background: rgba(255,255,255, 0.3);
+	  }
+	  
+	  .stand {
+		width: 0;
+		height: 0;
+		border-left: ($glass-classic-w - 18) solid transparent;
+		border-right: ($glass-classic-w - 18) solid transparent;
+		border-bottom: ($glass-classic-w - 20) solid lighten($martini, 50%);
+		position: relative;
+		left: -7px;
+		top: 16px;
+	  }
+	}
+	
+  }
+  
+  @keyframes float {
+	50% {transform: rotate(260deg) translate3d(-2px,1px,0);}
+  }
+  @keyframes float-simple {
+	50% {transform: rotate(15deg) translate3d(0px,2px,0);}
+  }
+  
+  
+  @keyframes fill-classic {
+	100% {
+	  transform: translate3d(0,0,0) scale(1);
+	}
+  }
+  
+  @keyframes fill-long {
+	100% {height: ($glass-long-h - 10px);}
+  }
+  
+  @keyframes fill-short {
+	100% {height: ($glass-short-h - 5px);}
+  }
