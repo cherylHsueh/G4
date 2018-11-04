@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -26,6 +27,11 @@
    v2.0 | 20110126
    License: none (public domain)
 >>>>>>> 會員中心按鈕修改及關於我們圖片重新上傳
+=======
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
 */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -503,6 +509,7 @@ p {
   height: 100vh;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #00B5BD;
 =======
   background-color: #00b5bd;
@@ -510,6 +517,9 @@ p {
 =======
   background-color: #00b5bd;
 >>>>>>> commit
+=======
+  background-color: #00B5BD;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   float: left; }
 
 .about_start_background_block {
@@ -520,6 +530,7 @@ p {
   height: 100vh;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #00B5BD;
 =======
   background-color: #00b5bd;
@@ -527,6 +538,9 @@ p {
 =======
   background-color: #00b5bd;
 >>>>>>> commit
+=======
+  background-color: #00B5BD;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   float: left; }
 
 .about_end {
@@ -534,6 +548,7 @@ p {
   height: 100vh;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #00B5BD;
 =======
   background-color: #00b5bd;
@@ -541,6 +556,9 @@ p {
 =======
   background-color: #00b5bd;
 >>>>>>> commit
+=======
+  background-color: #00B5BD;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   float: left; }
 
 .about_factory_background_block {
@@ -552,11 +570,15 @@ p {
   position: absolute;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   background-color: #00B5BD; }
 
 .about_bigwrapper {
   width: 5000px;
   height: 100vh; }
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> commit
@@ -570,6 +592,8 @@ p {
 >>>>>>> member
 =======
 >>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
 
 #app {
   position: relative;
@@ -582,14 +606,20 @@ p {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
 #section4 {
   background-color: #00B5BD;
   height: 100vh; }
 
+<<<<<<< HEAD
 =======
 >>>>>>> member
 =======
 >>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
 path {
   stroke: white;
   fill: transparent;
@@ -599,6 +629,7 @@ path {
 path:hover {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   fill: #B99362;
 =======
   fill: #b99362;
@@ -606,6 +637,9 @@ path:hover {
 =======
   fill: #b99362;
 >>>>>>> commit
+=======
+  fill: #B99362;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   -webkit-transform: translate(-5px, -5px);
   transform: translate(-5px, -5px); }
 
@@ -614,6 +648,7 @@ path:hover {
   height: 100vh;
   position: absolute; }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 .forcast h2, .forcast h4, .forcast h5 {
@@ -627,6 +662,9 @@ path:hover {
 .forcast h4,
 .forcast h5 {
 >>>>>>> commit
+=======
+.forcast h2, .forcast h4, .forcast h5 {
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   margin: 0; }
 
 #e468a7aa-2bdf-4501-b48d-35483b7c8ccc,
@@ -656,6 +694,7 @@ path:hover {
 #a21c4ba33-d057-42c1-9c71-be6061fc73cf {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   fill: #36BF36; }
 =======
   fill: #36bf36; }
@@ -663,6 +702,9 @@ path:hover {
 =======
   fill: #36bf36; }
 >>>>>>> commit
+=======
+  fill: #36BF36; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
 
 @keyframes shake {
   0% {
@@ -703,6 +745,7 @@ h3 {
 .bounce {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   animation: bounce .5s infinite alternate;
   -webkit-animation: bounce .8s infinite alternate; }
 =======
@@ -713,6 +756,10 @@ h3 {
   animation: bounce 0.5s infinite alternate;
   -webkit-animation: bounce 0.8s infinite alternate; }
 >>>>>>> commit
+=======
+  animation: bounce .5s infinite alternate;
+  -webkit-animation: bounce .8s infinite alternate; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
 
 @media only screen and (max-width: 767px) {
   header nav {
@@ -721,6 +768,9 @@ h3 {
     z-index: 100; }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .about_start_background_block {
     position: relative;
     height: 100vh; }
@@ -728,6 +778,7 @@ h3 {
     width: 50%;
     position: absolute;
     max-width: 245px;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> commit
@@ -774,6 +825,8 @@ h3 {
 >>>>>>> member
 =======
 >>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     animation: flutter 5s linear infinite; }
   .about_start_background_clould02 {
     width: 54%;
@@ -783,6 +836,7 @@ h3 {
     animation: flutter 5s linear infinite; }
   .about_start_background_clould03 {
     display: none; }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -802,6 +856,8 @@ h3 {
 >>>>>>> member
 =======
 >>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .farmerLocationIcon img {
     width: 30%;
     margin: 1% 0;
@@ -811,6 +867,9 @@ h3 {
     left: 10%; }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .about_start_content_orchard {
     width: 40%;
     max-width: 250px;
@@ -835,6 +894,7 @@ h3 {
     right: -17%; }
     .about_start_content_mountain03 img {
       width: 100%; }
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> commit
@@ -976,6 +1036,8 @@ h3 {
 >>>>>>> member
 =======
 >>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .about_start_content_car01 {
     width: 36%;
     position: absolute;
@@ -986,6 +1048,7 @@ h3 {
       width: 100%;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       animation: shake .3s  alternate  infinite; }
 =======
       animation: shake 0.3s alternate infinite; }
@@ -993,6 +1056,9 @@ h3 {
 =======
       animation: shake 0.3s alternate infinite; }
 >>>>>>> commit
+=======
+      animation: shake .3s  alternate  infinite; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .about_start_content_car01_tire1 {
     width: 8%;
     position: absolute;
@@ -1019,6 +1085,7 @@ h3 {
     position: absolute;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     max-width: 80px;
     top: 8%;
 =======
@@ -1029,6 +1096,10 @@ h3 {
     max-width: 143px;
     top: 16%;
 >>>>>>> commit
+=======
+    max-width: 80px;
+    top: 8%;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     z-index: 1; }
   .about_factory_background_clould03 {
     display: none; }
@@ -1045,6 +1116,7 @@ h3 {
     position: absolute;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     bottom: 48%;
     left: 17%;
 =======
@@ -1055,6 +1127,10 @@ h3 {
     bottom: 31%;
     left: 67%;
 >>>>>>> commit
+=======
+    bottom: 48%;
+    left: 17%;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     z-index: 2; }
     .about_factory_content_factoryTitle img {
       width: 100%; }
@@ -1073,6 +1149,9 @@ h3 {
     position: absolute;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     bottom: 28%;
     left: 1%;
     z-index: 2; }
@@ -1092,6 +1171,7 @@ h3 {
     z-index: 1;
     position: absolute;
     bottom: 20%; }
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> commit
@@ -1145,6 +1225,8 @@ h3 {
 >>>>>>> member
 =======
 >>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .about_factory_content_car01 {
     width: 35%;
     position: absolute;
@@ -1156,11 +1238,15 @@ h3 {
   .about_factory_info_blcok {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     width: 40%;
     background-color: #00ac6f;
     position: absolute;
     top: 1%;
     left: 0%;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> commit
@@ -1174,6 +1260,8 @@ h3 {
 >>>>>>> member
 =======
 >>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     right: 0;
     margin: 0% auto;
     border: 5px solid #fff;
@@ -1216,6 +1304,7 @@ h3 {
   .about_factory_info_item_truck_horizontal,
   .about_factory_info_item_cart_horizontal {
     display: none; }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   #section3 {
@@ -1307,12 +1396,19 @@ h3 {
 >>>>>>> member
 =======
 >>>>>>> commit
+=======
+  #section3 {
+    background-color: #00B5BD;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     height: 100vh; }
   .about_end_background {
     position: absolute;
     width: 100%;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     height: 100vh;
     bottom: 140px; }
   .about_end_background_shadow {
@@ -1344,6 +1440,7 @@ h3 {
     .about_end_background_truck img {
       width: 100%;
       animation: shake .3s  alternate  infinite; }
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> commit
@@ -1451,6 +1548,8 @@ h3 {
 >>>>>>> member
 =======
 >>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .about_end_background_truckTire1 {
     width: 6%;
     position: absolute;
@@ -1469,12 +1568,16 @@ h3 {
       animation: rotate 5s linear infinite; }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   #cf503461-00bd-459a-aeb5-062ebc913211 {
     width: 80%;
     height: 100vh;
     position: absolute;
     bottom: 12%;
     left: -14%; }
+<<<<<<< HEAD
 =======
   .about_end_background_house2 {
     display: none; }
@@ -1483,6 +1586,8 @@ h3 {
   .about_end_background_house2 {
     display: none; }
 >>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .title_area {
     width: 45%;
     height: 30%;
@@ -1499,6 +1604,9 @@ h3 {
       font-size: 18px; }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .about_taiwan_background_mountain {
     width: 79%;
     position: absolute;
@@ -1506,10 +1614,13 @@ h3 {
     left: 7%; }
     .about_taiwan_background_mountain img {
       width: 100%; }
+<<<<<<< HEAD
 =======
 >>>>>>> member
 =======
 >>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .about_taiwan_background_cloud {
     width: 20%;
     position: absolute;
@@ -1528,6 +1639,9 @@ h3 {
       animation: flutter 5s linear infinite; }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .about_taiwan_background_mountain2,
   .about_taiwan_background_grass {
     display: none; }
@@ -1540,6 +1654,7 @@ h3 {
     right: 0;
     margin: 1% auto;
     padding: 5% 0;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> commit
@@ -1558,6 +1673,8 @@ h3 {
 >>>>>>> member
 =======
 >>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     border: 5px solid #fff;
     box-shadow: 0 0 0 20px #00ac6f;
     z-index: 6;
@@ -1565,6 +1682,7 @@ h3 {
   .about_cooperation_info_blcok_border {
     width: 80%;
     margin: auto; }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -1585,6 +1703,8 @@ h3 {
 >>>>>>> member
 =======
 >>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .about_cooperation_info_item_title {
     width: 80%;
     margin: auto; }
@@ -1651,6 +1771,7 @@ h3 {
       margin: 10% 0 0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       animation: bounce .5s infinite alternate; }
 =======
       animation: bounce 0.5s infinite alternate; }
@@ -1658,6 +1779,9 @@ h3 {
 =======
       animation: bounce 0.5s infinite alternate; }
 >>>>>>> commit
+=======
+      animation: bounce .5s infinite alternate; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .about_start_content_orchard {
     width: 30%;
     position: absolute;
@@ -1743,6 +1867,7 @@ h3 {
     height: 18%;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     background-color: #D9E021;
 =======
     background-color: #d9e021;
@@ -1750,6 +1875,9 @@ h3 {
 =======
     background-color: #d9e021;
 >>>>>>> commit
+=======
+    background-color: #D9E021;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     position: absolute;
     bottom: 0;
     z-index: 2;
@@ -1778,6 +1906,7 @@ h3 {
       width: 100%;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       animation: shake .3s  alternate  infinite; }
 =======
       animation: shake 0.3s alternate infinite; }
@@ -1785,6 +1914,9 @@ h3 {
 =======
       animation: shake 0.3s alternate infinite; }
 >>>>>>> commit
+=======
+      animation: shake .3s  alternate  infinite; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .about_start_content_car01_tire1 {
     width: 5%;
     position: absolute;
@@ -1855,11 +1987,15 @@ h3 {
   .about_factory_content_mountain01 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     width: 85%;
     position: absolute;
     bottom: 18%;
     left: 0%;
     z-index: 1; }
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> commit
@@ -1872,6 +2008,8 @@ h3 {
 >>>>>>> member
 =======
 >>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     .about_factory_content_mountain01 img {
       width: 100%; }
   .about_factory_content_mountain02 {
@@ -1884,10 +2022,14 @@ h3 {
   .about_factory_content_grass1 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     width: 14%;
     position: absolute;
     bottom: 18%;
     right: 38%;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> commit
@@ -1899,12 +2041,15 @@ h3 {
 >>>>>>> member
 =======
 >>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     z-index: 4; }
     .about_factory_content_grass1 img {
       width: 100%; }
   .about_factory_grass {
     width: 100%;
     height: 18%;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     background-color: #D9E021;
@@ -1914,6 +2059,9 @@ h3 {
 =======
     background-color: #d9e021;
 >>>>>>> commit
+=======
+    background-color: #D9E021;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     position: absolute;
     bottom: 0;
     z-index: 2;
@@ -2023,6 +2171,9 @@ h3 {
       width: 100%; }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .about_factory_info_item_cart_straight, .about_factory_info_item_truck_straight {
     display: none; }
   .about_end {
@@ -2185,6 +2336,7 @@ h3 {
       padding: 5%;
       border: 1px solid #fff;
       border-radius: 10px; }
+<<<<<<< HEAD
 =======
   .about_factory_info_item_cart_straight,
   .about_factory_info_item_truck_straight {
@@ -2195,6 +2347,8 @@ h3 {
   .about_factory_info_item_truck_straight {
     display: none; }
 >>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   #cf503461-00bd-459a-aeb5-062ebc913211 {
     width: 25%;
     height: 100vh;
@@ -2204,6 +2358,9 @@ h3 {
     left: 25%; }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .title_area {
     width: 25%;
     position: absolute;
@@ -2212,10 +2369,13 @@ h3 {
     color: white;
     font-size: 30px;
     padding: 2%; }
+<<<<<<< HEAD
 =======
 >>>>>>> member
 =======
 >>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .about_taiwan_background_mountain {
     width: 70%;
     position: absolute;
@@ -2259,6 +2419,7 @@ h3 {
     height: 18%;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     background-color: #D9E021;
 =======
     background-color: #d9e021;
@@ -2266,6 +2427,9 @@ h3 {
 =======
     background-color: #d9e021;
 >>>>>>> commit
+=======
+    background-color: #D9E021;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     position: absolute;
     bottom: 0;
     z-index: 2;
@@ -2342,6 +2506,7 @@ h3 {
       width: 100%;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       animation: shake .3s  alternate  infinite; }
 =======
       animation: shake 0.3s alternate infinite; }
@@ -2349,6 +2514,9 @@ h3 {
 =======
       animation: shake 0.3s alternate infinite; }
 >>>>>>> commit
+=======
+      animation: shake .3s  alternate  infinite; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .about_taiwan_background_truckTire1 {
     width: 5%;
     position: absolute;
@@ -2386,6 +2554,7 @@ h3 {
     margin: auto; }
     .about_cooperation_info_item_title img {
       width: 100%;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       margin-bottom: 10%; } }
@@ -2555,3 +2724,6 @@ h3 {
 >>>>>>> member
 =======
 >>>>>>> commit
+=======
+      margin-bottom: 10%; } }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件

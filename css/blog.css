@@ -473,6 +473,12 @@ header {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+* {
+  outline: 1px solid red; }
+
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
 header nav li:nth-child(4) > a:after {
   transform: scaleX(1); }
 =======
@@ -582,7 +588,14 @@ body {
     height: 130px; }
   .blog_Heading {
     width: 90%;
+<<<<<<< HEAD
     margin: 10px auto 0; }
+=======
+    margin: 10px auto 0;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: #f5ba5b; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .blog_Subheading {
     margin-bottom: 20px; }
   .blog_Rank {
@@ -739,15 +752,21 @@ body {
           position: absolute; }
         .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar1 {
 <<<<<<< HEAD
+<<<<<<< HEAD
           background-color: rgba(255, 99, 132, 0.8);
           margin: auto; }
 =======
           background-color: rgba(255, 99, 132, 0.8); }
 >>>>>>> cart
+=======
+          background-color: rgba(255, 99, 132, 0.8);
+          margin: auto; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
         .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar2 {
           background-color: rgba(54, 162, 235, 0.8); }
         .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar3 {
           background-color: rgba(255, 206, 86, 0.8); }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
       .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_BottomBox_Title {
@@ -757,6 +776,8 @@ body {
         font-size: 2.3vw;
         text-align: center; }
 >>>>>>> cart
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     .blog_Rank_ContentBox .blog_Rank_ContentBox_Desc p {
       margin: 5%;
       text-align: right;
@@ -980,6 +1001,7 @@ body {
       transform: rotate(9deg);
       opacity: 0; } }
   .blogIn_Share {
+<<<<<<< HEAD
     margin: 5% 0; }
     .blogIn_Share .blogIn_Headingbox {
       margin: 0 5%;
@@ -987,6 +1009,11 @@ body {
       border-top-right-radius: 10px;
       border-top-left-radius: 10px;
       background-color: #f5ba5b; }
+=======
+    margin: 5%; }
+    .blogIn_Share .blogIn_Headingbox {
+      position: relative; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
       .blogIn_Share .blogIn_Headingbox .blogIn_umbrellaguava {
         width: 20%;
         position: absolute;
@@ -1813,10 +1840,14 @@ body {
     top: 0;
     right: 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
     z-index: -1;
 =======
     z-index: 1;
 >>>>>>> cart
+=======
+    z-index: -1;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     animation: umbrellaApple 30s linear infinite; }
   @keyframes umbrellaApple {
     0% {
@@ -1842,15 +1873,22 @@ body {
       opacity: 1; }
     100% {
 <<<<<<< HEAD
+<<<<<<< HEAD
       top: 100%;
 =======
       top: 180%;
 >>>>>>> cart
+=======
+      top: 100%;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
       right: 1200px;
       width: 250px;
       transform: rotate(9deg);
       opacity: 0; } }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .blogIn_Headingbox {
     position: relative; }
     .blogIn_Headingbox .blog_Heading {
@@ -1885,15 +1923,19 @@ body {
       left: 55%; } }
       .blogIn_Headingbox .blogIn_cloud img {
         width: 200px; }
+<<<<<<< HEAD
 =======
   .blogIn_Headingbox .blog_Heading {
     padding: 50px 0 0; }
 >>>>>>> cart
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .blogIn_Share {
     position: relative;
     z-index: 1;
     margin: 5%; }
   .blogIn_Container {
+<<<<<<< HEAD
 <<<<<<< HEAD
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -1902,6 +1944,11 @@ body {
     border-radius: 10px;
     background-color: #fefefe; }
 >>>>>>> cart
+=======
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgba(254, 254, 254, 0.6); }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .blogIn_LeftBox {
     padding-bottom: 2%; }
     .blogIn_LeftBox .blogIn_LeftBox_Pic {
@@ -1911,10 +1958,14 @@ body {
       width: 90%;
       margin: 0 auto;
 <<<<<<< HEAD
+<<<<<<< HEAD
       background-color: rgba(245, 195, 121, 0.993); }
 =======
       background-color: rgba(253, 253, 47, 0.938); }
 >>>>>>> cart
+=======
+      background-color: rgba(245, 195, 121, 0.993); }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
       .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blogIn_LeftBox_NamePic {
         width: 25%;
         margin-left: 13%; }
@@ -2000,10 +2051,14 @@ body {
       top: 0;
       left: 50px;
 <<<<<<< HEAD
+<<<<<<< HEAD
       z-index: -1;
 =======
       z-index: 1;
 >>>>>>> cart
+=======
+      z-index: -1;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
       transform: rotate(50deg);
       animation: umbrellaOrange 30s linear infinite; }
   @keyframes umbrellaOrange {
@@ -2036,11 +2091,16 @@ body {
     .blogIn_Msg .blogIn_Msg_sendContainer {
       margin: 0 5%;
 <<<<<<< HEAD
+<<<<<<< HEAD
       border-radius: 10px;
       background-color: rgba(254, 254, 254, 0.6); }
 =======
       background-color: #ececaa; }
 >>>>>>> cart
+=======
+      border-radius: 10px;
+      background-color: rgba(254, 254, 254, 0.6); }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
       .blogIn_Msg .blogIn_Msg_sendContainer .blogIn_Msg_SendBlock {
         border-bottom: 1px solid #ccc; }
   .blogIn_Msg_SendBlock {
@@ -2104,6 +2164,7 @@ body {
       margin: 50px 20px; }
   .umbrellaMandarin img {
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 300px;
     position: absolute;
     bottom: -10%;
@@ -2113,18 +2174,27 @@ body {
     animation: umbrellaMandarinScale 3s linear infinite alternate-reverse; }
 =======
     width: 200px;
+=======
+    width: 300px;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     position: absolute;
-    bottom: -100%;
-    right: 0;
+    bottom: -10%;
+    right: 0%;
+    z-index: 1;
     cursor: pointer;
+<<<<<<< HEAD
     animation: umbrellaMandarinScale 3s linear infinite alternate; }
 >>>>>>> cart
+=======
+    animation: umbrellaMandarinScale 3s linear infinite alternate-reverse; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   @keyframes umbrellaMandarinScale {
     from {
       transform: scale(0.8); }
     to {
       transform: scale(1); } }
   .umbrellaMandarin .umbrellaMandarin_active {
+<<<<<<< HEAD
 <<<<<<< HEAD
     animation: umbrellaMandarin 5s linear backwards; }
   @keyframes umbrellaMandarin {
@@ -2169,22 +2239,45 @@ body {
         margin: atuo; }
 =======
     animation: umbrellaMandarin 30s linear forwards; }
+=======
+    animation: umbrellaMandarin 5s linear backwards; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   @keyframes umbrellaMandarin {
     0% {
-      bottom: -100%;
-      right: 0;
+      bottom: -10%;
+      right: 0%;
       transform: scale(1); }
     99% {
       opacity: 1; }
-    to {
-      bottom: 100%;
-      right: 1000px;
+    100% {
+      bottom: 300%;
+      right: 100%;
       opacity: 0;
       transform: scale(0.1); } }
+  .blogSubmit_bgc {
+    position: relative;
+    background: #f2f848;
+    background: linear-gradient(180deg, #f0f56c 1%, #e9fa7a 63%, rgba(122, 230, 69, 0.986432) 82%, #42f163 100%); }
+  .blogSubmit_board {
+    margin-top: 200px; }
+    .blogSubmit_board img {
+      width: 75%;
+      position: absolute;
+      bottom: 0;
+      left: 12.5%;
+      z-index: 1; }
+  .blogSubmit_Share {
+    position: relative; }
   .blogSubmit_Headingbox .blog_Heading {
-    padding: 30px 0; }
+    position: absolute;
+    top: -50px;
+    z-index: 2; }
+  #blogSubmit_form {
+    position: relative;
+    top: -50px;
+    z-index: 2; }
   .blogSubmit_Container {
-    margin: 20px;
+    margin: 20px 50px;
     border: 1px solid #222; }
 >>>>>>> cart
   .blogSubmit_LeftBox {
@@ -2276,6 +2369,7 @@ body {
           color: #888; }
   form {
     text-align: center; }
+<<<<<<< HEAD
     form .common_btn_first {
       max-width: 300px;
       position: absolute;
@@ -2288,6 +2382,21 @@ body {
       transform: rotate(20deg); }
     to {
       transform: rotate(5deg); } }
+=======
+  a.blogSubmit_ButtonItem {
+    display: inline-block;
+    padding: 2% 8%;
+    margin: 5% auto;
+    border-radius: 10px;
+    background-color: #fff100;
+    color: #5e4909;
+    transition: 1s; }
+    a.blogSubmit_ButtonItem:hover {
+      background-color: #f1900f;
+      color: #fefefe; }
+  .common_btn_first {
+    position: relative; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .footer_wrapper {
     position: relative;
     text-align: center;

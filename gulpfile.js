@@ -22,7 +22,11 @@ gulp.task('default', ['sass'], function () {
     server: {
       //根目錄
       baseDir: "./",
+<<<<<<< HEAD
       index: "aboutNew.html"
+=======
+      index: "blogSubmit.html"
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     }
   });
 
@@ -31,4 +35,8 @@ gulp.task('default', ['sass'], function () {
   gulp.watch("js/*.js").on('change', reload);
   gulp.watch("images/*").on('change', reload);
   // gulp.watch("images/*").on('change', reload);
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
