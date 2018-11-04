@@ -69,9 +69,9 @@ body {
         @extend %blog_title;
         width: 90%;
         margin: 10px auto 0;
-        border-top-right-radius: 10px;
-        border-top-left-radius: 10px;
-        background-color: #f5ba5b;
+        // border-top-right-radius: 10px;
+        // border-top-left-radius: 10px;
+        // background-color: #f5ba5b;
     }
 
     .blog_Subheading {
@@ -792,10 +792,15 @@ body {
 
     .blogIn_Share {
         // border: 1px solid #ccc;
-        margin: 5%;
+        margin: 5% 0;
 
         .blogIn_Headingbox {
+            margin: 0 5%;
+            // width: 90%;
             position: relative;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            background-color: #f5ba5b;
 
             .blogIn_umbrellaguava {
                 width: 20%;
@@ -1195,6 +1200,9 @@ body {
         .blog_Heading {
             @extend %blog_title;
             padding: 30px 0;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            background-color: #f5ba5b;
         }
     }
 
@@ -1380,11 +1388,13 @@ body {
 
     form {
         text-align: center;
+
+        .common_btn_first {
+            margin-bottom: 50px;
+        }
     }
 
-    .common_btn_first {
-        margin-bottom: 50px;
-    }
+
 
     .footer_wrapper {
         text-align: center;
@@ -3158,30 +3168,32 @@ body {
     form {
         // margin: 0 auto;
         text-align: center;
-    }
 
-    .common_btn_first {
-        max-width: 300px;
-        position: absolute;
-        bottom: -5%;
-        left: 10%;
-        transform: rotate(10deg);
-        animation: buttonscale 2s infinite alternate-reverse;
-    }
-
-    @keyframes buttonscale {
-        from {
-            transform: rotate(20deg);
+        .common_btn_first {
+            max-width: 300px;
+            position: absolute;
+            bottom: -5%;
+            left: 10%;
+            transform: rotate(10deg);
+            animation: buttonscale 2s infinite alternate-reverse;
         }
 
-        ;
+        @keyframes buttonscale {
+            from {
+                transform: rotate(20deg);
+            }
 
-        to {
-            transform: rotate(5deg);
+            ;
+
+            to {
+                transform: rotate(5deg);
+            }
+
+            ;
         }
-
-        ;
     }
+
+
 
     .footer_wrapper {
         position: relative;
