@@ -1,6 +1,7 @@
 @charset "UTF-8";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -14,6 +15,11 @@
    v2.0 | 20110126
    License: none (public domain)
 >>>>>>> member
+=======
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+>>>>>>> commit
 */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -490,10 +496,14 @@ p {
   width: 25%;
   height: 100vh;
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #00B5BD;
 =======
   background-color: #00b5bd;
 >>>>>>> member
+=======
+  background-color: #00b5bd;
+>>>>>>> commit
   float: left; }
 
 .about_start_background_block {
@@ -503,20 +513,28 @@ p {
   width: 25%;
   height: 100vh;
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #00B5BD;
 =======
   background-color: #00b5bd;
 >>>>>>> member
+=======
+  background-color: #00b5bd;
+>>>>>>> commit
   float: left; }
 
 .about_end {
   width: 25%;
   height: 100vh;
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #00B5BD;
 =======
   background-color: #00b5bd;
 >>>>>>> member
+=======
+  background-color: #00b5bd;
+>>>>>>> commit
   float: left; }
 
 .about_factory_background_block {
@@ -527,19 +545,25 @@ p {
   height: 100vh;
   position: absolute;
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #00B5BD; }
 
 .about_bigwrapper {
   width: 5000px;
   height: 100vh; }
 =======
+=======
+>>>>>>> commit
   background-color: #00b5bd; }
 
 .about_bigwrapper {
   width: 5000px;
   height: 100vh;
   overflow: hidden; }
+<<<<<<< HEAD
 >>>>>>> member
+=======
+>>>>>>> commit
 
 #app {
   position: relative;
@@ -551,12 +575,15 @@ p {
   padding: 5% 0; }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #section4 {
   background-color: #00B5BD;
   height: 100vh; }
 
 =======
 >>>>>>> member
+=======
+>>>>>>> commit
 path {
   stroke: white;
   fill: transparent;
@@ -565,10 +592,14 @@ path {
 
 path:hover {
 <<<<<<< HEAD
+<<<<<<< HEAD
   fill: #B99362;
 =======
   fill: #b99362;
 >>>>>>> member
+=======
+  fill: #b99362;
+>>>>>>> commit
   -webkit-transform: translate(-5px, -5px);
   transform: translate(-5px, -5px); }
 
@@ -578,12 +609,18 @@ path:hover {
   position: absolute; }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .forcast h2, .forcast h4, .forcast h5 {
 =======
 .forcast h2,
 .forcast h4,
 .forcast h5 {
 >>>>>>> member
+=======
+.forcast h2,
+.forcast h4,
+.forcast h5 {
+>>>>>>> commit
   margin: 0; }
 
 #e468a7aa-2bdf-4501-b48d-35483b7c8ccc,
@@ -612,10 +649,14 @@ path:hover {
 #e1806d87-d003-48dd-b8d3-3f99b3759340,
 #a21c4ba33-d057-42c1-9c71-be6061fc73cf {
 <<<<<<< HEAD
+<<<<<<< HEAD
   fill: #36BF36; }
 =======
   fill: #36bf36; }
 >>>>>>> member
+=======
+  fill: #36bf36; }
+>>>>>>> commit
 
 @keyframes shake {
   0% {
@@ -655,18 +696,24 @@ h3 {
 
 .bounce {
 <<<<<<< HEAD
+<<<<<<< HEAD
   animation: bounce .5s infinite alternate;
   -webkit-animation: bounce .8s infinite alternate; }
 =======
   animation: bounce 0.5s infinite alternate;
   -webkit-animation: bounce 0.8s infinite alternate; }
 >>>>>>> member
+=======
+  animation: bounce 0.5s infinite alternate;
+  -webkit-animation: bounce 0.8s infinite alternate; }
+>>>>>>> commit
 
 @media only screen and (max-width: 767px) {
   header nav {
     position: fixed;
     width: 100vw;
     z-index: 100; }
+<<<<<<< HEAD
 <<<<<<< HEAD
   .about_start_background_block {
     position: relative;
@@ -676,6 +723,8 @@ h3 {
     position: absolute;
     max-width: 245px;
 =======
+=======
+>>>>>>> commit
   .about_bigwrapper {
     width: 1600px;
     height: 100vh;
@@ -715,7 +764,10 @@ h3 {
     top: 17%;
     position: absolute;
     max-width: 190px;
+<<<<<<< HEAD
 >>>>>>> member
+=======
+>>>>>>> commit
     animation: flutter 5s linear infinite; }
   .about_start_background_clould02 {
     width: 54%;
@@ -726,7 +778,10 @@ h3 {
   .about_start_background_clould03 {
     display: none; }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> commit
   .about_start_content_bounce {
     width: 14%;
     position: absolute;
@@ -737,7 +792,10 @@ h3 {
       width: 100%;
       margin: 10% 0 0;
       animation: bounce 0.5s infinite alternate; }
+<<<<<<< HEAD
 >>>>>>> member
+=======
+>>>>>>> commit
   .farmerLocationIcon img {
     width: 30%;
     margin: 1% 0;
@@ -745,6 +803,7 @@ h3 {
     bottom: 0;
     top: 30%;
     left: 10%; }
+<<<<<<< HEAD
 <<<<<<< HEAD
   .about_start_content_orchard {
     width: 40%;
@@ -771,6 +830,8 @@ h3 {
     .about_start_content_mountain03 img {
       width: 100%; }
 =======
+=======
+>>>>>>> commit
   .about_start_info_item_title {
     width: 70%;
     margin: auto; }
@@ -905,7 +966,10 @@ h3 {
     display: none; }
     .about_factory_road1 img {
       width: 100%; }
+<<<<<<< HEAD
 >>>>>>> member
+=======
+>>>>>>> commit
   .about_start_content_car01 {
     width: 36%;
     position: absolute;
@@ -915,10 +979,14 @@ h3 {
     .about_start_content_car01 img {
       width: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
       animation: shake .3s  alternate  infinite; }
 =======
       animation: shake 0.3s alternate infinite; }
 >>>>>>> member
+=======
+      animation: shake 0.3s alternate infinite; }
+>>>>>>> commit
   .about_start_content_car01_tire1 {
     width: 8%;
     position: absolute;
@@ -944,12 +1012,17 @@ h3 {
     width: 50%;
     position: absolute;
 <<<<<<< HEAD
+<<<<<<< HEAD
     max-width: 80px;
     top: 8%;
 =======
     max-width: 143px;
     top: 16%;
 >>>>>>> member
+=======
+    max-width: 143px;
+    top: 16%;
+>>>>>>> commit
     z-index: 1; }
   .about_factory_background_clould03 {
     display: none; }
@@ -965,12 +1038,17 @@ h3 {
     max-width: 100px;
     position: absolute;
 <<<<<<< HEAD
+<<<<<<< HEAD
     bottom: 48%;
     left: 17%;
 =======
     bottom: 31%;
     left: 67%;
 >>>>>>> member
+=======
+    bottom: 31%;
+    left: 67%;
+>>>>>>> commit
     z-index: 2; }
     .about_factory_content_factoryTitle img {
       width: 100%; }
@@ -987,6 +1065,7 @@ h3 {
     width: 40%;
     max-width: 250px;
     position: absolute;
+<<<<<<< HEAD
 <<<<<<< HEAD
     bottom: 28%;
     left: 1%;
@@ -1008,6 +1087,8 @@ h3 {
     position: absolute;
     bottom: 20%; }
 =======
+=======
+>>>>>>> commit
     bottom: 14%;
     left: 44%;
     z-index: 2; }
@@ -1054,7 +1135,10 @@ h3 {
     .about_factory_content_roadsign img {
       width: 100%;
       margin: -5% 0; }
+<<<<<<< HEAD
 >>>>>>> member
+=======
+>>>>>>> commit
   .about_factory_content_car01 {
     width: 35%;
     position: absolute;
@@ -1065,19 +1149,25 @@ h3 {
       width: 100%; }
   .about_factory_info_blcok {
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 40%;
     background-color: #00ac6f;
     position: absolute;
     top: 1%;
     left: 0%;
 =======
+=======
+>>>>>>> commit
     width: 46%;
     background-color: #00ac6f;
     position: absolute;
     top: 19%;
     left: 0%;
     z-index: 2;
+<<<<<<< HEAD
 >>>>>>> member
+=======
+>>>>>>> commit
     right: 0;
     margin: 0% auto;
     border: 5px solid #fff;
@@ -1121,9 +1211,12 @@ h3 {
   .about_factory_info_item_cart_horizontal {
     display: none; }
 <<<<<<< HEAD
+<<<<<<< HEAD
   #section3 {
     background-color: #00B5BD;
 =======
+=======
+>>>>>>> commit
   .about_taiwan_background_mountain3 {
     width: 100%;
     position: absolute;
@@ -1204,11 +1297,15 @@ h3 {
     left: -14%; }
   #section3 {
     background-color: #00b5bd;
+<<<<<<< HEAD
 >>>>>>> member
+=======
+>>>>>>> commit
     height: 100vh; }
   .about_end_background {
     position: absolute;
     width: 100%;
+<<<<<<< HEAD
 <<<<<<< HEAD
     height: 100vh;
     bottom: 140px; }
@@ -1242,6 +1339,8 @@ h3 {
       width: 100%;
       animation: shake .3s  alternate  infinite; }
 =======
+=======
+>>>>>>> commit
     height: 100vh; }
   .about_end_background_flowerpot {
     width: 4%;
@@ -1342,7 +1441,10 @@ h3 {
     display: none; }
     .about_end_background_soil_road1 img {
       width: 100%; }
+<<<<<<< HEAD
 >>>>>>> member
+=======
+>>>>>>> commit
   .about_end_background_truckTire1 {
     width: 6%;
     position: absolute;
@@ -1360,6 +1462,7 @@ h3 {
       width: 100%;
       animation: rotate 5s linear infinite; }
 <<<<<<< HEAD
+<<<<<<< HEAD
   #cf503461-00bd-459a-aeb5-062ebc913211 {
     width: 80%;
     height: 100vh;
@@ -1370,6 +1473,10 @@ h3 {
   .about_end_background_house2 {
     display: none; }
 >>>>>>> member
+=======
+  .about_end_background_house2 {
+    display: none; }
+>>>>>>> commit
   .title_area {
     width: 45%;
     height: 30%;
@@ -1385,6 +1492,7 @@ h3 {
     .forcast h5 {
       font-size: 18px; }
 <<<<<<< HEAD
+<<<<<<< HEAD
   .about_taiwan_background_mountain {
     width: 79%;
     position: absolute;
@@ -1394,6 +1502,8 @@ h3 {
       width: 100%; }
 =======
 >>>>>>> member
+=======
+>>>>>>> commit
   .about_taiwan_background_cloud {
     width: 20%;
     position: absolute;
@@ -1411,6 +1521,7 @@ h3 {
       width: 100%;
       animation: flutter 5s linear infinite; }
 <<<<<<< HEAD
+<<<<<<< HEAD
   .about_taiwan_background_mountain2,
   .about_taiwan_background_grass {
     display: none; }
@@ -1424,6 +1535,8 @@ h3 {
     margin: 1% auto;
     padding: 5% 0;
 =======
+=======
+>>>>>>> commit
   .about_taiwan_background_mountain2 {
     display: none; }
   .about_cooperation_info_blcok {
@@ -1435,7 +1548,10 @@ h3 {
     right: 0;
     margin: 0% auto;
     padding: 1% 0;
+<<<<<<< HEAD
 >>>>>>> member
+=======
+>>>>>>> commit
     border: 5px solid #fff;
     box-shadow: 0 0 0 20px #00ac6f;
     z-index: 6;
@@ -1444,7 +1560,10 @@ h3 {
     width: 80%;
     margin: auto; }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> commit
   .about_end_formInfo {
     margin: 1% auto 0;
     width: 100%;
@@ -1456,7 +1575,10 @@ h3 {
     color: #fff;
     padding: 1%;
     border-radius: 10px; }
+<<<<<<< HEAD
 >>>>>>> member
+=======
+>>>>>>> commit
   .about_cooperation_info_item_title {
     width: 80%;
     margin: auto; }
@@ -1522,10 +1644,14 @@ h3 {
       width: 100%;
       margin: 10% 0 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
       animation: bounce .5s infinite alternate; }
 =======
       animation: bounce 0.5s infinite alternate; }
 >>>>>>> member
+=======
+      animation: bounce 0.5s infinite alternate; }
+>>>>>>> commit
   .about_start_content_orchard {
     width: 30%;
     position: absolute;
@@ -1610,10 +1736,14 @@ h3 {
     width: 100%;
     height: 18%;
 <<<<<<< HEAD
+<<<<<<< HEAD
     background-color: #D9E021;
 =======
     background-color: #d9e021;
 >>>>>>> member
+=======
+    background-color: #d9e021;
+>>>>>>> commit
     position: absolute;
     bottom: 0;
     z-index: 2;
@@ -1641,10 +1771,14 @@ h3 {
     .about_start_content_car01 img {
       width: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
       animation: shake .3s  alternate  infinite; }
 =======
       animation: shake 0.3s alternate infinite; }
 >>>>>>> member
+=======
+      animation: shake 0.3s alternate infinite; }
+>>>>>>> commit
   .about_start_content_car01_tire1 {
     width: 5%;
     position: absolute;
@@ -1714,18 +1848,24 @@ h3 {
       width: 100%; }
   .about_factory_content_mountain01 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 85%;
     position: absolute;
     bottom: 18%;
     left: 0%;
     z-index: 1; }
 =======
+=======
+>>>>>>> commit
     width: 100%;
     position: absolute;
     bottom: 18%;
     left: 0%;
     z-index: 2; }
+<<<<<<< HEAD
 >>>>>>> member
+=======
+>>>>>>> commit
     .about_factory_content_mountain01 img {
       width: 100%; }
   .about_factory_content_mountain02 {
@@ -1737,16 +1877,22 @@ h3 {
       width: 100%; }
   .about_factory_content_grass1 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 14%;
     position: absolute;
     bottom: 18%;
     right: 38%;
 =======
+=======
+>>>>>>> commit
     width: 17%;
     position: absolute;
     bottom: 13%;
     right: 47%;
+<<<<<<< HEAD
 >>>>>>> member
+=======
+>>>>>>> commit
     z-index: 4; }
     .about_factory_content_grass1 img {
       width: 100%; }
@@ -1754,10 +1900,14 @@ h3 {
     width: 100%;
     height: 18%;
 <<<<<<< HEAD
+<<<<<<< HEAD
     background-color: #D9E021;
 =======
     background-color: #d9e021;
 >>>>>>> member
+=======
+    background-color: #d9e021;
+>>>>>>> commit
     position: absolute;
     bottom: 0;
     z-index: 2;
@@ -1865,6 +2015,7 @@ h3 {
     margin: 3% auto; }
     .about_factory_info_item_cart_horizontal img {
       width: 100%; }
+<<<<<<< HEAD
 <<<<<<< HEAD
   .about_factory_info_item_cart_straight, .about_factory_info_item_truck_straight {
     display: none; }
@@ -2033,6 +2184,11 @@ h3 {
   .about_factory_info_item_truck_straight {
     display: none; }
 >>>>>>> member
+=======
+  .about_factory_info_item_cart_straight,
+  .about_factory_info_item_truck_straight {
+    display: none; }
+>>>>>>> commit
   #cf503461-00bd-459a-aeb5-062ebc913211 {
     width: 25%;
     height: 100vh;
@@ -2040,6 +2196,7 @@ h3 {
     bottom: 5%;
     z-index: 2;
     left: 25%; }
+<<<<<<< HEAD
 <<<<<<< HEAD
   .title_area {
     width: 25%;
@@ -2051,6 +2208,8 @@ h3 {
     padding: 2%; }
 =======
 >>>>>>> member
+=======
+>>>>>>> commit
   .about_taiwan_background_mountain {
     width: 70%;
     position: absolute;
@@ -2093,10 +2252,14 @@ h3 {
     width: 100%;
     height: 18%;
 <<<<<<< HEAD
+<<<<<<< HEAD
     background-color: #D9E021;
 =======
     background-color: #d9e021;
 >>>>>>> member
+=======
+    background-color: #d9e021;
+>>>>>>> commit
     position: absolute;
     bottom: 0;
     z-index: 2;
@@ -2172,10 +2335,14 @@ h3 {
     .about_taiwan_background_truck img {
       width: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
       animation: shake .3s  alternate  infinite; }
 =======
       animation: shake 0.3s alternate infinite; }
 >>>>>>> member
+=======
+      animation: shake 0.3s alternate infinite; }
+>>>>>>> commit
   .about_taiwan_background_truckTire1 {
     width: 5%;
     position: absolute;
@@ -2214,8 +2381,11 @@ h3 {
     .about_cooperation_info_item_title img {
       width: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
       margin-bottom: 10%; } }
 =======
+=======
+>>>>>>> commit
       margin-bottom: 10%; }
   .about_end_background {
     position: relative;
@@ -2375,4 +2545,7 @@ h3 {
       padding: 5%;
       border: 1px solid #fff;
       border-radius: 10px; } }
+<<<<<<< HEAD
 >>>>>>> member
+=======
+>>>>>>> commit
