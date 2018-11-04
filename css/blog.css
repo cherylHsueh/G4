@@ -474,11 +474,14 @@ header {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 * {
   outline: 1px solid red; }
 
 >>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
 header nav li:nth-child(4) > a:after {
   transform: scaleX(1); }
 =======
@@ -1213,13 +1216,19 @@ body {
     .blogIn_ButtonContainer a.common_btn {
       margin: 10% 1%; }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
   .blogSubmit_board {
     display: none; }
   .blogSubmit_bgc {
     background: #f2f848;
     background: linear-gradient(180deg, #f0f56c 1%, #e9fa7a 63%, rgba(122, 230, 69, 0.986432) 82%, #42f163 100%); }
+<<<<<<< HEAD
 =======
 >>>>>>> cart
+=======
+>>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
   .blogSubmit_Headingbox .blog_Heading {
     padding: 30px 0;
     border-top-right-radius: 10px;
@@ -1333,8 +1342,13 @@ body {
           color: #888; }
   form {
     text-align: center; }
+<<<<<<< HEAD
     form .common_btn_first {
       margin-bottom: 50px; }
+=======
+  .common_btn_first {
+    margin-bottom: 50px; }
+>>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
   .footer_wrapper {
     text-align: center; }
     .footer_wrapper .footer_block {
@@ -2210,6 +2224,7 @@ body {
       opacity: 0;
       transform: scale(0.1); } }
   .blogSubmit_bgc {
+<<<<<<< HEAD
     background: #f2f848;
     background: linear-gradient(180deg, #f0f56c 1%, #e9fa7a 63%, rgba(122, 230, 69, 0.986432) 82%, #42f163 100%); }
   .blogSubmit_Share {
@@ -2256,18 +2271,13 @@ body {
       transform: scale(0.1); } }
   .blogSubmit_bgc {
     position: relative;
+=======
+>>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
     background: #f2f848;
     background: linear-gradient(180deg, #f0f56c 1%, #e9fa7a 63%, rgba(122, 230, 69, 0.986432) 82%, #42f163 100%); }
-  .blogSubmit_board {
-    margin-top: 200px; }
-    .blogSubmit_board img {
-      width: 75%;
-      position: absolute;
-      bottom: 0;
-      left: 12.5%;
-      z-index: 1; }
   .blogSubmit_Share {
     position: relative; }
+<<<<<<< HEAD
   .blogSubmit_Headingbox .blog_Heading {
     position: absolute;
     top: -50px;
@@ -2280,6 +2290,31 @@ body {
     margin: 20px 50px;
     border: 1px solid #222; }
 >>>>>>> cart
+=======
+    .blogSubmit_Share .wrapper {
+      position: relative; }
+      .blogSubmit_Share .wrapper .blogSubmit_board {
+        margin: 0 auto; }
+        .blogSubmit_Share .wrapper .blogSubmit_board img {
+          width: 100%;
+          max-width: 1200px;
+          position: relative;
+          bottom: 0;
+          z-index: 1; }
+      .blogSubmit_Share .wrapper .blogSubmit_Headingbox .blog_Heading {
+        position: absolute;
+        top: 0px;
+        left: 100px;
+        z-index: 2;
+        color: #fff; }
+      .blogSubmit_Share .wrapper #blogSubmit_form {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0px;
+        z-index: 2;
+        margin: atuo; }
+>>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
   .blogSubmit_LeftBox {
     padding: 10% 10%; }
     .blogSubmit_LeftBox p {
@@ -2370,6 +2405,7 @@ body {
   form {
     text-align: center; }
 <<<<<<< HEAD
+<<<<<<< HEAD
     form .common_btn_first {
       max-width: 300px;
       position: absolute;
@@ -2397,6 +2433,20 @@ body {
   .common_btn_first {
     position: relative; }
 >>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+  .common_btn_first {
+    max-width: 300px;
+    position: absolute;
+    bottom: -5%;
+    left: 10%;
+    transform: rotate(10deg);
+    animation: buttonscale 2s infinite alternate-reverse; }
+  @keyframes buttonscale {
+    from {
+      transform: rotate(20deg); }
+    to {
+      transform: rotate(5deg); } }
+>>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
   .footer_wrapper {
     position: relative;
     text-align: center;
