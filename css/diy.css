@@ -726,15 +726,6 @@ body {
   .diy_pickFruit_nextButton {
     margin: 20px 0;
     text-align: center; }
-    .diy_pickFruit_nextButton a {
-      background-color: #fff100;
-      padding: 10px 30px;
-      border-radius: 5px;
-      color: #5e4909;
-      transition: 1s; }
-      .diy_pickFruit_nextButton a:hover {
-        background-color: #f1900f;
-        color: #fefefe; }
   .tree1 {
     width: 100px;
     position: absolute;
@@ -1070,15 +1061,6 @@ body {
   .diy_pickFruit_nextButton {
     margin: 10px 0;
     text-align: center; }
-    .diy_pickFruit_nextButton a {
-      background-color: #fff100;
-      padding: 10px 30px;
-      border-radius: 5px;
-      color: #5e4909;
-      transition: 1s; }
-      .diy_pickFruit_nextButton a:hover {
-        background-color: #f1900f;
-        color: #fefefe; }
   .tree1 {
     width: 150px;
     position: absolute;

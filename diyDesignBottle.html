@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/diyDesignBottle.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
 	 crossorigin="anonymous">
+	<script src="js/global.js"></script>
 	<script src="js/Drag.js"></script>
 	<script src="js/plugin/jquery-1.7.2.min.js"></script>
 	<script src="js/plugin/jquery-3.3.1.min.js"></script>
@@ -20,42 +21,38 @@
 <header>
 	<input type="checkbox" name="" id="hb_control">
 	<nav>
-		<svg preserveAspectRatio="none" id="svg-2" viewBox="0 0 100 80" enable-background="new 0 0 100 80">
-			<animate dur="2s" attributeName="x" repeatCount="indefinite" from="0" to="100" xlink:href="#wave"></animate>
-			<defs>
-				<filter id="f4" x="0" y="0" width="100%" height="100%">
-					<feOffset result="offOut" in="SourceGraphic" dx="0" dy="0"></feOffset>
-					<feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"></feColorMatrix>
-					<feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="2"></feGaussianBlur>
-					<feBlend in="SourceGraphic" in2="blurOut" mode="normal"></feBlend>
-				</filter>
-			</defs>
-			<path x="0" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)" id="wave"></path>
-			<path x="30" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)" id="wave2"></path>
-		</svg>
+		<div id="svg-2">
+			<canvas id="wave" width="1000" height="400">
+				Hopefully you don't see this. If you do, get Google Chrome.
+			</canvas>
+			<canvas id="wave2" width="1000" height="400">
+				Hopefully you don't see this. If you do, get Google Chrome.
+			</canvas>
+		</div>
 		<div class="ph_nav">
 			<label for="hb_control" class="hb"><span></span></label>
-			<h1 class="phone_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
+			<a href="index.html">
+				<h1 class="phone_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
+			</a>
 		</div>
 
 		<div class="menu">
 			<ul>
 				<li class="menu_item"><a href="diy.html">果汁DIY</a></li>
 				<li class="menu_item"><a href="product.html">果然特調</a></li>
-				<li>
-					<h1 class="menu_logo"><a href="index.html"><img src="images/logo.png" alt="果然配"></a>果然配</h1>
-				</li>
+				<li><a href="index.html">
+						<h1 class="menu_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
+					</a> </li>
 				<li class="menu_item"><a href="blog.html">果然私藏</a></li>
 				<li class="menu_item"><a href="about.html">關於果然</a></li>
 			</ul>
 		</div>
 		<div class="nav_mem">
-			<p><a href="javascript:;">登入</a></p>
-			<div class="mem_pic"><a href="javascript:;"><img src="images/user.png" alt="會員中心"></a></div>
+			<p><a href="login.html">登入</a></p>
+			<div class="mem_pic"><a href="member.html"><img src="images/user.png" alt="會員中心"></a></div>
 			<div class="mem_pic"><a href="cart.html"><img src="images/cart.png" alt="購物車"></a></div>
 		</div>
 	</nav>
-	<div class="navSpace"></div>
 	<div class="coupon"><img src="images/coupon.png" alt="優惠小遊戲"></div>
 	<div class="robot"><img src="images/robot.png" alt="果然配客服機器人"></div>
 	<script>
@@ -67,15 +64,12 @@
 		}); 
 	</script>
 </header>
+<div class="navSpace"></div>
 
 <body>
-	<section class="section active diy_pickFruitBlock">
-		<div class="wrapper">
-		</div>
-	</section>
 	<!-- SCR2--設計瓶身文字敘述 -->
-	<section class="section active diy_designBottleBlock">
-		<div class="wrapper">
+	<div class="diy_designBottleBlock">
+		<div class="wrapper ">
 			<div class="diy_designBottle_stepBlock ">
 				<div class="diy_designBottle_stepFirstBox">
 					<img src="images/diy/stepBg.png" alt="挑選水果">
@@ -93,10 +87,10 @@
 				</div>
 			</div>
 			<div class="diy_designBottle_bgCloud">
-				<img src="images/diy/cloud2.png">
-				<img src="images/diy/cloud.png">
-				<img src="images/diy/cloud2.png">
-				<img src="images/diy/cloud.png">
+				<img src="images/About_Png/cloud(01).png">
+				<img src="images/About_Png/cloud(02).png">
+				<img src="images/About_Png/cloud(03).png">
+				<img src="images/About_Png/cloud(04).png">
 			</div>
 			<div class="diy_designBottle_title cl-s-12 cl-md-12 cl-xl-12">
 				<h4>來創作自己的瓶身</h4>
@@ -155,7 +149,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="diy_designBottle_container cl-s-5 cl-md-6 cl-xl-6">
+				<div class="diy_designBottle_container cl-s-6 cl-md-6 cl-xl-6">
 					<div id="diy_containmentBlock" class="diy_designBottle_pic cl-s-11 cl-md-9 cl-xl-9">
 						<div id="diy_designBottle_wrapper" class="diy_designBottle_bottleItem">
 							<img src="images/diy/emptyBottle.png" id="dragRange">
@@ -247,45 +241,45 @@
 				</div>
 			</div>
 		</div>
-	</section>
-	<footer>
-		<div class="wrapper">
-			<img class="factory" src="images/about/Factory.png">
-			<div class="diy_designBottle_bottleMoveBlock">
-				<div class="diy_designBottle_conveyorPic">
-					<img class="conveyor" src="images/diy/conveyor.png">
-				</div>
-				<div class="diy_designBottle_moveBlock">
-					<ul class="diy_designBottle_itemBottleBlock">
-						<img class="conveyorPic" src="conveyor.png">
-						<li class="item1">
-							<img src="images/diy/bottleOrange.png" alt="果汁瓶橘">
-						</li>
-						<li class="item2">
-							<img src="images/diy/fullBottle.png" alt="果汁瓶客製1">
-						</li>
-						<li class="item3">
-							<img src="images/diy/bottlePink.png" alt="果汁瓶粉">
-						</li>
-						<li class="item4">
-							<img src="images/diy/juiceBottle.png" alt="果汁瓶客製2">
-						</li>
-						<li class="item5">
-							<img src="images/diy/yellowBottle.png" alt="果汁瓶黃">
-						</li>
-						<li class="item6">
-							<img src="images/diy/mixBottle.png" alt="果汁瓶客製3">
-						</li>
-						<li class="item7">
-							<img src="images/diy/bottlePink.png" alt="果汁瓶粉">
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="footer_txt">
-				<p class="copyright">Copyright © All Rights Reserved.</p>
-			</div>
-			<img class="car" src="images/About_Png/car(01).png">
+	</div>
+	<div class=" diy_designBottle_bottleMoveBlock">
+		<div class="diy_factory">
+			<img class="factory" src="images/About_Png/Factory.png" alt="工廠">
+		</div>
+		<div class="diy_conveyor">
+			<img class="conveyor" src="images/diy/conveyor.png" alt="傳輸帶">
+		</div>
+		<div class="diy_designBottle_pcMoveBlock diy_designBottle_mobMoveBlock">
+			<ul class="diy_designBottle_itemBottleBlock">
+				<li class="item1">
+					<img src="images/diy/bottleOrange.png" alt="果汁瓶橘">
+				</li>
+				<li class="item2">
+					<img src="images/diy/fullBottle.png" alt="果汁瓶客製1">
+				</li>
+				<li class="item3">
+					<img src="images/diy/bottlePink.png" alt="果汁瓶粉">
+				</li>
+				<li class="item4">
+					<img src="images/diy/juiceBottle.png" alt="果汁瓶客製2">
+				</li>
+				<li class="item5">
+					<img src="images/diy/yellowBottle.png" alt="果汁瓶黃">
+				</li>
+				<li class="item6">
+					<img src="images/diy/mixBottle.png" alt="果汁瓶客製3">
+				</li>
+				<li class="item7">
+					<img src="images/diy/bottlePink.png" alt="果汁瓶粉">
+				</li>
+			</ul>
+		</div>
+		<div class="diy_car"><img class="car" src="images/About_Png/car(01).png" alt="貨車"></div>
+	</div>
+
+	<footer class="cl-md-12">
+		<div class="footer_txt">
+			<p class="copyright">Copyright © All Rights Reserved.</p>
 		</div>
 	</footer>
 
@@ -294,7 +288,6 @@
 			html2canvas($("#diy_containmentBlock")[0]).then(function (canvas) {
 				var $div = $(".diy_customizeBox_finishPic");
 				$div.empty();
-
 				$("<img />", { src: canvas.toDataURL("image/png") }).appendTo($div);
 			});
 		});						
@@ -334,9 +327,7 @@
 			$(".diy_customizeBox_item i").click(function () {
 				$(this).parent().parent().parent().hide("slow");
 			});
-			$(".diy_customizePopUp").click(function () {
-				$(this).hide("slow");
-			});
+
 		}
 
 
