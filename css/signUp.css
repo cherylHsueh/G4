@@ -472,6 +472,7 @@ header {
     transform: translate(0%, 0%); } }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -496,6 +497,8 @@ header nav  li:nth-child(2) > a:after {
 =======
 >>>>>>> 280a4a4c1247a2dea80405e899b323e7ca4b1a49
 >>>>>>> member
+=======
+>>>>>>> cart
 footer {
   position: absolute;
   bottom: 0;
@@ -579,6 +582,7 @@ footer {
     margin: 4px 2px;
     padding: 5px 0px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     display: inline-block; } }
 =======
     display: inline-block; }
@@ -589,6 +593,9 @@ footer {
   .grassb {
     display: none; } }
 >>>>>>> member
+=======
+    display: inline-block; } }
+>>>>>>> cart
 
 @media all and (min-width: 768px) {
   .nav_space {

@@ -472,6 +472,7 @@ header {
     transform: translate(0%, 0%); } }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -489,6 +490,8 @@ header nav  li:nth-child(2) > a:after {
 =======
 >>>>>>> 280a4a4c1247a2dea80405e899b323e7ca4b1a49
 >>>>>>> member
+=======
+>>>>>>> cart
 footer {
   position: absolute;
   bottom: 0;
@@ -907,6 +910,7 @@ footer {
     left: 10px;
     bottom: 10px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     color: #444; } }
 =======
     color: #444; }
@@ -915,3 +919,6 @@ footer {
     .draft img {
       width: 100%; } }
 >>>>>>> member
+=======
+    color: #444; } }
+>>>>>>> cart

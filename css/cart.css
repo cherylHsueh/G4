@@ -472,6 +472,7 @@ header {
     transform: translate(0%, 0%); } }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -489,6 +490,8 @@ header nav  li:nth-child(2) > a:after {
 =======
 >>>>>>> 280a4a4c1247a2dea80405e899b323e7ca4b1a49
 >>>>>>> member
+=======
+>>>>>>> cart
 footer {
   position: absolute;
   bottom: 0;
@@ -526,9 +529,6 @@ footer {
 
 footer {
   position: relative; }
-
-.footer_block {
-  background-color: #dde4b7; }
 
 @media only screen and (max-width: 767px) {
   .space {
@@ -989,19 +989,6 @@ footer {
           font-weight: bold;
           color: #6a3906;
           border: 1px solid #6a3906; }
-      .cart_priceCalculation .cart_priceCalculation_content .cart_nextstep {
-        width: 100%;
-        margin: 0 auto; }
-        .cart_priceCalculation .cart_priceCalculation_content .cart_nextstep button {
-          width: 120px;
-          height: 4vh;
-          border-radius: 10px;
-          background-color: #fff100;
-          color: #5e4909;
-          font-weight: bold;
-          font-size: 18px;
-          display: block;
-          margin: 0 auto; }
       .cart_priceCalculation .cart_priceCalculation_content img {
         width: 300px;
         float: right;
