@@ -472,6 +472,7 @@ header {
     transform: translate(0%, 0%); } }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 /*分頁做法
 header nav  li:nth-child(2) > a:after {
@@ -483,6 +484,8 @@ header nav  li:nth-child(2) > a:after {
 =======
 >>>>>>> 6a047bf83ca6a4f5d20759417a9bec51470ac612
 >>>>>>> blog
+=======
+>>>>>>> 280a4a4c1247a2dea80405e899b323e7ca4b1a49
 footer {
   position: absolute;
   bottom: 0;

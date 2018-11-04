@@ -471,18 +471,6 @@ header {
   100% {
     transform: translate(0%, 0%); } }
 
-<<<<<<< HEAD
-=======
-/*分頁做法
-header nav  li:nth-child(2) > a:after {
-    transform: scaleX(1);
-}
-*/
-<<<<<<< HEAD
->>>>>>> diy
-=======
->>>>>>> 6a047bf83ca6a4f5d20759417a9bec51470ac612
->>>>>>> blog
 .nav_space {
   width: 100%;
   height: 90px; }

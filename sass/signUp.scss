@@ -15,19 +15,25 @@ footer {
 
 @include rwd(mobile) {
     .nav_space {
-        margin-top: 95px;
+     height: 110px;
+     background-color: $sky;
     }
     .cloud {
-        text-align: right;
-        padding: 5%;
+        position:relative;
+        right:71%;
+		animation: mymoveright 80s infinite;
+        -webkit-animation:mymoveright 80s infinite;
+        width:20%;
     }
     .cloud img {
-        width: 20%;
+        width: 100%;
     }
     .signUp {
-        background-color: #00B5BD;
-        width: 100%; // height: calc(100vh - 110px);
+        background-color:$sky;
+        width: 100%; 
     }
+   
+   
     .signUp_newmem_box {
         text-align: center;
         background-color: white;
@@ -54,8 +60,76 @@ footer {
         width: 120px;
         height: 35px;
     }
-    .orchard img,
-    .orchard2 img {
+    .cloud2{
+        position:relative;
+		animation: mymove 80s infinite;
+        -webkit-animation:mymove 80s infinite;
+        width:25%;
+        img{
+            width:100%;
+        }
+    }
+    @keyframes mymove {
+        from {
+            left: 0px;
+        }
+        to {
+			left: 100%;
+			top:5%;
+        }
+    }
+    @keyframes mymoveright {
+        from {
+            left: 80%;
+        }
+        to {
+			left: 5%;
+			top:5%;
+        }
+    }
+
+    .windmill {
+		width: 50%;
+    	position: relative;
+        margin: 15% auto 0 auto;
+		z-index: 1;
+        img {
+            width: 100%;
+        }
+    }
+    .fan{
+		position: absolute;
+		top: -20%;
+		left: -16%;
+		width: 140%;
+		img{
+			width:100%;
+		}
+		animation: wind 1.25s linear infinite;
+    }
+   
+    @keyframes wind {
+		0% {
+		  transform: rotate(0deg);
+		}
+		25% {
+		  transform: rotate(90deg);
+		}
+		50% {
+		  transform: rotate(180deg);
+		}
+		75% {
+		  transform: rotate(270deg);
+		}
+		100% {
+		  transform: rotate(360deg);
+		}
+      }
+      .grass{
+		display: none;
+		
+	  }
+    .orchard img {
         display: none;
     }
     .confirm {
@@ -67,6 +141,15 @@ footer {
         padding: 5px 0px;
         display: inline-block;
     }
+    footer{
+        background-color: #dde4b7; 
+     } 
+     .sun{
+         display: none;
+     }
+     .grassb{
+         display: none;
+     }
 }
 
 @include rwd(medium) {
@@ -79,7 +162,7 @@ footer {
     .signUp_section {
 		background-color: $sky;
 		overflow: hidden;
-        height: 100vh;
+        // height: 100vh;
     }
     .cloud {
         text-align: left;
@@ -88,6 +171,15 @@ footer {
 		position:relative;
 		animation: mymove 70s infinite;
 		-webkit-animation:mymove 70s infinite;
+    }
+    .sun{
+        width:18%;
+        position: absolute;
+        top:3%;
+        right:3%;
+        img{
+            width: 100%;
+        }
     }
     .cloud img {
         width: 20%;
@@ -101,6 +193,7 @@ footer {
     .signUp_newmem {
         position: relative;
         left: 58%;
+        z-index: 1;
     }
     .signUp_newmem_box h2 {
         position: relative;
@@ -113,6 +206,8 @@ footer {
     .signUp_explain {
         position: relative;
         right: 42%;
+      
+        
     }
     .signUp_explain_box {
         width: 66%;
@@ -142,16 +237,18 @@ footer {
 		color:#fff;
 	}
     .cloud2 {
+        width:26%;
+        left:14%;
 		position:relative;
 		animation: mymove 80s infinite;
 		-webkit-animation:mymove 80s infinite;
     }
     .cloud2 img {
-        width: 20%;
+        width: 100%;
     }
     @keyframes mymove {
         from {
-            left: 0px;
+            left: 10%;
         }
         to {
 			left: 100%;
@@ -205,15 +302,15 @@ footer {
     	left: 56%;
 		z-index: 0;
 	  }
-	.grass2{
-		display: block;
-		max-width: 350px;
-		max-height: 350px;
-		margin: auto;
-		position: absolute;
-	    bottom: -15%;
-    	left: 20%;
-		z-index: 0;
+	.grassb{
+        display: block;
+        max-width: 350px;
+        max-height: 350px;
+        margin: auto;
+        position: absolute;
+        bottom: -15%;
+        left: 11%;
+        z-index: 0;
 	
 	  }
 	  footer{

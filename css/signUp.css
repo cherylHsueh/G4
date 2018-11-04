@@ -474,6 +474,7 @@ header {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> member
@@ -490,6 +491,8 @@ header nav  li:nth-child(2) > a:after {
 =======
 >>>>>>> 6a047bf83ca6a4f5d20759417a9bec51470ac612
 >>>>>>> blog
+=======
+>>>>>>> 280a4a4c1247a2dea80405e899b323e7ca4b1a49
 footer {
   position: absolute;
   bottom: 0;
@@ -624,15 +627,18 @@ footer {
     padding: 5px 0px;
     display: inline-block; }
   footer {
-    background-color: #dde4b7; } }
+    background-color: #dde4b7; }
+  .sun {
+    display: none; }
+  .grassb {
+    display: none; } }
 
 @media all and (min-width: 768px) {
   .nav_space {
     height: 110px; }
   .signUp_section {
     background-color: #a4ddfa;
-    overflow: hidden;
-    height: 100vh; }
+    overflow: hidden; }
   .cloud {
     text-align: left;
     padding: 5%;
@@ -640,6 +646,13 @@ footer {
     position: relative;
     animation: mymove 70s infinite;
     -webkit-animation: mymove 70s infinite; }
+  .sun {
+    width: 18%;
+    position: absolute;
+    top: 3%;
+    right: 3%; }
+    .sun img {
+      width: 100%; }
   .cloud img {
     width: 20%; }
   input {
@@ -682,14 +695,16 @@ footer {
   .btn:hover {
     color: #fff; }
   .cloud2 {
+    width: 26%;
+    left: 14%;
     position: relative;
     animation: mymove 80s infinite;
     -webkit-animation: mymove 80s infinite; }
   .cloud2 img {
-    width: 20%; }
+    width: 100%; }
   @keyframes mymove {
     from {
-      left: 0px; }
+      left: 10%; }
     to {
       left: 100%;
       top: 5%; } }
@@ -728,14 +743,14 @@ footer {
     bottom: -15%;
     left: 56%;
     z-index: 0; }
-  .grass2 {
+  .grassb {
     display: block;
     max-width: 350px;
     max-height: 350px;
     margin: auto;
     position: absolute;
     bottom: -15%;
-    left: 20%;
+    left: 11%;
     z-index: 0; }
   footer {
     background-color: #dde4b7; } }

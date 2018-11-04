@@ -474,6 +474,7 @@ header {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 /*分頁做法
 header nav  li:nth-child(2) > a:after {
@@ -535,6 +536,10 @@ header nav  li:nth-child(2) > a:after {
 header nav li:nth-child(4) > a:after {
   transform: scaleX(1); }
 >>>>>>> 6a047bf83ca6a4f5d20759417a9bec51470ac612
+=======
+header nav li:nth-child(4) > a:after {
+  transform: scaleX(1); }
+>>>>>>> 280a4a4c1247a2dea80405e899b323e7ca4b1a49
 
 body {
   background: #a4ddfa;
