@@ -13,6 +13,12 @@ footer {
   line-height: 25px;
   background-color: #f4d66d;
   text-align: center;
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 120px;
+  }
 }
 body {
   background-color: $sky;
@@ -320,6 +326,7 @@ body {
     left: 90%;
   }
 }
+
 //行動版----------------------------------------------------------------------------
 @include rwd(mobile) {
   .diy_customizeBox_finishPic {
@@ -484,18 +491,6 @@ body {
         }
         &:nth-child(2) {
           left: -150px;
-          top: -80px;
-          width: 200px;
-        }
-        &:nth-child(3) {
-          top: -40px;
-          left: 450px;
-          width: 100px;
-        }
-        &:nth-child(4) {
-          top: -50px;
-          left: 600px;
-          width: 200px;
         }
       }
     }
@@ -671,6 +666,16 @@ body {
         z-index: 2;
       }
     }
+    &_textLength {
+      margin: 15px 0 ;
+      width: 415px;
+      height: 20px; 
+    }
+    &_pics {
+      &:after {
+        bottom: 120px;
+      }
+    }
   }
 }
 //桌機---------------------------------------------------------------------------------------------
@@ -747,6 +752,54 @@ body {
         top: 80%;
         right: 0;
       }
+footer {
+  position: absolute;
+  bottom: -240px;
+  left: 0;
+  z-index: 5;
+  & .factory {
+    position: absolute;
+    bottom:25px;
+    left: -5px;
+    width: 300px;
+    img{width: 100%;}
+  }
+  & .conveyor_pc {
+    position: absolute;
+    bottom:25px;
+    width: 85%;
+    z-index: -1;
+  }
+  & .car {
+    width: 350px;
+    left: 82%;
+    top: -150px;
+    z-index: -1;
+  }
+}
+
+
+//客製完成跳窗尺寸
+.diy_customizeBox_content h3 {
+  margin: 10px 0;
+}
+.diy_customizeBox_finishPic {
+  img {
+    width: 250px;
+  }
+}
+.diy {
+  &_customizeBox {
+    &_content {
+      width: 600px;
+      height: 500px;
+      background-color: #fefefe;
+      position: absolute;
+      border-radius: 20px;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -45%);
+      margin: auto;
     }
   }
   .diy_designBottle_bottleMoveBlock {
