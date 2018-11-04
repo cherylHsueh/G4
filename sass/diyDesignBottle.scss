@@ -6,17 +6,26 @@
 //   outline: 1px solid red;
 // }
 footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
   width: 100%;
   line-height: 25px;
   height: 25px;
   background-color: #f4d66d;
   text-align: center;
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 120px;
+  }
 }
 body {
   background-color: $sky;
   overflow-x: hidden;
 }
-.displayBlock{
+.displayBlock {
   display: block;
 }
 //把nav擋到的高度往下挪
@@ -39,10 +48,14 @@ body {
 }
 
 //共用區域
+.navSpace {
+  margin-top: 140px;
+}
 .diy_designBottle {
-  &_title {
+  &_title h4 {
     text-align: center;
-    margin-top: 25px;
+    margin: 15px auto;
+    font-size: 20px;
     color: $mainfontcolor;
   }
 
@@ -88,11 +101,6 @@ body {
   &_stepSecondTitle {
     @extend %center;
   }
-  &_bottleItem {
-    img {
-      width: 120px;
-    }
-  }
   &_changePic {
     position: absolute;
     width: 140px;
@@ -101,6 +109,7 @@ body {
     width: 100px;
   }
   &_controlBlock {
+    margin-top:15px;
     i {
       margin-top: 20px;
       display: inline-block;
@@ -138,7 +147,7 @@ body {
       border: 1px solid #aeaeae;
       width: 100%;
       position: absolute;
-      bottom: 100px;
+      bottom: 105px;
       left: 0;
     }
   }
@@ -156,7 +165,7 @@ body {
   }
   &_textLength {
     margin: 5px 0 15px;
-    width: 160px;
+    width: 130px;
   }
   &_btnBlock {
     text-align: center;
@@ -175,13 +184,6 @@ body {
         background-color: #f1900f;
         color: #fefefe;
       }
-    }
-  }
-  &_bottleItem {
-    img {
-      width: 180px;
-      display: block;
-      margin: 0 auto;
     }
   }
   &_createTextBlock {
@@ -210,10 +212,14 @@ body {
     padding: 10px;
   }
   &_bgcBox {
-    margin: auto;
+    width: 360px;
+    height: 520px;
     border-radius: 10px;
-    width: 380px;
-    height: 350px;
+    // box-sizing: border-box;
+    padding: 10px;
+    position: relative;
+    top:50px;
+    margin: auto;
     background-color: #fff;
   }
 }
@@ -242,7 +248,7 @@ body {
     }
     &_content {
       width: 300px;
-      height: 350px;
+      height: 400px;
       background-color: #fafafa;
       position: absolute;
       top: 40%;
@@ -301,11 +307,10 @@ body {
 .robot {
   z-index: 10;
 }
+
 //行動版----------------------------------------------------------------------------
 @include rwd(mobile) {
-  .navSpace {
-    margin-top: 110px;
-  }
+
   .diy_customizeBox_finishPic {
     width: 100px;
   }
@@ -314,7 +319,7 @@ body {
   }
   .diy_designBottle_bottleItem img {
     width: 100px;
-    margin: 35px auto;
+    margin: 30px 40px 0;
   }
   .diy_designBottle {
     &_stepFirstBox {
@@ -327,30 +332,60 @@ body {
         width: 120px;
       }
     }
+    &_bgCloud {
+      display: none;
+    }
     &_disNone {
       display: none;
     }
+    &_mobMoveBlock{
+      li{
+        position: relative;
+        img{
+          width: 10px;
+         bottom:10px;
+         left:30%;
+         z-index: -1;
+        }
+      }
+    }
+    &_btnBlock{
+      a{
+        width: 75px;
+        display: inline-block;
+        margin: 40px 5px 0;
+      }
+    }
   }
+
   #diy_designBottle_wrapper {
     width: 100%;
   }
-}
-footer {
-  img {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 120px;
+  .diy_footer_container {
+    position: relative;
+    .factory{
+      img{
+        width: 120px;
+      }
+    }
+    .car {
+      position: absolute;
+      width: 110px;
+      left: 73%;
+      top: -50px;
+    }
+    .conveyor{
+      height: 20px;
+    }
   }
 }
-.common_btn_first {
-  width: 90px;
-}
+
 //平板--------------------------------------------------------------------------------------------
 @include rwd(medium) {
-  body{
+  body {
     overflow-x: hidden;
   }
+
   @keyframes bottleMove {
     0% {
       left: 0;
@@ -359,23 +394,23 @@ footer {
       left: 100%;
     }
   }
-  .navSpace {
-    margin-top: 140px;
-  }
   .diy_customizeBox_finishPic {
     width: 230px;
   }
   .diy_proToCartBtns {
     margin-top: 130px;
-    a{
-      margin:0  30px;
+    a {
+      margin: 0 30px;
     }
   }
   .diy_designBottle_bottleItem img {
     width: 140px;
-    margin: 30px auto;
+    margin: 25px 90px;
   }
   .diy_designBottle {
+    &_title{
+      h4{margin: 25px auto 5px;}
+    }
     &_stepFirstBox {
       img {
         width: 180px;
@@ -386,31 +421,31 @@ footer {
         width: 180px;
       }
     }
-    &_bgCloud{
-      position:absolute;
-      img{
-        position:relative;
-        top:-50px;
+    &_bgCloud {
+      position: absolute;
+      img {
+        position: relative;
+        top: -50px;
         width: 200px;
-        &:nth-child(1){
-          top:-40px;
-          left:-300px;
-          width: 150px;          
-        }        
-        &:nth-child(2){
-          left:-150px;
-          top:-80px;
-          width: 200px;          
+        &:nth-child(1) {
+          top: -40px;
+          left: -300px;
+          width: 150px;
         }
-        &:nth-child(3){
-          top:-40px;
-          left:450px;
-          width: 100px;          
+        &:nth-child(2) {
+          left: -150px;
+          top: -80px;
+          width: 200px;
         }
-        &:nth-child(4){
-          top:-50px;
-          left:600px;
-          width: 200px;          
+        &:nth-child(3) {
+          top: -40px;
+          left: 450px;
+          width: 100px;
+        }
+        &:nth-child(4) {
+          top: -50px;
+          left: 600px;
+          width: 200px;
         }
       }
     }
@@ -461,14 +496,13 @@ footer {
       }
     }
     &_bgcBox {
-      position: relative;
       top: 80px;
       box-sizing: border-box;
       padding: 30px;
       width: 900px;
-      height: 600px;
+      height: 620px;
     }
-    &_moveBlock {
+    &_pcMoveBlock {
       position: absolute;
       ul {
         width: 100%;
@@ -478,7 +512,7 @@ footer {
       li {
         display: inline-block;
         position: absolute;
-        left: -80px;
+        left: -65px;
         img {
           width: 30px;
         }
@@ -486,34 +520,37 @@ footer {
     }
     &_itemBottleBlock {
       position: absolute;
-      top:-50px;
+      top: -50px;
       .item1 {
-        
         animation: bottleMove 7s linear 0s infinite;
       }
       .item2 {
-       
         animation: bottleMove 7s linear 1s infinite;
       }
       .item3 {
-        
         animation: bottleMove 7s linear 2s infinite;
       }
       .item4 {
-        
         animation: bottleMove 7s linear 3s infinite;
       }
       .item5 {
-       
         animation: bottleMove 7s linear 4s infinite;
       }
       .item6 {
-       
         animation: bottleMove 7s linear 5s infinite;
       }
       .item7 {
-        
         animation: bottleMove 7s linear 6s infinite;
+      }
+    }
+    &_textLength {
+      margin: 15px 0 ;
+      width: 415px;
+      height: 20px; 
+    }
+    &_pics {
+      &:after {
+        bottom: 120px;
       }
     }
   }
@@ -525,24 +562,25 @@ footer {
   z-index: 5;
   & .factory {
     position: absolute;
-    top: -255px;
+    bottom:25px;
     left: -5px;
     width: 300px;
+    img{width: 100%;}
   }
-  & .conveyor {
+  & .conveyor_pc {
     position: absolute;
-    top: -73px;
-    width: 98%;
+    bottom:25px;
+    width: 85%;
     z-index: -1;
   }
   & .car {
     width: 350px;
-    position: absolute;
     left: 82%;
     top: -150px;
     z-index: -1;
   }
 }
+
 
 //客製完成跳窗尺寸
 .diy_customizeBox_content h3 {
@@ -560,7 +598,7 @@ footer {
       height: 500px;
       background-color: #fefefe;
       position: absolute;
-      border-radius:20px; 
+      border-radius: 20px;
       top: 45%;
       left: 50%;
       transform: translate(-50%, -45%);
@@ -593,18 +631,25 @@ footer {
         width: 90px;
       }
     }
-    &_moveBlock {
+    &_pcMoveBlock {
       left: 100px;
       width: 1510px;
       z-index: -1;
-    }
-    &_btnBlock{
-      margin-top: 10px ;
-      a{
-        margin: 10px 20px;
+      li {
+        display: inline-block;
+        position: absolute;
+        left: -65px;
+        img {
+          top:-80px;
+          width: 30px;
+        }
       }
     }
-
+    &_btnBlock {
+      margin-top: 10px;
+      a {
+        margin: 5px 20px;
+      }
+    }
   }
 }
-
