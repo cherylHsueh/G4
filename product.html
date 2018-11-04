@@ -7,10 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>果然配</title>
     <link rel="stylesheet" href="css/product.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="js/plugin/jquery-3.3.1.min.js"></script>
+    <script src="js/plugin/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js"></script>
+
+
 </head>
 
 <body>
@@ -34,7 +39,9 @@
             </svg>
             <div class="ph_nav">
                 <label for="hb_control" class="hb"><span></span></label>
-                <a href="index.html"><h1 class="phone_logo"><img src="images/logo.png" alt="果然配">果然配</h1></a>
+                <a href="index.html">
+                    <h1 class="phone_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
+                </a>
             </div>
 
             <div class="menu">
@@ -59,6 +66,19 @@
     </header>
 
     <section class="pdcate">
+        <div id="trigger01"></div>
+        <div class="cloud">
+            <img src="images/pd/cloud1.png">
+        </div>
+        <div class="cloud2">
+            <img src="images/pd/cloud2.png">
+        </div>
+        <div class="ballon">
+            <img src="images/pd/ballon.png">
+        </div>
+        <div class="bee">
+            <img src="images/pd/bee.gif">
+        </div>
         <div class="wrapper">
             <div class="pdcate_container clearfix">
                 <div class="pdcate_item cl-s-6 cl-md-6" id="whitening">
@@ -94,10 +114,19 @@
     </section>
 
     <section class="pd">
+        <div class="bottom">
+            <img src="images/pd/bottom.png">
+        </div>
         <div class="wrapper">
 
             <div id="pd_cate_whitening"></div>
             <div class="pd_cate">
+                <div class="cloud">
+                    <img src="images/pd/cloud1.png">
+                </div>
+                <div class="cloud2">
+                    <img src="images/pd/cloud2.png">
+                </div>
                 <h2>美白系列</h2>
                 <div class="pd_cate_list clearfix">
                     <div class="pd_cate_item cl-s-6 cl-md-3">
@@ -107,13 +136,14 @@
                             </div>
                             <h3>鳳梨檸檬汁</h3>
                             <div class="buttonArea">
-                                <a href="productitem.html">
-                                    <div class="btn2">查看詳情</div>
+                                <a class="common_btn common_btn_first" href="productitem.html">
+                                    <span class="common_btn_txt">瀏覽商品</span>
+                                    <div class="common_btn_blobs">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
                                 </a>
-                                <a href="cart.html">
-                                    <input class="btn" type="button" value="立即購買">
-                                </a>
-                                
                             </div>
                         </div>
                     </div>
@@ -124,11 +154,13 @@
                             </div>
                             <h3>鳳梨檸檬汁</h3>
                             <div class="buttonArea">
-                                <a href="productitem.html">
-                                    <div class="btn2">查看詳情</div>
-                                </a>
-                                <a href="cart.html">
-                                    <input class="btn" type="button" value="立即購買">
+                                <a class="common_btn common_btn_first" href="productitem.html">
+                                    <span class="common_btn_txt">瀏覽商品</span>
+                                    <div class="common_btn_blobs">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -140,11 +172,13 @@
                             </div>
                             <h3>鳳梨檸檬汁</h3>
                             <div class="buttonArea">
-                                <a href="productitem.html">
-                                    <div class="btn2">查看詳情</div>
-                                </a>
-                                <a href="cart.html">
-                                    <input class="btn" type="button" value="立即購買">
+                                <a class="common_btn common_btn_first" href="productitem.html">
+                                    <span class="common_btn_txt">瀏覽商品</span>
+                                    <div class="common_btn_blobs">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -156,11 +190,13 @@
                             </div>
                             <h3>鳳梨檸檬汁</h3>
                             <div class="buttonArea">
-                                <a href="productitem.html">
-                                    <div class="btn2">查看詳情</div>
-                                </a>
-                                <a href="cart.html">
-                                    <input class="btn" type="button" value="立即購買">
+                                <a class="common_btn common_btn_first" href="productitem.html">
+                                    <span class="common_btn_txt">瀏覽商品</span>
+                                    <div class="common_btn_blobs">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -170,20 +206,28 @@
 
             <div id="pd_cate_Iron"></div>
             <div class="pd_cate">
+                <div class="cloud">
+                    <img src="images/pd/cloud1.png">
+                </div>
+                <div class="cloud2">
+                    <img src="images/pd/cloud2.png">
+                </div>
                 <h2>補鐵系列</h2>
                 <div class="pd_cate_list clearfix">
                     <div class="pd_cate_item cl-s-6 cl-md-3">
                         <div class="item">
                             <div class="pd_cate_item_itemimg">
-                                <img src="images/pd/pd_cate2_item1.png">
+                                <img src="images/pd/pd_cate1_item1.png">
                             </div>
-                            <h3>葡萄好多汁</h3>
+                            <h3>鳳梨檸檬汁</h3>
                             <div class="buttonArea">
-                                <a href="productitem.html">
-                                    <div class="btn2">查看詳情</div>
-                                </a>
-                                <a href="cart.html">
-                                    <input class="btn" type="button" value="立即購買">
+                                <a class="common_btn common_btn_first" href="productitem.html">
+                                    <span class="common_btn_txt">瀏覽商品</span>
+                                    <div class="common_btn_blobs">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -191,15 +235,17 @@
                     <div class="pd_cate_item cl-s-6 cl-md-3">
                         <div class="item">
                             <div class="pd_cate_item_itemimg">
-                                <img src="images/pd/pd_cate2_item2.png">
+                                <img src="images/pd/pd_cate1_item2.png">
                             </div>
-                            <h3>葡萄好多汁</h3>
+                            <h3>鳳梨檸檬汁</h3>
                             <div class="buttonArea">
-                                <a href="productitem.html">
-                                    <div class="btn2">查看詳情</div>
-                                </a>
-                                <a href="cart.html">
-                                    <input class="btn" type="button" value="立即購買">
+                                <a class="common_btn common_btn_first" href="productitem.html">
+                                    <span class="common_btn_txt">瀏覽商品</span>
+                                    <div class="common_btn_blobs">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -207,15 +253,17 @@
                     <div class="pd_cate_item cl-s-6 cl-md-3">
                         <div class="item">
                             <div class="pd_cate_item_itemimg">
-                                <img src="images/pd/pd_cate2_item3.png">
+                                <img src="images/pd/pd_cate1_item3.png">
                             </div>
-                            <h3>葡萄好多汁</h3>
+                            <h3>鳳梨檸檬汁</h3>
                             <div class="buttonArea">
-                                <a href="productitem.html">
-                                    <div class="btn2">查看詳情</div>
-                                </a>
-                                <a href="cart.html">
-                                    <input class="btn" type="button" value="立即購買">
+                                <a class="common_btn common_btn_first" href="productitem.html">
+                                    <span class="common_btn_txt">瀏覽商品</span>
+                                    <div class="common_btn_blobs">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -223,164 +271,195 @@
                     <div class="pd_cate_item cl-s-6 cl-md-3">
                         <div class="item">
                             <div class="pd_cate_item_itemimg">
-                                <img src="images/pd/pd_cate2_item4.png">
+                                <img src="images/pd/pd_cate1_item4.png">
                             </div>
-                            <h3>葡萄好多汁</h3>
+                            <h3>鳳梨檸檬汁</h3>
                             <div class="buttonArea">
-                                <a href="productitem.html">
-                                    <div class="btn2">查看詳情</div>
+                                <a class="common_btn common_btn_first" href="productitem.html">
+                                    <span class="common_btn_txt">瀏覽商品</span>
+                                    <div class="common_btn_blobs">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
                                 </a>
-                                <a href="cart.html">
-                                    <input class="btn" type="button" value="立即購買">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="pd_cate_health"></div>
-                <div class="pd_cate">
-                    <h2>健康系列</h2>
-                    <div class="pd_cate_list clearfix">
-                        <div class="pd_cate_item cl-s-6 cl-md-3">
-                            <div class="item">
-                                <div class="pd_cate_item_itemimg">
-                                    <img src="images/pd/pd_cate3_item1.png">
-                                </div>
-                                <h3>葡萄好多汁</h3>
-                                <div class="buttonArea">
-                                    <a href="productitem.html">
-                                        <div class="btn2">查看詳情</div>
-                                    </a>
-                                    <a href="cart.html">
-                                    <input class="btn" type="button" value="立即購買">
-                                </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pd_cate_item cl-s-6 cl-md-3">
-                            <div class="item">
-                                <div class="pd_cate_item_itemimg">
-                                    <img src="images/pd/pd_cate3_item2.png">
-                                </div>
-                                <h3>葡萄好多汁</h3>
-                                <div class="buttonArea">
-                                    <a href="productitem.html">
-                                        <div class="btn2">查看詳情</div>
-                                    </a>
-                                    <a href="cart.html">
-                                    <input class="btn" type="button" value="立即購買">
-                                </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pd_cate_item cl-s-6 cl-md-3">
-                            <div class="item">
-                                <div class="pd_cate_item_itemimg">
-                                    <img src="images/pd/pd_cate3_item3.png">
-                                </div>
-                                <h3>葡萄好多汁</h3>
-                                <div class="buttonArea">
-                                    <a href="productitem.html">
-                                        <div class="btn2">查看詳情</div>
-                                    </a>
-                                    <a href="cart.html">
-                                    <input class="btn" type="button" value="立即購買">
-                                </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pd_cate_item cl-s-6 cl-md-3">
-                            <div class="item">
-                                <div class="pd_cate_item_itemimg">
-                                    <img src="images/pd/pd_cate3_item4.png">
-                                </div>
-                                <h3>葡萄好多汁</h3>
-                                <div class="buttonArea">
-                                    <a href="productitem.html">
-                                        <div class="btn2">查看詳情</div>
-                                    </a>
-                                    <a href="cart.html">
-                                        <input class="btn" type="button" value="立即購買">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="pd_cate_dieting"></div>
-                <div class="pd_cate">
-                    <h2>減肥系列</h2>
-                    <div class="pd_cate_list clearfix">
-                        <div class="pd_cate_item cl-s-6 cl-md-3">
-                            <div class="item">
-                                <div class="pd_cate_item_itemimg">
-                                    <img src="images/pd/pd_cate4_item1.png">
-                                </div>
-                                <h3>葡萄好多汁</h3>
-                                <div class="buttonArea">
-                                    <a href="productitem.html">
-                                        <div class="btn2">查看詳情</div>
-                                    </a>
-                                    <a href="cart.html">
-                                        <input class="btn" type="button" value="立即購買">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pd_cate_item cl-s-6 cl-md-3">
-                            <div class="item">
-                                <div class="pd_cate_item_itemimg">
-                                    <img src="images/pd/pd_cate4_item2.png">
-                                </div>
-                                <h3>葡萄好多汁</h3>
-                                <div class="buttonArea">
-                                    <a href="productitem.html">
-                                        <div class="btn2">查看詳情</div>
-                                    </a>
-                                    <a href="cart.html">
-                                        <input class="btn" type="button" value="立即購買">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pd_cate_item cl-s-6 cl-md-3">
-                            <div class="item">
-                                <div class="pd_cate_item_itemimg">
-                                    <img src="images/pd/pd_cate4_item3.png">
-                                </div>
-                                <h3>葡萄好多汁</h3>
-                                <div class="buttonArea">
-                                    <a href="productitem.html">
-                                        <div class="btn2">查看詳情</div>
-                                    </a>
-                                    <a href="cart.html">
-                                        <input class="btn" type="button" value="立即購買">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pd_cate_item cl-s-6 cl-md-3">
-                            <div class="item">
-                                <div class="pd_cate_item_itemimg">
-                                    <img src="images/pd/pd_cate4_item4.png">
-                                </div>
-                                <h3>葡萄好多汁</h3>
-                                <div class="buttonArea">
-                                    <a href="productitem.html">
-                                        <div class="btn2">查看詳情</div>
-                                    </a>
-                                    <a href="cart.html">
-                                        <input class="btn" type="button" value="立即購買">
-                                    </a>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div id="pd_cate_health"></div>
+            <div class="pd_cate">
+                <div class="cloud">
+                    <img src="images/pd/cloud1.png">
+                </div>
+                <div class="cloud2">
+                    <img src="images/pd/cloud2.png">
+                </div>
+                <h2>健康系列</h2>
+                <div class="pd_cate_list clearfix">
+                    <div class="pd_cate_item cl-s-6 cl-md-3">
+                        <div class="item">
+                            <div class="pd_cate_item_itemimg">
+                                <img src="images/pd/pd_cate1_item1.png">
+                            </div>
+                            <h3>鳳梨檸檬汁</h3>
+                            <div class="buttonArea">
+                                <a class="common_btn common_btn_first" href="productitem.html">
+                                    <span class="common_btn_txt">瀏覽商品</span>
+                                    <div class="common_btn_blobs">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pd_cate_item cl-s-6 cl-md-3">
+                        <div class="item">
+                            <div class="pd_cate_item_itemimg">
+                                <img src="images/pd/pd_cate1_item2.png">
+                            </div>
+                            <h3>鳳梨檸檬汁</h3>
+                            <div class="buttonArea">
+                                <a class="common_btn common_btn_first" href="productitem.html">
+                                    <span class="common_btn_txt">瀏覽商品</span>
+                                    <div class="common_btn_blobs">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pd_cate_item cl-s-6 cl-md-3">
+                        <div class="item">
+                            <div class="pd_cate_item_itemimg">
+                                <img src="images/pd/pd_cate1_item3.png">
+                            </div>
+                            <h3>鳳梨檸檬汁</h3>
+                            <div class="buttonArea">
+                                <a class="common_btn common_btn_first" href="productitem.html">
+                                    <span class="common_btn_txt">瀏覽商品</span>
+                                    <div class="common_btn_blobs">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pd_cate_item cl-s-6 cl-md-3">
+                        <div class="item">
+                            <div class="pd_cate_item_itemimg">
+                                <img src="images/pd/pd_cate1_item4.png">
+                            </div>
+                            <h3>鳳梨檸檬汁</h3>
+                            <div class="buttonArea">
+                                <a class="common_btn common_btn_first" href="productitem.html">
+                                    <span class="common_btn_txt">瀏覽商品</span>
+                                    <div class="common_btn_blobs">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pd_cate_dieting"></div>
+            <div class="pd_cate">
+                <h2>減肥系列</h2>
+                <div class="pd_cate_list clearfix">
+                    <div class="pd_cate_item cl-s-6 cl-md-3">
+                        <div class="item">
+                            <div class="pd_cate_item_itemimg">
+                                <img src="images/pd/pd_cate1_item1.png">
+                            </div>
+                            <h3>鳳梨檸檬汁</h3>
+                            <div class="buttonArea">
+                                <a class="common_btn common_btn_first" href="productitem.html">
+                                    <span class="common_btn_txt">瀏覽商品</span>
+                                    <div class="common_btn_blobs">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pd_cate_item cl-s-6 cl-md-3">
+                        <div class="item">
+                            <div class="pd_cate_item_itemimg">
+                                <img src="images/pd/pd_cate1_item2.png">
+                            </div>
+                            <h3>鳳梨檸檬汁</h3>
+                            <div class="buttonArea">
+                                <a class="common_btn common_btn_first" href="productitem.html">
+                                    <span class="common_btn_txt">瀏覽商品</span>
+                                    <div class="common_btn_blobs">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pd_cate_item cl-s-6 cl-md-3">
+                        <div class="item">
+                            <div class="pd_cate_item_itemimg">
+                                <img src="images/pd/pd_cate1_item3.png">
+                            </div>
+                            <h3>鳳梨檸檬汁</h3>
+                            <div class="buttonArea">
+                                <a class="common_btn common_btn_first" href="productitem.html">
+                                    <span class="common_btn_txt">瀏覽商品</span>
+                                    <div class="common_btn_blobs">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pd_cate_item cl-s-6 cl-md-3">
+                        <div class="item">
+                            <div class="pd_cate_item_itemimg">
+                                <img src="images/pd/pd_cate1_item4.png">
+                            </div>
+                            <h3>鳳梨檸檬汁</h3>
+                            <div class="buttonArea">
+                                <a class="common_btn common_btn_first" href="productitem.html">
+                                    <span class="common_btn_txt">瀏覽商品</span>
+                                    <div class="common_btn_blobs">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </section>
+
+
+
+
+
     <footer>
         <div class="footer_wrapper">
             <div class="footer_block clearfix">
@@ -396,63 +475,9 @@
         </div>
 
     </footer>
-    
 
-    <script>
 
-        $(document).ready(function () {
-            try {
-                $('.pd').ripples({
-                    resolution: 512,//要呈現的WebGL紋理的寬度和高度。此值越大，渲染越平滑，漣漪傳播越慢。
-                    dropRadius: 20, //通過在畫布上單擊或移動鼠標而產生的拖放的大小(px)
-                    perturbance: 0.002, //基本上由波紋引起的折射量
-                });
-
-            }
-            catch (e) {
-                $('.error').show().text(e);
-            }
-
-        });
-
-        document.getElementById('dieting').onclick = function () {
-            //注意windows 物件
-            TweenMax.to(window, 1, {
-                scrollTo: {
-                    y: "#pd_cate_dieting",//到達錨點
-                    offsetY: 100//位移
-                }
-            })
-        }
-        document.getElementById('health').onclick = function () {
-            //注意windows 物件
-            TweenMax.to(window, 1, {
-                scrollTo: {
-                    y: "#pd_cate_health",//到達錨點
-                    offsetY: 100//位移
-                }
-            })
-        }
-        document.getElementById('Iron').onclick = function () {
-            //注意windows 物件
-            TweenMax.to(window, 1, {
-                scrollTo: {
-                    y: "#pd_cate_Iron",//到達錨點
-                    offsetY: 100//位移
-                }
-            })
-        }
-        document.getElementById('whitening').onclick = function () {
-            //注意windows 物件
-            TweenMax.to(window, 1, {
-                scrollTo: {
-                    y: "#pd_cate_whitening",//到達錨點
-                    offsetY: 100//位移
-                }
-            })
-        }
-
-    </script>
+    <script src="js/product.js"></script>
 
 </body>
 
