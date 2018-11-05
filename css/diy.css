@@ -28,9 +28,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
-body {
-  line-height: 1; }
-
 ol, ul {
   list-style: none; }
 
@@ -472,15 +469,16 @@ header {
     transform: translate(0%, 0%); } }
 
 section {
-  width: 100%;
-  height: 100vh; }
+  width: 100%; }
+
+header nav li:nth-child(1) > a:after {
+  transform: scaleX(1); }
 
 .navSpace {
   margin-top: 140px; }
 
 body {
-  background: #a4ddfa;
-  background: linear-gradient(0deg, #a4ddfa 1%, #73c9f5 36%, #6ec9f7 71%, #45b0e6 100%); }
+  background-color: #a4ddfa; }
 
 .diy_pickFruit {
   position: relative;
@@ -490,6 +488,8 @@ body {
   display: none; }
 
 @media only screen and (max-width: 767px) {
+  .diy_pickFruit {
+    height: 100%; }
   .diy_pickFruit_wrapper {
     position: relative; }
     .diy_pickFruit_wrapper .cloud1 {
@@ -682,7 +682,7 @@ body {
   .diy_pickFruit_rightBlock {
     margin-top: -23px; }
   .diy_pickFruit_leftBox {
-    padding: 0 13%;
+    padding: 0 4%;
     position: relative;
     z-index: 1; }
     .diy_pickFruit_leftBox .diy_pickFruit_wrapperBottleBox {
@@ -721,10 +721,9 @@ body {
     flex-grow: 0;
     transition: 1s; }
   .diy_pickFruit_rightBox {
-    margin: 10px 0;
-    padding: 3% 6%; }
+    margin: 20px 0; }
   .diy_pickFruit_nextButton {
-    margin: 20px 0;
+    margin: 40px 50px;
     text-align: center; }
   .tree1 {
     width: 100px;
@@ -734,7 +733,7 @@ body {
   .tree2 {
     width: 30px;
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     right: 100px;
     z-index: -1; }
   .tree3 {
@@ -746,11 +745,10 @@ body {
   .house {
     width: 100px;
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     right: 30px;
     z-index: -2; }
   .footer_wrapper {
-    bottom: 0;
     text-align: center; }
     .footer_wrapper .footer_block {
       margin: 0 auto;
@@ -1063,7 +1061,6 @@ body {
     text-align: center; }
   .tree1 {
     width: 150px;
-    position: absolute;
     bottom: 0;
     z-index: -1; }
   .tree2 {
@@ -1084,6 +1081,9 @@ body {
     bottom: 0;
     right: 50px;
     z-index: -2; }
+  footer {
+    width: 100%;
+    bottom: 0; }
   .footer_wrapper {
     text-align: center;
     margin: 0 auto; }
