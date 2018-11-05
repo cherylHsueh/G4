@@ -7,28 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>果然配</title>
     <link rel="stylesheet" href="css/blog.css">
-    <script src='js/global.js'></script>
+    <script src="http://i.gtimg.cn/qzone/biz/gdt/lib/jquery/jquery-2.1.4.js?max_age=31536000"></script>
+    <!-- <script src='js/global.js'></script>
+    <script src="js/blog.js"></script> -->
 </head>
 
 <body>
     <header>
         <input type="checkbox" name="" id="hb_control">
         <nav>
-            <!-- <svg preserveAspectRatio="none" id="svg-2" viewBox="0 0 100 80" enable-background="new 0 0 100 80">
-                                        <animate dur="2s" attributeName="x" repeatCount="indefinite" from="0" to="100" xlink:href="#wave"></animate>
-                                        <defs>
-                                            <filter id="f4" x="0" y="0" width="100%" height="100%">
-                                                <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0"></feOffset>
-                                                <feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"></feColorMatrix>
-                                                <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="2"></feGaussianBlur>
-                                                <feBlend in="SourceGraphic" in2="blurOut" mode="normal"></feBlend>
-                                            </filter>
-                                        </defs>
-                                        <path x="0" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)"
-                                            id="wave"></path>
-                                        <path x="30" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)"
-                                            id="wave2"></path>
-                                    </svg> -->
             <div id="svg-2">
                 <canvas id="wave" width="1000" height="400">
                     Hopefully you don't see this. If you do, get Google Chrome.
@@ -82,14 +69,81 @@
                 </div>
                 <form id="blogSubmit_form" method="get" action="">
                     <div class="blogSubmit_Container clearfix">
-                        <div class="blogSubmit_LeftBox cl-md-6">
-                            <input id="picture" type="file" style="display: none">
+                        <input id="picture" type="file" style="display: none">
+                        <div id='previewImg' class="blogSubmit_LeftBox cl-md-6">
+
                             <p>上傳圖檔</p>
-                            <div href="javascript:;" class="blogSubmit_LeftBox_Pic">
+                            <div class="blogSubmit_LeftBox_Pic">
+                                <img src="" id='viewImg' />
                                 <label for="picture">
-                                    <img src="images/sendPictureFile.png" style="cursor: pointer" alt="上傳圖片">
+                                    <img class="upload" src="images/sendPictureFile.png" style="cursor: pointer" alt="上傳圖片">
                                 </label>
                             </div>
+
+
+                            <!-- <script>
+                                $("#picture").change(function(){
+                                      checkImage( this );
+                                    });
+                                  function checkImage(input) {
+                                        var filePath = input.value;
+                                        if(filePath){
+                                            //读取图片数据
+                                            var filePic = input.files[0];
+                                            var reader = new FileReader();
+                                            reader.onload = function (e) {
+                                                var data = e.target.result;
+                                                //加载图片获取图片真实宽度和高度
+                                                var image = new Image();
+                                                image.onload=function(){
+                                                    var width = image.width;
+                                                    var height = image.height;
+                                                    if (width <= 300 | height <= 300){
+                                                        alert("文件尺寸符合！"); 
+                                                        if ( input.files && input.files[0] ) {
+                                                            var FR= new FileReader();
+                                                            FR.onload = function(e) {
+                                                            //e.target.result = base64 format picture
+                                                            $('#viewImg').attr( "src", e.target.result );
+                                                            $('#viewImg').addClass('imgSize');
+                                                            $('.upload').css( "display","none");
+                                                            };       
+                                                            FR.readAsDataURL( input.files[0] );
+                                                        }
+                                                    }else {
+                                                        alert("文件尺寸应为：300*300！");
+                                                        file.value = "";
+                                                        return false;
+                                                    }
+                                                };
+                                                image.src= data;
+                                                
+                                            };
+                                            reader.readAsDataURL(filePic);
+                                           
+                                        }else{
+                                            return false;
+                                        }
+                                    }
+                                    function readImage(input) {
+                                      if ( input.files && input.files[0] ) {
+                                        var FR= new FileReader();
+                                        FR.onload = function(e) {
+                                          //e.target.result = base64 format picture
+                                          $('#viewImg').attr( "src", e.target.result );
+                                          $('#viewImg').addClass('imgSize');
+                                          $('.upload').css( "display","none");
+                                        };       
+                                        FR.readAsDataURL( input.files[0] );
+                                      }
+                                    }
+                                   
+
+                                  </script> -->
+
+
+
+
                             <!-- <div class="blogSubmit_LeftBox_NameContainer clearfix">
                         <div class="blogSubmit_LeftBox_NamePic cl-s-4 cl-md-4">
                             <img src="images/blogImg/memberPic.png" alt="分享者">
@@ -195,7 +249,7 @@
                         </div>
 
                     </div>
-                    <a class="common_btn common_btn_first" href="javascript:;">
+                    <a class="common_btn common_btn_first" id="uploadBtn" href="javascript:;">
                         <span class="common_btn_txt">上傳文章</span>
                         <div class="common_btn_blobs">
                             <div></div>
@@ -206,12 +260,13 @@
                 </form>
 
             </div>
-
+            <img src="images/Flower.png" alt="花" class="flower1">
+            <img src="images/blogImg/oneFlower.png" alt="花" class="flower2">
+            <img src="images/blogImg/oneFlower.png" alt="花" class="flower3">
+            <img src="images/blogImg/oneFlower.png" alt="花" class="flower4">
         </section>
     </div>
-    <!-- <div class="blogSubmit_board">
-        <img src="images/blogImg/board.png" alt="布告欄">
-    </div> -->
+
     <footer>
         <div class="footer_wrapper">
             <div class="footer_block clearfix">
@@ -225,6 +280,9 @@
         </div>
 
     </footer>
+    <script src='js/global.js'></script>
+    <script src="js/blog.js"></script>
+    <!-- <img src="images/Flower.png" alt="花" class="flower1"> -->
 </body>
 
 </html>
