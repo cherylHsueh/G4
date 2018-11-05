@@ -13,10 +13,11 @@ body{
 $mainfontcolor : #5e4909;
 $blogtextcolor : #ccc;
 $buttoncolor : rgb(255,241,0);
-
+$sky:#a4ddfa;
 $mobile : 767px; //手機斷點
 $medium:  768px; //平板斷點
 $desktop : 1024px; //桌機斷點
+
 
 //RWD斷點判斷函數
 @mixin rwd ($breakpoint) {
