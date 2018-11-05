@@ -474,25 +474,26 @@ header {
 p {
   text-align: justify; }
 
-.brick {
-  width: 100%;
-  height: 150px;
-  background-color: #00B5BD; }
-
 .about_start {
-  width: 100%;
+  width: 25%;
   height: 100vh;
   background-color: #00B5BD;
-  overflow: hidden; }
+  float: left; }
 
 .about_start_background_block {
   position: relative; }
 
 .about_factory {
-  width: 100%;
+  width: 25%;
   height: 100vh;
   background-color: #00B5BD;
-  overflow: hidden; }
+  float: left; }
+
+.about_end {
+  width: 25%;
+  height: 100vh;
+  background-color: #00B5BD;
+  float: left; }
 
 .about_factory_background_block {
   position: relative; }
@@ -503,9 +504,15 @@ p {
   position: absolute;
   background-color: #00B5BD; }
 
+.about_bigwrapper {
+  width: 5000px;
+  height: 100vh; }
+
 #app {
   position: relative;
-  height: 100vh; }
+  width: 25%;
+  height: 100vh;
+  float: left; }
 
 .forcast h4 {
   padding: 5% 0; }
@@ -601,6 +608,10 @@ h3 {
   -webkit-animation: bounce .8s infinite alternate; }
 
 @media only screen and (max-width: 767px) {
+  header nav {
+    position: fixed;
+    width: 100vw;
+    z-index: 100; }
   .about_start_background_block {
     position: relative;
     height: 100vh; }
@@ -628,8 +639,8 @@ h3 {
     width: 40%;
     max-width: 250px;
     position: absolute;
-    bottom: 25%;
-    left: 4%;
+    bottom: 50px;
+    left: 0;
     z-index: 2; }
     .about_start_content_orchard img {
       width: 100%; }
@@ -638,15 +649,8 @@ h3 {
     position: absolute;
     left: 35%;
     bottom: 24%;
-    z-index: 1; }
+    z-index: 2; }
     .about_start_content_mountain01 img {
-      width: 100%; }
-  .about_start_content_mountain02 {
-    width: 150%;
-    position: absolute;
-    bottom: 24%;
-    z-index: 1; }
-    .about_start_content_mountain02 img {
       width: 100%; }
   .about_start_content_mountain03 {
     width: 136%;
@@ -655,23 +659,6 @@ h3 {
     right: -17%; }
     .about_start_content_mountain03 img {
       width: 100%; }
-  .about_start_grass {
-    width: 100%;
-    height: 50px;
-    background-color: #D9E021;
-    z-index: 1;
-    position: absolute;
-    bottom: 22%; }
-    .about_start_grass .about_start_grass_soilroad {
-      width: 100%;
-      height: 30px;
-      background-color: #8c6239;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: auto; }
   .about_start_content_car01 {
     width: 36%;
     position: absolute;
@@ -699,8 +686,6 @@ h3 {
     .about_start_content_car01_tire2 img {
       width: 100%;
       animation: rotate 5s linear infinite; }
-  .about_start_content_grass01, .about_start_content_grass02 {
-    display: none; }
   .about_factory_background_block {
     position: relative;
     height: 100vh; }
@@ -746,42 +731,6 @@ h3 {
     z-index: 2; }
     .about_factory_content_factory img {
       width: 100%; }
-  .about_factory_content_orange {
-    width: 27%;
-    position: absolute;
-    right: 1%;
-    bottom: 26%;
-    z-index: 1; }
-    .about_factory_content_orange img {
-      width: 100%; }
-    .about_factory_content_orange .fruit1 {
-      width: 21%;
-      position: absolute;
-      bottom: 65%;
-      right: 13%; }
-      .about_factory_content_orange .fruit1 img {
-        width: 100%; }
-    .about_factory_content_orange .fruit2 {
-      width: 21%;
-      position: absolute;
-      bottom: 52%;
-      right: 60%; }
-      .about_factory_content_orange .fruit2 img {
-        width: 100%; }
-    .about_factory_content_orange .fruit3 {
-      width: 21%;
-      position: absolute;
-      bottom: 73%;
-      right: 55%; }
-      .about_factory_content_orange .fruit3 img {
-        width: 100%; }
-    .about_factory_content_orange .fruit4 {
-      width: 21%;
-      position: absolute;
-      bottom: 43%;
-      right: 22%; }
-      .about_factory_content_orange .fruit4 img {
-        width: 100%; }
   .about_factory_content_mountain02 {
     width: 150%;
     position: absolute;
@@ -796,16 +745,6 @@ h3 {
     z-index: 1;
     position: absolute;
     bottom: 20%; }
-    .about_factory_grass .about_factory_grass_soilroad {
-      width: 100%;
-      height: 30px;
-      background-color: #8c6239;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: auto; }
   .about_factory_content_car01 {
     width: 35%;
     position: absolute;
@@ -814,8 +753,6 @@ h3 {
     z-index: 3; }
     .about_factory_content_car01 img {
       width: 100%; }
-  .about_factory_content_grass02 {
-    display: none; }
   .about_factory_info_blcok {
     width: 40%;
     background-color: #00ac6f;
@@ -878,23 +815,12 @@ h3 {
     bottom: 0; }
     .about_end_background_shadow img {
       width: 100%; }
-  .about_end_background_house {
+  .about_end_background_house1 {
     width: 100%;
     position: absolute;
     bottom: 6%; }
-    .about_end_background_house img {
+    .about_end_background_house1 img {
       width: 100%; }
-  .about_end_background_house2 {
-    display: none; }
-  .about_end_background_road {
-    width: 100%;
-    position: absolute;
-    bottom: 1%; }
-    .about_end_background_road img {
-      width: 100%;
-      font-size: 0; }
-  .about_end_background_road2 {
-    display: none; }
   .about_end_background_bounce {
     width: 15%;
     position: absolute;
@@ -938,7 +864,7 @@ h3 {
     width: 45%;
     height: 30%;
     position: absolute;
-    left: 49%;
+    left: 48%;
     top: 40%;
     color: white;
     font-size: 30px;
@@ -958,7 +884,7 @@ h3 {
   .about_taiwan_background_cloud {
     width: 20%;
     position: absolute;
-    left: 4%; }
+    top: 4%; }
     .about_taiwan_background_cloud img {
       width: 100%;
       animation: flutter 5s linear infinite; }
@@ -997,82 +923,168 @@ h3 {
       width: 100%; } }
 
 @media all and (min-width: 768px) {
+  .about_start_info_blcok {
+    width: 40%;
+    background-color: #00ac6f;
+    position: absolute;
+    top: 20%;
+    left: 36%;
+    margin: auto;
+    padding: 4% 0;
+    border-radius: 10px;
+    border: 10px solid #fff;
+    box-shadow: 0 0 0 20px #00ac6f;
+    z-index: 6; }
+  .about_start_info_blcok_border {
+    width: 85%;
+    margin: auto;
+    text-align: center; }
+  .about_start_info_item_title {
+    width: 70%;
+    margin: auto; }
+    .about_start_info_item_title img {
+      width: 100%;
+      margin-bottom: 10%; }
+  .about_start_formInfo {
+    margin: 2% auto 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; }
+    .about_start_formInfo .about_start_formInfo_content {
+      line-height: 1.6;
+      margin: auto;
+      color: #fff;
+      padding: 5%;
+      border: 1px solid #fff;
+      border-radius: 10px; }
   .about_start_background_block {
     position: relative;
     height: 100vh; }
   .about_start_background_clould01 {
     position: absolute;
-    width: 20%; }
+    top: 20%;
+    left: 5%;
+    width: 20%;
+    animation: flutter 5s linear infinite; }
   .about_start_background_clould03 {
     width: 20%;
     position: absolute;
     right: 1%;
-    top: 10%; }
+    top: 20%;
+    animation: flutter 5s linear infinite; }
+  .about_start_content_bounce {
+    width: 8%;
+    position: absolute;
+    bottom: 37%;
+    left: 10%; }
+    .about_start_content_bounce img {
+      width: 100%;
+      margin: 10% 0 0;
+      animation: bounce .5s infinite alternate; }
   .about_start_content_orchard {
     width: 30%;
     position: absolute;
-    bottom: 20%;
+    bottom: 4%;
     z-index: 3; }
     .about_start_content_orchard img {
       width: 100%; }
+  .about_start_content_fence1 {
+    width: 18%;
+    position: absolute;
+    bottom: 18%;
+    left: 32%;
+    z-index: 3; }
+    .about_start_content_fence1 img {
+      width: 100%; }
+  .about_start_content_fence2 {
+    width: 18%;
+    position: absolute;
+    bottom: 18%;
+    right: 16%;
+    z-index: 3; }
+    .about_start_content_fence2 img {
+      width: 100%; }
+  .about_start_content_barn {
+    width: 20%;
+    position: absolute;
+    bottom: 18%;
+    left: 48%;
+    z-index: 5; }
+    .about_start_content_barn img {
+      width: 100%; }
   .about_start_content_mountain01 {
     position: absolute;
-    width: 90%;
+    width: 100%;
     right: -5%;
-    bottom: 22%;
-    z-index: 1; }
+    bottom: 18%;
+    z-index: 2; }
     .about_start_content_mountain01 img {
       width: 100%; }
   .about_start_content_mountain02 {
-    width: 80%;
     position: absolute;
-    bottom: 25%;
+    width: 80%;
+    left: 50%;
+    bottom: 18%;
     z-index: 1; }
     .about_start_content_mountain02 img {
       width: 100%; }
   .about_start_content_mountain03 {
-    width: 100%;
+    width: 75%;
     position: absolute;
-    bottom: 33%;
-    right: -17%; }
+    bottom: 18%;
+    right: -17%;
+    z-index: 1; }
     .about_start_content_mountain03 img {
+      width: 100%; }
+  .about_start_content_flower1 {
+    width: 10%;
+    position: absolute;
+    bottom: 14%;
+    right: 21%;
+    z-index: 5; }
+    .about_start_content_flower1 img {
+      width: 100%; }
+  .about_start_content_flower2 {
+    width: 9%;
+    position: absolute;
+    bottom: 16%;
+    right: 10%;
+    z-index: 5;
+    transform: rotate(6deg); }
+    .about_start_content_flower2 img {
+      width: 100%; }
+  .about_start_content_flower3 {
+    width: 10%;
+    position: absolute;
+    bottom: 13%;
+    right: 0%;
+    z-index: 5; }
+    .about_start_content_flower3 img {
       width: 100%; }
   .about_start_grass {
     width: 100%;
-    height: 110px;
+    height: 18%;
     background-color: #D9E021;
     position: absolute;
-    bottom: 12%;
-    z-index: 2; }
-    .about_start_grass .about_start_grass_soilroad {
-      width: 100%;
-      height: 74px;
-      background-color: #8c6239;
+    bottom: 0;
+    z-index: 2;
+    line-height: 110px; }
+    .about_start_grass .about_start_road01 {
+      width: 60%;
       position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
+      bottom: 5%; }
+      .about_start_grass .about_start_road01 img {
+        width: 100%; }
+    .about_start_grass .about_start_road02 {
+      width: 60%;
+      position: absolute;
+      bottom: 5%;
       right: 0;
-      margin: auto; }
-  .about_start_content_grass01 {
-    width: 20%;
-    position: absolute;
-    bottom: 23%;
-    left: 40%;
-    z-index: 2; }
-    .about_start_content_grass01 img {
-      width: 100%; }
-  .about_start_content_grass02 {
-    width: 35%;
-    position: absolute;
-    right: 0;
-    bottom: 25%;
-    z-index: 3; }
-    .about_start_content_grass02 img {
-      width: 100%; }
+      overflow: hidden; }
+      .about_start_grass .about_start_road02 img {
+        width: 100%; }
   .about_start_content_car01 {
     width: 25%;
-    height: 100%;
     position: absolute;
     top: 58%;
     right: 5%;
@@ -1109,15 +1121,16 @@ h3 {
   .about_factory_background_clould03 {
     width: 20%;
     position: absolute;
-    right: 1%;
-    top: 10%; }
+    right: 5%;
+    top: 20%;
+    animation: flutter 5s linear infinite; }
   .about_factory_content_factoryTitle {
     position: absolute;
     z-index: 2;
-    width: 10%;
+    width: 8%;
     max-width: 120px;
-    left: 11%;
-    top: 24%; }
+    right: 16%;
+    top: 20%; }
     .about_factory_content_factoryTitle img {
       margin: 10% 0 0;
       width: 100%; }
@@ -1131,81 +1144,98 @@ h3 {
     .factoryTitle img {
       width: 100%; }
   .about_factory_content_factory {
-    width: 18%;
+    width: 27%;
     position: absolute;
-    bottom: 22%;
-    left: 3%;
+    bottom: 18%;
+    right: 15%;
     z-index: 3; }
     .about_factory_content_factory img {
       width: 100%; }
-  .about_factory_content_orange {
+  .about_factory_content_pine {
+    width: 12%;
     position: absolute;
-    width: 18%;
-    right: 2%;
-    bottom: 22%;
-    z-index: 1; }
-    .about_factory_content_orange img {
+    right: -5%;
+    bottom: 16%;
+    z-index: 3; }
+    .about_factory_content_pine img {
       width: 100%; }
-    .about_factory_content_orange .fruit1 {
-      width: 21%;
-      position: absolute;
-      bottom: 65%;
-      right: 13%; }
-      .about_factory_content_orange .fruit1 img {
-        width: 100%; }
-    .about_factory_content_orange .fruit2 {
-      width: 21%;
-      position: absolute;
-      bottom: 52%;
-      right: 60%; }
-      .about_factory_content_orange .fruit2 img {
-        width: 100%; }
-    .about_factory_content_orange .fruit3 {
-      width: 21%;
-      position: absolute;
-      bottom: 73%;
-      right: 55%; }
-      .about_factory_content_orange .fruit3 img {
-        width: 100%; }
-    .about_factory_content_orange .fruit4 {
-      width: 21%;
-      position: absolute;
-      bottom: 43%;
-      right: 22%; }
-      .about_factory_content_orange .fruit4 img {
-        width: 100%; }
+  .about_factory_content_mountain01 {
+    width: 85%;
+    position: absolute;
+    bottom: 18%;
+    left: 0%;
+    z-index: 1; }
+    .about_factory_content_mountain01 img {
+      width: 100%; }
   .about_factory_content_mountain02 {
     width: 80%;
     position: absolute;
-    bottom: 13%;
-    z-index: 0; }
+    bottom: 18%;
+    left: -36%; }
     .about_factory_content_mountain02 img {
+      width: 100%; }
+  .about_factory_content_grass1 {
+    width: 14%;
+    position: absolute;
+    bottom: 18%;
+    right: 38%;
+    z-index: 4; }
+    .about_factory_content_grass1 img {
       width: 100%; }
   .about_factory_grass {
     width: 100%;
-    height: 110px;
+    height: 18%;
     background-color: #D9E021;
     position: absolute;
-    bottom: 13%;
-    z-index: 2; }
-    .about_factory_grass .about_factory_grass_soilroad {
-      width: 100%;
-      height: 74px;
-      background-color: #8c6239;
+    bottom: 0;
+    z-index: 2;
+    line-height: 110px; }
+    .about_factory_grass .about_factory_road1 {
+      width: 52%;
       position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: auto; }
-  .about_factory_content_grass02 {
-    width: 32%;
+      bottom: 5%; }
+      .about_factory_grass .about_factory_road1 img {
+        width: 100%; }
+    .about_factory_grass .about_factory_road2 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      right: 0; }
+      .about_factory_grass .about_factory_road2 img {
+        width: 100%; }
+  .about_factory_content_streetlamp1 {
+    width: 11%;
     position: absolute;
-    right: 0;
-    bottom: 21%;
-    z-index: 1; }
-    .about_factory_content_grass02 img {
+    left: 5%;
+    bottom: 11%;
+    z-index: 3; }
+    .about_factory_content_streetlamp1 img {
       width: 100%; }
+  .about_factory_content_streetlamp2 {
+    width: 11%;
+    position: absolute;
+    left: 30%;
+    bottom: 11%;
+    z-index: 3; }
+    .about_factory_content_streetlamp2 img {
+      width: 100%; }
+  .about_factory_content_streetlamp3 {
+    width: 11%;
+    position: absolute;
+    right: 0%;
+    bottom: 11%;
+    z-index: 4; }
+    .about_factory_content_streetlamp3 img {
+      width: 100%; }
+  .about_factory_content_roadsign {
+    width: 10%;
+    position: absolute;
+    left: 15%;
+    bottom: 14%;
+    z-index: 3; }
+    .about_factory_content_roadsign img {
+      width: 100%;
+      margin: -5% 0; }
   .about_factory_content_car01 {
     width: 25%;
     position: absolute;
@@ -1218,7 +1248,7 @@ h3 {
     width: 35%;
     background-color: #00ac6f;
     position: absolute;
-    top: 0;
+    top: 20%;
     left: 5%;
     right: 0;
     margin: 3% auto;
@@ -1265,83 +1295,154 @@ h3 {
       width: 100%; }
   .about_factory_info_item_cart_straight, .about_factory_info_item_truck_straight {
     display: none; }
-  #section3 {
-    background-color: #00B5BD;
-    height: 100vh; }
+  .about_end {
+    overflow: hidden; }
   .about_end_background {
     position: relative;
     width: 100%;
     height: 100vh;
     bottom: 140px; }
   .about_end_background_shadow {
-    width: 75%;
+    width: 100%;
     position: absolute;
-    bottom: 0;
-    right: 0; }
+    bottom: -8%;
+    left: 5%; }
     .about_end_background_shadow img {
       width: 100%; }
-  .about_end_background_house {
+  .about_end_background_house1 {
     width: 70%;
     position: absolute;
-    bottom: 8%;
-    left: 0; }
-    .about_end_background_house img {
+    bottom: 0%;
+    left: 5%; }
+    .about_end_background_house1 img {
       width: 100%; }
   .about_end_background_house2 {
     width: 70%;
     position: absolute;
-    bottom: 8%;
-    right: 0; }
+    bottom: 0%;
+    right: -40%; }
     .about_end_background_house2 img {
       width: 100%; }
-  .about_end_background_road {
-    width: 50%;
+  .about_end_background_flowerpot {
+    width: 10%;
     position: absolute;
-    bottom: 0; }
-    .about_end_background_road img {
-      width: 100%;
-      font-size: 0; }
-  .about_end_background_road2 {
-    width: 50%;
-    position: absolute;
-    bottom: 0;
-    left: 50%; }
-    .about_end_background_road2 img {
-      width: 100%;
-      font-size: 0; }
+    bottom: 0%;
+    left: 0%; }
+    .about_end_background_flowerpot img {
+      width: 100%; }
   .about_end_background_bounce {
-    width: 5%;
+    width: 8%;
     position: absolute;
-    bottom: 45%;
-    left: 15%; }
+    bottom: 35%;
+    left: 20%; }
     .about_end_background_bounce img {
       width: 100%;
       margin: 10% 0 0;
       animation: bounce .5s infinite alternate; }
+  .about_end_background_streetlight1 {
+    width: 11%;
+    position: absolute;
+    left: 10%;
+    bottom: -7%;
+    z-index: 2; }
+    .about_end_background_streetlight1 img {
+      width: 100%; }
+  .about_end_background_streetlight2 {
+    width: 11%;
+    position: absolute;
+    left: 60%;
+    bottom: -7%;
+    z-index: 2; }
+    .about_end_background_streetlight2 img {
+      width: 100%; }
+  .about_end_background_streetlight3 {
+    width: 11%;
+    position: absolute;
+    left: 80%;
+    bottom: -7%;
+    z-index: 2; }
+    .about_end_background_streetlight3 img {
+      width: 100%; }
+  .about_end_background_tree1 {
+    width: 8%;
+    position: absolute;
+    left: 20%;
+    bottom: -6%;
+    z-index: 3; }
+    .about_end_background_tree1 img {
+      width: 100%; }
+  .about_end_background_tree2 {
+    width: 8%;
+    position: absolute;
+    left: 40%;
+    bottom: -6%;
+    z-index: 4; }
+    .about_end_background_tree2 img {
+      width: 100%; }
+  .about_end_background_tree3 {
+    width: 8%;
+    position: absolute;
+    left: 65%;
+    bottom: -6%;
+    z-index: 4; }
+    .about_end_background_tree3 img {
+      width: 100%; }
   .about_end_background_truck {
     width: 25%;
     position: absolute;
-    bottom: 8%;
-    left: 10%; }
+    bottom: -11%;
+    left: 10%;
+    z-index: 3; }
     .about_end_background_truck img {
       width: 100%;
       animation: shake .3s  alternate  infinite; }
   .about_end_background_truckTire1 {
     width: 5%;
     position: absolute;
-    bottom: 8%;
-    left: 18%; }
+    bottom: -13%;
+    left: 18%;
+    z-index: 3; }
     .about_end_background_truckTire1 img {
       width: 100%;
       animation: rotate 5s linear infinite; }
   .about_end_background_truckTire2 {
     width: 5%;
     position: absolute;
-    bottom: 8%;
-    left: 28%; }
+    bottom: -13%;
+    left: 28%;
+    z-index: 3; }
     .about_end_background_truckTire2 img {
       width: 100%;
       animation: rotate 5s linear infinite; }
+  .about_end_background_soil {
+    width: 87%;
+    height: 18%;
+    background-color: #c69c6d;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    line-height: 110px; }
+    .about_end_background_soil .about_end_background_soil_road1 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      left: 0; }
+      .about_end_background_soil .about_end_background_soil_road1 img {
+        width: 100%; }
+    .about_end_background_soil .about_end_background_soil_road2 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      left: 46%; }
+      .about_end_background_soil .about_end_background_soil_road2 img {
+        width: 100%; }
+    .about_end_background_soil .about_end_background_soil_road3 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      right: 0%; }
+      .about_end_background_soil .about_end_background_soil_road3 img {
+        width: 100%; }
   .about_end_formInfo {
     margin: 2% auto 0;
     width: 100%;
@@ -1354,17 +1455,18 @@ h3 {
       padding: 5%;
       border: 1px solid #fff;
       border-radius: 10px; }
-  svg {
+  #cf503461-00bd-459a-aeb5-062ebc913211 {
     width: 25%;
     height: 100vh;
     position: absolute;
-    bottom: 15%;
-    left: 22%; }
+    bottom: 5%;
+    z-index: 2;
+    left: 25%; }
   .title_area {
     width: 25%;
     position: absolute;
-    left: 43%;
-    top: 32%;
+    left: 50%;
+    top: 19%;
     color: white;
     font-size: 30px;
     padding: 2%; }
@@ -1372,31 +1474,61 @@ h3 {
     width: 70%;
     position: absolute;
     bottom: 14%;
-    left: 22%; }
+    left: 0%;
+    z-index: 1; }
     .about_taiwan_background_mountain img {
       width: 100%; }
   .about_taiwan_background_mountain2 {
-    width: 70%;
+    width: 100%;
     position: absolute;
-    bottom: 14%;
-    left: -22%; }
+    bottom: 18%;
+    left: -25%; }
     .about_taiwan_background_mountain2 img {
+      width: 100%; }
+  .about_taiwan_background_mountain3 {
+    width: 100%;
+    position: absolute;
+    bottom: 18%;
+    right: 0%; }
+    .about_taiwan_background_mountain3 img {
+      width: 100%; }
+  .about_taiwan_background_windmill {
+    width: 20%;
+    position: absolute;
+    bottom: 18%;
+    left: 6%;
+    z-index: 1; }
+    .about_taiwan_background_windmill img {
+      width: 100%; }
+  .about_taiwan_background_grassflowr {
+    width: 7%;
+    position: absolute;
+    bottom: 13%;
+    left: 2%;
+    z-index: 3; }
+    .about_taiwan_background_grassflowr img {
       width: 100%; }
   .about_taiwan_background_grass {
     width: 100%;
-    height: 10%;
+    height: 18%;
     background-color: #D9E021;
     position: absolute;
-    bottom: 130px;
-    z-index: 1;
-    display: inline-block;
-    font-size: 0; }
-    .about_taiwan_background_grass::before {
-      content: '';
-      display: inline-block;
-      width: 0;
-      height: 100%;
-      vertical-align: middle; }
+    bottom: 0;
+    z-index: 2;
+    line-height: 110px; }
+    .about_taiwan_background_grass .about_taiwan_background_road1 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%; }
+      .about_taiwan_background_grass .about_taiwan_background_road1 img {
+        width: 100%; }
+    .about_taiwan_background_grass .about_taiwan_background_road2 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      right: 0; }
+      .about_taiwan_background_grass .about_taiwan_background_road2 img {
+        width: 100%; }
   .about_taiwan_background_road {
     width: 30%;
     display: inline-block;
@@ -1406,30 +1538,44 @@ h3 {
   .about_taiwan_background_sheep {
     width: 60%;
     position: absolute;
-    bottom: 100%;
-    left: 30%; }
+    bottom: 85%;
+    left: 9%; }
     .about_taiwan_background_sheep img {
       width: 100%; }
   .about_taiwan_background_tree {
-    width: 10%;
+    width: 12%;
     position: absolute;
     right: 5%;
-    bottom: 100%; }
+    bottom: 74%; }
     .about_taiwan_background_tree img {
+      width: 100%; }
+  .about_taiwan_background_treeflower {
+    width: 8%;
+    position: absolute;
+    right: 1%;
+    bottom: 52%; }
+    .about_taiwan_background_treeflower img {
+      width: 100%; }
+  .about_taiwan_background_smallgrass {
+    width: 5%;
+    position: absolute;
+    bottom: 44%;
+    right: 18%; }
+    .about_taiwan_background_smallgrass img {
       width: 100%; }
   .about_taiwan_background_cloud {
     width: 20%;
     position: absolute;
-    left: 4%; }
+    top: 20%;
+    left: -30%; }
     .about_taiwan_background_cloud img {
       width: 100%;
       animation: flutter 5s linear infinite; }
   .about_taiwan_background_cloud2 {
     width: 20%;
     position: absolute;
-    left: 61%;
-    top: 5%;
-    z-index: -2; }
+    left: 16%;
+    top: 20%; }
     .about_taiwan_background_cloud2 img {
       width: 100%;
       animation: flutter 5s linear infinite; }
@@ -1461,10 +1607,9 @@ h3 {
     width: 40%;
     background-color: #00ac6f;
     position: absolute;
-    top: 0%;
-    left: 0;
-    right: 0;
-    margin: 3% auto;
+    top: 40%;
+    left: 36%;
+    margin: auto;
     padding: 4% 0;
     border-radius: 10px;
     border: 10px solid #fff;

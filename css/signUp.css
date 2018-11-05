@@ -471,25 +471,6 @@ header {
   100% {
     transform: translate(0%, 0%); } }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> member
-=======
-=======
->>>>>>> blog
-/*分頁做法
-header nav  li:nth-child(2) > a:after {
-    transform: scaleX(1);
-}
-*/
-<<<<<<< HEAD
->>>>>>> diy
-=======
->>>>>>> 6a047bf83ca6a4f5d20759417a9bec51470ac612
->>>>>>> blog
 footer {
   position: absolute;
   bottom: 0;
@@ -533,18 +514,14 @@ footer {
 
 @media only screen and (max-width: 767px) {
   .nav_space {
-    height: 110px;
-    background-color: #a4ddfa; }
+    margin-top: 95px; }
   .cloud {
-    position: relative;
-    right: 71%;
-    animation: mymoveright 80s infinite;
-    -webkit-animation: mymoveright 80s infinite;
-    width: 20%; }
+    text-align: right;
+    padding: 5%; }
   .cloud img {
-    width: 100%; }
+    width: 20%; }
   .signUp {
-    background-color: #a4ddfa;
+    background-color: #00B5BD;
     width: 100%; }
   .signUp_newmem_box {
     text-align: center;
@@ -567,54 +544,8 @@ footer {
     background-color: #fff100;
     width: 120px;
     height: 35px; }
-  .cloud2 {
-    position: relative;
-    animation: mymove 80s infinite;
-    -webkit-animation: mymove 80s infinite;
-    width: 25%; }
-    .cloud2 img {
-      width: 100%; }
-  @keyframes mymove {
-    from {
-      left: 0px; }
-    to {
-      left: 100%;
-      top: 5%; } }
-  @keyframes mymoveright {
-    from {
-      left: 80%; }
-    to {
-      left: 5%;
-      top: 5%; } }
-  .windmill {
-    width: 50%;
-    position: relative;
-    margin: 15% auto 0 auto;
-    z-index: 1; }
-    .windmill img {
-      width: 100%; }
-  .fan {
-    position: absolute;
-    top: -20%;
-    left: -16%;
-    width: 140%;
-    animation: wind 1.25s linear infinite; }
-    .fan img {
-      width: 100%; }
-  @keyframes wind {
-    0% {
-      transform: rotate(0deg); }
-    25% {
-      transform: rotate(90deg); }
-    50% {
-      transform: rotate(180deg); }
-    75% {
-      transform: rotate(270deg); }
-    100% {
-      transform: rotate(360deg); } }
-  .grass {
-    display: none; }
-  .orchard img {
+  .orchard img,
+  .orchard2 img {
     display: none; }
   .confirm {
     position: relative;
@@ -622,9 +553,7 @@ footer {
   input {
     margin: 4px 2px;
     padding: 5px 0px;
-    display: inline-block; }
-  footer {
-    background-color: #dde4b7; } }
+    display: inline-block; } }
 
 @media all and (min-width: 768px) {
   .nav_space {
@@ -649,8 +578,7 @@ footer {
     display: inline-block; }
   .signUp_newmem {
     position: relative;
-    left: 58%;
-    z-index: 1; }
+    left: 58%; }
   .signUp_newmem_box h2 {
     position: relative;
     top: -30px; }
