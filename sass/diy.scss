@@ -183,25 +183,8 @@ body {
       width: 400%;
 
       .diy_pickFruit_picBox {
-        // width: 100px;
         display: inline-block;
 
-        // .fruitnameBox {
-        //   // display: none;
-        //   position: absolute;
-        //   bottom: -20px;
-        //   left: -25px;
-        //   // z-index: -1;
-        //   width: 75px;
-        //   height: 30px;
-        //   border-radius: 10px;
-        //   background-color: rgb(227, 253, 112);
-
-        // }
-      }
-
-      .fruitbgc {
-        // background-color: rgb(119, 73, 21);
       }
     }
   }
@@ -216,20 +199,6 @@ body {
     background-color: rgb(233, 201, 165);
     box-sizing: border-box;
 
-    // &:before{
-    //   content:'';
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   right: 0;
-    //   bottom: 0;
-    //   margin: auto;
-    //   display: inline-block;
-    //   width: 60px;
-    //   height: 60px;
-    //   border-radius: 50%;
-    //   background-color: #bd6308;
-    // }
     .fruiticon {
       position: relative;
       width: 70%;
@@ -244,50 +213,9 @@ body {
     }
   }
 
-  //spotlight
-  // %highlightphone {
-  //   // display: none;
-  //   position: absolute;
-  //   z-index: -1;
-  //   top: -20%;
-  //   left: -20%;
-  //   width: 80%;
-  //   animation: scale .6s;
-  // }
-
-  // @keyframes scale {
-  //   from {
-  //     transform: scale(.6);
-  //     // transform: rotate(0deg);
-  //   }
-
-  //   to {
-  //     transform: scale(1);
-  //     // transform: rotate(360deg);
-  //   }
-  // }
-
   @for $i from 1 through 9 {
     .diy_pickFruit_leftItem#{$i} {
       position: relative;
-      // .fruiticon {
-      //   width: 40%;
-      //   position: relative;
-      //   // z-index: -1;
-      //   cursor: pointer;
-      // }
-
-      // img.highlight {
-      //   @extend %highlightphone;
-      // }
-
-      // img.highlightClick {
-      //   @extend %highlightphone;
-      // }
-
-      // img.highlightUnclick {
-      //   @extend %highlightphone;
-      // }
     }
   }
 
@@ -431,14 +359,14 @@ body {
   .tree1 {
     width: 100px;
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     z-index: -1;
   }
 
   .tree2 {
     width: 30px;
     position: absolute;
-    bottom: 20px;
+    bottom: 0px;
     right: 100px;
     z-index: -1;
   }
@@ -446,7 +374,7 @@ body {
   .tree3 {
     width: 70px;
     position: absolute;
-    bottom: 20px;
+    bottom: 0px;
     right: 0;
     z-index: -2;
   }
@@ -454,17 +382,11 @@ body {
   .house {
     width: 100px;
     position: absolute;
-    bottom: 20px;
+    bottom: 0px;
     right: 30px;
     z-index: -2;
   }
 
-  //footer
-  // footer{
-  //   width: 100%;
-  //   position: absolute;
-  //   bottom: 0;
-  // }
   .footer_wrapper {
     // position: absolute;
     // bottom: 0;
@@ -496,6 +418,33 @@ body {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -979,7 +928,7 @@ body {
 
   .tree1 {
     width: 150px;
-    position: absolute;
+    // position: absolute;
     bottom: 0;
     z-index: -1;
   }
