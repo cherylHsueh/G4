@@ -4,7 +4,7 @@
 
 
 * {
-    // outline: 1px solid red;
+    outline: 1px solid red;
 }
 
 
@@ -14,12 +14,7 @@ header nav li:nth-child(4)>a:after {
 }
 
 body {
-    background: rgb(164, 221, 250);
-    background: linear-gradient(0deg,
-        rgba(164, 221, 250, 1) 1%,
-        rgba(115, 201, 245, 1) 36%,
-        rgba(110, 201, 247, 1) 71%,
-        rgba(69, 176, 230, 1) 100%);
+    background: $sky;
     overflow-x: hidden;
 }
 
@@ -50,7 +45,7 @@ body {
     //共用
 
     %blog_title {
-        color: #fff;
+        color: #5e4909;
         text-align: center;
         line-height: 1.5;
         font-weight: bold;
@@ -134,7 +129,7 @@ body {
         .blog_Rank_Container {
             width: calc(100% - 40px);
             margin: 0 15px;
-            // padding: 5px;
+            border-radius: 20px;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
             background-color: #fff;
@@ -164,7 +159,7 @@ body {
         }
 
         .blog_Rank_Container3 {
-            top: 45%;
+            top: 50%;
             z-index: 1;
             -webkit-transform: scale(0.8);
             -ms-transform: scale(0.8);
@@ -201,6 +196,37 @@ body {
     .blog_Rank_LeftBox {
         position: relative;
 
+        .blog_Rank_Content {
+            margin: 0 10px;
+
+            .blog_Rank_Title {
+                padding: 5%;
+                color: rgb(241, 144, 15);
+                font-weight: bold;
+                line-height: 1;
+
+                h4 {
+                    font-size: 3vw;
+                }
+            }
+
+            .blog_Rank_Item {
+                display: block;
+                width: 50%;
+                margin: 0 auto;
+
+                .blog_Rank_ItemPic {
+                    width: 33%;
+                    float: left;
+
+                    img {
+                        width: 100%;
+                        vertical-align: bottom;
+                    }
+                }
+            }
+        }
+
         .blog_Rank_Date {
             float: left;
             vertical-align: bottom;
@@ -218,7 +244,7 @@ body {
 
         .blog_Rank_Score {
             position: absolute;
-            bottom: 1%;
+            bottom: 15%;
             left: 0;
             width: 20%;
             padding-left: 10px;
@@ -259,47 +285,19 @@ body {
             p {
                 float: left;
                 padding: 8px 5%;
-                color: #333;
+                color: #aaa;
                 font-size: 3vw;
                 // text-align: right;
             }
+
         }
+
     }
 
     .blog_Rank_RightBox {
+
         // margin: 0 10px;
-
-        .blog_Rank_Item {
-            display: block;
-            width: 50%;
-            margin: 0 auto;
-
-            .blog_Rank_ItemPic {
-                width: 33%;
-                float: left;
-
-                img {
-                    width: 100%;
-                    vertical-align: bottom;
-                }
-            }
-        }
-
-
         .blog_Rank_Content {
-            margin: 0 10px;
-
-            .blog_Rank_Title {
-                padding: 5%;
-                color: rgb(241, 144, 15);
-                font-weight: bold;
-                line-height: 1;
-
-                h4 {
-                    font-size: 3vw;
-                }
-            }
-
             .blog_Rank_Desc {
                 margin-bottom: 10px;
                 padding: 5%;
@@ -312,6 +310,7 @@ body {
                 }
             }
         }
+
     }
 
     .blog_Rank_ContentBox {
@@ -582,7 +581,11 @@ body {
         background-color: #fbb03b;
         vertical-align: center;
         text-align: center;
-        color: $mainfontcolor;
+        color: #fff;
+
+        &:hover {
+            background-color: #487e0a;
+        }
 
         .blog_Forum_SubButtonContainer_Pic {
             // display: block;
@@ -602,10 +605,7 @@ body {
             line-height: 1.7;
         }
 
-        &:hover {
-            background-color: #fff100;
-            color: #fbb03b;
-        }
+
 
 
     }
@@ -870,8 +870,8 @@ body {
                 text-align: left;
 
                 p {
-                    padding: 10px;
-                    line-height: 2.3;
+                    padding: 3%;
+                    line-height: 3.3;
                     font-size: 4vw;
                 }
             }
@@ -1653,7 +1653,7 @@ body {
             // width: 58px;
             position: absolute;
             z-index: 10;
-            bottom: 40px;
+            bottom: 20px;
             left: calc(50%);
             // margin-left: -1%;
 
@@ -1703,7 +1703,7 @@ body {
     }
 
     .blog_Rank_Container {
-        // margin: 10%;
+        border-radius: 20px;
         padding: 10px;
         background-color: #fff;
     }
@@ -1789,7 +1789,7 @@ body {
             p {
                 float: left;
                 padding: 8px;
-                color: #333;
+                color: #aaa;
                 font-size: 1vw;
                 // text-align: right;
             }

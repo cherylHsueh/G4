@@ -111,7 +111,7 @@ $(function () {
         current: 0,
         // index of current item
 
-        autoplay: true,
+        autoplay: false,
         // slideshow on / off
 
         interval: 2000
