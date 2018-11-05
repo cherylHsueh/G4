@@ -302,10 +302,11 @@ body {
       }
     }
     &_content {
-      width: 300px;
+      width: 350px;
       height: 350px;
       background-color: #fff;
       position: absolute;
+      border-radius: 10px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -332,21 +333,10 @@ body {
     overflow: hidden;
     z-index: 5;
     &_customizeBtns {
-      display: none;
-    }
-    button {
-      width: 150px;
-      background-color: $buttoncolor;
-      margin: 0 10px;
-      padding: 10px 10px;
-      border: 1px solid transparent;
-      border-radius: 5px;
-      color: $mainfontcolor;
-      transition: 1s;
-
-      &:hover {
-        background-color: #f1900f;
-        color: #fefefe;
+      display: none; 
+      .common_btn{
+        width: 130px;
+        display: inline-block;
       }
     }
   }
@@ -584,10 +574,12 @@ body {
     }
     &_customizeFinishBox {
       &_customizeBtns {
-        display: none;
-        position: relative;
-        top: 80%;
-        right: 0;
+        position: absolute;
+        bottom: 12%;
+        left:15% ;
+        a{
+          width: 130px;
+        }
       }
     }
   }

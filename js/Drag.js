@@ -72,11 +72,9 @@ var clickItem=  "#diy_designBottle_diyImg";
 			var image = document.getElementById('diy_designBottle_diyImg');
 			image.src = this.result;
 			image.style.maxWidth = '100px';
-		
 		});
 	};
-	//新增文字
-		
+	//新增文字	
 	function createText(e) {
         var body = document.getElementsByClassName("diy_designBottle_createBlock")[0];
 		body.innerHTML="";

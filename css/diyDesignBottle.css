@@ -28,6 +28,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
+body {
+  line-height: 1; }
+
 ol, ul {
   list-style: none; }
 
@@ -704,10 +707,11 @@ body {
     cursor: pointer; }
 
 .diy_customizeBox_content {
-  width: 300px;
+  width: 350px;
   height: 350px;
   background-color: #fff;
   position: absolute;
+  border-radius: 10px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -733,18 +737,9 @@ body {
   z-index: 5; }
   .diy_customizeFinishBox_customizeBtns {
     display: none; }
-  .diy_customizeFinishBox button {
-    width: 150px;
-    background-color: #fff100;
-    margin: 0 10px;
-    padding: 10px 10px;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    color: #5e4909;
-    transition: 1s; }
-    .diy_customizeFinishBox button:hover {
-      background-color: #f1900f;
-      color: #fefefe; }
+    .diy_customizeFinishBox_customizeBtns .common_btn {
+      width: 130px;
+      display: inline-block; }
 
 .diy_proToCartBtns {
   text-align: center;
@@ -888,10 +883,11 @@ body {
     .diy_customizeBox_finishPic img {
       width: 250px; }
   .diy_customizeFinishBox_customizeBtns {
-    display: none;
-    position: relative;
-    top: 80%;
-    right: 0; } }
+    position: absolute;
+    bottom: 12%;
+    left: 15%; }
+    .diy_customizeFinishBox_customizeBtns a {
+      width: 130px; } }
 
 @media all and (min-width: 1024px) {
   .diy_designBottle_controlBlock i {
