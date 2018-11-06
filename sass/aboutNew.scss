@@ -5,6 +5,9 @@
 * {
   // outline:1px solid red;
 }
+header nav  li:nth-child(5) > a:after {
+  transform: scaleX(1);
+}
 p {
   text-align: justify;
 }
@@ -13,7 +16,7 @@ p {
 .about_start {
   width: 25%;
   height: 100vh;
-  background-color: #00b5bd;
+  background-color:$sky;
   // overflow: hidden;
   float: left;
 }
@@ -30,14 +33,15 @@ p {
 .about_factory {
   width: 25%;
   height: 100vh;
-  background-color: #00b5bd;
+  background-color: $sky;
   float: left;
 }
 .about_end {
   width: 25%;
   height: 100vh;
-  background-color: #00b5bd;
+  background-color: $sky;
   float: left;
+  position: relative;
 }
 
 .about_factory_background_block {
@@ -48,11 +52,11 @@ p {
   width: 100%;
   height: 100vh;
   position: absolute;
-  background-color: #00b5bd;
+  background-color: $sky;
 }
 
 .about_bigwrapper {
-  width: 5000px;
+  width: 400vw;
   height: 100vh;
   overflow: hidden;
 }
@@ -148,6 +152,19 @@ path:hover {
     transform: translate(-300px, 0px);
   }
 }
+//風車旋轉
+@keyframes rotate{
+  0%{
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+  }
+  100%{
+      transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+  }
+}
 
 //ru
 h3 {
@@ -179,17 +196,12 @@ h3 {
 }
 
 @include rwd(mobile) {
-  //手機版  nav
-  // header nav {
-  //   position: fixed;
-  //   width: 100vw;
-  //   z-index: 100;
+
+  // .about_bigwrapper {
+  //   width: 1600px;
+  //   height: 100vh;
+  //   overflow: hidden;
   // }
-  .about_bigwrapper {
-    width: 1600px;
-    height: 100vh;
-    overflow: hidden;
-  }
 
   //關於我們 第一屏  手機
   .about_start_background_block {
@@ -203,7 +215,7 @@ h3 {
     background-color: #00ac6f;
     position: absolute;
     top: 20%;
-    left: 5%;
+    left: 10%;
     margin: auto;
     padding: 1% 0;
     border-radius: 10px;
@@ -497,7 +509,8 @@ h3 {
     position: absolute;
     max-width: 143px;
     top: 16%;
-    z-index: 1;
+    z-index: 2;
+    animation: flutter 5s linear infinite;
   }
   .about_factory_background_clould03 {
     display: none;
@@ -814,7 +827,7 @@ h3 {
 
   //第四屏 手機 消費者房子
   #section3 {
-    background-color: #00b5bd;
+    background-color: $sky;
     height: 100vh;
   }
  
@@ -993,7 +1006,7 @@ h3 {
   .about_taiwan_background_cloud {
     width: 20%;
     position: absolute;
-    top: 4%;
+    top: 12%;
     img {
       width: 100%;
       animation: flutter 5s linear infinite;
@@ -1003,7 +1016,7 @@ h3 {
     width: 30%;
     position: absolute;
     left: 61%;
-    top: 5%;
+    top: 13%;
     z-index: -2;
     img {
       width: 100%;
@@ -1054,6 +1067,12 @@ h3 {
       width: 100%;
     }
   }
+  .about_truck{
+    width: 11%;
+    position: absolute;
+    left: 9%;
+    bottom: 3%;
+  }
 }
 
 @include rwd(medium) {
@@ -1065,10 +1084,10 @@ h3 {
     top: 20%;
     left: 36%;
     margin: auto;
-    padding: 4% 0;
+    padding: 4% 0 0;
     border-radius: 10px;
     border: 10px solid #fff;
-    box-shadow: 0 0 0 20px #00ac6f;
+    box-shadow: 0 0 0 15px #00ac6f;
     z-index: 6;
   }
   .about_start_info_blcok_border {
@@ -1081,7 +1100,7 @@ h3 {
     margin: auto;
     img {
       width: 100%;
-      margin-bottom: 10%;
+  
     }
   }
 
@@ -1089,14 +1108,11 @@ h3 {
     margin: 2% auto 0;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
     .about_start_formInfo_content {
       line-height: 1.6;
       margin: auto;
       color: #fff;
-      padding: 5%;
-      border: 1px solid #fff;
-      border-radius: 10px;
+      padding: 8% 5%;
     }
   }
 
@@ -1120,9 +1136,9 @@ h3 {
   }
 
   .about_start_content_bounce {
-    width: 8%;
+    width: 6%;
     position: absolute;
-    bottom: 37%;
+    bottom: 42%;
     left: 10%;
     img {
       width: 100%;
@@ -1352,8 +1368,10 @@ h3 {
   .about_factory_background_clould01 {
     position: absolute;
     width: 15%;
+    top: 15%;
     left: 5%;
     z-index: 3;
+    animation: flutter 5s linear infinite;
   }
   .about_factory_background_clould03 {
     width: 20%;
@@ -1366,7 +1384,7 @@ h3 {
   .about_factory_content_factoryTitle {
     position: absolute;
     z-index: 2;
-    width: 8%;
+    width: 6%;
     max-width: 120px;
     right: 16%;
     top: 20%;
@@ -1464,7 +1482,7 @@ h3 {
     }
   }
   .about_factory_content_streetlamp1 {
-    width: 11%;
+    width: 8%;
     position: absolute;
     left: 5%;
     bottom: 11%;
@@ -1474,7 +1492,7 @@ h3 {
     }
   }
   .about_factory_content_streetlamp2 {
-    width: 11%;
+    width: 8%;
     position: absolute;
     left: 30%;
     bottom: 11%;
@@ -1484,7 +1502,7 @@ h3 {
     }
   }
   .about_factory_content_streetlamp3 {
-    width: 11%;
+    width: 8%;
     position: absolute;
     right: 0%;
     bottom: 11%;
@@ -1601,8 +1619,9 @@ h3 {
     left: 50%;
     top: 19%;
     color: white;
-    font-size: 30px;
+    font-size: 22px;
     padding: 2%;
+    z-index: 2;
   }
 
   .about_taiwan_background_mountain {
@@ -1635,7 +1654,7 @@ h3 {
     }
   }
   .about_taiwan_background_windmill {
-    width: 20%;
+    width: 15%;
     position: absolute;
     bottom: 18%;
     left: 6%;
@@ -1644,6 +1663,19 @@ h3 {
       width: 100%;
     }
   }
+.about_taiwan_background_windmillFan{
+  width: 20%;
+  position: absolute;
+  left: 4%;
+  bottom: 30%;
+  z-index: 1;
+  img{
+    width: 100%;
+    animation: rotate 2s infinite linear;
+  }
+}
+
+
   .about_taiwan_background_grassflowr {
     width: 7%;
     position: absolute;
@@ -1750,51 +1782,21 @@ h3 {
     }
   }
 
-  .about_taiwan_background_truck {
-    position: absolute;
-    bottom: 100%;
-    width: 25%;
-    left: 5%;
-    img {
-      width: 100%;
-      animation: shake 0.3s alternate infinite;
-    }
-  }
-  .about_taiwan_background_truckTire1 {
-    width: 5%;
-    position: absolute;
-    bottom: 83%;
-    left: 13%;
-    img {
-      width: 100%;
-      animation: rotate 5s linear infinite;
-    }
-  }
-  .about_taiwan_background_truckTire2 {
-    width: 5%;
-    position: absolute;
-    bottom: 83%;
-    left: 23.5%;
-    img {
-      width: 100%;
-      animation: rotate 5s linear infinite;
-    }
-  }
-
   //關於我們  綠色資訊框  桌機
+
   .about_cooperation_info_blcok {
     width: 40%;
     background-color: #00ac6f;
     position: absolute;
-    top: 40%;
-    left: 36%;
+    top: 25%;
+    left: 30%;
     margin: auto;
     padding: 4% 0;
     border-radius: 10px;
     border: 10px solid #fff;
     box-shadow: 0 0 0 20px #00ac6f;
     z-index: 6;
-  }
+}
   .about_cooperation_info_blcok_border {
     width: 85%;
     margin: auto;
@@ -1817,8 +1819,7 @@ h3 {
   .about_end_background {
     position: relative;
     width: 100%;
-    height: 100vh;
-    bottom: 140px;
+    height: calc(100vh - 18%);
   }
   .about_end_background_shadow {
     width: 100%;
@@ -1858,7 +1859,7 @@ h3 {
   }
 
   .about_end_background_bounce {
-    width: 8%;
+    width: 6%;
     position: absolute;
     bottom: 35%;
     left: 20%;
@@ -1976,26 +1977,6 @@ h3 {
       }
     }
   }
-  // .about_end_background_soil2 {
-  //   width: 40%;
-  //   height: 18%;
-  //   background-color: #c69c6d;
-  //   position: absolute;
-  //   left: 100%;
-  //   bottom: 0%;
-  //   z-index: 2;
-  //   line-height: 110px;
-  //   .about_end_background_soil_road4{
-  //     width: 130%;
-  //     position: absolute;
-  //     bottom: 5%;
-  //     right: -30%;
-  //     img {
-  //       width: 100%;
-  //     }
-  //   }
-    
-  // }
 
   .about_end_formInfo {
     margin: 2% auto 0;
@@ -2011,4 +1992,15 @@ h3 {
       border-radius: 10px;
     }
   }
+.about_truck{
+  width: 6%;
+  position: absolute;
+  left: 10%;
+  bottom: 5%;
+  img{
+    width: 100%;
+    animation: shake 0.3s alternate infinite;
+  }
+}
+
 }

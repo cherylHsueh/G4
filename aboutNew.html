@@ -21,14 +21,13 @@
 	<!--slidder -->
 	<script src="dnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+	<!-- mousewheel-->
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="js/jquery.mousewheel.min.js"></script>
 </head>
 
 <body>
 	
-
-
-
-
 	<header>
 		<input type="checkbox" name="" id="hb_control">
 		<nav>
@@ -80,7 +79,7 @@
 			<div class="about_start_info_blcok">
 				<div class="about_start_info_blcok_border">
 					<div class="about_start_info_item_title">
-						<img src="images/about/farmer_flag.png" alt="farmerFlag">
+						<img src="images/about/aboutUs.png" alt="farmerFlag">
 					</div>
 					<div class="about_start_formInfo">
 						<p class="about_start_formInfo_content">
@@ -261,8 +260,11 @@
 					<img src="images/about/mountain04.png" alt="mountain">
 				</div>
 			<div class="about_taiwan_background_windmill">
-				<img src="images/about/Windmill.png" alt="windmill">
+				<img src="images/about/Windmill1.png" alt="windmill">
 			</div>
+			<div class="about_taiwan_background_windmillFan">
+					<img src="images/about/Windmill2.png" alt="windmillFan">
+				</div>
 			<div class="about_taiwan_background_grassflowr">
 				<img src="images/about/Grass(02).png" alt="grass">
 			</div>
@@ -286,15 +288,7 @@
 					<div class="about_taiwan_background_smallgrass">
 						<img src="images/about/Grass(03).png" alt="grass">
 					</div>
-					<!-- <div class="about_taiwan_background_truck">
-						<img src="images/about/car(noTire).png" alt="car">
-					</div>		
-					<div class="about_taiwan_background_truckTire1">
-						<img src="images/about/tire.png" alt="tire">
-					</div>
-					<div class="about_taiwan_background_truckTire2">
-						<img src="images/about/tire.png" alt="tire">
-					</div>			 -->
+
 			</div>
 			<div class="about_taiwan_background_cloud">
 				<img src="images/about/cloud(01).png" alt="cloud">
@@ -341,14 +335,14 @@
 				<img src="images/about/tree06.png" alt="tree">
 			</div>
 				
-			 <div class="about_end_background_truck">
+			 <!-- <div class="about_end_background_truck">
 				<img src="images/about/car.png" alt="car">
-			</div>
+			</div> -->
 		
 			<div class="about_cooperation_info_blcok">
 					<div class="about_cooperation_info_blcok_border">
 						<div class="about_cooperation_info_item_title">
-							<img src="images/about/farmer_flag.png" alt="farmerFlag">
+							<img src="images/about/brandConcept.png" alt="farmerFlag">
 						</div>
 						<div class="about_end_formInfo">
 							<p class="about_end_formInfo_content">
@@ -370,27 +364,26 @@
 					<img src="images/about/Asphaltroad01.png" alt="road">
 				</div> 
 		</div>
-		<!-- <div class="about_end_background_soil2">
-				<div class="about_end_background_soil_road4">
-					<img src="images/about/Asphaltroad01.png" alt="road">
-				</div>
-		</div> -->
+
 	</section>
+	</div>
+	<div class="about_truck">
+		<img src="images/about/car.png" alt="car">
 	</div>
 </div>
 			<script src="js/realtaiwan.js"></script>
-			<!-- <script>
+			<script>
 					$(function() {
 				  // wait for document ready
 				
 				  var controller = new ScrollMagic.Controller();
-				
-				  var horizontalSlide = new TimelineMax()
+				  
 				  // animate panels
+				  var horizontalSlide = new TimelineMax()
 				  .to(".about_bigwrapper_content", 1, { x: "-20%" })
 				  .to(".about_bigwrapper_content", 1, { x: "-40%" })
 				  .to(".about_bigwrapper_content", 1, { x: "-60%" })
-				  .to(".about_bigwrapper_content", 1, { x: "-70%" });
+				  .to(".about_bigwrapper_content", 1, { x: "-75%" });
 				
 				  // create scene to pin and link animation
 				  new ScrollMagic.Scene({
@@ -402,10 +395,33 @@
 					.setTween(horizontalSlide)
 				  //.addIndicators() // add indicators (requires plugin)
 					.addTo(controller);
-				});
-					
-						
-					</script> -->
+				});	
+			</script>
+			<script>	
+			//初始位置为页面顶部
+			var distance = 0;
+			//每触发一次滚动事件的移动距离
+			var step = 25;
+			$(function() {
+			//使用mousewheel插件捕捉滾輪事件
+			$("body").mousewheel(function(event, delta) {
+			//計算要滾動的距離
+			console.log('Mouse Delta:' + delta);
+			if (delta < 0){
+				distance += step;
+			}else{
+				if (distance > 0)
+       			 distance -= step;
+			}
+			console.log('Distance:' + distance);
+			 //用JS操控页面滚动
+			 scroll(0, distance);
+			 //阻止默认事件发生
+			 event.preventDefault();
+			});
+		});
+			
+			</script>
 
 
 
