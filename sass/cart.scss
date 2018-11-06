@@ -10,32 +10,32 @@
 // footer {
 //     position: relative;
 // }
-.footer_wrapper {
-    text-align: center;
+ .footer_wrapper {
+        text-align: center;
 
-    .footer_block {
-        margin: 0 auto;
-        // padding: 10px 0;
-        background-color: #f4d66d;
+        .footer_block {
+            margin: 0 auto;
+            // padding: 10px 0;
+            background-color: #f4d66d;
 
-        .footer_rightBox {
-            .footer_rightContent {
-                padding: 8px 0;
+            .footer_rightBox {
+                .footer_rightContent {
+                    padding: 8px 0;
 
-                .desc {
-                    display: inline-block;
-                    padding: 5px;
-                    font-size: 2vw;
+                    .desc {
+                        display: inline-block;
+                        padding: 5px;
+                        font-size: 2vw;
+                    }
+
+                    .copyright {
+                        font-size: 1vw;
+                    }
                 }
 
-                .copyright {
-                    font-size: 1vw;
-                }
             }
-
         }
     }
-}
 
 @include rwd(mobile) {
     body {
