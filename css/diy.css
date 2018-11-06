@@ -478,7 +478,8 @@ header nav li:nth-child(1) > a:after {
   transform: scaleX(1); }
 
 .navSpace {
-  margin-top: 140px; }
+  width: 100%;
+  height: 130px; }
 
 body {
   background-color: #a4ddfa; }
@@ -561,11 +562,10 @@ body {
   .diy_pickFruit_leftBlock {
     position: relative;
     width: 90%;
-    overflow: hidden;
     margin: 0 5%;
     margin-top: -15px; }
     .diy_pickFruit_leftBlock .diy_pickFruit_leftBox {
-      width: 400%; }
+      margin: 0 2%; }
       .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .diy_pickFruit_picBox {
         display: inline-block; }
   .diy_pickFruit_leftItem {
@@ -656,15 +656,15 @@ body {
     z-index: 1; }
   .diy_pickFruit_leftArrow {
     position: absolute;
-    top: 20%;
-    left: 0;
+    top: 30%;
+    left: -5%;
     width: 5%; }
     .diy_pickFruit_leftArrow img {
       width: 50%; }
   .diy_pickFruit_rightArrow {
     position: absolute;
-    top: 20%;
-    right: -2%;
+    top: 30%;
+    right: -5%;
     width: 5%; }
     .diy_pickFruit_rightArrow img {
       width: 50%; }
@@ -685,7 +685,6 @@ body {
   .diy_pickFruit_rightBlock {
     margin-top: -23px; }
   .diy_pickFruit_leftBox {
-    padding: 0 4%;
     position: relative;
     z-index: 1; }
     .diy_pickFruit_leftBox .diy_pickFruit_wrapperBottleBox {
@@ -724,7 +723,7 @@ body {
     flex-grow: 0;
     transition: 1s; }
   .diy_pickFruit_rightBox {
-    margin: 20px 0; }
+    margin-top: 50px; }
   .diy_pickFruit_nextButton {
     margin: 40px 50px;
     text-align: center; }

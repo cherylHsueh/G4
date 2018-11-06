@@ -234,19 +234,20 @@ $(document).ready(function () {
     })
 
     $(function () {
-      
-            if ($(window).width() < 768) {
-                $('.diy_pickFruit_leftItem').removeClass('hvr-radial-out');
-            } else {
-                $('.diy_pickFruit_leftItem').addClass('hvr-radial-out');
-            }
 
-            // if ($(window).resize() < 768) {
-            //     $('.diy_pickFruit_leftItem').removeClass('hvr-radial-out');
-            // } else {
-            //     $('.diy_pickFruit_leftItem').addClass('hvr-radial-out');
-            // }
-        
+        if ($(window).width() < 768) {
+            $('.diy_pickFruit_leftItem').removeClass('hvr-radial-out');
+        } else {
+            $('.diy_pickFruit_leftItem').addClass('hvr-radial-out');
+        }
+
+        // if ($(window).resize() < 768) {
+
+        //     $('.diy_pickFruit_leftItem').removeClass('hvr-radial-out');
+        // } else {
+        //     $('.diy_pickFruit_leftItem').addClass('hvr-radial-out');
+        // }
+
     });
 
     $('.fruiticon').click(function () {
@@ -456,3 +457,24 @@ $(document).ready(function () {
         }
     })
 })
+
+
+//手機水果輪播
+
+
+
+    if ($(window).width() < 768) {
+        $('.diy_pickFruit_leftPic').slick({
+
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            prevArrow: '<div class="diy_pickFruit_leftArrow"><img src="images/left01.png" alt="左箭頭"></div>',
+            nextArrow: '<div class="diy_pickFruit_rightArrow"><img src="images/right01.png" alt="右箭頭"></div>',
+        });
+    }
+
+
+
+// $(window).width
+//
