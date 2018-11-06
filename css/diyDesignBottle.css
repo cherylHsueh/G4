@@ -65,7 +65,6 @@ body {
   .cl-s-1, .cl-s-2, .cl-s-3, .cl-s-4, .cl-s-5, .cl-s-6,
   .cl-s-7, .cl-s-8, .cl-s-9, .cl-s-10, .cl-s-11, .cl-s-12 {
     float: left;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box; }
   .cl-s-1 {
     width: 8.33333%; }
@@ -104,7 +103,6 @@ body {
   .cl-md-1, .cl-md-2, .cl-md-3, .cl-md-4, .cl-md-5, .cl-md-6,
   .cl-md-7, .cl-md-8, .cl-md-9, .cl-md-10, .cl-md-11, .cl-md-12 {
     float: left;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box; }
   .cl-md-1 {
     width: 8.33333%; }
@@ -143,7 +141,6 @@ body {
   .cl-xl-1, .cl-xl-2, .cl-xl-3, .cl-xl-4, .cl-xl-5, .cl-xl-6,
   .cl-xl-7, .cl-xl-8, .cl-xl-9, .cl-xl-10, .cl-xl-11, .cl-xl-12 {
     float: left;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box; }
   .cl-xl-1 {
     width: 8.33333%; }
@@ -211,28 +208,23 @@ a {
       -webkit-transform: scale(1.4) translateY(125%) translateZ(0);
       transform: scale(1.4) translateY(125%) translateZ(0);
       -webkit-transition: all 700ms ease;
-      -o-transition: all 700ms ease;
       transition: all 700ms ease; }
     .common_btn .common_btn_blobs div:nth-child(1) {
       left: -5%; }
     .common_btn .common_btn_blobs div:nth-child(2) {
       left: 30%;
       -webkit-transition-delay: 60ms;
-      -o-transition-delay: 60ms;
       transition-delay: 60ms; }
     .common_btn .common_btn_blobs div:nth-child(3) {
       left: 66%;
       -webkit-transition-delay: 25ms;
-      -o-transition-delay: 25ms;
       transition-delay: 25ms; }
   .common_btn .common_btn_txt {
     position: relative;
     z-index: 1;
     -webkit-transition: color .3s;
-    -o-transition: color .3s;
     transition: color .3s;
     -webkit-transition-delay: .2s;
-    -o-transition-delay: .2s;
     transition-delay: .2s; }
   .common_btn:hover .common_btn_blobs div {
     -webkit-transform: scale(1.5) translateY(0) translateZ(0);
@@ -283,21 +275,13 @@ header {
       left: -2%;
       width: 104%;
       height: 5px;
-      -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
       transform: scaleX(0);
       background-color: #603813;
-      -webkit-transition: all .2s ease;
-      -o-transition: all .2s ease;
       transition: all .2s ease;
       opacity: 0.6; }
     header nav li > a:hover::after {
-      -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
       transform: scaleX(1); }
   header .nav_mem {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     position: absolute;
     z-index: 3;
@@ -369,37 +353,23 @@ header {
     top: 140px;
     width: 70px; }
   #svg-2 {
-    -webkit-transition: height 1.3s 0.5s ,width 2s;
-    -o-transition: height 1.3s 0.5s ,width 2s;
     transition: height 1.3s 0.5s ,width 2s; }
   #wave {
     height: 95px;
-    -webkit-transition: 1s;
-    -o-transition: 1s;
     transition: 1s; }
   #wave2 {
     height: 100px;
-    -webkit-transition: 1s;
-    -o-transition: 1s;
     transition: 1s; }
   .menu {
     text-align: center;
     height: 80vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -ms-flex-line-pack: distribute;
     align-content: space-around;
     margin-top: 40px;
     position: absolute;
     left: -1000px;
     opacity: 0;
-    -webkit-transition: left 0s 1s,opacity 1s 0s;
-    -o-transition: left 0s 1s,opacity 1s 0s;
     transition: left 0s 1s,opacity 1s 0s; }
     .menu .menu_item {
       margin: 40px; }
@@ -435,33 +405,23 @@ header {
           top: 6px; } }
 
 #hb_control:checked ~ nav #svg-2 {
-  -webkit-transition: 2s;
-  -o-transition: 2s;
   transition: 2s;
   height: 110vh;
   width: 1000%; }
 
 #hb_control:checked ~ nav #wave {
-  -webkit-transition: 2s;
-  -o-transition: 2s;
   transition: 2s;
   width: 900%;
   height: 107vh;
-  -webkit-animation: move2 3s 1s linear infinite alternate;
   animation: move2 3s 1s linear infinite alternate; }
 
 #hb_control:checked ~ nav #wave2 {
   height: 108vh;
-  -webkit-transition: 2s;
-  -o-transition: 2s;
   transition: 2s;
   width: 1000%;
-  -webkit-animation: move2 5s linear infinite alternate;
   animation: move2 5s linear infinite alternate; }
 
 #hb_control:checked ~ nav .menu {
-  -webkit-transition: left 0s ,opacity 2s 1s;
-  -o-transition: left 0s ,opacity 2s 1s;
   transition: left 0s ,opacity 2s 1s;
   opacity: 1;
   left: 0; }
@@ -477,14 +437,8 @@ header {
     right: 0;
     margin: 10px auto; }
     .menu ul {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
       justify-content: space-between;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
       align-items: center;
       list-style: none;
       margin: 0px 130px; }
@@ -495,34 +449,26 @@ header {
 
 @keyframes move {
   0% {
-    -webkit-transform: translate(-30%, 0%);
     transform: translate(-30%, 0%); }
   100% {
-    -webkit-transform: translate(0%, 0%);
     transform: translate(0%, 0%); } }
 
 @keyframes move2 {
   0% {
-    -webkit-transform: translate(-20%, 0%);
     transform: translate(-20%, 0%); }
   100% {
-    -webkit-transform: translate(0%, 0%);
     transform: translate(0%, 0%); } }
 
 @-webkit-keyframes move {
   0% {
-    -webkit-transform: translate(-40%, 0%);
     transform: translate(-40%, 0%); }
   100% {
-    -webkit-transform: translate(0%, 0%);
     transform: translate(0%, 0%); } }
 
 @-webkit-keyframes move2 {
   0% {
-    -webkit-transform: translate(-20%, 0%);
     transform: translate(-20%, 0%); }
   100% {
-    -webkit-transform: translate(0%, 0%);
     transform: translate(0%, 0%); } }
 
 footer {
@@ -538,23 +484,11 @@ body {
   background-color: #a4ddfa;
   overflow-x: hidden; }
 
-@-webkit-keyframes mobBottleMove {
-  0% {
-    left: 0; }
-  100% {
-    left: 75%; } }
-
 @keyframes mobBottleMove {
   0% {
     left: 0; }
   100% {
     left: 75%; } }
-
-@-webkit-keyframes bottleMove {
-  0% {
-    left: 5%; }
-  100% {
-    left: 90%; } }
 
 @keyframes bottleMove {
   0% {
@@ -566,8 +500,6 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: left; }
 
@@ -642,8 +574,6 @@ body {
       color: #fefefe;
       background: #f09824;
       border-color: #fff4c1;
-      -webkit-transition: all 0.4s ease 0s;
-      -o-transition: all 0.4s ease 0s;
       transition: all 0.4s ease 0s; }
 
 .diy_designBottle_picBlock {
@@ -695,8 +625,6 @@ body {
     .diy_designBottle_createTextBlock input:nth-child(3):hover {
       color: #fefefe;
       background: #f09824;
-      -webkit-transition: all 0.4s ease 0s;
-      -o-transition: all 0.4s ease 0s;
       transition: all 0.4s ease 0s; }
 
 .diy_designBottle_officalPic {
@@ -706,7 +634,6 @@ body {
   width: 360px;
   height: 510px;
   border-radius: 10px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 40px auto 120px;
   background-color: #fff; }
@@ -731,22 +658,16 @@ body {
     .diy_designBottle_bottlesBlock li img {
       width: 15px; }
   .diy_designBottle_bottlesBlock .item2 {
-    -webkit-animation: mobBottleMove 6s linear 1s infinite;
     animation: mobBottleMove 6s linear 1s infinite; }
   .diy_designBottle_bottlesBlock .item3 {
-    -webkit-animation: mobBottleMove 6s linear 2s infinite;
     animation: mobBottleMove 6s linear 2s infinite; }
   .diy_designBottle_bottlesBlock .item4 {
-    -webkit-animation: mobBottleMove 6s linear 3s infinite;
     animation: mobBottleMove 6s linear 3s infinite; }
   .diy_designBottle_bottlesBlock .item5 {
-    -webkit-animation: mobBottleMove 6s linear 4s infinite;
     animation: mobBottleMove 6s linear 4s infinite; }
   .diy_designBottle_bottlesBlock .item6 {
-    -webkit-animation: mobBottleMove 6s linear 5s infinite;
     animation: mobBottleMove 6s linear 5s infinite; }
   .diy_designBottle_bottlesBlock .item1 {
-    -webkit-animation: mobBottleMove 6s linear 6s infinite;
     animation: mobBottleMove 6s linear 6s infinite; }
   .diy_designBottle_bottlesBlock .item7 {
     display: none; }
@@ -793,8 +714,6 @@ body {
   border-radius: 10px;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center; }
   .diy_customizeBox_content h3 {
@@ -858,8 +777,6 @@ body {
 
 @media all and (min-width: 768px) {
   header nav li:nth-child(1) > a:after {
-    -webkit-transform: scaleX(1);
-    -ms-transform: scaleX(1);
     transform: scaleX(1); }
   .diy_customizeBox_finishPic {
     width: 230px;
@@ -895,25 +812,18 @@ body {
     .diy_designBottle_bottlesBlock li img {
       width: 35px; }
   .diy_designBottle_bottlesBlock .item1 {
-    -webkit-animation: bottleMove 6s linear 0s infinite;
     animation: bottleMove 6s linear 0s infinite; }
   .diy_designBottle_bottlesBlock .item2 {
-    -webkit-animation: bottleMove 6s linear 1s infinite;
     animation: bottleMove 6s linear 1s infinite; }
   .diy_designBottle_bottlesBlock .item3 {
-    -webkit-animation: bottleMove 6s linear 2s infinite;
     animation: bottleMove 6s linear 2s infinite; }
   .diy_designBottle_bottlesBlock .item4 {
-    -webkit-animation: bottleMove 6s linear 3s infinite;
     animation: bottleMove 6s linear 3s infinite; }
   .diy_designBottle_bottlesBlock .item5 {
-    -webkit-animation: bottleMove 6s linear 4s infinite;
     animation: bottleMove 6s linear 4s infinite; }
   .diy_designBottle_bottlesBlock .item6 {
-    -webkit-animation: bottleMove 6s linear 5s infinite;
     animation: bottleMove 6s linear 5s infinite; }
   .diy_designBottle_bottlesBlock .item7 {
-    -webkit-animation: bottleMove 6s linear 6s infinite;
     animation: bottleMove 6s linear 6s infinite; }
   .diy_designBottle_stepFirstTitle p,
   .diy_designBottle_stepFirstTitle h3 {
@@ -940,7 +850,6 @@ body {
     display: none; }
   .diy_designBottle_bgcBox {
     margin: 50px auto 200px;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 30px;
     width: 700px;
@@ -965,8 +874,6 @@ body {
     border-radius: 20px;
     top: 45%;
     left: 50%;
-    -webkit-transform: translate(-50%, -45%);
-    -ms-transform: translate(-50%, -45%);
     transform: translate(-50%, -45%);
     margin: auto; }
     .diy_customizeBox_content h3 {
@@ -1022,23 +929,16 @@ body {
     position: absolute;
     top: -50px; }
     .diy_designBottle_itemBottleBlock .item1 {
-      -webkit-animation: bottleMove 7s linear 0s infinite;
       animation: bottleMove 7s linear 0s infinite; }
     .diy_designBottle_itemBottleBlock .item2 {
-      -webkit-animation: bottleMove 7s linear 1s infinite;
       animation: bottleMove 7s linear 1s infinite; }
     .diy_designBottle_itemBottleBlock .item3 {
-      -webkit-animation: bottleMove 7s linear 2s infinite;
       animation: bottleMove 7s linear 2s infinite; }
     .diy_designBottle_itemBottleBlock .item4 {
-      -webkit-animation: bottleMove 7s linear 3s infinite;
       animation: bottleMove 7s linear 3s infinite; }
     .diy_designBottle_itemBottleBlock .item5 {
-      -webkit-animation: bottleMove 7s linear 4s infinite;
       animation: bottleMove 7s linear 4s infinite; }
     .diy_designBottle_itemBottleBlock .item6 {
-      -webkit-animation: bottleMove 7s linear 5s infinite;
       animation: bottleMove 7s linear 5s infinite; }
     .diy_designBottle_itemBottleBlock .item7 {
-      -webkit-animation: bottleMove 7s linear 6s infinite;
       animation: bottleMove 7s linear 6s infinite; } }
