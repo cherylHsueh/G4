@@ -9,6 +9,32 @@
 
 body {
     background-color: $sky;
+    .footer_wrapper {
+        text-align: center;
+
+        .footer_block {
+            margin: 0 auto;
+            // padding: 10px 0;
+            background-color: #f4d66d;
+
+            .footer_rightBox {
+                .footer_rightContent {
+                    padding: 8px 0;
+
+                    .desc {
+                        display: inline-block;
+                        padding: 5px;
+                        font-size: 2vw;
+                    }
+
+                    .copyright {
+                        font-size: 1vw;
+                    }
+                }
+
+            }
+        }
+    }
 }
 
 @include rwd(mobile) {
@@ -251,12 +277,14 @@ body {
 
     }
 
+   
     .cart_cart2Background {
         position: relative;
 
         img {
+            width: 100%;
             position: absolute;
-            bottom: -5vh;
+            bottom: 0;
             z-index: -1;
         }
     }
@@ -267,7 +295,7 @@ body {
         .footer_block {
             margin: 0 auto;
             // padding: 10px 0;
-            // background-color: #dde4b7;
+            background-color: #f4d66d;
 
             .footer_rightBox {
                 .footer_rightContent {
@@ -585,8 +613,9 @@ body {
         position: relative;
 
         img {
+            width: 100%;
             position: absolute;
-            bottom: -10vh;
+            bottom: -1vh;
             z-index: -1;
         }
     }
@@ -597,6 +626,7 @@ body {
         }
 
     }
+ 
 
     .footer_wrapper {
         position: relative;

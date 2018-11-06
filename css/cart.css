@@ -471,6 +471,20 @@ header nav  li:nth-child(2) > a:after {
     transform: scaleX(1);
 }
 */
+.footer_wrapper {
+  text-align: center; }
+  .footer_wrapper .footer_block {
+    margin: 0 auto;
+    background-color: #f4d66d; }
+    .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
+      padding: 8px 0; }
+      .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
+        display: inline-block;
+        padding: 5px;
+        font-size: 2vw; }
+      .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
+        font-size: 1vw; }
+
 @media only screen and (max-width: 767px) {
   body {
     background-color: #a4ddfa; }
@@ -524,7 +538,7 @@ header nav  li:nth-child(2) > a:after {
     height: 80px;
     display: inline-block;
     border: 3px solid #7f4f21;
-    background-color: #ecd06d;
+    background-color: #8ecf57;
     border-radius: 50%;
     text-align: center;
     vertical-align: middle; }
@@ -545,14 +559,14 @@ header nav  li:nth-child(2) > a:after {
       display: inline-block;
       font-weight: bold;
       font-size: 18px;
-      color: #7f4f21;
+      color: #FFF;
       position: relative;
       top: -70px; }
     .cart_shoppingProcess_step2 p {
       width: 100px;
       font-weight: bold;
       font-size: 16px;
-      color: #6a3906;
+      color: #FFF;
       text-align: center;
       vertical-align: middle; }
   .cart_shoppingProcess_box {
@@ -770,7 +784,7 @@ header nav  li:nth-child(2) > a:after {
     height: 150px;
     display: inline-block;
     border: 3px solid #7f4f21;
-    background-color: #ecd06d;
+    background-color: #8ecf57;
     border-radius: 50%;
     text-align: center;
     vertical-align: middle; }
@@ -792,14 +806,14 @@ header nav  li:nth-child(2) > a:after {
       display: inline-block;
       font-weight: bold;
       font-size: 24px;
-      color: #7f4f21;
+      color: #FFF;
       position: relative;
       top: -25px; }
     .cart_shoppingProcess_step2 p {
       width: 100px;
       font-weight: bold;
       font-size: 16px;
-      color: #6a3906;
+      color: #FFF;
       text-align: center;
       vertical-align: middle; }
   .cart_shoppingProcess_box {
@@ -956,9 +970,7 @@ header nav  li:nth-child(2) > a:after {
         display: block;
         padding: 30px; }
   .footer_wrapper {
-    position: relative;
-    text-align: center;
-    margin: 0 auto; }
+    text-align: center; }
     .footer_wrapper .footer_block {
       margin: 0 auto;
       background-color: #f4d66d; }
@@ -966,6 +978,7 @@ header nav  li:nth-child(2) > a:after {
         padding: 8px 0; }
         .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
           display: inline-block;
-          padding: 5px; }
+          padding: 5px;
+          font-size: 2vw; }
         .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
-          font-size: 12px; } }
+          font-size: 1vw; } }

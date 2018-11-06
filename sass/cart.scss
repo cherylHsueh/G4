@@ -10,6 +10,32 @@
 // footer {
 //     position: relative;
 // }
+.footer_wrapper {
+    text-align: center;
+
+    .footer_block {
+        margin: 0 auto;
+        // padding: 10px 0;
+        background-color: #f4d66d;
+
+        .footer_rightBox {
+            .footer_rightContent {
+                padding: 8px 0;
+
+                .desc {
+                    display: inline-block;
+                    padding: 5px;
+                    font-size: 2vw;
+                }
+
+                .copyright {
+                    font-size: 1vw;
+                }
+            }
+
+        }
+    }
+}
 
 @include rwd(mobile) {
     body {
@@ -99,7 +125,7 @@
             display: inline-block;
             font-weight: bold;
             font-size: 18px;
-            color: #7f4f21;
+            color: #FFF;
             position: relative;
             top: -70px;
         }
@@ -108,7 +134,7 @@
             width: 100px;
             font-weight: bold;
             font-size: 16px;
-            color: #6a3906;
+            color: #FFF;
             text-align: center;
             vertical-align: middle;
         }
@@ -117,7 +143,7 @@
         height: 80px;
         display: inline-block;
         border: 3px solid #7f4f21;
-        background-color: #ecd06d;
+        background-color: #8ecf57;
         border-radius: 50%;
         text-align: center;
         vertical-align: middle;
@@ -461,7 +487,7 @@
             display: inline-block;
             font-weight: bold;
             font-size: 24px;
-            color: #7f4f21;
+            color: #FFF;
             position: relative;
             top: -25px;
         }
@@ -470,7 +496,7 @@
             width: 100px;
             font-weight: bold;
             font-size: 16px;
-            color: #6a3906;
+            color: #FFF;
             text-align: center;
             vertical-align: middle;
         }
@@ -479,7 +505,7 @@
         height: 150px;
         display: inline-block;
         border: 3px solid #7f4f21;
-        background-color: #ecd06d;
+        background-color: #8ecf57;
         border-radius: 50%;
         text-align: center;
         vertical-align: middle;
@@ -702,13 +728,11 @@
     }
 
     .footer_wrapper {
-        position: relative;
         text-align: center;
-        margin: 0 auto;
 
         .footer_block {
             margin: 0 auto;
-            // padding: 20px 0;
+            // padding: 10px 0;
             background-color: #f4d66d;
 
             .footer_rightBox {
@@ -718,10 +742,11 @@
                     .desc {
                         display: inline-block;
                         padding: 5px;
+                        font-size: 2vw;
                     }
 
                     .copyright {
-                        font-size: 12px;
+                        font-size: 1vw;
                     }
                 }
 
