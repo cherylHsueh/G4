@@ -13,41 +13,75 @@ footer {
     left: 0;
 }
 
+@keyframes shake {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    100% {
+        transform: translate(0px, -5px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 @include rwd(mobile) {
     .nav_space {
-     height: 110px;
-     background-color: $sky;
+        height: 130px;
+        background-color: $sky;
     }
     .cloud {
-        position:relative;
-        right:71%;
-		animation: mymoveright 80s infinite;
-        -webkit-animation:mymoveright 80s infinite;
-        width:20%;
+        position: relative;
+        right: 71%;
+        animation: mymoveright 80s infinite;
+        -webkit-animation: mymoveright 80s infinite;
+        width: 20%;
+    }
+    .grassthree {
+        max-width: 300px;
+        max-height: 300px;
+        display: block;
+        position: absolute;
+        bottom: -36%;
+        left: 20%;
+        display: none; // z-index: -1;
     }
     .cloud img {
         width: 100%;
     }
-    .signUp {
-        background-color:$sky;
-        width: 100%; 
+    .car {
+        display: none;
     }
-   
-   
+    .tire1 {
+        display: none;
+    }
+    .tire2 {
+        display: none;
+    }
+    .signUp {
+        background-color: $sky;
+        width: 100%;
+    }
     .signUp_newmem_box {
         text-align: center;
         background-color: white;
         width: 80%;
         box-sizing: border-box;
         padding: 5% 3%;
-        margin: auto;
+        margin: 5% auto;
         div {
             margin: 15px;
         }
     }
     .signUp_explain_box {
         width: 80%;
-		margin: 10% auto 0 auto;
+        margin: 10% auto 0 auto;
     }
     .signUp_newmem_box>p,
     .signUp_explain_box>p {
@@ -60,13 +94,14 @@ footer {
         width: 120px;
         height: 35px;
     }
-    .cloud2{
-        position:relative;
-		animation: mymove 80s infinite;
-        -webkit-animation:mymove 80s infinite;
-        width:25%;
-        img{
-            width:100%;
+    .cloud2 {
+        margin-top: 5%;
+        position: relative;
+        animation: mymove 80s infinite;
+        -webkit-animation: mymove 80s infinite;
+        width: 25%;
+        img {
+            width: 100%;
         }
     }
     @keyframes mymove {
@@ -74,8 +109,8 @@ footer {
             left: 0px;
         }
         to {
-			left: 100%;
-			top:5%;
+            left: 100%;
+            top: 5%;
         }
     }
     @keyframes mymoveright {
@@ -83,52 +118,49 @@ footer {
             left: 80%;
         }
         to {
-			left: 5%;
-			top:5%;
+            left: 5%;
+            top: 5%;
         }
     }
-
     .windmill {
-		width: 50%;
-    	position: relative;
+        width: 50%;
+        position: relative;
         margin: 15% auto 0 auto;
-		z-index: 1;
+        z-index: 1;
         img {
             width: 100%;
         }
     }
-    .fan{
-		position: absolute;
-		top: -20%;
-		left: -16%;
-		width: 140%;
-		img{
-			width:100%;
-		}
-		animation: wind 1.25s linear infinite;
+    .fan {
+        position: absolute;
+        top: -20%;
+        left: -16%;
+        width: 140%;
+        img {
+            width: 100%;
+        }
+        animation: wind 1.25s linear infinite;
     }
-   
     @keyframes wind {
-		0% {
-		  transform: rotate(0deg);
-		}
-		25% {
-		  transform: rotate(90deg);
-		}
-		50% {
-		  transform: rotate(180deg);
-		}
-		75% {
-		  transform: rotate(270deg);
-		}
-		100% {
-		  transform: rotate(360deg);
-		}
-      }
-      .grass{
-		display: none;
-		
-	  }
+        0% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(90deg);
+        }
+        50% {
+            transform: rotate(180deg);
+        }
+        75% {
+            transform: rotate(270deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    .grass {
+        display: none;
+    }
     .orchard img {
         display: none;
     }
@@ -136,20 +168,50 @@ footer {
         position: relative;
         right: 14px;
     }
+    .tree {
+        display: none;
+        img {
+            width: 100%;
+        }
+        .orange {
+            display: none;
+            img {
+                width: 100%;
+            }
+        }
+        .orange2 {
+            display: none;
+            img {
+                width: 100%;
+            }
+        }
+        .orange3 {
+            display: none;
+            img {
+                width: 100%;
+            }
+        }
+        .orange4 {
+            display: none;
+            img {
+                width: 100%;
+            }
+        }
+    }
     input {
         margin: 4px 2px;
         padding: 5px 0px;
         display: inline-block;
     }
-    footer{
-        background-color: #dde4b7; 
-     } 
-     .sun{
-         display: none;
-     }
-     .grassb{
-         display: none;
-     }
+    footer {
+        background-color: #dde4b7;
+    }
+    .sun {
+        display: none;
+    }
+    .grassb {
+        display: none;
+    }
 }
 
 @include rwd(medium) {
@@ -159,25 +221,104 @@ footer {
     .signUp {
         // background-color: #a4ddfa;
     }
+    .car {
+        bottom: 6%;
+        width: 31%;
+        left: 5%;
+        position: absolute;
+        animation: shake .3s alternate infinite;
+        z-index: 2;
+        img {
+            width: 100%;
+        }
+    }
+    .tire1 {
+        width: 19%;
+        z-index: 2;
+        bottom: -7%;
+        right: 6%;
+        position: absolute;
+        animation: rotate 5s linear infinite;
+        img {
+            width: 100%;
+        }
+    }
+    .tire2 {
+        width: 19%;
+        z-index: 2;
+        bottom: -6%;
+        right: 49%;
+        position: absolute;
+        animation: rotate 5s linear infinite;
+        img {
+            width: 100%;
+        }
+    }
+    .tree {
+        width: 20%;
+        position: absolute;
+        bottom: 16%;
+        right: 3%;
+        z-index: 0;
+        img {
+            width: 100%;
+        }
+        .orange {
+            position: absolute;
+            top: 10%;
+            left: 17%;
+            width: 20%;
+            img {
+                width: 100%;
+            }
+        }
+        .orange2 {
+            position: absolute;
+            top: 22%;
+            left: 58%;
+            width: 20%;
+            img {
+                width: 100%;
+            }
+        }
+        .orange3 {
+            position: absolute;
+            top: 35%;
+            left: 24%;
+            width: 20%;
+            img {
+                width: 100%;
+            }
+        }
+        .orange4 {
+            position: absolute;
+            top: 43%;
+            left: 54%;
+            width: 20%;
+            img {
+                width: 100%;
+            }
+        }
+    }
     .signUp_section {
-		background-color: $sky;
-		overflow: hidden;
-        // height: 100vh;
+        background-color: $sky;
+        overflow: hidden;
+        position: relative; // height: 100vh;
     }
     .cloud {
         text-align: left;
-		padding: 5%;
-		position: relative;
-		position:relative;
-		animation: mymove 70s infinite;
-		-webkit-animation:mymove 70s infinite;
+        padding: 5%;
+        position: relative;
+        position: relative;
+        animation: mymove 70s infinite;
+        -webkit-animation: mymove 70s infinite;
     }
-    .sun{
-        width:18%;
+    .sun {
+        width: 18%;
         position: absolute;
-        top:3%;
-        right:3%;
-        img{
+        top: 3%;
+        right: 3%;
+        img {
             width: 100%;
         }
     }
@@ -206,8 +347,6 @@ footer {
     .signUp_explain {
         position: relative;
         right: 42%;
-      
-        
     }
     .signUp_explain_box {
         width: 66%;
@@ -218,7 +357,7 @@ footer {
     }
     .signUp_explain_box>h2 {
         line-height: 1.6;
-    } 
+    }
     .signUp_newmem_box {
         text-align: center;
         background-color: white;
@@ -228,20 +367,20 @@ footer {
         margin: auto;
     }
     .btn {
-		background-color: rgb(255, 241, 0);
+        background-color: rgb(255, 241, 0);
         width: 120px;
         height: 35px;
         margin-top: 18px;
-	}
-	.btn:hover{
-		color:#fff;
-	}
+    }
+    .btn:hover {
+        color: #fff;
+    }
     .cloud2 {
-        width:26%;
-        left:14%;
-		position:relative;
-		animation: mymove 80s infinite;
-		-webkit-animation:mymove 80s infinite;
+        width: 26%;
+        left: 14%;
+        position: relative;
+        animation: mymove 80s infinite;
+        -webkit-animation: mymove 80s infinite;
     }
     .cloud2 img {
         width: 100%;
@@ -251,70 +390,90 @@ footer {
             left: 10%;
         }
         to {
-			left: 100%;
-			top:5%;
+            left: 100%;
+            top: 5%;
         }
     }
     .windmill {
-		width: 20%;
-    	position: relative;
-		margin: 5% auto;
-		z-index: 1;
+        width: 20%;
+        position: relative;
+        margin: 10% auto;
+        z-index: 1;
         img {
             width: 100%;
         }
-	}
-	.fan{
-		position: absolute;
-		top: -20%;
-		left: -14%;
-		width: 140%;
-		img{
-			width:100%;
-		}
-		animation: wind 1.25s linear infinite;
-	}
-	@keyframes wind {
-		0% {
-		  transform: rotate(0deg);
-		}
-		25% {
-		  transform: rotate(90deg);
-		}
-		50% {
-		  transform: rotate(180deg);
-		}
-		75% {
-		  transform: rotate(270deg);
-		}
-		100% {
-		  transform: rotate(360deg);
-		}
-	  }
-	//   草
-	.grass{
-		display: block;
-		max-width: 350px;
-		max-height: 350px;
-		margin: auto;
-		position: absolute;
-	    bottom: -15%;
-    	left: 56%;
-		z-index: 0;
-	  }
-	.grassb{
+    }
+    .fan {
+        position: absolute;
+        top: -20%;
+        left: -14%;
+        width: 140%;
+        img {
+            width: 100%;
+        }
+        animation: wind 5s linear infinite;
+    }
+    @keyframes wind {
+        0% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(90deg);
+        }
+        50% {
+            transform: rotate(180deg);
+        }
+        75% {
+            transform: rotate(270deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    } //   草
+    .grass {
         display: block;
         max-width: 350px;
         max-height: 350px;
         margin: auto;
         position: absolute;
-        bottom: -15%;
+        bottom: 0%;
+        left: 56%;
+        z-index: 0;
+    }
+    .grassb {
+        display: block;
+        max-width: 350px;
+        max-height: 350px;
+        margin: auto;
+        position: absolute;
+        bottom: 0%;
         left: 11%;
         z-index: 0;
-	
-	  }
-	  footer{
-         background-color: #dde4b7; 
-      } 
-	
+    }
+    .grassthree {
+        max-width: 350px;
+        max-height: 350px;
+        display: block;
+        position: absolute;
+        bottom: -36%;
+        left: 20%;
+        z-index: -1;
+    }
+    .sign_earth {
+        position: absolute;
+        bottom: 0%;
+    }
+    .sign_up_dirt {
+        width: 100%;
+        height: 8px;
+        bottom: 10%;
+        position: absolute;
+        img {
+            width: 100%;
+            height: 80px;
+        }
+    }
+    footer {
+        background-color: #f4d66d;
+    }
 }

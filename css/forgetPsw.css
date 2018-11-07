@@ -510,7 +510,7 @@ footer {
   position: relative; }
 
 .footer_block {
-  background-color: #dde4b7; }
+  background-color: #f4d66d; }
 
 @media only screen and (max-width: 767px) {
   .nav_space {
@@ -518,7 +518,10 @@ footer {
     background-color: #a4ddfa; }
   .cloud {
     text-align: right;
-    padding: 5%; }
+    position: relative;
+    padding: 5%;
+    animation: mymove 70s infinite;
+    -webkit-animation: mymove 70s infinite; }
   .cloud img {
     width: 20%; }
   .forgetPsw {
@@ -637,10 +640,27 @@ footer {
     width: 100%;
     display: block; }
   .draft {
-    margin: 5% auto 0 auto;
-    width: 50%; }
+    margin: 30% auto 0 auto;
+    width: 58%; }
     .draft img {
-      width: 100%; } }
+      width: 100%; }
+  .cloud2 {
+    padding: 8%;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    z-index: 0;
+    animation: mymove 70s infinite;
+    -webkit-animation: mymove 70s infinite;
+    width: 25%; }
+    .cloud2 img {
+      width: 100%; }
+  @keyframes mymove {
+    from {
+      left: 0%; }
+    to {
+      left: 100%;
+      top: 5%; } } }
 
 @media all and (min-width: 768px) {
   .forgetPsw_newPsw_box h2 {
@@ -673,13 +693,30 @@ footer {
     background-color: #a4ddfa;
     overflow: hidden; }
   .cloud {
+    display: inline-block;
     text-align: right;
-    padding: 8%; }
-  .cloud img {
+    vertical-align: middle;
+    padding: 8%;
+    position: relative;
+    animation: mymove 45s infinite;
+    -webkit-animation: mymove 45s infinite;
     width: 20%; }
+    .cloud img {
+      width: 100%; }
+  .cloud2 {
+    padding: 8%;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    z-index: 0;
+    animation: mymove 90s infinite;
+    -webkit-animation: mymove 90s infinite;
+    width: 20%; }
+    .cloud2 img {
+      width: 100%; }
   .forgetPsw_explain_box {
     width: 63%;
-    padding-top: 10%;
+    padding-top: 16%;
     margin: auto; }
   .forgetPsw_newPsw_box > p,
   .forgetPsw_explain_box > p {
@@ -695,9 +732,11 @@ footer {
     margin: auto; }
     .forgetPsw_newPsw_box span {
       margin: 0 5px; }
+  .add_mem {
+    padding-top: 10%; }
   .psw_store {
     margin: 4% auto 0 auto;
-    width: 43%;
+    width: 48%;
     position: relative; }
     .psw_store img {
       width: 100%; }
@@ -725,7 +764,7 @@ footer {
   .apple {
     position: absolute;
     width: 10%;
-    top: 45%;
+    top: 46%;
     left: 37%; }
     .apple img {
       widtH: 100%; }
@@ -890,6 +929,15 @@ footer {
     bottom: 10px;
     color: #444; }
   .draft {
-    width: 30%; }
+    width: 32%;
+    position: absolute;
+    bottom: 0%;
+    right: 8%; }
     .draft img {
-      width: 100%; } }
+      width: 100%; }
+  @keyframes mymove {
+    from {
+      right: 0px; }
+    to {
+      right: 60%;
+      top: 5%; } } }

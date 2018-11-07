@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+	<style type="text/css">
+	*{
+			margin: 0;
+            padding: 0;
+            /* outline: 1px solid red; */
+		}
+	.tree{
+		width: 20%;	
+		margin: 10% auto;
+	}
+	.tree img{
+		width: 100%;
+	}
+
+	
+
+	#illustration_france div{
+       
+            display: inline-block;
+            background-position: center center;
+            background-repeat: no-repeat;
+            transform-origin: center bottom;
+            transform: rotateX(-90deg);
+            visibility: hidden;
+            opacity: 1;
+        }
+
+     #illustration_france .ddd {
+            transform: rotateX(0deg);
+            visibility: visible;
+            opacity: 1;
+        }
+
+  
+
+
+    #illustration_france .cloud {
+        background-position: center center;
+        background-repeat: no-repeat;
+        transform-origin: center bottom;
+        position: absolute;
+        bottom: 0;
+        transform: rotateX(-89deg);
+        visibility: hidden; 
+        opacity: 1;
+    }
+
+
+	</style>
+
+<!-- 滑動視窗定點觸發動畫:照順序放 3個 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="libs/gsap/src/minified/TweenMax.min.js"></script>
+
+<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+
+<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
+
+
+
+
+</head>
+<body>
+		<div id="illustration_france">
+			<div class="tree" id="homepage_about_tree01"><img src="car(01).png"></div>
+			<div class="tree" id="homepage_about_tree04"><img src="car(01).png"></div>
+		</div>
+
+
+
+
+<script>
+
+function animate_illustration(a,b) { //a是id  b是class名稱
+    $("#" + a).find("div");
+    TweenMax.killTweensOf($("#" + a));
+    setTimeout(function() {
+            $("#" + a).find(b).each(function(a) {
+                TweenMax.fromTo($(this), .5,{
+                    rotationX: -90,
+                    visibility: "hidden",
+                    opacity:0,
+
+                }, {
+                    delay: .2 * a,
+                    rotationX: 0,
+                    opacity: 1,
+                    ease: "Back.easeOut",
+                    visibility: "visible"
+                    })
+            })
+        }, 100);
+    setTimeout(function() {
+            $("#" + a).find("div.cloud").each(function(a) {
+                TweenMax.fromTo($(this), .5, {
+                    scale: 2,
+                    opacity: 0,
+                    rotationX: 0,
+                    visibility: "visible"
+                }, {
+                    delay: .15 * a,
+                    scale: 1,
+                    opacity: 1,
+                    ease: "Back.easeOut"
+                })
+            })
+        }, 400);
+}
+
+animate_illustration("illustration_france",".tree");
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -512,9 +512,21 @@ footer {
   right: 0;
   left: 0; }
 
+@keyframes shake {
+  0% {
+    transform: translate(0px, 0px); }
+  100% {
+    transform: translate(0px, -5px); } }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
 @media only screen and (max-width: 767px) {
   .nav_space {
-    height: 110px;
+    height: 130px;
     background-color: #a4ddfa; }
   .cloud {
     position: relative;
@@ -522,8 +534,22 @@ footer {
     animation: mymoveright 80s infinite;
     -webkit-animation: mymoveright 80s infinite;
     width: 20%; }
+  .grassthree {
+    max-width: 300px;
+    max-height: 300px;
+    display: block;
+    position: absolute;
+    bottom: -36%;
+    left: 20%;
+    display: none; }
   .cloud img {
     width: 100%; }
+  .car {
+    display: none; }
+  .tire1 {
+    display: none; }
+  .tire2 {
+    display: none; }
   .signUp {
     background-color: #a4ddfa;
     width: 100%; }
@@ -533,7 +559,7 @@ footer {
     width: 80%;
     box-sizing: border-box;
     padding: 5% 3%;
-    margin: auto; }
+    margin: 5% auto; }
     .signUp_newmem_box div {
       margin: 15px; }
   .signUp_explain_box {
@@ -549,6 +575,7 @@ footer {
     width: 120px;
     height: 35px; }
   .cloud2 {
+    margin-top: 5%;
     position: relative;
     animation: mymove 80s infinite;
     -webkit-animation: mymove 80s infinite;
@@ -600,6 +627,26 @@ footer {
   .confirm {
     position: relative;
     right: 14px; }
+  .tree {
+    display: none; }
+    .tree img {
+      width: 100%; }
+    .tree .orange {
+      display: none; }
+      .tree .orange img {
+        width: 100%; }
+    .tree .orange2 {
+      display: none; }
+      .tree .orange2 img {
+        width: 100%; }
+    .tree .orange3 {
+      display: none; }
+      .tree .orange3 img {
+        width: 100%; }
+    .tree .orange4 {
+      display: none; }
+      .tree .orange4 img {
+        width: 100%; }
   input {
     margin: 4px 2px;
     padding: 5px 0px;
@@ -614,9 +661,73 @@ footer {
 @media all and (min-width: 768px) {
   .nav_space {
     height: 110px; }
+  .car {
+    bottom: 6%;
+    width: 31%;
+    left: 5%;
+    position: absolute;
+    animation: shake .3s alternate infinite;
+    z-index: 2; }
+    .car img {
+      width: 100%; }
+  .tire1 {
+    width: 19%;
+    z-index: 2;
+    bottom: -7%;
+    right: 6%;
+    position: absolute;
+    animation: rotate 5s linear infinite; }
+    .tire1 img {
+      width: 100%; }
+  .tire2 {
+    width: 19%;
+    z-index: 2;
+    bottom: -6%;
+    right: 49%;
+    position: absolute;
+    animation: rotate 5s linear infinite; }
+    .tire2 img {
+      width: 100%; }
+  .tree {
+    width: 20%;
+    position: absolute;
+    bottom: 16%;
+    right: 3%;
+    z-index: 0; }
+    .tree img {
+      width: 100%; }
+    .tree .orange {
+      position: absolute;
+      top: 10%;
+      left: 17%;
+      width: 20%; }
+      .tree .orange img {
+        width: 100%; }
+    .tree .orange2 {
+      position: absolute;
+      top: 22%;
+      left: 58%;
+      width: 20%; }
+      .tree .orange2 img {
+        width: 100%; }
+    .tree .orange3 {
+      position: absolute;
+      top: 35%;
+      left: 24%;
+      width: 20%; }
+      .tree .orange3 img {
+        width: 100%; }
+    .tree .orange4 {
+      position: absolute;
+      top: 43%;
+      left: 54%;
+      width: 20%; }
+      .tree .orange4 img {
+        width: 100%; }
   .signUp_section {
     background-color: #a4ddfa;
-    overflow: hidden; }
+    overflow: hidden;
+    position: relative; }
   .cloud {
     text-align: left;
     padding: 5%;
@@ -689,7 +800,7 @@ footer {
   .windmill {
     width: 20%;
     position: relative;
-    margin: 5% auto;
+    margin: 10% auto;
     z-index: 1; }
     .windmill img {
       width: 100%; }
@@ -698,7 +809,7 @@ footer {
     top: -20%;
     left: -14%;
     width: 140%;
-    animation: wind 1.25s linear infinite; }
+    animation: wind 5s linear infinite; }
     .fan img {
       width: 100%; }
   @keyframes wind {
@@ -718,7 +829,7 @@ footer {
     max-height: 350px;
     margin: auto;
     position: absolute;
-    bottom: -15%;
+    bottom: 0%;
     left: 56%;
     z-index: 0; }
   .grassb {
@@ -727,8 +838,27 @@ footer {
     max-height: 350px;
     margin: auto;
     position: absolute;
-    bottom: -15%;
+    bottom: 0%;
     left: 11%;
     z-index: 0; }
+  .grassthree {
+    max-width: 350px;
+    max-height: 350px;
+    display: block;
+    position: absolute;
+    bottom: -36%;
+    left: 20%;
+    z-index: -1; }
+  .sign_earth {
+    position: absolute;
+    bottom: 0%; }
+  .sign_up_dirt {
+    width: 100%;
+    height: 8px;
+    bottom: 10%;
+    position: absolute; }
+    .sign_up_dirt img {
+      width: 100%;
+      height: 80px; }
   footer {
-    background-color: #dde4b7; } }
+    background-color: #f4d66d; } }
