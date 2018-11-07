@@ -165,7 +165,15 @@ path:hover {
       -moz-transform: rotate(360deg);
   }
 }
-
+//手指頭左右
+@keyframes gesture {
+  0%{
+    transform: translateX(10px)
+  }
+  100%{
+    transform: translateX(40px)
+  }
+}
 //ru
 h3 {
   color: #009245;
@@ -700,6 +708,17 @@ h3 {
 
 
   // 第三屏 手機 台灣
+
+  .about_taiwan_background_gesture{
+    width: 15%;
+    position: absolute;
+    top: 58%;
+    left: 30%;
+    img{
+      width: 100%;
+      animation: gesture 1s infinite ease-in-out alternate;
+    }
+  }
 
 //  尖尖的山
 .about_taiwan_background_mountain3 {
@@ -1624,6 +1643,16 @@ h3 {
     z-index: 2;
   }
 
+  .about_taiwan_background_gesture{
+    width: 5%;
+    position: absolute;
+    top: 38%;
+    left: 44%;
+    img{
+      width: 100%;
+      animation: gesture 1s infinite ease-in-out alternate;
+    }
+  }
   .about_taiwan_background_mountain {
     width: 70%;
     position: absolute;
