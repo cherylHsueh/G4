@@ -114,7 +114,7 @@ $(function () {
         autoplay: true,
         // slideshow on / off
 
-        interval: 2000
+        interval: 5000
         // time between transitions
     });
 });

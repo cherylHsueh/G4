@@ -512,30 +512,22 @@ body {
     padding: 80px 0; }
   .blog_Rank {
     display: block; }
-    .blog_Rank .blog_Heading {
-      width: 50%;
+    .blog_Rank .blog_Heading_pic {
       position: relative;
-      margin: 0 auto;
-      font-size: 24px;
-      padding: 20px 0;
-      color: #5e4909;
       font-weight: bold;
-      border: 4px #5e4909 dotted;
-      width: 250px;
-      margin: 20px auto;
-      border-radius: 20px; }
-      .blog_Rank .blog_Heading .num1 {
-        position: absolute;
-        transform: translate(-200%, -100%);
-        width: 50px; }
-      .blog_Rank .blog_Heading .num2 {
-        position: absolute;
-        transform: translate(-800%, 0%);
-        width: 25px; }
-      .blog_Rank .blog_Heading .num3 {
-        position: absolute;
-        transform: translate(0%, 0%);
-        width: 50px; }
+      background-image: url(../images/homepage/headerBac.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 70%;
+      margin-bottom: 7%; }
+      .blog_Rank .blog_Heading_pic .blog_Heading {
+        padding-bottom: 7%;
+        font-size: 5vw;
+        color: #6abee7; }
+    .blog_Rank .blog_Subheading {
+      margin: -10% 0 5%;
+      color: #32a8e2;
+      font-size: 3vw; }
   #phone {
     height: 100vh;
     width: 100%;
@@ -706,14 +698,22 @@ body {
   .blog_Forum_OptionContainer {
     margin: 0 auto; }
     .blog_Forum_OptionContainer .blog_Forum_SearchBar {
+      position: relative;
       text-align: center; }
       .blog_Forum_OptionContainer .blog_Forum_SearchBar input {
-        width: 150px;
+        width: 30%;
         height: 30px;
         margin-bottom: 40px;
         border: 1px solid #aaa;
         border-radius: 5px;
         padding-left: 5px; }
+      .blog_Forum_OptionContainer .blog_Forum_SearchBar i {
+        position: absolute;
+        top: 12%;
+        right: 36%;
+        cursor: pointer; }
+        .blog_Forum_OptionContainer .blog_Forum_SearchBar i:hover {
+          color: grey; }
     .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_NewShare a, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_HighScore a {
       display: block;
       width: 100px;
@@ -869,14 +869,22 @@ body {
         position: absolute;
         top: -60px;
         right: 70px; }
-    .blog_Forum_wrapper .blog_Heading {
-      padding: 20px 0;
-      color: #5e4909;
+    .blog_Forum_wrapper .blog_Heading_pic {
+      position: relative;
       font-weight: bold;
-      border: 4px #5e4909 dotted;
-      width: 250px;
-      margin: 20px auto;
-      border-radius: 20px; }
+      background-image: url(../images/homepage/headerBac.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 70%;
+      margin: 5% 0 7%; }
+      .blog_Forum_wrapper .blog_Heading_pic .blog_Heading {
+        padding-bottom: 7%;
+        font-size: 5vw;
+        color: #6abee7; }
+    .blog_Forum_wrapper .blog_Subheading {
+      margin: -10% 0 5%;
+      color: #32a8e2;
+      font-size: 3vw; }
   .umbrellaApple img {
     width: 100px;
     position: absolute;
@@ -1097,21 +1105,23 @@ body {
       color: #fefefe; }
       .blogIn_Msg_SendBlock a.subButtonItem:hover {
         background-color: #487e0a; }
-  .blogIn_Msg_Block {
-    padding: 5% 0; }
-    .blogIn_Msg_Block .blogIn_Msg_Box input {
-      width: 90%;
-      padding: 4% 1%; }
-    .blogIn_Msg_Block a.subButtonItem {
-      padding: 1% 0;
-      background-color: #fbb03b;
-      text-align: center;
-      font-size: 2.5vw;
-      color: #fefefe; }
-      .blogIn_Msg_Block a.subButtonItem:hover {
-        background-color: #487e0a; }
+  .blogIn_Msg_Containerc {
+    padding-right: 3%; }
+    .blogIn_Msg_Containerc .blogIn_Msg_Block {
+      padding: 5% 0; }
+      .blogIn_Msg_Containerc .blogIn_Msg_Block .blogIn_Msg_Box .blogIn_Msg_ContentInput input {
+        width: 90%;
+        padding: 4% 1%; }
+      .blogIn_Msg_Containerc .blogIn_Msg_Block a.subButtonItem {
+        padding: 1%;
+        background-color: #fbb03b;
+        text-align: center;
+        font-size: 2.5vw;
+        color: #fefefe; }
+        .blogIn_Msg_Containerc .blogIn_Msg_Block a.subButtonItem:hover {
+          background-color: #487e0a; }
   .blogIn_Msg_SendBox2 {
-    margin: 3%;
+    margin: 0 3%;
     background-color: #fefefe; }
   .blogIn_ButtonContainer {
     text-align: center; }
@@ -1180,12 +1190,21 @@ body {
         width: 90%; }
       .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic .upload {
         width: 50%;
-        margin: 25% 0; }
+        margin: 25% 0;
+        transition: .5s; }
+        .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic .upload:hover {
+          transform: scale(1.1); }
       .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic .upload_active {
         width: 10%;
         position: absolute;
         bottom: -20%;
-        right: 5%; }
+        right: 5%;
+        animation: upload .5s linear forwards; }
+  @keyframes upload {
+    from {
+      width: 50%; }
+    to {
+      width: 10%; } }
     .blogSubmit_LeftBox .blogSubmit_LeftBox_NameContainer {
       width: 70%;
       margin: 0 auto; }
@@ -1296,7 +1315,15 @@ body {
   form {
     text-align: center; }
     form .common_btn_first {
-      margin: 50px 0; }
+      margin: 50px 0;
+      animation: buttonscale 1s linear infinite alternate-reverse; }
+      form .common_btn_first:hover {
+        animation-play-state: paused; }
+  @keyframes buttonscale {
+    from {
+      transform: rotate(2deg); }
+    to {
+      transform: rotate(-2deg); } }
   .flower1 {
     display: none; }
   .flower2 {
@@ -1351,20 +1378,20 @@ body {
     display: block;
     padding: 100px 0 25px; }
     .blog_Rank .blog_Heading_pic {
+      width: 600px;
       position: relative;
       padding: 20px 0;
       font-weight: bold;
       background-image: url(../images/homepage/headerBac.png);
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 40%;
-      margin-bottom: 20px; }
+      margin: 0 auto 20px; }
       .blog_Rank .blog_Heading_pic .blog_Heading {
-        margin-top: -20px;
+        margin-top: -25px;
         font-size: 30px;
         color: #6abee7; }
     .blog_Rank .blog_Subheading {
-      margin: -50px 0 50px;
+      margin: -20px 0 50px;
       color: #32a8e2; }
   .dg-container {
     width: 100%;
@@ -1567,6 +1594,7 @@ body {
   .blog_Forum_OptionContainer {
     margin: 0 auto; }
     .blog_Forum_OptionContainer .blog_Forum_SearchBar {
+      position: relative;
       text-align: center;
       float: right; }
       .blog_Forum_OptionContainer .blog_Forum_SearchBar input {
@@ -1576,6 +1604,13 @@ body {
         border: 1px solid #aaa;
         border-radius: 5px;
         padding-left: 5px; }
+      .blog_Forum_OptionContainer .blog_Forum_SearchBar i {
+        position: absolute;
+        top: 15%;
+        right: 23%;
+        cursor: pointer; }
+        .blog_Forum_OptionContainer .blog_Forum_SearchBar i:hover {
+          color: grey; }
     .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_NewShare a, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_HighScore a {
       display: block;
       width: 100px;
@@ -1791,18 +1826,36 @@ body {
     100% {
       top: 0px; } }
     .blog_Forum_wrapper .blog_Heading_pic {
+      width: 600px;
       position: relative;
+      padding: 20px 0;
       font-weight: bold;
       background-image: url(../images/homepage/headerBac.png);
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 40%; }
+      margin: 0 auto 20px; }
       .blog_Forum_wrapper .blog_Heading_pic .blog_Heading {
-        margin-bottom: -50px;
+        margin-top: -25px;
         font-size: 30px;
         color: #6abee7; }
     .blog_Forum_wrapper .blog_Subheading {
-      margin-top: 60px;
+      margin: -20px 0 50px;
+      color: #32a8e2; }
+    .blog_Forum_wrapper .blog_Heading_pic {
+      width: 600px;
+      position: relative;
+      padding: 20px 0;
+      font-weight: bold;
+      background-image: url(../images/homepage/headerBac.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0 auto 20px; }
+      .blog_Forum_wrapper .blog_Heading_pic .blog_Heading {
+        margin-top: -25px;
+        font-size: 30px;
+        color: #6abee7; }
+    .blog_Forum_wrapper .blog_Subheading {
+      margin: -20px 0 50px;
       color: #32a8e2; }
   .umbrellaApple img {
     width: 50px;
@@ -2037,6 +2090,7 @@ body {
           text-align: left;
           color: #ccc; }
       .blogIn_Msg_SendBlock .blogIn_Msg_SendWrapper a.subButtonItem {
+        margin-left: 0;
         padding: 10px 0;
         background-color: #fbb03b;
         color: #fefefe;
@@ -2048,15 +2102,14 @@ body {
     margin: 0 3%;
     background-color: #fefefe; }
   .blogIn_Msg_Block {
-    margin: 0 5%;
     padding: 20px 0; }
-    .blogIn_Msg_Block .blogIn_Msg_Box {
-      float: left; }
-      .blogIn_Msg_Block .blogIn_Msg_Box input {
-        width: 80%;
-        padding: 20px 10px; }
+    .blogIn_Msg_Block .blogIn_Msg_Box input {
+      width: 80%;
+      max-width: 1000px;
+      margin-left: 50px;
+      padding: 20px 50px 20px 10px; }
     .blogIn_Msg_Block a.subButtonItem {
-      width: 10%;
+      margin-left: 20px;
       padding: 10px;
       background-color: #fbb03b;
       text-align: center;
@@ -2070,10 +2123,10 @@ body {
     .blogIn_ButtonContainer a.common_btn {
       margin: 50px 20px; }
   .umbrellaMandarin img {
-    width: 300px;
+    width: 200px;
     position: absolute;
     bottom: -10%;
-    right: 0%;
+    right: -10%;
     z-index: 1;
     cursor: pointer;
     animation: umbrellaMandarinScale 3s linear infinite alternate-reverse; }
@@ -2147,12 +2200,21 @@ body {
         width: 90%; }
       .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic .upload {
         width: 50%;
-        margin: 25% 0; }
+        margin: 25% 0;
+        transition: .5s; }
+        .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic .upload:hover {
+          transform: scale(1.1); }
       .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic .upload_active {
         width: 10%;
         position: absolute;
         bottom: -20%;
-        right: 5%; }
+        right: 5%;
+        animation: upload .5s linear forwards; }
+  @keyframes upload {
+    from {
+      width: 50%; }
+    to {
+      width: 10%; } }
   .blogSubmit_RightBox {
     position: relative;
     top: 2.5%;
@@ -2235,13 +2297,16 @@ body {
     height: 100%;
     text-align: center; }
     form .common_btn_first {
-      margin: 2%;
-      font-size: 1vw; }
+      margin: 10% 0 0%;
+      font-size: 1vw;
+      animation: buttonscale 1s linear infinite alternate-reverse; }
+      form .common_btn_first:hover {
+        animation-play-state: paused; }
   @keyframes buttonscale {
     from {
-      transform: rotate(20deg); }
+      transform: rotate(2deg); }
     to {
-      transform: rotate(5deg); } }
+      transform: rotate(-2deg); } }
   .flower1 {
     width: 10%;
     position: absolute;
