@@ -1060,7 +1060,13 @@ body {
     padding: 4% 6%; }
   .diy_pickFruit_nextButton {
     margin: 10px 0;
-    text-align: center; }
+    text-align: center;
+    animation: nextButton 1s linear infinite alternate-reverse; }
+  @keyframes nextButton {
+    from {
+      transform: scale(0.9); }
+    to {
+      transform: sacle(1.2); } }
   .tree1 {
     width: 150px;
     bottom: 0;

@@ -161,7 +161,19 @@ function chart() {
             $('#diy_pickFruit_bottle3').css('background-color', 'rgba( ' + r + ',' + g + ' ,' + b + ', ' + a + ')');
             $('#diy_pickFruit_bottle3').css('flex-grow', '1');
         } else {
-            alert("果汁已經滿了哦!");
+            swal({
+                type: 'error',
+                title: '果汁已經滿了哦!',
+                confirmButtonText: '<a href="diyDesignBottle.html">下一步!</a>',
+                confirmButtonColor: '#ffd700',
+                showCancelButton: true,
+                cancelButtonColor: '#d33',
+                cancelButtonText: '取消',
+                animation: false,
+                customClass: 'animated tada',
+                // text: 'Something went wrong!',
+                footer: '<p>下一步可以客製瓶身外觀</p>'
+            })
         }
     }
 
@@ -203,13 +215,6 @@ $(document).ready(function () {
         // alert($(this).parent().parent().attr('class'));
         // alert('.fruitname' + $(this).attr('id'));
         _index = $(this).index();
-        // $(this).after('<img class="highlight" src="images/hightlight.png" alt="已選到">');
-        // $(this).wrap('<div class="fruitbgc"></div>');
-        // $(this).after('<div class="fruitnameBox"></div>');
-        // bgc = '.diy_pickFruit_leftItem' + $(this).attr('id');
-        // $(bgc).css('background-color', "rgb(199, 129, 50)");
-        // $(this).parent().parent().addClass('fruitbgc');
-        // $(this).parent().addClass('fruitbgc');
         name = '.fruitname' + $(this).attr('id');
         $(name).show();
         namebgc = '.fruitnameBox' + $(this).attr('id');
@@ -220,13 +225,7 @@ $(document).ready(function () {
 
     $('.fruiticon').mouseout(function () {
 
-        // bgc = '.diy_pickFruit_leftItem' + $(this).attr('id');
-        // $(bgc).css('background-color', "rgb(233, 201, 165)");
-        // $(this).parent().addClass('fruitbgc');
         $(this).parent().removeClass('fruitbgc');
-        // bgc = '.diy_pickFruit_leftItem' + $(this).attr('id');
-        // $(bgc).css('background-color', "rgb(233, 201, 165)");
-        // $('.fruitnameBox').remove();
         name = '.fruitname' + $(this).attr('id');
         $(name).hide();
         namebgc = '.fruitnameBox' + $(this).attr('id');
@@ -251,18 +250,11 @@ $(document).ready(function () {
     });
 
     $('.fruiticon').click(function () {
-        // if($('.diy_pickFruit_rightItem > p').length < 4){
-        //         $('.diy_pickFruit_rightItem').append('<p class="diy_pickFruit_righItemContent">蘋果:養顏美容</p>');
-        //     }else{
-        //         alert('已超過容量');
-        //     }
 
         if ($("#diy_pickFruit_bottle1").css('background-color') == "rgba(0, 0, 0, 0)") {
             _index = $(this).index();
             bgc = '.diy_pickFruit_leftItem' + $(this).attr('id');
             $(bgc).css('background-color', "rgb(199, 129, 50)");
-            // $(this).after('<img class="highlightClick" src="images/hightlight.png" alt="已選到">');
-            // $(this).after('<img class="highlightUnclick" src="images/hightlight.png" alt="已選到">');
             // alert('no');
 
         } else if ($("#diy_pickFruit_bottle2").css('background-color') == "rgba(0, 0, 0, 0)") {
@@ -463,16 +455,16 @@ $(document).ready(function () {
 
 
 
-    if ($(window).width() < 768) {
-        $('.diy_pickFruit_leftPic').slick({
+if ($(window).width() < 768) {
+    $('.diy_pickFruit_leftPic').slick({
 
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            prevArrow: '<div class="diy_pickFruit_leftArrow"><img src="images/left01.png" alt="左箭頭"></div>',
-            nextArrow: '<div class="diy_pickFruit_rightArrow"><img src="images/right01.png" alt="右箭頭"></div>',
-        });
-    }
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        prevArrow: '<div class="diy_pickFruit_leftArrow"><img src="images/left01.png" alt="左箭頭"></div>',
+        nextArrow: '<div class="diy_pickFruit_rightArrow"><img src="images/right01.png" alt="右箭頭"></div>',
+    });
+}
 
 
 

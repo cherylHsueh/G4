@@ -918,6 +918,11 @@ body {
   .diy_pickFruit_nextButton {
     margin: 10px 0;
     text-align: center;
+    animation: nextButton 1s linear infinite alternate-reverse;
+  }
+  @keyframes nextButton {
+    from{transform: scale(.9)};
+    to{transform: sacle(1.2)};
   }
 
   .tree1 {
