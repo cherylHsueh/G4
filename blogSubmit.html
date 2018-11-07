@@ -52,220 +52,168 @@
         <div class="robot"><img src="images/robot.png" alt="果然配客服機器人"></div>
     </header>
 
-    <div class="blogSubmit_bgc">
-        <div class="space"></div>
-        <!-- <div class="blogSubmit_board">
+    <div class="space"></div>
+    <!-- <div class="blogSubmit_board">
             <img src="images/blogImg/board.png" alt="布告欄">
         </div> -->
-        <!-- SUBMIT_ARTICAL -->
+    <!-- SUBMIT_ARTICAL -->
 
-        <section class="blogSubmit_Share">
-            <div class="wrapper">
-                <div class="blogSubmit_board">
-                    <img src="images/blogImg/board.png" alt="布告欄">
-                </div>
-                <div class="blogSubmit_Headingbox">
-                    <h2 class="blog_Heading">分享配方</h2>
-                </div>
-                <form id="blogSubmit_form" method="get" action="">
-                    <div class="blogSubmit_Container clearfix">
-                        <input id="picture" type="file" style="display: none">
-                        <div id='previewImg' class="blogSubmit_LeftBox cl-md-6">
+    <section class="blogSubmit_Share">
+        <div class="blogSubmit_Share_cloud1">
+            <img src="images/cloud(03).png" alt="雲">
+        </div>
+        <div class="blogSubmit_Share_cloud2">
+            <img src="images/cloud(02).png" alt="雲">
+        </div>
+        <div class="wrapper">
+            <div class="blogSubmit_board">
+                <img src="images/blogImg/board.png" alt="布告欄">
+            </div>
+            <div class="blogSubmit_Headingbox">
+                <img src="images/blogImg/boardTitle.png" alt="分享配方">
+            </div>
+            <form id="blogSubmit_form" method="get" action="">
+                <div class="blogSubmit_Container  clearfix">
+                    <input id="picture" type="file" style="display: none">
+                    <div id='previewImg' class="blogSubmit_LeftBox cl-md-6">
 
-                            <p>上傳圖檔</p>
-                            <div class="blogSubmit_LeftBox_Pic">
-                                <img src="" id='viewImg' />
-                                <label for="picture">
-                                    <img class="upload" src="images/sendPictureFile.png" style="cursor: pointer" alt="上傳圖片">
-                                </label>
-                            </div>
-
-
-                            <!-- <script>
-                                $("#picture").change(function(){
-                                      checkImage( this );
-                                    });
-                                  function checkImage(input) {
-                                        var filePath = input.value;
-                                        if(filePath){
-                                            //读取图片数据
-                                            var filePic = input.files[0];
-                                            var reader = new FileReader();
-                                            reader.onload = function (e) {
-                                                var data = e.target.result;
-                                                //加载图片获取图片真实宽度和高度
-                                                var image = new Image();
-                                                image.onload=function(){
-                                                    var width = image.width;
-                                                    var height = image.height;
-                                                    if (width <= 300 | height <= 300){
-                                                        alert("文件尺寸符合！"); 
-                                                        if ( input.files && input.files[0] ) {
-                                                            var FR= new FileReader();
-                                                            FR.onload = function(e) {
-                                                            //e.target.result = base64 format picture
-                                                            $('#viewImg').attr( "src", e.target.result );
-                                                            $('#viewImg').addClass('imgSize');
-                                                            $('.upload').css( "display","none");
-                                                            };       
-                                                            FR.readAsDataURL( input.files[0] );
-                                                        }
-                                                    }else {
-                                                        alert("文件尺寸应为：300*300！");
-                                                        file.value = "";
-                                                        return false;
-                                                    }
-                                                };
-                                                image.src= data;
-                                                
-                                            };
-                                            reader.readAsDataURL(filePic);
-                                           
-                                        }else{
-                                            return false;
-                                        }
-                                    }
-                                    function readImage(input) {
-                                      if ( input.files && input.files[0] ) {
-                                        var FR= new FileReader();
-                                        FR.onload = function(e) {
-                                          //e.target.result = base64 format picture
-                                          $('#viewImg').attr( "src", e.target.result );
-                                          $('#viewImg').addClass('imgSize');
-                                          $('.upload').css( "display","none");
-                                        };       
-                                        FR.readAsDataURL( input.files[0] );
-                                      }
-                                    }
-                                   
-
-                                  </script> -->
-
-
-
-
-                            <!-- <div class="blogSubmit_LeftBox_NameContainer clearfix">
-                        <div class="blogSubmit_LeftBox_NamePic cl-s-4 cl-md-4">
-                            <img src="images/blogImg/memberPic.png" alt="分享者">
+                        <p>上傳圖檔</p>
+                        <div class="blogSubmit_LeftBox_Pic">
+                            <img src="" id='viewImg' />
+                            <label for="picture">
+                                <img class="upload" src="images/sendPictureFile.png" style="cursor: pointer" alt="上傳圖片">
+                            </label>
                         </div>
-                        <div class="blogSubmit_LeftBox_NameTitle cl-s-8 cl-md-8">
-                            <h4>哆啦A夢</h4>
-                        </div>
-                    </div> -->
-                        </div>
-                        <div class="blogSubmit_RightBox cl-md-6 clearfix">
-                            <div class="blogSubmit_RightBox_message">
-                                <img src="images/blogImg/message.png" alt="留言紙">
-                            </div>
-                            <div class="blogSubmit_RightBox_pin">
-                                <img src="images/blogImg/pin.png" alt="圖釘">
-                            </div>
-                            <div class="blogSubmit_RightBox_TitleContainer clearfix">
-                                <div class="blogSubmit_RightBox_TitleContent clearfix">
-                                    <div class="blogSubmit_RightBox_TitleName">
-                                        <input type="text" placeholder="請輸入果汁名稱">
-                                    </div>
-                                    <div class="blogSubmit_RightBox_TitlePic cl-s-8  cl-md-8 clearfix">
-                                        <div class="blogSubmit_RightBox_PicItem cl-s-4 cl-md-4">
-                                            <select name="fruit" id="fruit">
-                                                <option value="芭樂">芭樂</option>
-                                                <option value="西瓜">西瓜</option>
-                                                <option value="哈密瓜">哈密瓜</option>
-                                                <option value="柳丁">柳丁</option>
-                                                <option value="香蕉">香蕉</option>
-                                                <option value="蘋果">蘋果</option>
-                                                <option value="鳳梨">鳳梨</option>
-                                                <option value="葡萄">葡萄</option>
-                                                <option value="番茄">番茄</option>
-                                            </select>
-                                        </div>
-                                        <div class="blogSubmit_RightBox_PicItem cl-s-4 cl-md-4">
-                                            <select name="fruit" id="fruit">
-                                                <option value="芭樂">芭樂</option>
-                                                <option value="西瓜">西瓜</option>
-                                                <option value="哈密瓜">哈密瓜</option>
-                                                <option value="柳丁">柳丁</option>
-                                                <option value="香蕉">香蕉</option>
-                                                <option value="蘋果" selected>蘋果</option>
-                                                <option value="鳳梨">鳳梨</option>
-                                                <option value="葡萄">葡萄</option>
-                                                <option value="番茄">番茄</option>
-                                            </select>
-                                        </div>
-                                        <div class="blogSubmit_RightBox_PicItem cl-s-4 cl-md-4">
-                                            <select name="fruit" id="fruit">
-                                                <option value="芭樂">芭樂</option>
-                                                <option value="西瓜">西瓜</option>
-                                                <option value="哈密瓜" selected>哈密瓜</option>
-                                                <option value="柳丁">柳丁</option>
-                                                <option value="香蕉">香蕉</option>
-                                                <option value="蘋果">蘋果</option>
-                                                <option value="鳳梨">鳳梨</option>
-                                                <option value="葡萄">葡萄</option>
-                                                <option value="番茄">番茄</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- 私藏分頁的 -->
-                                <div class="blog_Rank_ContentBox cl-s-12 clearfix">
-                                    <div class="blog_Rank_ContentBox_Block clearfix">
-                                        <div class="blog_Rank_ContentBox_Box">
-                                            <div class="blog_Rank_ContentBox_Item">
-                                                <div class="blog_Rank_ContentBox_Container">
-                                                    <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar1"></div>
-                                                </div>
-                                                <p class="blog_Rank_BottomBox_Title">維他命C</p>
-                                            </div>
-                                            <div class="blog_Rank_ContentBox_Item">
-                                                <div class="blog_Rank_ContentBox_Container">
-                                                    <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar2"></div>
-                                                </div>
-                                                <p class="blog_Rank_BottomBox_Title">鐵質</p>
-                                            </div>
-                                            <div class="blog_Rank_ContentBox_Item">
-                                                <div class="blog_Rank_ContentBox_Container">
-                                                    <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar3"></div>
-                                                </div>
-                                                <div class="blog_Rank_BottomBox_Title">膳食纖維</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="blog_Rank_ContentBox_Desc">
-                                        <p>熱量共50Cals</p>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="blogSubmit_RightBox_ShareContainer clearfix">
-                                    <div class="blogSubmit_RightBox_ShareContent clearfix">
-                                        <input type="text" placeholder="嚐分享">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
                     </div>
-                    <a class="common_btn common_btn_first" id="uploadBtn" href="javascript:;">
+                    <div class="blogSubmit_RightBox cl-md-6 clearfix">
+                        <div class="blogSubmit_RightBox_pin">
+                            <img src="images/blogImg/pin.png" alt="圖釘">
+                        </div>
+                        <div class="blogSubmit_RightBox_TitleContainer clearfix">
+                            <div class="blogSubmit_RightBox_TitleContent clearfix">
+                                <div class="blogSubmit_RightBox_TitleName">
+                                    <input type="text" placeholder="請輸入果汁名稱">
+                                </div>
+                                <div class="blogSubmit_RightBox_TitlePic cl-s-8  cl-md-8 clearfix">
+                                    <div class="blogSubmit_RightBox_PicItem cl-s-4 cl-md-4">
+                                        <select name="fruit" id="fruit">
+                                            <option value="芭樂">芭樂</option>
+                                            <option value="西瓜">西瓜</option>
+                                            <option value="哈密瓜">哈密瓜</option>
+                                            <option value="柳丁">柳丁</option>
+                                            <option value="香蕉">香蕉</option>
+                                            <option value="蘋果">蘋果</option>
+                                            <option value="鳳梨">鳳梨</option>
+                                            <option value="葡萄">葡萄</option>
+                                            <option value="番茄">番茄</option>
+                                        </select>
+                                    </div>
+                                    <div class="blogSubmit_RightBox_PicItem cl-s-4 cl-md-4">
+                                        <select name="fruit" id="fruit">
+                                            <option value="芭樂">芭樂</option>
+                                            <option value="西瓜">西瓜</option>
+                                            <option value="哈密瓜">哈密瓜</option>
+                                            <option value="柳丁">柳丁</option>
+                                            <option value="香蕉">香蕉</option>
+                                            <option value="蘋果" selected>蘋果</option>
+                                            <option value="鳳梨">鳳梨</option>
+                                            <option value="葡萄">葡萄</option>
+                                            <option value="番茄">番茄</option>
+                                        </select>
+                                    </div>
+                                    <div class="blogSubmit_RightBox_PicItem cl-s-4 cl-md-4">
+                                        <select name="fruit" id="fruit">
+                                            <option value="芭樂">芭樂</option>
+                                            <option value="西瓜">西瓜</option>
+                                            <option value="哈密瓜" selected>哈密瓜</option>
+                                            <option value="柳丁">柳丁</option>
+                                            <option value="香蕉">香蕉</option>
+                                            <option value="蘋果">蘋果</option>
+                                            <option value="鳳梨">鳳梨</option>
+                                            <option value="葡萄">葡萄</option>
+                                            <option value="番茄">番茄</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 私藏分頁的 -->
+                            <div class="blog_Rank_ContentBox cl-s-12 clearfix">
+                                <div class="blog_Rank_ContentBox_Block clearfix">
+                                    <div class="blog_Rank_ContentBox_Box">
+                                        <div class="blog_Rank_ContentBox_Item">
+                                            <div class="blog_Rank_ContentBox_Container">
+                                                <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar1"></div>
+                                            </div>
+                                            <p class="blog_Rank_BottomBox_Title">維他命C</p>
+                                        </div>
+                                        <div class="blog_Rank_ContentBox_Item">
+                                            <div class="blog_Rank_ContentBox_Container">
+                                                <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar2"></div>
+                                            </div>
+                                            <p class="blog_Rank_BottomBox_Title">鐵質</p>
+                                        </div>
+                                        <div class="blog_Rank_ContentBox_Item">
+                                            <div class="blog_Rank_ContentBox_Container">
+                                                <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar3"></div>
+                                            </div>
+                                            <div class="blog_Rank_BottomBox_Title">膳食纖維</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="blog_Rank_ContentBox_Desc">
+                                    <p>熱量共50Cals</p>
+                                </div>
+                            </div>
+
+
+
+                            <div class="blogSubmit_RightBox_ShareContainer clearfix">
+                                <div class="blogSubmit_RightBox_ShareContent clearfix">
+                                    <input type="text" placeholder="嚐分享">
+                                </div>
+                            </div>
+                            <a class="common_btn common_btn_first" id="uploadBtn" href="javascript:;">
+                                <span class="common_btn_txt">上傳文章</span>
+                                <div class="common_btn_blobs">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- <a class="common_btn common_btn_first" id="uploadBtn" href="javascript:;">
                         <span class="common_btn_txt">上傳文章</span>
                         <div class="common_btn_blobs">
                             <div></div>
                             <div></div>
                             <div></div>
                         </div>
-                    </a>
-                </form>
+                    </a> -->
+            </form>
 
-            </div>
-            <img src="images/Flower.png" alt="花" class="flower1">
-            <img src="images/blogImg/oneFlower.png" alt="花" class="flower2">
-            <img src="images/blogImg/oneFlower.png" alt="花" class="flower3">
-            <img src="images/blogImg/oneFlower.png" alt="花" class="flower4">
-        </section>
-    </div>
+        </div>
+        <div class="blogSubmit_grass1">
+            <img src="images/about/Grass(02).png" alt="草">
+        </div>
+        <div class="blogSubmit_grass2">
+            <img src="images/about/Grass(02).png" alt="草">
+        </div>
+        <div class="blogSubmit_grass3">
+            <img src="images/about/Grass(01).png" alt="草">
+        </div>
+        <img src="images/Flower.png" alt="花" class="flower1">
+        <img src="images/blogImg/oneFlower.png" alt="花" class="flower2">
+        <img src="images/blogImg/oneFlower.png" alt="花" class="flower3">
+        <img src="images/blogImg/oneFlower.png" alt="花" class="flower4">
+    </section>
+
+
+
 
     <footer>
         <div class="footer_wrapper">

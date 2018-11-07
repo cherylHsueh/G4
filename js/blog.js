@@ -214,7 +214,7 @@ function checkImage(input) {
                   var width = image.width;
                   var height = image.height;
                   if (width <= 300 | height <= 300){
-                      alert("文件尺寸符合！"); 
+                      alert("圖檔上傳成功"); 
                       if ( input.files && input.files[0] ) {
                           var FR= new FileReader();
                           FR.onload = function(e) {
@@ -227,7 +227,7 @@ function checkImage(input) {
                           FR.readAsDataURL( input.files[0] );
                       }
                   }else {
-                      alert("文件尺寸应为：300*300！");
+                      alert("圖檔尺寸不符，尺寸應為300*300！");
                       file.value = "";
                       return false;
                   }

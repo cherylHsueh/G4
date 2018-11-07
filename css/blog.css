@@ -492,7 +492,7 @@ body {
   display: none; }
 
 @media only screen and (max-width: 767px) {
-  .blog_Heading, .blog_Subheading, .blogSubmit_Headingbox .blog_Heading {
+  .blog_Heading, .blog_Subheading {
     color: #5e4909;
     text-align: center;
     line-height: 1.5;
@@ -516,7 +516,14 @@ body {
       width: 50%;
       position: relative;
       margin: 0 auto;
-      font-size: 24px; }
+      font-size: 24px;
+      padding: 20px 0;
+      color: #5e4909;
+      font-weight: bold;
+      border: 4px #5e4909 dotted;
+      width: 250px;
+      margin: 20px auto;
+      border-radius: 20px; }
       .blog_Rank .blog_Heading .num1 {
         position: absolute;
         transform: translate(-200%, -100%);
@@ -530,7 +537,7 @@ body {
         transform: translate(0%, 0%);
         width: 50px; }
   #phone {
-    height: 70vh;
+    height: 100vh;
     width: 100%;
     position: relative;
     margin-top: -10%; }
@@ -862,6 +869,14 @@ body {
         position: absolute;
         top: -60px;
         right: 70px; }
+    .blog_Forum_wrapper .blog_Heading {
+      padding: 20px 0;
+      color: #5e4909;
+      font-weight: bold;
+      border: 4px #5e4909 dotted;
+      width: 250px;
+      margin: 20px auto;
+      border-radius: 20px; }
   .umbrellaApple img {
     width: 100px;
     position: absolute;
@@ -1130,35 +1145,47 @@ body {
       transform: scale(0.1); } }
   .blogSubmit_board {
     display: none; }
-  .blogSubmit_bgc {
-    background: #f2f848;
-    background: linear-gradient(180deg, #f0f56c 1%, #e9fa7a 63%, rgba(122, 230, 69, 0.986432) 82%, #42f163 100%); }
   .blogSubmit_Share {
-    position: relative; }
-  .blogSubmit_Headingbox .blog_Heading {
-    padding: 30px 0;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    background-color: #f5ba5b;
-    color: #fff; }
+    position: relative;
+    margin-top: 100px; }
+    .blogSubmit_Share .blogSubmit_Share_cloud1 {
+      display: none; }
+    .blogSubmit_Share .blogSubmit_Share_cloud2 {
+      width: 200px;
+      position: absolute;
+      top: -10%;
+      right: 10%; }
+  .blogSubmit_Headingbox {
+    width: 30%;
+    position: absolute;
+    top: -2%; }
   .blogSubmit_Container {
     margin: 0 5% 5%; }
   .blogSubmit_LeftBox {
     padding: 10% 10%;
     background-color: #d0961c; }
     .blogSubmit_LeftBox p {
+      width: 100%;
+      background-color: #b97b18;
       padding: 2% 0;
       color: #fff; }
     .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic {
+      position: relative;
+      width: 100%;
+      height: 100%;
       display: block;
-      padding: 30% 10%;
       background-color: #b97b18;
       text-align: center; }
-      .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic p {
-        margin: 2%;
-        font-size: 4vw; }
-      .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic img {
-        width: 50%; }
+      .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic .imgSize {
+        width: 90%; }
+      .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic .upload {
+        width: 50%;
+        margin: 25% 0; }
+      .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic .upload_active {
+        width: 10%;
+        position: absolute;
+        bottom: -20%;
+        right: 5%; }
     .blogSubmit_LeftBox .blogSubmit_LeftBox_NameContainer {
       width: 70%;
       margin: 0 auto; }
@@ -1174,20 +1201,36 @@ body {
           font-size: 5vw; }
   .blogSubmit_RightBox {
     position: relative;
+    top: 2.5%;
+    padding: 6% 0 5%;
     background-color: #d0961c; }
+    .blogSubmit_RightBox .blogSubmit_RightBox_TitleContainer {
+      border: 5px solid #c7df5c;
+      background-color: #fefefe;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5); }
+      .blogSubmit_RightBox .blogSubmit_RightBox_TitleContainer:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-right: 50px solid transparent;
+        border-left: 50px solid #c7df5c;
+        border-bottom: 50px solid transparent; }
+      .blogSubmit_RightBox .blogSubmit_RightBox_TitleContainer:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        border-top: 50px solid transparent;
+        border-right: 50px solid #c7df5c;
+        border-left: 50px solid transparent; }
     .blogSubmit_RightBox .blogSubmit_RightBox_pin {
+      width: 50px;
       position: absolute;
-      top: 30px;
-      right: 50px; }
-      .blogSubmit_RightBox .blogSubmit_RightBox_pin img {
-        width: 50px; }
-    .blogSubmit_RightBox .blogSubmit_RightBox_message {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: rotate(10deg); }
-      .blogSubmit_RightBox .blogSubmit_RightBox_message img {
-        max-width: 800px; }
+      top: 6%;
+      left: 7%;
+      z-index: 2;
+      transform: rotate(-110deg); }
     .blogSubmit_RightBox .blog_Rank_ContentBox {
       background-color: transparent;
       padding: 3% 5%; }
@@ -1199,13 +1242,15 @@ body {
           .blogSubmit_RightBox .blog_Rank_ContentBox .blog_Rank_ContentBox_Box .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container {
             padding-bottom: 100%; }
           .blogSubmit_RightBox .blog_Rank_ContentBox .blog_Rank_ContentBox_Box .blog_Rank_ContentBox_Item .blog_Rank_BottomBox_Title {
-            font-size: 16px; }
+            font-size: 1.4vw; }
     .blogSubmit_RightBox .blog_Rank_ContentBox_Desc {
       position: absolute;
-      top: 60%;
-      right: 10%;
+      top: 40%;
+      right: 5%;
       white-space: nowrap;
       color: #624b09; }
+      .blogSubmit_RightBox .blog_Rank_ContentBox_Desc p {
+        font-size: 2.5vw; }
   .blogSubmit_RightBox_TitleContainer {
     position: relative;
     z-index: 1;
@@ -1253,25 +1298,19 @@ body {
     form .common_btn_first {
       margin: 50px 0; }
   .flower1 {
-    width: 20%;
-    position: absolute;
-    left: 10%;
-    bottom: 0; }
+    display: none; }
   .flower2 {
-    width: 5%;
-    position: absolute;
-    right: 10%;
-    bottom: 0; }
+    display: none; }
   .flower3 {
-    width: 5%;
-    position: absolute;
-    right: 25%;
-    bottom: 0; }
+    display: none; }
   .flower4 {
-    width: 5%;
-    position: absolute;
-    right: 18%;
-    bottom: -1%; }
+    display: none; }
+  .blogSubmit_grass1 {
+    display: none; }
+  .blogSubmit_grass2 {
+    display: none; }
+  .blogSubmit_grass3 {
+    display: none; }
   footer {
     position: relative;
     z-index: 1; }
@@ -1290,7 +1329,7 @@ body {
           font-size: 1vw; } }
 
 @media all and (min-width: 768px) {
-  .blog_Heading, .blog_Subheading, .blogIn_Headingbox .blog_Heading, .blogSubmit_Share .wrapper .blogSubmit_Headingbox .blog_Heading {
+  .blog_Heading, .blog_Subheading, .blogIn_Headingbox .blog_Heading {
     color: #5e4909;
     text-align: center;
     line-height: 1.5;
@@ -1311,20 +1350,22 @@ body {
   .blog_Rank {
     display: block;
     padding: 100px 0 25px; }
-    .blog_Rank .blog_Heading {
-      position: relative; }
-      .blog_Rank .blog_Heading .num1 {
-        position: absolute;
-        transform: translate(-200%, -90%);
-        width: 60px; }
-      .blog_Rank .blog_Heading .num2 {
-        position: absolute;
-        transform: translate(-800%, 20%);
-        width: 30px; }
-      .blog_Rank .blog_Heading .num3 {
-        position: absolute;
-        transform: translate(0%, 30%);
-        width: 50px; }
+    .blog_Rank .blog_Heading_pic {
+      position: relative;
+      padding: 20px 0;
+      font-weight: bold;
+      background-image: url(../images/homepage/headerBac.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 40%;
+      margin-bottom: 20px; }
+      .blog_Rank .blog_Heading_pic .blog_Heading {
+        margin-top: -20px;
+        font-size: 30px;
+        color: #6abee7; }
+    .blog_Rank .blog_Subheading {
+      margin: -50px 0 50px;
+      color: #32a8e2; }
   .dg-container {
     width: 100%;
     max-width: 1200px;
@@ -1749,6 +1790,20 @@ body {
       top: -40px; }
     100% {
       top: 0px; } }
+    .blog_Forum_wrapper .blog_Heading_pic {
+      position: relative;
+      font-weight: bold;
+      background-image: url(../images/homepage/headerBac.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 40%; }
+      .blog_Forum_wrapper .blog_Heading_pic .blog_Heading {
+        margin-bottom: -50px;
+        font-size: 30px;
+        color: #6abee7; }
+    .blog_Forum_wrapper .blog_Subheading {
+      margin-top: 60px;
+      color: #32a8e2; }
   .umbrellaApple img {
     width: 50px;
     position: absolute;
@@ -2041,36 +2096,39 @@ body {
       right: 100%;
       opacity: 0;
       transform: scale(0.1); } }
-  .blogSubmit_bgc {
-    background: #f2f848;
-    background: linear-gradient(180deg, #f0f56c 1%, #e9fa7a 63%, rgba(122, 230, 69, 0.986432) 82%, #42f163 100%); }
   .blogSubmit_Share {
-    position: relative; }
+    position: relative;
+    margin-top: 100px; }
+    .blogSubmit_Share .blogSubmit_Headingbox {
+      display: none; }
+    .blogSubmit_Share .blogSubmit_Share_cloud1 {
+      width: 200px;
+      position: absolute;
+      top: -10%;
+      left: 20%; }
+    .blogSubmit_Share .blogSubmit_Share_cloud2 {
+      width: 200px;
+      position: absolute;
+      top: 5%;
+      right: 10%; }
     .blogSubmit_Share .wrapper {
       position: relative; }
       .blogSubmit_Share .wrapper .blogSubmit_board {
+        position: relative;
         margin: 0 auto; }
         .blogSubmit_Share .wrapper .blogSubmit_board img {
           width: 100%;
-          max-width: 1200px;
-          position: relative;
-          bottom: 0;
           z-index: 1; }
-      .blogSubmit_Share .wrapper .blogSubmit_Headingbox .blog_Heading {
+      .blogSubmit_Share .wrapper #blogSubmit_form .blogSubmit_Container {
+        width: 90%;
         position: absolute;
-        top: 0px;
-        left: 100px;
-        z-index: 2;
-        color: #fff; }
-      .blogSubmit_Share .wrapper #blogSubmit_form {
-        position: absolute;
-        left: 0;
+        left: 5%;
         right: 0;
-        top: 0px;
-        z-index: 2;
-        margin: atuo; }
+        top: 10%;
+        bottom: 0; }
   .blogSubmit_LeftBox {
-    padding: 10% 10%; }
+    padding: 14% 10% 10%;
+    text-align: center; }
     .blogSubmit_LeftBox p {
       padding: 10px 0;
       background-color: #b97b18;
@@ -2096,21 +2154,34 @@ body {
         bottom: -20%;
         right: 5%; }
   .blogSubmit_RightBox {
-    position: relative; }
-    .blogSubmit_RightBox .blogSubmit_RightBox_pin {
+    position: relative;
+    top: 2.5%;
+    padding: 6% 0 5%;
+    border: 5px solid #c7df5c;
+    background-color: #fefefe;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5); }
+    .blogSubmit_RightBox:before {
+      content: '';
       position: absolute;
-      top: 30px;
-      right: 50px; }
-      .blogSubmit_RightBox .blogSubmit_RightBox_pin img {
-        width: 50px; }
-    .blogSubmit_RightBox .blogSubmit_RightBox_message {
+      left: 0;
+      top: 0;
+      border-right: 50px solid transparent;
+      border-left: 50px solid #c7df5c;
+      border-bottom: 50px solid transparent; }
+    .blogSubmit_RightBox:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      border-top: 50px solid transparent;
+      border-right: 50px solid #c7df5c;
+      border-left: 50px solid transparent; }
+    .blogSubmit_RightBox .blogSubmit_RightBox_pin {
+      width: 50px;
       position: absolute;
       top: 0;
       left: 0;
-      z-index: -1;
-      transform: rotate(10deg); }
-      .blogSubmit_RightBox .blogSubmit_RightBox_message img {
-        max-width: 800px; }
+      transform: rotate(-110deg); }
     .blogSubmit_RightBox .blog_Rank_ContentBox {
       background-color: transparent;
       padding: 3% 5%; }
@@ -2120,86 +2191,94 @@ body {
         .blogSubmit_RightBox .blog_Rank_ContentBox .blog_Rank_ContentBox_Box .blog_Rank_ContentBox_Item {
           padding: 0; }
           .blogSubmit_RightBox .blog_Rank_ContentBox .blog_Rank_ContentBox_Box .blog_Rank_ContentBox_Item .blog_Rank_BottomBox_Title {
-            font-size: 15px; }
+            font-size: 1vw; }
     .blogSubmit_RightBox .blog_Rank_ContentBox_Desc {
       position: absolute;
-      top: 60%;
-      right: 15%;
+      top: 50%;
+      right: 10%;
       white-space: nowrap;
       color: #624b09; }
-  .blogSubmit_RightBox_TitleContainer {
-    width: 75%;
-    margin: 0 auto; }
-    .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitleName {
-      margin: 5% 0 3%;
-      text-align: center;
-      border-bottom: 1px solid transparent; }
-      .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitleName input {
-        width: 60%;
-        margin-top: 20px;
-        padding-left: 2%;
+      .blogSubmit_RightBox .blog_Rank_ContentBox_Desc p {
+        font-size: 1vw; }
+  .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitleName {
+    margin: 0% 0 3%;
+    text-align: center;
+    border-bottom: 1px solid transparent; }
+    .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitleName input {
+      width: 60%;
+      padding-left: 2%;
+      border: 1px solid grey;
+      background-color: #fefefe;
+      font-size: 1vw;
+      line-height: 2;
+      color: #624b09; }
+  .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic {
+    width: 100%; }
+    .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic .blogSubmit_RightBox_PicItem {
+      width: 20%;
+      margin: 0 5% 3%; }
+      .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic .blogSubmit_RightBox_PicItem select {
         border: 1px solid grey;
+        padding: 1%;
+        font-size: 1vw;
         background-color: #fefefe;
-        font-size: 18px;
-        line-height: 2;
         color: #624b09; }
-    .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic {
-      width: 100%; }
-      .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic .blogSubmit_RightBox_PicItem {
-        width: 20%;
-        margin: 0 5% 3%; }
-        .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic .blogSubmit_RightBox_PicItem select {
-          border: 1px solid grey;
-          padding: 2px;
-          font-size: 16px;
-          background-color: #fefefe;
-          color: #624b09; }
-    .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer {
-      text-align: center; }
-      .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer .blogSubmit_RightBox_ShareContent input {
-        width: 80%;
-        height: 10px;
-        margin: 2% 0;
-        padding: 2% 0 15% 1%;
-        border: 3px solid #009944;
-        font-size: 16px;
-        text-align: left;
-        color: #888; }
+  .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer {
+    text-align: center; }
+    .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer .blogSubmit_RightBox_ShareContent input {
+      padding: 2% 10% 10% 1%;
+      border: 1px solid #009944;
+      font-size: 1vw;
+      text-align: left;
+      color: #888; }
   form {
+    height: 100%;
     text-align: center; }
     form .common_btn_first {
-      max-width: 300px;
-      position: absolute;
-      bottom: -5%;
-      left: 10%;
-      transform: rotate(10deg);
-      animation: buttonscale 2s infinite alternate-reverse; }
+      margin: 2%;
+      font-size: 1vw; }
   @keyframes buttonscale {
     from {
       transform: rotate(20deg); }
     to {
       transform: rotate(5deg); } }
   .flower1 {
-    width: 200px;
+    width: 10%;
     position: absolute;
     left: 140px;
     bottom: -20px; }
   .flower2 {
-    width: 50px;
+    width: 3%;
     position: absolute;
     right: 100px;
     bottom: -10px; }
   .flower3 {
-    width: 50px;
+    width: 2%;
     position: absolute;
     right: 150px;
     bottom: -20px; }
   .flower4 {
-    width: 50px;
+    width: 3%;
     position: absolute;
     right: 170px;
     bottom: 0px;
     z-index: 1; }
+  .blogSubmit_grass1 {
+    width: 20%;
+    position: absolute;
+    left: 20%;
+    bottom: -10px; }
+  .blogSubmit_grass2 {
+    width: 20%;
+    position: absolute;
+    right: 13%;
+    bottom: -10px;
+    z-index: 1; }
+  .blogSubmit_grass3 {
+    width: 10%;
+    position: absolute;
+    right: 27%;
+    bottom: -10px; }
   .footer_wrapper {
     position: relative;
     text-align: center;
