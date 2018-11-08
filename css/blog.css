@@ -493,7 +493,7 @@ body {
 
 @media only screen and (max-width: 767px) {
   .blog_Heading, .blog_Subheading {
-    color: #5e4909;
+    color: #fefefe;
     text-align: center;
     line-height: 1.5;
     font-weight: bold; }
@@ -1121,7 +1121,7 @@ body {
         .blogIn_Msg_Containerc .blogIn_Msg_Block a.subButtonItem:hover {
           background-color: #487e0a; }
   .blogIn_Msg_SendBox2 {
-    margin: 0 3%;
+    margin: 0 3% 1%;
     background-color: #fefefe; }
   .blogIn_ButtonContainer {
     text-align: center; }
@@ -1140,7 +1140,7 @@ body {
     to {
       transform: scale(1); } }
   .umbrellaMandarin .umbrellaMandarin_active {
-    animation: umbrellaMandarin 10s linear forwards; }
+    animation: umbrellaMandarin 5s linear  backwards; }
   @keyframes umbrellaMandarin {
     0% {
       bottom: 0%;
@@ -1357,7 +1357,7 @@ body {
 
 @media all and (min-width: 768px) {
   .blog_Heading, .blog_Subheading, .blogIn_Headingbox .blog_Heading {
-    color: #5e4909;
+    color: #fefefe;
     text-align: center;
     line-height: 1.5;
     font-weight: bold; }

@@ -45,7 +45,7 @@ body {
     //共用
 
     %blog_title {
-        color: #5e4909;
+        color: #fefefe;
         text-align: center;
         line-height: 1.5;
         font-weight: bold;
@@ -1234,7 +1234,7 @@ body {
 
 
     .blogIn_Msg_SendBox2 {
-        margin: 0 3%;
+        margin: 0 3% 1%;
         background-color: #fefefe;
     }
 
@@ -1272,7 +1272,7 @@ body {
         }
 
         .umbrellaMandarin_active {
-            animation: umbrellaMandarin 10s linear forwards;
+            animation: umbrellaMandarin 5s linear  backwards;
         }
 
         @keyframes umbrellaMandarin {
@@ -1728,7 +1728,7 @@ body {
 
 
     %blog_title_desk {
-        color: $mainfontcolor;
+        color: #fefefe;
         // color: rgb(87, 80, 94);
         text-align: center;
         line-height: 1.5;
