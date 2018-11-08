@@ -422,7 +422,7 @@ x
 	}
 
 	.member_personalInfo_basicInfo_block{
-		width: 40%;
+		width: 60%;
 		border-radius: 50px;
 		border:5px solid #aaa;
 		margin:20px auto;
@@ -433,6 +433,10 @@ x
 		position: relative;
 		top: 50px;
 	}
+	.member_container{
+		width: 66%;
+		margin: auto;
+	}
 	.member_memberInfo_wrapper{
 		padding:20px 0; 
 		line-height: 20px;
@@ -440,7 +444,7 @@ x
 
 	//桌機版 變更密碼
 	.member_personalInfo_password_block{
-		width: 40%;
+		width: 60%;
 		border-radius: 50px;
 		border:5px solid #aaa;
 		margin:20px auto;
@@ -462,7 +466,7 @@ x
 	//桌機版訂單查詢
 	.member_orderSearch_wrpaper{
 		position: relative;
-		top: 80px;
+		top: 70px;
 	}
 	.member_orderSearch_block{
 		width: 60%;
