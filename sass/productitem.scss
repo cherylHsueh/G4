@@ -15,7 +15,7 @@ footer{
     position: relative;
 }
 .footer_block {
-    background-color: #dde4b7;
+    background-color: rgb(244, 214, 109);
 }
 h2{
     line-height: 50px;
@@ -33,7 +33,7 @@ section{
 }
 
 section div{
-    // @extend %boxsize;
+    box-sizing: border-box;
  }
 
  @keyframes cloudleft
@@ -91,6 +91,7 @@ section div{
     .pdInfo{
         color: #084;   
         text-align: justify;
+        line-height: 1.7;
     }
     h3{
         font-size: 30px;
@@ -101,7 +102,7 @@ section div{
 }
 .pdItem_buyBlock{
     text-align: center;
-    padding: 40px;
+    padding: 60px 50px 50px 50px;
     vertical-align: middle;
 }
 
@@ -123,9 +124,22 @@ section div{
 }
 
 @include rwd(mobile){
+    .pdItem_imgBlock{
+        padding: 10px;
+    }
+    .pdItem_buyBlock{
+        padding: 10px;
+    }
+    .pdItem_textBlock{
+        padding: 0 20px;
+        text-align: center;
+    }
     .pdItem{
        padding-top:200px;
        padding-bottom:100px;
+    }
+    .itemwrapper{
+        padding:20px; 
     }
 }
 
