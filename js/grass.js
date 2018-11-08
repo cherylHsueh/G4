@@ -24,7 +24,7 @@ Blade=function(x,y,w,h,c){
 
 Blade.prototype.draw=function(){
   ctx.fillStyle=this.c;
-  
+  // 開始路徑
   ctx.beginPath();
   ctx.moveTo(this.x - this.w/2, this.y); //left point
   ctx.lineTo(this.x + this.displacement*this.tightness, this.y - this.h); //top point

@@ -1,12 +1,12 @@
 function strToHex(strtwo){
 	strtwo=strtwo.replace("#","0x");
-	return(strtwo);
+	return(strthree);
 }
 
 var Color2 = net.brehaut.Color;
 
 // 抓左邊的草
-canvastwo  = document.getElementById("canvastwo");
+canvasleft  = document.getElementById("canvastwo");
 ctxl = canvastwo.getContext('2d');
 
 
@@ -37,27 +37,27 @@ Blade2.prototype.update=function(){
 }
 
 var osc2=0;
-var grassleft=new Array();
+var grassb=new Array();
 
 for(var i=0;i<9;i++)
-grassleft.push(new Blade2(185+i*30,300,40+Math.random()*10,60+Math.random()*40,"#009e52"));
+grassb.push(new Blade2(185+i*30,300,40+Math.random()*10,60+Math.random()*40,"#009e52"));
 
 for(var i=0;i<10;i++){
-grassleft.push(new Blade2(170+i*30,300,30+Math.random()*10,60+Math.random()*30,"yellowgreen"));
+  grassb.push(new Blade2(170+i*30,300,30+Math.random()*10,60+Math.random()*30,"yellowgreen"));
 }
 
 draw = function(){
   ctxl.fillStyle="#a4ddfa";
   ctxl.fillRect ( 0 , 0 , canvastwo.width, canvastwo.height );
   
-  for(i=0;i<grassleft.length;i++)
-    grassleft[i].draw();
+  for(i=0;i<grassb.length;i++)
+  grassb[i].draw();
 }
 
 update=function(){
     osc2++;
-    for(i=0;i<grassleft.length;i++)
-      grassleft[i].update();
+    for(i=0;i<grassb.length;i++)
+    grassb[i].update();
 }
 console.log('canvastwo');
 
