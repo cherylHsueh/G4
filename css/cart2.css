@@ -496,6 +496,10 @@ body {
     text-align: center; }
     .cart_shoppingProcess_control img {
       width: 5%; }
+    .cart_shoppingProcess_control .cart_shoppingProcess_arrow {
+      width: 5%;
+      height: 10%;
+      padding: 0 2%; }
   .cart_shoppingProcess_step {
     width: 80px;
     height: 80px;
@@ -605,29 +609,23 @@ body {
         text-align: left;
         padding: 5px 10px; }
       .cart_fillInData_control .cart_fillInData_content input {
-        width: 61%;
+        width: 40%;
         border-radius: 5px; }
       .cart_fillInData_control .cart_fillInData_content textarea {
         border-radius: 5px; }
       .cart_fillInData_control .cart_fillInData_content #paymentMethod {
-        width: 20%;
-        vertical-align: middle;
-        position: relative;
-        left: 3vh;
-        top: -2.5vh; }
-      .cart_fillInData_control .cart_fillInData_content .cart_fillInData_paymentMethod_comtrol {
-        width: 70%;
-        height: 2vh;
+        width: 20px;
         display: inline-block;
-        text-align: center;
-        vertical-align: middle;
-        line-height: 2vh;
-        margin: 0.5vh 1.5vh 0.5vh 1.5vh; }
+        vertical-align: middle; }
+      .cart_fillInData_control .cart_fillInData_content #paymentMethod2 {
+        width: 20px;
+        display: inline-block;
+        vertical-align: middle; }
+      .cart_fillInData_control .cart_fillInData_content .cart_fillInData_paymentMethod_comtrol {
+        clear: both;
+        width: 100%; }
       .cart_fillInData_control .cart_fillInData_content .cart_fillInData_paymentMethod {
-        width: 100%;
-        float: left;
-        text-align: left;
-        margin-left: 0%;
+        width: 40%;
         vertical-align: middle; }
       .cart_fillInData_control .cart_fillInData_content #cart_address {
         width: 90%; }
@@ -638,6 +636,15 @@ body {
         margin: 0 auto; }
       .cart_fillInData_control .cart_fillInData_content img {
         display: none; }
+      .cart_fillInData_control .cart_fillInData_content .cart_checked {
+        opacity: 0;
+        width: 7%;
+        display: block;
+        display: inline-block; }
+      .cart_fillInData_control .cart_fillInData_content p {
+        display: inline-block; }
+      .cart_fillInData_control .cart_fillInData_content :checked ~ label {
+        opacity: 1; }
   .cart_shoppingProcess_box {
     margin: 0 auto;
     width: 60%;
@@ -645,7 +652,8 @@ body {
     justify-content: center;
     justify-content: space-around; }
     .cart_shoppingProcess_box p {
-      padding: 7%;
+      width: 80%;
+      padding: 9%;
       white-space: nowrap;
       color: #6a3906;
       font-weight: bold; }
@@ -686,12 +694,15 @@ body {
     text-align: center; }
     .cart_shoppingProcess_control img {
       width: 3%; }
+    .cart_shoppingProcess_control .cart_shoppingProcess_arrow {
+      width: 30px;
+      height: 45px;
+      padding: 0 15px; }
   .cart_shoppingProcess_step {
     margin: 0 auto;
     width: 150px;
     height: 150px;
     display: inline-block;
-    border: 3px solid #7f4f21;
     border-radius: 50%;
     text-align: center;
     vertical-align: middle;
@@ -822,25 +833,19 @@ body {
       .cart_fillInData_control .cart_fillInData_content textarea {
         border-radius: 5px; }
       .cart_fillInData_control .cart_fillInData_content #paymentMethod {
-        width: 15px;
-        vertical-align: middle;
         position: relative;
-        top: -62px;
-        left: -110px; }
+        top: 7px; }
+      .cart_fillInData_control .cart_fillInData_content #paymentMethod2 {
+        position: relative;
+        top: 7px; }
       .cart_fillInData_control .cart_fillInData_content .cart_fillInData_paymentMethod_comtrol {
-        width: 500px;
-        height: 60px;
-        display: inline-block;
-        text-align: center;
-        vertical-align: middle;
-        line-height: 60px; }
+        clear: both; }
       .cart_fillInData_control .cart_fillInData_content .cart_fillInData_paymentMethod {
         font-size: 16px;
         color: #6a3906;
         width: 100px;
         font-weight: bold;
-        vertical-align: middle;
-        text-align: left; }
+        vertical-align: middle; }
       .cart_fillInData_control .cart_fillInData_content #cart_address {
         width: 400px; }
       .cart_fillInData_control .cart_fillInData_content #cart_remarks {
@@ -849,10 +854,17 @@ body {
         text-align: left;
         margin: 0 auto; }
       .cart_fillInData_control .cart_fillInData_content img {
-        width: 50px;
-        position: relative;
-        top: -62px;
-        left: -110px; }
+        width: 40px;
+        display: inline-block; }
+      .cart_fillInData_control .cart_fillInData_content .cart_checked {
+        opacity: 0;
+        width: 20px; }
+      .cart_fillInData_control .cart_fillInData_content p {
+        display: inline-block; }
+      .cart_fillInData_control .cart_fillInData_content #paymentMethod:checked ~ .cart_checked {
+        opacity: 1; }
+      .cart_fillInData_control .cart_fillInData_content #paymentMethod2:checked ~ .cart_checked {
+        opacity: 1; }
   .cart_shoppingProcess_box {
     max-width: 1200px;
     width: 100%;
@@ -862,7 +874,7 @@ body {
       font-size: 20px;
       font-weight: bold;
       display: inline-block;
-      width: 200px;
+      width: 214px;
       color: #6a3906;
       padding: 10px 0; }
   .cart_nextstepBox {
@@ -890,8 +902,16 @@ body {
       position: absolute;
       bottom: -1vh;
       z-index: -1; }
-  .cart_nextstepBox #nextButton {
-    margin: 0 10px 50px 10px; }
+  .cart_nextstepBox {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold; }
+    .cart_nextstepBox #nextButton {
+      margin: 0 10px 50px 10px;
+      border: 3px solid #6a3906; }
+    .cart_nextstepBox .common_btn_txt span {
+      font-weight: bold; }
   .footer_wrapper {
     position: relative;
     text-align: center;
