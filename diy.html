@@ -23,7 +23,7 @@
 
 </head>
 
-<body>
+<body onselectstart="return false">
 	<header>
         <input type="checkbox" name="" id="hb_control">
         <nav>
@@ -226,18 +226,21 @@
 					</div>
 
 					<div class="diy_pickFruit_rightBlock clearfix cl-md-8">
-						<div class="diy_pickFruit_leftBox cl-s-6 cl-md-5">
+						<div class="diy_pickFruit_leftBox cl-s-5 cl-md-5">
 							<div class="diy_pickFruit_wrapperBottleBox">
 								<div class="diy_pickFruit_bottleBox">
 									<div class="diy_pickFruit_bottle diy_pickFruit_bottle3" id="diy_pickFruit_bottle3"></div>
 									<div class="diy_pickFruit_bottle diy_pickFruit_bottle2" id="diy_pickFruit_bottle2"></div>
 									<div class="diy_pickFruit_bottle diy_pickFruit_bottle1" id="diy_pickFruit_bottle1"></div>
+									<div class="diy_pickFruit_cursor diy_pickFruit_cursor1" id="cursor1">1</div>
+									<div class="diy_pickFruit_cursor diy_pickFruit_cursor2" id="cursor2">2</div>
+
 									<!-- <img src="images/diy/emptyBottle.png" alt="空瓶"> -->
 								</div>
-								<img src="images/bottle.png" alt="空瓶">
+								<img src="images/bottle.png" alt="空瓶" >
 							</div>
 						</div>
-						<div id="chart" class="diy_pickFruit_rightBox cl-s-6 cl-md-7">
+						<div id="chart" class="diy_pickFruit_rightBox cl-s-7 cl-md-7">
 							<canvas id="myChart" height="300"></canvas>
 							<div class="diy_pickFruit_rightItem">
 								<p class="diy_pickFruit_rightItemTitle">

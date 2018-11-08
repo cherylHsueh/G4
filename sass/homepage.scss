@@ -91,16 +91,16 @@ body{
     .homepage_header_farmerPic{
         max-width: 80px;
         width: 9%;
-        left:50%;
+        left:48%;
         transform: translateX(-50%);
         animation: farmer .8s infinite both alternate;
 
     }
     .homepage_header_flatePic{
         position: absolute;
-        width: 20%;
-        bottom:11.5%;
-        right: 6.5%;
+        width: 11%;
+        bottom:16.5%;
+        right: 11%;
         animation: cloud-spin 10s linear infinite;
     }
     .homepage_header_makerPic{
@@ -138,7 +138,7 @@ body{
         .homepage_header_carPart2{
             left: 12%;
             width: 60%;
-            margin-top: -20px;
+            margin-top: -10%;
             position: absolute;
         }
     }
@@ -197,7 +197,9 @@ body{
     display: inline-block;
     line-height: 1em;
 }
-
+.homepage_animate{
+    overflow: hidden;
+}
 
 //第二屏
 .homepage_diy{
@@ -208,8 +210,11 @@ body{
     background-size: 110vw;
     background-position: top;
     overflow: hidden;
-    margin-top:-14%;
+    margin-top:-50%;
     animation: diyMargin 2s 3s backwards;
+    .homepage_diy_buttleBlock {
+        position: relative;
+    }
 }
 @keyframes diyMargin{
     0%{margin-top:0;}
@@ -218,14 +223,32 @@ body{
 .homepage_diy_arrowBox,.homepage_diy_fruitContent{
      display: none;
  }
+ .homepage_diy_arrowBox{
+    .homepage_diy_arrowPic{
+        animation: arrow backwards infinite reverse 2s;
+    }
+ }
  
+
  .homepage_diy .common_btn{
      position: absolute;
-     right: 2%;
+     left: 50%;
+     bottom:20%;
+     transform: translateX(-50%);
+
  }
-
-
- 
+// @keyframes arrow{
+//     0%{}
+//     100%{}
+// }
+@keyframes arrow{
+    50% {
+        transform: rotate(20deg);
+    }
+    0%,100% {
+        transform: rotate(-5deg);
+    }
+} 
 //第三屏
 .homepage_test{
     margin-top:-10px;
@@ -234,6 +257,7 @@ body{
     background-size: cover;
 }
 .homepage_test_questionContainer{
+    z-index: 4;
     .homepage_test_questionBlock{
         line-height: 1.5;
         h3{
@@ -246,6 +270,26 @@ body{
         color: $mainfontcolor ;
         opacity: .7;
         line-height: 1.3;
+        h4{
+            cursor: pointer;
+            position: relative;
+            z-index: 4;
+            &:after{
+                content: '';
+                display: block;
+                position: absolute;
+                top: 68%;
+                width: 0;
+                transition: .8s;
+                box-shadow: 0px 0px 0px 0px #fbff27;
+            }
+            &:hover:after{
+                transition: .8s;
+                width: 77%;
+                box-shadow: 0px 0px 15px 6px #fbff27;
+            }
+        }
+        
     }
 }
 
@@ -291,6 +335,7 @@ body{
     background-image: url('../images/cloudBg\(02\).png'),linear-gradient(180deg,$sky 0%,$sky 95%,#fff 95% ,#fff 100%);
     background-size: cover;
     background-position: bottom center;
+    margin-top: -1px;
     height:100vh;
     position: inherit;
 }
@@ -346,12 +391,10 @@ body{
 .homepage_blog_btnBlock{
     opacity: 0;
     transition: 2s 3s;
-
-    position: absolute;
+    margin: 4% 1%;
+    float: right;
     display: flex;
     flex-direction: column;
-    bottom:10%;
-    right:3%;
     a.common_btn{
         margin-bottom:10px;
     }   
@@ -401,16 +444,36 @@ body{
         }
     }
 }
+.homepage_blog_titleBox{
+    position: relative;
+    h3{
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+    }
+   .homepage_blog_fruits{
+       float: right;
+       padding:1% 0;
+   }
+}
+
 
 //footer
 .footer_wrapper .footer_block {
     background-color: none;
 }
+.footer_wrapper {
+    position: absolute;
+    bottom:0;
+    left:50%;
+    transform: translateX(-50%);
+}
 .homepage_about {
-    background-size: 300vw;
+    margin-top: -1px;
+    // background-size: 300vw;
     background-repeat: no-repeat;
     background-position: top center;
-    background-image: url('../images/homepage/cloudBg2.png'),linear-gradient(180deg,#fff 0% ,#fff 3%,$sky 3%,$sky 100%);
+    background-image: url('../images/homepage/cloudBgDown.png'),linear-gradient(180deg,#fff 0% ,#fff 3%,$sky 3%,$sky 100%);
     height: 103vh;
     overflow: hidden;
 }
@@ -519,6 +582,9 @@ body{
                 left: 9px;
                 right: 4px;
                 }
+            .homepage_header_carPart2{
+                margin-top: -20%;
+            }
             .homepage_header_carPic{
                 animation: car .5s alternate infinite both;
                 @keyframes car {
@@ -576,9 +642,6 @@ body{
     //     padding-top: 100px;
 
     // }
-    .homepage_diy{
-        margin-top: -50%;
-    }
     .homepage_diy_container{
         margin-top: 8%;
         display: flex;
@@ -670,9 +733,9 @@ body{
         margin-top:5%;
     }
     .homepage_blog_titleBox{
-        padding:7px 25px 1px;
+        padding:0px 25px;
         h3{
-            margin:7% 0;
+            // margin:7% 0;
         }
         .homepage_blog_fruit{
             padding-left: 5px;
@@ -1062,7 +1125,7 @@ body{
                     color: #fff;
                     font-size: 14px;
                     font-weight: bold;
-                    line-height: 20px;
+                    line-height: 18px;
                     padding: 10px 10px;
                     border: 2px solid #fff;
                     border-radius: 10px;
@@ -1143,7 +1206,7 @@ body{
                     height: 60%;
                     font-size: 0;
                     box-sizing: border-box;
-                    margin-top: -30px;
+                    margin-top: -40px;
 
                     img {
                         width: 30%;
@@ -1212,10 +1275,11 @@ body{
                     background-color: #f9d658;
                     border-radius: 10px;
                     text-align: center;
-                    position: absolute;
-                    right: 35%;
-                    left: 35%;
-                    bottom: 30%;
+                    // position: absolute;
+                    // right: 35%;
+                    // left: 35%;
+                    // bottom: 30%;
+                    margin-top: 10px;
 
                     #a4 {
                         cursor: pointer;
@@ -1231,14 +1295,12 @@ body{
                     right: 0%;
 
                     a {
-                        font-weight: 1vw;
                         vertical-align: middle;
                         text-align: center;
                         font-weight: bold;
-                        font-size: 16px;
+                        font-size: 12px;
                         color: #FFF;
                         // text-decoration:underline;
-                        text-align: center;
                     }
 
                 }
@@ -1258,7 +1320,7 @@ body{
                     padding: 10px 20px;
                     border: 3px solid #fff;
                     border-radius: 10px;
-                    margin-top: 30px;
+                    margin: 10px auto;
                 }
 
                 img {
@@ -1291,8 +1353,8 @@ body{
             top:0;
         }
         .homepage_test_animatePic1{
-            width: 20%;
-            top:40%;
+            width: 18%;
+            top:50%;
             left:5%;
 
         }
@@ -1303,26 +1365,26 @@ body{
 
         }
         .homepage_test_animatePic3{
-            width: 15%;
-            top:10%;
-            left:20%;
+            width: 25%;
+            top:20%;
+            left:2%;
 
         }
         .homepage_test_animatePic4{
             width: 17%;
-            top:70%;
-            left:20%;
+            top:65%;
+            left:-2%;
 
         }
         .homepage_test_animatePic5{
             width: 12%;
-            top:46%;
+            top:56%;
             left:70%;
         }
         .homepage_test_animatePic6{
             width: 20%;
-            top:0%;
-            left:70%;
+            top:23%;
+            left:90%;
 
         }
         .homepage_test_animatePic7{
@@ -1333,7 +1395,7 @@ body{
         }
         .homepage_test_animatePic8{
             width: 10%;
-            top:50%;
+            top:40%;
             left:2%;
 
         }
@@ -1362,7 +1424,7 @@ body{
             font-size: 1.7em;
             padding:18px;
             .homepage_header_textWrapper{
-                top:-3px;
+                top:-8px;
                 left:0px;
             }
             
@@ -1435,8 +1497,8 @@ body{
     .homepage_diy_labaBox{
         position: absolute;
         left: 0;
-        bottom:0;
-        margin-bottom: 10px;
+        bottom:0%;
+        // margin-bottom: 10px;
         display: flex;
         align-items: flex-end;
 
@@ -1455,8 +1517,8 @@ body{
         margin: auto;
     }
     .homepage_diy .common_btn{
-        right: 7%;
-        bottom:47%;
+        // right: 7%;
+        // bottom:47%;
     }
 //第二屏動畫
     .homepage_diy_Box-active{
@@ -1597,7 +1659,7 @@ body{
             left: 4.8%;
             background-color: #FFFFF0;
             border:10px solid  #4d1f03;
-            z-index: 1;
+            // z-index: 1;
             padding:40px;
             .homepage_test_questionBlock{
                 h3{
@@ -1618,15 +1680,14 @@ body{
     
     //平板第四屏
     .homepage_blog{
-        height: 94vh;
+        height: 90vh;
         .homepage_title{
             padding-top:30px;
         }
     } 
     .homepage_blog_titleBox{
-        padding:12px 25px 2px;
+        padding:0 25px 0;
         h3{
-            margin:7% 5%;
             font-size: 2.5em;
         }
         .homepage_blog_fruit{
@@ -2215,8 +2276,8 @@ body{
 @include rwd(desktop){
     .homepage_title{
         width: 17%;
+        max-width: 310px;
     }    
-
     .homepage_header_fixedBg{
         .homepage_header_carBox{
             top: 310px;
@@ -2264,10 +2325,73 @@ body{
             }
         }
     }    
-//平板橫第二屏
-    .homepage_diy .homepage_title{
-        padding-top:320px;
+
+//動畫
+    .homepage_animate{
+        position: relative;
+        .homepage_test_animatePic{
+            position: absolute;
+            z-index: 0;
+            top:0;
+        }
+        .homepage_test_animatePic1{
+            width: 18%;
+            top:50%;
+            left:5%;
+            display: none;
+
+        }
+        .homepage_test_animatePic2{
+            width: 30%;
+            top:48%;
+            left:110%;
+
+        }
+        .homepage_test_animatePic3{
+            width: 20%;
+            top:13%;
+            left:-10%;
+
+        }
+        .homepage_test_animatePic4{
+            width: 17%;
+            top:60%;
+            left:-2%;
+
+        }
+        .homepage_test_animatePic5{
+            width: 12%;
+            top:70%;
+            left:70%;
+        }
+        .homepage_test_animatePic6{
+            width: 15%;
+            top:23%;
+            left:90%;
+
+        }
+        .homepage_test_animatePic7{
+            width: 10%;
+            top:26%;
+            left:70%;
+            display: none;
+        }
+        .homepage_test_animatePic8{
+            width: 10%;
+            top:45%;
+            left:2%;
+
+        }
     }
+
+//平板橫第二屏
+    .homepage_diy {
+        margin-top: -14%;
+        .homepage_title{
+            padding-top:320px;
+        }
+    }
+    
     .homepage_diy_container{
         padding:0 40px;
         flex-direction: row;
@@ -2281,6 +2405,11 @@ body{
             margin:auto;
             line-height: 36px;
             text-align: center;
+            span{
+                font-size: 3em;
+                color: #f53f2c;
+                font-weight: 900;
+            }
         }
     }
     .homepage_diy_fruitBlock {
@@ -2296,15 +2425,15 @@ body{
                 max-width: 80px;
             }
             .homepage_diy_grapePic{
-                margin-top:30%;
-                margin-left:74%;
+                margin-top: 38%;
+                margin-left: 70%;
             }
             .homepage_diy_cantaloupePic{
-                margin-top:10%;
-                margin-left:35%;
+                margin-top:-10%;
+                margin-left:28%;
             }
             .homepage_diy_tomatoPic{
-                margin-top:-4%;
+                margin-top:-25%;
                 margin-left:44%;
             }
             .homepage_diy_guavaPic{
@@ -2315,8 +2444,8 @@ body{
             }
             .homepage_diy_pineapplePic{
                 position: absolute;
-                top:50%;
-                width: 9%;
+                top:46%;
+                width: 7%;
                 left:37%;
 
             }
@@ -2333,8 +2462,8 @@ body{
                 margin-left:40%;
             }
             .homepage_diy_orangePic{
-                margin-top:-10%;
-                margin-left:23%;
+                margin-top: -28%;
+                margin-left: 33%;
             }
         }
         
@@ -2356,21 +2485,23 @@ body{
     }
     .homepage_diy_labaBox{
         .homepage_diy_labaPic{
-        width: 90px;
+        width: 80px;
         }
     }
     .homepage_diy .common_btn{
-        right: .5%;
-        bottom:23%;
+        // right: .5%;
+        // bottom:23%;
     }
 //平板橫第三屏
     .homepage_test_Container{
         height: 65vh;
+        padding-top:0;
     }
     .homepage_test{
+        background-size: 100vw;
         height: 100%;
         .homepage_title{
-            padding-top:150px;
+            padding-top:400px;
         }
     }
     
@@ -2378,13 +2509,13 @@ body{
     .homepage_blog{
         height: 100%;
         .homepage_title{
-            padding-top:10px;
+            padding-top:250px;
         }
     }
     .homepage_blog_container{
         max-width:1400px;
         margin:auto;
-        padding:0px 20px 30px;
+        padding:20px 20px 30px;
     } 
     .homepage_blog_papperBlock{
         background-image: url('../images/homepage/papper1.png');
@@ -2393,6 +2524,7 @@ body{
         background-repeat: no-repeat;
         max-width: 1200px;
         margin-left:3.3333%;
+        margin-top:-6%;
         padding:2% 2% 5%;
         width: 66.6666%;
 
@@ -2405,8 +2537,9 @@ body{
         .homepage_blog_papperBox{
             background-color: transparent;
             box-sizing:border-box;
-            margin: 6% auto 1%;
-            width: 81%;
+            margin: 6% 0 1%;
+            width: 90%;
+            position: relative;
         }
     }
     .homepage_blog_platBlock{
@@ -2436,65 +2569,44 @@ body{
         bottom:20%;
         width: 18%;
     }
-    .homepage_blog_spotlightBox{
-        // position: absolute;
-        display: none;
-        left: 0;
-        // top:-100%;
-        right: 0;
-        margin:auto;
-        z-index: -1;
-        .homepage_blog_spotlight1{
-            // display:none;
-            perspective-origin: top;
-            transform: rotate(10deg);
-            opacity: 1;
-        }
-        .homepage_blog_spotlight2{
-            // display: none;
-            position: absolute;
-        }
-        .homepage_blog_spotlight3{
-            // display:none;
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 1;
-            // top:-90%;
-    }
-        .homepage_blog_spotlight-active{
-            opacity: 1;
-        }
-
-    }
     .homepage_blog_titleAndPic{
         box-sizing: border-box;
-        padding:0 20px;
-        .homepage_blog_titleBox h3{
-            font-size: 26px;
-            // margin:10% 13%;
-            position: relative;
+        padding:0 0 0 20px;
+        .homepage_blog_titleBox{
+            border-radius: 10px 10px 0 0;
+            background-color: #f9d658;
+            padding: 0 8px 0;
+            h3{
+                font-size: 26px;
+                // margin:10% 13%;
+                // position: relative;
+                color:$mainfontcolor;
+                white-space: nowrap;
+                // margin: 5% 5%;
+            }
         }
         .homepage_blog_fruits{
             margin:2% 0;
-        }
-        .homepage_blog_title{
-
-            h3{
-               margin: 10% 5%;
+            div{
+                padding:8px 9px;
+                background-color: #fff;
+                border-radius: 50%;
+                width: 31%;
+                margin-left:2.3333%;
             }
         }
-        
         .homepage_blog_picBox{
             padding:0;
         }
     }
     
     .homepage_blog_btnBlock{
+        position: absolute;
         display: flex;
-        flex-direction: row;
-        right:15%;
-        bottom:0;
+        bottom:-24%;
+        left:50%;
+        transform: translateX(-50%);
+        flex-direction:row;
         .common_btn{
             margin-right:20px;
         }   
@@ -2502,13 +2614,31 @@ body{
     .homepage_blog_contentAndMessage{
         display: block;
         box-sizing: border-box;
+        background-color: hsla(20,100%,100%,0.9);
+        height: 100%;
+        padding:5px 14px;
+        right: 0;
+        position: absolute;
         // position: absolute;
         // right: 0;
         // top:50%;
         // transform: translateY(-50%);
+        font-size: 0;
+            height: 100%;
+            &:before{
+                content: '';
+                display: inline-block;
+                vertical-align: middle;
+                width: 0;
+                height: 100%;
+            }
+        .homepage_blog_contentBlock{
+                display: inline-block;
+                vertical-align: middle;
+        }
         .homepage_blog_authorPic{
             display: inline-block;
-            width: 24%;
+            width: 18%;
             img{
                 border-radius: 50%;
             }
@@ -2520,13 +2650,31 @@ body{
         h4{
             color:#555;
             line-height: 1.4;
-            padding:10px 0;
+            padding:10px 20px 3px;
+            font-size: 16px;
+        }
+        .homepage_blog_contentBox{
+            &>p{
+                padding:2px 20px 0px;
+                font-size: 12px;
+            }
+            .homepage_blog_author {
+                position: relative;
+                p{
+                    position: absolute;
+                    top:50%;
+                    transform: translateY(-50%);
+                    left:20%;
+                }
+            }
+            
         }
         .homepage_blog_messageBox{
-            margin:15px 0;
+            margin:1% 0;
             position: relative;
             .homepage_blog_messageAuthor{
                 float: left;
+                width: 14%;
                 img{
                     border-radius: 50%;
                 }
@@ -2546,16 +2694,17 @@ body{
                 display: inline-block;
                 vertical-align: middle;
                 font-size: 14px;
-                padding-left:10px;
+                // padding-left:10px;
             }
         }
     }
 //關於果然桌機版
     .homepage_about {
         text-align: center;
-        height: 120vh;
+        height: 124vh;
+        background-size: 100vw;
         .homepage_title{
-            padding-top: 160px;
+            padding-top: 380px;
         }
         .homepage_about_underGround {
             #homepage_about_ground {
@@ -2799,8 +2948,8 @@ body{
     #homepage_about_cloud01 {
         width: 10%;
         position: absolute;
-        left: 10%;
-        top: 20%;
+        left: 18%;
+        top: 30%;
     }
 
     #homepage_about_cloud02 {
@@ -2814,7 +2963,7 @@ body{
         width: 15%;
         position: absolute;
         left: -5%;
-        top: 35%;
+        top: 45%;
     }
 
     #homepage_about_cloud04 {
@@ -2838,8 +2987,8 @@ body{
         width: 65%;
         max-width: 800px;
         height: 38vh;
-        margin: 0 auto;
-        // position: absolute;
+        margin: -2% auto 0;
+        position:static;
         // left: 30%;
         // right: 30%;
         // top: 30%;
@@ -3113,6 +3262,10 @@ body{
 //桌機第一屏
     .homepage_header_fixedBg .homepage_header_container .homepage_header_carBox{
         margin-top: 3%;
+        left:51%;
+        .homepage_header_carPart2{
+            margin-top: -12%;
+        }
     }
     @keyframes  customer{
         0%{left:-110px}
@@ -3123,10 +3276,11 @@ body{
         100%{top:-140px;}
     }
 //桌機第二屏
+
     .homepage_diy_fruitBlock {
         .homepage_diy_Box{
             background-size: 60%;
-            padding:40px;
+            // padding:40px;
             // margin-top: -54px;
             .homepage_diy_fruitPic{
                 width: 30%;
@@ -3149,6 +3303,7 @@ body{
             }
             .homepage_diy_pineapplePic{
                 top:44%;
+                width: 9%;
 
             }
             .homepage_diy_watermelonPic{
@@ -3175,6 +3330,13 @@ body{
     .homepage_diy .common_btn{
         right: 4%;
     }
+    .homepage_diy_container {
+        margin-top: -2%;
+    }
+    .homepage_diy_labaBox{
+        bottom:4%;
+        left:1%;
+    }
 //桌機第三屏
     .homepage_test_shipContainer{
         padding:120px 0 0;
@@ -3183,25 +3345,68 @@ body{
         .homepage_test_shipBlock{
             width: 1500px;
         }
+        
         .homepage_test_questionContainer{
             top: 14%;
             left: 6.1%;
+            .homepage_test_answerBlock h4{
+                padding: 0px 16px 0 42px;
+            }
+            .homepage_test_questionBlock h3{
+                padding: 25px 30px 0 87px;
+            }
+        }
+    }
 
-        }
-    }
-    .homepage_test{
-        .homepage_title{
-            padding-top:90px;
-        }
-    }
- 
     //桌機第四屏
     .homepage_blog_container{
         max-width:1600px;
-    }
-   .homepage_blog{
-        .homepage_title{
-            padding-top:250px;
+        padding-top:0;
+        margin-top:-4%;
+        .homepage_blog_papperBlock{
+            margin-top:-2%;
         }
     }
+    .homepage_blog_titleAndPic{
+        .homepage_blog_titleBox{
+            h3{
+                font-size: 30px;
+                margin:0 5%;
+            }
+        }
+    }
+    .homepage_blog_contentAndMessage{
+        padding:5px 25px;
+        .homepage_blog_contentBlock{
+            .homepage_blog_contentBox{
+                
+                &>p{
+                    padding: 0px 0px 2px 22px;
+                    font-size: 12px;
+        
+                }
+            }
+            .homepage_blog_content{
+                padding: 10px 0px 13px 50px;
+                font-size: 20px;
+                &~p{
+                        padding: 0px 0px 22px 52px;
+                }
+            }
+        }
+    }
+    .homepage_blog_btnBlock{
+        bottom:-18%;
+    }
+    .homepage_about {
+        height: 133vh;
+        .homepage_title{
+            padding-top: 40vh;
+        }
+        .homepage_about_underGround #homepage_about_mountain03 {
+            width: 91%;
+            left: 15%;
+        }
+    }
+    
 }

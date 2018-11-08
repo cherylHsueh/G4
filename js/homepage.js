@@ -14,8 +14,8 @@ function doFirst() {
 //果汁DIY
 	var sceneDiy =new ScrollMagic.Scene({
 		triggerElement:'#homepageDiy',
-		duration: 200,    
-		offset:400,
+		// duration: 200,    
+		offset:200,
 	})
 	.on('enter',function(){
 		document.getElementById('lightRotation').className += " homepage_diy_Box-active";
@@ -73,31 +73,199 @@ function doFirst() {
 			var ship = TweenMax.to('#homepageTestShip',6,{
 				x:-windowWidth-50,
 			});
+			var cloud1 = TweenMax.to('.homepage_test_animatePic1',3,{x:60});
+			var cloud2 = TweenMax.to('.homepage_test_animatePic2',6,{x:-50});
+			var cloud3 = TweenMax.to('.homepage_test_animatePic3',5,{
+				x:160});
+			var cloud4 = TweenMax.to('.homepage_test_animatePic4',8,{
+				x:10
+			});
+			var fruit5 = TweenMax.to('.homepage_test_animatePic5',4.5,{y:-270});
+			var fruit6 = TweenMax.to('.homepage_test_animatePic6',5.5,{
+				rotation:"20deg",
+				bezier:{
+					values:[{
+						x:-100,
+						y:-90
+					},{
+						x:-140,
+						y:-120
+					},{
+						x:-250,
+						y:-280
+					}],
+					autoRotate:false
+				},
+				
+				
+			});
+			var fruit8 = TweenMax.to('.homepage_test_animatePic8',5,{
+				rotation:"30deg",
+				bezier:{
+					values:[{
+						x:220,
+						y:100
+					},{
+						x:300,
+						y:290
+					}],
+					autoRotate:false
+				},
+			});
 		}else if(windowWidth>=1024 && windowWidth<1440){
 			var ship = TweenMax.to('#homepageTestShip',6,{
 				x:-windowWidth*3/4,
 			});
+			var cloud1 = TweenMax.to('.homepage_test_animatePic1',3,{x:60});
+			var cloud2 = TweenMax.to('.homepage_test_animatePic2',4,{x:-150});
+			var cloud3 = TweenMax.to('.homepage_test_animatePic3',5,{
+				x:160});
+			var cloud4 = TweenMax.to('.homepage_test_animatePic4',8,{
+				x:200
+			});
+			var fruit5 = TweenMax.to('.homepage_test_animatePic5',4.5,{y:-370});
+			var fruit6 = TweenMax.to('.homepage_test_animatePic6',5.5,{
+				rotation:"20deg",
+				bezier:{
+					values:[{
+						x:-100,
+						y:-90
+					},{
+						x:-140,
+						y:-120
+					},{
+						x:-250,
+						y:-380
+					}],
+					autoRotate:false
+				},
+				
+				
+			});
+			var fruit8 = TweenMax.to('.homepage_test_animatePic8',15,{
+				rotation:"30deg",
+				bezier:{
+					values:[{
+						x:220,
+						y:100
+					},{
+						x:650,
+						y:1050
+					}],
+					autoRotate:false
+				},
+			});
 		}else if(windowWidth>=1440){
-			var ship = TweenMax.to('#homepageTestShip',6,{
-				x:-windowWidth/2,
+			var cloud1 = TweenMax.to('.homepage_test_animatePic1',3,{x:260});
+			var cloud2 = TweenMax.to('.homepage_test_animatePic2',6,{x:-450});
+			var cloud3 = TweenMax.to('.homepage_test_animatePic3',5,{
+				x:160});
+			var cloud4 = TweenMax.to('.homepage_test_animatePic4',8,{
+				x:200
+			});
+			if(windowWidth>1440){
+				var fruit5 = TweenMax.to('.homepage_test_animatePic5',8.5,{
+					x:70,
+					y:-670
+				});
+				var ship = TweenMax.to('#homepageTestShip',6,{
+					x:-windowWidth/3-windowWidth*.1,
+				});
+				var fruit6 = TweenMax.to('.homepage_test_animatePic6',5.5,{
+					rotation:"20deg",
+					bezier:{
+						values:[{
+							x:-100,
+							y:-90
+						},{
+							x:-240,
+							y:-220
+						},{
+							x:-450,
+							y:-480
+						}],
+						autoRotate:false
+					},
+					
+					
+				});
+			}else{
+				var fruit5 = TweenMax.to('.homepage_test_animatePic5',4.5,{y:-370});
+				var ship = TweenMax.to('#homepageTestShip',6,{
+					x:-windowWidth/3-windowWidth*0.13,				
+				});
+				var fruit6 = TweenMax.to('.homepage_test_animatePic6',5.5,{
+					rotation:"20deg",
+					bezier:{
+						values:[{
+							x:-100,
+							y:-90
+						},{
+							x:-140,
+							y:-120
+						},{
+							x:-250,
+							y:-200
+						}],
+						autoRotate:false
+					},
+					
+					
+				});
+			}
+			
+			var fruit8 = TweenMax.to('.homepage_test_animatePic8',15,{
+				rotation:"30deg",
+				bezier:{
+					values:[{
+						x:220,
+						y:100
+					},{
+						x:650,
+						y:1550
+					}],
+					autoRotate:false
+				},
 			});
 		}
-		var sceneTest =new ScrollMagic.Scene({
+		var sceneShip =new ScrollMagic.Scene({
 			triggerElement:'#homepageTest',
 			duration: 200,    
 			reverse:false,
 			offset:150,
 		})
-		// .on('enter',function(){
-		// 	ship.style.left="10%";
-			
-		// })
 		.setTween(ship)
-		.addIndicators({
-		    name: 'test',
-		    colorStart: '#f20',
-		    colorEnd: '#000'
+		// .addIndicators({
+		//     name: 'ship',
+		//     colorStart: '#f20',
+		//     colorEnd: '#000'
+		// })
+		.addTo(controller);
+
+		var sceneTest =new ScrollMagic.Scene({
+			triggerElement:'#homepageTest',
+			// duration:"30%",    
+			offset:-230,
 		})
+		.setTween([cloud3,fruit6])
+		// .addIndicators({
+		//     name: 'test1',
+		//     colorStart: '#f20',
+		//     colorEnd: '#000'
+		// })
+		.addTo(controller);
+
+		var sceneTest2 =new ScrollMagic.Scene({
+			triggerElement:'#homepageTest',
+			// duration:"30%",    
+			offset:350,
+		})
+		.setTween([cloud1,cloud2,cloud4,fruit5,fruit8])
+		// .addIndicators({
+		//     name: 'test2',
+		//     colorStart: '#f20',
+		//     colorEnd: '#000'
+		// })
 		.addTo(controller);
 	}
 	
@@ -115,12 +283,25 @@ function doFirst() {
 	.on('enter',function(){
 		var blogPerson = document.querySelector('.homepage_blog_platBlock');
 		blogPerson.style.opacity="1";
-		var t1 = TweenMax.to('.homepage_blog_platBlock',3,{
-			scale:"1.5",
-		})
-		setTimeout(function(){
+
+		if(windowWidth>768){
 			var t1 = TweenMax.to('.homepage_blog_platBlock',3,{
+				scale:"1.5",
+				x:100,
+				y:-100,
+			})
+		}else{
+			var t1 = TweenMax.to('.homepage_blog_platBlock',3,{
+				scale:"1.5",
+			})
+		}
+		
+		setTimeout(function(){
+			var t1 = TweenMax.to('.homepage_blog_platBlock',2,{
 				scale:"1",
+				y:0,
+				x:0,
+
 			})
 			var blogButon = document.querySelector('.homepage_blog_btnBlock');
 			var blogPepper = document.querySelector('.homepage_blog_papperBlock');
@@ -131,12 +312,6 @@ function doFirst() {
 			blogPepper.style.bottom=0;
 			blogPerson.style.left=0;
 			blogPerson.style.bottom=0;
-			
-			
-
-			var t1 = TweenMax.set('.homepage_blog_platBlock',{
-				scale:"1",
-			})
 			
 		},3000);
 		setTimeout(function(){
@@ -310,7 +485,7 @@ function header_blog() {
 			}, duration, 'ease-out', function () {
 				$(this).remove() //结束后删除
 			});
-		}, 500);
+		}, 300);
 	}
 	snowflake();
 	//执行函数
