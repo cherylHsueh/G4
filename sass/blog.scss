@@ -1,6 +1,7 @@
 @import 'reset';
 @import 'global';
 @import 'nav';
+@import "footer";
 
 
 * {
@@ -373,7 +374,7 @@ body {
 
             }
 
-            }
+
 
             // .blog_Rank_BottomBox_Title {
             //     width: 100%;
@@ -1673,8 +1674,6 @@ body {
             }
         }
     }
-
-
 
 }
 
@@ -3575,7 +3574,7 @@ body {
         position: relative;
         text-align: center;
         margin: 0 auto;
-        overflow: hidden;
+        // overflow: hidden;
         z-index: 2;
 
         .footer_block {

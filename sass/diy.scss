@@ -1,6 +1,7 @@
 @import "reset";
 @import "global";
 @import "nav";
+@import "footer";
 
 * {
   // outline: 1px solid red;
@@ -202,10 +203,10 @@ body {
       cursor: pointer;
     }
 
-    #f1 {
-      width: 80%;
+    // #f1 {
+      // width: 80%;
       // max-width: 90px;
-    }
+    // }
   }
 
   @for $i from 1 through 9 {
@@ -608,10 +609,10 @@ body {
       cursor: pointer;
     }
 
-    #f1 {
-      width: 91%;
-      max-width: 90px;
-    }
+    // #f1 {
+    //   width: 91%;
+    //   max-width: 90px;
+    // }
   }
 
 
@@ -1062,10 +1063,10 @@ body {
       cursor: pointer;
     }
 
-    #f1 {
-      width: 91%;
-      max-width: 90px;
-    }
+    // #f1 {
+    //   width: 91%;
+    //   max-width: 90px;
+    // }
   }
 
   %fruitname {
