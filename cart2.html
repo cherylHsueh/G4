@@ -59,13 +59,13 @@
             <img src="images/cart/cart.png" alt="">
             <!-- <p>購物車清單</p> -->
         </div>
-        <img src="images/cart/right01.png" alt="">
+        <img class="cart_shoppingProcess_arrow" src="images/cart/right01.png" alt="">
         <div class="cart_shoppingProcess_step2">
             <span>STEP2</span>
             <img src="images/cart/note.png" alt="">
             <!-- <p>填寫寄送資料</p> -->
         </div>
-        <img src="images/cart/right01.png" alt="">
+        <img class="cart_shoppingProcess_arrow" src="images/cart/right01.png" alt="">
         <div class="cart_shoppingProcess_step">
             <span>STEP3</span>
             <img src="images/cart/pass.png" alt="">
@@ -78,7 +78,7 @@
         <p>完成訂單</p>
     </div>
     <div class="cart_fillInData_title_control">
-          <div class="cart_fillInData_title">
+        <div class="cart_fillInData_title">
             <h2>填寫寄送資料</h2>
         </div>
     </div>
@@ -95,14 +95,24 @@
             <div class="cart_fillInData_content">
                 <h4>付款方式</h4>
                 <div class="cart_fillInData_paymentMethod_comtrol">
-                    <p class="cart_fillInData_paymentMethod">1.信用卡付款</p>
-                    <img src="images/cart/credictcard.png" alt="">
-                    <input type="radio" name="paymentMethod" id="paymentMethod">
+                    <input type="radio" checked="checked" name="paymentMethod" id="paymentMethod">
+                    <label for="paymentMethod">
+                        <p class="cart_fillInData_paymentMethod">1.信用卡付款</p>
+                        <img src="images/cart/credictcard.png" alt="">
+                    </label>
+                    <img id="check_1" class="cart_checked" src="images/cart/checked.png" alt="">
+
+
                 </div>
                 <div class="cart_fillInData_paymentMethod_comtrol">
-                    <p class="cart_fillInData_paymentMethod">2.貨到付款</p>
-                    <img src="images/cart/noteBox.png" alt="">
-                    <input type="radio" name="paymentMethod" id="paymentMethod">
+                    <input type="radio" checked="checked" name="paymentMethod" id="paymentMethod2">
+                    <label for="paymentMethod2">
+                        <p class="cart_fillInData_paymentMethod">2.貨到付款</p>
+                        <img src="images/cart/noteBox.png" alt="">
+                    </label>
+                    <img id="check_2" class="cart_checked" src="images/cart/checked.png" alt="">
+
+
                 </div>
             </div>
             <div class="cart_fillInData_content">
@@ -115,8 +125,8 @@
             </div>
         </div>
     </div>
-    
-    
+
+
     <div class="cart_nextstepBox">
         <a id="nextButton" class="common_btn common_btn_first" href="cart.html">
             <span class="common_btn_txt">上一步</span>
@@ -144,8 +154,6 @@
             <div class="footer_block clearfix">
                 <div class="footer_rightBox">
                     <div class="footer_rightContent">
-                        <p class="desc">地址:桃園市中壢區中大路111號</p>
-                        <p class="desc">電話:(03)49111853</p>
                         <p class="copyright">Copyright © All Rights Reserved.</p>
                     </div>
                 </div>
@@ -153,7 +161,24 @@
         </div>
     </footer>
 
+    <script>
+        var paymentMethod = document.getElementById('paymentMethod');
+        var paymentMethod2 = document.getElementById('paymentMethod2');
+        var check_1 = document.getElementById('check_1');
+        var check_2 = document.getElementById('check_2');
 
+        paymentMethod.onclick = function () {
+            check_1.style.opacity = '1';
+            check_1.style.transition = '.5s';
+            check_2.style.opacity = '0';
+        }
+
+        paymentMethod2.onclick = function () {
+            check_1.style.opacity = '0';
+            check_2.style.opacity = '1';
+            check_2.style.transition = '.5s';
+        }
+    </script>
 </body>
 
 </html>
