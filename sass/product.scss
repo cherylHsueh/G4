@@ -17,7 +17,7 @@ input{
     cursor: pointer;
 }
 .footer_block {
-    background-color: #dde4b7;
+    background-color:rgb(244, 214, 109);
 }
 input{
     border:none;
@@ -93,14 +93,14 @@ section div{
 
 .pd{
     overflow: hidden;
-    padding-bottom: 300px;
+    padding-bottom: 100px;
     position: relative;
     background: $sky;
-    .bottom{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-    }
+    // .bottom{
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 0;
+    // }
     .wrapper{
         position: relative;
     }
@@ -150,12 +150,10 @@ section div{
 .pd_cate_item{
     padding: 20px;
     .item{
-        background-color: #fff;
-        padding: 20px 0;
-        // border: 4px #ccc dotted;
+        background-color:rgba(255,255,255,0.9);
+        padding: 20px 20px;
         border-radius: 20px;
         box-shadow: 2px 2px 2px 0px #ccc;
-        border: $mainfontcolor 2px solid;
     }
     h3{
         padding:14px;
@@ -208,11 +206,15 @@ footer{
     }
 
     .pd_cate_item{
-        padding: 5px;
+        padding: 8px;
     }
 
     .pd{
         padding-bottom: 50px;
+    }
+
+    .pd_cate_item .cl-s-6{
+        padding: 0 20px;
     }
 }
 
