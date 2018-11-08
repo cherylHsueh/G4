@@ -1,7 +1,7 @@
 @import "reset";
 @import "global";
 @import "nav";
-// @import "footer";
+@import "footer";
 
 // footer {
 //     position: fixed;
@@ -308,12 +308,20 @@ body {
 
     .cart_nextstepBox {
         width: 100%;
+        margin: 0 auto;
         text-align: center;
-
+        font-weight: bold;
         #nextButton {
-            margin: 0 1vh 1vh 1vh;
+            margin: 10px 10px 15px 10px;
+            border: 3px solid #6a3906;
         }
 
+        .common_btn_txt {
+            span {
+                font-weight: bold;
+            }
+
+        }
     }
 
 
@@ -691,7 +699,6 @@ body {
         margin: 0 auto;
         text-align: center;
         font-weight: bold;
-
         #nextButton {
             margin: 0 10px 50px 10px;
             border: 3px solid #6a3906;

@@ -281,12 +281,12 @@ body{
                 top: 68%;
                 width: 0;
                 transition: .8s;
-                box-shadow: 0px 0px 0px 0px #fbff27;
+                box-shadow: 0px 0px 0px 0px #fa5d42;
             }
             &:hover:after{
                 transition: .8s;
                 width: 77%;
-                box-shadow: 0px 0px 15px 6px #fbff27;
+                box-shadow: 0px 0px 15px 6px #fa5d42;
             }
         }
         
@@ -693,7 +693,7 @@ body{
         display: none;
     }
     .homepage_diy .common_btn{
-        position: static;
+        position: relative;
         margin: 0 auto 20px;
         display:block;
     }
@@ -2689,6 +2689,9 @@ body{
                     height: 100%;
                     display: inline-block;
                     vertical-align: middle;
+                }
+                p{
+                    color:#555;
                 }
             }
             p{
