@@ -80,6 +80,14 @@ body {
     }
   }
 
+  #cursor1{
+    display: none;
+  }
+
+  #cursor2{
+    display: none;
+  }
+
   //步驟
   .diy_pickFruit_stepBlock {
     text-align: center;
@@ -204,8 +212,8 @@ body {
     }
 
     // #f1 {
-      // width: 80%;
-      // max-width: 90px;
+    // width: 80%;
+    // max-width: 90px;
     // }
   }
 
@@ -305,8 +313,8 @@ body {
         width: 100%;
         height: 0;
         padding-bottom: 200%;
-        
-    }
+
+      }
     }
   }
 
@@ -878,7 +886,7 @@ body {
         width: 100%;
         // height: 0;
         // padding-bottom: 200%;
-    }
+      }
     }
   }
 
@@ -925,9 +933,19 @@ body {
     text-align: center;
     animation: nextButton 1s linear infinite alternate-reverse;
   }
+
   @keyframes nextButton {
-    from{transform: scale(.9)};
-    to{transform: sacle(1.2)};
+    from {
+      transform: scale(.9)
+    }
+
+    ;
+
+    to {
+      transform: sacle(1.2)
+    }
+
+    ;
   }
 
   .tree1 {
@@ -961,11 +979,12 @@ body {
     z-index: -2;
   }
 
-  footer{
+  footer {
     width: 100%;
     // position: absolute;
     bottom: 0;
   }
+
   .footer_wrapper {
     // width: 100%;
     // position: absolute;
@@ -1011,6 +1030,22 @@ body {
 
   }
 
+  //test
+
+  .diy_pickFruit_cursor {
+    position: absolute;
+    z-index: 10;
+    width: 25px;
+    height: 25px;
+    background-color: #593100;
+    border-radius: 50%;
+    display: none;
+    left: 106%;
+    transition: 1s;
+    color: #fff;
+    text-align: center;
+    line-height: 25px;
+  }
 
   //水果區 
 
@@ -1290,18 +1325,19 @@ body {
 
 
 
-//test
+// //test
 
-.diy_pickFruit_cursor{
-  position: absolute;
-  width: 25px;
-  height:25px;
-  background-color: #593100;
-  border-radius:50%;
-  display: none;
-  left:118%;
-  transition: 1s;
-  color:#fff;
-  text-align: center;
-  line-height: 25px;
-}
+// .diy_pickFruit_cursor{
+//   position: absolute;
+//   z-index: 10;
+//   width: 25px;
+//   height:25px;
+//   background-color: #593100;
+//   border-radius:50%;
+//   display: none;
+//   left:106%;
+//   transition: 1s;
+//   color:#fff;
+//   text-align: center;
+//   line-height: 25px;
+// }

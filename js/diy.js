@@ -155,29 +155,57 @@ function chart() {
             $('#diy_pickFruit_bottle1').css('background-color', 'rgba( ' + r + ',' + g + ' ,' + b + ', ' + a + ')');
             $('#diy_pickFruit_bottle1').css('height', '100%');
             $('.diy_pickFruit_cursor1').css({
-                'display':'none'});
+                'display': 'none'
+            });
             $('.diy_pickFruit_cursor2').css({
-                'display':'none'});
+                'display': 'none'
+            });
         } else if ($("#diy_pickFruit_bottle2").css('background-color') == "rgba(0, 0, 0, 0)") {
             $('#diy_pickFruit_bottle2').css('background-color', 'rgba( ' + r + ',' + g + ' ,' + b + ', ' + a + ')');
             $('#diy_pickFruit_bottle1').css('height', '50%');
             $('#diy_pickFruit_bottle2').css('height', '50%');
-            $('.diy_pickFruit_cursor1').css({
-                'display':'block',
-                'top':'calc(50% - 10px)'});
-            $('.diy_pickFruit_cursor2').css({
-                'display':'none'});
+
+            if ($(window).width() > 768) {
+                $('.diy_pickFruit_cursor1').css({
+                    'display': 'block',
+                    'top': 'calc(50% - 10px)'
+                });
+                $('.diy_pickFruit_cursor2').css({
+                    'display': 'none'
+                });
+            } else {
+                $('.diy_pickFruit_cursor1').css({
+                    'display': 'none'
+                });
+                $('.diy_pickFruit_cursor2').css({
+                    'display': 'none'
+                });
+            }
+
+
             // drag1();
         } else if ($("#diy_pickFruit_bottle3").css('background-color') == "rgba(0, 0, 0, 0)") {
             $('#diy_pickFruit_bottle3').css('background-color', 'rgba( ' + r + ',' + g + ' ,' + b + ', ' + a + ')');
             $('#diy_pickFruit_bottle3').css('height', '33.3333%');
             $('#diy_pickFruit_bottle1').css('height', '33.3333%');
             $('#diy_pickFruit_bottle2').css('height', '33.3333%');
-            $('.diy_pickFruit_cursor1').css({
-                'top':'calc(66.6666% - 10px)'});
-            $('.diy_pickFruit_cursor2').css({
-                'display':'block',
-                'top':'calc(33.3333% - 10px)'});
+
+            if ($(window).width() > 768) {
+                $('.diy_pickFruit_cursor1').css({
+                    'top': 'calc(66.6666% - 10px)'
+                });
+                $('.diy_pickFruit_cursor2').css({
+                    'display': 'block',
+                    'top': 'calc(33.3333% - 10px)'
+                });
+            } else {
+                $('.diy_pickFruit_cursor1').css({
+                    'display': 'none'
+                });
+                $('.diy_pickFruit_cursor2').css({
+                    'display': 'none'
+                });
+            }
         } else {
             swal({
                 type: 'error',
@@ -228,7 +256,7 @@ window.addEventListener('load', chart);
 
 //挑選水果
 $(document).ready(function () {
-    
+
     var _index = 0;
     $('.fruiticon').mousemove(function () {
         // alert($(this).parent().parent().attr('class'));
@@ -291,8 +319,9 @@ $(document).ready(function () {
             // $(this).after('<img class="highlightUnclick" src="images/hightlight.png" alt="已選到">');
             // alert('no');  
         } else {
-            bgc = '.diy_pickFruit_leftItem' + $(this).attr('id');
-            $(bgc).css('background-color', "rgb(233, 201, 165)");
+            _index = $(this).index();
+            // bgc = '.diy_pickFruit_leftItem' + $(this).attr('id');
+            // $(bgc).css('background-color', "rgb(233, 201, 165)");
             // $(bgc).css('background-color', "#bd6308");
             // $('.highlightUnclick').remove();
             // alert('no');
@@ -338,9 +367,11 @@ $(document).ready(function () {
         $('#chart').prepend('<canvas id="myChart" height="300"><canvas>');
         chartPre();
         $('#cursor1').css({
-            'display':'none'});
+            'display': 'none'
+        });
         $('#cursor2').css({
-            'display':'none'});
+            'display': 'none'
+        });
 
         function chartPre() {
             var ctx = document.getElementById('myChart');
@@ -482,13 +513,13 @@ $(document).ready(function () {
 
 
 //果汁比例
-window.addEventListener('load',function(){
-// function drag1(){
-        var cursor1 = document.getElementById('cursor1');
-        var cursor2 = document.getElementById('cursor2');
+window.addEventListener('load', function () {
+    // function drag1(){
+    var cursor1 = document.getElementById('cursor1');
+    var cursor2 = document.getElementById('cursor2');
 
-        cursor1.onmousedown = down;
-        cursor2.onmousedown = down;
+    cursor1.onmousedown = down;
+    cursor2.onmousedown = down;
 
     // function getMouseXY(e) {
     //     var x = 0, y = 0;
@@ -502,7 +533,7 @@ window.addEventListener('load',function(){
 
     //     return y;
     // };
-    function down(e){
+    function down(e) {
         dragging = true;
         if (e.pageY) {
             mouseY = e.pageY;
@@ -516,6 +547,7 @@ window.addEventListener('load',function(){
         //到瓶口的高度
         // console.log(mouseY);
         document.onmousemove = move;
+
         function move(e) {
             e = e || window.event;
             if (dragging) {
@@ -538,53 +570,53 @@ window.addEventListener('load',function(){
                 var bottle2 = document.getElementById('diy_pickFruit_bottle2');
                 var bottle1 = document.getElementById('diy_pickFruit_bottle1');
 
-                if(cursor2.style.display=='none'){
-                    if(y>=bottleHeight){
+                if (cursor2.style.display == 'none') {
+                    if (y >= bottleHeight) {
                         cursor.style.top = bottleHeight + 'px';
-                    }else if(y<=0){
-                        cursor.style.top = 0+ 'px';
-                    }else{
-                        cursor.style.top = y-10 + 'px';
-                    }
-                    bottle2.style.height=(y/bottleHeight)*100+"%";
-                    bottle1.style.height=100-(y/bottleHeight)*100+"%";
-                }else if(cursor==cursor1){
-                    if(y>=bottleHeight){
-                        cursor.style.top = bottleHeight + 'px';
-                    }else if(y<=cursor2.offsetTop){
-                        cursor.style.top = cursor2.offsetTop + 'px';
-                    }else{
-                        cursor.style.top = y-10 + 'px';
-                    }
-                    console.log(y);
-                    bottle1.style.height=(bottleHeight-y)/bottleHeight*100+"%";
-                    bottle2.style.height=100-(bottle3.clientHeight/bottleHeight)*100-(bottleHeight-y)/bottleHeight*100+"%";
-                }else{
-                    if(y>=cursor1.offsetTop){
-                        cursor.style.top = cursor1.offsetTop + 'px';
-                    }else if(y<=0){
+                    } else if (y <= 0) {
                         cursor.style.top = 0 + 'px';
-                    }else{
-                        cursor.style.top = y-10 + 'px';
+                    } else {
+                        cursor.style.top = y - 10 + 'px';
+                    }
+                    bottle2.style.height = (y / bottleHeight) * 100 + "%";
+                    bottle1.style.height = 100 - (y / bottleHeight) * 100 + "%";
+                } else if (cursor == cursor1) {
+                    if (y >= bottleHeight) {
+                        cursor.style.top = bottleHeight + 'px';
+                    } else if (y <= cursor2.offsetTop) {
+                        cursor.style.top = cursor2.offsetTop + 'px';
+                    } else {
+                        cursor.style.top = y - 10 + 'px';
                     }
                     console.log(y);
-                    bottle3.style.height=(y/bottleHeight)*100+"%";
-                    bottle2.style.height=100-(bottle1.clientHeight/bottleHeight)*100-(y/bottleHeight)*100+"%";
+                    bottle1.style.height = (bottleHeight - y) / bottleHeight * 100 + "%";
+                    bottle2.style.height = 100 - (bottle3.clientHeight / bottleHeight) * 100 - (bottleHeight - y) / bottleHeight * 100 + "%";
+                } else {
+                    if (y >= cursor1.offsetTop) {
+                        cursor.style.top = cursor1.offsetTop + 'px';
+                    } else if (y <= 0) {
+                        cursor.style.top = 0 + 'px';
+                    } else {
+                        cursor.style.top = y - 10 + 'px';
+                    }
+                    console.log(y);
+                    bottle3.style.height = (y / bottleHeight) * 100 + "%";
+                    bottle2.style.height = 100 - (bottle1.clientHeight / bottleHeight) * 100 - (y / bottleHeight) * 100 + "%";
                     console.log(bottle1.clientHeight);
-                    console.log(y/bottleHeight);
+                    console.log(y / bottleHeight);
 
                 }
-                    
-                
+
+
             };
         };
-        document.onmouseup = function(e){
+        document.onmouseup = function (e) {
             dragging = false;
         };
-     };
-// };
+    };
+    // };
 });
-    
+
 
 //手機水果輪播
 if ($(window).width() < 768) {

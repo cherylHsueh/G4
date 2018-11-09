@@ -471,45 +471,55 @@ header {
   100% {
     transform: translate(0%, 0%); } }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-/*分頁做法
-header nav  li:nth-child(2) > a:after {
-    transform: scaleX(1);
-}
-*/
->>>>>>> blog
-=======
-/*分頁做法
-header nav  li:nth-child(2) > a:after {
-    transform: scaleX(1);
-}
-*/
->>>>>>> 6a047bf83ca6a4f5d20759417a9bec51470ac612
-.navSpace {
-  margin-top: 140px; }
-=======
-/*分頁做法
-header nav  li:nth-child(2) > a:after {
-    transform: scaleX(1);
-}
-*/
-=======
->>>>>>> 280a4a4c1247a2dea80405e899b323e7ca4b1a49
->>>>>>> member
-=======
->>>>>>> cart
-=======
->>>>>>> 1105homepage(having about)
-=======
->>>>>>> cart
+footer {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0; }
+
+.footer_wrapper::before {
+  position: absolute;
+  top: -40px;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 40px;
+  background-image: url("../images/footershadow.png");
+  background-size: contain;
+  background-position: bottom center;
+  background-repeat: repeat-x; }
+
+@media only screen and (max-width: 767px) {
+  .footer_wrapper {
+    text-align: center; }
+    .footer_wrapper .footer_block {
+      margin: 0 auto;
+      background-color: #f4d66d; }
+      .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
+        padding: 8px 0; }
+        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
+          display: inline-block;
+          padding: 5px;
+          font-size: 2vw; }
+        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
+          font-size: 1vw; } }
+
+@media all and (min-width: 768px) {
+  .footer_wrapper {
+    position: relative;
+    text-align: center;
+    margin: 0 auto; }
+    .footer_wrapper .footer_block {
+      margin: 0 auto;
+      background-color: #f4d66d; }
+      .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
+        padding: 8px 0; }
+        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
+          display: inline-block;
+          padding: 5px; }
+        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
+          font-size: 12px; } }
+
 section {
   width: 100%; }
 
@@ -546,6 +556,10 @@ body {
       left: 20px; }
       .diy_pickFruit_wrapper .cloud2 img {
         width: 20%; }
+  #cursor1 {
+    display: none; }
+  #cursor2 {
+    display: none; }
   .diy_pickFruit_stepBlock {
     text-align: center;
     margin: 0 auto; }
@@ -619,8 +633,6 @@ body {
       max-width: 80px;
       margin-left: 10px;
       cursor: pointer; }
-    .diy_pickFruit_leftItem #f1 {
-      width: 80%; }
   .diy_pickFruit_leftItem1 {
     position: relative; }
   .diy_pickFruit_leftItem2 {
@@ -751,15 +763,15 @@ body {
     height: 1px; }
   .diy_pickFruit_bottleBox .diy_pickFruit_bottle1 {
     background-color: transparent;
-    flex-grow: 0;
+    height: 0;
     transition: 1s; }
   .diy_pickFruit_bottleBox .diy_pickFruit_bottle2 {
     background-color: transparent;
-    flex-grow: 0;
+    height: 0;
     transition: 1s; }
   .diy_pickFruit_bottleBox .diy_pickFruit_bottle3 {
     background-color: transparent;
-    flex-grow: 0;
+    height: 0;
     transition: 1s; }
   .diy_pickFruit_rightBox {
     margin-top: 50px; }
@@ -883,9 +895,6 @@ body {
       width: 80%;
       max-width: 80px;
       cursor: pointer; }
-    .diy_pickFruit_leftItem #f1 {
-      width: 91%;
-      max-width: 90px; }
   .diy_pickFruit_leftItem1 {
     position: relative; }
   .diy_pickFruit_leftItem2 {
@@ -1148,6 +1157,19 @@ body {
 @media all and (min-width: 1024px) {
   .diy_pickFruit_title h4 {
     font-size: 20px; }
+  .diy_pickFruit_cursor {
+    position: absolute;
+    z-index: 10;
+    width: 25px;
+    height: 25px;
+    background-color: #593100;
+    border-radius: 50%;
+    display: none;
+    left: 106%;
+    transition: 1s;
+    color: #fff;
+    text-align: center;
+    line-height: 25px; }
   .diy_pickFruit_leftBlock {
     max-width: 400px;
     padding: 3% 0 0 10%;
@@ -1167,9 +1189,6 @@ body {
       width: 80%;
       max-width: 80px;
       cursor: pointer; }
-    .diy_pickFruit_leftItem #f1 {
-      width: 91%;
-      max-width: 90px; }
   .fruitnamef1, .fruitnamef2, .fruitnamef3, .fruitnamef4, .fruitnamef5, .fruitnamef6, .fruitnamef7, .fruitnamef8, .fruitnamef9 {
     display: none;
     position: absolute;
