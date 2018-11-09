@@ -1,6 +1,7 @@
 @import "reset";
 @import "global";
 @import "nav";
+@import "footer";
 
 // * {
 //   outline: 1px solid red;
@@ -14,6 +15,12 @@ footer {
   line-height: 18px;
   background-color: #f4d66d;
   text-align: center;
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 120px;
+  }
 }
 body {
   background-color: $sky;
@@ -402,6 +409,23 @@ body {
     -webkit-transition:  height 3s cubic-bezier(0.19, 1, 0.22, 1);
     transition: height 3s cubic-bezier(0.19, 1, 0.22, 1); }
 
+@keyframes mobBottleMove {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 70%;
+  }
+}
+@keyframes bottleMove {
+  0% {
+    left: 5%;
+  }
+  100% {
+    left: 90%;
+  }
+}
+
 //行動版----------------------------------------------------------------------------
 @include rwd(mobile) {
   .diy_customizeBox_finishPic {
@@ -675,6 +699,16 @@ body {
             }
           }
         }
+      }
+    }
+    &_textLength {
+      margin: 15px 0 ;
+      width: 415px;
+      height: 20px; 
+    }
+    &_pics {
+      &:after {
+        bottom: 120px;
       }
     }
   }
