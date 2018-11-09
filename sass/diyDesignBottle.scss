@@ -18,13 +18,33 @@ footer {
 body {
   background-color: $sky;
   overflow-x: hidden;
+  -moz-user-select:none; 
 }
+@keyframes bounceOutUp {
+  20% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  40%,45% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 20px, 0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0);
+  }
+}
+
 @keyframes mobBottleMove {
   0% {
     left: 0;
   }
   100% {
-    left: 80%;
+    left: 75%;
   }
 }
 @keyframes bottleMove {
@@ -37,6 +57,9 @@ body {
 }
 //把nav擋到的高度往下挪
 
+.displayBlock{
+  display: block;
+}
 %displayNon {
   display: none;
 }
@@ -56,13 +79,13 @@ body {
 
 //共用區域
 .navSpace {
-  margin-top: 140px;
+  height: 130px;
 }
 .diy_designBottle {
   &_title {
     h4 {
       text-align: center;
-      margin:0 auto;
+      margin: 0 auto;
       font-size: 20px;
       color: $mainfontcolor;
     }
@@ -117,6 +140,7 @@ body {
     width: 60px;
   }
   &_controlBlock {
+    position: relative;
     margin-top: 15px;
     i {
       margin-top: 20px;
@@ -133,7 +157,7 @@ body {
       height: 20px;
       line-height: 20px;
       outline: 1px solid #f09824;
-      padding: 8px;
+      padding:7px 7px 7px 10px;
       color: #f09824;
       cursor: pointer;
       &:hover {
@@ -160,7 +184,7 @@ body {
     }
   }
   &_officalPicBlock {
-    margin: 10px 5px;
+    margin: 10px auto;
     border: 1px solid brown;
     border-radius: 5px;
   }
@@ -217,16 +241,19 @@ body {
     .diy_designBottle_conveyorPic {
       position: absolute;
       bottom: 0;
+      z-index: 0;
     }
   }
   //傳輸帶果汁瓶區塊
   &_bottlesBlock {
     width: 100%;
+    position: absolute;
     left: -70px;
     bottom: 0;
+    z-index: 0;
     li {
       position: absolute;
-      bottom: 10px;
+      bottom: 0;
       left: -50px;
       display: inline-block;
       margin-right: 20px;
@@ -259,22 +286,24 @@ body {
   }
   &_conveyorPic {
     position: absolute;
-    bottom: 0;
-    padding-top: 200px;
+    bottom: 20px;
+    padding-top: 180px;
     z-index: -1;
   }
   &_factoryPic {
     img {
-      width: 150px;
+      width: 140px;
       position: absolute;
       bottom: 0;
-      left: -10px;
+      left: -20px;
     }
   }
   &_carPic {
     img {
-      width: 130px;
-      margin-left: calc(100vw - 130px);
+      position: absolute;
+      bottom:0;
+      width: 150px;
+      margin-left: calc(100vw - 110px);
     }
   }
 }
@@ -333,10 +362,22 @@ body {
     overflow: hidden;
     z-index: 5;
     &_customizeBtns {
-      display: none; 
-      .common_btn{
-        width: 130px;
+      // display: none;
+      .common_btn {
+        width: 150px;
         display: inline-block;
+        border-radius: 10px;
+        a{
+          width: 150px;
+        }
+        .btnPic {
+          position: relative;
+          img {
+            position: absolute;
+            right: 0;
+            transform: rotate(45deg);
+          }
+        }
       }
     }
   }
@@ -350,9 +391,16 @@ body {
     }
   }
 }
+
 .robot {
   z-index: 4;
 }
+.btnBounceOutUp{
+  animation: bounceOutUp linear 2s  0s;
+}
+.btnbounceInUp{
+    -webkit-transition:  height 3s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: height 3s cubic-bezier(0.19, 1, 0.22, 1); }
 
 //行動版----------------------------------------------------------------------------
 @include rwd(mobile) {
@@ -378,7 +426,7 @@ body {
       }
     }
     &_bgCloud {
-      display: none;
+      display: block;
     }
     &_disNone {
       display: none;
@@ -389,6 +437,13 @@ body {
         width: 75px;
         display: inline-block;
         margin: 40px 5px 0;
+      }
+    }
+    &_conveyorMoveContainer {
+      position: relative;
+      .diy_designBottle_conveyorPic {
+        position: absolute;
+        bottom: 0;
       }
     }
   }
@@ -406,9 +461,10 @@ body {
   .diy_customizeBox_finishPic {
     width: 230px;
     margin: 0 auto;
+    
   }
   .diy_proToCartBtns {
-    margin:100px auto;
+    margin: 100px auto;
     a {
       margin: 0 30px;
     }
@@ -447,12 +503,12 @@ body {
     &_bottlesBlock {
       li {
         position: absolute;
-        bottom: 30px;
+        bottom: 60px;
         left: 30px;
         z-index: -1;
         margin-right: 150px;
         img {
-          width: 35px;
+          width: 30px;
         }
       }
       .item1 {
@@ -493,7 +549,7 @@ body {
     }
     &_controlBlock {
       i {
-        font-size: 30px;
+        font-size: 20px;
         display: inline-block;
         margin: 20px 30px;
       }
@@ -514,11 +570,8 @@ body {
         width: 200px;
       }
     }
-    &_bgCloud{
-      display: none;
-    }
     &_bgcBox {
-      margin: 50px auto 200px;
+      margin: 50px auto 550px;
       box-sizing: border-box;
       padding: 30px;
       width: 700px;
@@ -536,14 +589,14 @@ body {
     }
     &_factoryPic {
       img {
-        width: 300px;
-        margin-left: -35px;
+        width: 550px;
+        margin-left: -100px;
       }
     }
     &_carPic {
       img {
-        width: 300px;
-        margin-left: calc(100vw - 300px);
+        width: 400px;
+        margin-left: calc(100vw - 400px);
       }
     }
   }
@@ -557,9 +610,9 @@ body {
         background-color: #fff;
         position: absolute;
         border-radius: 20px;
-        top: 45%;
+        top: 50%;
         left: 50%;
-        transform: translate(-50%, -45%);
+        transform: translate(-50%,-50%);
         margin: auto;
         h3 {
           margin: 10px 0;
@@ -573,12 +626,54 @@ body {
       }
     }
     &_customizeFinishBox {
+      margin: 0 auto;
       &_customizeBtns {
-        position: absolute;
-        bottom: 12%;
-        left:15% ;
-        a{
-          width: 130px;
+        position: relative;
+        bottom:-195px;
+        
+        .common_btn {
+          width: 200px;
+          height: 40px;
+          display: inline-block;
+          border-radius: 10px;
+          position: relative;
+          padding: 0;
+          margin: 0 30px;
+          line-height: 40px;
+          // border: 3px solid #F4D66D;
+          overflow:visible;
+          a{width: 200px;}
+          .common_btn_blobs{
+            width: 101%;
+          }
+          .common_btn_txt{
+            position: relative;
+            i{
+              position: absolute;
+              top:-5px;
+              font-size: 30px;
+              margin-left: 5px;
+            }
+            .bottleIcon{
+              transform: rotate(5deg);
+              position: relative;
+              img{width: 15px;}
+              position: absolute;
+              right:-30px;
+              top:-25px;
+            }
+          }
+          .diy_toBlogBtn {
+            .btnPic {
+              transform: rotate(45deg);
+              img {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 20px;
+              }
+            }
+          }
         }
       }
     }
@@ -589,7 +684,7 @@ body {
   .diy_designBottle {
     &_controlBlock {
       i {
-        font-size: 40px;
+        font-size: 30px;
         display: inline-block;
         margin: 20px 30px;
       }
@@ -615,23 +710,23 @@ body {
         position: absolute;
         z-index: -1;
         &:nth-child(1) {
-          top: 0;
-          left: 0;
-          width: 150px;
+          top: -10px;
+          left: -150px;
+          width: 200px;
         }
         &:nth-child(2) {
-          left: 250px;
-          top: -40px;
+          left: 150px;
+          top: -50px;
           width: 100px;
         }
         &:nth-child(3) {
           top: 0;
-          right: 0;
+          right: -150px;
           width: 100px;
         }
         &:nth-child(4) {
-          top: -10px;
-          right: 180px;
+          top: -80px;
+          right: 100px;
           width: 150px;
         }
       }
