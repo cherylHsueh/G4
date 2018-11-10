@@ -1,9 +1,7 @@
-<?php 
-
-echo"   <header>
-        <input type='checkbox' name=' id='hb_control'>
+ <header>
+     <input type='checkbox' name=' id='hb_control'>
         <nav>
-            <!-- <svg preserveAspectRatio='none' id='svg-2' viewBox='0 0 100 80' enable-background='new 0 0 100 80'>
+            <svg preserveAspectRatio='none' id='svg-2' viewBox='0 0 100 80' enable-background='new 0 0 100 80'>
                 <animate dur='2s' attributeName='x' repeatCount='indefinite' from='0' to='100' xlink:href='#wave'></animate>
                 <defs>
                     <filter id='f4' x='0' y='0' width='100%' height='100%'>
@@ -17,7 +15,7 @@ echo"   <header>
                     id='wave'></path>
                 <path x='30' y='0' d='M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z' filter='url(#f4)'
                     id='wave2'></path>
-            </svg> -->
+            </svg>
             <div id='svg-2'>
                 <canvas id='wave' width='1000' height='400'>
                     Hopefully you don't see this. If you do, get Google Chrome.
@@ -32,7 +30,6 @@ echo"   <header>
                     <h1 class='phone_logo'><img src='images/logo.png' alt='果然配'>果然配</h1>
                 </a>
             </div>
-
             <div class='menu'>
                 <ul>
                     <li class='menu_item'><a href='diy.html'>果汁DIY</a></li>
@@ -52,8 +49,6 @@ echo"   <header>
         </nav>
         <div class='coupon'><img src='images/coupon.png' alt='優惠小遊戲'></div>
         <div class='robot'><img src='images/robot.png' alt='果然配客服機器人'></div>
-    </header>"
+    </header>
 
 
-
- ?>

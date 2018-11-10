@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8" />
+	<meta charset="utf-8" >
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>果然配</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/diyDesignBottle.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
 	 crossorigin="anonymous">
-	<script src="js/Drag.js"></script>
-	<script src="js/jquery-1.7.2.min.js"></script>
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/jquery-ui.min.js"></script>
-	<script src="js/html2canvas.js"></script>
-	<script src="js/jquery.ui.touch-punch.js"></script>
-	<script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js "></script>W
+	 <link rel="stylesheet" href="css/colpick.css">
+	 <link rel="stylesheet" href="css/colpickStyle.css">
+	<script src="js/plugin/jquery-1.7.2.min.js"></script>
+	<script src="js/plugin/jquery-3.3.1.min.js"></script>
+	<script src="js/plugin/jquery-ui.min.js"></script>
+	<script src="js/plugin/colpick.js"></script>
+	<script src="js/plugin/html2canvas.js"></script>
+	<script src="js/plugin/jquery.ui.touch-punch.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js "></script>
 </head>
-<header>
-	<input type="checkbox" name="" id="hb_control">
-	<div class="coupon"><img src="images/coupon.png" alt="優惠小遊戲"></div>
-	<div class="robot"><img src="images/robot.png" alt="果然配客服機器人"></div>
-
-</header>
-<div class="navSpace"></div>
 <body>
+	<?php
+	require_once("nav.php");
+	?>
+<div class="navSpace"></div>
+<?php
+try{
+  $dsn = "mysql:host=localhost;dbname=cd103g4;port=3306;charset=utf8";
+  $user = "root";
+  $password = "root";
+  $options = array( PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+  $pdo = new PDO($dsn, $user, $password, $options);
+  $sql = "select * from bottleimg";
+  $bottlePics = $pdo->query($sql);
+?>
 	<!-- SCR2--設計瓶身文字敘述 -->
 	<div class="diy_designBottleBlock">
 		<div class="wrapper ">
@@ -62,32 +71,12 @@
 						<input type="hidden" name="diy_designBottle_Logo" id="diy_designBottle_Logo">
 						<div class="diy_designBottle_pics cl-s-12 cl-md-12 cl-xl-12">
 							<div class="diy_designBottle_officalPicBlock cl-s-12 cl-md-12 cl-xl-12">
+								<?php while($bottlePicRow = $bottlePics->fetchObject()){ ?>
 								<button class="diy_designBottle_officalPic cl-s-6 cl-md-4 cl-xl-4" id="diy_designBottle_logobtn" style="background-color: transparent;">
-									<input type="hidden" value="1">
-									<img src="images/diy/logo.png" alt="logo" onclick="change(this)">
+									<input type="hidden" value="<?php echo $bottlePicRow->bottleNo ?>">
+									<img src="images/diy/<?php echo $bottlePicRow->bottleImg ?>" alt="logo" onclick="change(this)">
 								</button>
-								<button class="diy_designBottle_officalPic cl-s-6 cl-md-4 cl-xl-4" id="diy_designBottle_logobtn" style="background-color: transparent;">
-									<input type="hidden" value="2">
-									<img src="images/diy/logo1.png" alt="logo5" onclick="change(this)">
-								</button>
-								<button class="diy_designBottle_officalPic cl-s-6 cl-md-4 cl-xl-4" id="diy_designBottle_logobtn" style="background-color: transparent;">
-									<input type="hidden" value="3">
-									<img src="images/diy/logo3.png" alt="logo4" onclick="change(this)">
-								</button>
-								<button class="diy_designBottle_officalPic cl-s-6 cl-md-4 cl-xl-4" id="diy_designBottle_logobtn" style="background-color: transparent;">
-									<input type="hidden" value="4">
-									<img src="images/diy/logo2.png" alt="logo3" onclick="change(this)">
-								</button>
-								<button class="diy_designBottle_officalPic diy_designBottle_disNone cl-s-6 cl-md-4 cl-xl-4" id="diy_designBottle_logobtn "
-								 style="background-color: transparent;">
-									<input type="hidden" value="5">
-									<img src="images/diy/logo4.png" alt="logo5" onclick="change(this)">
-								</button>
-								<button class="diy_designBottle_officalPic diy_designBottle_disNone cl-s-6 cl-md-4 cl-xl-4" id="diy_designBottle_logobtn "
-								 style="background-color: transparent;">
-									<input type="hidden" value="6">
-									<img src="images/diy/logo5.png" alt="logo6" onclick="change(this)">
-								</button>
+								<?php } ?>
 							</div>
 							<div class="diy_designBottle_uploadBtn cl-s-12 cl-md-12 cl-xl-12 ">
 								<label class="diy_designBottle_uploadItem">
@@ -105,6 +94,12 @@
 						</div>
 					</div>
 				</div>
+<?php
+}catch(PDOException $e){
+  echo "error~<br>";
+  echo $e->getMessage() , "<br>";
+}
+?>				
 				<div class="diy_designBottle_container cl-s-6 cl-md-6 cl-xl-6">
 					<div id="diy_containmentBlock" class="diy_designBottle_pic cl-s-11 cl-md-9 cl-xl-9">
 						<div id="diy_designBottle_wrapper" class="diy_designBottle_bottleItem">
@@ -197,7 +192,7 @@
 	</div>
 	<div class="diy_designBottle_bottleMovingBlock">
 		<div class="diy_designBottle_conveyorMoveContainer">
-			<img class="diy_designBottle_conveyorPic" src="images/diy/conveyor1.png" alt="傳輸帶">
+			<img class="diy_designBottle_conveyorPic" src="images/diy/conveyor.png" alt="傳輸帶">
 			<ul class="diy_designBottle_bottlesBlock">
 				<li class="item1"><img src="images/diy/bottleOrange.png" alt="果汁瓶"></li>
 				<li class="item2"><img src="images/diy/juiceBottle.png" alt="果汁瓶"></li>
@@ -212,99 +207,17 @@
 			<div class="diy_designBottle_soliRoad"></div>
 		</div>
 	</div>
-	<footer class="cl-md-12">
-		<div class="footer_txt">
-			<p class="copyright">Copyright © All Rights Reserved.</p>
-		</div>
+    <footer>
+        <div class="footer_wrapper">
+            <div class="footer_block clearfix">
+                <div class="footer_rightBox">
+                    <div class="footer_rightContent">
+                        <p class="copyright">Copyright © All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 	</footer>
-	<script>
-		$(document).ready(function () {
-			$("#diy_copyPicButton").click(function () {
-				popCenterWindow();
-			});
-		}); 
-	</script>
-	<script>
-		$("#diy_copyPicButton").click(function () {
-			html2canvas($("#diy_containmentBlock")[0]).then(function (canvas) {
-				var $div = $(".diy_customizeBox_finishPic");
-				$div.empty();
-				$("<img />", { src: canvas.toDataURL("image/png") }).appendTo($div);
-				console.log()
-			});
-		});						
-	</script>
-	<script>// 上傳圖檔後把預設的logo刪除 
-		$(document).ready(function () {
-			$('#uploadButton').on("change", function () {
-				for (var i = 0; i < $('.diy_designBottle_officalPic').length; i++) {
-					$('#diy_designBottle_Logo').val('');
-					$('.diy_designBottle_officalPic').eq(i).css('backgroundColor', 'transparent');
-				}
-			});
-		});
-		$('#addToCartBtn').click(function () {
-			$(".diy_proToCartBtns").addClass("btnBounceOutUp", 500, callback);
-			$(".diy_customizeFinishBox_customizeBtns").addClass("btnbounceInUp");
-			function callback() {
-				setTimeout(function () {
-					$(".diy_proToCartBtns").css("display", "none");
-
-				}, 1500);
-			}
-		});
-
-
-	</script>
-	<script type="text/javascript">
-		//獲取視窗的高度 
-		var windowHeight;
-		//獲取視窗的寬度 
-		var windowWidth;
-		//獲取彈窗的寬度 
-		var popWidth;
-		//獲取彈窗高度 
-		var popHeight;
-		function init() {
-			windowHeight = $(window).height();
-			windowWidth = $(window).width();
-			popHeight = $(".diy_customizeFinishBox").height();
-			popWidth = $(".diy_customizeFinishBox").width();
-		}
-		//定義彈出居中視窗的方法 
-		function popCenterWindow() {
-			init();
-			//計算彈出視窗的左上角Y的偏移量 
-			var popY = (windowHeight - popHeight) / 2;
-			var popX = (windowWidth - popWidth) / 2;
-			//設定視窗的位置 
-			$("#center").css("top", popY).css("left", popX).slideToggle("slow");
-		}
-		$(function dragging() {
-			$('#diy_designBottle_diyImg').draggable(
-				{
-					containment: "#dragRange",
-					scroll: false,
-				} //#diy_designBottle_wrapper
-			);
-			$('#diy_designBottle_dragText').draggable(
-				{ containment: "#dragRange" }//#diy_designBottle_wrapper
-			);
-		});
-	</script>
-	<script>
-		$('#picker').colpick({
-			flat: false,
-			layout: 'rgbhex',
-			color: '1080C8',
-			submit: 1,
-			onSubmit: function (hsb, hex, rgb, el) {
-				$('.diy_designBottle_createBlock').css('color', '#' + hex);
-				$(el).colpickHide();
-
-			}
-		});
-	</script>
+	<script src="js/diyDesignBottle.js"></script>
 </body>
-
 </html>

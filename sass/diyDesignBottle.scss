@@ -142,9 +142,11 @@ body {
   &_changePic {
     position: absolute;
     width: 140px;
+    cursor: pointer;
   }
   &_createBlock {
     width: 60px;
+    cursor: pointer;
   }
   &_controlBlock {
     position: relative;
@@ -310,7 +312,7 @@ body {
       position: absolute;
       bottom:0;
       width: 150px;
-      margin-left: calc(100vw - 110px);
+      margin-left: calc(100vw - 150px);
     }
   }
 }
@@ -450,7 +452,25 @@ body {
       }
     }
     &_bgCloud {
-      display: block;
+      img {
+        width: 80px;
+        position: absolute;
+        z-index: -1;
+        &:nth-child(1) {
+          display: none;
+        }
+        &:nth-child(2) {
+          left: -20px;
+          top: 95px;
+        }
+        &:nth-child(3) {
+          top: 90px;
+          right: 0;
+        }
+        &:nth-child(4) {
+          display: none;
+        }
+      }
     }
     &_disNone {
       display: none;
@@ -519,6 +539,33 @@ body {
       img {
         width: 90px;
         margin: 5px;
+      }
+    }
+    &_bgCloud {
+      position: relative;
+      img {
+        position: absolute;
+        z-index: -1;
+        &:nth-child(1) {
+          top: -10px;
+          left: -150px;
+          width: 200px;
+        }
+        &:nth-child(2) {
+          left: 150px;
+          top: -50px;
+          width: 100px;
+        }
+        &:nth-child(3) {
+          top: -500px;
+          right: -50px;
+          width: 100px;
+        }
+        &:nth-child(4) {
+          top: -80px;
+          right: 100px;
+          width: 150px;
+        }
       }
     }
     &_bottleItem {
@@ -737,31 +784,13 @@ body {
     }
     &_bgcBox {
       width: 900px;
-    }
+    } 
     &_bgCloud {
-      position: relative;
       img {
-        position: absolute;
-        z-index: -1;
-        &:nth-child(1) {
-          top: -10px;
-          left: -150px;
-          width: 200px;
-        }
-        &:nth-child(2) {
-          left: 150px;
-          top: -50px;
-          width: 100px;
-        }
         &:nth-child(3) {
-          top: 0;
-          right: -150px;
+          top: 10px;
+          right:-50px;
           width: 100px;
-        }
-        &:nth-child(4) {
-          top: -80px;
-          right: 100px;
-          width: 150px;
         }
       }
     }

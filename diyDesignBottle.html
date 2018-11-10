@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html onselectstart="return false">
-
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +11,6 @@
 	<link rel="stylesheet" href="css/colpick.css">
 	<link rel="stylesheet" href="css/colpickStyle.css">
 	<script src="js/global.js"></script>
-	<script src="js/Drag.js"></script>
 	<script src="js/plugin/jquery-1.7.2.min.js"></script>
 	<script src="js/plugin/jquery-3.3.1.min.js"></script>
 	<script src="js/plugin/jquery-ui.min.js"></script>
@@ -247,103 +245,17 @@
 		</div>
 	</div>
     <footer>
-        <div class="footer_wrapper">
-            <div class="footer_block clearfix">
-                <div class="footer_rightBox">
-                    <div class="footer_rightContent">
-                        <p class="copyright">Copyright © All Rights Reserved.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-	<script>
-		$(document).ready(function () {
-			$("#diy_copyPicButton").click(function () {
-				popCenterWindow();
-			});
-		}); 
-	</script>
-	<script>
-		$("#diy_copyPicButton").click(function () {
-			html2canvas($("#diy_containmentBlock")[0]).then(function (canvas) {
-				var $div = $(".diy_customizeBox_finishPic");
-				$div.empty();
-				$("<img />", { src: canvas.toDataURL("image/png") }).appendTo($div);
-			});
-		});						
-	</script>
-	<script>// 上傳圖檔後把預設的logo刪除 
-		$(document).ready(function () {
-			$('#uploadButton').on("change", function () {
-				for (var i = 0; i < $('.diy_designBottle_officalPic').length; i++) {
-					$('#diy_designBottle_Logo').val('');
-					$('.diy_designBottle_officalPic').eq(i).css('backgroundColor', 'transparent');
-				}
-			});
-		});
-		$('#addToCartBtn').click(function () {
-			$(".diy_proToCartBtns").addClass("btnBounceOutUp", 500, callback);
-			$(".diy_customizeFinishBox_customizeBtns").addClass("btnbounceInUp");
-			function callback() {
-				setTimeout(function () {
-					$(".diy_proToCartBtns").css("display", "none");
-
-				}, 1500);
-			}
-		});
-
-
-	</script>
-	<script type="text/javascript">
-		//獲取視窗的高度 
-		var windowHeight;
-		//獲取視窗的寬度 
-		var windowWidth;
-		//獲取彈窗的寬度 
-		var popWidth;
-		//獲取彈窗高度 
-		var popHeight;
-		function init() {
-			windowHeight = $(window).height();
-			windowWidth = $(window).width();
-			popHeight = $(".diy_customizeFinishBox").height();
-			popWidth = $(".diy_customizeFinishBox").width();
-		}
-		//定義彈出居中視窗的方法 
-		function popCenterWindow() {
-			init();
-			//計算彈出視窗的左上角Y的偏移量 
-			var popY = (windowHeight - popHeight) / 2;
-			var popX = (windowWidth - popWidth) / 2;
-			//設定視窗的位置 
-			$("#center").css("top", popY).css("left", popX).slideToggle("slow");
-		}
-		$(function dragging() {
-			$('#diy_designBottle_diyImg').draggable(
-				{
-					containment: "#dragRange",
-					scroll: false,
-				} //#diy_designBottle_wrapper
-			);
-			$('#diy_designBottle_dragText').draggable(
-				{ containment: "#dragRange" }//#diy_designBottle_wrapper
-			);
-		});
-	</script>
-	<script>
-		$('#picker').colpick({
-			flat: false,
-			layout: 'rgbhex',
-			color: '1080C8',
-			submit: 1,
-			onSubmit: function (hsb, hex, rgb, el) {
-				$('.diy_designBottle_createBlock').css('color', '#' + hex);
-				$(el).colpickHide();
-
-			}
-		});
-	</script>
+			<div class="footer_wrapper">
+				<div class="footer_block clearfix">
+					<div class="footer_rightBox">
+						<div class="footer_rightContent">
+							<p class="copyright">Copyright © All Rights Reserved.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	<script src="js/diyDesignBottle.js"></script>
 </body>
 
 </html>

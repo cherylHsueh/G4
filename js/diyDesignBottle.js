@@ -1,3 +1,86 @@
+//客製瓶身跳窗
+$("#diy_copyPicButton").click(function() {
+  html2canvas($("#diy_containmentBlock")[0]).then(function(canvas) {
+    var $div = $(".diy_customizeBox_finishPic");
+    $div.empty();
+    $("<img />", { src: canvas.toDataURL("image/png") }).appendTo($div);
+  });
+});
+//點選官方logo切換
+$(document).ready(function() {
+  $("#uploadButton").on("change", function() {
+    for (var i = 0; i < $(".diy_designBottle_officalPic").length; i++) {
+      $("#diy_designBottle_Logo").val("");
+      $(".diy_designBottle_officalPic")
+        .eq(i)
+        .css("backgroundColor", "transparent");
+    }
+  });
+  //製作完成後,點擊=>跳窗出現
+  $("#diy_copyPicButton").click(function() {
+    popCenterWindow();
+  });
+});
+//跳窗畫面的按鈕動畫
+$("#addToCartBtn").click(function() {
+  $(".diy_proToCartBtns").addClass("btnBounceOutUp", 500, callback);
+  $(".diy_customizeFinishBox_customizeBtns").addClass("btnbounceInUp");
+  function callback() {
+    setTimeout(function() {
+      $(".diy_proToCartBtns").css("display", "none");
+    }, 1500);
+  }
+});
+//跳窗畫面
+//獲取視窗
+var windowHeight;
+var windowWidth;
+//獲取彈窗
+var popWidth;
+var popHeight;
+function init() {
+  windowHeight = $(window).height();
+  windowWidth = $(window).width();
+  popHeight = $(".diy_customizeFinishBox").height();
+  popWidth = $(".diy_customizeFinishBox").width();
+}
+//定義彈出視窗的方法
+function popCenterWindow() {
+  init();
+  //計算彈出視窗的左上角Y的偏移量
+  var popY = (windowHeight - popHeight) / 2;
+  var popX = (windowWidth - popWidth) / 2;
+  //設定視窗的位置
+  $("#center")
+    .css("top", popY)
+    .css("left", popX)
+    .slideToggle("slow");
+}
+
+//拖拉瓶身圖片
+$(function dragging() {
+  $("#diy_designBottle_diyImg").draggable(
+    {
+      containment: "#dragRange",
+      scroll: false
+    } //#diy_designBottle_wrapper
+  );
+  //拖拉瓶身文字
+  $("#diy_designBottle_dragText").draggable(
+    { containment: "#dragRange" } //#diy_designBottle_wrapper
+  );
+});
+//文字換色
+$("#picker").colpick({
+  flat: false,
+  layout: "rgbhex",
+  color: "1080C8",
+  submit: 1,
+  onSubmit: function(hsb, hex, rgb, el) {
+    $(".diy_designBottle_createBlock").css("color", "#" + hex);
+    $(el).colpickHide();
+  }
+});
 var clickItem;
 function doFirst(){	
 	zoomInButton = document.getElementById('zoomInButton');

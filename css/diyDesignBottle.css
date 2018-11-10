@@ -472,16 +472,29 @@ header {
     transform: translate(0%, 0%); } }
 
 footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   right: 0;
   left: 0; }
+
+.footer_wrapper::before {
+  position: absolute;
+  top: -40px;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 40px;
+  background-image: url("../images/footershadow.png");
+  background-size: contain;
+  background-position: bottom center;
+  background-repeat: repeat-x; }
 
 @media only screen and (max-width: 767px) {
   .footer_wrapper {
     text-align: center; }
     .footer_wrapper .footer_block {
-      margin: 0 auto; }
+      margin: 0 auto;
+      background-color: #f4d66d; }
       .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
         padding: 8px 0; }
         .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
@@ -497,7 +510,8 @@ footer {
     text-align: center;
     margin: 0 auto; }
     .footer_wrapper .footer_block {
-      margin: 0 auto; }
+      margin: 0 auto;
+      background-color: #f4d66d; }
       .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
         padding: 8px 0; }
         .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
@@ -603,10 +617,12 @@ body {
 
 .diy_designBottle_changePic {
   position: absolute;
-  width: 140px; }
+  width: 140px;
+  cursor: pointer; }
 
 .diy_designBottle_createBlock {
-  width: 60px; }
+  width: 60px;
+  cursor: pointer; }
 
 .diy_designBottle_controlBlock {
   position: relative;
@@ -749,7 +765,7 @@ body {
   position: absolute;
   bottom: 0;
   width: 150px;
-  margin-left: calc(100vw - 110px); }
+  margin-left: calc(100vw - 150px); }
 
 .diy_customizePopUp {
   width: 100%;
@@ -853,8 +869,20 @@ body {
     width: 120px; }
   .diy_designBottle_stepSecondBox img {
     width: 120px; }
-  .diy_designBottle_bgCloud {
-    display: block; }
+  .diy_designBottle_bgCloud img {
+    width: 80px;
+    position: absolute;
+    z-index: -1; }
+    .diy_designBottle_bgCloud img:nth-child(1) {
+      display: none; }
+    .diy_designBottle_bgCloud img:nth-child(2) {
+      left: -20px;
+      top: 95px; }
+    .diy_designBottle_bgCloud img:nth-child(3) {
+      top: 90px;
+      right: 0; }
+    .diy_designBottle_bgCloud img:nth-child(4) {
+      display: none; }
   .diy_designBottle_disNone {
     display: none; }
   .diy_designBottle_btnBlock a {
@@ -895,6 +923,27 @@ body {
     .diy_designBottle_logoPic img {
       width: 90px;
       margin: 5px; }
+  .diy_designBottle_bgCloud {
+    position: relative; }
+    .diy_designBottle_bgCloud img {
+      position: absolute;
+      z-index: -1; }
+      .diy_designBottle_bgCloud img:nth-child(1) {
+        top: -10px;
+        left: -150px;
+        width: 200px; }
+      .diy_designBottle_bgCloud img:nth-child(2) {
+        left: 150px;
+        top: -50px;
+        width: 100px; }
+      .diy_designBottle_bgCloud img:nth-child(3) {
+        top: -500px;
+        right: -50px;
+        width: 100px; }
+      .diy_designBottle_bgCloud img:nth-child(4) {
+        top: -80px;
+        right: 100px;
+        width: 150px; }
   .diy_designBottle_bottleItem {
     position: relative; }
   .diy_designBottle_bottlesBlock li {
@@ -1037,27 +1086,10 @@ body {
       margin: 5px 20px; }
   .diy_designBottle_bgcBox {
     width: 900px; }
-  .diy_designBottle_bgCloud {
-    position: relative; }
-    .diy_designBottle_bgCloud img {
-      position: absolute;
-      z-index: -1; }
-      .diy_designBottle_bgCloud img:nth-child(1) {
-        top: -10px;
-        left: -150px;
-        width: 200px; }
-      .diy_designBottle_bgCloud img:nth-child(2) {
-        left: 150px;
-        top: -50px;
-        width: 100px; }
-      .diy_designBottle_bgCloud img:nth-child(3) {
-        top: 0;
-        right: -150px;
-        width: 100px; }
-      .diy_designBottle_bgCloud img:nth-child(4) {
-        top: -80px;
-        right: 100px;
-        width: 150px; }
+  .diy_designBottle_bgCloud img:nth-child(3) {
+    top: 10px;
+    right: -50px;
+    width: 100px; }
   .diy_designBottle_itemBottleBlock {
     position: absolute;
     top: -50px; }

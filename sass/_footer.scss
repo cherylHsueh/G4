@@ -4,10 +4,23 @@
     // outline: 1px solid red;
 }
 footer{
-    position: absolute;
+    position:relative;
     bottom: 0;
     right: 0;
     left: 0;
+}
+
+.footer_wrapper::before{
+    position: absolute;
+    top: -40px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-image: url('../images/footershadow.png');
+    background-size:contain;
+    background-position:bottom center;
+    background-repeat: repeat-x;
 }
 
 @include rwd(mobile) {
@@ -17,8 +30,7 @@ footer{
         .footer_block {
             margin: 0 auto;
             // padding: 10px 0;
-            // background-color: #dde4b7;
-
+            background-color: #f4d66d;
             .footer_rightBox {
                 .footer_rightContent {
                     padding: 8px 0;
@@ -46,7 +58,7 @@ footer{
         .footer_block {
             margin: 0 auto;
             // padding: 20px 0;
-            // background-color: #dde4b7;
+            background-color: #f4d66d;
 
             .footer_rightBox {
                 .footer_rightContent {
