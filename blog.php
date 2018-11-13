@@ -520,7 +520,7 @@ $id("NewShare").onclick = sendFormShare;
 
                                            
 
-                                        <a href='blogIn.php?artNo=<?php echo $blogRow ->artNo ?>' class='blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6'>
+                                        <a href='blogIn.php?artNo=<?php echo $blogRow ->artNo?>#message' class='blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6'>
                                             <div class='blog_Forum_SubButtonContainer_Pic'>
                                                 <img src='images/blogImg/messagewhite.png' alt='留言圖示' class='blog_Score_Img'>
                                             </div>
