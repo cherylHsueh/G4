@@ -1,13 +1,10 @@
 <?php
-ob_start();
-session_start();
+// ob_start();
+// session_start();
 // m.memId = '1' and m.memPsw = '111'
 
 try {
 	require_once("connectBooks.php");
-    $sql = "SELECT b.artNo, b.photo, b.artTitle, b.artContent, b.thumbFq, b.postTime, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3 From blog b, member m, fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo
-    ";
-    $blogs = $pdo -> query( $sql );
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +17,9 @@ try {
     <title>果然配</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="css/loginFruit.css">       
     <link rel="stylesheet" href="css/blog.css">
+
     <script src="js/plugin/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/plugin/masonry.pkgd.min.js"></script>
     <script src="js/plugin/jquery.gallery.js"></script>
@@ -31,7 +30,7 @@ try {
 
 <body>
     <?php
-	require_once("nav.php");
+	require_once("php/nav.php");
 	?>
 
     <div class="space"></div>
@@ -53,6 +52,9 @@ try {
             <!-- 手機輪播 -->
             <section id="phone" class="phone clearfix">
 <?php
+$sql = "SELECT b.artNo, b.photo, b.artTitle, b.artContent, b.thumbFq, b.postTime, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3 From blog b, member m, fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo
+    ";
+$blogs = $pdo -> query( $sql );
 $sql ="select b.artNo, b.photo, b.artTitle, b.artContent, b.postTime, b.thumbFq, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3
 from blog b, member m,fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo 
 order by thumbFq desc LIMIT  3";

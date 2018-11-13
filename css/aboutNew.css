@@ -1,7 +1,43 @@
 @charset "UTF-8";
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
+=======
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+>>>>>>> blog
+=======
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+>>>>>>> member
+=======
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+>>>>>>> commit
+=======
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+>>>>>>> 會員中心按鈕修改及關於我們圖片重新上傳
+=======
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+>>>>>>> 1105homepage(having about)
 */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -471,16 +507,29 @@ header {
   100% {
     transform: translate(0%, 0%); } }
 
-header nav li:nth-child(5) > a:after {
-  transform: scaleX(1); }
-
 p {
   text-align: justify; }
 
 .about_start {
   width: 25%;
   height: 100vh;
-  background-color: #a4ddfa;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  background-color: #00B5BD;
+=======
+  background-color: #00b5bd;
+>>>>>>> member
+=======
+  background-color: #00b5bd;
+>>>>>>> commit
+=======
+  background-color: #00B5BD;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+  background-color: #00B5BD;
+>>>>>>> 1105homepage(having about)
   float: left; }
 
 .about_start_background_block {
@@ -489,15 +538,46 @@ p {
 .about_factory {
   width: 25%;
   height: 100vh;
-  background-color: #a4ddfa;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  background-color: #00B5BD;
+=======
+  background-color: #00b5bd;
+>>>>>>> member
+=======
+  background-color: #00b5bd;
+>>>>>>> commit
+=======
+  background-color: #00B5BD;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+  background-color: #00B5BD;
+>>>>>>> 1105homepage(having about)
   float: left; }
 
 .about_end {
   width: 25%;
   height: 100vh;
-  background-color: #a4ddfa;
-  float: left;
-  position: relative; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  background-color: #00B5BD;
+=======
+  background-color: #00b5bd;
+>>>>>>> member
+=======
+  background-color: #00b5bd;
+>>>>>>> commit
+=======
+  background-color: #00B5BD;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+  background-color: #00B5BD;
+>>>>>>> 1105homepage(having about)
+  float: left; }
 
 .about_factory_background_block {
   position: relative; }
@@ -506,12 +586,38 @@ p {
   width: 100%;
   height: 100vh;
   position: absolute;
-  background-color: #a4ddfa; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
+  background-color: #00B5BD; }
 
 .about_bigwrapper {
-  width: 400vw;
+  width: 5000px;
+  height: 100vh; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> commit
+  background-color: #00b5bd; }
+
+.about_bigwrapper {
+  width: 5000px;
   height: 100vh;
   overflow: hidden; }
+<<<<<<< HEAD
+>>>>>>> member
+=======
+>>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
 
 #app {
   position: relative;
@@ -522,6 +628,28 @@ p {
 .forcast h4 {
   padding: 5% 0; }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
+#section4 {
+  background-color: #00B5BD;
+  height: 100vh; }
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> member
+=======
+>>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
 path {
   stroke: white;
   fill: transparent;
@@ -529,7 +657,23 @@ path {
   cursor: pointer; }
 
 path:hover {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  fill: #B99362;
+=======
   fill: #b99362;
+>>>>>>> member
+=======
+  fill: #b99362;
+>>>>>>> commit
+=======
+  fill: #B99362;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+  fill: #B99362;
+>>>>>>> 1105homepage(having about)
   -webkit-transform: translate(-5px, -5px);
   transform: translate(-5px, -5px); }
 
@@ -538,9 +682,27 @@ path:hover {
   height: 100vh;
   position: absolute; }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+.forcast h2, .forcast h4, .forcast h5 {
+=======
 .forcast h2,
 .forcast h4,
 .forcast h5 {
+>>>>>>> member
+=======
+.forcast h2,
+.forcast h4,
+.forcast h5 {
+>>>>>>> commit
+=======
+.forcast h2, .forcast h4, .forcast h5 {
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+.forcast h2, .forcast h4, .forcast h5 {
+>>>>>>> 1105homepage(having about)
   margin: 0; }
 
 #e468a7aa-2bdf-4501-b48d-35483b7c8ccc,
@@ -568,7 +730,23 @@ path:hover {
 #a0ce2847a-4f9c-4ff7-8c51-6b0fa24ba8b7,
 #e1806d87-d003-48dd-b8d3-3f99b3759340,
 #a21c4ba33-d057-42c1-9c71-be6061fc73cf {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  fill: #36BF36; }
+=======
   fill: #36bf36; }
+>>>>>>> member
+=======
+  fill: #36bf36; }
+>>>>>>> commit
+=======
+  fill: #36BF36; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+  fill: #36BF36; }
+>>>>>>> 1105homepage(having about)
 
 @keyframes shake {
   0% {
@@ -587,22 +765,6 @@ path:hover {
     transition: transition(0px, 0px); }
   100% {
     transform: translate(-300px, 0px); } }
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg); }
-  100% {
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg); } }
-
-@keyframes gesture {
-  0% {
-    transform: translateX(10px); }
-  100% {
-    transform: translateX(40px); } }
 
 h3 {
   color: #009245;
@@ -623,19 +785,67 @@ h3 {
     transform: translateY(-20px); } }
 
 .bounce {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  animation: bounce .5s infinite alternate;
+  -webkit-animation: bounce .8s infinite alternate; }
+=======
   animation: bounce 0.5s infinite alternate;
   -webkit-animation: bounce 0.8s infinite alternate; }
+>>>>>>> member
+=======
+  animation: bounce 0.5s infinite alternate;
+  -webkit-animation: bounce 0.8s infinite alternate; }
+>>>>>>> commit
+=======
+  animation: bounce .5s infinite alternate;
+  -webkit-animation: bounce .8s infinite alternate; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+  animation: bounce .5s infinite alternate;
+  -webkit-animation: bounce .8s infinite alternate; }
+>>>>>>> 1105homepage(having about)
 
 @media only screen and (max-width: 767px) {
+  header nav {
+    position: fixed;
+    width: 100vw;
+    z-index: 100; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
+  .about_start_background_block {
+    position: relative;
+    height: 100vh; }
+  .about_start_background_clould01 {
+    width: 50%;
+    position: absolute;
+    max-width: 245px;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> commit
+  .about_bigwrapper {
+    width: 1600px;
+    height: 100vh;
+    overflow: hidden; }
   .about_start_background_block {
     position: relative;
     height: 100vh; }
   .about_start_info_blcok {
-    width: 80%;
+    width: 69%;
     background-color: #00ac6f;
     position: absolute;
-    top: 20%;
-    left: 10%;
+    top: 17%;
+    left: 13%;
     margin: auto;
     padding: 1% 0;
     border-radius: 10px;
@@ -662,6 +872,14 @@ h3 {
     top: 17%;
     position: absolute;
     max-width: 190px;
+<<<<<<< HEAD
+>>>>>>> member
+=======
+>>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
     animation: flutter 5s linear infinite; }
   .about_start_background_clould02 {
     width: 54%;
@@ -671,6 +889,13 @@ h3 {
     animation: flutter 5s linear infinite; }
   .about_start_background_clould03 {
     display: none; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> commit
   .about_start_content_bounce {
     width: 14%;
     position: absolute;
@@ -681,6 +906,14 @@ h3 {
       width: 100%;
       margin: 10% 0 0;
       animation: bounce 0.5s infinite alternate; }
+<<<<<<< HEAD
+>>>>>>> member
+=======
+>>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
   .farmerLocationIcon img {
     width: 30%;
     margin: 1% 0;
@@ -688,6 +921,43 @@ h3 {
     bottom: 0;
     top: 30%;
     left: 10%; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
+  .about_start_content_orchard {
+    width: 40%;
+    max-width: 250px;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    z-index: 2; }
+    .about_start_content_orchard img {
+      width: 100%; }
+  .about_start_content_mountain01 {
+    width: 130%;
+    position: absolute;
+    left: 35%;
+    bottom: 24%;
+    z-index: 2; }
+    .about_start_content_mountain01 img {
+      width: 100%; }
+  .about_start_content_mountain03 {
+    width: 136%;
+    position: absolute;
+    bottom: 33%;
+    right: -17%; }
+    .about_start_content_mountain03 img {
+      width: 100%; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> commit
   .about_start_info_item_title {
     width: 70%;
     margin: auto; }
@@ -778,20 +1048,19 @@ h3 {
     right: -7%; }
     .about_start_content_mountain03 img {
       width: 100%; }
+  .about_start_grass .about_start_road01 {
+    width: 28%;
+    position: absolute;
+    bottom: 2%;
+    left: 2%; }
   .about_start_grass {
-    width: 112%;
-    height: 14%;
+    width: 100%;
+    height: 16%;
     background-color: #d9e021;
     position: absolute;
     bottom: 0;
     z-index: 1;
     line-height: 140px; }
-    .about_start_grass .about_start_road01 {
-      width: 100%;
-      position: absolute;
-      bottom: -35%; }
-    .about_start_grass .about_start_road02 {
-      display: none; }
   .about_factory_content_mountain01 {
     width: 96%;
     position: absolute;
@@ -809,21 +1078,28 @@ h3 {
     .about_factory_content_mountain02 img {
       width: 100%; }
   .about_factory_grass {
-    width: 100%;
+    width: 99%;
     height: 14%;
     background-color: #d9e021;
     position: absolute;
     bottom: 0;
     z-index: 2;
     line-height: 109px; }
-    .about_factory_grass .about_factory_road1 {
-      width: 100%;
-      position: absolute;
-      bottom: -19%; }
-      .about_factory_grass .about_factory_road1 img {
-        width: 100%; }
-    .about_factory_grass .about_factory_road2 {
-      display: none; }
+  .about_factory_road1 {
+    width: 52%;
+    position: absolute;
+    bottom: 5%;
+    display: none; }
+    .about_factory_road1 img {
+      width: 100%; }
+<<<<<<< HEAD
+>>>>>>> member
+=======
+>>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
   .about_start_content_car01 {
     width: 36%;
     position: absolute;
@@ -832,7 +1108,23 @@ h3 {
     z-index: 3; }
     .about_start_content_car01 img {
       width: 100%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+      animation: shake .3s  alternate  infinite; }
+=======
       animation: shake 0.3s alternate infinite; }
+>>>>>>> member
+=======
+      animation: shake 0.3s alternate infinite; }
+>>>>>>> commit
+=======
+      animation: shake .3s  alternate  infinite; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+      animation: shake .3s  alternate  infinite; }
+>>>>>>> 1105homepage(having about)
   .about_start_content_car01_tire1 {
     width: 8%;
     position: absolute;
@@ -857,10 +1149,29 @@ h3 {
   .about_factory_background_clould01 {
     width: 50%;
     position: absolute;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    max-width: 80px;
+    top: 8%;
+=======
     max-width: 143px;
     top: 16%;
-    z-index: 2;
-    animation: flutter 5s linear infinite; }
+>>>>>>> member
+=======
+    max-width: 143px;
+    top: 16%;
+>>>>>>> commit
+=======
+    max-width: 80px;
+    top: 8%;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+    max-width: 80px;
+    top: 8%;
+>>>>>>> 1105homepage(having about)
+    z-index: 1; }
   .about_factory_background_clould03 {
     display: none; }
   .farmerLocationIcon img {
@@ -871,15 +1182,34 @@ h3 {
     top: 30%;
     left: 10%; }
   .about_factory_content_factoryTitle {
-    width: 14%;
+    width: 18%;
     max-width: 100px;
     position: absolute;
-    bottom: 35%;
-    left: 70%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    bottom: 48%;
+    left: 17%;
+=======
+    bottom: 31%;
+    left: 67%;
+>>>>>>> member
+=======
+    bottom: 31%;
+    left: 67%;
+>>>>>>> commit
+=======
+    bottom: 48%;
+    left: 17%;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+    bottom: 48%;
+    left: 17%;
+>>>>>>> 1105homepage(having about)
     z-index: 2; }
     .about_factory_content_factoryTitle img {
-      width: 100%;
-      margin-bottom: 15%; }
+      width: 100%; }
   .factoryTitle {
     width: 22%;
     max-width: 155px;
@@ -893,6 +1223,38 @@ h3 {
     width: 40%;
     max-width: 250px;
     position: absolute;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
+    bottom: 28%;
+    left: 1%;
+    z-index: 2; }
+    .about_factory_content_factory img {
+      width: 100%; }
+  .about_factory_content_mountain02 {
+    width: 150%;
+    position: absolute;
+    bottom: 24%;
+    z-index: 1; }
+    .about_factory_content_mountain02 img {
+      width: 100%; }
+  .about_factory_grass {
+    width: 100%;
+    height: 50px;
+    background-color: #D9E021;
+    z-index: 1;
+    position: absolute;
+    bottom: 20%; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> commit
     bottom: 14%;
     left: 44%;
     z-index: 2; }
@@ -939,6 +1301,14 @@ h3 {
     .about_factory_content_roadsign img {
       width: 100%;
       margin: -5% 0; }
+<<<<<<< HEAD
+>>>>>>> member
+=======
+>>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
   .about_factory_content_car01 {
     width: 35%;
     position: absolute;
@@ -948,12 +1318,38 @@ h3 {
     .about_factory_content_car01 img {
       width: 100%; }
   .about_factory_info_blcok {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
+    width: 40%;
+    background-color: #00ac6f;
+    position: absolute;
+    top: 1%;
+    left: 0%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> commit
     width: 46%;
     background-color: #00ac6f;
     position: absolute;
-    top: 22%;
-    left: 6%;
+    top: 19%;
+    left: 0%;
     z-index: 2;
+<<<<<<< HEAD
+>>>>>>> member
+=======
+>>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
     right: 0;
     margin: 0% auto;
     border: 5px solid #fff;
@@ -996,14 +1392,15 @@ h3 {
   .about_factory_info_item_truck_horizontal,
   .about_factory_info_item_cart_horizontal {
     display: none; }
-  .about_taiwan_background_gesture {
-    width: 15%;
-    position: absolute;
-    top: 58%;
-    left: 30%; }
-    .about_taiwan_background_gesture img {
-      width: 100%;
-      animation: gesture 1s infinite ease-in-out alternate; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  #section3 {
+    background-color: #00B5BD;
+=======
+=======
+>>>>>>> commit
   .about_taiwan_background_mountain3 {
     width: 100%;
     position: absolute;
@@ -1036,21 +1433,18 @@ h3 {
     .about_taiwan_background_grassflowr img {
       width: 100%; }
   .about_taiwan_background_grass {
-    width: 100%;
+    width: 99;
     height: 14%;
     background-color: #d9e021;
     position: absolute;
     bottom: 0;
+    left: -2%;
     z-index: 2;
-    line-height: 110px; }
-    .about_taiwan_background_grass .about_taiwan_background_road1 {
-      width: 100%;
-      position: absolute;
-      bottom: -19%; }
-      .about_taiwan_background_grass .about_taiwan_background_road1 img {
-        width: 100%; }
-    .about_taiwan_background_grass .about_taiwan_background_road2 {
-      display: none; }
+    line-height: 109px; }
+  .about_taiwan_background_road1 {
+    display: none; }
+    .about_taiwan_background_road1 img {
+      width: 100%; }
   .about_taiwan_background_sheep {
     width: 75%;
     position: absolute;
@@ -1079,12 +1473,6 @@ h3 {
     right: 18%; }
     .about_taiwan_background_smallgrass img {
       width: 100%; }
-  .taiwan1 {
-    width: 80%;
-    height: 100vh;
-    position: relative;
-    top: 5%;
-    left: 7%; }
   #cf503461-00bd-459a-aeb5-062ebc913211 {
     width: 80%;
     height: 100vh;
@@ -1092,28 +1480,85 @@ h3 {
     bottom: 8%;
     left: -14%; }
   #section3 {
-    background-color: #a4ddfa;
+    background-color: #00b5bd;
+<<<<<<< HEAD
+>>>>>>> member
+=======
+>>>>>>> commit
+=======
+  #section3 {
+    background-color: #00B5BD;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+  #section3 {
+    background-color: #00B5BD;
+>>>>>>> 1105homepage(having about)
     height: 100vh; }
   .about_end_background {
     position: absolute;
     width: 100%;
-    height: 100vh; }
-  .about_end_background_flowerpot {
-    width: 10%;
-    position: absolute;
-    bottom: 13%;
-    left: -7%;
-    z-index: 3; }
-    .about_end_background_flowerpot img {
-      width: 100%; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
+    height: 100vh;
+    bottom: 140px; }
   .about_end_background_shadow {
     width: 100%;
     position: absolute;
-    bottom: 13%; }
+    bottom: 0; }
     .about_end_background_shadow img {
       width: 100%; }
   .about_end_background_house1 {
     width: 100%;
+    position: absolute;
+    bottom: 6%; }
+    .about_end_background_house1 img {
+      width: 100%; }
+  .about_end_background_bounce {
+    width: 15%;
+    position: absolute;
+    bottom: 22%;
+    left: 17%; }
+    .about_end_background_bounce img {
+      width: 100%;
+      margin: 10% 0 0;
+      animation: bounce .5s infinite alternate; }
+  .about_end_background_truck {
+    width: 25%;
+    position: absolute;
+    bottom: 6%;
+    left: 14%; }
+    .about_end_background_truck img {
+      width: 100%;
+      animation: shake .3s  alternate  infinite; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> commit
+    height: 100vh; }
+  .about_end_background_flowerpot {
+    width: 4%;
+    position: absolute;
+    bottom: 12%;
+    left: 0%;
+    z-index: 3; }
+    .about_end_background_flowerpot img {
+      width: 100%; }
+  .about_end_background_shadow {
+    width: 22%;
+    position: absolute;
+    left: 2%;
+    bottom: 16%; }
+    .about_end_background_shadow img {
+      width: 100%; }
+  .about_end_background_house1 {
+    width: 24%;
     position: absolute;
     bottom: 14%; }
     .about_end_background_house1 img {
@@ -1126,7 +1571,7 @@ h3 {
     .about_end_background_house2 img {
       width: 100%; }
   .about_end_background_bounce {
-    width: 14%;
+    width: 4%;
     position: absolute;
     bottom: 30%;
     left: 4%;
@@ -1136,82 +1581,123 @@ h3 {
       margin: 10% 0 0;
       animation: bounce 0.5s infinite alternate; }
   .about_end_background_streetlight1 {
-    width: 10%;
+    width: 3%;
     position: absolute;
-    left: 5%;
+    left: 2%;
     bottom: 13%;
     z-index: 2; }
     .about_end_background_streetlight1 img {
       width: 100%; }
   .about_end_background_streetlight2 {
-    width: 10%;
-    position: absolute;
-    left: 37%;
-    bottom: 13%; }
+    display: none; }
   .about_end_background_streetlight3 {
+    display: none; }
+  .about_end_background_truck {
     width: 10%;
     position: absolute;
-    right: 25%;
-    bottom: 13%; }
-  .about_end_background_truck {
-    width: 40%;
-    position: absolute;
-    bottom: 3%;
+    bottom: 6%;
     left: 7%;
     z-index: 5; }
     .about_end_background_truck img {
       width: 100%;
       animation: shake 0.3s alternate infinite; }
   .about_end_background_tree1 {
-    width: 10%;
+    width: 2.5%;
     position: absolute;
-    left: 11%;
+    left: 5%;
     bottom: 11%;
     z-index: 3; }
     .about_end_background_tree1 img {
       width: 100%; }
   .about_end_background_tree2 {
-    width: 10%;
+    width: 2.5%;
     position: absolute;
-    left: 45%;
+    left: 11%;
     bottom: 11%;
     z-index: 4; }
     .about_end_background_tree2 img {
       width: 100%; }
   .about_end_background_tree3 {
-    width: 10%;
+    width: 2.5%;
     position: absolute;
-    right: 12%;
+    left: 18%;
     bottom: 11%;
-    z-index: 3; }
+    z-index: 0; }
     .about_end_background_tree3 img {
       width: 100%; }
   .about_end_background_soil {
-    width: 100%;
+    width: 24%;
     height: 18%;
     background-color: #c69c6d;
     position: absolute;
     bottom: -4%;
     z-index: 2;
     line-height: 110px; }
-    .about_end_background_soil .about_end_background_soil_road1 {
+  .about_end_background_soil_road1 {
+    width: 52%;
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    display: none; }
+    .about_end_background_soil_road1 img {
+      width: 100%; }
+<<<<<<< HEAD
+>>>>>>> member
+=======
+>>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
+  .about_end_background_truckTire1 {
+    width: 6%;
+    position: absolute;
+    bottom: 6%;
+    left: 21%; }
+    .about_end_background_truckTire1 img {
       width: 100%;
-      position: absolute;
-      bottom: 8%;
-      left: 0; }
-      .about_end_background_soil .about_end_background_soil_road1 img {
-        width: 100%; }
-    .about_end_background_soil .about_end_background_soil_road2 {
-      display: none; }
-    .about_end_background_soil .about_end_background_soil_road3 {
-      display: none; }
+      animation: rotate 5s linear infinite; }
+  .about_end_background_truckTire2 {
+    width: 6%;
+    position: absolute;
+    bottom: 6%;
+    left: 32%; }
+    .about_end_background_truckTire2 img {
+      width: 100%;
+      animation: rotate 5s linear infinite; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
+  #cf503461-00bd-459a-aeb5-062ebc913211 {
+    width: 80%;
+    height: 100vh;
+    position: absolute;
+    bottom: 12%;
+    left: -14%; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
   .about_end_background_house2 {
     display: none; }
+>>>>>>> member
+=======
+  .about_end_background_house2 {
+    display: none; }
+>>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
   .title_area {
     width: 45%;
     height: 30%;
     position: absolute;
-    left: 50%;
+    left: 48%;
     top: 40%;
     color: white;
     font-size: 30px;
@@ -1221,10 +1707,35 @@ h3 {
     height: 77%; }
     .forcast h5 {
       font-size: 18px; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
+  .about_taiwan_background_mountain {
+    width: 79%;
+    position: absolute;
+    bottom: 21%;
+    left: 7%; }
+    .about_taiwan_background_mountain img {
+      width: 100%; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> member
+=======
+>>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
   .about_taiwan_background_cloud {
     width: 20%;
     position: absolute;
-    top: 12%; }
+    top: 4%; }
     .about_taiwan_background_cloud img {
       width: 100%;
       animation: flutter 5s linear infinite; }
@@ -1232,22 +1743,55 @@ h3 {
     width: 30%;
     position: absolute;
     left: 61%;
-    top: 13%;
+    top: 5%;
     z-index: -2; }
     .about_taiwan_background_cloud2 img {
       width: 100%;
       animation: flutter 5s linear infinite; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
+  .about_taiwan_background_mountain2,
+  .about_taiwan_background_grass {
+    display: none; }
+  .about_cooperation_info_blcok {
+    width: 65%;
+    background-color: #00ac6f;
+    position: absolute;
+    top: 7%;
+    left: -15%;
+    right: 0;
+    margin: 1% auto;
+    padding: 5% 0;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> commit
   .about_taiwan_background_mountain2 {
     display: none; }
   .about_cooperation_info_blcok {
-    width: 60%;
+    width: 17%;
     background-color: #00ac6f;
     position: absolute;
-    top: 27%;
-    left: 0%;
+    top: 18%;
+    left: -76%;
     right: 0;
     margin: 0% auto;
     padding: 1% 0;
+<<<<<<< HEAD
+>>>>>>> member
+=======
+>>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
     border: 5px solid #fff;
     box-shadow: 0 0 0 20px #00ac6f;
     z-index: 6;
@@ -1255,6 +1799,13 @@ h3 {
   .about_cooperation_info_blcok_border {
     width: 80%;
     margin: auto; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> commit
   .about_end_formInfo {
     margin: 1% auto 0;
     width: 100%;
@@ -1266,16 +1817,19 @@ h3 {
     color: #fff;
     padding: 1%;
     border-radius: 10px; }
+<<<<<<< HEAD
+>>>>>>> member
+=======
+>>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
   .about_cooperation_info_item_title {
     width: 80%;
     margin: auto; }
     .about_cooperation_info_item_title img {
-      width: 100%; }
-  .about_truck {
-    width: 11%;
-    position: absolute;
-    left: 9%;
-    bottom: 3%; } }
+      width: 100%; } }
 
 @media all and (min-width: 768px) {
   .about_start_info_blcok {
@@ -1285,10 +1839,10 @@ h3 {
     top: 20%;
     left: 36%;
     margin: auto;
-    padding: 4% 0 0;
+    padding: 4% 0;
     border-radius: 10px;
     border: 10px solid #fff;
-    box-shadow: 0 0 0 15px #00ac6f;
+    box-shadow: 0 0 0 20px #00ac6f;
     z-index: 6; }
   .about_start_info_blcok_border {
     width: 85%;
@@ -1298,16 +1852,20 @@ h3 {
     width: 70%;
     margin: auto; }
     .about_start_info_item_title img {
-      width: 100%; }
+      width: 100%;
+      margin-bottom: 10%; }
   .about_start_formInfo {
     margin: 2% auto 0;
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    border-radius: 10px; }
     .about_start_formInfo .about_start_formInfo_content {
       line-height: 1.6;
       margin: auto;
       color: #fff;
-      padding: 8% 5%; }
+      padding: 5%;
+      border: 1px solid #fff;
+      border-radius: 10px; }
   .about_start_background_block {
     position: relative;
     height: 100vh; }
@@ -1324,14 +1882,30 @@ h3 {
     top: 20%;
     animation: flutter 5s linear infinite; }
   .about_start_content_bounce {
-    width: 6%;
+    width: 8%;
     position: absolute;
-    bottom: 42%;
+    bottom: 37%;
     left: 10%; }
     .about_start_content_bounce img {
       width: 100%;
       margin: 10% 0 0;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+      animation: bounce .5s infinite alternate; }
+=======
       animation: bounce 0.5s infinite alternate; }
+>>>>>>> member
+=======
+      animation: bounce 0.5s infinite alternate; }
+>>>>>>> commit
+=======
+      animation: bounce .5s infinite alternate; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+      animation: bounce .5s infinite alternate; }
+>>>>>>> 1105homepage(having about)
   .about_start_content_orchard {
     width: 30%;
     position: absolute;
@@ -1415,7 +1989,23 @@ h3 {
   .about_start_grass {
     width: 100%;
     height: 18%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    background-color: #D9E021;
+=======
     background-color: #d9e021;
+>>>>>>> member
+=======
+    background-color: #d9e021;
+>>>>>>> commit
+=======
+    background-color: #D9E021;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+    background-color: #D9E021;
+>>>>>>> 1105homepage(having about)
     position: absolute;
     bottom: 0;
     z-index: 2;
@@ -1442,7 +2032,23 @@ h3 {
     z-index: 4; }
     .about_start_content_car01 img {
       width: 100%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+      animation: shake .3s  alternate  infinite; }
+=======
       animation: shake 0.3s alternate infinite; }
+>>>>>>> member
+=======
+      animation: shake 0.3s alternate infinite; }
+>>>>>>> commit
+=======
+      animation: shake .3s  alternate  infinite; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+      animation: shake .3s  alternate  infinite; }
+>>>>>>> 1105homepage(having about)
   .about_start_content_car01_tire1 {
     width: 5%;
     position: absolute;
@@ -1467,10 +2073,8 @@ h3 {
   .about_factory_background_clould01 {
     position: absolute;
     width: 15%;
-    top: 15%;
     left: 5%;
-    z-index: 3;
-    animation: flutter 5s linear infinite; }
+    z-index: 3; }
   .about_factory_background_clould03 {
     width: 20%;
     position: absolute;
@@ -1480,7 +2084,7 @@ h3 {
   .about_factory_content_factoryTitle {
     position: absolute;
     z-index: 2;
-    width: 6%;
+    width: 8%;
     max-width: 120px;
     right: 16%;
     top: 20%; }
@@ -1513,11 +2117,37 @@ h3 {
     .about_factory_content_pine img {
       width: 100%; }
   .about_factory_content_mountain01 {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
+    width: 85%;
+    position: absolute;
+    bottom: 18%;
+    left: 0%;
+    z-index: 1; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> commit
     width: 100%;
     position: absolute;
     bottom: 18%;
     left: 0%;
     z-index: 2; }
+<<<<<<< HEAD
+>>>>>>> member
+=======
+>>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
     .about_factory_content_mountain01 img {
       width: 100%; }
   .about_factory_content_mountain02 {
@@ -1528,17 +2158,58 @@ h3 {
     .about_factory_content_mountain02 img {
       width: 100%; }
   .about_factory_content_grass1 {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
+    width: 14%;
+    position: absolute;
+    bottom: 18%;
+    right: 38%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> commit
     width: 17%;
     position: absolute;
     bottom: 13%;
     right: 47%;
+<<<<<<< HEAD
+>>>>>>> member
+=======
+>>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
     z-index: 4; }
     .about_factory_content_grass1 img {
       width: 100%; }
   .about_factory_grass {
     width: 100%;
     height: 18%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    background-color: #D9E021;
+=======
     background-color: #d9e021;
+>>>>>>> member
+=======
+    background-color: #d9e021;
+>>>>>>> commit
+=======
+    background-color: #D9E021;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+    background-color: #D9E021;
+>>>>>>> 1105homepage(having about)
     position: absolute;
     bottom: 0;
     z-index: 2;
@@ -1557,7 +2228,7 @@ h3 {
       .about_factory_grass .about_factory_road2 img {
         width: 100%; }
   .about_factory_content_streetlamp1 {
-    width: 8%;
+    width: 11%;
     position: absolute;
     left: 5%;
     bottom: 11%;
@@ -1565,7 +2236,7 @@ h3 {
     .about_factory_content_streetlamp1 img {
       width: 100%; }
   .about_factory_content_streetlamp2 {
-    width: 8%;
+    width: 11%;
     position: absolute;
     left: 30%;
     bottom: 11%;
@@ -1573,7 +2244,7 @@ h3 {
     .about_factory_content_streetlamp2 img {
       width: 100%; }
   .about_factory_content_streetlamp3 {
-    width: 8%;
+    width: 11%;
     position: absolute;
     right: 0%;
     bottom: 11%;
@@ -1646,9 +2317,192 @@ h3 {
     margin: 3% auto; }
     .about_factory_info_item_cart_horizontal img {
       width: 100%; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
+  .about_factory_info_item_cart_straight, .about_factory_info_item_truck_straight {
+    display: none; }
+  .about_end {
+    overflow: hidden; }
+  .about_end_background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    bottom: 140px; }
+  .about_end_background_shadow {
+    width: 100%;
+    position: absolute;
+    bottom: -8%;
+    left: 5%; }
+    .about_end_background_shadow img {
+      width: 100%; }
+  .about_end_background_house1 {
+    width: 70%;
+    position: absolute;
+    bottom: 0%;
+    left: 5%; }
+    .about_end_background_house1 img {
+      width: 100%; }
+  .about_end_background_house2 {
+    width: 70%;
+    position: absolute;
+    bottom: 0%;
+    right: -40%; }
+    .about_end_background_house2 img {
+      width: 100%; }
+  .about_end_background_flowerpot {
+    width: 10%;
+    position: absolute;
+    bottom: 0%;
+    left: 0%; }
+    .about_end_background_flowerpot img {
+      width: 100%; }
+  .about_end_background_bounce {
+    width: 8%;
+    position: absolute;
+    bottom: 35%;
+    left: 20%; }
+    .about_end_background_bounce img {
+      width: 100%;
+      margin: 10% 0 0;
+      animation: bounce .5s infinite alternate; }
+  .about_end_background_streetlight1 {
+    width: 11%;
+    position: absolute;
+    left: 10%;
+    bottom: -7%;
+    z-index: 2; }
+    .about_end_background_streetlight1 img {
+      width: 100%; }
+  .about_end_background_streetlight2 {
+    width: 11%;
+    position: absolute;
+    left: 60%;
+    bottom: -7%;
+    z-index: 2; }
+    .about_end_background_streetlight2 img {
+      width: 100%; }
+  .about_end_background_streetlight3 {
+    width: 11%;
+    position: absolute;
+    left: 80%;
+    bottom: -7%;
+    z-index: 2; }
+    .about_end_background_streetlight3 img {
+      width: 100%; }
+  .about_end_background_tree1 {
+    width: 8%;
+    position: absolute;
+    left: 20%;
+    bottom: -6%;
+    z-index: 3; }
+    .about_end_background_tree1 img {
+      width: 100%; }
+  .about_end_background_tree2 {
+    width: 8%;
+    position: absolute;
+    left: 40%;
+    bottom: -6%;
+    z-index: 4; }
+    .about_end_background_tree2 img {
+      width: 100%; }
+  .about_end_background_tree3 {
+    width: 8%;
+    position: absolute;
+    left: 65%;
+    bottom: -6%;
+    z-index: 4; }
+    .about_end_background_tree3 img {
+      width: 100%; }
+  .about_end_background_truck {
+    width: 25%;
+    position: absolute;
+    bottom: -11%;
+    left: 10%;
+    z-index: 3; }
+    .about_end_background_truck img {
+      width: 100%;
+      animation: shake .3s  alternate  infinite; }
+  .about_end_background_truckTire1 {
+    width: 5%;
+    position: absolute;
+    bottom: -13%;
+    left: 18%;
+    z-index: 3; }
+    .about_end_background_truckTire1 img {
+      width: 100%;
+      animation: rotate 5s linear infinite; }
+  .about_end_background_truckTire2 {
+    width: 5%;
+    position: absolute;
+    bottom: -13%;
+    left: 28%;
+    z-index: 3; }
+    .about_end_background_truckTire2 img {
+      width: 100%;
+      animation: rotate 5s linear infinite; }
+  .about_end_background_soil {
+    width: 87%;
+    height: 18%;
+    background-color: #c69c6d;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    line-height: 110px; }
+    .about_end_background_soil .about_end_background_soil_road1 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      left: 0; }
+      .about_end_background_soil .about_end_background_soil_road1 img {
+        width: 100%; }
+    .about_end_background_soil .about_end_background_soil_road2 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      left: 46%; }
+      .about_end_background_soil .about_end_background_soil_road2 img {
+        width: 100%; }
+    .about_end_background_soil .about_end_background_soil_road3 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      right: 0%; }
+      .about_end_background_soil .about_end_background_soil_road3 img {
+        width: 100%; }
+  .about_end_formInfo {
+    margin: 2% auto 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; }
+    .about_end_formInfo .about_end_formInfo_content {
+      line-height: 1.6;
+      margin: auto;
+      color: #fff;
+      padding: 5%;
+      border: 1px solid #fff;
+      border-radius: 10px; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
   .about_factory_info_item_cart_straight,
   .about_factory_info_item_truck_straight {
     display: none; }
+>>>>>>> member
+=======
+  .about_factory_info_item_cart_straight,
+  .about_factory_info_item_truck_straight {
+    display: none; }
+>>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
   #cf503461-00bd-459a-aeb5-062ebc913211 {
     width: 25%;
     height: 100vh;
@@ -1656,23 +2510,32 @@ h3 {
     bottom: 5%;
     z-index: 2;
     left: 25%; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
   .title_area {
     width: 25%;
     position: absolute;
     left: 50%;
     top: 19%;
     color: white;
-    font-size: 22px;
-    padding: 2%;
-    z-index: 2; }
-  .about_taiwan_background_gesture {
-    width: 5%;
-    position: absolute;
-    top: 38%;
-    left: 44%; }
-    .about_taiwan_background_gesture img {
-      width: 100%;
-      animation: gesture 1s infinite ease-in-out alternate; }
+    font-size: 30px;
+    padding: 2%; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> member
+=======
+>>>>>>> commit
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> 1105homepage(having about)
   .about_taiwan_background_mountain {
     width: 70%;
     position: absolute;
@@ -1696,22 +2559,13 @@ h3 {
     .about_taiwan_background_mountain3 img {
       width: 100%; }
   .about_taiwan_background_windmill {
-    width: 15%;
+    width: 20%;
     position: absolute;
     bottom: 18%;
     left: 6%;
     z-index: 1; }
     .about_taiwan_background_windmill img {
       width: 100%; }
-  .about_taiwan_background_windmillFan {
-    width: 20%;
-    position: absolute;
-    left: 4%;
-    bottom: 30%;
-    z-index: 1; }
-    .about_taiwan_background_windmillFan img {
-      width: 100%;
-      animation: rotate 2s infinite linear; }
   .about_taiwan_background_grassflowr {
     width: 7%;
     position: absolute;
@@ -1723,7 +2577,23 @@ h3 {
   .about_taiwan_background_grass {
     width: 100%;
     height: 18%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    background-color: #D9E021;
+=======
     background-color: #d9e021;
+>>>>>>> member
+=======
+    background-color: #d9e021;
+>>>>>>> commit
+=======
+    background-color: #D9E021;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+    background-color: #D9E021;
+>>>>>>> 1105homepage(having about)
     position: absolute;
     bottom: 0;
     z-index: 2;
@@ -1791,12 +2661,52 @@ h3 {
     .about_taiwan_background_cloud2 img {
       width: 100%;
       animation: flutter 5s linear infinite; }
+  .about_taiwan_background_truck {
+    position: absolute;
+    bottom: 100%;
+    width: 25%;
+    left: 5%; }
+    .about_taiwan_background_truck img {
+      width: 100%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+      animation: shake .3s  alternate  infinite; }
+=======
+      animation: shake 0.3s alternate infinite; }
+>>>>>>> member
+=======
+      animation: shake 0.3s alternate infinite; }
+>>>>>>> commit
+=======
+      animation: shake .3s  alternate  infinite; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+      animation: shake .3s  alternate  infinite; }
+>>>>>>> 1105homepage(having about)
+  .about_taiwan_background_truckTire1 {
+    width: 5%;
+    position: absolute;
+    bottom: 83%;
+    left: 13%; }
+    .about_taiwan_background_truckTire1 img {
+      width: 100%;
+      animation: rotate 5s linear infinite; }
+  .about_taiwan_background_truckTire2 {
+    width: 5%;
+    position: absolute;
+    bottom: 83%;
+    left: 23.5%; }
+    .about_taiwan_background_truckTire2 img {
+      width: 100%;
+      animation: rotate 5s linear infinite; }
   .about_cooperation_info_blcok {
     width: 40%;
     background-color: #00ac6f;
     position: absolute;
-    top: 25%;
-    left: 30%;
+    top: 40%;
+    left: 36%;
     margin: auto;
     padding: 4% 0;
     border-radius: 10px;
@@ -1812,13 +2722,20 @@ h3 {
     margin: auto; }
     .about_cooperation_info_item_title img {
       width: 100%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+      margin-bottom: 10%; } }
+=======
+=======
+>>>>>>> commit
       margin-bottom: 10%; }
-  .about_end {
-    position: relative; }
   .about_end_background {
     position: relative;
     width: 100%;
-    height: calc(100vh - 18%); }
+    height: 100vh;
+    bottom: 140px; }
   .about_end_background_shadow {
     width: 100%;
     position: absolute;
@@ -1848,7 +2765,7 @@ h3 {
     .about_end_background_flowerpot img {
       width: 100%; }
   .about_end_background_bounce {
-    width: 6%;
+    width: 8%;
     position: absolute;
     bottom: 35%;
     left: 20%; }
@@ -1907,18 +2824,36 @@ h3 {
   .about_end_background_truck {
     width: 25%;
     position: absolute;
-    bottom: -10%;
+    bottom: -11%;
     left: 10%;
     z-index: 3; }
     .about_end_background_truck img {
       width: 100%;
       animation: shake 0.3s alternate infinite; }
+  .about_end_background_truckTire1 {
+    width: 5%;
+    position: absolute;
+    bottom: -13%;
+    left: 18%;
+    z-index: 3; }
+    .about_end_background_truckTire1 img {
+      width: 100%;
+      animation: rotate 5s linear infinite; }
+  .about_end_background_truckTire2 {
+    width: 5%;
+    position: absolute;
+    bottom: -13%;
+    left: 28%;
+    z-index: 3; }
+    .about_end_background_truckTire2 img {
+      width: 100%;
+      animation: rotate 5s linear infinite; }
   .about_end_background_soil {
     width: 100%;
     height: 18%;
     background-color: #c69c6d;
     position: absolute;
-    bottom: 0%;
+    bottom: -18%;
     z-index: 2;
     line-height: 110px; }
     .about_end_background_soil .about_end_background_soil_road1 {
@@ -1953,12 +2888,14 @@ h3 {
       color: #fff;
       padding: 5%;
       border: 1px solid #fff;
-      border-radius: 10px; }
-  .about_truck {
-    width: 6%;
-    position: absolute;
-    left: 10%;
-    bottom: 5%; }
-    .about_truck img {
-      width: 100%;
-      animation: shake 0.3s alternate infinite; } }
+      border-radius: 10px; } }
+<<<<<<< HEAD
+>>>>>>> member
+=======
+>>>>>>> commit
+=======
+      margin-bottom: 10%; } }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+      margin-bottom: 10%; } }
+>>>>>>> 1105homepage(having about)

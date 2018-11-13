@@ -1,4 +1,4 @@
-h1{
+.menu h1.menu_logo{
     font-size: 0;
 }
 #hb_control{
@@ -93,12 +93,100 @@ header{
     animation: move 10s linear infinite alternate;
 }
 //機器人
-.robot{
+#robotControl:checked {
+    &~.robot_container .robot_toggle{
+        transform: rotate(180deg);
+        transition: .5s;
+    }
+    &~ .robot_container{
+        bottom:0;
+        transition: 1s;
+    }
+}
+.robot_container{
+    display: flex;
+    flex-direction: column;
     position: fixed;
-    width: 110px;
-    bottom: 0;
+    transition: 1s;
+    bottom:-450px;
+    // bottom:0;
     right:0;
     z-index: 50;
+    width:350px;
+    height: 500px;
+    div{
+        width: 100%;
+    }
+    .robot_titleBlock{
+        display: flex;
+        height: 10%;
+        position: relative;
+        line-height: 50px;
+        .robot_toggle{
+            width: 10%;
+            padding:0 20px ;
+            transition: .5s;
+        }
+        .robot_pic{
+            position: absolute;
+            bottom: 0;
+            right:1%;
+            width: 110px;
+
+        }
+         background-color:rgb(244, 214, 109);
+         border-radius: 10px 10px 0 0;
+    }
+    .robot_conversationBlock{
+        height: 82%;
+        background-color: #fff;
+        overflow: auto;
+        border: 6px solid #f4d66d;
+        border-bottom: 2px solid #f4d66d;
+        border-top: 0px;
+        .robot_text{  
+            margin:4% 2%;
+            display: inline-block;
+            padding:8px 12px;
+            border-radius: 10px;
+            background-color: rgba(244, 214, 109,.8);
+        }
+        .robot_textTime{
+            color:#ddd;
+            position: relative;
+            bottom:-7px;
+        }
+        .user_conversation{
+            .user_text{
+                display: inline-block;
+                background-color: rgba(244, 214, 109,.6);
+                padding:8px 12px;
+                border-radius: 10px;
+                margin:2% 2%;
+            }
+            text-align: right;
+        }
+    }
+    .robot_inputBlock{
+        height: 8%;
+        display: flex;
+        textarea{
+            width: 80%;
+            border: 1px solid #fff;
+            border-left: 6px solid #f4d66d;
+            border-top: 3px solid #f4d66d;
+        }
+        button{
+            display: inline-block;
+            height: 100%;
+            width: 20%;
+            line-height: 40px;
+            background-color: #ffd700;
+        }
+    }
+}
+#robotControl,#hb_control{
+    display:none;
 }
 //優惠卷
 .coupon{
@@ -108,16 +196,14 @@ header{
     right:2%;
     z-index: 100;
 }
-
-
 @include rwd(mobile){
     //機器人
-    .robot{
-        width: 80px;
+    .robot_container{
+        display: none;
     }
     //優惠卷
     .coupon{
-        top: 140px;
+        top: 75px;
         width: 70px;
     }
     #svg-2{

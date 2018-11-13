@@ -1,8 +1,8 @@
-@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -55,20 +55,17 @@ table {
   background-color: rgba(0, 0, 0, 0.5); }
 
 .lightbox_logo img {
-  width: 35%;
-  margin-right: 14px; }
+  width: 35%; }
 
 .lightbox {
   background-color: #d7eab2;
-  width: 80%;
-  max-width: 350px;
+  width: 370px;
   text-align: center;
   box-sizing: border-box;
-  padding: 5px 5px 0px 30px;
+  padding: 5px 20px 0px 20px;
   position: fixed;
   top: 50%;
   left: 50%;
-  border-radius: 30px;
   transform: translate(-50%, -50%); }
 
 #fruit,
@@ -93,26 +90,24 @@ table {
 
 .close {
   position: absolute;
-  right: 19px;
-  top: -32px;
-  top: 7px;
+  right: 25px;
+  top: 0;
   color: #000;
-  font-size: 42px;
+  font-size: 35px;
   font-weight: bold; }
 
 .logoContainer {
   padding-top: 30px; }
 
 .loginContainer {
-  padding-top: 11%; }
+  padding-top: 30px; }
 
 .memeber {
   display: block;
   border-radius: 10px;
   width: 100%; }
 
-input[type=text],
-input[type=password] {
+input[type=text], input[type=password] {
   width: 90%;
   padding: 10px 20px;
   margin: 8px 0;
@@ -124,15 +119,14 @@ input[type=password] {
 .login_btn {
   display: inline-block;
   width: 90%;
-  background-color: #fff100;
+  background-color: #8ecd14;
   padding: 12px 20px;
   border-radius: 10px;
   margin: 8px 0;
   position: relative;
   left: -5%; }
 
-.lightbox_signUp,
-.lightbox_forgrtPsw {
+.lightbox_signUp, .lightbox_forgrtPsw {
   color: black;
   text-decoration: none; }
 
@@ -144,6 +138,9 @@ input[type=password] {
 .regPsw > a {
   padding: 0 2%; }
 
+.tree {
+  float: left; }
+
 .clearfix {
   display: block;
   clear: both; }
@@ -151,22 +148,58 @@ input[type=password] {
 .orange img {
   width: 15%; }
 
-*,
-*:before,
-*:after {
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
   box-sizing: inherit; }
 
-/* 橘子 */
-/* 冰塊 */
-/* 果汁的顏色*/
+/* Ingredient: orange */
+/* Ingredient ice */
+/* cocktails */
+html {
+  min-height: 100%;
+  height: 100%; }
+
+.bar {
+  padding-top: 40px;
+  max-width: 900px;
+  margin: 0 auto; }
+  .bar:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.title {
+  font-size: 66px;
+  line-height: 100px;
+  text-align: center;
+  border-bottom: 1px solid #fff; }
+
 .cocktail {
-  padding: 7px 0 0; }
+  float: left;
+  min-width: 200px;
+  padding: 80px 60px 0;
+  width: 33%; }
   @media all and (max-width: 600px) {
     .cocktail {
       width: 50%; } }
   @media all and (max-width: 400px) {
     .cocktail {
       width: 100%; } }
+  .cocktail .description {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 14px;
+    line-height: 20px; }
+    .cocktail .description .ingredient {
+      display: block;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: left;
+      color: rgba(255, 255, 255, 0.5); }
+      .cocktail .description .ingredient.top {
+        padding-top: 15px; }
   .cocktail .cocktail__glass {
     margin: 0 auto; }
   .cocktail.negroni {
@@ -176,10 +209,10 @@ input[type=password] {
     .cocktail.martini .description {
       padding-top: 42px; }
   .cocktail .ice .ice__cube {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.2);
     width: 14px;
     height: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     position: absolute;
     bottom: 0; }
@@ -237,6 +270,28 @@ input[type=password] {
       top: -11px;
       left: 3px;
       transform: rotate(15deg); }
+  .cocktail .olive {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(128, 128, 0, 0.5);
+    position: relative;
+    left: -2px;
+    top: -20px;
+    animation: float-simple 5s infinite alternate linear; }
+    .cocktail .olive:before {
+      content: '';
+      background-color: transparent;
+      width: 23px;
+      height: 15px;
+      border: 1px solid #dEb887;
+      border-right: none;
+      border-top: none;
+      border-bottom: none;
+      display: block;
+      position: absolute;
+      top: -15px;
+      left: 5px; }
   .cocktail .cocktail__glass-long {
     position: relative;
     width: 32px;
@@ -247,52 +302,93 @@ input[type=password] {
     border-bottom-right-radius: 5px; }
     .cocktail .cocktail__glass-long:after {
       content: '';
-      background: rgba(255, 195, 0, 0.5);
+      background: rgba(255, 255, 255, 0.2);
       position: absolute;
       left: 0;
       right: 0;
       bottom: 0;
       height: 0;
       animation: fill-long 0.6s forwards ease; }
-  .cocktail .orange {
-    position: absolute;
-    right: 12px;
-    top: -4px;
-    transform: rotate(15deg);
-    overflow: hidden;
-    width: 28px;
-    height: 14px;
-    animation: float-simple 3s infinite alternate linear; }
-    .cocktail .orange:before {
-      content: "";
+  .cocktail .cocktail__glass-short {
+    position: relative;
+    width: 38px;
+    height: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-top: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; }
+    .cocktail .cocktail__glass-short:after {
+      content: '';
+      background: rgba(230, 45, 13, 0.7);
       position: absolute;
-      background-color: orange;
-      width: 100%;
-      height: 200%;
-      border-radius: 50%;
-      box-shadow: inset 0 0 0 2px #ffc04d, inset 0 0 0 10px #ffdb99; }
-
-.cocktail__glass-classic {
-  position: relative;
-  width: 0;
-  height: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  border-top: 25px solid rgba(255, 255, 255, 0.3);
-  /* 填滿果汁 */ }
-  .cocktail__glass-classic:before {
-    content: '';
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 0;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      animation: fill-short 0.6s forwards ease;
+      /*
+		@include keyframes( "fill") {
+		  100% {height: ($glass-long-h - 10px);}
+		}
+		*/ }
+    .cocktail .cocktail__glass-short .orange {
+      position: absolute;
+      right: 6px;
+      top: -4px;
+      transform: rotate(15deg);
+      overflow: hidden;
+      width: 28px;
+      height: 14px;
+      animation: float-simple 3s infinite alternate linear; }
+      .cocktail .cocktail__glass-short .orange:before {
+        content: "";
+        position: absolute;
+        background-color: orange;
+        width: 100%;
+        height: 200%;
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 2px #ffc04d, inset 0 0 0 10px #ffdb99; }
+  .cocktail .cocktail__glass-classic {
+    position: relative;
     width: 0;
     height: 0;
-    border-left: 18px solid transparent;
-    border-right: 18px solid transparent;
-    border-top: 18px solid rgba(255, 255, 255, 0.3);
-    position: absolute;
-    top: -20px;
-    left: -18px;
-    animation: fill-classic 0.6s forwards ease;
-    transform: translate3d(0, 0, 0) scale(0);
-    transform-origin: 50% bottom; }
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 25px solid rgba(255, 255, 255, 0.3);
+    /* fill */
+    /* gambo */ }
+    .cocktail .cocktail__glass-classic:before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-top: 18px solid rgba(255, 255, 255, 0.3);
+      position: absolute;
+      top: -20px;
+      left: -18px;
+      animation: fill-classic 0.6s forwards ease;
+      transform: translate3d(0, 0, 0) scale(0);
+      transform-origin: 50% bottom; }
+    .cocktail .cocktail__glass-classic:after {
+      content: '';
+      position: absolute;
+      left: -1px;
+      bottom: -27px;
+      height: 28px;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.3); }
+    .cocktail .cocktail__glass-classic .stand {
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 5px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+      left: -7px;
+      top: 16px; }
 
 @keyframes float {
   50% {

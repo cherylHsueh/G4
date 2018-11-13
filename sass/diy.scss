@@ -885,7 +885,7 @@ body {
   .diy_pickFruit_bottleBox {
 
     // transition: 1s;
-    diy_pickFruit_bottle {
+    .diy_pickFruit_bottle {
       width: auto;
       max-width: 100%;
       height: 1px;
@@ -1277,8 +1277,13 @@ body {
 
     .diy_pickFruit_rightItemTitle {
       margin-bottom: 10px;
+      color: #efb657;
+      font-size: 23px;
     }
-
+    .diy_pickFruit_rightItemContent{
+      line-height: 1.4;
+      padding-left: 26px;  
+    }
     .diy_pickFruit_righItemContent {
       margin-bottom: 6px;
     }

@@ -1,4 +1,99 @@
 function doFirst() {
+//首頁功能區
+	var fruits = document.querySelectorAll('.diy_pickFruit_leftItem');
+	var diyButton = document.querySelector('.diy_start');
+	diyButton.addEventListener('click',diySubmit);
+	for(var i=0;i<fruits.length;i++){
+		fruits[i].addEventListener('click',addJuice);
+		// infoArea = document.querySelector('.diy_pickFruit_rightItem');
+	}
+//hoer
+	$(".diy_pickFruit_leftItem").hover(function(e){
+		this.style.scale='1.2';
+		var content = this.nextElementSibling.value;
+		var info = content.split(',')[2];
+		var fruit = this.alt;
+		$("body .homepage_diy_fruitContent.homepage_diy_fruitContent-active").html('<h3>'+fruit+'</h3><h4>'+info+'</h4>');
+		console.log('<h3>'+fruit+':</h3><h4>'+info+'</h4>');
+	},function(){
+		this.scale='1';
+		$("body .homepage_diy_fruitContent").html('<h4>任選<span>3</span>種水果</h4><h4>客製您的專屬果汁</h4>');
+	})
+//點選果汁
+	function addJuice(e){
+			var fruit =this.id;
+			var content = this.nextElementSibling.value;
+			var no= content.split(',')[0];
+			var color = content.split(',')[1];
+			var info = content.split(',')[2];
+			filljuice(color,no);
+	}
+//裝果汁
+	function filljuice(color,fruit){
+        if ($(".diy_pickFruit_bottle1").css('background-color') == "rgba(0, 0, 0, 0)") {
+            $('#bottle1').attr('value', fruit);
+            $('.diy_pickFruit_bottle1').css('background-color', '#' + color);
+            $('.diy_pickFruit_bottle1').css('height', '100%');
+            $('.diy_pickFruit_cursor1').css({
+                'display':'none'});
+            $('.diy_pickFruit_cursor2').css({
+                'display':'none'});
+            // var info = document.createElement('p');
+            // infoArea.append(info);
+            // info.innerText=fruitInfo[fruit];
+            // info.className='diy_pickFruit_rightItemContent';
+        } else if ($(".diy_pickFruit_bottle2").css('background-color') == "rgba(0, 0, 0, 0)") {
+            $('.diy_pickFruit_bottle2').css('background-color',  '#' + color);
+            $('#bottle2').attr('value', fruit);            
+            $('.diy_pickFruit_bottle1').css('height', '50%');
+            $('.diy_pickFruit_bottle2').css('height', '50%');
+            $('.diy_pickFruit_cursor1').css({
+                'display':'block',
+                'top':'calc(50% - 10px)'});
+            $('.diy_pickFruit_cursor2').css({
+                'display':'none'});
+            // var info = document.createElement('p');
+            // infoArea.append(info);
+            // info.innerText=fruitInfo[fruit];
+            // info.className='diy_pickFruit_rightItemContent';
+        } else if ($(".diy_pickFruit_bottle3").css('background-color') == "rgba(0, 0, 0, 0)") {
+            $('.diy_pickFruit_bottle3').css('background-color',  '#' + color);
+            $('#bottle3').attr('value', fruit);
+            $('.diy_pickFruit_bottle3').css('height', '33.3333%');
+            $('.diy_pickFruit_bottle1').css('height', '33.3333%');
+            $('.diy_pickFruit_bottle2').css('height', '33.3333%');
+            $('.diy_pickFruit_cursor1').css({
+                'top':'calc(66.6666% - 10px)'});
+            $('.diy_pickFruit_cursor2').css({
+                'display':'block',
+                'top':'calc(33.3333% - 10px)'});
+            // var info = document.createElement('p');
+            // infoArea.append(info);
+            // info.innerText=fruitInfo[fruit];
+            // info.className='diy_pickFruit_rightItemContent';
+        } else {
+            swal({
+                type: 'error',
+                title: '果汁已經滿了哦!',
+                confirmButtonText: '<a class="diy_start" href="diy.php">開始製作</a>',
+                confirmButtonColor: '#ffd700',
+                showCancelButton: true,
+                cancelButtonColor: '#d33',
+                cancelButtonText: '取消',
+                animation: false,
+                customClass: 'animated tada',
+                // text: 'Something went wrong!',
+                footer: '<p>開始製作您的專屬果汁</p>'
+            })
+        }
+    }
+//點選開始製作
+	function diySubmit(){
+		document.getElementById('diyForm').submit();
+	}
+
+//首頁動畫區
+
 //第一屏地球放大，字出現的動畫
 	document.querySelector('.homepage_header_ballBox').style.transform="scale(1)";
 	setTimeout(function(){
@@ -9,7 +104,6 @@ function doFirst() {
 	setTimeout(typeAnimation, 2000);
 
 //初始化卷軸
-
 	var controller = new ScrollMagic.Controller();
 //果汁DIY
 	var sceneDiy =new ScrollMagic.Scene({
@@ -304,18 +398,19 @@ function doFirst() {
 
 			})
 			var blogButon = document.querySelector('.homepage_blog_btnBlock');
-			var blogPepper = document.querySelector('.homepage_blog_papperBlock');
+			var blogPepper = document.querySelector('.homepage_blog_papperBlock1');
 			var blogPerson = document.querySelector('.homepage_blog_platBlock');
 			
 			blogButon.style.opacity="1";
-			blogPepper.style.opacity="1";
-			blogPepper.style.bottom=0;
+			// blogPepper.style.opacity="1";
+			// blogPepper.style.bottom=0;
+			blogPepper.id+="homepage_blog_papperBlock-active";
 			blogPerson.style.left=0;
 			blogPerson.style.bottom=0;
 			
 		},3000);
 		setTimeout(function(){
-				document.querySelector('.homepage_blog_person2').className+=" homepage_blog_person-active";
+				document.querySelector('#blogPerson1').className+=" homepage_blog_person-active";
 			},6500);
 	})
 	// .addIndicators({
@@ -381,8 +476,13 @@ function doFirst() {
 		};
 	}, 1);
 	
-
-	
+//果粉私藏點選的動畫
+	blogPerson1 = document.getElementById('blogPerson1');
+	blogPerson2 = document.getElementById('blogPerson2');
+	blogPerson3 = document.getElementById('blogPerson3');
+	blogPerson1.addEventListener('click',blogActive);
+	blogPerson2.addEventListener('click',blogActive);
+	blogPerson3.addEventListener('click',blogActive);
 
 };
 
@@ -492,9 +592,59 @@ function header_blog() {
 }
 
 
-//關於果然
-function animate_illustration(a, b) {
+//私藏輪播
+function blogActive(e) {
+	blogPepper = document.querySelectorAll('.homepage_blog_papperBlock');
+	var blogButton = document.querySelectorAll('.homepage_blog_btnBlock');
+	if(this.id=="blogPerson1"){
+	blogPepper[0].style.display="block";
+	blogPepper[1].style.display="none";
+	blogPepper[2].style.display="none";
+	setTimeout(function(){
+		blogPepper[0].id+="homepage_blog_papperBlock-active";
+		blogPepper[1].id="";
+		blogPepper[2].id="";
+		blogButton[0].style.opacity="1";
+		blogButton[1].style.opacity="0";
+		blogButton[2].style.opacity="0";
+	},10);
 
+	blogPerson2.className="";
+	blogPerson3.className="";
+	this.className+=' homepage_blog_person-active';
+ }else if(this.id=="blogPerson2"){
+	blogPepper[1].style.display="block";
+	blogPepper[0].style.display="none";
+	blogPepper[2].style.display="none";
+	setTimeout(function(){
+		blogPepper[1].id+="homepage_blog_papperBlock-active";
+		blogPepper[0].id="";
+		blogPepper[2].id="";
+		blogButton[1].style.opacity="1";
+		blogButton[0].style.opacity="0";
+		blogButton[2].style.opacity="0";
+	},10);
+
+	blogPerson1.className="";
+	blogPerson3.className="";
+	this.className+=' homepage_blog_person-active';
+ }else if(this.id=="blogPerson3"){
+	blogPepper[2].style.display="block";
+	blogPepper[0].style.display="none";
+	blogPepper[1].style.display="none";
+	setTimeout(function(){
+		blogPepper[2].id+="homepage_blog_papperBlock-active";
+		blogPepper[0].id="";
+		blogPepper[1].id="";
+		blogButton[2].style.opacity="1";
+		blogButton[1].style.opacity="0";
+		blogButton[0].style.opacity="0";
+	},10);
+
+	blogPerson1.className="";
+	blogPerson2.className="";
+	this.className+=' homepage_blog_person-active';
+ }
 }
 
 

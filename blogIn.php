@@ -19,6 +19,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0,shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>果然配</title>
+    <link rel="stylesheet" type="text/css" href="css/loginFruit.css">
     <link rel="stylesheet" href="css/blog.css">
     <script src='js/global.js'></script>
     <script src="js/plugin/jquery-3.3.1.min.js" type="text/javascript"></script>
@@ -28,7 +29,7 @@ try {
 <body>
     
 <?php
-    require_once("nav.php");
+    require_once("php/nav.php");
 ?>
 
     <div class="umbrellaApple">

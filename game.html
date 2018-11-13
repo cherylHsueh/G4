@@ -1,260 +1,321 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>水果遊戲</title>
-    <meta name="Name" content="科博网">
-    <meta name="keywords"/>
+    <meta name="Name" content="科博网" />
+    <meta name="keywords" />
     <meta name="description" />
     <meta name="Author" content="Mr.Co" />
 
-    <style type='text/css'>
-        * {
-            padding: 0px;
-            margin: 0px;
-            outline:1px solid red;
-        }
+    <style type="text/css">
+      * {
+        padding: 0px;
+        margin: 0px;
+        /* outline: 1px solid red; */
+      }
 
-        .game_container {
-            position: absolute;
-            width: 500px;
-            height: 530px;
-            left: 50%;
+      .game_container {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        /* left: 50%;
             top: 50%;
             margin-left: -250px;
-            margin-top: -265px;
-            border: 2px solid #000;
-        }
+            margin-top: -265px; */
+        /* border: 2px solid #000; */
+      }
 
-        #game_info {
-            left: 0px;
-            top: 0px;
-            position: absolute;
-            width: 98px;
-            height: 530px;
-            background: #ccc;
-            border-right: 1px solid #000;
-        }
+      #game_info {
+        left: 86%;
+        top: 68%;
+        font-family: "微軟正黑體";
+        text-align: center;
+        color: white;
+        display: block;
+        position: absolute;
+        z-index: 2;
+      }
 
-        #game_info dl {
-            list-style: none;
-            margin-top: 10px;
-        }
+      #game_info > div {
+        margin-top: 10px;
+      }
 
-        #game_info dl dt {
-            font-weight: bold;
-            font-family: '微软雅黑';
-            font-size: 14px;
-            text-indent: 10px;
-            text-shadow: 1px 1px #ccc;
-        }
+      #game_info dl dt {
+        font-weight: bold;
+        font-family: "微軟正黑體";
+        font-size: 22px;
+        text-indent: 10px;
+      }
 
-        #game_info dl dd {
-            font-size: 12px;
-            line-height: 30px;
-            text-align: center;
-        }
+      #game_info dl dd {
+        font-size: 12px;
+        line-height: 30px;
+        text-align: center;
+      }
 
-        #game_info #gameCent, #game_info #gameLevel {
-            font-weight: bold;
-            text-shadow: 2px 1px #ccc;
-            color: #0000ff;
-            font-size: 16px;
-            font-family: '微软雅黑';
-            margin: 0 2px;
-        }
+      #game_info #gameCent,
+      #game_info #gameLevel {
+        font-weight: bold;
+        text-shadow: 2px 1px #ccc;
+        color: #0000ff;
+        font-size: 16px;
+        font-family: "微软雅黑";
+        margin: 0 2px;
+      }
 
-        #game_info #gameLevel {
-            color: red;
-        }
+      #game_info #gameLevel {
+        color: red;
+      }
+      #gameLevel {
+        display: none;
+      }
 
-        #game_info .life_bar_box {
-            display: inline-block;
-            margin-left: 8px;
-            height: 12px;
-            width: 82px;
-            border: 1px solid #000;
-            box-shadow: 2px 1px 5px #ccc;
-            border-radius: 2px 2px;
-            line-height: normal;
-            _overflow: hidden;
-        }
+      #game_info .life_bar_box {
+        display: inline-block;
+        margin-left: 8px;
+        height: 12px;
+        width: 82px;
+        /* border: 1px solid #000; */
+        box-shadow: 2px 1px 5px #ccc;
+        border-radius: 2px 2px;
+        line-height: normal;
+        overflow: hidden;
+      }
 
-        #game_info #lifeBar {
-            display: inline-block;
-            height: 10px;
-            background: green;
-            width: 80px;
-            margin-left: 1px;
-            box-shadow: 1px 1px 10px #ccc;
-        }
+      #game_info #lifeBar {
+        display: inline-block;
+        height: 10px;
+        background: green;
+        width: 80px;
+        margin-left: 1px;
+        box-shadow: 1px 1px 10px #ccc;
+      }
 
-        #game_info #lifeBar.yellow {
-            background: #ef9c26;
-        }
+      #game_info #lifeBar.yellow {
+        background: #ef9c26;
+      }
 
-        #game_info #lifeBar.red {
-            background: red;
-        }
+      #game_info #lifeBar.red {
+        background: red;
+      }
+      /* 主螢幕 */
+      #game_box {
+        /* left: 100px; */
+        top: 0px;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        /* border: 1px solid #00415e; */
+        background: url(images/blog_backgroung5.jpg) no-repeat;
+        background-size: cover;
+        /* background-size: 100%; */
+        overflow: hidden;
+      }
 
-        #game_box {
-            left: 100px;
-            top: 0px;
-            position: absolute;
-            width: 400px;
-            height: 500px;
-            border: 1px solid #00415e;
-            background: url(images/blog_backgroung5.jpg) no-repeat -600px -160px;
-            overflow: hidden;
-        }
+      #game_box .bg_layer {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        z-index: 2;
+      }
 
-        #game_box .bg_layer {
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            position: absolute;
-            z-index: 2;
-        }
+      .car_bar {
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+        left: 0px;
+        height: 95px;
+        z-index: 9;
+      }
 
-        .car_bar {
-            position: absolute;
-            width: 100%;
-            bottom: 0px;
-            left: 0px;
-            height: 70px;
-            z-index: 9;
-        }
+      .car_bar .car {
+        position: absolute;
+        height: 95px;
+        width: 169px;
+        background: url(images/jie.png) no-repeat;
+      }
+      /* 水果大小 */
+      .thing {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        z-index: 10;
+      }
+      .thing img {
+        width: 100%;
+        height: 100%;
+      }
 
-        .car_bar .car {
-            position: absolute;
-            height: 70px;
-            width: 68px;
-            background: #b6d152;
-            background: url(images/jie.png) no-repeat;
-        }
-    /* 水果大小 */
-        .thing {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            z-index: 10;
-        }
-        .thing img{
-            width:100%;
-        }
+      #game_box .tip_box {
+        position: absolute;
+        display: inline-block;
+        background: url(images/kiss.png) no-repeat left top;
+        width: 45px;
+        height: 16px;
+        z-index: 11;
+      }
 
-        #game_box .tip_box {
-            position: absolute;
-            display: inline-block;
-            background: url(images/kiss.png) no-repeat left top;
-            width: 45px;
-            height: 16px;
-            z-index: 11;
-        }
+      #game_box .tip_box.miss {
+        background-position: 0px 0px;
+      }
 
-        #game_box .tip_box.miss {
-            background-position: 0px 0px;
-        }
+      #game_box .tip_box.kiss {
+        background-position: 0px -18px;
+      }
 
-        #game_box .tip_box.kiss {
-            background-position: 0px -18px;
-        }
+      #game_box .tip_box.bomb {
+        background-position: 0px -37px;
+        width: 94px;
+        height: 61px;
+      }
 
-        #game_box .tip_box.bomb {
-            background-position: 0px -37px;
-            width: 94px;
-            height: 61px;
-        }
+      #game_box .upgrade_tip,
+      #game_box .game_over_tip {
+        display: inline-block;
+        position: absolute;
+        z-index: 12;
+        font-family: "微軟正黑體";
+        font-size: 40px;
+        color: BLACK;
+        /* font-style: italic; */
+        text-shadow: 1px 1px 5px #fff;
+        width: 100%;
+        height: 40px;
+        top: 18%;
+        margin-top: -20px;
+        text-align: center;
+      }
+      #game_box .game_over_tip2 {
+        display: inline-block;
+        position: absolute;
+        z-index: 12;
+        font-family: "微軟正黑體";
+        font-size: 40px;
+        color: BLACK;
+        font-family: "Showcard Gothic";
+        text-shadow: 1px 1px 5px #fff;
+        width: 100%;
+        height: 40px;
+        top: 27%;
+        margin-top: -20px;
+        text-align: center;
+      }
+      #game_box .game_over_tip3 {
+        display: inline-block;
+        /* cursor: pointer; */
+        position: absolute;
+        z-index: 12;
+        font-family: "微軟正黑體";
+        font-size: 40px;
+        color: BLACK;
+        /* font-family: "Showcard Gothic"; */
+        text-shadow: 1px 1px 5px #fff;
+        width: 120px;
+        height: 68px;
+        top: 50%;
+        background-color: #ffd700;
+        left: 45%;
+        border-radius: 20px;
+        margin-top: 7%;
+        text-align: center;
+        text-decoration: none;
+      }
 
-        #game_box .upgrade_tip, #game_box .game_over_tip {
-            display: inline-block;
-            position: absolute;
-            z-index: 12;
-            font-family:'微軟正黑';
-            font-size: 36px;
-            color: #ffd800;
-            font-style: italic;
-            text-shadow: 1px 1px 5px #fff;
-            width: 100%;
-            height: 40px;
-            top: 50%;
-            margin-top: -20px;
-            text-align: center;
-        }
-
-        #game_box .game_over_tip {
-            color: red;
-            text-shadow: 1px 1px 5px blue;
-            font-family: 'Showcard Gothic';
-        }
-
-        #game_control {
-            position: absolute;
-            bottom: 0px;
-            left: 100px;
-            width: 400px;
-            margin: 0 auto;
-            background: #a9a9a9;
-            height: 30px;
-            line-height: 30px;
-            text-align: center;
-        }
-
-        #game_control button {
-            margin-right: 10px;
-            cursor: pointer;
-            height: 30px;
-            width: 60px;
-        }
+      #game_box .game_over_tip {
+        color: BLACK;
+        /* text-shadow: 2px 2px 2px black; */
+        font-family: "微軟正黑體";
+        /* font-family: "Showcard Gothic"; */
+        font-size: 40px;
+      }
+      /* 開始按鈕和背景 */
+      #game_control {
+        position: absolute;
+        width: 100%;
+        margin: 0 auto;
+        background-color: rgba(0, 0, 0, 0.7);
+        line-height: 21vh;
+        height: 100%;
+        text-align: center;
+        z-index: 11;
+      }
+      #game_control_txt {
+        font-size: 30px;
+        color: white;
+        font-family: "微軟正黑體";
+        margin-top: 120px;
+      }
+      .special {
+        width: 23%;
+        position: absolute;
+        top: 36%;
+        left: 38%;
+      }
+      #game_control button {
+        /* 出現手的游標 */
+        cursor: pointer;
+        height: 100px;
+        width: 150px;
+        border-radius: 20px;
+        border: 3px solid white;
+        background-color: rgba(0, 0, 0, 0.1);
+        color: mintcream;
+        font-size: 30px;
+      }
+      #game_control button:hover {
+        background-color: yellow;
+        color: black;
+      }
     </style>
-</head>
-<body>
-<div class='game_container'>
-    <!--預設的訊息-->
-    <div id='game_info'>
-        <dl>
-            <dt>生命力</dt>
-            <dd style='text-align: left;'>
-                <div class='life_bar_box'><span id='lifeBar'></span></div>
-            </dd>
-            <dt>玩家</dt>
-            <dd>果然配老闆</dd>
-            <dt>当前关卡</dt>
-            <dd>第<strong id='gameLevel'>1</strong>关</dd>
-            <dt>当前得分</dt>
-            <dd id='gameCent'>0</dd>
-            <dt>操控说明</dt>
-            <dd style='line-height: normal;'>使用"→"跟"←"来控制移动,要小心导弹、炸弹</dd>
-        </dl>
-    </div>
-    <!--游戏信息 end-->
-
-    <!--遊戲主螢幕 start-->
-    <div id='game_box'>
-        <!--<span class='game_over_tip'>Game Over!</span>-->
-        <div class='car_bar'>
-            <div id='carBox' class='car'></div>
+  </head>
+  <body>
+    <div class="game_container">
+      <!-- 遊戲訊息欄 -->
+      <div id="game_info">
+        <div>
+          <div>生命力</div>
+          <div style="text-align: left;">
+            <div class="life_bar_box"><span id="lifeBar"></span></div>
+          </div>
+          <div style="display:none;">關卡</div>
+          <div><strong id="gameLevel">1</strong></div>
+          <div>當前得分</div>
+          <div id="gameCent">0</div>
         </div>
-    </div>
-    <!--游戏屏幕 end-->
+      </div>
+      <!-- 遊戲訊息 end -->
+      <!-- 遊戲主螢幕 start -->
+      <div id="game_box">
+        <div class="car_bar"><div id="carBox" class="car"></div></div>
+      </div>
+      <!-- 遊戲螢幕 end -->
+      <!-- 遊戲控制 start -->
+      <div id="game_control">
+        <div id="game_control_txt">
+          使用"→"跟"←"來接住水果,會依照水果數量給不同獎賞唷!
+        </div>
+        <button
+          onclick="document.getElementById('game_control').style.display='none'"
+          id="btnStart"
+        >
+          開始
+        </button>
+      </div>
+      <!-- 手機箭頭 -->
 
-    <!--游戏控制 start-->
-    <div id='game_control'>
-        <button id='btnStart'>开始</button>
-        <button id='btnPause'>暂停</button>
+      <!-- 遊戲控制 end -->
     </div>
-    <!--游戏控制 end-->
-</div>
 
-<script type='text/javascript' src='js/jquery.js'></script>
-<script type='text/javascript' src='js/game.js'></script>
-<script type='text/javascript'>
-    $(function () {
-        $('#btnStart').click(function () {
-            FruitGame.Start();
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $("#btnStart").click(function() {
+          FruitGame.Start();
         });
-    });
-</script>
-</body>
+      });
+    </script>
+  </body>
 </html>
