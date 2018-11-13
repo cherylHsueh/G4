@@ -1,107 +1,93 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<meta charset="utf-8" />
+	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<<<<<<< HEAD
-	<title>果然配ohya測試</title>
-=======
-	<title>果然配_ohyeah</title>
->>>>>>> diy
+	<title>果然配</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/diyDesignBottle.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
 	 crossorigin="anonymous">
+	 <link rel="stylesheet"  href="css/colpick.css">
+	 <link rel="stylesheet"  href="css/colpickStyle.css">
+	<script src="js/global.js"></script>
 	<script src="js/Drag.js"></script>
-	<script src="js/jquery-1.7.2.min.js"></script>
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/jquery-ui.min.js"></script>
-	<script src="js/html2canvas.js"></script>
-	<script src="js/jquery.ui.touch-punch.js"></script>
-	<script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js "></script>W
+	<script src="js/plugin/jquery-1.7.2.min.js"></script>
+	<script src="js/plugin/jquery-3.3.1.min.js"></script>
+	<script src="js/plugin/jquery-ui.min.js"></script>
+	<script src="js/plugin/html2canvas.js"></script>
+	<script src="js/plugin/jquery.ui.touch-punch.js"></script>
+	<script src="js/plugin/colpick.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js "></script>
 </head>
 <header>
 	<input type="checkbox" name="" id="hb_control">
 	<nav>
-		<svg preserveAspectRatio="none" id="svg-2" viewBox="0 0 100 80" enable-background="new 0 0 100 80">
-			<animate dur="2s" attributeName="x" repeatCount="indefinite" from="0" to="100" xlink:href="#wave"></animate>
-			<defs>
-				<filter id="f4" x="0" y="0" width="100%" height="100%">
-					<feOffset result="offOut" in="SourceGraphic" dx="0" dy="0"></feOffset>
-					<feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"></feColorMatrix>
-					<feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="2"></feGaussianBlur>
-					<feBlend in="SourceGraphic" in2="blurOut" mode="normal"></feBlend>
-				</filter>
-			</defs>
-			<path x="0" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)" id="wave"></path>
-			<path x="30" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)" id="wave2"></path>
-		</svg>
+		<div id="svg-2">
+			<canvas id="wave" width="1000" height="400"></canvas>
+			<canvas id="wave2" width="1000" height="400"></canvas>
+		</div>
 		<div class="ph_nav">
 			<label for="hb_control" class="hb"><span></span></label>
-			<h1 class="phone_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
+			<a href="index.html">
+				<h1 class="phone_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
+			</a>
 		</div>
 
 		<div class="menu">
 			<ul>
 				<li class="menu_item"><a href="diy.html">果汁DIY</a></li>
 				<li class="menu_item"><a href="product.html">果然特調</a></li>
-				<li>
-					<h1 class="menu_logo"><a href="index.html"><img src="images/logo.png" alt="果然配"></a>果然配</h1>
-				</li>
+				<li><a href="index.html">
+						<h1 class="menu_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
+					</a> </li>
 				<li class="menu_item"><a href="blog.html">果然私藏</a></li>
 				<li class="menu_item"><a href="about.html">關於果然</a></li>
 			</ul>
 		</div>
 		<div class="nav_mem">
-			<p><a href="javascript:;">登入</a></p>
-			<div class="mem_pic"><a href="javascript:;"><img src="images/user.png" alt="會員中心"></a></div>
+			<p><a href="login.html">登入</a></p>
+			<div class="mem_pic"><a href="member.html"><img src="images/user.png" alt="會員中心"></a></div>
 			<div class="mem_pic"><a href="cart.html"><img src="images/cart.png" alt="購物車"></a></div>
 		</div>
 	</nav>
-	<div class="navSpace"></div>
 	<div class="coupon"><img src="images/coupon.png" alt="優惠小遊戲"></div>
 	<div class="robot"><img src="images/robot.png" alt="果然配客服機器人"></div>
-	<script>
-		$(document).ready(function () {
-			$("#diy_copyPicButton").click(function () {
-				popCenterWindow();
-			});
-
-		}); 
-	</script>
 </header>
-
+<div class="navSpace"></div>
 <body>
-		<section class="section active diy_pickFruitBlock">
-			<div class="wrapper">
-			</div>
-		</section>
-		<!-- SCR2--設計瓶身文字敘述 -->
-		<section class="section active diy_designBottleBlock">
-			<div class="wrapper">
-				<div class="diy_designBottle_stepBlock ">
-					<div class="diy_designBottle_stepFirstBox">
-						<img src="images/diy/stepBg.png" alt="挑選水果">
-						<div class="diy_designBottle_stepFirstTitle">
-							<p>STEP1</p>
-							<h3>挑選水果</h3>
-						</div>
-					</div>
-					<div class="diy_designBottle_stepSecondBox">
-						<img src="images/diy/stepBg1.png" alt="設計瓶身">
-						<div class="diy_designBottle_stepSecondTitle">
-							<p>STEP2</p>
-							<h3>設計瓶身</h3>
-						</div>
+	<!-- SCR2--設計瓶身文字敘述 -->
+	<div class="diy_designBottleBlock">
+		<div class="wrapper ">
+			<div class="diy_designBottle_stepBlock ">
+				<div class="diy_designBottle_stepFirstBox">
+					<img src="images/diy/stepBg.png" alt="挑選水果">
+					<div class="diy_designBottle_stepFirstTitle">
+						<p>STEP1</p>
+						<h3>挑選水果</h3>
 					</div>
 				</div>
-				<div class="diy_designBottle_title cl-s-12 cl-md-12 cl-xl-12">
-					<h4>來創作自己的瓶身</h4>
+				<div class="diy_designBottle_stepSecondBox">
+					<img src="images/diy/stepBg1.png" alt="設計瓶身">
+					<div class="diy_designBottle_stepSecondTitle">
+						<p>STEP2</p>
+						<h3>設計瓶身</h3>
+					</div>
 				</div>
 			</div>
-			<!-- 設計瓶身、上傳圖檔及新增文字即時顯示調整效果 -->
-			<div class="wrapper clearfix">
+			<div class="diy_designBottle_title cl-s-12 cl-md-12 cl-xl-12 clearfix">
+				<h4>來創作自己的瓶身</h4>
+			</div>
+			<div class="diy_designBottle_bgCloud">
+				<img src="images/About_Png/cloud(01).png">
+				<img src="images/About_Png/cloud(02).png">
+				<img src="images/About_Png/cloud(03).png">
+				<img src="images/About_Png/cloud(04).png">
+			</div>
+		</div>
+		<!-- 設計瓶身、上傳圖檔及新增文字即時顯示調整效果 -->
+		<div class="wrapper clearfix">
+			<div class="diy_designBottle_bgcBox">
 				<div class="diy_designBottle_box cl-s-5 cl-md-6 cl-xl-6">
 					<div class="diy_designBottle_picBlock cl-s-12 cl-md-12 cl-xl-12">
 						<p>圖片:</p>
@@ -151,13 +137,13 @@
 						</div>
 					</div>
 				</div>
-				<div class="diy_designBottle_container cl-s-5 cl-md-6 cl-xl-6">
+				<div class="diy_designBottle_container cl-s-6 cl-md-6 cl-xl-6">
 					<div id="diy_containmentBlock" class="diy_designBottle_pic cl-s-11 cl-md-9 cl-xl-9">
 						<div id="diy_designBottle_wrapper" class="diy_designBottle_bottleItem">
 							<img src="images/diy/emptyBottle.png" id="dragRange">
 						</div>
 						<img id="diy_designBottle_diyImg" class="diy_designBottle_changePic draggable  ui-draggable ui-widget-header"
-						 style="top:300px;right:35%;">
+						 style="top:50%;right:40%;">
 						<div id="diy_designBottle_dragText" class="diy_designBottle_createBlock" style="top:-250px;right:-120px;margin:0;"></div>
 					</div>
 					<div class="diy_designBottle_controlBlock cl-s-1 cl-md-3 cl-xl-3">
@@ -165,62 +151,130 @@
 						<i id="zoomOutButton" class="fas fa-search-minus "></i>
 						<i id="rotateLeftButton" class="fas fa-undo-alt "></i>
 						<i id="rotateRightButton" class="fas fa-redo-alt "></i>
+						<i id="picker" class="fas fa-palette"></i>
 						<i id="deleteButton" class="fas fa-trash "></i>
 					</div>
 				</div>
-
 				<div class="diy_designBottle_btnBlock cl-s-12 cl-md-12 cl-xl-12 clearfix">
-					<a href="diy.html"><button class="diy_designBottle_btnPrevious">上一步</button></a>
-					<button class="diy_designBottle_btnNext" id="diy_copyPicButton">製作完成</button>
+					<a class="common_btn common_btn_first" href="diy.html">
+						<span class="common_btn_txt">上一步</span>
+						<div class="common_btn_blobs">
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+					</a>
+					<a class="common_btn common_btn_first" id="diy_copyPicButton">
+						<span class="common_btn_txt">製作完成</span>
+						<div class="common_btn_blobs">
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+					</a>
 				</div>
 			</div>
-			<footer>
-					<div class="footer_wrapper">
-						<div class="footer_block clearfix">
-								<div >
-									<p class="copyright">Copyright © All Rights Reserved.</p>
+		</div>
+		<!-- 客製完成跳出蓋滿視窗 -->
+		<div class="wrapper">
+			<div class=" diy_customizePopUp" id="center">
+				<div class="diy_customizeFinishBox ">
+					<div class="diy_customizeBox_content cl-s-12">
+						<div class="diy_customizeBox_item ">
+							<i class="far fa-times-circle "></i>
+						</div>
+						<h3>客製完成</h3>
+						<div class="diy_customizeBox_finishPic">
+						</div>
+						<div class="diy_proToCartBtns">
+							<a class="common_btn common_btn_first diy_addCartBtn" id="addToCartBtn">
+								<span class="common_btn_txt">加入購物車</span>
+								<div class="common_btn_blobs">
+									<div></div>
+									<div></div>
+									<div></div>
 								</div>
-						</div>
-			
-					</div>
-				</footer>
-			<!-- 客製完成跳出蓋滿視窗 -->
-			<div class="wrapper">
-				<div class=" diy_customizePopUp" id="center">
-					<div class="diy_customizeFinishBox ">
-						<div class="diy_customizeBox_content cl-s-12">
-							<div class="diy_customizeBox_item ">
-								<i class="far fa-times-circle "></i>
+							</a>
+							<a class="common_btn common_btn_first diy_addCartBtn" href="cart.html">
+								<span class="
+							 common_btn_txt">我要結帳</span>
+								<div class="common_btn_blobs">
+									<div></div>
+									<div></div>
+									<div></div>
+								</div>
+							</a>
+							<div class="diy_customizeFinishBox_customizeBtns">
+								<a class="common_btn common_btn_second diy_doMoreBtn" href="diy.html">
+									<span class="
+											 common_btn_txt">再做一瓶</span>
+									<div class="common_btn_blobs">
+										<div></div>
+										<div></div>
+										<div></div>
+									</div>
+								</a>
+								<a class="common_btn common_btn_second diy_toBlogBtn" href="blog.html">
+									<span class="
+											 common_btn_txt">看看別人怎麼做</span>
+									<div class="common_btn_blobs">
+										<div></div>
+										<div></div>
+										<div></div>
+									</div>
+								</a>
 							</div>
-							<h3>客製完成</h3>
-							<div class="diy_customizeBox_finishPic">
-							</div>
-							<div class="diy_proToCartBtns">
-								<a href="#"><button class="diy_addCartBtn">加入購物車</button></a>
-								<a href="cart.html"><button class="diy_payItBtn ">我要結帳</button></a>
-							</div>
-						</div>
-						<div class="diy_customizeFinishBox_btns">
-							<a href="diyDesignBottle.html"><button class="diy_moreBtn">再做一瓶</button></a>
-							<a href="blog.html"><button class="diy_viewOtherBtn">看看別人怎麼做</button></a>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+	</div>
+	<div class="diy_designBottle_bottleMovingBlock">
+		<div class="diy_designBottle_conveyorMoveContainer">
+			<img class="diy_designBottle_conveyorPic" src="images/diy/conveyor.png" alt="傳輸帶">
+			<ul class="diy_designBottle_bottlesBlock">
+				<li class="item1"><img src="images/diy/bottleOrange.png" alt="果汁瓶"></li>
+				<li class="item2"><img src="images/diy/juiceBottle.png" alt="果汁瓶"></li>
+				<li class="item3"><img src="images/diy/bottlePink.png" alt="果汁瓶"></li>
+				<li class="item4"><img src="images/diy/fullBottle.png" alt="果汁瓶"></li>
+				<li class="item5"><img src="images/diy/yellowBottle.png" alt="果汁瓶"></li>
+				<li class="item6"><img src="images/diy/mixBottle.png" alt="果汁瓶"></li>
+				<li class="item7"><img src="images/diy/greenBottle.png" alt="果汁瓶"></li>
+			</ul>
+			<div class="diy_designBottle_factoryPic"><img src="images/about/Factory.png" alt="工廠"></div>
+			<div class="diy_designBottle_carPic"><img src="images/About_Png/car(01).png" alt="車子"></div>
+		</div>
+	</div>
+	<footer>
+		<div class="footer_wrapper">
+			<div class="footer_block clearfix">
+				<div class="footer_rightBox">
+					<div class="footer_rightContent">
+						<p class="copyright">Copyright © All Rights Reserved.</p>
+					</div>
+				</div>
+			</div>
 
+		</div>
+	</footer>
+	<script>
+		$(document).ready(function () {
+			$("#diy_copyPicButton").click(function () {
+				popCenterWindow();
+			});
+		}); 
+	</script>
 	<script>
 		$("#diy_copyPicButton").click(function () {
 			html2canvas($("#diy_containmentBlock")[0]).then(function (canvas) {
 				var $div = $(".diy_customizeBox_finishPic");
 				$div.empty();
-
 				$("<img />", { src: canvas.toDataURL("image/png") }).appendTo($div);
 			});
 		});						
 	</script>
-	<script>
-		// 上傳圖檔後把預設的logo刪除 
+	<script>// 上傳圖檔後把預設的logo刪除 
 		$(document).ready(function () {
 			$('#uploadButton').on("change", function () {
 				for (var i = 0; i < $('.diy_designBottle_officalPic').length; i++) {
@@ -228,7 +282,11 @@
 					$('.diy_designBottle_officalPic').eq(i).css('backgroundColor', 'transparent');
 				}
 			});
-		});			
+		});
+		$('#addToCartBtn').click(function () {
+			$(".diy_customizeFinishBox_customizeBtns").css("display", "block");
+			$(".diy_addCartBtn").css("display", "none");
+		});
 	</script>
 	<script type="text/javascript">
 		//獲取視窗的高度 
@@ -250,12 +308,7 @@
 			$(".diy_customizeBox_item i").click(function () {
 				$(this).parent().parent().parent().hide("slow");
 			});
-			$(".diy_customizePopUp").click(function () {
-				$(this).hide("slow");
-			});
 		}
-
-
 		//定義彈出居中視窗的方法 
 		function popCenterWindow() {
 			init();
@@ -278,6 +331,18 @@
 			);
 		});
 	</script>
-</body>
+	<script>
+		$('#picker').colpick({
+			flat: false,
+			layout: 'rgbhex',
+			color: '1080C8',
+			submit: 1,
+			onSubmit: function (hsb, hex, rgb, el) {
+				$('.diy_designBottle_createBlock').css('color', '#' + hex);
+				$('.diy_designBottle_createBlock').colpickHide();
 
+			}
+		});
+	</script>
+</body>
 </html>

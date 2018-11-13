@@ -316,7 +316,7 @@ header {
   top: 0;
   height: 140px;
   width: 300%;
-  fill: rgba(255, 255, 255, 0.5);
+  fill: white;
   -webkit-animation: move 5s 1s linear infinite alternate;
   animation: move 5s .5s linear infinite alternate; }
 
@@ -341,10 +341,10 @@ header {
 
 .coupon {
   position: fixed;
-  width: 110px;
-  top: 20%;
+  width: 100px;
+  top: 110px;
   right: 2%;
-  z-index: 50; }
+  z-index: 100; }
 
 @media only screen and (max-width: 767px) {
   .robot {
@@ -354,7 +354,11 @@ header {
     width: 70px; }
   #svg-2 {
     transition: height 1.3s 0.5s ,width 2s; }
-  #wave, #wave2 {
+  #wave {
+    height: 95px;
+    transition: 1s; }
+  #wave2 {
+    height: 100px;
     transition: 1s; }
   .menu {
     text-align: center;
@@ -376,12 +380,12 @@ header {
     width: 100%;
     margin-top: 7px; }
     .ph_nav .phone_logo {
-      width: 80px;
+      width: 60px;
       margin: auto; }
     .ph_nav .hb {
       padding: 20px 15px;
       float: left;
-      margin: 20px 0 0 5%; }
+      margin: 14px 0 0 5%; }
       .ph_nav .hb span {
         display: block;
         height: 2px;
@@ -408,6 +412,7 @@ header {
 #hb_control:checked ~ nav #wave {
   transition: 2s;
   width: 900%;
+  height: 107vh;
   animation: move2 3s 1s linear infinite alternate; }
 
 #hb_control:checked ~ nav #wave2 {
@@ -444,7 +449,7 @@ header {
 
 @keyframes move {
   0% {
-    transform: translate(-40%, 0%); }
+    transform: translate(-30%, 0%); }
   100% {
     transform: translate(0%, 0%); } }
 
@@ -466,11 +471,35 @@ header {
   100% {
     transform: translate(0%, 0%); } }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+* {
+  outline: 1px solid red; }
+
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+>>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
+header nav li:nth-child(4) > a:after {
+  transform: scaleX(1); }
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 /*分頁做法
 header nav  li:nth-child(2) > a:after {
     transform: scaleX(1);
 }
 */
+>>>>>>> diy
+=======
+>>>>>>> blog
 footer {
   position: absolute;
   bottom: 0;
@@ -505,9 +534,46 @@ footer {
           padding: 5px; }
         .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
           font-size: 12px; } }
+=======
+/*分頁做法
+header nav  li:nth-child(2) > a:after {
+    transform: scaleX(1);
+}
+*/
+header nav li:nth-child(4) > a:after {
+  transform: scaleX(1); }
+>>>>>>> blog
+=======
+/*分頁做法
+header nav  li:nth-child(2) > a:after {
+    transform: scaleX(1);
+}
+*/
+header nav li:nth-child(4) > a:after {
+  transform: scaleX(1); }
+>>>>>>> 6a047bf83ca6a4f5d20759417a9bec51470ac612
+=======
+header nav li:nth-child(4) > a:after {
+  transform: scaleX(1); }
+>>>>>>> 280a4a4c1247a2dea80405e899b323e7ca4b1a49
+>>>>>>> member
+=======
+header nav li:nth-child(4) > a:after {
+  transform: scaleX(1); }
+>>>>>>> cart
+=======
+header nav li:nth-child(4) > a:after {
+  transform: scaleX(1); }
+>>>>>>> 1105homepage(having about)
+=======
+header nav li:nth-child(4) > a:after {
+  transform: scaleX(1); }
+>>>>>>> cart
 
-.footer_block {
-  background-color: #dde4b7; }
+body {
+  background: #a4ddfa;
+  background: linear-gradient(0deg, #a4ddfa 1%, #73c9f5 36%, #6ec9f7 71%, #45b0e6 100%);
+  overflow-x: hidden; }
 
 .space {
   width: 100%;
@@ -519,28 +585,57 @@ footer {
 .blog_Subheading {
   margin-bottom: 20px; }
 
-footer {
-  position: relative; }
-
-#dg-container {
+.blog_Rank_bg {
   display: none; }
 
 @media only screen and (max-width: 767px) {
   .blog_Heading, .blog_Subheading, .blogSubmit_Headingbox .blog_Heading {
-    color: #5e4909;
+    color: #fff;
     text-align: center;
-    line-height: 1.5; }
+    line-height: 1.5;
+    font-weight: bold; }
   .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Pic, .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Num, .blog_Rank_ContentBox .blog_Rank_ContentBox_Item, .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_NewShare, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_HighScore, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Pic, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Num, .blog_Forum_SubButtonContainer_Box .blog_Forum_SubButtonContainer_Pic {
     float: left; }
   .space {
     width: 100%;
     height: 130px; }
   .blog_Heading {
-    margin: 10px 0; }
+    width: 90%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+    margin: 10px auto 0; }
+=======
+    margin: 10px auto 0;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: #f5ba5b; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+    margin: 10px auto 0; }
+>>>>>>> commit blog 微修
   .blog_Subheading {
     margin-bottom: 20px; }
   .blog_Rank {
-    padding: 25px 0; }
+    position: relative;
+    padding: 80px 0; }
+  .blog_Rank {
+    display: block; }
+    .blog_Rank .blog_Heading {
+      width: 50%;
+      position: relative;
+      margin: 0 auto; }
+      .blog_Rank .blog_Heading .num1 {
+        position: absolute;
+        transform: translate(-250%, -100%);
+        width: 50px; }
+      .blog_Rank .blog_Heading .num2 {
+        position: absolute;
+        transform: translate(-800%, 0%);
+        width: 25px; }
+      .blog_Rank .blog_Heading .num3 {
+        position: absolute;
+        transform: translate(0%, 0%);
+        width: 50px; }
   #phone {
     height: 70vh;
     width: 100%;
@@ -666,18 +761,47 @@ footer {
       .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container {
         height: 0;
         padding-bottom: 200%;
+        padding-left: 25%;
         position: relative; }
         .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar {
-          width: 100%;
+          width: 50%;
           height: 100%;
-          position: absolute;
-          background-color: #90f135; }
+          position: absolute; }
+        .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar1 {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+          background-color: rgba(255, 99, 132, 0.8);
+          margin: auto; }
+=======
+          background-color: rgba(255, 99, 132, 0.8); }
+>>>>>>> cart
+=======
+          background-color: rgba(255, 99, 132, 0.8);
+          margin: auto; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+          background-color: rgba(255, 99, 132, 0.8); }
+>>>>>>> cart
+        .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar2 {
+          background-color: rgba(54, 162, 235, 0.8); }
+        .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar3 {
+          background-color: rgba(255, 206, 86, 0.8); }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> cart
       .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_BottomBox_Title {
         width: 100%;
         padding: 5% 0;
         color: rgba(117, 119, 82, 0.685);
         font-size: 2.3vw;
         text-align: center; }
+>>>>>>> cart
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     .blog_Rank_ContentBox .blog_Rank_ContentBox_Desc p {
       margin: 5%;
       text-align: right;
@@ -685,9 +809,8 @@ footer {
   .blog_Forum {
     padding: 25px 0; }
   .blog_Forum_ButtonContainer {
-    width: 100px;
-    height: 40px;
-    margin: 0 auto 90px; }
+    margin: 0 auto 90px;
+    text-align: center; }
     .blog_Forum_ButtonContainer a.blog_Forum_Button {
       display: block;
       border-radius: 7px;
@@ -805,9 +928,146 @@ footer {
     .blog_Forum_SubButtonContainer_Box:hover {
       background-color: #fff100;
       color: #fbb03b; }
-  .blogIn_Container {
-    border: 1px solid #ccc;
+  .blog_Forum {
+    position: relative; }
+    .blog_Forum .blog_Forum_bg .city {
+      width: 90%;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: -1; }
+    .blog_Forum .blog_Forum_bg .grass1 {
+      width: 20%;
+      position: absolute;
+      left: -1%;
+      bottom: 0; }
+    .blog_Forum .blog_Forum_bg .grass2 {
+      width: 20%;
+      position: absolute;
+      left: 5%;
+      bottom: 0;
+      z-index: -1; }
+    .blog_Forum .blog_Forum_bg .grass3 {
+      width: 20%;
+      position: absolute;
+      left: 20%;
+      bottom: 0; }
+  .blog_Forum_wrapper {
+    position: relative; }
+    .blog_Forum_wrapper .blog_Headingbox_cloud5 {
+      position: relative; }
+      .blog_Forum_wrapper .blog_Headingbox_cloud5 .cloud5 {
+        width: 50%;
+        position: absolute;
+        top: 150px;
+        z-index: -1; }
+      .blog_Forum_wrapper .blog_Headingbox_cloud5 .fruit1 {
+        width: 10%;
+        position: absolute;
+        top: 150px;
+        left: 50px; }
+      .blog_Forum_wrapper .blog_Headingbox_cloud5 .fruit2 {
+        width: 10%;
+        position: absolute;
+        top: 160px;
+        left: 100px; }
+    .blog_Forum_wrapper .blog_Headingbox_cloud6 {
+      position: relative; }
+      .blog_Forum_wrapper .blog_Headingbox_cloud6 .cloud6 {
+        width: 50%;
+        position: absolute;
+        top: -50px;
+        right: 0;
+        z-index: -1; }
+      .blog_Forum_wrapper .blog_Headingbox_cloud6 .fruit3 {
+        width: 10%;
+        position: absolute;
+        top: -40px;
+        right: 20px; }
+      .blog_Forum_wrapper .blog_Headingbox_cloud6 .fruit4 {
+        width: 10%;
+        position: absolute;
+        top: -60px;
+        right: 70px; }
+  .umbrellaApple img {
+    width: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    animation: umbrellaApple 30s linear infinite; }
+  @keyframes umbrellaApple {
+    0% {
+      top: 0;
+      right: 0;
+      width: 50px;
+      transform: rotate(10deg); }
+    10% {
+      transform: rotate(-10deg); }
+    25% {
+      transform: rotate(-20deg); }
+    40% {
+      transform: rotate(10deg); }
+    50% {
+      transform: rotate(30deg); }
+    60% {
+      transform: rotate(10deg); }
+    75% {
+      transform: rotate(-20deg); }
+    85% {
+      transform: rotate(-10deg); }
+    99% {
+      opacity: 1; }
+    100% {
+      top: 100%;
+      right: 150%;
+      width: 150px;
+      transform: rotate(9deg);
+      opacity: 0; } }
+  .blogIn_Share {
+<<<<<<< HEAD
+<<<<<<< HEAD
+    margin: 5% 0; }
+    .blogIn_Share .blogIn_Headingbox {
+      margin: 0 5%;
+      position: relative;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      background-color: #f5ba5b; }
+=======
     margin: 5%; }
+    .blogIn_Share .blogIn_Headingbox {
+      position: relative; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+    margin: 5% 0; }
+    .blogIn_Share .blogIn_Headingbox {
+      margin: 0 5%;
+      position: relative;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      background-color: #f5ba5b; }
+>>>>>>> commit blog 微修
+      .blogIn_Share .blogIn_Headingbox .blogIn_umbrellaguava {
+        width: 20%;
+        position: absolute;
+        top: -50px;
+        left: -30px;
+        z-index: -1;
+        animation: umbrellaguava 3s linear infinite alternate; }
+  @keyframes umbrellaguava {
+    from {
+      transform: rotate(10deg); }
+    to {
+      transform: rotate(-10deg); } }
+      .blogIn_Share .blogIn_Headingbox .blogIn_cloud {
+        display: none; }
+  .blogIn_Container {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: rgba(254, 254, 254, 0.6); }
+  .blogIn_Container {
+    margin: 0 5%; }
   .blogIn_LeftBox {
     padding-bottom: 10%;
     border-bottom: 1px solid #ccc; }
@@ -815,26 +1075,36 @@ footer {
       padding: 5%;
       text-align: center; }
     .blogIn_LeftBox .blogIn_LeftBox_NameContainer {
-      width: 70%;
-      margin: 0 auto; }
+      width: 90%;
+      margin: 0 auto;
+      background-color: rgba(245, 195, 121, 0.993); }
       .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blogIn_LeftBox_NamePic {
-        width: 25%;
+        width: 20%;
         margin-left: 13%; }
         .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blogIn_LeftBox_NamePic img {
           width: 100%;
           border-radius: 50%; }
       .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_LeftBox_NameTitle {
-        text-align: center; }
+        text-align: left; }
         .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_LeftBox_NameTitle p {
-          line-height: 4;
+          padding: 10px;
+          line-height: 2.3;
           font-size: 4vw; }
   .blogIn_RightBox {
     padding: 5% 0; }
     .blogIn_RightBox .blog_Rank_ContentBox {
+      margin: 5% 0;
       padding: 5% 0 0;
-      border-bottom: 1px solid #ccc; }
+      border-bottom: 1px solid #ccc;
+      background-color: #fefefe;
+      border-radius: 5px; }
       .blogIn_RightBox .blog_Rank_ContentBox .blog_Rank_BottomBox_Title {
-        font-size: 2.5vw; }
+        width: 100%;
+        padding: 5% 0;
+        color: rgba(117, 119, 82, 0.685);
+        text-align: center;
+        font-size: 15px;
+        font-weight: blod; }
   .blogIn_RightBox_TitleContainer {
     width: 80%;
     margin: 0 auto; }
@@ -853,7 +1123,9 @@ footer {
           margin: 0 5%; }
     .blogIn_RightBox_TitleContainer .blogIn_RightBox_ShareContainer .blogIn_RightBox_ShareContent {
       clear: both;
-      border-bottom: 1px solid #ccc; }
+      border-bottom: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fefefe; }
       .blogIn_RightBox_TitleContainer .blogIn_RightBox_ShareContainer .blogIn_RightBox_ShareContent p {
         padding: 5% 2%;
         font-size: 3.7vw;
@@ -869,7 +1141,7 @@ footer {
         padding: 2%;
         box-sizing: border-box;
         background-color: #fbb03b;
-        color: #5e4909; }
+        color: #fefefe; }
         .blogIn_RightBox_TitleContainer .blogIn_RightBox_subButtonContainer a.blogIn_RightBox_subButtonItem div {
           width: 30%;
           float: left; }
@@ -880,11 +1152,47 @@ footer {
           line-height: 1.8;
           text-align: center; }
         .blogIn_RightBox_TitleContainer .blogIn_RightBox_subButtonContainer a.blogIn_RightBox_subButtonItem:hover {
-          background-color: #fff100;
-          color: #fbb03b; }
+          background-color: #487e0a; }
   .blogIn_Msg {
-    background-color: #ececaa;
-    margin: 5%; }
+    position: relative;
+    background-color: rgba(254, 254, 254, 0.6);
+    margin: 10%;
+    border-radius: 10px; }
+    .blogIn_Msg .umbrellaOrange img {
+      width: 150px;
+      position: absolute;
+      top: 0;
+      left: 50px;
+      z-index: -1;
+      transform: rotate(50deg);
+      animation: umbrellaOrange 30s linear infinite; }
+  @keyframes umbrellaOrange {
+    0% {
+      top: 0;
+      width: 50px;
+      transform: rotate(10deg); }
+    10% {
+      transform: rotate(30deg); }
+    25% {
+      transform: rotate(50deg); }
+    40% {
+      transform: rotate(20deg); }
+    50% {
+      transform: rotate(-10deg); }
+    60% {
+      transform: rotate(20deg); }
+    75% {
+      transform: rotate(-10deg); }
+    85% {
+      transform: rotate(10deg); }
+    99% {
+      opacity: 1; }
+    100% {
+      top: 100%;
+      left: 80%;
+      width: 150px;
+      transform: rotate(-20deg);
+      opacity: 0; } }
     .blogIn_Msg .blogIn_Msg_sendContainer {
       padding: 0 5%; }
       .blogIn_Msg .blogIn_Msg_sendContainer .blogIn_Msg_SendBlock {
@@ -898,13 +1206,15 @@ footer {
       text-align: center;
       line-height: 1.5; }
     .blogIn_Msg_SendBlock .blogIn_Msg_SendBox .blogIn_Msg_SendContent p {
-      text-align: left;
+      padding: 5%;
       margin: 0 1%;
+      text-align: left;
       font-size: 2.5vw;
       color: #888;
       line-height: 1.5; }
     .blogIn_Msg_SendBlock .blogIn_Msg_SendBox .blogIn_Msg_SendDate p {
       margin: 0 1%;
+      padding: 5%;
       text-align: left;
       font-size: 1.8vw;
       color: #ccc; }
@@ -912,7 +1222,10 @@ footer {
       padding: 1% 0;
       background-color: #fbb03b;
       text-align: center;
-      font-size: 2.5vw; }
+      font-size: 2.5vw;
+      color: #fefefe; }
+      .blogIn_Msg_SendBlock a.subButtonItem:hover {
+        background-color: #487e0a; }
   .blogIn_Msg_Block {
     padding: 5% 0; }
     .blogIn_Msg_Block .blogIn_Msg_Box input {
@@ -922,46 +1235,57 @@ footer {
       padding: 1% 0;
       background-color: #fbb03b;
       text-align: center;
-      font-size: 2.5vw; }
+      font-size: 2.5vw;
+      color: #fefefe; }
+      .blogIn_Msg_Block a.subButtonItem:hover {
+        background-color: #487e0a; }
   .blogIn_Msg_SendBox2 {
     margin: 0 3%;
-    border: 1px solid #ccc; }
+    background-color: #fefefe; }
   .blogIn_ButtonContainer {
     text-align: center; }
-    .blogIn_ButtonContainer a.blogIn_ButtonItem {
-      display: inline-block;
-      padding: 3% 10%;
-      margin: 10% 1%;
-      border-radius: 10px;
-      background-color: #fff100;
-      color: #5e4909;
-      transition: 1s; }
-      .blogIn_ButtonContainer a.blogIn_ButtonItem:hover {
-        background-color: #f1900f;
-        color: #fefefe; }
+    .blogIn_ButtonContainer a.common_btn {
+      margin: 10% 1%; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
+  .blogSubmit_board {
+    display: none; }
   .blogSubmit_bgc {
-    background: linear-gradient(180deg, #f4d66d, white); }
+    background: #f2f848;
+    background: linear-gradient(180deg, #f0f56c 1%, #e9fa7a 63%, rgba(122, 230, 69, 0.986432) 82%, #42f163 100%); }
+<<<<<<< HEAD
+=======
+>>>>>>> cart
+=======
+>>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
+=======
+>>>>>>> cart
   .blogSubmit_Headingbox .blog_Heading {
-    padding: 30px 0; }
+    padding: 30px 0;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: #f5ba5b; }
   .blogSubmit_Container {
-    margin: 5%;
-    border: 1px solid #222; }
+    margin: 0 5% 5%; }
   .blogSubmit_LeftBox {
     padding: 10% 10%;
-    border-bottom: 1px solid #222; }
+    background-color: #d0961c; }
     .blogSubmit_LeftBox p {
       font-size: 4vw;
       padding: 2% 0; }
     .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic {
       display: block;
       padding: 30% 10%;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: #b97b18;
       text-align: center; }
       .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic p {
         margin: 2%;
         font-size: 4vw; }
       .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic img {
-        width: 30%; }
+        width: 50%; }
     .blogSubmit_LeftBox .blogSubmit_LeftBox_NameContainer {
       width: 70%;
       margin: 0 auto; }
@@ -975,20 +1299,54 @@ footer {
         .blogSubmit_LeftBox .blogSubmit_LeftBox_NameContainer .blog_LeftBox_NameTitle h4 {
           line-height: 4;
           font-size: 5vw; }
+  .blogSubmit_RightBox {
+    position: relative;
+    background-color: #d0961c; }
+    .blogSubmit_RightBox .blogSubmit_RightBox_pin {
+      position: absolute;
+      top: 30px;
+      right: 50px; }
+      .blogSubmit_RightBox .blogSubmit_RightBox_pin img {
+        width: 50px; }
+    .blogSubmit_RightBox .blogSubmit_RightBox_message {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotate(10deg); }
+      .blogSubmit_RightBox .blogSubmit_RightBox_message img {
+        max-width: 800px; }
+    .blogSubmit_RightBox .blog_Rank_ContentBox {
+      background-color: transparent;
+      padding: 3% 5%; }
+      .blogSubmit_RightBox .blog_Rank_ContentBox .blog_Rank_ContentBox_Box {
+        width: 70%;
+        float: left; }
+        .blogSubmit_RightBox .blog_Rank_ContentBox .blog_Rank_ContentBox_Box .blog_Rank_ContentBox_Item {
+          padding: 0; }
+          .blogSubmit_RightBox .blog_Rank_ContentBox .blog_Rank_ContentBox_Box .blog_Rank_ContentBox_Item .blog_Rank_BottomBox_Title {
+            font-size: 16px; }
+    .blogSubmit_RightBox .blog_Rank_ContentBox_Desc {
+      position: absolute;
+      top: 60%;
+      right: 10%;
+      white-space: nowrap;
+      color: #624b09; }
   .blogSubmit_RightBox_TitleContainer {
+    position: relative;
+    z-index: 1;
     width: 80%;
     margin: 0 auto; }
     .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitleName {
-      margin: 5% 0 0;
-      padding: 0 0 5%;
-      border-bottom: 1px solid #222;
+      padding: 10% 0 5%;
       text-align: center; }
       .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitleName input {
         width: 60%;
-        padding-left: 1%;
+        padding-left: 2%;
+        border: 1px solid transparent;
         font-size: 3vw;
         line-height: 2.5;
-        color: #666; }
+        background-color: #fff000;
+        color: #624b09; }
     .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic {
       width: 100%;
       margin: 5% 0;
@@ -998,6 +1356,10 @@ footer {
         width: 20%;
         margin: 0 5%; }
         .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic .blogSubmit_RightBox_PicItem select {
+          padding: 2px;
+          border: 1px solid transparent;
+          background-color: #fff000;
+          color: #624b09;
           font-size: 3vw; }
     .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer {
       text-align: center; }
@@ -1010,27 +1372,69 @@ footer {
           padding: 1% 0 15% 1%;
           font-size: 3vw;
           text-align: left;
+          border: 3px solid #009944;
           color: #888; }
   form {
     text-align: center; }
-  a.blogSubmit_ButtonItem {
-    display: inline-block;
-    padding: 3% 10%;
-    margin: 5% 1%;
-    border-radius: 10px;
-    background-color: #fff100;
-    color: #5e4909;
-    transition: 1s; }
-    a.blogSubmit_ButtonItem:hover {
-      background-color: #f1900f;
-      color: #fefefe; } }
+<<<<<<< HEAD
+<<<<<<< HEAD
+    form .common_btn_first {
+      margin-bottom: 50px; }
+=======
+  .common_btn_first {
+    margin-bottom: 50px; }
+>>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
+=======
+    form .common_btn_first {
+      margin-bottom: 50px; }
+>>>>>>> commit blog 微修
+  .footer_wrapper {
+    text-align: center; }
+    .footer_wrapper .footer_block {
+      margin: 0 auto;
+      background-color: #f4d66d; }
+      .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
+        padding: 8px 0; }
+        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
+          display: inline-block;
+          padding: 5px;
+          font-size: 2vw; }
+        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
+          font-size: 1vw; }
+  .umbrellaMandarin img {
+    width: 80px;
+    position: absolute;
+    bottom: 0%;
+    right: 0;
+    cursor: pointer;
+    animation: umbrellaMandarinScale 3s linear infinite alternate-reverse; }
+  @keyframes umbrellaMandarinScale {
+    from {
+      transform: scale(0.8); }
+    to {
+      transform: scale(1); } }
+  .umbrellaMandarin .umbrellaMandarin_active {
+    animation: umbrellaMandarin 30s linear forwards; }
+  @keyframes umbrellaMandarin {
+    0% {
+      bottom: 0%;
+      right: 0;
+      transform: scale(1); }
+    99% {
+      opacity: 1; }
+    to {
+      bottom: 100%;
+      right: 100%;
+      opacity: 0;
+      transform: scale(0.1); } } }
 
 @media all and (min-width: 768px) {
-  .blog_Heading, .blog_Subheading, .blogIn_Headingbox .blog_Heading, .blogSubmit_Headingbox .blog_Heading {
+  .blog_Heading, .blog_Subheading, .blogIn_Headingbox .blog_Heading, .blogSubmit_Share .wrapper .blogSubmit_Headingbox .blog_Heading {
     color: #5e4909;
     text-align: center;
-    line-height: 1.5; }
-  .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Pic, .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Num, .blog_Rank_ContentBox .blog_Rank_ContentBox_Item, .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_NewShare, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_HighScore, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Pic, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Num, .blog_Forum_SubButtonContainer_Box .blog_Forum_SubButtonContainer_Pic {
+    line-height: 1.5;
+    font-weight: bold; }
+  .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Pic, .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Num, .blog_Rank_ContentBox .blog_Rank_ContentBox_Item, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_NewShare, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_HighScore, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Pic, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Num, .blog_Forum_SubButtonContainer_Box .blog_Forum_SubButtonContainer_Pic {
     float: left; }
   .space {
     width: 100%;
@@ -1041,10 +1445,25 @@ footer {
     margin-bottom: 20px; }
   #phone {
     display: none; }
-  #dg-container {
+  .blog_Rank_bg {
     display: block; }
   .blog_Rank {
-    padding: 25px 0; }
+    display: block;
+    padding: 100px 0 25px; }
+    .blog_Rank .blog_Heading {
+      position: relative; }
+      .blog_Rank .blog_Heading .num1 {
+        position: absolute;
+        transform: translate(-200%, -90%);
+        width: 60px; }
+      .blog_Rank .blog_Heading .num2 {
+        position: absolute;
+        transform: translate(-800%, 20%);
+        width: 30px; }
+      .blog_Rank .blog_Heading .num3 {
+        position: absolute;
+        transform: translate(0%, 30%);
+        width: 50px; }
   .dg-container {
     width: 100%;
     max-width: 1200px;
@@ -1099,6 +1518,18 @@ footer {
       .dg-container nav .dg-next {
         background-position: top right;
         margin-left: 10px; }
+  .blog_Rank {
+    position: relative; }
+    .blog_Rank .cloudBr {
+      position: absolute;
+      transform: translate(-20%, -100%);
+      z-index: -1;
+      width: 130%; }
+    .blog_Rank .cloud1 {
+      position: absolute;
+      transform: translate(-20%, -50%);
+      z-index: -1;
+      width: 130%; }
   .blog_Rank_Container {
     padding: 10px;
     background-color: #fff; }
@@ -1181,20 +1612,29 @@ footer {
       .blog_Rank_RightBox .blog_Rank_Content .blog_Rank_Desc p {
         font-size: 18px; }
   .blog_Rank_ContentBox {
-    padding: 0 5%; }
+    padding: 5%;
+    border-radius: 5px;
+    background-color: #fefefe; }
     .blog_Rank_ContentBox .blog_Rank_ContentBox_Item {
       width: 33.3333%;
       box-sizing: border-box;
-      padding: 0 3%; }
+      margin: 0 auto;
+      padding: 0 10px; }
       .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container {
         height: 0;
-        padding-bottom: 200%;
+        padding-bottom: 100px;
+        padding-left: 25%;
         position: relative; }
         .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar {
-          width: 100%;
+          width: 50%;
           height: 100%;
-          position: absolute;
-          background-color: #90f135; }
+          position: absolute; }
+        .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar1 {
+          background-color: rgba(255, 99, 132, 0.8); }
+        .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar2 {
+          background-color: rgba(54, 162, 235, 0.8); }
+        .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar3 {
+          background-color: rgba(255, 206, 86, 0.8); }
       .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_BottomBox_Title {
         width: 100%;
         padding-top: 5px;
@@ -1205,11 +1645,11 @@ footer {
       margin: 5%;
       text-align: right; }
   .blog_Forum {
-    padding: 25px 0; }
+    margin: 200px 0 0px;
+    padding-bottom: 50px; }
   .blog_Forum_ButtonContainer {
-    width: 150px;
-    height: 40px;
-    margin: 0px auto 100px; }
+    text-align: center;
+    margin: 10px auto 150px; }
     .blog_Forum_ButtonContainer a.blog_Forum_Button {
       display: block;
       border-radius: 7px;
@@ -1316,11 +1756,12 @@ footer {
     background-color: #fbb03b;
     vertical-align: middle;
     text-align: center;
-    color: #5e4909; }
+    color: #fefefe; }
+    .blog_Forum_SubButtonContainer_Box:hover {
+      background-color: #487e0a; }
     .blog_Forum_SubButtonContainer_Box .blog_Forum_SubButtonContainer_Pic {
       display: block;
-      width: 20px;
-      vertical-align: middle; }
+      width: 20px; }
       .blog_Forum_SubButtonContainer_Box .blog_Forum_SubButtonContainer_Pic img {
         width: 100%;
         vertical-align: bottom; }
@@ -1328,32 +1769,290 @@ footer {
       font-size: 16px;
       line-height: 1.3; }
     .blog_Forum_SubButtonContainer_Box:hover {
-      background-color: #fff100;
-      color: #fbb03b; }
+      background-color: #487e0a; }
+  .blog_Forum {
+    position: relative; }
+    .blog_Forum .blog_Forum_bg .city {
+      width: 90%;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: -1; }
+    .blog_Forum .blog_Forum_bg .grass1 {
+      width: 20%;
+      position: absolute;
+      left: -1%;
+      bottom: 0; }
+    .blog_Forum .blog_Forum_bg .grass2 {
+      width: 20%;
+      position: absolute;
+      left: 5%;
+      bottom: 0;
+      z-index: -1; }
+    .blog_Forum .blog_Forum_bg .grass3 {
+      width: 20%;
+      position: absolute;
+      left: 20%;
+      bottom: 0; }
+  .blog_Forum_wrapper {
+    position: relative; }
+    .blog_Forum_wrapper .blog_Headingbox_cloud5 {
+      position: relative;
+      animation: cloud5active 2s linear infinite alternate;
+      cursor: pointer; }
+      .blog_Forum_wrapper .blog_Headingbox_cloud5 .cloud5 {
+        width: 300px;
+        position: absolute;
+        top: 50px;
+        z-index: 1; }
+      .blog_Forum_wrapper .blog_Headingbox_cloud5 .fruit1 {
+        width: 80px;
+        position: absolute;
+        top: 50px;
+        left: 10px;
+        z-index: 2; }
+      .blog_Forum_wrapper .blog_Headingbox_cloud5 .fruit1_active {
+        animation: fruit1 .5s alternate infinite; }
+  @keyframes fruit1 {
+    from {
+      top: 60px; }
+    to {
+      top: 10px; } }
+      .blog_Forum_wrapper .blog_Headingbox_cloud5 .fruit2 {
+        width: 80px;
+        position: absolute;
+        top: 10px;
+        left: 140px;
+        z-index: 2;
+        animation: fruit2 .5s alternate infinite; }
+  @keyframes fruit2 {
+    from {
+      left: 140px; }
+    to {
+      left: 120px; } }
+      .blog_Forum_wrapper .blog_Headingbox_cloud5:hover {
+        animation-play-state: paused; }
+  @keyframes cloud5active {
+    0% {
+      top: 50px; }
+    25% {
+      top: 70px; }
+    75% {
+      top: 50px; }
+    100% {
+      top: 30px; } }
+    .blog_Forum_wrapper .blog_Headingbox_cloud6 {
+      position: relative;
+      animation: cloud6active 2s linear infinite alternate;
+      cursor: pointer; }
+      .blog_Forum_wrapper .blog_Headingbox_cloud6 .cloud6 {
+        width: 300px;
+        position: absolute;
+        top: -50px;
+        right: 0;
+        z-index: 1; }
+      .blog_Forum_wrapper .blog_Headingbox_cloud6 .fruit3 {
+        width: 80px;
+        position: absolute;
+        top: -40px;
+        right: 20px;
+        z-index: 2; }
+      .blog_Forum_wrapper .blog_Headingbox_cloud6 .fruit3_active {
+        animation: fruit3 .5s infinite alternate; }
+  @keyframes fruit3 {
+    from {
+      transform: rotate(0deg); }
+    to {
+      transform: rotate(360deg); } }
+      .blog_Forum_wrapper .blog_Headingbox_cloud6 .fruit4 {
+        width: 80px;
+        position: absolute;
+        top: -60px;
+        right: 140px;
+        z-index: 2;
+        animation: fruit4 .5s infinite alternate; }
+  @keyframes fruit4 {
+    from {
+      transform: scale(0.8); }
+    to {
+      transform: scale(1.1); } }
+      .blog_Forum_wrapper .blog_Headingbox_cloud6:hover {
+        animation-play-state: paused; }
+  @keyframes cloud6active {
+    0% {
+      top: -40px; }
+    25% {
+      top: -80px; }
+    75% {
+      top: -40px; }
+    100% {
+      top: 0px; } }
+  .umbrellaApple img {
+    width: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    z-index: -1;
+=======
+    z-index: 1;
+>>>>>>> cart
+=======
+    z-index: -1;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+    z-index: 1;
+>>>>>>> cart
+    animation: umbrellaApple 30s linear infinite; }
+  @keyframes umbrellaApple {
+    0% {
+      top: 0;
+      right: 0;
+      width: 50px;
+      transform: rotate(10deg); }
+    10% {
+      transform: rotate(-10deg); }
+    25% {
+      transform: rotate(-20deg); }
+    40% {
+      transform: rotate(10deg); }
+    50% {
+      transform: rotate(30deg); }
+    60% {
+      transform: rotate(10deg); }
+    75% {
+      transform: rotate(-20deg); }
+    85% {
+      transform: rotate(-10deg); }
+    99% {
+      opacity: 1; }
+    100% {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+      top: 100%;
+=======
+      top: 180%;
+>>>>>>> cart
+=======
+      top: 100%;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+      top: 180%;
+>>>>>>> cart
+      right: 1200px;
+      width: 250px;
+      transform: rotate(9deg);
+      opacity: 0; } }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+  .blogIn_Headingbox {
+    position: relative; }
+    .blogIn_Headingbox .blog_Heading {
+      margin: 50px 0 0px;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      background-color: #f5ba5b;
+      color: #fefefe; }
+    .blogIn_Headingbox .blogIn_umbrellaguava {
+      position: absolute;
+      top: -30%;
+      left: -15%;
+      z-index: -1;
+      animation: umbrellaguava 3s linear infinite alternate; }
+  @keyframes umbrellaguava {
+    from {
+      transform: rotate(10deg); }
+    to {
+      transform: rotate(-10deg); } }
+      .blogIn_Headingbox .blogIn_umbrellaguava img {
+        width: 250px; }
+    .blogIn_Headingbox .blogIn_cloud {
+      position: absolute;
+      top: 150%;
+      left: 0%;
+      z-index: -5;
+      animation: cloudmove 3s linear infinite alternate; }
+  @keyframes cloudmove {
+    from {
+      left: 50%; }
+    to {
+      left: 55%; } }
+      .blogIn_Headingbox .blogIn_cloud img {
+        width: 200px; }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> cart
   .blogIn_Headingbox .blog_Heading {
     padding: 50px 0 0; }
+>>>>>>> cart
+=======
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .blogIn_Share {
+    position: relative;
+    z-index: 1;
     margin: 5%; }
   .blogIn_Container {
-    border: 1px solid #ccc; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgba(254, 254, 254, 0.6); }
+=======
+    border-radius: 10px;
+    background-color: #fefefe; }
+>>>>>>> cart
+=======
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgba(254, 254, 254, 0.6); }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+    border-radius: 10px;
+    background-color: #fefefe; }
+>>>>>>> cart
   .blogIn_LeftBox {
     padding-bottom: 2%; }
     .blogIn_LeftBox .blogIn_LeftBox_Pic {
       padding: 5%;
       text-align: center; }
     .blogIn_LeftBox .blogIn_LeftBox_NameContainer {
-      width: 70%;
-      margin: 0 auto; }
+      width: 90%;
+      margin: 0 auto;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+      background-color: rgba(245, 195, 121, 0.993); }
+=======
+      background-color: rgba(253, 253, 47, 0.938); }
+>>>>>>> cart
+=======
+      background-color: rgba(245, 195, 121, 0.993); }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+      background-color: rgba(253, 253, 47, 0.938); }
+>>>>>>> cart
       .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blogIn_LeftBox_NamePic {
         width: 25%;
         margin-left: 13%; }
         .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blogIn_LeftBox_NamePic img {
-          border-radius: 50%; }
+          width: 70px;
+          border-radius: 50%;
+          padding: 5px 0; }
       .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_LeftBox_NameTitle {
         text-align: center; }
         .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_LeftBox_NameTitle p {
-          padding: 21% 0;
-          font-size: 18px; }
+          padding: 10px 10px;
+          font-size: 18px;
+          text-align: left;
+          line-height: 60px; }
   .blogIn_RightBox {
     padding: 1% 0;
     border-left: 1px solid #ccc; }
@@ -1361,7 +2060,9 @@ footer {
       padding-bottom: 1%;
       border-bottom: 1px solid #ccc; }
       .blogIn_RightBox .blog_Rank_ContentBox .blog_Rank_BottomBox_Title {
-        font-size: 15px; }
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 2px; }
   .blogIn_RightBox_TitleContainer {
     width: 80%;
     margin: 0 auto; }
@@ -1382,12 +2083,15 @@ footer {
         margin: 0 5%; }
     .blogIn_RightBox_TitleContainer .blogIn_RightBox_ShareContainer {
       margin: 5% 0; }
-      .blogIn_RightBox_TitleContainer .blogIn_RightBox_ShareContainer .blogIn_RightBox_ShareContent p {
-        padding: 0 2% 5%;
-        border-bottom: 1px solid #ccc;
-        font-size: 16px;
-        line-height: 1.5;
-        color: #888; }
+      .blogIn_RightBox_TitleContainer .blogIn_RightBox_ShareContainer .blogIn_RightBox_ShareContent {
+        border-radius: 5px;
+        background-color: #fefefe; }
+        .blogIn_RightBox_TitleContainer .blogIn_RightBox_ShareContainer .blogIn_RightBox_ShareContent p {
+          padding: 3%;
+          border-bottom: 1px solid #ccc;
+          font-size: 16px;
+          line-height: 1.5;
+          color: #888; }
     .blogIn_RightBox_TitleContainer .blogIn_RightBox_subButtonContainer {
       padding-top: 5%;
       text-align: center; }
@@ -1405,16 +2109,78 @@ footer {
             padding: 0 2%; }
         .blogIn_RightBox_TitleContainer .blogIn_RightBox_subButtonContainer a.blogIn_RightBox_subButtonItem span {
           display: inline-block;
+          color: #fefefe;
           font-size: 16px;
+          font-weight: bold;
           line-height: 1.9;
           text-align: center; }
         .blogIn_RightBox_TitleContainer .blogIn_RightBox_subButtonContainer a.blogIn_RightBox_subButtonItem:hover {
-          background-color: #fff100;
-          color: #fbb03b; }
+          background-color: #487e0a; }
   .blogIn_Msg {
-    margin: 0 5%; }
+    position: relative; }
+    .blogIn_Msg .umbrellaOrange img {
+      width: 150px;
+      position: absolute;
+      top: 0;
+      left: 50px;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+      z-index: -1;
+=======
+      z-index: 1;
+>>>>>>> cart
+=======
+      z-index: -1;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+      z-index: 1;
+>>>>>>> cart
+      transform: rotate(50deg);
+      animation: umbrellaOrange 30s linear infinite; }
+  @keyframes umbrellaOrange {
+    0% {
+      top: 0;
+      width: 50px;
+      transform: rotate(10deg); }
+    10% {
+      transform: rotate(30deg); }
+    25% {
+      transform: rotate(50deg); }
+    40% {
+      transform: rotate(20deg); }
+    50% {
+      transform: rotate(-10deg); }
+    60% {
+      transform: rotate(20deg); }
+    75% {
+      transform: rotate(-10deg); }
+    85% {
+      transform: rotate(10deg); }
+    99% {
+      opacity: 1; }
+    100% {
+      top: 70%;
+      left: 1500px;
+      width: 250px;
+      transform: rotate(-20deg);
+      opacity: 0; } }
     .blogIn_Msg .blogIn_Msg_sendContainer {
+      margin: 0 5%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+      border-radius: 10px;
+      background-color: rgba(254, 254, 254, 0.6); }
+=======
+=======
+>>>>>>> cart
       background-color: #ececaa; }
+>>>>>>> cart
+=======
+      border-radius: 10px;
+      background-color: rgba(254, 254, 254, 0.6); }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
       .blogIn_Msg .blogIn_Msg_sendContainer .blogIn_Msg_SendBlock {
         border-bottom: 1px solid #ccc; }
   .blogIn_Msg_SendBlock {
@@ -1433,22 +2199,27 @@ footer {
           text-align: center;
           line-height: 1.5; }
         .blogIn_Msg_SendBlock .blogIn_Msg_SendWrapper .blogIn_Msg_SendBox .blogIn_Msg_SendContent p {
-          margin: 0 5%;
+          padding: 5%;
           color: #888;
           text-align: left;
           font-size: 18px;
           line-height: 1.5; }
         .blogIn_Msg_SendBlock .blogIn_Msg_SendWrapper .blogIn_Msg_SendBox .blogIn_Msg_SendDate p {
-          margin: 2% 5% 0;
+          margin: 2% 5%;
           font-size: 12px;
           text-align: left;
           color: #ccc; }
       .blogIn_Msg_SendBlock .blogIn_Msg_SendWrapper a.subButtonItem {
         padding: 10px 0;
         background-color: #fbb03b;
-        text-align: center; }
+        color: #fefefe;
+        text-align: center;
+        font-weight: bold; }
+        .blogIn_Msg_SendBlock .blogIn_Msg_SendWrapper a.subButtonItem:hover {
+          background-color: #487e0a; }
   .blogIn_Msg_SendBox2 {
-    border: 1px solid #ccc; }
+    margin: 0 3%;
+    background-color: #fefefe; }
   .blogIn_Msg_Block {
     margin: 0 5%;
     padding: 20px 0; }
@@ -1461,79 +2232,288 @@ footer {
       width: 10%;
       padding: 10px;
       background-color: #fbb03b;
-      text-align: center; }
+      text-align: center;
+      color: #fefefe;
+      font-weight: bold; }
+      .blogIn_Msg_Block a.subButtonItem:hover {
+        background-color: #487e0a; }
   .blogIn_ButtonContainer {
+    position: relative;
     text-align: center; }
-    .blogIn_ButtonContainer a.blogIn_ButtonItem {
-      width: 120px;
-      display: inline-block;
-      padding: 20px 50px;
-      margin: 50px 20px;
-      border-radius: 10px;
-      background-color: #fff100;
-      color: #5e4909;
-      transition: 1s; }
-      .blogIn_ButtonContainer a.blogIn_ButtonItem:hover {
-        background-color: #f1900f;
-        color: #fefefe; }
+    .blogIn_ButtonContainer a.common_btn {
+      margin: 50px 20px; }
+  .umbrellaMandarin img {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    width: 300px;
+    position: absolute;
+    bottom: -10%;
+    right: 0%;
+    z-index: 1;
+    cursor: pointer;
+    animation: umbrellaMandarinScale 3s linear infinite alternate-reverse; }
+=======
+    width: 200px;
+=======
+    width: 300px;
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+    position: absolute;
+    bottom: -10%;
+    right: 0%;
+    z-index: 1;
+    cursor: pointer;
+<<<<<<< HEAD
+    animation: umbrellaMandarinScale 3s linear infinite alternate; }
+>>>>>>> cart
+=======
+    animation: umbrellaMandarinScale 3s linear infinite alternate-reverse; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+    width: 200px;
+    position: absolute;
+    bottom: -100%;
+    right: 0;
+    cursor: pointer;
+    animation: umbrellaMandarinScale 3s linear infinite alternate; }
+>>>>>>> cart
+  @keyframes umbrellaMandarinScale {
+    from {
+      transform: scale(0.8); }
+    to {
+      transform: scale(1); } }
+  .umbrellaMandarin .umbrellaMandarin_active {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    animation: umbrellaMandarin 5s linear backwards; }
+  @keyframes umbrellaMandarin {
+    0% {
+      bottom: -10%;
+      right: 0%;
+      transform: scale(1); }
+    99% {
+      opacity: 1; }
+    100% {
+      bottom: 300%;
+      right: 100%;
+      opacity: 0;
+      transform: scale(0.1); } }
   .blogSubmit_bgc {
-    background: linear-gradient(180deg, #f4d66d, white); }
+<<<<<<< HEAD
+    background: #f2f848;
+    background: linear-gradient(180deg, #f0f56c 1%, #e9fa7a 63%, rgba(122, 230, 69, 0.986432) 82%, #42f163 100%); }
+  .blogSubmit_Share {
+    position: relative; }
+    .blogSubmit_Share .wrapper {
+      position: relative; }
+      .blogSubmit_Share .wrapper .blogSubmit_board {
+        margin: 0 auto; }
+        .blogSubmit_Share .wrapper .blogSubmit_board img {
+          width: 100%;
+          max-width: 1200px;
+          position: relative;
+          bottom: 0;
+          z-index: 1; }
+      .blogSubmit_Share .wrapper .blogSubmit_Headingbox .blog_Heading {
+        position: absolute;
+        top: 0px;
+        left: 100px;
+        z-index: 2;
+        color: #fff; }
+      .blogSubmit_Share .wrapper #blogSubmit_form {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0px;
+        z-index: 2;
+        margin: atuo; }
+=======
+    animation: umbrellaMandarin 30s linear forwards; }
+=======
+    animation: umbrellaMandarin 5s linear backwards; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+  @keyframes umbrellaMandarin {
+    0% {
+      bottom: -10%;
+      right: 0%;
+      transform: scale(1); }
+    99% {
+      opacity: 1; }
+    100% {
+      bottom: 300%;
+      right: 100%;
+      opacity: 0;
+      transform: scale(0.1); } }
+  .blogSubmit_bgc {
+    position: relative;
+=======
+>>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
+    background: #f2f848;
+    background: linear-gradient(180deg, #f0f56c 1%, #e9fa7a 63%, rgba(122, 230, 69, 0.986432) 82%, #42f163 100%); }
+  .blogSubmit_Share {
+    position: relative; }
+<<<<<<< HEAD
+=======
+    animation: umbrellaMandarin 30s linear forwards; }
+  @keyframes umbrellaMandarin {
+    0% {
+      bottom: -100%;
+      right: 0;
+      transform: scale(1); }
+    99% {
+      opacity: 1; }
+    to {
+      bottom: 100%;
+      right: 1000px;
+      opacity: 0;
+      transform: scale(0.1); } }
+>>>>>>> cart
   .blogSubmit_Headingbox .blog_Heading {
-    padding: 30px 0; }
+    position: absolute;
+    top: -50px;
+    z-index: 2; }
+  #blogSubmit_form {
+    position: relative;
+    top: -50px;
+    z-index: 2; }
   .blogSubmit_Container {
-    margin: 20px;
+    margin: 20px 50px;
     border: 1px solid #222; }
+>>>>>>> cart
+=======
+    .blogSubmit_Share .wrapper {
+      position: relative; }
+      .blogSubmit_Share .wrapper .blogSubmit_board {
+        margin: 0 auto; }
+        .blogSubmit_Share .wrapper .blogSubmit_board img {
+          width: 100%;
+          max-width: 1200px;
+          position: relative;
+          bottom: 0;
+          z-index: 1; }
+      .blogSubmit_Share .wrapper .blogSubmit_Headingbox .blog_Heading {
+        position: absolute;
+        top: 0px;
+        left: 100px;
+        z-index: 2;
+        color: #fff; }
+      .blogSubmit_Share .wrapper #blogSubmit_form {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0px;
+        z-index: 2;
+        margin: atuo; }
+>>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
   .blogSubmit_LeftBox {
-    padding: 10% 10%;
-    border-right: 1px solid #222; }
+    padding: 10% 10%; }
     .blogSubmit_LeftBox p {
+      padding: 2% 0;
+      background-color: #b97b18;
       font-size: 20px;
-      padding: 2% 0; }
+      color: #fff; }
     .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic {
       display: block;
       padding: 30% 10%;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: #b97b18;
       text-align: center; }
       .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic img {
-        width: 30%; }
-  .blogSubmit_RightBox .blog_Rank_ContentBox .blog_Rank_BottomBox_Title {
-    font-size: 16px; }
+        width: 50%; }
+  .blogSubmit_RightBox {
+    position: relative; }
+    .blogSubmit_RightBox .blogSubmit_RightBox_pin {
+      position: absolute;
+      top: 30px;
+      right: 50px; }
+      .blogSubmit_RightBox .blogSubmit_RightBox_pin img {
+        width: 50px; }
+    .blogSubmit_RightBox .blogSubmit_RightBox_message {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transform: rotate(10deg); }
+      .blogSubmit_RightBox .blogSubmit_RightBox_message img {
+        max-width: 800px; }
+    .blogSubmit_RightBox .blog_Rank_ContentBox {
+      background-color: transparent;
+      padding: 3% 5%; }
+      .blogSubmit_RightBox .blog_Rank_ContentBox .blog_Rank_ContentBox_Box {
+        width: 70%;
+        float: left; }
+        .blogSubmit_RightBox .blog_Rank_ContentBox .blog_Rank_ContentBox_Box .blog_Rank_ContentBox_Item {
+          padding: 0; }
+          .blogSubmit_RightBox .blog_Rank_ContentBox .blog_Rank_ContentBox_Box .blog_Rank_ContentBox_Item .blog_Rank_BottomBox_Title {
+            font-size: 16px; }
+    .blogSubmit_RightBox .blog_Rank_ContentBox_Desc {
+      position: absolute;
+      top: 60%;
+      right: 15%;
+      white-space: nowrap;
+      color: #624b09; }
   .blogSubmit_RightBox_TitleContainer {
     width: 80%;
     margin: 0 auto; }
     .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitleName {
-      margin: 5% 0;
-      padding-bottom: 5%;
+      margin: 5% 0 3%;
       text-align: center;
-      border-bottom: 1px solid #222; }
+      border-bottom: 1px solid transparent; }
       .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitleName input {
         width: 60%;
-        padding-left: 1%;
+        margin-top: 20px;
+        padding-left: 2%;
+        border: 1px solid transparent;
+        background-color: #fff000;
         font-size: 18px;
-        line-height: 2.5;
-        color: #666; }
+        line-height: 2;
+        color: #624b09; }
     .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic {
       width: 100%;
-      margin: 0 0 5%;
       border-bottom: 1px solid #222; }
       .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic .blogSubmit_RightBox_PicItem {
         width: 20%;
-        margin: 5% 5%; }
+        margin: 0 5% 3%; }
         .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic .blogSubmit_RightBox_PicItem select {
-          font-size: 16px; }
+          border: 1px solid transparent;
+          padding: 2px;
+          font-size: 16px;
+          background-color: #fff000;
+          color: #624b09; }
     .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer {
       text-align: center; }
       .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer .blogSubmit_RightBox_ShareContent {
         border-top: 1px solid #222; }
         .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer .blogSubmit_RightBox_ShareContent input {
-          width: 70%;
-          margin: 5% 0;
-          padding: 1% 0 15% 1%;
+          width: 80%;
+          height: 10px;
+          margin: 2% 0;
+          padding: 2% 0 15% 1%;
+          border: 3px solid #009944;
           font-size: 16px;
           text-align: left;
           color: #888; }
   form {
     text-align: center; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> commit blog 微修
+    form .common_btn_first {
+      max-width: 300px;
+      position: absolute;
+      bottom: -5%;
+      left: 10%;
+      transform: rotate(10deg);
+      animation: buttonscale 2s infinite alternate-reverse; }
+<<<<<<< HEAD
+  @keyframes buttonscale {
+    from {
+      transform: rotate(20deg); }
+    to {
+      transform: rotate(5deg); } }
+=======
   a.blogSubmit_ButtonItem {
     display: inline-block;
     padding: 2% 8%;
@@ -1544,4 +2524,39 @@ footer {
     transition: 1s; }
     a.blogSubmit_ButtonItem:hover {
       background-color: #f1900f;
-      color: #fefefe; } }
+      color: #fefefe; }
+  .common_btn_first {
+    position: relative; }
+>>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
+=======
+  .common_btn_first {
+    max-width: 300px;
+    position: absolute;
+    bottom: -5%;
+    left: 10%;
+    transform: rotate(10deg);
+    animation: buttonscale 2s infinite alternate-reverse; }
+=======
+>>>>>>> commit blog 微修
+  @keyframes buttonscale {
+    from {
+      transform: rotate(20deg); }
+    to {
+      transform: rotate(5deg); } }
+>>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
+  .footer_wrapper {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 2; }
+    .footer_wrapper .footer_block {
+      margin: 0 auto;
+      background-color: #f4d66d; }
+      .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
+        padding: 8px 0; }
+        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
+          display: inline-block;
+          padding: 5px; }
+        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
+          font-size: 12px; } }

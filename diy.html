@@ -10,78 +10,72 @@
 	<link rel="stylesheet" href="css/diy.css">
 	<link rel="stylesheet" href="css/slick.css">
 	<link rel="stylesheet" href="css/slick-theme.css">
+	<link rel="stylesheet" href="css/hover.css">
+	<link rel="stylesheet" href="css/sweetalert2.min.css">
 
+
+	<script src="js/plugin/sweetalert2.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
-	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript" src="js/slick.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="js/plugin/slick.min.js"></script>
 	<script type="text/javascript" src="js/global.js"></script>
 
 
 </head>
 
-<body>
-
+<body onselectstart="return false">
 	<header>
-		<input type='checkbox' name=' id=' hb_control'>
-		<nav>
-			<!-- <svg preserveAspectRatio='none' id='svg-2' viewBox='0 0 100 80' enable-background='new 0 0 100 80'>
-                <animate dur='2s' attributeName='x' repeatCount='indefinite' from='0' to='100' xlink:href='#wave'></animate>
-                <defs>
-                    <filter id='f4' x='0' y='0' width='100%' height='100%'>
-                        <feOffset result='offOut' in='SourceGraphic' dx='0' dy='0'></feOffset>
-                        <feColorMatrix result='matrixOut' in='offOut' type='matrix' values='0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0'></feColorMatrix>
-                        <feGaussianBlur result='blurOut' in='matrixOut' stdDeviation='2'></feGaussianBlur>
-                        <feBlend in='SourceGraphic' in2='blurOut' mode='normal'></feBlend>
-                    </filter>
-                </defs>
-                <path x='0' y='0' d='M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z' filter='url(#f4)'
-                    id='wave'></path>
-                <path x='30' y='0' d='M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z' filter='url(#f4)'
-                    id='wave2'></path>
-            </svg> -->
-			<div id='svg-2'>
-				<canvas id='wave' width='1000' height='400'>
-					Hopefully you don't see this. If you do, get Google Chrome.
-				</canvas>
-				<canvas id='wave2' width='1000' height='400'>
-					Hopefully you don't see this. If you do, get Google Chrome.
-				</canvas>
-			</div>
-			<div class='ph_nav'>
-				<label for='hb_control' class='hb'><span></span></label>
-				<a href='index.html'>
-					<h1 class='phone_logo'><img src='images/logo.png' alt='果然配'>果然配</h1>
-				</a>
-			</div>
+        <input type="checkbox" name="" id="hb_control">
+        <nav>
+            <div id="svg-2">
+                <canvas id="wave" width="1000" height="400">
+                    Hopefully you don't see this. If you do, get Google Chrome.
+                </canvas>
+                <canvas id="wave2" width="1000" height="400">
+                    Hopefully you don't see this. If you do, get Google Chrome.
+                </canvas>
+            </div>
+            <div class="ph_nav">
+                <label for="hb_control" class="hb"><span></span></label>
+                <a href="index.html">
+                    <h1 class="phone_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
+                </a>
+            </div>
 
-			<div class='menu'>
-				<ul>
-					<li class='menu_item'><a href='diy.html'>果汁DIY</a></li>
-					<li class='menu_item'><a href='product.html'>果然特調</a></li>
-					<li><a href='index.html'>
-							<h1 class='menu_logo'><img src='images/logo.png' alt='果然配'>果然配</h1>
-						</a> </li>
-					<li class='menu_item'><a href='blog.html'>果然私藏</a></li>
-					<li class='menu_item'><a href='about.html'>關於果然</a></li>
-				</ul>
-			</div>
-			<div class='nav_mem'>
-				<p><a href='login.html'>登入</a></p>
-				<div class='mem_pic'><a href='member.html'><img src='images/user.png' alt='會員中心'></a></div>
-				<div class='mem_pic'><a href='cart.html'><img src='images/cart.png' alt='購物車'></a></div>
-			</div>
-		</nav>
-		<div class='coupon'><img src='images/coupon.png' alt='優惠小遊戲'></div>
-		<div class='robot'><img src='images/robot.png' alt='果然配客服機器人'></div>
-	</header>"
+            <div class="menu">
+                <ul>
+                    <li class="menu_item"><a href="diy.html">果汁DIY</a></li>
+                    <li class="menu_item"><a href="product.html">果然特調</a></li>
+                    <li><a href="index.html">
+                            <h1 class="menu_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
+                        </a> </li>
+                    <li class="menu_item"><a href="blog.html">果然私藏</a></li>
+                    <li class="menu_item"><a href="about.html">關於果然</a></li>
+                </ul>
+            </div>
+            <div class="nav_mem">
+                <p><a href="login.html">登入</a></p>
+                <div class="mem_pic"><a href="member.html"><img src="images/user.png" alt="會員中心"></a></div>
+                <div class="mem_pic"><a href="cart.html"><img src="images/cart.png" alt="購物車"></a></div>
+            </div>
+        </nav>
+        <div class="coupon"><img src="images/coupon.png" alt="優惠小遊戲"></div>
+        <div class="robot"><img src="images/robot.png" alt="果然配客服機器人"></div>
+    </header>
 	<!-- DIY挑選水果 -->
 	<div class="navSpace"></div>
 	<section class="section active diy_pickFruit">
 		<!-- <div class="space"></div> -->
 		<div class="wrapper diy_pickFruit_wrapper">
+			<div class="cloud1">
+				<img src="images/cloud(01).png" alt="雲">
+			</div>
+			<div class="cloud2">
+				<img src="images/cloud(04).png" alt="雲">
+			</div>
 			<div class="diy_pickFruit_stepBlock clearfix">
 				<div class="diy_pickFruit_stepFirstBox">
 					<img src="images/diy/stepBg1.png" alt="挑選水果">
@@ -109,48 +103,80 @@
 						<div class="diy_pickFruit_leftBox clearfix">
 
 							<div class="diy_pickFruit_leftPic clearfix">
-								<div id="apple" class="diy_pickFruit_leftItem diy_pickFruit_leftItem1 diy_pickFruit_leftItemf1 cl-md-4">
-									<span class="fruitnamef1">我是蘋果</span>
-									<!-- <div class="fruitnameBox"></div> -->
-									<img id="f1" class="fruiticon" src="images/apple.png" alt="蘋果">
+
+								<div class="diy_pickFruit_picBox">
+									<span class="fruitnamef1 ">我是蘋果</span>
+									<div class="fruitnameBox fruitnameBoxf1"></div>
+									<div id="apple" class="diy_pickFruit_leftItem diy_pickFruit_leftItem1 diy_pickFruit_leftItemf1 hvr-radial-out cl-md-4">
+										<img id="f1" class="fruiticon" src="images/apple.png" alt="蘋果">
+									</div>
 								</div>
 
-								<div id="guava" class="diy_pickFruit_leftItem diy_pickFruit_leftItem2 diy_pickFruit_leftItemf2 cl-md-4">
+								<div class="diy_pickFruit_picBox">
 									<span class="fruitnamef2">我是芭樂</span>
-									<!-- <div class="fruitnameBox"></div> -->
-									<img id="f2" class="fruiticon" src="images/guava.png" alt="芭樂">
+									<div class="fruitnameBox fruitnameBoxf2"></div>
+									<div id="guava" class="diy_pickFruit_leftItem diy_pickFruit_leftItem2 diy_pickFruit_leftItemf2 hvr-radial-out cl-md-4">
+										<img id="f2" class="fruiticon" src="images/guava.png" alt="芭樂">
+									</div>
 								</div>
-								<div id="grape" class="diy_pickFruit_leftItem diy_pickFruit_leftItem3 diy_pickFruit_leftItemf3 cl-md-4">
+
+								<div class="diy_pickFruit_picBox">
 									<span class="fruitnamef3">我是葡萄</span>
-									<!-- <div class="fruitnameBox"></div> -->
-									<img id="f3" class="fruiticon" src="images/grape.png" alt="葡萄">
+									<div class="fruitnameBox fruitnameBoxf3"></div>
+									<div id="grape" class="diy_pickFruit_leftItem diy_pickFruit_leftItem3 diy_pickFruit_leftItemf3 hvr-radial-out cl-md-4">
+										<img id="f3" class="fruiticon" src="images/grape.png" alt="葡萄">
+									</div>
 								</div>
-								<div id="cantaloupe" class="diy_pickFruit_leftItem diy_pickFruit_leftItem4 diy_pickFruit_leftItemf4 cl-md-4">
+
+								<div class="diy_pickFruit_picBox">
 									<span class="fruitnamef4">我是甜瓜</span>
-									<!-- <div class="fruitnameBox"></div> -->
-									<img id="f4" class="fruiticon" src="images/cantaloupe.png" alt="哈密瓜">
+									<div class="fruitnameBox fruitnameBoxf4"></div>
+									<div id="cantaloupe" class="diy_pickFruit_leftItem diy_pickFruit_leftItem4 diy_pickFruit_leftItemf4 hvr-radial-out cl-md-4">
+										<img id="f4" class="fruiticon" src="images/cantaloupe.png" alt="哈密瓜">
+									</div>
 								</div>
-								<div id="pineapple" class="diy_pickFruit_leftItem diy_pickFruit_leftItem5 diy_pickFruit_leftItemf5 cl-md-4">
+
+								<div class="diy_pickFruit_picBox">
 									<span class="fruitnamef5">我是鳳梨</span>
-									<img id="f5" class="fruiticon" src="images/pineapple.png" alt="鳳梨">
+									<div class="fruitnameBox fruitnameBoxf5"></div>
+									<div id="pineapple" class="diy_pickFruit_leftItem diy_pickFruit_leftItem5 diy_pickFruit_leftItemf5 hvr-radial-out cl-md-4">
+										<img id="f5" class="fruiticon" src="images/pineapple.png" alt="鳳梨">
+									</div>
 								</div>
-								<div id="tomato" class="diy_pickFruit_leftItem diy_pickFruit_leftItem6 diy_pickFruit_leftItemf6 cl-md-4">
+
+								<div class="diy_pickFruit_picBox">
 									<span class="fruitnamef6">我是番茄</span>
-									<img id="f6" class="fruiticon" src="images/tomato.png" alt="番茄">
+									<div class="fruitnameBox fruitnameBoxf6"></div>
+									<div id="tomato" class="diy_pickFruit_leftItem diy_pickFruit_leftItem6 diy_pickFruit_leftItemf6 hvr-radial-out cl-md-4">
+										<img id="f6" class="fruiticon" src="images/tomato.png" alt="番茄">
+									</div>
 								</div>
-								<div id="watermelon" class="diy_pickFruit_leftItem diy_pickFruit_leftItem7 diy_pickFruit_leftItemf7 cl-md-4">
+
+								<div class="diy_pickFruit_picBox">
 									<span class="fruitnamef7">我是西瓜</span>
-									<img id="f7" class="fruiticon" src="images/watermelon.png" alt="西瓜">
+									<div class="fruitnameBox fruitnameBoxf7"></div>
+									<div id="watermelon" class="diy_pickFruit_leftItem diy_pickFruit_leftItem7 diy_pickFruit_leftItemf7 hvr-radial-out cl-md-4">
+										<img id="f7" class="fruiticon" src="images/watermelon.png" alt="西瓜">
+									</div>
 								</div>
-								<div id="banana" class="diy_pickFruit_leftItem diy_pickFruit_leftItem8 diy_pickFruit_leftItemf8 cl-md-4">
+
+								<div class="diy_pickFruit_picBox">
 									<span class="fruitnamef8">我是香蕉</span>
-									<img id="f8" class="fruiticon" src="images/banana.png" alt="香蕉">
+									<div class="fruitnameBox fruitnameBoxf8"></div>
+									<div id="banana" class="diy_pickFruit_leftItem diy_pickFruit_leftItem8 diy_pickFruit_leftItemf8 hvr-radial-out cl-md-4">
+										<img id="f8" class="fruiticon" src="images/banana.png" alt="香蕉">
+									</div>
 								</div>
-								<div id="orange" class="diy_pickFruit_leftItem diy_pickFruit_leftItem9 diy_pickFruit_leftItemf9 cl-md-4">
+
+								<div class="diy_pickFruit_picBox">
 									<span class="fruitnamef9">我是柳丁</span>
-									<img id="f9" class="fruiticon" src="images/orange.png" alt="柳丁">
+									<div class="fruitnameBox fruitnameBoxf9"></div>
+									<div id="orange" class="diy_pickFruit_leftItem diy_pickFruit_leftItem9 diy_pickFruit_leftItemf9 hvr-radial-out cl-md-4">
+										<img id="f9" class="fruiticon" src="images/orange.png" alt="柳丁">
+									</div>
 								</div>
 							</div>
+
 
 
 							<!-- <script>
@@ -175,30 +201,33 @@
 							</script> -->
 
 						</div>
-						<div class="diy_pickFruit_leftArrow">
+						<!-- <div class="diy_pickFruit_leftArrow">
 							<img src="images/left01.png" alt="左箭頭">
 						</div>
 						<div class="diy_pickFruit_rightArrow">
 							<img src="images/right01.png" alt="右箭頭">
-						</div>
+						</div> -->
 						<div class="diy_pickFruit_resetButton">
 							<a href="javascript:;" id="resetButton">重新挑選</a>
 						</div>
 					</div>
 
 					<div class="diy_pickFruit_rightBlock clearfix cl-md-8">
-						<div class="diy_pickFruit_leftBox cl-s-6 cl-md-5">
+						<div class="diy_pickFruit_leftBox cl-s-5 cl-md-5">
 							<div class="diy_pickFruit_wrapperBottleBox">
 								<div class="diy_pickFruit_bottleBox">
 									<div class="diy_pickFruit_bottle diy_pickFruit_bottle3" id="diy_pickFruit_bottle3"></div>
 									<div class="diy_pickFruit_bottle diy_pickFruit_bottle2" id="diy_pickFruit_bottle2"></div>
 									<div class="diy_pickFruit_bottle diy_pickFruit_bottle1" id="diy_pickFruit_bottle1"></div>
+									<div class="diy_pickFruit_cursor diy_pickFruit_cursor1" id="cursor1">1</div>
+									<div class="diy_pickFruit_cursor diy_pickFruit_cursor2" id="cursor2">2</div>
+
 									<!-- <img src="images/diy/emptyBottle.png" alt="空瓶"> -->
 								</div>
-								<img src="images/bottle.png" alt="空瓶">
+								<img src="images/bottle.png" alt="空瓶" >
 							</div>
 						</div>
-						<div id="chart" class="diy_pickFruit_rightBox cl-s-6 cl-md-7">
+						<div id="chart" class="diy_pickFruit_rightBox cl-s-7 cl-md-7">
 							<canvas id="myChart" height="300"></canvas>
 							<div class="diy_pickFruit_rightItem">
 								<p class="diy_pickFruit_rightItemTitle">
@@ -246,20 +275,22 @@
 		<div class="tree3">
 			<img src="images/about/Tree.png" alt="tree">
 		</div>
-		<footer>
-			<div class="footer_wrapper">
-				<div class="footer_block clearfix">
-					<div class="footer_rightBox">
-						<div class="footer_rightContent">
-							<p class="copyright">Copyright © All Rights Reserved.</p>
-						</div>
+		<div class="house">
+			<img src="images/Barn.png" alt="house">
+		</div>
+	</section>
+	<footer>
+		<div class="footer_wrapper">
+			<div class="footer_block clearfix">
+				<div class="footer_rightBox">
+					<div class="footer_rightContent">
+						<p class="copyright">Copyright © All Rights Reserved.</p>
 					</div>
+		
 				</div>
 			</div>
-		</footer>
-
-	</section>
-
+		</div>
+	</footer>
 	<script type="text/javascript" src="js/diy.js"></script>
 
 </body>

@@ -1,40 +1,378 @@
 function doFirst() {
+//第一屏地球放大，字出現的動畫
+	document.querySelector('.homepage_header_ballBox').style.transform="scale(1)";
+	setTimeout(function(){
+		document.querySelector('.homepage_header_titleBlock').style.opacity=1;
+		document.querySelector('.homepage_header_carBox').style.opacity=1;
+	},3500);
 
-	
-	
-//滿屏一頁效果
-	new fullpage('#fullpage', {
-		//options here
-		anchors: ['homepage_header', 'homepage_diy', 'homepage_test', 'homepage_blog', 'homepage_about'],
-		//autoScrolling:true,//手動滾動時，無法停留在頁面與頁面中間
-		fitToSection: true, //手動滾動時，在頁面與頁面中間停留，會強制移到下一頁面
-		navigation: true, //顯示導行列
-		css3: true,
-		easing: 3,
-		controlArrow: false,
-		// scrollBar:true,
-		afterLoad: function (anchorLink, index) {
-			var loadedSection = $(this);
+	setTimeout(typeAnimation, 2000);
 
-			//using index
-			//把開場動畫放進來
-			if (index.index == 1) {
-				setTimeout(lightRotation,10);
-			} else if (index.index == 3) {
-				//私藏的彩帶動畫
-				header_blog();
+//初始化卷軸
 
-			} else if (index.index == 4) {
-				//("父層ID")
-				animate_illustration("illustration_france", "div.aaa,div.mountain,div.tree,div.grass");
-				// setTimeOut('animate_illustration("illustration_france")',1000);
-
+	var controller = new ScrollMagic.Controller();
+//果汁DIY
+	var sceneDiy =new ScrollMagic.Scene({
+		triggerElement:'#homepageDiy',
+		// duration: 200,    
+		offset:200,
+	})
+	.on('enter',function(){
+		document.getElementById('lightRotation').className += " homepage_diy_Box-active";
+		setTimeout(function(){
+			var fruits = document.querySelectorAll(".homepage_diy_fruitPic");
+			var diyText = document.querySelector(".homepage_diy_fruitContent");
+			for(var i =0 ; i<fruits.length ; i++){
+				fruits[i].className += " homepage_diy_fruitPic-active";
 			}
+			diyText.className += " homepage_diy_fruitContent-active";
 
+		},1200);
+	})
+	// .addIndicators({
+    //     name: 'diy',
+    //     colorStart: '#f20',
+    //     colorEnd: '#000'
+    // })
+	.addTo(controller);
+//果然特調	
+	var windowWidth = window.screen.width;
+	var ship = document.getElementById('homepageTestShip');
+	if(windowWidth<768){
+		var cloud2 = TweenMax.to('.homepage_test_animatePic2',2,{x:30});
+		var cloud3 = TweenMax.to('.homepage_test_animatePic3',2,{x:-60});
+		var fruit5 = TweenMax.to('.homepage_test_animatePic5',2.5,{y:50});
+		var fruit8 = TweenMax.to('.homepage_test_animatePic8',3.5,{y:90});
+		var cloud4 = TweenMax.to('.homepage_test_animatePic4',2,{x:-60});
 
+		var sceneTest1 =new ScrollMagic.Scene({
+			triggerElement:'#homepageTest',
+			offset:150,
+		})
+		.setTween([cloud2,cloud3])
+		// .addIndicators({
+		//     name: 'test',
+		//     colorStart: '#f20',
+		//     colorEnd: '#000'
+		// })
+		.addTo(controller);
+
+		var sceneTest =new ScrollMagic.Scene({
+			triggerElement:'#homepageTest',
+			offset:250,
+		})
+		.setTween([fruit5,fruit8,cloud4])
+		// .addIndicators({
+		//     name: 'test',
+		//     colorStart: '#f20',
+		//     colorEnd: '#000'
+		// })
+		.addTo(controller);
+	}else{
+		if(windowWidth>=768 && windowWidth<1024){
+			var ship = TweenMax.to('#homepageTestShip',6,{
+				x:-windowWidth-50,
+			});
+			var cloud1 = TweenMax.to('.homepage_test_animatePic1',3,{x:60});
+			var cloud2 = TweenMax.to('.homepage_test_animatePic2',6,{x:-50});
+			var cloud3 = TweenMax.to('.homepage_test_animatePic3',5,{
+				x:160});
+			var cloud4 = TweenMax.to('.homepage_test_animatePic4',8,{
+				x:10
+			});
+			var fruit5 = TweenMax.to('.homepage_test_animatePic5',4.5,{y:-270});
+			var fruit6 = TweenMax.to('.homepage_test_animatePic6',5.5,{
+				rotation:"20deg",
+				bezier:{
+					values:[{
+						x:-100,
+						y:-90
+					},{
+						x:-140,
+						y:-120
+					},{
+						x:-250,
+						y:-280
+					}],
+					autoRotate:false
+				},
+				
+				
+			});
+			var fruit8 = TweenMax.to('.homepage_test_animatePic8',5,{
+				rotation:"30deg",
+				bezier:{
+					values:[{
+						x:220,
+						y:100
+					},{
+						x:300,
+						y:290
+					}],
+					autoRotate:false
+				},
+			});
+		}else if(windowWidth>=1024 && windowWidth<1440){
+			var ship = TweenMax.to('#homepageTestShip',6,{
+				x:-windowWidth*3/4,
+			});
+			var cloud1 = TweenMax.to('.homepage_test_animatePic1',3,{x:60});
+			var cloud2 = TweenMax.to('.homepage_test_animatePic2',4,{x:-150});
+			var cloud3 = TweenMax.to('.homepage_test_animatePic3',5,{
+				x:160});
+			var cloud4 = TweenMax.to('.homepage_test_animatePic4',8,{
+				x:200
+			});
+			var fruit5 = TweenMax.to('.homepage_test_animatePic5',4.5,{y:-370});
+			var fruit6 = TweenMax.to('.homepage_test_animatePic6',5.5,{
+				rotation:"20deg",
+				bezier:{
+					values:[{
+						x:-100,
+						y:-90
+					},{
+						x:-140,
+						y:-120
+					},{
+						x:-250,
+						y:-380
+					}],
+					autoRotate:false
+				},
+				
+				
+			});
+			var fruit8 = TweenMax.to('.homepage_test_animatePic8',15,{
+				rotation:"30deg",
+				bezier:{
+					values:[{
+						x:220,
+						y:100
+					},{
+						x:650,
+						y:1050
+					}],
+					autoRotate:false
+				},
+			});
+		}else if(windowWidth>=1440){
+			var cloud1 = TweenMax.to('.homepage_test_animatePic1',3,{x:260});
+			var cloud2 = TweenMax.to('.homepage_test_animatePic2',6,{x:-450});
+			var cloud3 = TweenMax.to('.homepage_test_animatePic3',5,{
+				x:160});
+			var cloud4 = TweenMax.to('.homepage_test_animatePic4',8,{
+				x:200
+			});
+			if(windowWidth>1440){
+				var fruit5 = TweenMax.to('.homepage_test_animatePic5',8.5,{
+					x:70,
+					y:-670
+				});
+				var ship = TweenMax.to('#homepageTestShip',6,{
+					x:-windowWidth/3-windowWidth*.1,
+				});
+				var fruit6 = TweenMax.to('.homepage_test_animatePic6',5.5,{
+					rotation:"20deg",
+					bezier:{
+						values:[{
+							x:-100,
+							y:-90
+						},{
+							x:-240,
+							y:-220
+						},{
+							x:-450,
+							y:-480
+						}],
+						autoRotate:false
+					},
+					
+					
+				});
+			}else{
+				var fruit5 = TweenMax.to('.homepage_test_animatePic5',4.5,{y:-370});
+				var ship = TweenMax.to('#homepageTestShip',6,{
+					x:-windowWidth/3-windowWidth*0.13,				
+				});
+				var fruit6 = TweenMax.to('.homepage_test_animatePic6',5.5,{
+					rotation:"20deg",
+					bezier:{
+						values:[{
+							x:-100,
+							y:-90
+						},{
+							x:-140,
+							y:-120
+						},{
+							x:-250,
+							y:-200
+						}],
+						autoRotate:false
+					},
+					
+					
+				});
+			}
+			
+			var fruit8 = TweenMax.to('.homepage_test_animatePic8',15,{
+				rotation:"30deg",
+				bezier:{
+					values:[{
+						x:220,
+						y:100
+					},{
+						x:650,
+						y:1550
+					}],
+					autoRotate:false
+				},
+			});
 		}
-	});
-	//第一屏動畫
+		var sceneShip =new ScrollMagic.Scene({
+			triggerElement:'#homepageTest',
+			duration: 200,    
+			reverse:false,
+			offset:150,
+		})
+		.setTween(ship)
+		// .addIndicators({
+		//     name: 'ship',
+		//     colorStart: '#f20',
+		//     colorEnd: '#000'
+		// })
+		.addTo(controller);
+
+		var sceneTest =new ScrollMagic.Scene({
+			triggerElement:'#homepageTest',
+			// duration:"30%",    
+			offset:-230,
+		})
+		.setTween([cloud3,fruit6])
+		// .addIndicators({
+		//     name: 'test1',
+		//     colorStart: '#f20',
+		//     colorEnd: '#000'
+		// })
+		.addTo(controller);
+
+		var sceneTest2 =new ScrollMagic.Scene({
+			triggerElement:'#homepageTest',
+			// duration:"30%",    
+			offset:350,
+		})
+		.setTween([cloud1,cloud2,cloud4,fruit5,fruit8])
+		// .addIndicators({
+		//     name: 'test2',
+		//     colorStart: '#f20',
+		//     colorEnd: '#000'
+		// })
+		.addTo(controller);
+	}
+	
+
+//果粉私藏
+	header_blog();
+	var sceneBlog =new ScrollMagic.Scene({
+		triggerElement:'#homepageBlog',
+		
+		duration: 200,
+		reverse:false,
+		offset:window.screen.width/300,    
+		
+	})
+	.on('enter',function(){
+		var blogPerson = document.querySelector('.homepage_blog_platBlock');
+		blogPerson.style.opacity="1";
+
+		if(windowWidth>768){
+			var t1 = TweenMax.to('.homepage_blog_platBlock',3,{
+				scale:"1.5",
+				x:100,
+				y:-100,
+			})
+		}else{
+			var t1 = TweenMax.to('.homepage_blog_platBlock',3,{
+				scale:"1.5",
+			})
+		}
+		
+		setTimeout(function(){
+			var t1 = TweenMax.to('.homepage_blog_platBlock',2,{
+				scale:"1",
+				y:0,
+				x:0,
+
+			})
+			var blogButon = document.querySelector('.homepage_blog_btnBlock');
+			var blogPepper = document.querySelector('.homepage_blog_papperBlock');
+			var blogPerson = document.querySelector('.homepage_blog_platBlock');
+			
+			blogButon.style.opacity="1";
+			blogPepper.style.opacity="1";
+			blogPepper.style.bottom=0;
+			blogPerson.style.left=0;
+			blogPerson.style.bottom=0;
+			
+		},3000);
+		setTimeout(function(){
+				document.querySelector('.homepage_blog_person2').className+=" homepage_blog_person-active";
+			},6500);
+	})
+	// .addIndicators({
+    //     name: 'blog',
+    //     colorStart: '#f20',
+    //     colorEnd: '#000'
+    // })
+	.addTo(controller);
+//關於果然
+	var sceneAbout =new ScrollMagic.Scene({
+		triggerElement:'#homepageAbout',
+		duration: '100%',    
+		reverse:false,
+		offset:window.screen.width/300,  
+	})
+	.on('enter',function(){
+		$("#illustration_france").find("div");
+		TweenMax.killTweensOf($("#illustration_france"));
+		setTimeout(function () {
+			$("#illustration_france").find("div.aaa,div.mountain,div.tree,div.grass").each(function (a) {
+				TweenMax.fromTo($(this), .5, {
+					rotationX: -90,
+					visibility: "hidden",
+					opacity: 0,
+	
+				}, {
+					delay: .2 * a,
+					rotationX: 0,
+					opacity: 1,
+					ease: "Back.easeOut",
+					visibility: "visible"
+				})
+			})
+		}, 100);
+		setTimeout(function () {
+			$("#illustration_france").find("div.cloud").each(function (a) {
+				TweenMax.fromTo($(this), .5, {
+					scale: 2,
+					opacity: 0,
+					rotationX: 0,
+					visibility: "visible"
+				}, {
+					delay: .15 * a,
+					scale: 1,
+					opacity: 1,
+					ease: "Back.easeOut"
+				})
+			})
+		}, 300);
+	})
+	// .addIndicators({
+    //     name: 'about',
+    //     colorStart: '#f20',
+    //     colorEnd: '#000'
+    // })
+	.addTo(controller);
+
 
 	setTimeout(function () {
 		var homepageHeaderItems = document.querySelectorAll('.homepage_header_box');
@@ -42,59 +380,14 @@ function doFirst() {
 			homepageHeaderItems[i].style.opacity = '1';
 		};
 	}, 1);
-	setTimeout(homepageHeader, 1000);
-	setTimeout(typeAnimation, 0);
-	setTimeout(fruitText, 500);
-	//第一屏水果滾動動畫
-	window.onresize = homepageHeader;
-
 	
 
 	
-
-};
-
-
-
-function homepageHeader() {
-	var windowHeight = window.screen.height;
-	var windowWidth = window.screen.width;
-
-	document.querySelector('.homepage_header_waterPic').className += ' homepage_header_waterPic-active';
-	TweenMax.from('.homepage_header_waterPic', .9, {
-		scale: 0.0000000000000001,
-		y: windowHeight * 0.6 + 'px',
-		ease: Power4.easeIn,
-		opacity: 0,
-	});
-	setTimeout(function () {
-		var drop = new TimelineMax({});
-		drop.to('.homepage_header_drop', .5, {
-			opacity: 1,
-			scale: 1.6,
-		}).to('.homepage_header_drop', .5, {
-			scale: 1,
-		});
-
-	}, 800);
-
-	setTimeout(headerParallax, 3000);
-
-
-};
-
-//第一屏的Parallax
-function headerParallax() {
-	var homepageHeaderItems = document.querySelectorAll('.homepage_header_fruitPic');
-	for (var i = 0; i < homepageHeaderItems.length; i++) {
-		var parallax = new Parallax(homepageHeaderItems[i]);
-	};
 
 };
 
 //第一瓶字的動畫
 function typeAnimation() {
-	// 可愛版
 	$('.homepage_header_textWrapper').css('opacity', '1');
 
 	$('.homepage_header_textBox .homepage_header_texts').each(function () {
@@ -108,68 +401,13 @@ function typeAnimation() {
 			targets: '.homepage_header_textBox .homepage_header_text',
 			translateY: ["1.8em", 0],
 			translateZ: 14,
-			duration: 1200,
+			duration: 1500,
 			delay: function (el, i) {
 				return 110 * i;
 			}
 		});
 };
-
-function fruitText() {
-	var texts = document.querySelectorAll('.homepage_header_fruitContent');
-	var fruits = document.querySelectorAll('.homepage_header_fruitPic');
-	var time = 5;
-	var index = 0;
-	setInterval(function () {
-		if (index < 5) {
-			var text = new TimelineMax({});
-			text.to(texts[index], 2.7, {
-				opacity: 1,
-				scale: 1.2,
-			}).to(texts[index], .9, {
-				opacity: 0,
-				scale: .2,
-			});
-			var fruit = new TimelineMax({});
-			fruit.to(fruits[index], 2.7, {
-				scale: 1.1,
-			}).to(fruits[index], .9, {
-				scale: 1,
-			});
-			index++;
-
-		} else {
-			var text = new TimelineMax({});
-			text.to(texts[index], 2.7, {
-				opacity: 1,
-				scale: 1.2,
-			}).to(texts[index], .9, {
-				opacity: 0,
-				scale: .2,
-			});
-			var fruit = new TimelineMax({});
-			fruit.to(fruits[index], 2.7, {
-				scale: 1.1,
-			}).to(fruits[index], .9, {
-				scale: 1,
-			});
-			index = 0;
-		}
-	}, 2900);
-}
-function lightRotation(){
-	document.getElementById('lightRotation').className += " homepage_diy_Box-active";
-	setTimeout(function(){
-		var fruits = document.querySelectorAll(".homepage_diy_fruitPic");
-		var diyText = document.querySelector(".homepage_diy_fruitContent");
-		for(var i =0 ; i<fruits.length ; i++){
-			fruits[i].className += " homepage_diy_fruitPic-active";
-		}
-		diyText.className += " homepage_diy_fruitContent-active";
-
-	},1200);
-	
-}
+// 雪花
 function header_blog() {
 	var snowflakeURl = [
 		'images/homepage/red.png',
@@ -194,7 +432,7 @@ function header_blog() {
 		// 创建一个雪花元素
 		function createSnowBox() {
 			var url = getImagesName();
-			visualWidth = container.width();
+			visualWidth = window.screen.width;
 			if (visualWidth < 1024) {
 				return $('<div class="snowbox" />').css({
 					'width': visualWidth / 30,
@@ -247,7 +485,7 @@ function header_blog() {
 			}, duration, 'ease-out', function () {
 				$(this).remove() //结束后删除
 			});
-		}, 500);
+		}, 300);
 	}
 	snowflake();
 	//执行函数
@@ -256,39 +494,7 @@ function header_blog() {
 
 //關於果然
 function animate_illustration(a, b) {
-	$("#" + a).find("div");
-	TweenMax.killTweensOf($("#" + a));
-	setTimeout(function () {
-		$("#" + a).find(b).each(function (a) {
-			TweenMax.fromTo($(this), .5, {
-				rotationX: -90,
-				visibility: "hidden",
-				opacity: 0,
 
-			}, {
-				delay: .2 * a,
-				rotationX: 0,
-				opacity: 1,
-				ease: "Back.easeOut",
-				visibility: "visible"
-			})
-		})
-	}, 100);
-	setTimeout(function () {
-		$("#" + a).find("div.cloud").each(function (a) {
-			TweenMax.fromTo($(this), .5, {
-				scale: 2,
-				opacity: 0,
-				rotationX: 0,
-				visibility: "visible"
-			}, {
-				delay: .15 * a,
-				scale: 1,
-				opacity: 1,
-				ease: "Back.easeOut"
-			})
-		})
-	}, 400);
 }
 
 

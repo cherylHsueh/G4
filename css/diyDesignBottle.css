@@ -316,7 +316,7 @@ header {
   top: 0;
   height: 140px;
   width: 300%;
-  fill: rgba(255, 255, 255, 0.5);
+  fill: white;
   -webkit-animation: move 5s 1s linear infinite alternate;
   animation: move 5s .5s linear infinite alternate; }
 
@@ -341,10 +341,10 @@ header {
 
 .coupon {
   position: fixed;
-  width: 110px;
-  top: 20%;
+  width: 100px;
+  top: 110px;
   right: 2%;
-  z-index: 50; }
+  z-index: 100; }
 
 @media only screen and (max-width: 767px) {
   .robot {
@@ -354,7 +354,11 @@ header {
     width: 70px; }
   #svg-2 {
     transition: height 1.3s 0.5s ,width 2s; }
-  #wave, #wave2 {
+  #wave {
+    height: 95px;
+    transition: 1s; }
+  #wave2 {
+    height: 100px;
     transition: 1s; }
   .menu {
     text-align: center;
@@ -376,12 +380,12 @@ header {
     width: 100%;
     margin-top: 7px; }
     .ph_nav .phone_logo {
-      width: 80px;
+      width: 60px;
       margin: auto; }
     .ph_nav .hb {
       padding: 20px 15px;
       float: left;
-      margin: 20px 0 0 5%; }
+      margin: 14px 0 0 5%; }
       .ph_nav .hb span {
         display: block;
         height: 2px;
@@ -408,6 +412,7 @@ header {
 #hb_control:checked ~ nav #wave {
   transition: 2s;
   width: 900%;
+  height: 107vh;
   animation: move2 3s 1s linear infinite alternate; }
 
 #hb_control:checked ~ nav #wave2 {
@@ -444,7 +449,7 @@ header {
 
 @keyframes move {
   0% {
-    transform: translate(-40%, 0%); }
+    transform: translate(-30%, 0%); }
   100% {
     transform: translate(0%, 0%); } }
 
@@ -466,54 +471,65 @@ header {
   100% {
     transform: translate(0%, 0%); } }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 /*分頁做法
 header nav  li:nth-child(2) > a:after {
     transform: scaleX(1);
 }
 */
+<<<<<<< HEAD
+>>>>>>> diy
+=======
+>>>>>>> 6a047bf83ca6a4f5d20759417a9bec51470ac612
+>>>>>>> blog
+=======
+>>>>>>> 280a4a4c1247a2dea80405e899b323e7ca4b1a49
+>>>>>>> member
+=======
+>>>>>>> 1105homepage(having about)
+footer {
+  position: relative;
+  bottom: -200px;
+  left: 0;
+=======
+footer {
+  position: relative;
+  bottom: -200px;
+  left: 0;
+<<<<<<< HEAD
+  bottom: 0;
+>>>>>>> cart
+=======
+>>>>>>> 手機板調整跳窗圖片跑版,處理OK
+=======
 footer {
   position: absolute;
+  left: 0;
   bottom: 0;
-  right: 0;
-  left: 0; }
+>>>>>>> cart
+  width: 100%;
+  line-height: 25px;
+  background-color: #f4d66d;
+  text-align: center; }
+  footer img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 120px; }
 
-@media only screen and (max-width: 767px) {
-  .footer_wrapper {
-    text-align: center; }
-    .footer_wrapper .footer_block {
-      margin: 0 auto; }
-      .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
-        padding: 8px 0; }
-        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
-          display: inline-block;
-          padding: 5px;
-          font-size: 2vw; }
-        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
-          font-size: 1vw; } }
+body {
+  background-color: #a4ddfa;
+  overflow-x: hidden; }
 
-@media all and (min-width: 768px) {
-  .footer_wrapper {
-    position: relative;
-    text-align: center;
-    margin: 0 auto; }
-    .footer_wrapper .footer_block {
-      margin: 0 auto; }
-      .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
-        padding: 8px 0; }
-        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
-          display: inline-block;
-          padding: 5px; }
-        .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
-          font-size: 12px; } }
-
-footer {
-  position: relative; }
-
-.footer_block {
-  background-color: #dde4b7; }
-
-.navSpace {
-  margin-top: 130px; }
+.displayBlock {
+  display: block; }
 
 .diy_designBottle_stepFirstTitle, .diy_designBottle_stepSecondTitle {
   position: absolute;
@@ -522,9 +538,13 @@ footer {
   transform: translate(-50%, -50%);
   text-align: left; }
 
-.diy_designBottle_title {
+.navSpace {
+  margin-top: 140px; }
+
+.diy_designBottle_title h4 {
   text-align: center;
-  margin-top: 25px;
+  margin: 15px auto;
+  font-size: 20px;
   color: #5e4909; }
 
 .diy_designBottle_uploadBtn input {
@@ -559,9 +579,6 @@ footer {
     padding-top: 1px;
     font-size: 15px; }
 
-.diy_designBottle_bottleItem img {
-  width: 120px; }
-
 .diy_designBottle_changePic {
   position: absolute;
   width: 140px; }
@@ -569,12 +586,14 @@ footer {
 .diy_designBottle_createBlock {
   width: 100px; }
 
-.diy_designBottle_controlBlock i {
-  margin-top: 20px;
-  display: inline-block;
-  font-size: 30px;
-  cursor: pointer;
-  color: #5e4909; }
+.diy_designBottle_controlBlock {
+  margin-top: 15px; }
+  .diy_designBottle_controlBlock i {
+    margin-top: 20px;
+    display: inline-block;
+    font-size: 30px;
+    cursor: pointer;
+    color: #5e4909; }
 
 .diy_designBottle_uploadBtn {
   margin: 5px 5px 15px; }
@@ -582,13 +601,13 @@ footer {
     width: 80px;
     height: 20px;
     line-height: 20px;
-    outline: 1px dashed #f09824;
+    outline: 1px solid #f09824;
     padding: 8px;
-    color: #5e4909;
+    color: #f09824;
     cursor: pointer; }
     .diy_designBottle_uploadBtn p:hover {
-      color: #db7e7e;
-      background: #fff4c1;
+      color: #fefefe;
+      background: #f09824;
       border-color: #fff4c1;
       transition: all 0.4s ease 0s; }
 
@@ -602,7 +621,19 @@ footer {
   border: 1px solid #aeaeae;
   width: 100%;
   position: absolute;
-  bottom: 100px;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  bottom: 95px;
+=======
+  bottom: 105px;
+>>>>>>> cart
+=======
+  bottom: 95px;
+>>>>>>> 手機板調整跳窗圖片跑版,處理OK
+=======
+  bottom: 105px;
+>>>>>>> cart
   left: 0; }
 
 .diy_designBottle_officalPicBlock {
@@ -618,11 +649,11 @@ footer {
 
 .diy_designBottle_textLength {
   margin: 5px 0 15px;
-  width: 160px; }
+  width: 130px; }
 
 .diy_designBottle_btnBlock {
   text-align: center;
-  margin-top: -10px; }
+  margin-top: -30px; }
   .diy_designBottle_btnBlock button {
     width: 120px;
     background-color: #fff100;
@@ -636,11 +667,6 @@ footer {
       background-color: #f1900f;
       color: #fefefe; }
 
-.diy_designBottle_bottleItem img {
-  width: 180px;
-  display: block;
-  margin: 0 auto; }
-
 .diy_designBottle_createTextBlock {
   margin-left: 5px; }
   .diy_designBottle_createTextBlock p {
@@ -650,25 +676,49 @@ footer {
     display: block;
     background: none;
     border: none;
-    outline: 1px dashed #f09824;
+    outline: 1px solid #f09824;
     padding: 5px 15px;
-    color: #5e4909;
+    color: #f09824;
     font-size: 16px;
     cursor: pointer; }
     .diy_designBottle_createTextBlock input:nth-child(3):hover {
-      color: #db7e7e;
-      background: #fff4c1;
-      border-color: #fff4c1;
+      color: #fefefe;
+      background: #f09824;
       transition: all 0.4s ease 0s; }
 
 .diy_designBottle_officalPic {
   padding: 10px; }
 
+.diy_designBottle_bgcBox {
+  width: 360px;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  height: 510px;
+  border-radius: 10px;
+  box-sizing: border-box;
+=======
+  height: 520px;
+  border-radius: 10px;
+>>>>>>> cart
+=======
+  height: 510px;
+  border-radius: 10px;
+  box-sizing: border-box;
+>>>>>>> 手機板調整跳窗圖片跑版,處理OK
+=======
+  height: 520px;
+  border-radius: 10px;
+>>>>>>> cart
+  padding: 10px;
+  position: relative;
+  top: 50px;
+  margin: auto;
+  background-color: #fff; }
+
 .diy_customizePopUp {
   width: 100%;
   position: absolute;
-  padding: 2px;
-  margin: 5px;
   display: none; }
 
 .diy_customizeBox_item {
@@ -681,18 +731,33 @@ footer {
     font-size: 55px;
     top: -25px;
     right: 10px;
-    text-align: center; }
+    text-align: center;
+    cursor: pointer; }
 
 .diy_customizeBox_content {
   width: 300px;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   height: 350px;
-  background-color: #fedfe1;
+  background-color: #fff;
+=======
+=======
+>>>>>>> cart
+  height: 400px;
+  background-color: #fafafa;
+>>>>>>> cart
+=======
+  height: 350px;
+  background-color: #fff;
+>>>>>>> 手機板調整跳窗圖片跑版,處理OK
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -45%);
-  margin: auto;
+  transform: translate(-50%, -50%);
   text-align: center; }
+  .diy_customizeBox_content h3 {
+    color: #5e4909; }
 
 .diy_customizeBox_finishPic {
   width: 100px;
@@ -701,15 +766,17 @@ footer {
 
 .diy_customizeFinishBox {
   position: fixed;
+  width: 100%;
   top: 0px;
   right: 1px;
   bottom: 1px;
   left: 1px;
   background-color: rgba(0, 0, 0, 0.4);
   text-align: center;
-  overflow-x: hidden;
-  z-index: 2; }
+  overflow: hidden;
+  z-index: 5; }
   .diy_customizeFinishBox_btns {
+    display: none;
     position: relative;
     top: 73%;
     right: 0; }
@@ -728,17 +795,25 @@ footer {
 
 .diy_proToCartBtns {
   text-align: center; }
-  .diy_proToCartBtns button {
-    width: 120px;
-    padding: 10px 10px;
+  .diy_proToCartBtns a {
+    width: 100px;
+    margin: 0 5px;
     display: inline-block; }
 
-footer {
-  position: static;
-  padding-top: 50px; }
-
 .robot {
-  z-index: 1; }
+  z-index: 4; }
+
+@keyframes mobBottleMove {
+  0% {
+    left: 0; }
+  100% {
+    left: 70%; } }
+
+@keyframes bottleMove {
+  0% {
+    left: 5%; }
+  100% {
+    left: 90%; } }
 
 @media only screen and (max-width: 767px) {
   .diy_customizeBox_finishPic {
@@ -747,42 +822,229 @@ footer {
     margin: 10px 0; }
   .diy_designBottle_bottleItem img {
     width: 100px;
-    margin: 35px auto; }
+    margin: 30px 40px 0; }
   .diy_designBottle_stepFirstBox img {
     width: 120px; }
   .diy_designBottle_stepSecondBox img {
     width: 120px; }
+  .diy_designBottle_bgCloud {
+    display: none; }
   .diy_designBottle_disNone {
     display: none; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 手機板調整跳窗圖片跑版,處理OK
+  .diy_designBottle_mobMoveBlock {
+    width: 100%; }
+    .diy_designBottle_mobMoveBlock ul {
+      width: 90%;
+      position: relative; }
+    .diy_designBottle_mobMoveBlock li {
+      position: absolute;
+      bottom: -190px; }
+      .diy_designBottle_mobMoveBlock li img {
+        position: relative;
+        width: 15px;
+        left: 0; }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> cart
+  .diy_designBottle_mobMoveBlock li {
+    position: relative; }
+    .diy_designBottle_mobMoveBlock li img {
+      width: 10px;
+      bottom: 10px;
+      left: 30%;
+      z-index: -1; }
+<<<<<<< HEAD
+>>>>>>> cart
+=======
+>>>>>>> 手機板調整跳窗圖片跑版,處理OK
+=======
+>>>>>>> cart
+  .diy_designBottle_btnBlock a {
+    width: 75px;
+    display: inline-block;
+    margin: 40px 5px 0; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 手機板調整跳窗圖片跑版,處理OK
+  .diy_designBottle_itemBottleBlock {
+    position: absolute;
+    top: 0;
+    left: 0; }
+    .diy_designBottle_itemBottleBlock .item2 {
+      animation: mobBottleMove 6s linear 1s infinite; }
+    .diy_designBottle_itemBottleBlock .item3 {
+      animation: mobBottleMove 6s linear 2s infinite; }
+    .diy_designBottle_itemBottleBlock .item4 {
+      animation: mobBottleMove 6s linear 3s infinite; }
+    .diy_designBottle_itemBottleBlock .item5 {
+      animation: mobBottleMove 6s linear 4s infinite; }
+    .diy_designBottle_itemBottleBlock .item6 {
+      animation: mobBottleMove 6s linear 5s infinite; }
+    .diy_designBottle_itemBottleBlock .item1 {
+      animation: mobBottleMove 6s linear 6s infinite; }
+    .diy_designBottle_itemBottleBlock .item7 {
+      display: none; }
+<<<<<<< HEAD
   #diy_designBottle_wrapper {
-    width: 100%; } }
+    width: 100%; }
+  .diy_designBottle_bottleMoveBlock {
+    position: relative; }
+    .diy_designBottle_bottleMoveBlock .diy_factory .factory {
+      width: 150px;
+      position: absolute;
+      bottom: -200px;
+      left: -15px;
+      z-index: 2; }
+    .diy_designBottle_bottleMoveBlock .diy_conveyor img {
+      width: 100%;
+      position: absolute;
+      bottom: -200px;
+      left: 0; }
+    .diy_designBottle_bottleMoveBlock .diy_car img {
+      position: absolute;
+      right: 0;
+      bottom: -200px;
+      width: 145px;
+      z-index: 2; } }
 
 @media all and (min-width: 768px) {
+  footer {
+    position: absolute;
+    transform: translate(0%, 0%); }
+=======
+=======
+>>>>>>> 手機板調整跳窗圖片跑版,處理OK
+  #diy_designBottle_wrapper {
+    width: 100%; }
+  .diy_designBottle_bottleMoveBlock {
+    position: relative; }
+    .diy_designBottle_bottleMoveBlock .diy_factory .factory {
+      width: 150px;
+      position: absolute;
+      bottom: -200px;
+      left: -15px;
+      z-index: 2; }
+    .diy_designBottle_bottleMoveBlock .diy_conveyor img {
+      width: 100%;
+      position: absolute;
+      bottom: -200px;
+      left: 0; }
+    .diy_designBottle_bottleMoveBlock .diy_car img {
+      position: absolute;
+      right: 0;
+      bottom: -200px;
+      width: 145px;
+      z-index: 2; } }
+=======
+  #diy_designBottle_wrapper {
+    width: 100%; }
+  .diy_footer_container {
+    position: relative; }
+    .diy_footer_container .factory img {
+      width: 120px; }
+    .diy_footer_container .car {
+      position: absolute;
+      width: 110px;
+      left: 73%;
+      top: -50px; }
+    .diy_footer_container .conveyor {
+      height: 20px; } }
+>>>>>>> cart
+
+@media all and (min-width: 768px) {
+<<<<<<< HEAD
+  body {
+    overflow-x: hidden; }
+  @keyframes bottleMove {
+    0% {
+      left: 0; }
+    100% {
+      left: 100%; } }
+<<<<<<< HEAD
+>>>>>>> cart
+=======
+  footer {
+    position: absolute;
+    transform: translate(0%, 0%); }
+>>>>>>> 手機板調整跳窗圖片跑版,處理OK
+=======
+>>>>>>> cart
   .diy_customizeBox_finishPic {
-    width: 230px; }
+    width: 230px;
+    margin: 0 auto; }
   .diy_proToCartBtns {
-    margin-top: 20px; }
+    margin-top: 130px; }
+    .diy_proToCartBtns a {
+      margin: 0 30px; }
   .diy_designBottle_bottleItem img {
     width: 140px;
-    margin: 30px auto; }
+    margin: 25px 90px; }
+  .diy_designBottle_title h4 {
+    margin: 25px auto 5px; }
   .diy_designBottle_stepFirstBox img {
     width: 180px; }
   .diy_designBottle_stepSecondBox img {
     width: 180px; }
+  .diy_designBottle_bgCloud {
+    position: absolute; }
+    .diy_designBottle_bgCloud img {
+      position: relative;
+      width: 200px; }
+      .diy_designBottle_bgCloud img:nth-child(1) {
+        top: -40px;
+        left: -300px;
+        width: 150px; }
+      .diy_designBottle_bgCloud img:nth-child(2) {
+        left: -150px;
+        top: -80px;
+        width: 200px; }
+      .diy_designBottle_bgCloud img:nth-child(3) {
+        top: -40px;
+        left: 450px;
+        width: 100px; }
+      .diy_designBottle_bgCloud img:nth-child(4) {
+        top: -50px;
+        left: 600px;
+        width: 200px; }
   .diy_designBottle_logoPic {
     display: inline-block; }
     .diy_designBottle_logoPic img {
       width: 90px;
       margin: 5px; }
   .diy_designBottle_bottleItem {
-    position: relative;
-    padding-left: 50px; }
+    position: relative; }
+  .diy_designBottle_itemBottleBlock {
+    top: -50px; }
+    .diy_designBottle_itemBottleBlock .item1 {
+      animation: bottleMove 7s linear 0s infinite; }
+    .diy_designBottle_itemBottleBlock .item2 {
+      animation: bottleMove 7s linear 1s infinite; }
+    .diy_designBottle_itemBottleBlock .item3 {
+      animation: bottleMove 7s linear 2s infinite; }
+    .diy_designBottle_itemBottleBlock .item4 {
+      animation: bottleMove 7s linear 3s infinite; }
+    .diy_designBottle_itemBottleBlock .item5 {
+      animation: bottleMove 7s linear 4s infinite; }
+    .diy_designBottle_itemBottleBlock .item6 {
+      animation: bottleMove 7s linear 5s infinite; }
+    .diy_designBottle_itemBottleBlock .item7 {
+      animation: bottleMove 7s linear 6s infinite; }
   .diy_designBottle_stepFirstTitle p,
   .diy_designBottle_stepFirstTitle h3 {
-    font-size: 18px; }
+    font-size: 18px;
+    margin: 8px 0; }
   .diy_designBottle_stepSecondTitle p,
   .diy_designBottle_stepSecondTitle h3 {
-    font-size: 18px; }
+    font-size: 18px;
+    margin: 8px 0; }
   .diy_designBottle_controlBlock i {
     font-size: 30px;
     display: inline-block;
@@ -796,23 +1058,82 @@ footer {
       width: 90px; }
   .diy_designBottle_textForm :nth-child(2) {
     width: 200px; }
-  .diy_customizeBox_content h3 {
-    margin: 10px 0; }
-  .diy_customizeBox_finishPic img {
-    width: 250px; }
+  .diy_designBottle_bgcBox {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    margin: 0 auto;
+=======
+>>>>>>> cart
+=======
+    margin: 0 auto;
+>>>>>>> 手機板調整跳窗圖片跑版,處理OK
+=======
+>>>>>>> cart
+    top: 80px;
+    box-sizing: border-box;
+    padding: 30px;
+    width: 900px;
+    height: 620px; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 手機板調整跳窗圖片跑版,處理OK
+  .diy_designBottle_pcMoveBlock ul {
+    width: 100%;
+    position: relative; }
+  .diy_designBottle_pcMoveBlock li {
+    display: inline-block;
+<<<<<<< HEAD
+    position: absolute; }
+    .diy_designBottle_pcMoveBlock li img {
+      width: 30px; }
+  .diy_designBottle_textLength {
+    margin: 15px 0;
+    width: 415px;
+    height: 20px; }
+  .diy_designBottle_pics:after {
+    bottom: 120px; }
+  .diy_designBottle_bottleMoveBlock .diy_factory_pc {
+    width: 350px; }
   .diy_customizeBox_content {
     width: 600px;
-    height: 400px;
-    background-color: #fedfe1;
+    height: 500px;
+    background-color: #fff;
     position: absolute;
+    border-radius: 20px;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -45%);
     margin: auto; }
+    .diy_customizeBox_content h3 {
+      margin: 10px 0; }
+  .diy_customizeBox_finishPic {
+    margin: 0 auto; }
+    .diy_customizeBox_finishPic img {
+      width: 250px; }
   .diy_customizeFinishBox_btns {
+    display: none;
     position: relative;
     top: 80%;
-    right: 0; } }
+    right: 0; }
+  .diy_designBottle_bottleMoveBlock {
+    margin-bottom: 50px; }
+    .diy_designBottle_bottleMoveBlock .diy_factory .factory {
+      position: absolute;
+      transform: translate(0%, 0%);
+      width: 320px;
+      z-index: 2; }
+    .diy_designBottle_bottleMoveBlock .diy_conveyor img {
+      width: 100%;
+      position: absolute;
+      transform: translate(0%, 0%); }
+    .diy_designBottle_bottleMoveBlock .diy_car img {
+      width: 320px;
+      position: absolute;
+      transform: translate(0%, 0%);
+      z-index: 2; } }
 
 @media all and (min-width: 1024px) {
   .diy_designBottle_controlBlock i {
@@ -822,4 +1143,253 @@ footer {
   .diy_designBottle_officalPic {
     border: none; }
     .diy_designBottle_officalPic img {
-      width: 90px; } }
+      width: 90px; }
+  .diy_designBottle_pcMoveBlock {
+    left: 100px;
+    z-index: -1; }
+    .diy_designBottle_pcMoveBlock li {
+      display: inline-block;
+      position: absolute;
+      left: -65px;
+      bottom: -250px; }
+=======
+  .diy_designBottle_pcMoveBlock {
+    position: absolute; }
+=======
+  .diy_designBottle_pcMoveBlock {
+    position: absolute; }
+>>>>>>> cart
+    .diy_designBottle_pcMoveBlock ul {
+      width: 100%;
+      height: 0;
+      position: relative; }
+    .diy_designBottle_pcMoveBlock li {
+      display: inline-block;
+      position: absolute;
+      left: -65px; }
+<<<<<<< HEAD
+>>>>>>> cart
+=======
+>>>>>>> cart
+      .diy_designBottle_pcMoveBlock li img {
+        width: 30px; }
+  .diy_designBottle_btnBlock {
+    margin-top: 10px; }
+    .diy_designBottle_btnBlock a {
+      margin: 5px 20px; }
+  .diy_designBottle_itemBottleBlock {
+    position: absolute;
+    top: -50px; }
+    .diy_designBottle_itemBottleBlock .item1 {
+      animation: bottleMove 7s linear 0s infinite; }
+    .diy_designBottle_itemBottleBlock .item2 {
+      animation: bottleMove 7s linear 1s infinite; }
+    .diy_designBottle_itemBottleBlock .item3 {
+      animation: bottleMove 7s linear 2s infinite; }
+    .diy_designBottle_itemBottleBlock .item4 {
+      animation: bottleMove 7s linear 3s infinite; }
+    .diy_designBottle_itemBottleBlock .item5 {
+      animation: bottleMove 7s linear 4s infinite; }
+    .diy_designBottle_itemBottleBlock .item6 {
+      animation: bottleMove 7s linear 5s infinite; }
+    .diy_designBottle_itemBottleBlock .item7 {
+      animation: bottleMove 7s linear 6s infinite; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+  .diy_designBottle_bottleMoveBlock {
+    margin-bottom: 50px; }
+    .diy_designBottle_bottleMoveBlock .diy_factory .factory {
+      position: absolute;
+      bottom: -175px;
+      left: -2%;
+      width: 320px;
+      z-index: 2; }
+    .diy_designBottle_bottleMoveBlock .diy_conveyor img {
+      position: absolute;
+      left: 125px;
+      width: 100%;
+      bottom: -175px; }
+    .diy_designBottle_bottleMoveBlock .diy_car img {
+      position: absolute;
+      right: -10px;
+      bottom: -175px;
+      width: 320px;
+      z-index: 2; } }
+=======
+=======
+    position: absolute; }
+    .diy_designBottle_pcMoveBlock li img {
+      width: 30px; }
+>>>>>>> 手機板調整跳窗圖片跑版,處理OK
+=======
+>>>>>>> cart
+  .diy_designBottle_textLength {
+    margin: 15px 0;
+    width: 415px;
+    height: 20px; }
+  .diy_designBottle_pics:after {
+<<<<<<< HEAD
+    bottom: 120px; }
+  .diy_designBottle_bottleMoveBlock .diy_factory_pc {
+    width: 350px; }
+  .diy_customizeBox_content {
+    width: 600px;
+    height: 500px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 20px;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    margin: auto; }
+    .diy_customizeBox_content h3 {
+      margin: 10px 0; }
+  .diy_customizeBox_finishPic {
+    margin: 0 auto; }
+    .diy_customizeBox_finishPic img {
+      width: 250px; }
+  .diy_customizeFinishBox_btns {
+    display: none;
+    position: relative;
+    top: 80%;
+    right: 0; }
+  .diy_designBottle_bottleMoveBlock {
+    margin-bottom: 50px; }
+    .diy_designBottle_bottleMoveBlock .diy_factory .factory {
+      position: absolute;
+      transform: translate(0%, 0%);
+      width: 320px;
+      z-index: 2; }
+    .diy_designBottle_bottleMoveBlock .diy_conveyor img {
+      width: 100%;
+      position: absolute;
+      transform: translate(0%, 0%); }
+    .diy_designBottle_bottleMoveBlock .diy_car img {
+      width: 320px;
+      position: absolute;
+      transform: translate(0%, 0%);
+      z-index: 2; } }
+=======
+    bottom: 120px; } }
+
+footer {
+  position: absolute;
+  bottom: -240px;
+  left: 0;
+  z-index: 5; }
+  footer .factory {
+    position: absolute;
+    bottom: 25px;
+    left: -5px;
+    width: 300px; }
+    footer .factory img {
+      width: 100%; }
+  footer .conveyor_pc {
+    position: absolute;
+    bottom: 25px;
+    width: 85%;
+    z-index: -1; }
+  footer .car {
+    width: 350px;
+    left: 82%;
+    top: -150px;
+    z-index: -1; }
+
+.diy_customizeBox_content h3 {
+  margin: 10px 0; }
+
+.diy_customizeBox_finishPic img {
+  width: 250px; }
+
+.diy_customizeBox_content {
+  width: 600px;
+  height: 500px;
+  background-color: #fefefe;
+  position: absolute;
+  border-radius: 20px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  margin: auto; }
+
+.diy_customizeFinishBox_btns {
+  display: none;
+  position: relative;
+  top: 80%;
+  right: 0; }
+>>>>>>> cart
+
+@media all and (min-width: 1024px) {
+  .diy_designBottle_controlBlock i {
+    font-size: 40px;
+    display: inline-block;
+    margin: 20px 30px; }
+  .diy_designBottle_officalPic {
+    border: none; }
+    .diy_designBottle_officalPic img {
+      width: 90px; }
+  .diy_designBottle_pcMoveBlock {
+    left: 100px;
+    z-index: -1; }
+    .diy_designBottle_pcMoveBlock li {
+      display: inline-block;
+      position: absolute;
+<<<<<<< HEAD
+      left: -65px;
+      bottom: -250px; }
+      .diy_designBottle_pcMoveBlock li img {
+=======
+      left: -65px; }
+      .diy_designBottle_pcMoveBlock li img {
+        top: -80px;
+>>>>>>> cart
+        width: 30px; }
+  .diy_designBottle_btnBlock {
+    margin-top: 10px; }
+    .diy_designBottle_btnBlock a {
+<<<<<<< HEAD
+<<<<<<< HEAD
+      margin: 5px 20px; } }
+>>>>>>> cart
+=======
+      margin: 5px 20px; }
+  .diy_designBottle_itemBottleBlock {
+    position: absolute;
+    top: -50px; }
+    .diy_designBottle_itemBottleBlock .item1 {
+      animation: bottleMove 7s linear 0s infinite; }
+    .diy_designBottle_itemBottleBlock .item2 {
+      animation: bottleMove 7s linear 1s infinite; }
+    .diy_designBottle_itemBottleBlock .item3 {
+      animation: bottleMove 7s linear 2s infinite; }
+    .diy_designBottle_itemBottleBlock .item4 {
+      animation: bottleMove 7s linear 3s infinite; }
+    .diy_designBottle_itemBottleBlock .item5 {
+      animation: bottleMove 7s linear 4s infinite; }
+    .diy_designBottle_itemBottleBlock .item6 {
+      animation: bottleMove 7s linear 5s infinite; }
+    .diy_designBottle_itemBottleBlock .item7 {
+      animation: bottleMove 7s linear 6s infinite; }
+  .diy_designBottle_bottleMoveBlock {
+    margin-bottom: 50px; }
+    .diy_designBottle_bottleMoveBlock .diy_factory .factory {
+      position: absolute;
+      bottom: -175px;
+      left: -2%;
+      width: 320px;
+      z-index: 2; }
+    .diy_designBottle_bottleMoveBlock .diy_conveyor img {
+      position: absolute;
+      left: 125px;
+      width: 100%;
+      bottom: -175px; }
+    .diy_designBottle_bottleMoveBlock .diy_car img {
+      position: absolute;
+      right: -10px;
+      bottom: -175px;
+      width: 320px;
+      z-index: 2; } }
+>>>>>>> 手機板調整跳窗圖片跑版,處理OK
+=======
+      margin: 5px 20px; } }
+>>>>>>> cart

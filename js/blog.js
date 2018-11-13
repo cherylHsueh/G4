@@ -114,7 +114,7 @@ $(function () {
         autoplay: true,
         // slideshow on / off
 
-        interval: 2000
+        interval: 5000
         // time between transitions
     });
 });
@@ -163,3 +163,85 @@ $(".blog_Rank_Container").click(function () {
 
     }
 })
+
+
+//cloud animation
+
+function cloudAnimation() {
+    var paused1 = document.getElementById('blog_cloud5_paused');
+    var fruit1 = document.getElementById('blog_cloud5_fruit1');
+    var paused2 = document.getElementById('blog_cloud6_paused');
+    var fruit3 = document.getElementById('blog_cloud6_fruit3');
+
+    paused1.addEventListener('click', function () {
+        // alert('ok');
+        fruit1.classList.add('fruit1_active');
+    });
+    paused2.addEventListener('click', function () {
+        // alert('ok');
+        fruit3.classList.add('fruit3_active');
+    })
+}
+window.addEventListener('load', cloudAnimation);
+
+//umbrella
+
+function umbrellaAnimation() {
+    var umbrellaMandarin = document.getElementById('blogIn_umbrellaMandarin');
+    umbrellaMandarin.addEventListener('click', function () {
+    umbrellaMandarin.classList.add('umbrellaMandarin_active');
+    })
+}
+window.addEventListener('load', umbrellaAnimation);
+
+
+//上傳圖檔
+
+$("#picture").change(function(){
+    checkImage( this );
+  });
+function checkImage(input) {
+      var filePath = input.value;
+      if(filePath){
+          //读取图片数据
+          var filePic = input.files[0];
+          var reader = new FileReader();
+          reader.onload = function (e) {
+              var data = e.target.result;
+              //加载图片获取图片真实宽度和高度
+              var image = new Image();
+              image.onload=function(){
+                  var width = image.width;
+                  var height = image.height;
+                  if (width <= 300 | height <= 300){
+                      alert("圖檔上傳成功"); 
+                      if ( input.files && input.files[0] ) {
+                          var FR= new FileReader();
+                          FR.onload = function(e) {
+                          //e.target.result = base64 format picture
+                          $('#viewImg').attr( "src", e.target.result );
+                          $('#viewImg').addClass('imgSize');
+                        //   $('.upload').css( "display","none");
+                          $('.upload').addClass( "upload_active");
+                          };       
+                          FR.readAsDataURL( input.files[0] );
+                      }
+                  }else {
+                      alert("圖檔尺寸不符，尺寸應為300*300！");
+                      file.value = "";
+                      return false;
+                  }
+              };
+              image.src= data;
+              
+          };
+          reader.readAsDataURL(filePic);
+         
+      }else{
+          return false;
+      }
+  }
+
+  $("#uploadBtn").click(function(){
+    alert( '上傳成功' );
+  });

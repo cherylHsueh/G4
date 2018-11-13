@@ -36,7 +36,7 @@ function chart() {
             // toggle();
             if ($('.diy_pickFruit_rightItem > p').length < 4) {
                 $('.diy_pickFruit_rightItem').append('<p class="diy_pickFruit_righItemContent">蘋果：養顏美容</p>');
-                alert($('.diy_pickFruit_righItemContent').length);
+                // alert($('.diy_pickFruit_righItemContent').length);
             } else {
                 // alert('已超過容量');
             }
@@ -153,15 +153,45 @@ function chart() {
     function filljuice(r, g, b, a) {
         if ($("#diy_pickFruit_bottle1").css('background-color') == "rgba(0, 0, 0, 0)") {
             $('#diy_pickFruit_bottle1').css('background-color', 'rgba( ' + r + ',' + g + ' ,' + b + ', ' + a + ')');
-            $('#diy_pickFruit_bottle1').css('flex-grow', '1');
+            $('#diy_pickFruit_bottle1').css('height', '100%');
+            $('.diy_pickFruit_cursor1').css({
+                'display':'none'});
+            $('.diy_pickFruit_cursor2').css({
+                'display':'none'});
         } else if ($("#diy_pickFruit_bottle2").css('background-color') == "rgba(0, 0, 0, 0)") {
             $('#diy_pickFruit_bottle2').css('background-color', 'rgba( ' + r + ',' + g + ' ,' + b + ', ' + a + ')');
-            $('#diy_pickFruit_bottle2').css('flex-grow', '1');
+            $('#diy_pickFruit_bottle1').css('height', '50%');
+            $('#diy_pickFruit_bottle2').css('height', '50%');
+            $('.diy_pickFruit_cursor1').css({
+                'display':'block',
+                'top':'calc(50% - 10px)'});
+            $('.diy_pickFruit_cursor2').css({
+                'display':'none'});
+            // drag1();
         } else if ($("#diy_pickFruit_bottle3").css('background-color') == "rgba(0, 0, 0, 0)") {
             $('#diy_pickFruit_bottle3').css('background-color', 'rgba( ' + r + ',' + g + ' ,' + b + ', ' + a + ')');
-            $('#diy_pickFruit_bottle3').css('flex-grow', '1');
+            $('#diy_pickFruit_bottle3').css('height', '33.3333%');
+            $('#diy_pickFruit_bottle1').css('height', '33.3333%');
+            $('#diy_pickFruit_bottle2').css('height', '33.3333%');
+            $('.diy_pickFruit_cursor1').css({
+                'top':'calc(66.6666% - 10px)'});
+            $('.diy_pickFruit_cursor2').css({
+                'display':'block',
+                'top':'calc(33.3333% - 10px)'});
         } else {
-            alert("果汁已經滿了哦!");
+            swal({
+                type: 'error',
+                title: '果汁已經滿了哦!',
+                confirmButtonText: '<a href="diyDesignBottle.html">下一步!</a>',
+                confirmButtonColor: '#ffd700',
+                showCancelButton: true,
+                cancelButtonColor: '#d33',
+                cancelButtonText: '取消',
+                animation: false,
+                customClass: 'animated tada',
+                // text: 'Something went wrong!',
+                footer: '<p>下一步可以客製瓶身外觀</p>'
+            })
         }
     }
 
@@ -184,9 +214,9 @@ function chart() {
 
 
     $(function () {
-        $(".logoimg").draggable({
-            containment: ".juicebottle"
-        });
+        // $(".logoimg").draggable({
+        //     containment: ".juicebottle"
+        // });
     });
 
     $('#needimg').click(function () {
@@ -198,50 +228,52 @@ window.addEventListener('load', chart);
 
 //挑選水果
 $(document).ready(function () {
+    
     var _index = 0;
     $('.fruiticon').mousemove(function () {
         // alert($(this).parent().parent().attr('class'));
         // alert('.fruitname' + $(this).attr('id'));
         _index = $(this).index();
-        // $(this).after('<img class="highlight" src="images/hightlight.png" alt="已選到">');
-        // $(this).wrap('<div class="fruitbgc"></div>');
-        $(this).after('<div class="fruitnameBox"></div>');
-        // bgc = '.diy_pickFruit_leftItem' + $(this).attr('id');
-        // $(bgc).css('background-color', "rgb(199, 129, 50)");
-        // $(this).parent().parent().addClass('fruitbgc');
-        $(this).parent().addClass('fruitbgc');
         name = '.fruitname' + $(this).attr('id');
         $(name).show();
+        namebgc = '.fruitnameBox' + $(this).attr('id');
+        $(namebgc).show();
 
 
     })
 
     $('.fruiticon').mouseout(function () {
 
-        // bgc = '.diy_pickFruit_leftItem' + $(this).attr('id');
-        // $(bgc).css('background-color', "rgb(233, 201, 165)");
-        // $(this).parent().addClass('fruitbgc');
         $(this).parent().removeClass('fruitbgc');
-        // bgc = '.diy_pickFruit_leftItem' + $(this).attr('id');
-        // $(bgc).css('background-color', "rgb(233, 201, 165)");
-        $('.fruitnameBox').remove();
         name = '.fruitname' + $(this).attr('id');
         $(name).hide();
+        namebgc = '.fruitnameBox' + $(this).attr('id');
+        $(namebgc).hide();
     })
 
+    $(function () {
+
+        if ($(window).width() < 768) {
+            $('.diy_pickFruit_leftItem').removeClass('hvr-radial-out');
+        } else {
+            $('.diy_pickFruit_leftItem').addClass('hvr-radial-out');
+        }
+
+        // if ($(window).resize() < 768) {
+
+        //     $('.diy_pickFruit_leftItem').removeClass('hvr-radial-out');
+        // } else {
+        //     $('.diy_pickFruit_leftItem').addClass('hvr-radial-out');
+        // }
+
+    });
+
     $('.fruiticon').click(function () {
-        // if($('.diy_pickFruit_rightItem > p').length < 4){
-        //         $('.diy_pickFruit_rightItem').append('<p class="diy_pickFruit_righItemContent">蘋果:養顏美容</p>');
-        //     }else{
-        //         alert('已超過容量');
-        //     }
 
         if ($("#diy_pickFruit_bottle1").css('background-color') == "rgba(0, 0, 0, 0)") {
             _index = $(this).index();
             bgc = '.diy_pickFruit_leftItem' + $(this).attr('id');
             $(bgc).css('background-color', "rgb(199, 129, 50)");
-            // $(this).after('<img class="highlightClick" src="images/hightlight.png" alt="已選到">');
-            // $(this).after('<img class="highlightUnclick" src="images/hightlight.png" alt="已選到">');
             // alert('no');
 
         } else if ($("#diy_pickFruit_bottle2").css('background-color') == "rgba(0, 0, 0, 0)") {
@@ -305,6 +337,10 @@ $(document).ready(function () {
         $('#myChart').remove(); // this is my <canvas> element
         $('#chart').prepend('<canvas id="myChart" height="300"><canvas>');
         chartPre();
+        $('#cursor1').css({
+            'display':'none'});
+        $('#cursor2').css({
+            'display':'none'});
 
         function chartPre() {
             var ctx = document.getElementById('myChart');
@@ -394,13 +430,16 @@ $(document).ready(function () {
             function filljuice(r, g, b, a) {
                 if ($("#diy_pickFruit_bottle1").css('background-color') == "rgba(0, 0, 0, 0)") {
                     $('#diy_pickFruit_bottle1').css('background-color', 'rgba( ' + r + ',' + g + ' ,' + b + ', ' + a + ')');
-                    $('#diy_pickFruit_bottle1').css('flex-grow', '1');
+                    $('#diy_pickFruit_bottle1').css('height', '100%');
                 } else if ($("#diy_pickFruit_bottle2").css('background-color') == "rgba(0, 0, 0, 0)") {
                     $('#diy_pickFruit_bottle2').css('background-color', 'rgba( ' + r + ',' + g + ' ,' + b + ', ' + a + ')');
-                    $('#diy_pickFruit_bottle2').css('flex-grow', '1');
+                    $('#diy_pickFruit_bottle1').css('height', '50%');
+                    $('#diy_pickFruit_bottle2').css('height', '50%');
                 } else if ($("#diy_pickFruit_bottle3").css('background-color') == "rgba(0, 0, 0, 0)") {
                     $('#diy_pickFruit_bottle3').css('background-color', 'rgba( ' + r + ',' + g + ' ,' + b + ', ' + a + ')');
-                    $('#diy_pickFruit_bottle3').css('flex-grow', '1');
+                    $('#diy_pickFruit_bottle1').css('height', '33.3333%');
+                    $('#diy_pickFruit_bottle2').css('height', '33.3333%');
+                    $('#diy_pickFruit_bottle3').css('height', '33.3333%');
                 } else {
                     // alert("果汁已經滿了哦!");
                 }
@@ -436,3 +475,130 @@ $(document).ready(function () {
         }
     })
 })
+
+
+
+
+
+
+//果汁比例
+window.addEventListener('load',function(){
+// function drag1(){
+        var cursor1 = document.getElementById('cursor1');
+        var cursor2 = document.getElementById('cursor2');
+
+        cursor1.onmousedown = down;
+        cursor2.onmousedown = down;
+
+    // function getMouseXY(e) {
+    //     var x = 0, y = 0;
+    //     e = this || window.event;
+    //     if (e.pageY) {
+    //     y = e.pageY;
+    //     } else {
+    //     y = e.clientY + document.body.scrollTop - document.body.clientTop;
+    //     }
+    //     console.log(e);
+
+    //     return y;
+    // };
+    function down(e){
+        dragging = true;
+        if (e.pageY) {
+            mouseY = e.pageY;
+        } else {
+            mouseY = e.clientY + document.body.scrollTop - document.body.clientTop;
+        }
+        cursor = this || window.event;
+        dragging = true;
+        cursorY = cursor.offsetTop;
+        offsetY = mouseY - cursorY;
+        //到瓶口的高度
+        // console.log(mouseY);
+        document.onmousemove = move;
+        function move(e) {
+            e = e || window.event;
+            if (dragging) {
+
+                if (e.pageY) {
+                    mouseY = e.pageY;
+                } else {
+                    mouseY = e.clientY + document.body.scrollTop - document.body.clientTop;
+                }
+                var y = mouseY - offsetY;
+                var height = document.documentElement.clientHeight - cursor.offsetHeight;
+                // y = Math.min(Math.max(0, y), height);
+
+                var bottleHeight = document.querySelector('.diy_pickFruit_bottleBox').clientHeight;
+                console.log(bottleHeight);
+                console.log(y);
+                var cursor1 = document.getElementById('cursor1');
+                var cursor2 = document.getElementById('cursor2');
+                var bottle3 = document.getElementById('diy_pickFruit_bottle3');
+                var bottle2 = document.getElementById('diy_pickFruit_bottle2');
+                var bottle1 = document.getElementById('diy_pickFruit_bottle1');
+
+                if(cursor2.style.display=='none'){
+                    if(y>=bottleHeight){
+                        cursor.style.top = bottleHeight + 'px';
+                    }else if(y<=0){
+                        cursor.style.top = 0+ 'px';
+                    }else{
+                        cursor.style.top = y-10 + 'px';
+                    }
+                    bottle2.style.height=(y/bottleHeight)*100+"%";
+                    bottle1.style.height=100-(y/bottleHeight)*100+"%";
+                }else if(cursor==cursor1){
+                    if(y>=bottleHeight){
+                        cursor.style.top = bottleHeight + 'px';
+                    }else if(y<=cursor2.offsetTop){
+                        cursor.style.top = cursor2.offsetTop + 'px';
+                    }else{
+                        cursor.style.top = y-10 + 'px';
+                    }
+                    console.log(y);
+                    bottle1.style.height=(bottleHeight-y)/bottleHeight*100+"%";
+                    bottle2.style.height=100-(bottle3.clientHeight/bottleHeight)*100-(bottleHeight-y)/bottleHeight*100+"%";
+                }else{
+                    if(y>=cursor1.offsetTop){
+                        cursor.style.top = cursor1.offsetTop + 'px';
+                    }else if(y<=0){
+                        cursor.style.top = 0 + 'px';
+                    }else{
+                        cursor.style.top = y-10 + 'px';
+                    }
+                    console.log(y);
+                    bottle3.style.height=(y/bottleHeight)*100+"%";
+                    bottle2.style.height=100-(bottle1.clientHeight/bottleHeight)*100-(y/bottleHeight)*100+"%";
+                    console.log(bottle1.clientHeight);
+                    console.log(y/bottleHeight);
+
+                }
+                    
+                
+            };
+        };
+        document.onmouseup = function(e){
+            dragging = false;
+        };
+     };
+// };
+});
+    
+
+//手機水果輪播
+if ($(window).width() < 768) {
+    $('.diy_pickFruit_leftPic').slick({
+
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        prevArrow: '<div class="diy_pickFruit_leftArrow"><img src="images/left01.png" alt="左箭頭"></div>',
+        nextArrow: '<div class="diy_pickFruit_rightArrow"><img src="images/right01.png" alt="右箭頭"></div>',
+    });
+}
+
+
+
+// $(window).width
+//
