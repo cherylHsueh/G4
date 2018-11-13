@@ -1,3 +1,30 @@
+
+//文章內容限制
+$(window).ready(function(){
+    var lenone = 30; // 超過50個字以"..."取代
+   
+            $(".blog_Rank_Desc p").each(function(i){
+                if($(this).text().length>lenone){
+                    $(this).attr("title",$(this).text());
+                    var text=$(this).text().substring(0,lenone-1)+"...";
+                    $(this).text(text);
+                }
+             }); 
+             
+    var lentwo = 50; // 超過50個字以"..."取代
+   
+            $(".blog_Forum_Desc p").each(function(i){
+                if($(this).text().length>lentwo){
+                    $(this).attr("title",$(this).text());
+                    var text=$(this).text().substring(0,lentwo-1)+"...";
+                    $(this).text(text);
+                }
+             });
+})
+
+
+
+
 //留言
 
 window.onload = function () {
@@ -7,23 +34,26 @@ window.onload = function () {
     blogIn_Msg_SendWrapper.className = 'blogIn_Msg_SendWrapper clearfix';
     document.getElementById('blogIn_Msg_SendBlock').appendChild(blogIn_Msg_SendWrapper);
 
-    Btn = document.getElementById("blogIn_Msg_BoxBtn");
-    Btn.addEventListener('click', function () {
-        addItem();
-    })
+    // Btn = document.getElementById("blogIn_Msg_BoxBtn");
+    // Btn.addEventListener('click', function () {
+    //     addItem();
+    // })
 
-    var input = document.getElementById("blogIn_Msg_Content");
-    input.addEventListener("keydown", function (event) {
-        event.preventDefault();
-        if (event.keyCode === 13) {
-            document.getElementById("blogIn_Msg_BoxBtn").click();
-            addItem();
-        }
-    });
+    // var input = document.getElementById("blogIn_Msg_Content");
+    // input.addEventListener("keydown", function (event) {
+    //     event.preventDefault();
+    //     if (event.keyCode === 13) {
+    //         // document.getElementById("blogIn_Msg_BoxBtn").click();
+    //         addItem();
+    //     }
+    // });
 
 }
 
 function addItem() {
+    // url = "blogInMes.php";
+    // location.href= url;
+
     blogIn_Msg_SendWrapper = document.createElement('div');
     blogIn_Msg_SendWrapper.className = 'blogIn_Msg_SendWrapper clearfix';
 
@@ -84,10 +114,10 @@ function addItem() {
 
 
     //createbutton
-    var subButtonItem = document.createElement('a');
+    var subButtonItem = document.createElement('input');
     subButtonItem.className = 'subButtonItem cl-s-2 cl-md-1';
     subButtonItem.href = 'javascript:;';
-    subButtonItem.innerHTML = '檢舉';
+    subButtonItem.value = '檢舉';
 
     blogIn_Msg_SendWrapper.appendChild(subButtonItem);
 
@@ -95,8 +125,9 @@ function addItem() {
 }
 
 
-//桌機輪播
 
+
+//瀑布流
 
 $(function () {
     $('#container').masonry({
@@ -106,6 +137,9 @@ $(function () {
     });
 });
 
+
+
+//桌機輪播
 $(function () {
     $('#dg-container').gallery({
         current: 0,
@@ -245,3 +279,93 @@ function checkImage(input) {
   $("#uploadBtn").click(function(){
     alert( '上傳成功' );
   });
+
+
+//按讚及收回讚
+// function doFirst(){
+//    pushGreat = document.querySelectorAll('.pushGreat'); 
+// // var greatNum = document.getElementById('.greatNum'); 
+// for( i=0 ; i<pushGreat.length; i++){  
+// 	pushGreat[i].addEventListener('click',function(){
+//         Num = this.id;
+//         spanNum = 'span' +this.id;
+//         greatNum = 'great' + this.id;
+//         spanNumIn = document.querySelector('#'+spanNum).innerHTML;
+//         imgNum = 'img' + this.id;
+//         // alert(imgNum);
+//         if( spanNumIn === '收回'){
+//         // alert('ok');
+//         dodelete();
+//         }else if(spanNumIn === '按讚'){
+//             // alert('no');
+//             doplus();
+//         }
+//     }) 
+// };
+ 
+// }
+
+function doplus(){
+    greatNumIn = document.querySelector('#'+greatNum).innerHTML; //找按讚數的空間
+    // alert(greatNumIn);
+    addinformation = parseInt(greatNumIn) + 1; //按一次加一
+    // alert(addinformation);
+    document.getElementById(greatNum).innerHTML = addinformation; //放入讚數空間
+    //---------
+    spanNumIn = document.querySelector('#'+spanNum).innerHTML; //找按讚鈕的空間
+    // alert(spanNumIn);
+    document.getElementById(spanNum).innerHTML = '收回'; //放入讚數空間
+    // alert('ok');
+    document.getElementById(Num).style.backgroundColor='#90A30B';
+    document.getElementById(imgNum).style.transform = "rotate(15deg)";
+    // alert('ok');
+    
+}
+function dodelete(){
+    greatNumIn = document.querySelector('#'+greatNum).innerHTML; //找按讚數的空間
+    // alert(greatNumIn);
+    deleteinformation = parseInt(greatNumIn) - 1; //按一次減一
+    // alert(deleteinformation);
+    document.getElementById(greatNum).innerHTML = deleteinformation; //放入讚數空間
+    //---------
+    spanNumIn = document.querySelector('#'+spanNum).innerHTML; //找按讚鈕的空間
+    // alert(spanNumIn);
+    document.getElementById(spanNum).innerHTML = '按讚'; //放入讚數空間
+    // alert('ok');
+    document.getElementById(Num).style.backgroundColor='#fbb03b';
+    document.getElementById(imgNum).style.transform = "rotate(0deg)";
+
+}
+
+function doplusIn(){
+    greatNum = document.getElementById('greatNum').innerHTML; //找按讚數的空間
+    // alert(greatNum);
+    addinformation = parseInt(greatNum) + 1; //按一次加一
+    // alert(addinformation);
+    document.getElementById('greatNum').innerHTML = addinformation; //放入讚數空間
+    //---------
+    document.getElementById('spanNum').innerHTML = '收回'; //放入讚數空間
+    // alert('ok');
+    document.getElementById("Numthumb").style.backgroundColor='#90A30B';
+    document.getElementById('imgNum').style.transform = "rotate(15deg)";
+    // alert('ok');
+    
+}
+function dodeleteIn(){
+    greatNum = document.getElementById('greatNum').innerHTML; //找按讚數的空間
+    // alert(greatNum);
+    deleteinformation = parseInt(greatNum) - 1; //按一次減一
+    // alert(deleteinformation);
+    // // alert(addinformation);
+    document.getElementById('greatNum').innerHTML = deleteinformation; //放入讚數空間
+    //---------
+    document.getElementById('spanNum').innerHTML = '按讚'; //放入讚數空間
+    // alert('ok');
+    document.getElementById("Numthumb").style.backgroundColor='#fbb03b';
+    document.getElementById('imgNum').style.transform = "rotate(0deg)";
+
+}
+window.addEventListener('load',doFirst);
+
+
+

@@ -344,7 +344,7 @@ body {
             @extend %float_L;
             width: 33.3333%;
             box-sizing: border-box;
-            // padding: 0 2%;
+            text-align: center;
 
             .blog_Rank_ContentBox_Container {
                 height: 0;
@@ -473,12 +473,8 @@ body {
                 @extend %float_L;
                 margin: 0 10px;
                 border-bottom: 5px solid #fff100;
-
-                a {
-                    @extend %OptionLeftBox;
-                    // border-bottom: 5px solid #fff100;
-
-                }
+                @extend %OptionLeftBox;
+                // border-bottom: 5px solid #fff100;
 
                 &:hover {
                     border-bottom: 5px solid #f1900f;
@@ -493,11 +489,8 @@ body {
                 @extend %float_L;
                 margin: 0 10px;
                 border-bottom: 5px solid #fff100;
+                @extend %OptionLeftBox;
 
-                a {
-                    @extend %OptionLeftBox;
-
-                }
 
                 &:hover {
                     border-bottom: 5px solid #f1900f;
@@ -612,16 +605,19 @@ body {
         }
     }
 
-    .blog_Forum_SubButtonContainer_Box {
-        border: 1px solid #eee;
-        padding: 2% 2%;
-        background-color: #fbb03b;
-        vertical-align: center;
-        text-align: center;
-        color: #fff;
 
-        &:hover {
-            background-color: #90A30B;
+    .blog_Forum_SubButtonContainer {
+        .blog_Forum_SubButtonContainer_Box {
+            border: 1px solid #eee;
+            padding: 2% 2%;
+            background-color: #fbb03b;
+            vertical-align: center;
+            text-align: center;
+            color: #fff;
+
+            &:hover {
+                background-color: #90A30B;
+            }
         }
 
         .blog_Forum_SubButtonContainer_Pic {
@@ -641,11 +637,9 @@ body {
             font-size: 2.5vw;
             line-height: 1.7;
         }
-
-
-
-
     }
+
+
 
 
     .blog_Forum {
@@ -916,7 +910,7 @@ body {
         .blogIn_LeftBox_NameContainer {
             width: 90%;
             margin: 0 auto;
-            background-color: rgba(245, 195, 121, 0.993);
+            background-color: #fefefe;
 
             .blogIn_LeftBox_NamePic {
                 width: 20%;
@@ -935,6 +929,32 @@ body {
                     padding: 3%;
                     line-height: 3.3;
                     font-size: 4vw;
+                }
+            }
+
+            .blog_Rank_Score {
+                float: right;
+                .blog_Score_Pic {
+                    width: 50%;
+                    // padding: 10% 0;
+                    @extend %float_L;
+
+                    img {
+                        width: 100%;
+
+                        vertical-align: bottom;
+                    }
+                }
+
+                .blog_Score_Num {
+
+                    p {
+                        color: #ff9324;
+                        font-size: 3vw;
+                        text-align: center;
+                        line-height: 2.2;
+                    }
+
                 }
             }
         }
@@ -1001,6 +1021,7 @@ body {
                 // border-bottom: 1px solid #ccc;
                 border-radius: 5px;
                 background-color: #fefefe;
+                text-align: left;
 
                 p {
                     padding: 5% 2%;
@@ -1188,8 +1209,9 @@ body {
             }
         }
 
-        a.subButtonItem {
+        input.subButtonItem {
             padding: 1% 0;
+            border: 0;
             // display: block;
             background-color: #fbb03b;
             text-align: center;
@@ -1200,6 +1222,7 @@ body {
                 background-color: #90A30B;
             }
         }
+
     }
 
     .blogIn_Msg_Containerc {
@@ -1220,8 +1243,10 @@ body {
 
             }
 
-            a.subButtonItem {
+            input.subButtonItem {
+
                 padding: 1%;
+                border: 0;
                 // display: block;
                 background-color: #fbb03b;
                 text-align: center;
@@ -1231,6 +1256,8 @@ body {
                 &:hover {
                     background-color: #90A30B;
                 }
+
+
             }
         }
     }
@@ -1275,7 +1302,7 @@ body {
         }
 
         .umbrellaMandarin_active {
-            animation: umbrellaMandarin 5s linear  backwards;
+            animation: umbrellaMandarin 5s linear backwards;
         }
 
         @keyframes umbrellaMandarin {
@@ -1493,6 +1520,7 @@ body {
 
                 .blog_Rank_ContentBox_Item {
                     padding: 0;
+                    text-align: center;
 
                     .blog_Rank_ContentBox_Container {
                         padding-bottom: 100%;
@@ -1593,6 +1621,7 @@ body {
         .common_btn_first {
             margin: 50px 0;
             animation: buttonscale 1s linear infinite alternate-reverse;
+
             &:hover {
                 animation-play-state: paused;
             }
@@ -2063,7 +2092,7 @@ body {
             width: 33.3333%;
             box-sizing: border-box;
             margin: 0 auto;
-            // padding: 0 10px;
+            text-align: center;
 
             .blog_Rank_ContentBox_Container {
                 height: 0;
@@ -2189,17 +2218,16 @@ body {
             .blog_Forum_OptionLeftBox_NewShare {
                 @extend %float_L_desk;
                 margin: 0 10px;
+                background-color: transparent;
+                border: 0px solid transparent;
                 border-bottom: 5px solid #fff100;
+                @extend %OptionLeftBox_desk;
 
-                a {
-                    @extend %OptionLeftBox_desk;
-                }
 
                 &:hover {
-                    border-bottom: 5px solid #f1900f;
-                    transition: 1s;
-
-
+                    background-color: #f1900f;
+                    color: #fff;
+                    cursor: pointer;
                 }
 
             }
@@ -2207,17 +2235,15 @@ body {
             .blog_Forum_OptionLeftBox_HighScore {
                 @extend %float_L_desk;
                 margin: 0 10px;
+                background-color: transparent;
+                border: 0px solid transparent;
                 border-bottom: 5px solid #fff100;
-
-                a {
-                    @extend %OptionLeftBox_desk;
-                }
+                @extend %OptionLeftBox_desk;
 
                 &:hover {
-                    border-bottom: 5px solid #f1900f;
-                    transition: 1s;
-
-
+                    background-color: #f1900f;
+                    color: #fff;
+                    cursor: pointer;
                 }
 
             }
@@ -2340,30 +2366,27 @@ body {
 
         &:hover {
             background-color: #90A30B;
+            cursor: pointer;
         }
-
-        .blog_Forum_SubButtonContainer_Pic {
-            display: block;
-            width: 20px;
-            @extend %float_L_desk;
-
-            img {
-                width: 100%;
-                vertical-align: bottom;
-            }
-        }
-
-        span {
-            font-size: 16px;
-            line-height: 1.3;
-        }
-
-        &:hover {
-            background-color: #90A30B;
-        }
-
-
     }
+
+    .blog_Forum_SubButtonContainer_Pic {
+        display: block;
+        width: 20px;
+        @extend %float_L_desk;
+
+        img {
+            width: 100%;
+            vertical-align: bottom;
+        }
+    }
+
+    span {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+
+
 
     .blog_Forum {
         position: relative;
@@ -2823,7 +2846,7 @@ body {
         .blogIn_LeftBox_NameContainer {
             width: 90%;
             margin: 0 auto;
-            background-color: rgba(245, 195, 121, 0.993);
+            background-color: #fefefe;
 
             .blogIn_LeftBox_NamePic {
                 width: 25%;
@@ -2844,6 +2867,41 @@ body {
                     font-size: 18px;
                     text-align: left;
                     line-height: 60px;
+                }
+            }
+
+            .blog_Rank_Score {
+                float: right;
+                // padding: 3.2% 0;
+                // background-color: steelblue;
+                .blog_Score_Pic {
+                    width: 50%;
+                    // padding: 5px 0;
+                    @extend %float_L_desk;
+
+                    img {
+                        width: 100%;
+
+                        vertical-align: bottom;
+                    }
+                }
+
+                .blog_Score_Num {
+                    // width: 0%;
+                    // @extend %float_L_desk;
+                    // display: inline-block;
+                    // margin-left: 13%;
+                    vertical-align: bottom;
+
+                    p {
+                        padding: 15% 0;
+                        color: #ff9324;
+                        // vertical-align: bottom;
+                        font-size: 18px;
+                        text-align: center;
+                        // line-height: 1.6;
+                    }
+
                 }
             }
         }
@@ -2902,6 +2960,7 @@ body {
             margin: 5% 0;
 
             .blogIn_RightBox_ShareContent {
+                text-align: left;
                 border-radius: 5px;
                 background-color: #fefefe;
 
@@ -3103,14 +3162,17 @@ body {
                 }
             }
 
-            a.subButtonItem {
-                margin-left: 0;
-                padding: 10px 0;
+            input.subButtonItem {
+                // width: 10%;
+                margin-left: 20px;
+                padding: 10px;
+                border: 0px;
                 // display: block;
                 background-color: #fbb03b;
-                color: #fefefe;
                 text-align: center;
+                color: #fefefe;
                 font-weight: bold;
+                cursor: pointer;
 
                 &:hover {
                     background-color: #90A30B;
@@ -3133,7 +3195,7 @@ body {
             // float: left;
 
 
-            input {
+            #blogIn_Msg_Content {
                 width: 80%;
                 max-width: 1000px;
                 margin-left: 50px;
@@ -3141,19 +3203,22 @@ body {
             }
         }
 
-        a.subButtonItem {
+        input.subButtonItem {
             // width: 10%;
             margin-left: 20px;
             padding: 10px;
+            border: 0px;
             // display: block;
             background-color: #fbb03b;
             text-align: center;
             color: #fefefe;
             font-weight: bold;
+            cursor: pointer;
 
             &:hover {
                 background-color: #90A30B;
             }
+
 
         }
     }
@@ -3175,7 +3240,7 @@ body {
         img {
             width: 200px;
             position: absolute;
-            bottom: -10%;
+            bottom: 0%;
             right: -10%;
             // transform: translate(50%,50%);
             z-index: 1;
@@ -3406,6 +3471,7 @@ body {
                 float: left;
 
                 .blog_Rank_ContentBox_Item {
+                    text-align: center;
                     padding: 0;
 
                     .blog_Rank_BottomBox_Title {
@@ -3495,6 +3561,7 @@ body {
             margin: 10% 0 0%;
             font-size: 1vw;
             animation: buttonscale 1s linear infinite alternate-reverse;
+
             &:hover {
                 animation-play-state: paused;
             }
