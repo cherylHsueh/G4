@@ -1,12 +1,12 @@
 
 (function(window,undefined){
     /**
-     * 水果游戏初始化对象
+     * 初始化遊戲
      */
     var fruitGame = function(args){
         /*十種水果*/
         this.FruitList = [
-            { ID:'F1', FruitName:'香蕉',Icon:'images/b-fruit/banana.png',Cent:50 },
+            // { ID:'F1', FruitName:'香蕉',Icon:'images/b-fruit/banana.png',Cent:50 },
             { ID:'F2', FruitName:'蘋果',Icon:'images/apple.png',Cent:50 },
             { ID:'F3', FruitName:'哈密瓜',Icon:'images/cantaloupe.png',Cent:50 },
             { ID:'F4', FruitName:'葡萄',Icon:'images/grape.png',Cent:30 },
@@ -19,15 +19,12 @@
         ];
         /*兩顆炸彈*/
         this.BombList = [
-            { ID:'B1',BombName:'土雷',Icon:'images/15.png',Life:10 },
+            { ID:'B1',BombName:'土雷',Icon:'images/15.png',Life:40 },
             { ID:'B2',BombName:'導弹',Icon:'images/16.png',Life:40 }
         ];
-        /*关卡等级*/
+        /*關卡等级*/
         this.LevelList = [
-            { Level:1,Cent:1000,Speed:1000 },
-            { Level:2,Cent:2000,Speed:600 },
-            { Level:3,Cent:6000,Speed:400 },
-            { Level:4,Cent:12000,Speed:200 }
+            { Level:1,Cent:1000,Speed:1000 }
         ];
         /*生成水果炸弹的全局引用*/
         this.BuilderFruit = null;
@@ -39,19 +36,19 @@
             GameBox:$('div#game_box'),
             //水果篮
             CarBox:$('div#carBox'),
-            //水果篮移动像素
-            CarMoveWidth:30,
-            //水果篮宽度
+            //水果藍移动像素
+            CarMoveWidth:50,
+            //水果籃寬度
             CarBoxWidth:$('div#carBox').width(),
             //游戏盒子宽度
-            BoxWidth:400,
+            BoxWidth:1920,
             //游戏盒子高度
             BoxHeight:500,
-            //水果宽度
-            FruitWidth:30,
+            //水果寬度
+            FruitWidth:80,
             //当前总得分
             CountCent:0,
-            //当前关卡级别
+            //当前關卡级别
             LevelNum:1,
             //当前关卡级别-升级监听变量
             ListenerLevelNum:1,
@@ -67,7 +64,7 @@
     }
 
     /**
-     * 获取游戏等级对象
+     * 遊戲等級對象,改寫成只有一關
      */
     fruitGame.prototype.GetLevelModel = function(level){
         var _levels = this.LevelList,
@@ -94,7 +91,7 @@
     }
 
     /**
-     * 游戏等级監聽
+     * 監聽遊戲等級
      */
     fruitGame.prototype.GameLevelListener = function(){
         var _this = this,
@@ -116,8 +113,7 @@
     }
 
     /**
-     * 显示提示框,Miss,Kiss,Bomb
-     * @type int miss ,kiss, bomb
+     * @type 
      * @position object { X:0,Y:0 }
      */
     fruitGame.prototype.ShowTipBox = function(type,position){
@@ -134,14 +130,14 @@
      * 升级提示框
      * @level int 等级
      */
-    fruitGame.prototype.ShowUpgrade = function(level){
-        var _this = this,
-            _tipBox = '<span class="upgrade_tip">第'+ level +'关,加油！</span>';
-        _this.Setting.GameBox.append(_tipBox);
-        setTimeout(function(){
-            $('span.upgrade_tip').remove();
-        },2000);
-    }
+    // fruitGame.prototype.ShowUpgrade = function(level){
+    //     var _this = this,
+    //         _tipBox = '<span class="upgrade_tip">第'+ level +'关,加油！</span>';
+    //     _this.Setting.GameBox.append(_tipBox);
+    //     setTimeout(function(){
+    //         $('span.upgrade_tip').remove();
+    //     },2000);
+    // }
 
     /**
      * 控制水果籃左右移動
@@ -198,7 +194,8 @@
                  _top = _$element.position().top;
             _$element.css({ top:(_top + _setting.FruitWidth) + 'px' });
             _this.FruitPutCount(_$element,_move);
-        },this.GetLevelModel(_setting.LevelNum).Speed / 2);
+        },this.GetLevelModel(_setting.LevelNum).Speed /3 );
+        // 控制速度
     }
 
     /**
@@ -209,10 +206,28 @@
              _$lifeBar = $('#lifeBar'),
             _lifeSize = _$lifeBar.width();
         _lifeSize -= life;
-        if(_lifeSize <= 0){
+        if(_lifeSize <= 0 ){
+    // 生命值小於零遊戲結束字樣
             _$lifeBar.animate({width:_lifeSize + 'px'},100,function(){
                 $('div.thing').remove();
-                _this.Setting.GameBox.append('<span class="game_over_tip">Game Over!</span>');
+                aa = parseInt(document.getElementById('gameCent').innerText);
+                // 把文字轉成數值再來判斷
+                // alert(aa);
+                if(aa >=200){
+                    c = 6;
+                }else if(aa >=150){
+                    c = 7;
+                }else if(aa >=100){
+                    c = 8;
+                }else if(aa >=0){
+                    c = 9;
+                }
+                _this.Setting.GameBox.append('<span class="game_over_tip">恭喜你得到積分'+document.getElementById('gameCent').innerText+'分~拿到'+c+'折優惠券</span>');
+                _this.Setting.GameBox.append('<span class="game_over_tip2">立刻前往果汁DIY頁面</span>');
+                _this.Setting.GameBox.append('<a href="diy.html" class="game_over_tip3">'+'GO'+'</a>');
+                _this.Setting.GameBox.append('<img class="special" src="images/coupon.png" alt="">')
+
+                
             });
             clearInterval(this.BuilderFruit);
         }else{
@@ -226,7 +241,7 @@
     }
 
     /**
-     * 水果爆炸后,抖动屏幕
+     * 水果爆炸後,抖動畫面
      */
     fruitGame.prototype.FruitBombShock = function(){
         var _this = this,
@@ -271,6 +286,7 @@
                 //console.log('A:' + _life + ' - ' + (typeof _life == 'undefined') + ' - ' + _fruitCent);
                 _setting.CountCent += _fruitCent;
                 $('#gameCent').text(_setting.CountCent);
+                // console.log($('#gameCent').text(_setting.CountCent));
                 _this.GameLevelListener();
                 _this.ShowTipBox('kiss',{ X:_elLeft - _setting.FruitWidth, Y: _elTop - 30 });
             }else{
@@ -287,7 +303,7 @@
     }
 
     /**
-     * 开始游戏
+     * 開始遊戲
      */
     fruitGame.prototype.Start = function(){
         var _this = this,
@@ -313,7 +329,7 @@
     }
 
     /**
-     * 游戏初始化
+     * 遊戲初始化
      */
     fruitGame.prototype.Init = function(){
         var _this = this;

@@ -53,6 +53,7 @@ footer{
 }
 
 
+
 @include rwd(mobile){
 
 	.modifyInfo_btn{
@@ -107,24 +108,6 @@ footer{
 		display: none;
 		}
 
-
-	.member_memberInfo_Points_block{
-		width: 200px;
-		background-color: aaa;
-		margin-top:80px;
-		text-align: center;
-				p{
-					display:inline-block;
-					font-size:18px;
-					width: 90px;
-					
-				}
-				.member_memberInfo_Points{
-					font-size:18px;
-					display: inline-block;
-					width: 100px;
-				}
-	}
 	.member_memberInfo_Features_box{
 		width: 200px;
 		margin-top:20px;
@@ -400,20 +383,7 @@ x
 				color:#000;
 			}
 	}
-	.member_memberInfo_Points_block{
-		margin:20px 0;
-		text-align: center;
-				p{
-					display:inline-block;
-					font-size:18px;
-					width: 90px;	
-				}
-				.member_memberInfo_Points{
-					font-size:18px;
-					display: inline-block;
-					width: 100px;
-				}
-	}
+
 	.member_personalInfo_basicInfo_block_item{
 			span{
 				margin-right:10px;

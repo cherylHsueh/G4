@@ -7,12 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>果然配</title>
     <script src="js/global.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/loginFruit.css">
     <link rel="stylesheet" href="css/productitem.css">
 </head>
 
 <body>
 <?php
- require_once('nav.php');
+ require_once('php/nav.php');
 ?>
 
     <section class="pdItem">

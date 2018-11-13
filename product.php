@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>果然配</title>
+    <link rel="stylesheet" type="text/css" href="css/loginFruit.css">
     <link rel="stylesheet" href="css/product.css">
     <script src="js/plugin/jquery-3.3.1.min.js"></script>
     <script src="js/plugin/TweenMax.min.js"></script>
@@ -21,7 +22,7 @@
 
 <body>
 <?php
- require_once('nav.php');
+ require_once('php/nav.php');
 ?>
     <section class="pdcate">
         <div id="trigger01"></div>

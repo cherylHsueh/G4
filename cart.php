@@ -1,6 +1,6 @@
 <?php
-ob_start();
-session_start();
+// ob_start();
+// session_start();
 ?>
 
 <!DOCTYPE html>
@@ -12,13 +12,14 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>果然配</title>
+	<link rel="stylesheet" type="text/css" href="css/loginFruit.css">
     <link rel="stylesheet" href="css/cart.css">
     <script src='js/global.js'></script>
 </head>
 
 <body>
 <?php
- require_once('nav.php');
+ require_once('php/nav.php');
 ?>
 
     <div class="space"></div>

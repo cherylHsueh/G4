@@ -7,12 +7,12 @@
 	<title>果然配</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0,shrink-to-fit=no">
 	<!-- <link rel="stylesheet" type="text/css" href="css/fullpage.css" /> -->
-	<link rel="stylesheet" href="css/diy.css">
+	<link rel="stylesheet" type="text/css" href="css/loginFruit.css">
 	<link rel="stylesheet" href="css/slick.css">
 	<link rel="stylesheet" href="css/slick-theme.css">
 	<link rel="stylesheet" href="css/hover.css">
 	<link rel="stylesheet" href="css/sweetalert2.min.css">
-
+	<link rel="stylesheet" href="css/diy.css">	
 
 	<script src="js/plugin/sweetalert2.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -27,46 +27,8 @@
 </head>
 
 <body onselectstart="return false">
-	<!-- <header>
-        <input type="checkbox" name="" id="hb_control">
-        <nav>
-            <div id="svg-2">
-                <canvas id="wave" width="1000" height="400">
-                    Hopefully you don't see this. If you do, get Google Chrome.
-                </canvas>
-                <canvas id="wave2" width="1000" height="400">
-                    Hopefully you don't see this. If you do, get Google Chrome.
-                </canvas>
-            </div>
-            <div class="ph_nav">
-                <label for="hb_control" class="hb"><span></span></label>
-                <a href="index.html">
-                    <h1 class="phone_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
-                </a>
-            </div>
-
-            <div class="menu">
-                <ul>
-                    <li class="menu_item"><a href="diy.html">果汁DIY</a></li>
-                    <li class="menu_item"><a href="product.html">果然特調</a></li>
-                    <li><a href="index.html">
-                            <h1 class="menu_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
-                        </a> </li>
-                    <li class="menu_item"><a href="blog.html">果然私藏</a></li>
-                    <li class="menu_item"><a href="about.html">關於果然</a></li>
-                </ul>
-            </div>
-            <div class="nav_mem">
-                <p><a href="login.html">登入</a></p>
-                <div class="mem_pic"><a href="member.html"><img src="images/user.png" alt="會員中心"></a></div>
-                <div class="mem_pic"><a href="cart.html"><img src="images/cart.png" alt="購物車"></a></div>
-            </div>
-        </nav>
-        <div class="coupon"><img src="images/coupon.png" alt="優惠小遊戲"></div>
-        <div class="robot"><img src="images/robot.png" alt="果然配客服機器人"></div>
-    </header> -->
  <?php
-    require_once('nav.php');
+    require_once('php/nav.php');
  try{
     require_once("connectBooks.php");
  ?>
@@ -126,7 +88,7 @@
 			';
 			$i++;
 };
-if($_GET["fruit1"]){
+if(isset($_GET["fruit1"])==true){
     	
 	// echo $_GET["fruit1"],$_GET["fruit2"],$_GET["fruit3"];
 	$k=1;
