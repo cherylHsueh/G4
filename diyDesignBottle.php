@@ -103,10 +103,12 @@ try{
 				<div class="diy_designBottle_container cl-s-6 cl-md-6 cl-xl-6">
 					<div id="diy_containmentBlock" class="diy_designBottle_pic cl-s-11 cl-md-9 cl-xl-9">
 						<div id="diy_designBottle_wrapper" class="diy_designBottle_bottleItem">
-							<img src="images/diy/emptyBottle.png" id="dragRange">
+							<div class="diy_pickFruit_bottle diy_pickFruit_bottle3"></div>
+							<div class="diy_pickFruit_bottle diy_pickFruit_bottle2"></div>
+							<div class="diy_pickFruit_bottle diy_pickFruit_bottle1"></div>
+							<img src="images/bottle.png" id="dragRange" alt="瓶子">
 						</div>
-						<img id="diy_designBottle_diyImg" class="diy_designBottle_changePic draggable  ui-draggable ui-widget-header ui-widget-content"
-						 style="position:relative; top:-240px;right:-90px;">
+						<img id="diy_designBottle_diyImg" class="diy_designBottle_changePic draggable  ui-draggable ui-widget-header ui-widget-content" style="position:relative; top:-240px;right:-90px; ">
 						<div id="diy_designBottle_dragText" class="diy_designBottle_createBlock" style="top:-150px;right:-120px;margin:0;"></div>
 					</div>
 					<div class="diy_designBottle_controlBlock cl-s-1 cl-md-3 cl-xl-3 clearfix">
@@ -119,7 +121,7 @@ try{
 					</div>
 				</div>
 				<div class="diy_designBottle_btnBlock cl-s-12 cl-md-12 cl-xl-12 clearfix">
-					<a class="common_btn common_btn_first" href="diy.html">
+					<a class="common_btn common_btn_first" href="diy.php">
 						<span class="common_btn_txt">上一步</span>
 						<div class="common_btn_blobs">
 							<div></div>
@@ -140,14 +142,16 @@ try{
 		</div>
 		<!-- 客製完成跳出蓋滿視窗 -->
 		<div class="wrapper">
-			<div class=" diy_customizePopUp" id="center">
+			<div id="center" class=" diy_customizePopUp" >
 				<div class="diy_customizeFinishBox ">
 					<div class="diy_customizeBox_content cl-s-12">
-						<h3>客製完成</h3>
-						<div class="diy_customizeBox_finishPic">
-						</div>
+							<div class="diy_customizeBox_finishTextPic"><img src="images/diy/finishText.png" alt="製作完成"></div>
+							<div class="diy_customizeBox-lightActive" ><img src="images/diy/light.png"></div>
+							<div class="diy_customizeBox-lightActive2" ><img src="images/diy/light2.png"></div>
+							<div class="diy_customizeBox_finishPic">
+							</div>
 						<div class="diy_proToCartBtns">
-							<a class="common_btn common_btn_first diy_addCartBtn" id="addToCartBtn">
+							<a id="addToCartBtn" class="common_btn common_btn_first diy_addCartBtn" >
 								<span class="common_btn_txt">加入購物車</span>
 								<div class="common_btn_blobs">
 									<div></div>
@@ -155,7 +159,7 @@ try{
 									<div></div>
 								</div>
 							</a>
-							<a class="common_btn common_btn_first diy_addCartBtn" href="cart.html">
+							<a class="common_btn common_btn_first diy_addCartBtn" href="cart.php">
 								<span class="
 							 common_btn_txt">我要結帳</span>
 								<div class="common_btn_blobs">
@@ -166,7 +170,7 @@ try{
 							</a>
 						</div>
 						<div class="diy_customizeFinishBox_customizeBtns">
-							<a class="common_btn common_btn_second diy_doMoreBtn" href="diy.html">
+							<a class="common_btn common_btn_second diy_doMoreBtn" href="diy.php">
 								<span class="common_btn_txt">再做一瓶<i class="fas fa-reply"></i></span>
 								<div class="common_btn_blobs">
 									<div></div>
@@ -174,7 +178,7 @@ try{
 									<div></div>
 								</div>
 							</a>
-							<a class="common_btn common_btn_second diy_doMoreBtn" href="blog.html">
+							<a class="common_btn common_btn_second diy_doMoreBtn" href="blog.php">
 								<span class="
 									 common_btn_txt">看看別人怎麼做
 									 <div class="bottleIcon"><img src="images/diy/bottleBtn.png"></div></span>

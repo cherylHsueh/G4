@@ -1,10 +1,16 @@
+var clickItem;
+var size = 1;
+var degree = 0;
 //客製瓶身跳窗
 $("#diy_copyPicButton").click(function() {
   html2canvas($("#diy_containmentBlock")[0]).then(function(canvas) {
     var $div = $(".diy_customizeBox_finishPic");
     $div.empty();
-    $("<img />", { src: canvas.toDataURL("image/png") }).appendTo($div);
+    var imageData = canvas.toDataURL("image/png");
+    $("<img />", { src: imageData }).appendTo($div);
   });
+  popCenterWindow();
+  $('.diy_customizeBox-lightActive2').css("opacity","1");
 });
 //點選官方logo切換
 $(document).ready(function() {
@@ -16,19 +22,18 @@ $(document).ready(function() {
         .css("backgroundColor", "transparent");
     }
   });
-  //製作完成後,點擊=>跳窗出現
-  $("#diy_copyPicButton").click(function() {
-    popCenterWindow();
-  });
 });
 //跳窗畫面的按鈕動畫
 $("#addToCartBtn").click(function() {
+  
   $(".diy_proToCartBtns").addClass("btnBounceOutUp", 500, callback);
-  $(".diy_customizeFinishBox_customizeBtns").addClass("btnbounceInUp");
   function callback() {
     setTimeout(function() {
+      
+      $('.diy_customizeFinishBox_customizeBtns').css("opacity","1");
       $(".diy_proToCartBtns").css("display", "none");
     }, 1500);
+
   }
 });
 //跳窗畫面
@@ -81,129 +86,261 @@ $("#picker").colpick({
     $(el).colpickHide();
   }
 });
-var clickItem;
-function doFirst(){	
-	zoomInButton = document.getElementById('zoomInButton');
-	zoomOutButton = document.getElementById('zoomOutButton');
-	rotateLeftButton = document.getElementById('rotateLeftButton');
-	rotateRightButton = document.getElementById('rotateRightButton');
-	deleteButton = document.getElementById('deleteButton');
-	document.getElementById('uploadButton').onchange = fileChange;
-	PicClick = document.getElementById('diy_designBottle_diyImg');
-	TextClick = document.getElementById('diy_designBottle_dragText');
-	//圖片或文字被點擊
-	PicClick.addEventListener('click',choosePic);
-	TextClick.addEventListener('click',chooseText);
-	zoomInButton.addEventListener('click',zoomIn);
-	zoomOutButton.addEventListener('click',zoomOut);
-	rotateLeftButton.addEventListener('click',rotateL);
-	rotateRightButton.addEventListener('click',rotateR);
-	deleteButton.addEventListener('click',deletefile);
-}	 
-//變數
-	function choosePic() {
-		//更改變數的值
-		 clickItem=  "#diy_designBottle_diyImg";
 
-	}
-	function chooseText() {
-		//更改變數的值
-		 clickItem=  "#diy_designBottle_dragText";
-	}
-	function zoomIn(){
-		if (clickItem) {
-			let size = getScale();
-			let degree = getDegree();
-			if (clickItem == '#diy_designBottle_diyImg' ) {
-				size += 0.1;
-			} else {
-				size += 0.05;
-			}
-			$(clickItem).css("transform","scale(" + size + ")" + " rotate(" + degree + "deg)");
-		}
-	};
-	function zoomOut(){
-		if (clickItem) {
-			let size = getScale();
-			let degree = getDegree();
-			if (clickItem == '#diy_designBottle_diyImg' ) {
-				size -= 0.1;
-			} else {
-				size -= 0.05;
-			}
-			$(clickItem).css("transform","scale(" + size + ")" + " rotate(" + degree + "deg)");
-		}
-	};
-	function rotateL(){	
-		if (clickItem) {
-			let size = getScale();
-			let degree = getDegree();
-			if (clickItem == '#diy_designBottle_diyImg' ) {
-				degree -= 20;
-			} else {
-				degree -= 5;
-			}
-			$(clickItem).css("transform","scale(" + size + ")" + " rotate(" + degree + "deg)");
-		}
-	};
-	function rotateR(){
-		if (clickItem) {
-			let size = getScale();
-			let degree = getDegree();
-			if (clickItem == '#diy_designBottle_diyImg' ) {
-				degree += 20;
-			} else {
-				degree += 5;
-			}
-			$(clickItem).css("transform","scale(" + size + ")" + " rotate(" + degree + "deg)");
-		}
-	};
-	function getScale() {
-		var matches =/(-?\d+)(\.\d+)?/gi;
-		var transform = $(clickItem)[0].style.transform;
-		return Number(transform.match(matches)[0]);
-	}
-	function getDegree() {
-		var matches =/(-?\d+)(\.\d+)?/gi;
-		var transform = $(clickItem)[0].style.transform;
-		return Number(transform.match(matches)[1]);
-	}
-	function deletefile(){	
-		if (clickItem == '#diy_designBottle_diyImg' ) {
-			var image = document.getElementById('diy_designBottle_diyImg');
-			image.src = "";
-		} else {
-			$(clickItem).empty();
-			$(clickItem).css('color','#000');
-		}
-	};
-	function change(img){
-		let image = document.getElementById('diy_designBottle_diyImg');
-		image.src = img.src;
-		image.style.maxWidth = '60px';
-		image.style.transform='scale(1) rotate(0deg)';
-	};
+// function doFirst() {
+//   zoomInButton = document.getElementById("zoomInButton");
+//   zoomOutButton = document.getElementById("zoomOutButton");
+//   rotateLeftButton = document.getElementById("rotateLeftButton");
+//   rotateRightButton = document.getElementById("rotateRightButton");
+//   deleteButton = document.getElementById("deleteButton");
+//   document.getElementById("uploadButton").onchange = fileChange;
+//   picClick = document.getElementById("diy_designBottle_diyImg");
+//   textClick = document.getElementById("diy_designBottle_dragText");
+//   //圖片或文字被點擊
+//   picClick.addEventListener("click", choosePic);
+//   textClick.addEventListener("click", chooseText);
+//   zoomInButton.addEventListener("click", zoomIn);
+//   zoomOutButton.addEventListener("click", zoomOut);
+//   rotateLeftButton.addEventListener("click", rotateL);
+//   rotateRightButton.addEventListener("click", rotateR);
+//   deleteButton.addEventListener("click", deletefile);
+// }
+// //變數
+// function choosePic() {
+//   clickItem = "#diy_designBottle_diyImg";
+// }
+// function chooseText() {
+//   clickItem = "#diy_designBottle_dragText";
+// }
+// function zoomIn() {
+//   if (clickItem) {
+//     if (clickItem == "#diy_designBottle_diyImg") {
+//       size += 0.1;
+//     } else {
+//       size += 0.05;
+//     }
+//     $(clickItem).css(
+//       "transform",
+//       "scale(" + size + ")" + " rotate(" + degree + "deg)"
+//     );
+//   }
+// }
+// function zoomOut() {
+//   if (clickItem) {
+//     if (clickItem == "#diy_designBottle_diyImg") {
+//       size -= 0.1;
+//     } else {
+//       size -= 0.05;
+//     }
+//     $(clickItem).css(
+//       "transform",
+//       "scale(" + size + ")" + " rotate(" + degree + "deg)"
+//     );
+//   }
+// }
+// function rotateL() {
+//   if (clickItem) {
+//     if (clickItem == "#diy_designBottle_diyImg") {
+//       degree -= 20;
+//     } else {
+//       degree -= 5;
+//     }
+//     $(clickItem).css(
+//       "transform",
+//       "scale(" + size + ")" + " rotate(" + degree + "deg)"
+//     );
+//   }
+// }
+// function rotateR() {
+//   if (clickItem) {
+//     if (clickItem == "#diy_designBottle_diyImg") {
+//       degree += 20;
+//     } else {
+//       degree += 5;
+//     }
+//     $(clickItem).css(
+//       "transform",
+//       "scale(" + size + ")" + " rotate(" + degree + "deg)"
+//     );
+//   }
+// }
+// function deletefile() {
+//   if (clickItem == "#diy_designBottle_diyImg") {
+//     var image = document.getElementById("diy_designBottle_diyImg");
+//     image.src = "";
+//   } else {
+//     $(clickItem).empty();
+//     $(clickItem).css("color", "#000");
+//   }
+// }
+// function change(img) {
+//   let image = document.getElementById("diy_designBottle_diyImg");
+//   image.src = img.src;
+//   image.style.maxWidth = "60px";
+//   image.style.transform = "scale(1) rotate(0deg)";
+// }
 
-	function fileChange(){
-		var file = document.getElementById('uploadButton').files[0];
-		var readFile = new FileReader();
-		readFile.readAsDataURL(file); 
-		readFile.addEventListener('load',function(e){
-			var image = document.getElementById('diy_designBottle_diyImg');
-			image.src = this.result;
-			image.style.maxWidth = '100px';
-		});
-	};
-	//新增文字	
-	function createText(e) {
-        var body = document.getElementsByClassName("diy_designBottle_createBlock")[0];
-		body.innerHTML="";
-		body.style.color="#000";
-		body.style.transform="scale(1) rotate(0deg)";
-		var newText = document.createElement("p");
-		var text = document.createTextNode(e);
-        newText.appendChild(text);
-        body.appendChild(newText);
-    };
-window.addEventListener('load',doFirst);
+// function fileChange() {
+//   var file = document.getElementById("uploadButton").files[0];
+//   var readFile = new FileReader();
+//   readFile.readAsDataURL(file);
+//   readFile.addEventListener("load", function(e) {
+//     var image = document.getElementById("diy_designBottle_diyImg");
+//     image.src = this.result;
+//     image.style.maxWidth = "100px";
+//   });
+// }
+// //新增文字
+// function createText(e) {
+//   var body = document.getElementsByClassName("diy_designBottle_createBlock")[0];
+//   body.innerHTML = "";
+//   body.style.color = "#000";
+//   body.style.transform = "scale(1) rotate(0deg)";
+//   var newText = document.createElement("p");
+//   var text = document.createTextNode(e);
+//   newText.appendChild(text);
+//   body.appendChild(newText);
+// }
+// window.addEventListener("load", doFirst);
 
+
+var type;
+var picTextControll = {
+    picSize: 1,
+    picDegree: 0,
+    textSize: 1,
+    textDegree: 1
+}
+
+function doFirst() {
+    zoomInButton = document.getElementById('zoomInButton');
+    zoomOutButton = document.getElementById('zoomOutButton');
+    rotateLeftButton = document.getElementById('rotateLeftButton');
+    rotateRightButton = document.getElementById('rotateRightButton');
+    deleteButton = document.getElementById('deleteButton');
+    document.getElementById('uploadButton').onchange = fileChange;
+    PicClick = document.getElementById('diy_designBottle_diyImg');
+    TextClick = document.getElementById('diy_designBottle_dragText');
+    //圖片或文字被點擊
+    PicClick.addEventListener('click', () => {
+        type = 'pic';
+        picTextControll.picSize = 1;
+        picTextControll.picDegree = 0;
+    });
+    TextClick.addEventListener('click', () => {
+        type = 'text';
+        picTextControll.textSize = 1;
+        picTextControll.textDegree = 0;
+    });
+    zoomInButton.addEventListener('click', () => {
+        refreshTarget(1, 'zoom');
+    });
+    zoomOutButton.addEventListener('click', () => {
+        refreshTarget(-1, 'zoom');
+    });
+    rotateRightButton.addEventListener('click', () => {
+        refreshTarget(1, 'rotate');
+    });
+    rotateLeftButton.addEventListener('click', () => {
+        refreshTarget(-1, 'rotate');
+    });
+    deleteButton.addEventListener('click', deletefile);
+}
+
+function refreshTarget(num, mode) {
+    if (!type) {
+        return;
+    }
+    let size = 0;
+    let degree = 0;
+    if (mode == 'zoom') {
+        refreshSize(num);
+    } else {
+        refreshDegree(num);
+    }
+    changeTarget();
+}
+
+function changeTarget() {
+    let target = getTarget();
+    let size = 0;
+    let degree = 1;
+    if (type == 'pic') {
+        size = picTextControll.picSize;
+        degree = picTextControll.picDegree;
+    } else {
+        size = picTextControll.textSize;
+        degree = picTextControll.textDegree;
+    }
+    target.css("transform", "scale(" + size + ")" + " rotate(" + degree + "deg)");
+}
+
+function refreshSize(num) {
+    if (type == 'pic') {
+        picTextControll.picSize +=  (num * 0.1);
+    } else {
+        picTextControll.textSize += (num * 0.05);
+    }
+}
+
+function refreshDegree(dictionary) {
+    if (type == 'pic') {
+        picTextControll.picDegree += (dictionary * 20);
+    } else {
+        picTextControll.textDegree += (dictionary * 5);
+    }
+}
+
+function getTarget() {
+    if (type == 'pic') {
+        return $("#diy_designBottle_diyImg");
+    } else {
+        return $("#diy_designBottle_dragText");
+    }
+
+}
+
+function deletefile() {
+    if (!type) {
+        return;
+    }
+    let target = getTarget();
+    if (type == 'pic') {
+        var image = target[0];
+        image.src = "";
+    } else {
+        target.empty();
+        target.css('color', '#000');
+    }
+};
+
+function change(img) {
+    let image = document.getElementById('diy_designBottle_diyImg');
+    image.src = img.src;
+    image.style.maxWidth = '60px';
+    image.style.transform = 'scale(1) rotate(0deg)';
+};
+
+function fileChange() {
+    var file = document.getElementById('uploadButton').files[0];
+    var readFile = new FileReader();
+    readFile.readAsDataURL(file);
+    readFile.addEventListener('load', function(e) {
+        var image = document.getElementById('diy_designBottle_diyImg');
+        image.src = this.result;
+        image.style.maxWidth = '60px';
+        image.style.transform = 'scale(1) rotate(0deg)';
+    });
+};
+//新增文字	
+function createText(e) {
+    var body = document.getElementsByClassName("diy_designBottle_createBlock")[0];
+    body.innerHTML = "";
+    body.style.color = "#000";
+    body.style.transform = "scale(1) rotate(0deg)";
+    var newText = document.createElement("p");
+    var text = document.createTextNode(e);
+    newText.appendChild(text);
+    body.appendChild(newText);
+};
+window.addEventListener('load', doFirst);

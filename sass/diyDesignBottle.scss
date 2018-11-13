@@ -25,7 +25,7 @@ footer {
 body {
   background-color: $sky;
   overflow-x: hidden;
-  -moz-user-select:none; 
+  -moz-user-select: none;
 }
 @keyframes bounceOutUp {
   20% {
@@ -33,7 +33,8 @@ body {
     transform: translate3d(0, -10px, 0);
   }
 
-  40%,45% {
+  40%,
+  45% {
     opacity: 1;
     -webkit-transform: translate3d(0, 20px, 0);
     transform: translate3d(0, 20px, 0);
@@ -62,9 +63,37 @@ body {
     left: 90%;
   }
 }
+@keyframes lightRatation {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    z-index: 20;
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+  }
+  95% {
+    -webkit-transform: none;
+    transform: none;
+    z-index: -1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes lightOpcity {
+  0% {
+    animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 //把nav擋到的高度往下挪
 
-.displayBlock{
+.displayBlock {
   display: block;
 }
 %displayNon {
@@ -166,7 +195,7 @@ body {
       height: 20px;
       line-height: 20px;
       outline: 1px solid #f09824;
-      padding:7px 7px 7px 10px;
+      padding: 7px 7px 7px 10px;
       color: #f09824;
       cursor: pointer;
       &:hover {
@@ -206,7 +235,6 @@ body {
   }
   &_textLength {
     margin: 5px 0 15px;
-    width: 130px;
   }
   &_btnBlock {
     text-align: center;
@@ -310,7 +338,7 @@ body {
   &_carPic {
     img {
       position: absolute;
-      bottom:0;
+      bottom: 0;
       width: 150px;
       margin-left: calc(100vw - 150px);
     }
@@ -341,7 +369,7 @@ body {
     }
     &_content {
       width: 350px;
-      height: 350px;
+      height: 400px;
       background-color: #fff;
       position: absolute;
       border-radius: 10px;
@@ -349,14 +377,23 @@ body {
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      h3 {
-        color: $mainfontcolor;
+    }
+    &_finishTextPic {
+      width: 220px;
+      box-sizing: border-box;
+      padding: 10px 0 0;
+      margin: 0 auto;
+      img {
+        width: 100%;
       }
     }
     &_finishPic {
       width: 100px;
       height: 250px;
       margin: 0 auto;
+      position: relative;
+
+      z-index: 10;
     }
   }
   &_customizeFinishBox {
@@ -371,13 +408,18 @@ body {
     overflow: hidden;
     z-index: 5;
     &_customizeBtns {
-      // display: none;
+      position: absolute;
+      box-sizing: border-box;
+      padding: 0 4px;
+      bottom: 20px;
+      opacity: 0;
+      z-index: 19;
       .common_btn {
-        width: 150px;
+        width: 140px;
         display: inline-block;
         border-radius: 10px;
-        a{
-          width: 150px;
+        a {
+          width: 140px;
         }
         .btnPic {
           position: relative;
@@ -391,8 +433,10 @@ body {
     }
   }
   &_proToCartBtns {
-    text-align: center;
-    margin: -10px auto;
+    // text-align: center;
+    margin: 20px auto;
+    position: relative;
+    z-index: 20;
     a {
       width: 100px;
       margin: 0 5px;
@@ -404,12 +448,9 @@ body {
 .robot {
   z-index: 4;
 }
-.btnBounceOutUp{
-  animation: bounceOutUp linear 2s  0s;
+.btnBounceOutUp {
+  animation: bounceOutUp linear 2s 0s;
 }
-.btnbounceInUp{
-    -webkit-transition:  height 3s cubic-bezier(0.19, 1, 0.22, 1);
-    transition: height 3s cubic-bezier(0.19, 1, 0.22, 1); }
 
 @keyframes mobBottleMove {
   0% {
@@ -427,19 +468,60 @@ body {
     left: 90%;
   }
 }
+.diy_customizeBox_lightBottle {
+  width: 98px;
+  position: absolute;
+  top: 104px;
+  left: 252px;
+
+  img {
+    width: 100%;
+  }
+}
+#diy_designBottle_diyImg {
+  background: transparent;
+}
 
 //行動版----------------------------------------------------------------------------
 @include rwd(mobile) {
-  .diy_customizeBox_finishPic {
-    width: 100px;
+  .diy_customizeBox {
+    &_finishPic {
+      width: 100px;
+    }
+    &_finishTextPic {
+      width: 150px;
+      margin: 10px auto;
+      img {
+        width: 100%;
+      }
+    }
+    &-lightActive {
+      width: 300px;
+      position: absolute;
+      top: 35px;
+      left: 32px;
+      img {
+        width: 100%;
+      }
+      -webkit-animation-name: lightRatation;
+      animation-name: lightRatation;
+      -webkit-animation-duration: 0.5s;
+      animation-duration: 0.5s;
+    }
+    &-lightActive2 {
+      position: absolute;
+      z-index: 50;
+      width: 300px;
+      top: 50px;
+      left: 30px;
+      opacity: 0;
+      transition:  opacity 0.9s;
+      img {
+        width: 100%;
+      }
+    }
   }
-  .diy_customizeBox_content h3 {
-    margin: 10px 0;
-  }
-  .diy_designBottle_bottleItem img {
-    width: 100px;
-    margin: 30px 40px 0;
-  }
+
   .diy_designBottle {
     &_stepFirstBox {
       img {
@@ -450,6 +532,10 @@ body {
       img {
         width: 120px;
       }
+    }
+    &_bottleItem img {
+      width: 100px;
+      margin: 30px 40px 0;
     }
     &_bgCloud {
       img {
@@ -475,7 +561,6 @@ body {
     &_disNone {
       display: none;
     }
-
     &_btnBlock {
       a {
         width: 75px;
@@ -491,12 +576,33 @@ body {
       }
     }
   }
-
   #diy_designBottle_wrapper {
     width: 100%;
   }
+  .diy_customizeFinishBox_customizeBtns {
+    position: absolute;
+    transition: opacity 1s;
+    .common_btn {
+      width: 140px;
+    }
+    .common_btn_txt {
+      .bottleIcon {
+        transform: rotate(5deg);
+        img {
+          width: 10px;
+        }
+        position: absolute;
+        right: -15px;
+        top: -5px;
+      }
+    }
+  }
+  .colpick.colpick_rgbhex {
+    position: absolute;
+    top: 500px;
+    left: 45px;
+  }
 }
-
 //平板--------------------------------------------------------------------------------------------
 @include rwd(medium) {
   header nav li:nth-child(1) > a:after {
@@ -505,17 +611,20 @@ body {
   .diy_customizeBox_finishPic {
     width: 230px;
     margin: 0 auto;
-    
+    position: relative;
+    z-index: 5;
   }
   .diy_proToCartBtns {
-    margin: 100px auto;
+    position: relative;
+    z-index: 20;
+    margin: 175px auto;
     a {
       margin: 0 30px;
     }
   }
   .diy_designBottle_bottleItem img {
     width: 140px;
-    margin: 25px 90px;
+    margin: 40px 90px;
   }
   .diy_designBottle {
     &_title {
@@ -646,11 +755,11 @@ body {
       box-sizing: border-box;
       padding: 30px;
       width: 700px;
-      height: 620px;
+      height: 655px;
     }
     &_textLength {
       margin: 15px 0;
-      width: 415px;
+      width: 315px;
       height: 20px;
     }
     &_pics {
@@ -677,31 +786,53 @@ body {
     &_customizeBox {
       &_content {
         width: 600px;
-        height: 500px;
+        height: 560px;
         background-color: #fff;
         position: absolute;
         border-radius: 20px;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
-        margin: auto;
-        h3 {
-          margin: 10px 0;
-        }
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
       }
       &_finishPic {
-        margin: 0 auto;
+        position: relative;
+        margin: 10px auto 150px;
+      }
+      &-lightActive {
+        position: absolute;
+        width: 500px;
+        top: 25px;
+        left: 49px;
         img {
-          width: 250px;
+          width: 100%;
         }
+        -webkit-animation-name: lightRatation;
+        animation-name: lightRatation;
+        -webkit-animation-duration: 0.7s;
+        animation-duration: 0.7s;
+      }
+      &-lightActive2{
+        position: absolute;
+        z-index: 8;
+        width: 500px;
+        top: 49px;
+        left: 49px;
+        img {
+          width: 100%;
+        }
+        -webkit-animation-name: lightOpcity;
+        animation-name: lightOpcity;
+        -webkit-animation-duration: 0.79s;
+        animation-duration: 0.79s;
       }
     }
     &_customizeFinishBox {
       margin: 0 auto;
       &_customizeBtns {
-        position: relative;
-        bottom:-195px;
-        
+        position: absolute;
+        left: 35px;
+
         .common_btn {
           width: 200px;
           height: 40px;
@@ -711,27 +842,31 @@ body {
           padding: 0;
           margin: 0 30px;
           line-height: 40px;
-          // border: 3px solid #F4D66D;
-          overflow:visible;
-          a{width: 200px;}
-          .common_btn_blobs{
+          overflow: visible;
+          a {
+            width: 200px;
+          }
+          .common_btn_blobs {
             width: 101%;
           }
-          .common_btn_txt{
+          .common_btn_txt {
             position: relative;
-            i{
+            left: -5px;
+            i {
               position: absolute;
-              top:-5px;
+              top: -5px;
               font-size: 30px;
               margin-left: 5px;
             }
-            .bottleIcon{
+            .bottleIcon {
               transform: rotate(5deg);
               position: relative;
-              img{width: 15px;}
+              img {
+                width: 15px;
+              }
               position: absolute;
-              right:-30px;
-              top:-25px;
+              right: -30px;
+              top: -25px;
             }
           }
           .diy_toBlogBtn {
@@ -749,15 +884,17 @@ body {
       }
     }
     &_textLength {
-      margin: 15px 0 ;
       width: 415px;
-      height: 20px; 
     }
     &_pics {
       &:after {
         bottom: 120px;
       }
     }
+  }
+  .diy_designBottle_pic {
+    position: relative;
+    z-index: 0;
   }
 }
 //桌機---------------------------------------------------------------------------------------------
@@ -784,12 +921,12 @@ body {
     }
     &_bgcBox {
       width: 900px;
-    } 
+    }
     &_bgCloud {
       img {
         &:nth-child(3) {
           top: 10px;
-          right:-50px;
+          right: -50px;
           width: 100px;
         }
       }
