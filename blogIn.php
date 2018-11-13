@@ -1,11 +1,10 @@
 <?php
 $artNo = $_REQUEST['artNo'];
 try {
-    require_once("connectBooks.php");
+	require_once("connectBooks.php");
     $sql = "SELECT b.artNo, b.photo, b.artTitle, b.artContent, b.thumbFq, b.artReportFq, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3, me.mesNo, me.mesContent, me.mesTime, me.mesReportFq From blog b, member m, message me,fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo and b.artNo = me.artNo and b.artNo = $artNo
     ";
     $blogs = $pdo -> query( $sql );
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -267,7 +266,7 @@ function sendFormthumb(){
                             </div>
                             <!-- <a href="javascript:;" > -->
                             <input type="button" id="reportNum<?php echo $blogRow->mesNo?>" class="blogIn_Msg_SendBox subButtonItem cl-s-2 cl-md-1" name="report" value="檢舉">
-                            <input type="hidden" id="mesreportbtn" name="mesreportbtn" value="<?php echo $blogRow->mesReportFq?>">
+                            <input type="hidden" class="mesreportbtn" name="mesreportbtn" value="<?php echo $blogRow->mesReportFq?>">
                             <input type="hidden" class="mesreportNum" value="<?php echo $blogRow->mesNo?>">
                       </div>
                         <?php
@@ -277,13 +276,22 @@ function sendFormthumb(){
 function $id(id){
   	return document.getElementById(id);
   };
-var pushreport = document.querySelectorAll('.reportNum');  
-    for( i=0 ; i<pushreport.length; i++){  
-        pushreport[i].addEventListener('click',function(){
-            alert(pushreport.length);
-            sendFormReport();
-     });
+  alert(document.('.mesreportNum');
+var reportNum = $id('reportNum')
+var mesreportNum = document.querySelectorAll('.mesreportNum');  
+    for( i=0 ; i<mesreportNum.length; i++){  
+        alert(mesreportNum.value);
     };
+// var pushreport = document.querySelectorAll('.reportNum');  
+//     for( i=0 ; i<pushreport.length; i++){  
+//         pushreport[i].addEventListener('click',function(){
+//             alert(pushreport.length); 
+//             alert(mesreportNum.length);
+//             // alert(mesreportNum.length);
+//             sendFormReport();
+//      });
+//     };
+
     function sendFormReport(){
         alert($id("mesreportbtn").value);
         alert(pushreport.length);

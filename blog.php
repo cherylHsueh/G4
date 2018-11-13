@@ -4,11 +4,12 @@ session_start();
 // m.memId = '1' and m.memPsw = '111'
 
 try {
-    require_once("connectBooks.php");
+	require_once("connectBooks.php");
     $sql = "SELECT b.artNo, b.photo, b.artTitle, b.artContent, b.thumbFq, b.postTime, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3 From blog b, member m, fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo
     ";
     $blogs = $pdo -> query( $sql );
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
