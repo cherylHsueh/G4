@@ -4,11 +4,7 @@ session_start();
 // m.memId = '1' and m.memPsw = '111'
 
 try {
-	$dsn = "mysql:host=localhost;dbname=cd103g4;port=3306;charset=utf8";
-	$user = "root";
-	$password = "123";
-	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-	$pdo = new PDO( $dsn, $user, $password, $options);
+    require_once("connectBooks.php");
     $sql = "SELECT b.artNo, b.photo, b.artTitle, b.artContent, b.thumbFq, b.postTime, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3 From blog b, member m, fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo
     ";
     $blogs = $pdo -> query( $sql );
@@ -34,7 +30,7 @@ try {
 
 <body>
     <?php
-	require_once("nav.php");
+	// require_once("nav.php");
 	?>
 
     <div class="space"></div>

@@ -1,11 +1,7 @@
 <?php
 $artNo = $_REQUEST['artNo'];
 try {
-	$dsn = "mysql:host=localhost;dbname=cd103g4;port=3306;charset=utf8";
-	$user = "root";
-	$password = "123";
-	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-	$pdo = new PDO( $dsn, $user, $password, $options);
+    require_once("connectBooks.php");
     $sql = "SELECT b.artNo, b.photo, b.artTitle, b.artContent, b.thumbFq, b.artReportFq, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3, me.mesNo, me.mesContent, me.mesTime, me.mesReportFq From blog b, member m, message me,fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo and b.artNo = me.artNo and b.artNo = $artNo
     ";
     $blogs = $pdo -> query( $sql );
