@@ -11,7 +11,7 @@
 	 <link rel="stylesheet" href="css/colpick.css">
 	 <link rel="stylesheet" href="css/colpickStyle.css">
 	<script src="js/plugin/jquery-1.7.2.min.js"></script>
-	<script src="js/plugin/jquery-3.3.1.min.js"></script>
+	<!-- <script src="js/plugin/jquery-3.3.1.min.js"></script> -->
 	<script src="js/plugin/jquery-ui.min.js"></script>
 	<script src="js/plugin/colpick.js"></script>
 	<script src="js/plugin/html2canvas.js"></script>
@@ -21,15 +21,11 @@
 <body>
 	<?php
 	require_once("nav.php");
+	require_once("connectBooks.php");
 	?>
 <div class="navSpace"></div>
 <?php
 try{
-  $dsn = "mysql:host=localhost;dbname=cd103g4;port=3306;charset=utf8";
-  $user = "root";
-  $password = "root";
-  $options = array( PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
-  $pdo = new PDO($dsn, $user, $password, $options);
   $sql = "select * from bottleimg";
   $bottlePics = $pdo->query($sql);
 ?>
