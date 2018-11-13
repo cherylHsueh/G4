@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/backEnd.css">
+</head>
+<style>
+    * {
+        /* outline: 1px #f00 solid; */
+    }
+</style>
+
+<body>
+
+    <div class="d-flex">
+        <div class="col-xl-2">
+            <ul class="list-group selector">
+                <a href="#">
+                    <li class="left list-group-item text-center"><img src="images/logo.png" alt=""></li>
+                </a>
+                <a href="backFruit.html">
+                    <li class="left list-group-item text-center">水果管理</li>
+                </a>
+                <a href="backBottle.html">
+                    <li class="left list-group-item text-center">瓶子圖片管理</li>
+                </a>
+                <a href="backProduct.html">
+                    <li class="left list-group-item text-center">官方商品管理</li>
+                </a>
+                <a href="backFarmer.html">
+                    <li class="left list-group-item text-center">小農管理</li>
+                </a>
+                <a href="backReport.html">
+                    <li class="left list-group-item text-center">檢舉審核</li>
+                </a>
+                <a href="backOrderlist.html">
+                    <li class="left list-group-item text-center">訂單管理</li>
+                </a>
+                <a href="backMemManage.html">
+                    <li class="left list-group-item text-center">會員帳號管理</li>
+                </a>
+                <a href="backEmpManage.html">
+                    <li class="left list-group-item text-center">管理員帳號管理</li>
+                </a>
+            </ul>
+        </div>
+        <div class="col-xl-10">
+            <div class="container">
+                <div class="banner">
+                    <img src="images/banner.png" alt="">
+                </div>
+                <div class="newPdUpArea">
+                    <button id="showUpPd">上傳新商品</button>
+                    <div class="newPdUp">
+                        <table class="table">
+                            <tr class="newPd">
+                                <th>商品名稱</th>
+                                <td><input type="text" name="" id=""></td>
+                            </tr>
+                            <tr class="newPd">
+                                <th>商品分類</th>
+                                <td>
+                                    <select name="" id="">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="newPd">
+                                <th>商品照片</th>
+                                <td><input type="file"></td>
+                            </tr>
+                            <tr class="newPd">
+                                <th>商品功效</th>
+                                <td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+                            </tr>
+                            <tr class="newPd">
+                                <td colspan="2">
+                                    <button type="submit">確認新增</button>
+                                    <button type="reset">清除內容</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>商品編號</th>
+                            <th>商品名稱</th>
+                            <th>商品分類</th>
+                            <th>商品圖片</th>
+                            <th>商品狀態</th>
+                            <th>商品詳情</th>
+                            <th>上下架管理</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>鳳梨柳橙汁</td>
+                            <td>美白系列</td>
+                            <td></td>
+                            <td>上架中</td>
+                            <td><button>商品詳情</button></td>
+                            <td><button>下架</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>鳳梨柳橙汁</td>
+                            <td>美白系列</td>
+                            <td></td>
+                            <td>上架中</td>
+                            <td><button>商品詳情</button></td>
+                            <td><button>下架</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination justify-content-center">
+
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $('#showUpPd').click(function () {
+            $('.newPdUp').show();
+        });
+    </script>
+
+</body>
+
+</html>
