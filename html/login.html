@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/login.css">
+	<title>果然配</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>		
+		<script>
+			$(document).ready(function(){
+
+				$(':text').focus(function(){
+					fruit.style.opacity=1;
+					fruit2.style.opacity=0;
+				});
+			$(':password').focus(function(){
+					fruit2.style.opacity=1;
+					fruit.style.opacity=0;
+				});
+			});		
+		
+
+		</script>
+
+</head>
+
+<body>
+	<!-- 燈箱 -->
+	<section id="lightbox_section">
+	<div class="lightbox" id="lightbox">
+		<form class="" action="">
+			<!-- logo和關閉 -->
+			<div class="logoContainer">
+				<span onclick="document.getElementById('lightbox').style.display='none'" class="close">&times;</span>
+				<div class="lightbox_logo">
+					<img src="images/about/logo.png" alt="Avatar" class="avatar">
+				</div>
+			</div>
+			<!-- 登入輸入框 -->
+			<div class="loginContainer">
+				<div class="account">
+					<input class="memeber" type="text" placeholder="帳號" name="memId" required="required" id="memId">
+					<img id="fruit" src="images/about/orange.png" alt="">
+				</div>
+				<div class="secret">
+				<input class="memeber" type="password" placeholder="密碼" name="memPsw" required="required" id="memPsw">
+				<img id="fruit2" src="images/about/orange.png" alt="">
+				</div>
+				<button class="login_btn" id="btnLogin" onclick="document.getElementById('lightbox').style.display='none'">登入</button>
+			</div>
+			<div class="regPsw">
+				<a class="lightbox_signUp" href="signUp.html">會員註冊</a>
+				<a class="lightbox_forgrtPsw" href="forgetPsw.html">忘記密碼</a>
+			</div>
+			
+			<div class="clearfix"></div>
+		</form>
+		<div class="cocktail collins">
+			<div class="cocktail__glass cocktail__glass-long">
+			  <div class="orange"></div>
+			  <div class="cherry"></div>      
+			  <div class="ice">
+				<div class="ice__cube cube-1"></div>
+				<div class="ice__cube cube-2"></div>
+				<div class="ice__cube cube-3"></div>
+			  </div>
+			</div>
+		  </div>
+	</div>
+
+</section>
+
+
+
+	
+
+
+
+
+
+</body>
+
+</html>

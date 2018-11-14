@@ -5,22 +5,21 @@
 *{
 	// outline: 1px solid red;
 }
-footer{
-	position: relative;
-}
-.footer_wrapper .footer_block {
-    background-color: #dde4b7;;
-}
-
 .brick{
 	width: 100%;
 	height: 130px;
-	background-color:#00B5BD;
+	background-color:$sky;
 	
+}
+footer{
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 .member_memberInfo{
 	width: 100%;
-	background-color:#00B5BD;
+	background-color:$sky;
 	// padding-bottom:20px;
 }
 
@@ -37,7 +36,7 @@ footer{
 
 .member_memberInfo_box{
 	width: 50%;
-	border:1px solid #ccc;
+	border:5px solid #aaa;
 	border-radius: 50px;
 	margin:auto;
 	padding: 10px 0;
@@ -48,7 +47,26 @@ footer{
 .member_coupon_wrpaper{
 	display: none;
 }
+
+.fa-photo{
+	color:#fff;
+}
+
+
+
 @include rwd(mobile){
+
+	.modifyInfo_btn{
+		padding: 12px;
+		position: relative;
+		top: 20px;
+	}
+	.modifyPsw_btn{
+		padding: 12px;
+		position: relative;
+		top: 20px;
+	}
+
 	.member_memberInfo_wrapper{
 		padding-top:10px;
 	}
@@ -69,15 +87,12 @@ footer{
 				width: 100%;
 			}
 	}
-	// .member_memberInfo_photo_change{
-	// 	width: 100px;
-	// 	height: 20px;
-	// 	background-color: #ccc;
-	// 	margin-top: 10px;
-	// 	text-align:  center;
-	// 	line-height: 20px;
-		
-	// }
+	.uploadBtn{
+		position: relative;
+		top: 30px;
+		left: 17px;
+		padding: 14px 0px;
+	}	
 
 	.member_memberInfo_photo_change {
 		display: block;
@@ -93,39 +108,11 @@ footer{
 		display: none;
 		}
 
-
-	.member_memberInfo_Points_block{
-		width: 200px;
-		background-color: aaa;
-		margin-top:60px;
-		text-align: center;
-				p{
-					display:inline-block;
-					font-size:18px;
-					width: 90px;
-					
-				}
-				.member_memberInfo_Points{
-					font-size:18px;
-					display: inline-block;
-					width: 100px;
-				}
-	}
 	.member_memberInfo_Features_box{
 		width: 200px;
 		margin-top:20px;
 	}
-	.member_personalInfo_basicInfo_block{
-		text-align: center;	
-		font-size: 18px;
-			#submit{
-				margin-top: 20px;
-				width: 120px;
-				height: 20px;
-				background-color: #aaa;
-			}	
-	}
-	
+
 	.member_personalInfo_basicInfo_block_item{
 		margin-top:20px; 
 			span{
@@ -146,14 +133,8 @@ footer{
 		border:1px solid #ccc;
 		border-radius: 50px;
 		text-align: center;
-		padding:20px 0;
+		padding:40px 0;
 		font-size: 18px;
-			#submit{
-				margin-top: 20px;
-				width: 120px;
-				height: 20px;
-				background-color: #aaa;
-			}	
 	}
 
 	.member_personalInfo_password_block{
@@ -164,12 +145,6 @@ footer{
 		margin:20px auto;
 		padding: 20px 0;
 		font-size: 18px;
-			#submit{
-				margin-top: 20px;
-				width: 120px;
-				height: 20px;
-				background-color: #aaa;
-			}	
 	}
 	.member_personalInfo_password_block_item{
 		margin-top:20px; 
@@ -245,15 +220,6 @@ footer{
 	}
 }
 
-	.member_orderSearch_block_box_item_orderDetail_button{
-		width: 50%;
-		height: 35px;
-		line-height: 35px;
-		margin: 5% auto 0;
-		font-size: 16px;
-		color:#000;
-		background-color: #ccc;
-	}
 
 .member_orderSearch_block_box_item{
 	span{
@@ -361,6 +327,24 @@ footer{
 }
 
 @include rwd(medium){
+	.modifyInfo_btn{
+		padding: 0;
+		position: relative;
+		top: 20px;
+		left: 3%;
+	}
+	.modifyPsw_btn{
+		padding: 0;
+		position: relative;
+		top: 20px;
+		left: 3%;
+	}
+	.orderDetail_btn{
+		padding: 10px;
+		position: relative;
+		top: 20px;
+		left: 3%;
+	}
 	.member_memberInfo_box{
 		width: 300px;
 		margin: 50px auto 40px;
@@ -373,25 +357,15 @@ footer{
 		border-radius: 100%;
 		padding: 40px 0;
 			img{
-				border:1px solid #ccc;
+				border:3px solid #aaa;
 				border-radius:50%; 
 				width: 100%;
 			}
-
-			.member_memberInfo_photo_change {
-				display: block;
-				color: #000;
-				background-color: yellow;
-				border-radius: 5px;
-				padding:3%;
-				margin: auto;
-				margin-top: 15%;
-				cursor: pointer;
-				}
-			#upload_img{
-				display: none;
-				}
-	
+	}
+	.uploadBtn{
+		position: relative;
+		left: 55px;
+		bottom: 20px;
 	}
 x
 	.member_memberInfo_profile_photo{
@@ -409,22 +383,8 @@ x
 				color:#000;
 			}
 	}
-	.member_memberInfo_Points_block{
-		margin:20px 0;
-		text-align: center;
-				p{
-					display:inline-block;
-					font-size:18px;
-					width: 90px;	
-				}
-				.member_memberInfo_Points{
-					font-size:18px;
-					display: inline-block;
-					width: 100px;
-				}
-	}
+
 	.member_personalInfo_basicInfo_block_item{
-		// margin-top:20px; 
 			span{
 				margin-right:10px;
 				font-size:16px;
@@ -432,9 +392,9 @@ x
 	}
 
 	.member_personalInfo_basicInfo_block{
-		width: 30%;
+		width: 60%;
 		border-radius: 50px;
-		border:1px solid #ccc;
+		border:5px solid #aaa;
 		margin:20px auto;
 		text-align: center;
 		padding:20px ;
@@ -442,13 +402,10 @@ x
 		line-height: 3;
 		position: relative;
 		top: 50px;
-			#submit{
-				margin-top: 20px;
-				width: 120px;
-				height: 35px;
-				background-color: yellow;
-				cursor: pointer;
-			}	
+	}
+	.member_container{
+		width: 66%;
+		margin: auto;
 	}
 	.member_memberInfo_wrapper{
 		padding:20px 0; 
@@ -457,9 +414,9 @@ x
 
 	//桌機版 變更密碼
 	.member_personalInfo_password_block{
-		width: 30%;
+		width: 60%;
 		border-radius: 50px;
-		border:1px solid #ccc;
+		border:5px solid #aaa;
 		margin:20px auto;
 		text-align: center;
 		padding:20px ;
@@ -467,13 +424,6 @@ x
 		line-height: 3;
 		position: relative;
 		top: 50px;
-			#submit{
-				margin-top: 20px;
-				width: 120px;
-				height: 35px;
-				background-color: yellow;
-				cursor: pointer;
-			}	
 	}
 	.member_personalInfo_password_block_item{
 		margin-top:20px; 
@@ -486,11 +436,11 @@ x
 	//桌機版訂單查詢
 	.member_orderSearch_wrpaper{
 		position: relative;
-		top: 80px;
+		top: 70px;
 	}
 	.member_orderSearch_block{
 		width: 60%;
-		border:1px solid #ccc;
+		border:5px solid #aaa;
 		border-radius: 50px;
 		margin: auto;
 		padding: 0px 10px 50px;
@@ -498,8 +448,9 @@ x
 		font-size: 18px;
 		.member_orderSearch_block_box{
 			width: 200px;
-			border: 1px solid #ccc;
-			padding: 20px;
+			border: 1px solid #aaa;
+			border-radius: 50px;
+			padding: 34px;
 			margin: 2% ;
 			display: inline-block;
 		}
@@ -524,20 +475,12 @@ x
 	}
 	.member_orderSearch_title{
 		width: 300px;
-		margin: 10px auto;
+		margin: 20px auto;
+		padding-top: 10px;
 		text-align: center;
 		font-size: 18px;
 	}
 
-		.member_orderSearch_block_box_item_orderDetail_button{
-			width: 50%;
-			height: 35px;
-			line-height: 35px;
-			margin: 5% auto 0;
-			font-size: 16px;
-			color:#000;
-			background-color: #ccc;
-		}
 //桌機版 訂單詳情跳窗
 .member_orderSearch_block_lightbox{
 	width: 100vw;
@@ -590,7 +533,7 @@ x
 	}
 	.member_coupon_block{
 		width: 80%;
-		border:1px solid #ccc;
+		border:5px solid #aaa;
 		border-radius: 50px;
 		margin: auto;
 		text-align: center;
@@ -599,7 +542,7 @@ x
 	}
 	.member_coupon_block_box{
 		width: 300px;
-		border:1px solid #ccc;
+		border:3px solid #aaa;
 		border-radius: 50px;
 		display: inline-block;
 		margin:20px 20px; 
@@ -657,9 +600,9 @@ x
 				left:650px;
 			}
 		.member_background_bottom_tree{
-			width: 30%;
+			width: 25%;
 			position: absolute;
-			bottom: 50px;
+			bottom: 40px;
 			right:0px;
 			z-index: -1;
 		}

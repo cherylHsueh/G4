@@ -1,0 +1,373 @@
+@import "reset";
+* {
+  // outline:1px solid red;
+  box-sizing: border-box;
+}
+
+#lightbox_section {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 4;
+  display: none;
+}
+
+.lightbox_logo img {
+  width: 35%;
+  margin-right: 14px;
+}
+
+.lightbox {
+  background-color: #d7eab2;
+  width: 80%;
+  max-width: 350px;
+  text-align: center;
+  box-sizing: border-box;
+  // padding: 5px 20px 0px 20px;
+  padding: 5px 5px 0px 30px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 30px;
+  transform: translate(-50%, -50%);
+
+}
+
+#fruit,
+#fruit2 {
+  opacity: 0;
+}
+
+.account {
+  font-size: 0;
+  img {
+    margin-left: 5px;
+    width: 8%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.secret {
+  font-size: 0;
+  img {
+    margin-left: 5px;
+    width: 8%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+#close {
+  position: absolute;
+  right: 19px;
+  top: -32px;
+  top: 7px;
+  color: #000;
+  font-size: 42px;
+  font-weight: bold;
+}
+
+// .logoContainer {
+//   padding-top: 30px;
+// }
+
+.loginContainer {
+  padding-top: 11%;
+}
+
+.memeber {
+  display: block;
+  border-radius: 10px;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 90%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.login_btn {
+  display: inline-block;
+  width: 90%;
+  background-color: rgb(255, 241, 0);
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin: 8px 0;
+  position: relative;
+  left: -5%;
+}
+
+.lightbox_signUp,
+.lightbox_forgrtPsw {
+  color: black;
+  text-decoration: none;
+}
+
+.regPsw {
+  padding: 3% 12% 5% 5%;
+  text-align: right;
+  font-size: 15px;
+}
+
+.regPsw > a {
+  padding: 0 2%;
+}
+
+// .clearfix {
+//     display: block;
+//     clear: both;
+// }
+
+.orange img {
+  width: 15%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+
+/* 橘子 */
+
+@mixin orange($right, $top, $rotate, $animation) {
+  position: absolute;
+  right: $right;
+  top: $top;
+  transform: $rotate;
+  overflow: hidden;
+  width: $orange-w;
+  height: $orange-h;
+  animation: $animation;
+  &:before {
+    content: "";
+    position: absolute;
+    background-color: orange;
+    width: 100%;
+    height: 200%;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px #ffc04d, inset 0 0 0 10px #ffdb99;
+  }
+}
+
+/* 冰塊 */
+
+@mixin icecube($ice-num) {
+  .ice__cube {
+    background: lighten($tom-collins, 80%);
+    width: $ice__cube-w;
+    height: $ice__cube-w;
+    border: 1px solid $ice-boder-color;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 0;
+    @for $item from 1 through ($ice-num) {
+      &:nth-child(#{$item}) {
+        left: ($item - 1) * $ice__cube-w;
+        transform: rotate($item * 20deg) translate3d(0, 0, 0);
+      }
+    }
+    &.cube-#{$ice-num} {
+      transform: rotate($ice-num * 20deg) translate3d(-18px, 9px, 0);
+    }
+  }
+}
+
+$glass-boder-color: rgba(255, 255, 255, 0.8);
+$glass-long-w: 32px;
+$glass-long-h: 65px;
+$glass-short-w: 38px;
+$glass-short-h: 32px;
+$glass-classic-w: 25px;
+$ice-num: 3;
+$ice-boder-color: rgba(255, 255, 255, 0.8);
+$ice__cube-w: 14px;
+$orange-w: 28px;
+$orange-h: 14px;
+$cherry_r: 10px;
+$cherry-color: #c40000;
+$olive-r: 10px;
+$olive-color: rgba(128, 128, 0, 0.5);
+$toothpick-color: #deb887;
+/* 果汁的顏色*/
+
+$tom-collins: rgba(255, 195, 0, 0.5);
+$negroni: rgba(230, 45, 13, 0.7);
+$martini: rgba(255, 255, 255, 0.3); // 果汁本身
+.cocktail {
+  // float: left;
+  // min-width: 200px;
+  padding: 7px 0 0; // width: 33%;
+  @media all and (max-width: 600px) {
+    width: 50%;
+  }
+  @media all and (max-width: 400px) {
+    width: 100%;
+  }
+  .cocktail__glass {
+    margin: 0 auto;
+  }
+  &.negroni {
+    padding-top: 113px;
+  }
+  &.martini {
+    padding-top: 89px;
+    .description {
+      padding-top: 42px;
+    }
+  }
+  .ice {
+    .ice__cube {
+      background: lighten($tom-collins, 80%);
+      width: $ice__cube-w;
+      height: $ice__cube-w;
+      border: 1px solid $ice-boder-color;
+      border-radius: 4px;
+      position: absolute;
+      bottom: 0;
+      @for $item from 1 through ($ice-num) {
+        &:nth-child(#{$item}) {
+          left: ($item - 1) * $ice__cube-w;
+          transform: rotate($item * 20deg) translate3d(0, 0, 0);
+        }
+      }
+      &.cube-#{$ice-num} {
+        transform: rotate($ice-num * 20deg) translate3d(-18px, 9px, 0);
+      }
+    }
+  }
+  .orange {
+    @include orange(
+      8px,
+      2px,
+      rotate(250deg),
+      float 3s infinite alternate linear
+    );
+  }
+  .cherry {
+    width: $cherry_r;
+    height: $cherry_r;
+    border-radius: 50%;
+    background: $cherry-color;
+    position: relative;
+    left: 17px;
+    top: 3px;
+    animation: float-simple 5s infinite alternate linear;
+    &:before {
+      content: "";
+      background-color: transparent;
+      width: 23px;
+      height: 17px;
+      border-radius: 50% / 100%;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border: 1px solid #c40000;
+      border-right: none;
+      border-top: none;
+      border-bottom: none;
+      display: block;
+      position: absolute;
+      top: -11px;
+      left: 3px;
+      transform: rotate(15deg);
+    }
+  }
+  .cocktail__glass-long {
+    position: relative;
+    width: $glass-long-w;
+    height: $glass-long-h;
+    border: 1px solid $glass-boder-color;
+    border-top: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    &:after {
+      content: "";
+      background: $tom-collins;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 0;
+      animation: fill-long 0.6s forwards ease;
+    }
+  }
+  .orange {
+    @include orange(
+      12px,
+      -4px,
+      rotate(15deg),
+      float-simple 3s infinite alternate linear
+    );
+  }
+}
+
+.cocktail__glass-classic {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: $glass-classic-w solid transparent;
+  border-right: $glass-classic-w solid transparent;
+  border-top: $glass-classic-w solid rgba(255, 255, 255, 0.3);
+  /* 填滿果汁 */
+  &:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: ($glass-classic-w - 7) solid transparent;
+    border-right: ($glass-classic-w - 7) solid transparent;
+    border-top: ($glass-classic-w - 7) solid lighten($martini, 50%);
+    position: absolute;
+    top: -20px;
+    left: #{- ($glass-classic-w - 7)};
+    animation: fill-classic 0.6s forwards ease;
+    transform: translate3d(0, 0, 0) scale(0);
+    transform-origin: 50% bottom;
+  }
+}
+
+@keyframes float {
+  50% {
+    transform: rotate(260deg) translate3d(-2px, 1px, 0);
+  }
+}
+
+@keyframes float-simple {
+  50% {
+    transform: rotate(15deg) translate3d(0px, 2px, 0);
+  }
+}
+
+@keyframes fill-classic {
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes fill-long {
+  100% {
+    height: ($glass-long-h - 10px);
+  }
+}
+
+@keyframes fill-short {
+  100% {
+    height: ($glass-short-h - 5px);
+  }
+}

@@ -153,6 +153,8 @@ var vm = new Vue({
   }
 });
 
+var tagname=$("path").eq(0).attr("data-name");
+vm.filter=tagname;
 $("path").mouseenter(function(e){
   var tagname=$(this).attr("data-name");
   vm.filter=tagname;

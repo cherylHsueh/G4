@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/forgetPsw.css">
+    <title>忘記密碼</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="libs/gsap/src/minified/TweenMax.min.js"></script>
+
+    <script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+
+    <script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+    <script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <input type="checkbox" name="" id="hb_control">
+        <nav>
+            <svg preserveAspectRatio="none" id="svg-2" viewBox="0 0 100 80" enable-background="new 0 0 100 80">
+                <animate dur="2s" attributeName="x" repeatCount="indefinite" from="0" to="100" xlink:href="#wave"></animate>
+                <defs>
+                    <filter id="f4" x="0" y="0" width="100%" height="100%">
+                        <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0"></feOffset>
+                        <feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"></feColorMatrix>
+                        <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="2"></feGaussianBlur>
+                        <feBlend in="SourceGraphic" in2="blurOut" mode="normal"></feBlend>
+                    </filter>
+                </defs>
+                <path x="0" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)"
+                    id="wave"></path>
+                <path x="30" y="0" d="M 100,0 L 0,0 L 0,65 Q 12.5,80 25,65T 50,65 Q62.5,80 75,65 T 100,65Z" filter="url(#f4)"
+                    id="wave2"></path>
+            </svg>
+            <div class="ph_nav">
+                <label for="hb_control" class="hb"><span></span></label>
+                <a href="index.html">
+                    <h1 class="phone_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
+                </a>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li class="menu_item"><a href="diy.html">果汁DIY</a></li>
+                    <li class="menu_item"><a href="product.html">果然特調</a></li>
+                    <li><a href="index.html">
+                            <h1 class="menu_logo"><img src="images/logo.png" alt="果然配">果然配</h1>
+                        </a> </li>
+                    <li class="menu_item"><a href="blog.html">果然私藏</a></li>
+                    <li class="menu_item"><a href="about.html">關於果然</a></li>
+                </ul>
+            </div>
+            <div class="nav_mem">
+                <p><a href="login.html">登入</a></p>
+                <div class="mem_pic"><a href="member.html"><img src="images/user.png" alt="會員中心"></a></div>
+                <div class="mem_pic"><a href="cart.html"><img src="images/cart.png" alt="購物車"></a></div>
+            </div>
+        </nav>
+        <div class="coupon"><img src="images/coupon.png" alt="優惠小遊戲"></div>
+        <div class="robot"><img src="images/robot.png" alt="果然配客服機器人"></div>
+    </header>
+    <div class="nav_space"></div>
+    <section>
+        <div class="nav clearfix"></div>
+    </section>
+    <section class="forgetPsw_session">
+        <!-- 小鳥飛 -->
+        <div id="pictureframe">
+            <div id="bird">
+                <div id="body2"></div>
+                <div id="body1"></div>
+                <div id="wing-l"></div>
+                <div id="wing-r"></div>
+            </div>
+            <div id="shadow"></div>
+        </div>
+        <div class="forgetPsw clearfix">
+            <div class="forgetPsw_explain cl-md-7">
+                <div class="forgetPsw_explain_box">
+                    <p>本系統將以手機號碼識別會員資訊， 請輸入您的手機號碼， 若經系統核對正確無誤,即可更改密碼。
+                    </p>
+                </div>
+                <div class="psw_store">
+                    <img src="images/member/store.png" alt="">
+                    <div class="guava">
+                        <img src="images/guava.png" alt="">
+                    </div>
+                    <div class="banana">
+                        <img src="images/b-fruit/banana.png" alt="">
+                    </div>
+                    <div class="banana2">
+                        <img src="images/b-fruit/banana.png" alt="">
+                    </div>
+                    <div class="cantaloupe">
+                        <img src="images/cantaloupe.png" alt="">
+                    </div>
+                    <div class="apple">
+                        <img src="images/apple.png" alt="">
+                    </div>
+                    <div class="grape">
+                        <img src="images/orange.png" alt="">
+                    </div>
+                    <div class="pineapple">
+                        <img src="images/pineapple.png" alt="">
+                    </div>
+                    <div class="watermelon">
+                        <img src="images/watermelon.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="forgetPsw_newmem cl-md-5">
+
+                <div class="cloud">
+                    <img src="images/about/cloud(03).png" alt="">
+                </div>
+                <div class="cloud2">
+                    <img src="images/about/cloud(01).png" alt="">
+                </div>
+
+                <div class="forgetPsw_newPsw_box">
+                    <h2>忘記密碼</h2>
+                    <div class="psw_inner">
+                        <div class="box_phone">
+                            <span>手機:</span>
+                            <input type="text" name="memId">
+                        </div>
+                        <div class="box_psw">
+                            <span>新密碼 :</span>
+                            <input type="text" name="memPsw">
+                        </div>
+                        <div class="psw_btn">
+                            <button class="common_btn common_btn_first" type="submit" id="newpswsubmit" value="登入">
+                                <span class="common_btn_txt">送出</span>
+                                <div class="common_btn_blobs">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </button>
+                            <div class="add_mem">
+                                <h3>還沒有會員?
+                                    <span class="apply">
+                                        <a href="signUp.html">立即申請</span>
+                                    </a>
+                                </h3>  
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="draft">
+                    <img src="images/member/ru_plant.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer_wrapper">
+            <div class="footer_block clearfix">
+                <div class="footer_rightBox">
+                    <div class="footer_rightContent">
+                        <p class="desc">地址:桃園市中壢區中大路111號</p>
+                        <p class="desc">電話:(03)49111853</p>
+                        <p class="copyright">Copyright © All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

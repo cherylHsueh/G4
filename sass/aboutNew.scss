@@ -1,0 +1,2035 @@
+@import "reset";
+@import "global";
+@import "nav";
+
+* {
+  // outline:1px solid red;
+}
+header nav  li:nth-child(5) > a:after {
+  transform: scaleX(1);
+}
+p {
+  text-align: justify;
+}
+
+//關於我們 第一屏 共用
+.about_start {
+  width: 25%;
+  height: 100vh;
+  background-color:$sky;
+  // overflow: hidden;
+  float: left;
+}
+.about_start_background_block {
+  position: relative;
+}
+//關於我們 第二屏 小農合作 公用
+// .about_cooperation_grass_background{
+// 	width: 100%;
+// 	height: 100vh;
+// 	position: relative;
+// 	background-color:#D9E021;
+// }
+.about_factory {
+  width: 25%;
+  height: 100vh;
+  background-color: $sky;
+  float: left;
+}
+.about_end {
+  width: 25%;
+  height: 100vh;
+  background-color: $sky;
+  float: left;
+  position: relative;
+}
+
+.about_factory_background_block {
+  position: relative;
+}
+
+.about_factory_grass_background {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: $sky;
+}
+
+.about_bigwrapper {
+  width: 400vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+//第四屏 台灣地圖 公用
+#app {
+  position: relative;
+  width: 25%;
+  height: 100vh;
+  float: left;
+}
+
+.forcast h4 {
+  padding: 5% 0;
+}
+
+path {
+  stroke: white;
+  fill: transparent;
+  transition: 0.5s;
+  cursor: pointer;
+}
+path:hover {
+  fill: #b99362;
+  -webkit-transform: translate(-5px, -5px);
+  transform: translate(-5px, -5px);
+}
+
+.taiwan1 {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+.forcast h2,
+.forcast h4,
+.forcast h5 {
+  margin: 0;
+}
+
+#e468a7aa-2bdf-4501-b48d-35483b7c8ccc,
+#ae9239f1-7686-4c40-a5f8-f322391c7328 {
+  fill: red;
+}
+#f8107e5f-0c12-4631-aed9-d525f4e8558d,
+#a66958373-17e2-4fab-8b83-b16e2d323782,
+#a1e48e0bb-8964-4121-b347-b900162cf771,
+#a21535635-db1e-4831-a63f-263ab3ed4b79,
+#a65175d47-0a21-4bf1-abfb-b58e4d3069a0,
+#ea41be52-3728-49f2-aa36-b90633ee55f6,
+#a350fa9bc-d25e-4c61-ae4b-b5c60b1a74b6 {
+  fill: orange;
+}
+#a7ed22330-8901-4fc6-a351-206f6b2daf2b,
+#ffd01e75-6ce2-4cfa-af98-bc61479c68ed,
+#a30e45b59-571b-4340-a006-0ba62460619a,
+#d5701392-fc06-4411-bf79-2703f225ab2e,
+#a4eed8214-870d-46ff-b77b-49234479d430 {
+  fill: green;
+}
+
+#a2b6aac2d-ce2d-4c48-89d5-ff2a81000e07,
+#ae28d47a-650c-43d9-aedc-c1d11a068993,
+#a0ce2847a-4f9c-4ff7-8c51-6b0fa24ba8b7,
+#e1806d87-d003-48dd-b8d3-3f99b3759340,
+#a21c4ba33-d057-42c1-9c71-be6061fc73cf {
+  fill: #36bf36;
+}
+
+//車子上下動畫
+@keyframes shake {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(0px, -6px);
+  }
+}
+//輪子旋轉動畫
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+//雲飛動畫
+@keyframes flutter {
+  0% {
+    transition: transition(0px, 0px);
+  }
+  100% {
+    transform: translate(-300px, 0px);
+  }
+}
+//風車旋轉
+@keyframes rotate{
+  0%{
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+  }
+  100%{
+      transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+  }
+}
+//手指頭左右
+@keyframes gesture {
+  0%{
+    transform: translateX(10px)
+  }
+  100%{
+    transform: translateX(40px)
+  }
+}
+//ru
+// h3{
+//   color: #009245;
+//   padding: 10px;
+//   font-weight: bold;
+//   text-align: center;
+// }
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+@-webkit-keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+.bounce {
+  animation: bounce 0.5s infinite alternate;
+  -webkit-animation: bounce 0.8s infinite alternate;
+}
+
+@include rwd(mobile) {
+
+  // .about_bigwrapper {
+  //   width: 1600px;
+  //   height: 100vh;
+  //   overflow: hidden;
+  // }
+
+  //關於我們 第一屏  手機
+  .about_start_background_block {
+    position: relative;
+    height: 100vh;
+
+  }
+  // 第一屏綠色看版
+  .about_start_info_blcok {
+    width: 80%;
+    background-color: #00ac6f;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    margin: auto;
+    padding: 1% 0;
+    border-radius: 10px;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 15px #00ac6f;
+    z-index: 6;
+  }
+   .about_start_info_blcok_border {
+    width: 85%;
+    margin: auto;
+    text-align: center;
+   }
+   .about_start_formInfo {
+    margin: 2% auto 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    .about_start_formInfo_content {
+      line-height: 1.4;
+      margin: auto;
+      color: #fff;
+      padding: 1%;
+      // border: 1px solid #fff;
+      border-radius: 10px;
+    }
+  }
+  .about_start_background_clould01 {
+    width: 50%;
+    top: 17%;
+    position: absolute;
+    max-width: 190px;
+    animation: flutter 5s linear infinite;
+  }
+  .about_start_background_clould02 {
+    width: 54%;
+    position: absolute;
+    top: 8%;
+    left: 40%;
+    animation: flutter 5s linear infinite;
+  }
+  .about_start_background_clould03 {
+    display: none;
+  }
+  .about_start_content_bounce{
+    width: 14%;
+    position: absolute;
+    bottom: 15%;
+    left: 15%;
+    z-index: 7;
+    img {
+      width: 100%;
+      margin: 10% 0 0;
+      animation: bounce 0.5s infinite alternate;
+    }
+  }
+
+  .farmerLocationIcon {
+    img {
+      width: 30%;
+      margin: 1% 0;
+      position: absolute;
+      bottom: 0;
+      top: 30%;
+      left: 10%;
+    }
+  }
+  .about_start_info_item_title {
+    width: 70%;
+    margin: auto;
+    img {
+      width: 100%;
+      margin-bottom: 10%;
+    }
+  }
+  .about_start_content_orchard {
+    width: 40%;
+    max-width: 150px;
+    position: absolute;
+    bottom: 5px;
+    left: 6px;
+    z-index: 3;
+    img {
+      width: 100%;
+    }
+  }
+  // 左邊籬笆
+  .about_start_content_fence1 {
+    width: 43%;
+    position: absolute;
+    bottom: 14%;
+    left: 0%;
+    z-index: 1;
+    img {
+      width: 100%;
+    }
+  }
+  // 右邊籬笆
+  .about_start_content_fence2 {
+    width: 43%;
+    position: absolute;
+    bottom: 15%;
+    right: 3%;
+    z-index: 1;
+    img {
+      width: 100%;
+    }
+  }
+  // 紅房子
+  .about_start_content_barn {
+    width: 44%;
+    position: absolute;
+    bottom: 11%;
+    left: 24%;
+    z-index: 2;
+    img {
+      width: 100%;
+    }
+  }
+  .about_start_content_mountain01 {
+    width: 140%;
+    position: absolute;
+    left: -15%;
+    bottom: 17%;
+    z-index: 0;
+    img {
+      width: 100%;
+    }
+  }
+  .about_start_content_mountain02 {
+    position: absolute;
+    width: 124%;
+    left: 32.5%;
+    bottom: 16%;
+    z-index: 0;
+    img {
+      width: 100%;
+    }
+  }
+  .about_start_content_flower1 {
+    width: 17%;
+    position: absolute;
+    bottom: 14%;
+    /* right: 0%; */
+    left: 1%;
+    z-index: 2;
+    img {
+      width: 100%;
+    }
+  }
+  .about_start_content_flower2 {
+    width: 16%;
+    position: absolute;
+    bottom: 13%;
+    /* right: 71%; */
+    left: 63%;
+    z-index: 5;
+    transform: rotate(4deg);
+    img {
+      width: 100%;
+    }
+  }
+  .about_start_content_flower3 {
+    width: 16%;
+    /* width: 10%; */
+    position: absolute;
+    bottom: 11%;
+    right: 7%;
+    z-index: 5;
+    img {
+      width: 100%;
+    }
+  }
+  .about_start_content_mountain03 {
+    width: 100%;
+    position: absolute;
+    bottom: 13%;
+    right: -7%;
+    img {
+      width: 100%;
+    }
+  }
+ 
+.about_start_grass {
+  width: 112%;
+  height: 14%;
+  background-color: #d9e021;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  line-height: 140px;
+  .about_start_road01 {
+      width: 100%;
+      position: absolute;
+      bottom: -35%;
+  }
+  .about_start_road02{
+    display: none;
+  }
+}
+
+.about_factory_content_mountain01 {
+  width: 96%;
+  position: absolute;
+  bottom: 14%;
+  left: -1%;
+  z-index: 1;
+  img {
+    width: 100%;
+  }
+}
+.about_factory_content_mountain02 {
+  width: 102%;
+  position: absolute;
+  bottom: 14%;
+  left: -16%;
+  z-index: 0;
+  img {
+    width: 100%;
+  }
+}
+// 第二屏 黃色草
+
+.about_factory_grass {
+  width: 100%;
+  height: 14%;
+  background-color: #d9e021;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  line-height: 109px;
+ .about_factory_road1 {
+    width: 100%;
+    position: absolute;
+    bottom: -19%;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_road2{
+    display: none;
+  }
+
+}
+
+ 
+
+  
+ 
+  .about_start_content_car01 {
+    width: 36%;
+    position: absolute;
+    bottom: 25%;
+    right: 19%;
+    z-index: 3;
+    img {
+      width: 100%;
+      animation: shake 0.3s alternate infinite;
+    }
+  }
+  .about_start_content_car01_tire1 {
+    width: 8%;
+    position: absolute;
+    right: 36%;
+    bottom: 24%;
+    z-index: 4;
+    img {
+      width: 100%;
+      animation: rotate 5s linear infinite;
+    }
+  }
+  .about_start_content_car01_tire2 {
+    width: 8%;
+    position: absolute;
+    right: 21%;
+    bottom: 24%;
+    z-index: 4;
+    img {
+      width: 100%;
+      animation: rotate 5s linear infinite;
+    }
+  }
+
+  //第二屏 手機 小農合作 ru
+
+  .about_factory_background_block {
+    position: relative;
+    height: 100vh;
+  }
+  .about_factory_background_clould01 {
+    width: 50%;
+    position: absolute;
+    max-width: 143px;
+    top: 16%;
+    z-index: 2;
+    animation: flutter 5s linear infinite;
+  }
+  .about_factory_background_clould03 {
+    display: none;
+  }
+
+  .farmerLocationIcon {
+    img {
+      width: 30%;
+      margin: 1% 0;
+      position: absolute;
+      bottom: 0;
+      top: 30%;
+      left: 10%;
+    }
+  }
+
+  .about_factory_content_factoryTitle {
+    width: 14%;
+    max-width: 100px;
+    position: absolute;
+    bottom: 35%;
+    left: 70%;
+    z-index: 2;
+    img {
+      width: 100%;
+      margin-bottom: 15%;
+    }
+  }
+  .factoryTitle {
+    width: 22%;
+    max-width: 155px;
+    position: absolute;
+    left: 14%;
+    bottom: 47%;
+    z-index: 2;
+    img {
+      width: 100%;
+    }
+  }
+
+  .about_factory_content_factory {
+    width: 40%;
+    max-width: 250px;
+    position: absolute;
+    bottom: 14%;
+    left: 44%;
+    z-index: 2;
+    img {
+      width: 100%;
+    }
+  }
+  
+  // 房子旁邊的草
+  .about_factory_content_grass1 {
+    width: 17%;
+    position: absolute;
+    bottom: 10%;
+    right: 47%;
+    z-index: 4;
+    img {
+      width: 100%;
+    }
+  }
+
+
+  // 路燈
+
+
+  .about_factory_content_streetlamp1 {
+    width: 13%;
+    position: absolute;
+    left: 5%;
+    bottom: 9%;
+    z-index: 3;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_content_streetlamp2 {
+    width: 14%;
+    position: absolute;
+    left: 30%;
+    bottom: 9%;
+    z-index: 3;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_content_streetlamp3 {
+    width: 14%;
+    position: absolute;
+    right: 0%;
+    bottom: 9%;
+    z-index: 4;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_content_roadsign {
+    width: 15%;
+    position: absolute;
+    left: 12%;
+    bottom: 9%;
+    z-index: 3;
+    img {
+      width: 100%;
+      margin: -5% 0;
+    }
+  }
+  // 山
+  
+  .about_factory_content_car01 {
+    width: 35%;
+    position: absolute;
+    bottom: 26%;
+    left: 46%;
+    z-index: 3;
+    img {
+      width: 100%;
+    }
+  }
+
+  .about_factory_info_blcok {
+    width: 46%;
+    background-color: #00ac6f;
+    position: absolute;
+    top: 22%;
+    left: 6%;
+    z-index: 2;
+    right: 0;
+    margin: 0% auto;
+    border: 5px solid #fff;
+    box-shadow: 0 0 0 5px #00ac6f;
+  }
+  .about_factory_bird {
+    width: 40%;
+    left: -18%;
+    top: -5%;
+    position: absolute;
+  }
+
+  .about_factory_info_blcok_border {
+    width: 70%;
+    margin: auto;
+  }
+  .about_factory_info_item_title {
+    width: 80%;
+    margin: 10% auto 0;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_info_item_farmer {
+    width: 50%;
+    margin: 10% auto;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_info_item_cart_straight {
+    width: 35%;
+    margin-left: 6%;
+    display: inline-block;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_info_item_truck_straight {
+    width: 35%;
+    margin-left: 18%;
+    display: inline-block;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_info_item_logo {
+    width: 40%;
+    margin: 10% auto;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_info_item_truck_horizontal,
+  .about_factory_info_item_cart_horizontal {
+    display: none;
+  }
+
+
+  // 第三屏 手機 台灣
+
+  .about_taiwan_background_gesture{
+    width: 15%;
+    position: absolute;
+    top: 58%;
+    left: 30%;
+    img{
+      width: 100%;
+      animation: gesture 1s infinite ease-in-out alternate;
+    }
+  }
+
+//  尖尖的山
+.about_taiwan_background_mountain3 {
+  width: 100%;
+  position: absolute;
+  bottom: 14%;
+  right: 9%;
+
+  img {
+    width: 100%;
+  }
+}
+// 圓山
+.about_taiwan_background_mountain {
+  width: 61%;
+  position: absolute;
+  bottom: 14%;
+  left: 3%;
+  z-index: 1;
+  img {
+    width: 100%;
+  }
+}
+// 風車
+.about_taiwan_background_windmill {
+  width: 26%;
+  position: absolute;
+  bottom: 14%;
+  left: 2%;
+  z-index: 1;
+  img {
+    width: 100%;
+  }
+}
+// 小花
+.about_taiwan_background_grassflowr {
+  width: 11%;
+    position: absolute;
+    bottom: 13%;
+    left: -3%;
+    z-index: 3;
+  img {
+    width: 100%;
+  }
+}
+// 下面的地和路
+
+.about_taiwan_background_grass {
+  width: 100%;
+  height: 14%;
+  background-color: #d9e021;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  line-height: 110px;
+  .about_taiwan_background_road1{
+    width: 100%;
+    position: absolute;
+    bottom: -19%;
+    img{
+      width: 100%;
+    }
+  }
+ .about_taiwan_background_road2 {
+    display: none;
+  }
+}
+ 
+  // 小羊
+
+  .about_taiwan_background_sheep {
+    width: 75%;
+    position: absolute;
+    bottom: 52%;
+    left: 9%;
+    img {
+      width: 100%;
+    }
+  }
+  // 小羊旁邊的植物
+  .about_taiwan_background_tree {
+    width: 14%;
+    position: absolute;
+    right: 5%;
+    bottom: 49%;
+    img {
+      width: 100%;
+    }
+  }
+  .about_taiwan_background_treeflower {
+    width: 8%;
+    position: absolute;
+    right: 1%;
+    bottom: 21%;
+    img {
+      width: 100%;
+    }
+  }
+  .about_taiwan_background_smallgrass {
+    width: 8%;
+    position: absolute;
+    bottom: 22%;
+    right: 18%;
+    img {
+      width: 100%;
+    }
+  }
+  //重要的  台灣地圖
+  .taiwan1 {
+    width: 80%;
+    height: 100vh;
+    position: relative;
+    top: 5%;
+    left: 7%;
+}
+  #cf503461-00bd-459a-aeb5-062ebc913211 {
+    width: 80%;
+    height: 100vh;
+    position: absolute;
+    bottom: 8%;
+    left: -14%;
+  }
+
+
+
+  //第四屏 手機 消費者房子
+  #section3 {
+    background-color: $sky;
+    height: 100vh;
+  }
+ 
+  .about_end_background {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+ 
+  }
+  // 左邊一盆
+  .about_end_background_flowerpot{
+    width: 10%;
+    position: absolute;
+    bottom: 13%;
+    left: -7%;
+    z-index: 3;
+    img {
+      width: 100%;
+    }
+  }
+  .about_end_background_shadow {
+    width: 100%;
+    position: absolute;
+    bottom: 13%;
+    img {
+      width: 100%;
+    }
+  }
+  .about_end_background_house1 {
+    width: 100%;
+    position: absolute;
+    bottom: 14%;
+    img {
+      width: 100%;
+    }
+  }
+  .about_end_background_house2 {
+    width: 20%;
+    position: absolute;
+    bottom: 0%;
+    right: -40%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .about_end_background_bounce {
+    width: 14%;
+    position: absolute;
+    bottom: 30%;
+    left: 4%;
+    z-index: 7;
+    img {
+      width: 100%;
+      margin: 10% 0 0;
+      animation: bounce 0.5s infinite alternate;
+    }
+  }
+  .about_end_background_streetlight1{
+    width: 10%;
+    position: absolute;
+    left: 5%;
+    bottom: 13%;
+    z-index: 2;
+    img {
+      width: 100%;
+    }
+  }
+  .about_end_background_streetlight2{
+    width: 10%;
+    position: absolute;
+    left: 37%;    
+    bottom: 13%;    
+  }
+  .about_end_background_streetlight3{
+    width: 10%;
+    position: absolute;
+    right: 25%;
+    bottom: 13%; 
+  }
+  .about_end_background_truck {
+    width: 40%;
+    position: absolute;
+    bottom: 3%;
+    left: 7%;
+    z-index: 5;
+    img {
+      width: 100%;
+      animation: shake 0.3s alternate infinite;
+    }
+  }
+  // 手機板最後一瓶的樹
+
+  .about_end_background_tree1 {
+    width: 10%;
+    position: absolute;
+    left: 11%;
+    bottom: 11%;
+    z-index: 3;
+    img {
+      width: 100%;
+    }
+  }
+  .about_end_background_tree2 {
+    width: 10%;
+    position: absolute;
+    left: 45%;
+    bottom: 11%;
+    z-index: 4;
+    img {
+      width: 100%;
+    }
+  }
+  .about_end_background_tree3 {
+    width: 10%;
+    position: absolute;
+    right: 12%;
+    bottom: 11%;
+    z-index: 3;
+    img {
+      width: 100%;
+    }
+  }
+  .about_end_background_soil {
+    width: 100%;
+    height: 18%;
+    background-color: #c69c6d;
+    position: absolute;
+    bottom: -4%;
+    z-index: 2;
+    line-height: 110px;
+    .about_end_background_soil_road1 {
+      width: 100%;
+      position: absolute;
+      bottom: 8%;
+      left: 0;
+      img {
+        width: 100%;
+      }
+    }
+    .about_end_background_soil_road2{
+      display:none;
+    }
+    .about_end_background_soil_road3{
+      display:none;
+    }
+  }
+ 
+
+  .about_end_background_house2{
+    display:none;
+  }
+
+  
+
+  .title_area {
+    width: 45%;
+    height: 30%;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    color: white;
+    font-size: 30px;
+    padding: 2%;
+  }
+
+  .forcast {
+    width: 90%;
+    height: 77%;
+    h5 {
+      font-size: 18px;
+    }
+  }
+
+ 
+  .about_taiwan_background_cloud {
+    width: 20%;
+    position: absolute;
+    top: 12%;
+    img {
+      width: 100%;
+      animation: flutter 5s linear infinite;
+    }
+  }
+  .about_taiwan_background_cloud2 {
+    width: 30%;
+    position: absolute;
+    left: 61%;
+    top: 13%;
+    z-index: -2;
+    img {
+      width: 100%;
+      animation: flutter 5s linear infinite;
+    }
+  }
+  .about_taiwan_background_mountain2{
+    display: none;
+  }
+
+  //手機版 綠色資訊框
+  .about_cooperation_info_blcok {
+    width: 60%;
+    background-color: #00ac6f;
+    position: absolute;
+    top: 27%;
+    left: 0%;
+    right: 0;
+    margin: 0% auto;
+    padding: 1% 0;
+    border: 5px solid #fff;
+    box-shadow: 0 0 0 20px #00ac6f;
+    z-index: 6;
+    line-height: 1.2;
+  }
+  .about_cooperation_info_blcok_border {
+    width: 80%;
+    margin: auto;
+  }
+  .about_end_formInfo {
+    margin: 1% auto 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;}
+
+    .about_end_formInfo_content {
+      line-height: 1.5;
+      margin: auto;
+      color: #fff;
+      padding: 1%;
+      border-radius: 10px;
+    }
+  
+  .about_cooperation_info_item_title {
+    width: 80%;
+    margin: auto;
+    img {
+      width: 100%;
+    }
+  }
+  .about_truck{
+    width: 11%;
+    position: absolute;
+    left: 9%;
+    bottom: 3%;
+  }
+}
+
+@include rwd(medium) {
+  //關於我們 第一屏  桌機
+  .about_start_info_blcok {
+    width: 40%;
+    background-color: #00ac6f;
+    position: absolute;
+    top: 20%;
+    left: 36%;
+    margin: auto;
+    padding: 4% 0 0;
+    border-radius: 10px;
+    border: 10px solid #fff;
+    box-shadow: 0 0 0 15px #00ac6f;
+    z-index: 6;
+  }
+  .about_start_info_blcok_border {
+    width: 85%;
+    margin: auto;
+    text-align: center;
+  }
+  .about_start_info_item_title {
+    width: 70%;
+    margin: auto;
+    img {
+      width: 100%;
+  
+    }
+  }
+
+  .about_start_formInfo {
+    margin: 2% auto 0;
+    width: 100%;
+    height: 100%;
+    .about_start_formInfo_content {
+      line-height: 1.6;
+      margin: auto;
+      color: #fff;
+      padding: 8% 5%;
+    }
+  }
+
+  .about_start_background_block {
+    position: relative;
+    height: 100vh;
+  }
+  .about_start_background_clould01 {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 20%;
+    animation: flutter 5s linear infinite;
+  }
+  .about_start_background_clould03 {
+    width: 20%;
+    position: absolute;
+    right: 1%;
+    top: 20%;
+    animation: flutter 5s linear infinite;
+  }
+
+  .about_start_content_bounce {
+    width: 6%;
+    position: absolute;
+    bottom: 42%;
+    left: 10%;
+    img {
+      width: 100%;
+      margin: 10% 0 0;
+      animation: bounce 0.5s infinite alternate;
+    }
+  }
+
+  .about_start_content_orchard {
+    width: 30%;
+    position: absolute;
+    bottom: 4%;
+    z-index: 3;
+    img {
+      width: 100%;
+    }
+  }
+  .about_start_content_fence1 {
+    width: 18%;
+    position: absolute;
+    bottom: 18%;
+    left: 32%;
+    z-index: 3;
+    img {
+      width: 100%;
+    }
+  }
+  .about_start_content_fence2 {
+    width: 18%;
+    position: absolute;
+    bottom: 18%;
+    right: 16%;
+    z-index: 3;
+    img {
+      width: 100%;
+    }
+  }
+  .about_start_content_barn {
+    width: 20%;
+    position: absolute;
+    bottom: 18%;
+    left: 48%;
+    z-index: 5;
+    img {
+      width: 100%;
+    }
+  }
+  .about_start_content_mountain01 {
+    position: absolute;
+    width: 100%;
+    right: -5%;
+    bottom: 18%;
+    z-index: 2;
+    img {
+      width: 100%;
+    }
+  }
+  .about_start_content_mountain02 {
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    bottom: 18%;
+    z-index: 1;
+    img {
+      width: 100%;
+    }
+  }
+
+  .about_start_content_mountain03 {
+    width: 75%;
+    position: absolute;
+    bottom: 18%;
+    right: -17%;
+    z-index: 1;
+    img {
+      width: 100%;
+    }
+  }
+  .about_start_content_flower1 {
+    width: 10%;
+    position: absolute;
+    bottom: 14%;
+    right: 21%;
+    z-index: 5;
+    img {
+      width: 100%;
+    }
+  }
+  .about_start_content_flower2 {
+    width: 9%;
+    position: absolute;
+    bottom: 16%;
+    right: 10%;
+    z-index: 5;
+    transform: rotate(6deg);
+    img {
+      width: 100%;
+    }
+  }
+  .about_start_content_flower3 {
+    width: 10%;
+    position: absolute;
+    bottom: 13%;
+    right: 0%;
+    z-index: 5;
+    img {
+      width: 100%;
+    }
+  }
+  .about_start_grass {
+    width: 100%;
+    height: 18%;
+    background-color: #d9e021;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    line-height: 110px;
+    .about_start_road01 {
+      width: 60%;
+      position: absolute;
+      bottom: 5%;
+      img {
+        width: 100%;
+      }
+    }
+    .about_start_road02 {
+      width: 60%;
+      position: absolute;
+      bottom: 5%;
+      right: 0;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .about_start_content_car01 {
+    width: 25%;
+    position: absolute;
+    top: 58%;
+    right: 5%;
+    z-index: 4;
+    img {
+      width: 100%;
+      animation: shake 0.3s alternate infinite;
+    }
+  }
+  .about_start_content_car01_tire1 {
+    width: 5%;
+    position: absolute;
+    right: 17%;
+    bottom: 19%;
+    z-index: 6;
+    img {
+      width: 100%;
+      animation: rotate 5s linear infinite;
+    }
+  }
+  .about_start_content_car01_tire2 {
+    width: 5%;
+    position: absolute;
+    right: 7%;
+    bottom: 19%;
+    z-index: 6;
+    img {
+      width: 100%;
+      animation: rotate 5s linear infinite;
+    }
+  }
+
+  // .about_cooperation_rightRoad{
+  // 	width: 10%;
+  // 	height: 100vh;
+  // 	position: absolute;
+  // 	right: 0;
+  // 	top:-11%;
+  // 	margin: 0 5%;
+  // 	z-index: 2;
+  // 	img{
+  // 		width: 100%;
+  // 	}
+  // }
+  // .about_cooperation_info_item_farmer{
+  // 	width: 20%;
+  // 	margin:2% 10%;
+  // 	display: inline-block;
+  // 	img{
+  // 		width: 100%;
+  // 	}
+  // }
+  // .about_cooperation_info_item_truck_horizontal{
+  // 	width: 35%;
+  // 	margin: auto;
+  // 	img{
+  // 		width: 100%;
+  // 	}
+  // }
+  // .about_cooperation_info_item_logo{
+  // 	width: 16%;
+  // 	display: inline-block;
+  // 	margin-left: 35%;
+  // 	img{
+  // 		width: 100%;
+  // 	}
+  // }
+  // .about_cooperation_info_item_cart_horizontal{
+  // 	width: 35%;
+  // 	margin: 3% auto;
+  // 	img{
+  // 		width: 100%;
+  // 	}
+  // }
+
+  // .about_cooperation_info_item_cart_straight,.about_cooperation_info_item_truck_straight{
+  // 	display: none;
+  // }
+
+  //第二屏 小農合作 桌機 ru
+  // .about_factory_grass_background{
+  // 	top: 20%;
+  // }
+  .about_factory_background_block {
+    position: relative;
+    height: 100vh;
+  }
+  .about_factory_background_clould01 {
+    position: absolute;
+    width: 15%;
+    top: 15%;
+    left: 5%;
+    z-index: 3;
+    animation: flutter 5s linear infinite;
+  }
+  .about_factory_background_clould03 {
+    width: 20%;
+    position: absolute;
+    right: 5%;
+    top: 20%;
+    animation: flutter 5s linear infinite;
+  }
+
+  .about_factory_content_factoryTitle {
+    position: absolute;
+    z-index: 2;
+    width: 6%;
+    max-width: 120px;
+    right: 16%;
+    top: 20%;
+    img {
+      margin: 10% 0 0;
+      width: 100%;
+    }
+  }
+  .factoryTitle {
+    width: 15%;
+    max-width: 170px;
+    position: absolute;
+    left: 10%;
+    top: 38%;
+    z-index: 4;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_content_factory {
+    width: 27%;
+    position: absolute;
+    bottom: 18%;
+    right: 15%;
+    z-index: 3;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_content_pine {
+    width: 12%;
+    position: absolute;
+    right: -5%;
+    bottom: 16%;
+    z-index: 3;
+    img {
+      width: 100%;
+    }
+  }
+
+  .about_factory_content_mountain01 {
+    width: 100%;
+    position: absolute;
+    bottom: 18%;
+    left: 0%;
+    z-index: 2;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_content_mountain02 {
+    width: 80%;
+    position: absolute;
+    bottom: 18%;
+    left: -36%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .about_factory_content_grass1 {
+    width: 17%;
+    position: absolute;
+    bottom: 13%;
+    right: 47%;
+    z-index: 4;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_grass {
+    width: 100%;
+    height: 18%;
+    background-color: #d9e021;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    line-height: 110px;
+    .about_factory_road1 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      img {
+        width: 100%;
+      }
+    }
+    .about_factory_road2 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      right: 0;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .about_factory_content_streetlamp1 {
+    width: 8%;
+    position: absolute;
+    left: 5%;
+    bottom: 11%;
+    z-index: 3;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_content_streetlamp2 {
+    width: 8%;
+    position: absolute;
+    left: 30%;
+    bottom: 11%;
+    z-index: 3;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_content_streetlamp3 {
+    width: 8%;
+    position: absolute;
+    right: 0%;
+    bottom: 11%;
+    z-index: 4;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_content_roadsign {
+    width: 10%;
+    position: absolute;
+    left: 15%;
+    bottom: 14%;
+    z-index: 3;
+    img {
+      width: 100%;
+      margin: -5% 0;
+    }
+  }
+  .about_factory_content_car01 {
+    width: 25%;
+    position: absolute;
+    bottom: 20%;
+    left: 28%;
+    z-index: 4;
+    img {
+      width: 100%;
+    }
+  }
+
+  .about_factory_info_blcok {
+    width: 35%;
+    //   max-width: 800px;
+    background-color: #00ac6f;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    right: 0;
+    margin: 3% auto;
+    padding: 1% 0;
+    z-index: 1;
+    border: 10px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 0 20px #00ac6f;
+    position: relative;
+  }
+  .about_factory_bird {
+    width: 18%;
+    top: -6%;
+    left: -8%;
+    position: absolute;
+  }
+
+  .about_factory_info_blcok_border {
+    width: 65%;
+    margin: auto;
+  }
+  .about_factory_info_item_title {
+    width: 70%;
+    margin: 5% auto 0;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_info_item_farmer {
+    width: 20%;
+    margin: 2% 10%;
+    display: inline-block;
+    img {
+      width: 130%;
+    }
+  }
+  .about_factory_info_item_truck_horizontal {
+    width: 35%;
+    margin: auto;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_info_item_logo {
+    width: 20%;
+    display: inline-block;
+    margin-left: 35%;
+    img {
+      width: 130%;
+    }
+  }
+  .about_factory_info_item_cart_horizontal {
+    width: 35%;
+    margin: 3% auto;
+    img {
+      width: 100%;
+    }
+  }
+  .about_factory_info_item_cart_straight,
+  .about_factory_info_item_truck_straight {
+    display: none;
+  }
+
+  //第三屏 桌機 台灣地圖
+
+  #cf503461-00bd-459a-aeb5-062ebc913211 {
+    width: 25%;
+    height: 100vh;
+    position: absolute;
+    bottom: 5%;
+    z-index: 2;
+    left: 25%;
+  }
+
+  .title_area {
+    width: 25%;
+    position: absolute;
+    left: 50%;
+    top: 19%;
+    color: white;
+    font-size: 22px;
+    padding: 2%;
+    z-index: 2;
+  }
+
+  .about_taiwan_background_gesture{
+    width: 5%;
+    position: absolute;
+    top: 38%;
+    left: 44%;
+    img{
+      width: 100%;
+      animation: gesture 1s infinite ease-in-out alternate;
+    }
+  }
+  .about_taiwan_background_mountain {
+    width: 70%;
+    position: absolute;
+    bottom: 14%;
+    left: 0%;
+    z-index: 1;
+    img {
+      width: 100%;
+    }
+  }
+
+  .about_taiwan_background_mountain2 {
+    width: 100%;
+    position: absolute;
+    bottom: 18%;
+    left: -25%;
+    img {
+      width: 100%;
+    }
+  }
+  .about_taiwan_background_mountain3 {
+    width: 100%;
+    position: absolute;
+    bottom: 18%;
+    right: 0%;
+    img {
+      width: 100%;
+    }
+  }
+  .about_taiwan_background_windmill {
+    width: 15%;
+    position: absolute;
+    bottom: 18%;
+    left: 6%;
+    z-index: 1;
+    img {
+      width: 100%;
+    }
+  }
+.about_taiwan_background_windmillFan{
+  width: 20%;
+  position: absolute;
+  left: 4%;
+  bottom: 30%;
+  z-index: 1;
+  img{
+    width: 100%;
+    animation: rotate 2s infinite linear;
+  }
+}
+
+
+  .about_taiwan_background_grassflowr {
+    width: 7%;
+    position: absolute;
+    bottom: 13%;
+    left: 2%;
+    z-index: 3;
+    img {
+      width: 100%;
+    }
+  }
+
+  .about_taiwan_background_grass {
+    width: 100%;
+    height: 18%;
+    background-color: #d9e021;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    line-height: 110px;
+    .about_taiwan_background_road1 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      img {
+        width: 100%;
+      }
+    }
+    .about_taiwan_background_road2 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      right: 0;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .about_taiwan_background_road {
+    width: 30%;
+    display: inline-block;
+    vertical-align: middle;
+    img {
+      width: 100%;
+    }
+  }
+
+  .about_taiwan_background_sheep {
+    width: 60%;
+    position: absolute;
+    bottom: 85%;
+    left: 9%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .about_taiwan_background_tree {
+    width: 12%;
+    position: absolute;
+    right: 5%;
+    bottom: 74%;
+    img {
+      width: 100%;
+    }
+  }
+  .about_taiwan_background_treeflower {
+    width: 8%;
+    position: absolute;
+    right: 1%;
+    bottom: 52%;
+    img {
+      width: 100%;
+    }
+  }
+  .about_taiwan_background_smallgrass {
+    width: 5%;
+    position: absolute;
+    bottom: 44%;
+    right: 18%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .about_taiwan_background_cloud {
+    width: 20%;
+    position: absolute;
+    top: 20%;
+    left: -30%;
+    img {
+      width: 100%;
+      animation: flutter 5s linear infinite;
+    }
+  }
+
+  .about_taiwan_background_cloud2 {
+    width: 20%;
+    position: absolute;
+    left: 16%;
+    top: 20%;
+    img {
+      width: 100%;
+      animation: flutter 5s linear infinite;
+    }
+  }
+
+  //關於我們  綠色資訊框  桌機
+
+  .about_cooperation_info_blcok {
+    width: 40%;
+    background-color: #00ac6f;
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    margin: auto;
+    padding: 4% 0;
+    border-radius: 10px;
+    border: 10px solid #fff;
+    box-shadow: 0 0 0 20px #00ac6f;
+    z-index: 6;
+}
+  .about_cooperation_info_blcok_border {
+    width: 85%;
+    margin: auto;
+    text-align: center;
+  }
+  .about_cooperation_info_item_title {
+    width: 70%;
+    margin: auto;
+    img {
+      width: 100%;
+      margin-bottom: 10%;
+    }
+  }
+
+  //第四屏 消費者城市 桌機
+  .about_end{
+    position: relative;
+  }
+
+  .about_end_background {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 18%);
+  }
+  .about_end_background_shadow {
+    width: 100%;
+    position: absolute;
+    bottom: -8%;
+    left: 5%;
+    img {
+      width: 100%;
+    }
+  }
+  .about_end_background_house1 {
+    width: 70%;
+    position: absolute;
+    bottom: 0%;
+    left: 5%;
+    img {
+      width: 100%;
+    }
+  }
+  .about_end_background_house2 {
+    width: 70%;
+    position: absolute;
+    bottom: 0%;
+    right: -4%;
+    img {
+      width: 100%;
+    }
+  }
+  .about_end_background_flowerpot {
+    width: 10%;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .about_end_background_bounce {
+    width: 6%;
+    position: absolute;
+    bottom: 35%;
+    left: 20%;
+    img {
+      width: 100%;
+      margin: 10% 0 0;
+      animation: bounce 0.5s infinite alternate;
+    }
+  }
+  .about_end_background_streetlight1 {
+    width: 11%;
+    position: absolute;
+    left: 10%;
+    bottom: -7%;
+    z-index: 2;
+    img {
+      width: 100%;
+    }
+  }
+  .about_end_background_streetlight2 {
+    width: 11%;
+    position: absolute;
+    left: 60%;
+    bottom: -7%;
+    z-index: 2;
+    img {
+      width: 100%;
+    }
+  }
+  .about_end_background_streetlight3 {
+    width: 11%;
+    position: absolute;
+    left: 80%;
+    bottom: -7%;
+    z-index: 2;
+    img {
+      width: 100%;
+    }
+  }
+  .about_end_background_tree1 {
+    width: 8%;
+    position: absolute;
+    left: 20%;
+    bottom: -6%;
+    z-index: 3;
+    img {
+      width: 100%;
+    }
+  }
+  .about_end_background_tree2 {
+    width: 8%;
+    position: absolute;
+    left: 40%;
+    bottom: -6%;
+    z-index: 4;
+    img {
+      width: 100%;
+    }
+  }
+  .about_end_background_tree3 {
+    width: 8%;
+    position: absolute;
+    left: 65%;
+    bottom: -6%;
+    z-index: 4;
+    img {
+      width: 100%;
+    }
+  }
+  .about_end_background_truck {
+    width: 25%;
+    position: absolute;
+    bottom: -10%;
+    left: 10%;
+    z-index: 3;
+    img {
+      width: 100%;
+      animation: shake 0.3s alternate infinite;
+    }
+  }
+ 
+  .about_end_background_soil {
+    width: 100%;
+    height: 18%;
+    background-color: #c69c6d;
+    position: absolute;
+    bottom: 0%;
+    z-index: 2;
+    line-height: 110px;
+    .about_end_background_soil_road1 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      left: 0;
+      img {
+        width: 100%;
+      }
+    }
+    .about_end_background_soil_road2 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      left: 46%;
+      img {
+        width: 100%;
+      }
+    }
+    .about_end_background_soil_road3 {
+      width: 52%;
+      position: absolute;
+      bottom: 5%;
+      right: 0%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .about_end_formInfo {
+    margin: 2% auto 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    .about_end_formInfo_content {
+      line-height: 1.6;
+      margin: auto;
+      color: #fff;
+      padding: 5%;
+      border: 1px solid #fff;
+      border-radius: 10px;
+    }
+  }
+.about_truck{
+  width: 6%;
+  position: absolute;
+  left: 10%;
+  bottom: 5%;
+  img{
+    width: 100%;
+    animation: shake 0.3s alternate infinite;
+  }
+}
+
+}

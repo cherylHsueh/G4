@@ -1,7 +1,7 @@
 @import "reset";
 @import "global";
 @import "nav";
-// @import "footer";
+@import "footer";
 
 // * {
 //     outline: 1px solid #F00;
@@ -275,6 +275,8 @@
                 width: 80%;
                 color: #6a3906;
                 font-weight: bold;
+                -webkit-appearance: none;
+                border-radius: 0;
 
                 option {
                     font-weight: bold;
