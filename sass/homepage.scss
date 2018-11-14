@@ -2780,6 +2780,12 @@ body{
                     height: 100%;
                     display: inline-block;
                     vertical-align: middle;
+<<<<<<< HEAD
+                }
+                p{
+                    color:#555;
+=======
+>>>>>>> e142f6ff538aab5cb88d1946b2e0a7c5fc4aface
                 }
                 p{
                     color:#555;
@@ -2791,10 +2797,19 @@ body{
                 font-size: 14px;
                 // padding-left:10px;
             }
+            p{
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 14px;
+                // padding-left:10px;
+            }
         }
     }
 //關於果然桌機版
+<<<<<<< HEAD
 
+=======
+>>>>>>> e142f6ff538aab5cb88d1946b2e0a7c5fc4aface
     .homepage_about {
         text-align: center;
         height: 124vh;
