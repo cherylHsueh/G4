@@ -1,12 +1,10 @@
 <?php
+ob_start();
+// session_start();
 $artNo = $_REQUEST['artNo'];
 try {
-	$dsn = "mysql:host=localhost;dbname=cd103g4;port=3306;charset=utf8";
-	$user = "root";
-	$password = "123";
-	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-	$pdo = new PDO( $dsn, $user, $password, $options);
-    $sql = "SELECT b.artNo, b.photo, b.artTitle, b.artContent, b.thumbFq, b.artReportFq, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3, me.mesNo, me.mesContent, me.mesTime, me.mesReportFq From blog b, member m, message me,fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo and b.artNo = me.artNo and b.artNo = $artNo
+    require_once("connectBooks.php");
+    $sql = "SELECT b.artNo, b.photo, b.artTitle, b.cal, b.iron, b.fiber, b.vinC, b.artContent, b.thumbFq, b.artReportFq, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3, me.mesNo, me.mesContent, me.mesTime, me.mesReportFq From blog b, member m, message me,fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo and b.artNo = me.artNo and b.artNo = $artNo
     ";
     $blogs = $pdo -> query( $sql );
 
@@ -22,6 +20,7 @@ try {
     <link rel="stylesheet" type="text/css" href="css/loginFruit.css">
     <link rel="stylesheet" href="css/blog.css">
     <script src='js/global.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
     <script src="js/plugin/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script src="js/blog.js"></script>
 </head>
@@ -102,33 +101,15 @@ try {
 
                             <!-- 私藏分頁的 -->
                             <div class="blog_Rank_ContentBox cl-s-12 clearfix">
-                                <div class="blog_Rank_ContentBox_Block clearfix">
-                                    <div class="blog_Rank_ContentBox_Box">
-                                        <div class="blog_Rank_ContentBox_Item">
-                                            <div class="blog_Rank_ContentBox_Container">
-                                                <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar1"></div>
-                                            </div>
-                                            <p class="blog_Rank_BottomBox_Title">維他命C</p>
+                            <div class="chart diy_pickFruit_rightBox">
+                                            <canvas class="blogcanvas" id="blogmyChart" height="300"></canvas>
                                         </div>
-                                        <div class="blog_Rank_ContentBox_Item">
-                                            <div class="blog_Rank_ContentBox_Container">
-                                                <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar2"></div>
-                                            </div>
-                                            <p class="blog_Rank_BottomBox_Title">鐵質</p>
-                                        </div>
-                                        <div class="blog_Rank_ContentBox_Item">
-                                            <div class="blog_Rank_ContentBox_Container">
-                                                <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar3"></div>
-                                            </div>
-                                            <div class="blog_Rank_BottomBox_Title">膳食纖維</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="blog_Rank_ContentBox_Desc">
-                                    <p>熱量共50Cals</p>
-                                </div>
-                            </div>
+                                        <input type="hidden" id="blogcal" class='blogCal' value="<?php echo $blogRow["cal"]?>">
+                                        <input type="hidden" id="blogiron" class='blogIron' value="<?php echo $blogRow["iron"]?>">
+                                        <input type="hidden" id="blogfiber" class='blogFiber' value="<?php echo $blogRow["fiber"]?>">
+                                        <input type="hidden" id="blogvinc" class='blogVinc' value="<?php echo $blogRow["vinC"]?>">
 
+                                    </div>
 
                             <form action="post">
                             <div class="blogIn_RightBox_ShareContainer clearfix">
@@ -154,7 +135,7 @@ try {
                                     ?>
 
 
-                                    <a href="#message" class="blogIn_RightBox_subButtonItem">
+                                    <a href="#messagearea" class="blogIn_RightBox_subButtonItem">
                                         <div>
                                             <img src="images/blogImg/messagewhite.png" alt="留言">
                                         </div>
@@ -285,7 +266,7 @@ function sendFormthumb(){
 
 
 
-        <section id="message" class="blogIn_Msg">
+        <section id="messagearea" class="blogIn_Msg">
             <div class="umbrellaOrange">
                 <img src="images/blogImg/umbrellaOrange.png" alt="降落傘柳橙">
             </div>
@@ -442,7 +423,8 @@ function $id(id){
       xhr.onload = function (){
         if( xhr.status == 200){
             addItem();
-            sendFormReport();
+            // sendFormReport();
+            // alert('ok');
             $id('blogIn_Msg_Content').value='';
         }else{
           alert(xhr.status);
@@ -452,6 +434,7 @@ function $id(id){
       xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
       
       var data = "artNo=" + $id("artNo").value + "&mes=" + $id("blogIn_Msg_Content").value;
+      alert(data);
       xhr.send(data);    
     }
  function init(){

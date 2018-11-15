@@ -155,9 +155,18 @@ $(function () {
 
 
 //手機輪播
-
-$(".blog_Rank_Container").click(function () {
-
+function init(){
+    //  alert('ok');
+var RankContainer = document.querySelectorAll('.blog_Rank_Container');  
+    for( i=0 ; i<RankContainer.length; i++){  
+        RankContainer[i].addEventListener('click',function(){
+            // alert('ok');
+            mobileturn;
+     });
+    };
+};
+function mobileturn(){
+    // alert('okok');
     if ($(this).attr('data-rank') == 2) {
         for (var i = 1; i <= 3; i++) {
             var rankBox = $("#phone .blog_Rank_Container:nth-child(" + i + ")");
@@ -196,7 +205,10 @@ $(".blog_Rank_Container").click(function () {
         }
 
     }
-})
+};
+window.addEventListener('load', init);
+
+
 
 
 //cloud animation
@@ -231,54 +243,75 @@ window.addEventListener('load', umbrellaAnimation);
 
 //上傳圖檔
 
-$("#picture").change(function(){
-    checkImage( this );
-  });
-function checkImage(input) {
-      var filePath = input.value;
-      if(filePath){
-          //读取图片数据
-          var filePic = input.files[0];
-          var reader = new FileReader();
-          reader.onload = function (e) {
-              var data = e.target.result;
-              //加载图片获取图片真实宽度和高度
-              var image = new Image();
-              image.onload=function(){
-                  var width = image.width;
-                  var height = image.height;
-                  if (width <= 300 | height <= 300){
-                      alert("圖檔上傳成功"); 
-                      if ( input.files && input.files[0] ) {
-                          var FR= new FileReader();
-                          FR.onload = function(e) {
-                          //e.target.result = base64 format picture
-                          $('#viewImg').attr( "src", e.target.result );
-                          $('#viewImg').addClass('imgSize');
-                        //   $('.upload').css( "display","none");
-                          $('.upload').addClass( "upload_active");
-                          };       
-                          FR.readAsDataURL( input.files[0] );
-                      }
-                  }else {
-                      alert("圖檔尺寸不符，尺寸應為300*300！");
-                      file.value = "";
-                      return false;
-                  }
-              };
-              image.src= data;
+// $("#picture").change(function(){
+//     checkImage( this );
+//     alert('ok');
+//   });
+// function checkImage(input) {
+//       var filePath = input.value;
+//       if(filePath){
+//           //读取图片数据
+//           var filePic = input.files[0];
+//           var reader = new FileReader();
+//           reader.onload = function (e) {
+//               var data = e.target.result;
+//               alert(data);
+//               //加载图片获取图片真实宽度和高度
+//               var image = new Image();
+//               image.onload=function(){
+//                   var width = image.width;
+//                   var height = image.height;
+//                   if (width <= 300 | height <= 300){
+//                       alert("圖檔上傳成功"); 
+//                       if ( input.files && input.files[0] ) {
+//                           var FR= new FileReader();
+//                           FR.onload = function(e) {
+//                           //e.target.result = base64 format picture
+//                           $('#viewImg').attr( "src", e.target.result );
+//                           $('#viewImg').addClass('imgSize');
+//                           $('.upload').css( "display","none");
+//                         //   $('.upload').addClass( "upload_active");
+//                           };       
+//                           FR.readAsDataURL( input.files[0] );
+//                       }
+//                   }else {
+//                       alert("圖檔尺寸不符，尺寸應為300*300！");
+//                       file.value = "";
+//                       return false;
+//                   }
+//               };
+//               image.src= reader.result;
               
-          };
-          reader.readAsDataURL(filePic);
+//           };
+//           reader.readAsDataURL(filePic);
          
-      }else{
-          return false;
-      }
-  }
+//       }else{
+//           return false;
+//       }
+//   }
 
-  $("#uploadBtn").click(function(){
-    alert( '上傳成功' );
-  });
+
+// document.getElementById('picture').onchange=function(e){
+//     box = document.getElementById('viewImg');
+//     box.textContent=''
+//     var file = e.target.files[0];
+//     var reader = new FileReader();
+//     reader.onload=function(){
+//      var image = document.createElement('img');
+//      box.appendChild(image);
+//      image.src=reader.result;
+//      image.style.width='150px';
+//      document.getElementById('viewImg').classList.add('imgSize');
+//      document.getElementById('upLoad').classList.add( "upload_active");
+                 
+//     };
+//     reader.readAsDataURL(file);
+//    };
+
+
+//   $("#uploadBtn").click(function(){
+//     alert( '上傳成功' );
+//   });
 
 
 //按讚及收回讚
@@ -367,5 +400,259 @@ function dodeleteIn(){
 }
 window.addEventListener('load',doFirst);
 
+
+
+
+
+
+
+
+//柱狀圖
+
+//前三名
+
+function chart() {
+    mychart1 = document.getElementsByClassName("chartcanvas")[0].id;
+    chartcal1 = document.getElementsByClassName("chartCal")[0].value;
+    chartiron1 = document.getElementsByClassName("chartIron")[0].value;
+    chartfiber1 = document.getElementsByClassName("chartFiber")[0].value;
+    chartvinc1 = document.getElementsByClassName("chartVinc")[0].value;
+    var ctx = document.getElementById(mychart1);
+        var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['熱量', '纖維', '維他命', '鐵質'],
+            datasets: [{
+                label: ['果汁成分 (cal)', '熱量(cal)'],
+                data: [chartcal1, chartiron1, chartfiber1, chartvinc1],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(255, 206, 255, 0.8)',
+                ]
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        } 
+    });
+    
+
+
+    mychart2 = document.getElementsByClassName("chartcanvas")[1].id;
+    chartcal2 = document.getElementsByClassName("chartCal")[1].value;
+    chartiron2 = document.getElementsByClassName("chartIron")[1].value;
+    chartfiber2 = document.getElementsByClassName("chartFiber")[1].value;
+    chartvinc2 = document.getElementsByClassName("chartVinc")[1].value;
+    var ctx = document.getElementById(mychart2);
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['熱量', '纖維', '維他命', '鐵質'],
+            datasets: [{
+                label: ['果汁成分 (cal)', '熱量(cal)'],
+                data: [chartcal2,chartfiber2,chartvinc2,chartiron2],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(255, 206, 255, 0.8)',
+                ]
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+
+    mychart3 = document.getElementsByClassName("chartcanvas")[2].id;
+    chartcal3 = document.getElementsByClassName("chartCal")[2].value;
+    chartiron3 = document.getElementsByClassName("chartIron")[2].value;
+    chartfiber3 = document.getElementsByClassName("chartFiber")[2].value;
+    chartvinc3 = document.getElementsByClassName("chartVinc")[2].value;
+    var ctx = document.getElementById(mychart3);
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['熱量', '纖維', '維他命', '鐵質'],
+            datasets: [{
+                label: ['果汁成分 (cal)', '熱量(cal)'],
+                data: [chartcal3, chartiron3, chartfiber3, chartvinc3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(255, 206, 255, 0.8)',
+                ]
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+
+    mychartM1 = document.getElementsByClassName("chartcanvasM")[0].id;
+    chartcalM1 = document.getElementsByClassName("chartCalM")[0].value;
+    chartironM1 = document.getElementsByClassName("chartIronM")[0].value;
+    chartfiberM1 = document.getElementsByClassName("chartFiberM")[0].value;
+    chartvincM1 = document.getElementsByClassName("chartVincM")[0].value;
+    var ctx = document.getElementById(mychartM1);
+        var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['熱量', '纖維', '維他命', '鐵質'],
+            datasets: [{
+                label: ['果汁成分 (cal)', '熱量(cal)'],
+                data: [chartcalM1, chartironM1, chartfiberM1, chartvincM1],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(255, 206, 255, 0.8)',
+                ]
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        } 
+    });
+    
+
+
+    mychartM2 = document.getElementsByClassName("chartcanvasM")[1].id;
+    chartcalM2 = document.getElementsByClassName("chartCalM")[1].value;
+    chartironM2 = document.getElementsByClassName("chartIronM")[1].value;
+    chartfiberM2 = document.getElementsByClassName("chartFiberM")[1].value;
+    chartvincM2 = document.getElementsByClassName("chartVincM")[1].value;
+    var ctx = document.getElementById(mychartM2);
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['熱量', '纖維', '維他命', '鐵質'],
+            datasets: [{
+                label: ['果汁成分 (cal)', '熱量(cal)'],
+                data: [chartcalM2,chartfiberM2,chartvincM2,chartironM2],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(255, 206, 255, 0.8)',
+                ]
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+
+    mychartM3 = document.getElementsByClassName("chartcanvasM")[2].id;
+    chartcalM3 = document.getElementsByClassName("chartCalM")[2].value;
+    chartironM3 = document.getElementsByClassName("chartIronM")[2].value;
+    chartfiberM3 = document.getElementsByClassName("chartFiberM")[2].value;
+    chartvincM3 = document.getElementsByClassName("chartVincM")[2].value;
+    var ctx = document.getElementById(mychartM3);
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['熱量', '纖維', '維他命', '鐵質'],
+            datasets: [{
+                label: ['果汁成分 (cal)', '熱量(cal)'],
+                data: [chartcalM3, chartironM3, chartfiberM3, chartvincM3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(255, 206, 255, 0.8)',
+                ]
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+
+
+   
+};
+
+window.addEventListener('load', chart);
+
+// 每章文章
+function blogchart(){
+
+     blogcal = document.getElementById("blogcal").value;
+    blogiron = document.getElementById("blogiron").value;
+    blogfiber = document.getElementById("blogfiber").value;
+    blogVinc = document.getElementById("blogvinc").value;
+    var ctx = document.getElementById('blogmyChart');
+    var mychartq = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['熱量', '纖維', '維他命', '鐵質'],
+            datasets: [{
+                label: ['果汁成分 (cal)', '熱量(cal)'],
+                data: [ blogcal, blogiron, blogfiber, blogVinc],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(255, 206, 255, 0.8)',
+                ]
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+}
+window.addEventListener('load', blogchart);
 
 

@@ -1,10 +1,13 @@
 <?php
-// ob_start();
+ob_start();
 // session_start();
 // m.memId = '1' and m.memPsw = '111'
 
 try {
-	require_once("connectBooks.php");
+    require_once("connectBooks.php");
+    $sql = "SELECT b.artNo, b.photo, b.artTitle, b.artContent, b.thumbFq, b.postTime, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3 From blog b, member m, fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo
+    ";
+    $blogs = $pdo -> query( $sql );
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +23,7 @@ try {
      <link rel="stylesheet" type="text/css" href="css/loginFruit.css">       
     <link rel="stylesheet" href="css/blog.css">
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
     <script src="js/plugin/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/plugin/masonry.pkgd.min.js"></script>
     <script src="js/plugin/jquery.gallery.js"></script>
@@ -55,7 +59,7 @@ try {
 $sql = "SELECT b.artNo, b.photo, b.artTitle, b.artContent, b.thumbFq, b.postTime, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3 From blog b, member m, fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo
     ";
 $blogs = $pdo -> query( $sql );
-$sql ="select b.artNo, b.photo, b.artTitle, b.artContent, b.postTime, b.thumbFq, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3
+$sql ="select b.artNo, b.photo, b.cal, b.iron, b.fiber, b.vinC, b.artTitle, b.artContent, b.postTime, b.thumbFq, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3
 from blog b, member m,fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo 
 order by thumbFq desc LIMIT  3";
 $blogRankM = $pdo -> query( $sql );
@@ -111,31 +115,13 @@ while($blogRankMRow = $blogRankM->fetch(PDO:: FETCH_ASSOC)){
                                     <p><?php echo $blogRankMRow["artContent"]?></p>
                                 </div>
                                 <div class="blog_Rank_ContentBox cl-s-12 clearfix">
-                                    <div class="blog_Rank_ContentBox_Block clearfix">
-                                        <div class="blog_Rank_ContentBox_Box">
-                                            <div class="blog_Rank_ContentBox_Item">
-                                                <div class="blog_Rank_ContentBox_Container">
-                                                    <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar1"></div>
-                                                </div>
-                                                <p class="blog_Rank_BottomBox_Title">維他命C</p>
-                                            </div>
-                                            <div class="blog_Rank_ContentBox_Item">
-                                                <div class="blog_Rank_ContentBox_Container">
-                                                    <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar2"></div>
-                                                </div>
-                                                <p class="blog_Rank_BottomBox_Title">鐵質</p>
-                                            </div>
-                                            <div class="blog_Rank_ContentBox_Item">
-                                                <div class="blog_Rank_ContentBox_Container">
-                                                    <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar3"></div>
-                                                </div>
-                                                <div class="blog_Rank_BottomBox_Title">膳食纖維</div>
-                                            </div>
-                                        </div>
+                                    <div class="chart diy_pickFruit_rightBox">
+                                        <canvas class="chartcanvasM" id="myChartM<?php echo $blogRankMRow["artNo"]?>" height="300"></canvas>
                                     </div>
-                                    <div class="blog_Rank_ContentBox_Desc">
-                                        <p>熱量共50Cals</p>
-                                    </div>
+                                    <input type="hidden" id="chartcalM<?php echo $blogRankMRow["artNo"]?>" class='chartCalM' value="<?php echo $blogRankMRow["cal"]?>">
+                                    <input type="hidden" id="chartironM<?php echo $blogRankMRow["artNo"]?>" class='chartIronM' value="<?php echo $blogRankMRow["iron"]?>">
+                                    <input type="hidden" id="chartfiberM<?php echo $blogRankMRow["artNo"]?>" class='chartFiberM' value="<?php echo $blogRankMRow["fiber"]?>">
+                                    <input type="hidden" id="chartvincM<?php echo $blogRankMRow["artNo"]?>" class='chartVincM' value="<?php echo $blogRankMRow["vinC"]?>">
                                 </div>
                             </div>
                         </div>
@@ -156,7 +142,7 @@ $i++;
                 <section id="dg-container" class="dg-container">
                     <div class="dg-wrapper">
 <?php
-$sql ="select b.artNo, b.photo, b.artTitle, b.artContent, b.postTime, b.thumbFq, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3
+$sql ="select b.artNo, b.photo, b.cal, b.iron, b.fiber, b.vinC, b.artTitle, b.artContent, b.postTime, b.thumbFq, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3
 from blog b, member m,fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo 
 order by thumbFq desc LIMIT  3";
 $blogRank = $pdo -> query( $sql );
@@ -211,33 +197,13 @@ while($blogRankRow = $blogRank->fetch(PDO:: FETCH_ASSOC)){
                                         <div class="blog_Rank_Desc clearfix">
                                             <p><?php echo $blogRankRow["artContent"]?></p>
                                         </div>
-                                        <div class="blog_Rank_ContentBox cl-md-12 clearfix">
-                                            <div class="blog_Rank_ContentBox_Block clearfix">
-                                                <div class="blog_Rank_ContentBox_Box">
-                                                    <div class="blog_Rank_ContentBox_Item">
-                                                        <div class="blog_Rank_ContentBox_Container">
-                                                            <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar1"></div>
-                                                        </div>
-                                                        <p class="blog_Rank_BottomBox_Title">維他命C</p>
-                                                    </div>
-                                                    <div class="blog_Rank_ContentBox_Item">
-                                                        <div class="blog_Rank_ContentBox_Container">
-                                                            <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar2"></div>
-                                                        </div>
-                                                        <p class="blog_Rank_BottomBox_Title">鐵質</p>
-                                                    </div>
-                                                    <div class="blog_Rank_ContentBox_Item">
-                                                        <div class="blog_Rank_ContentBox_Container">
-                                                            <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar3"></div>
-                                                        </div>
-                                                        <div class="blog_Rank_BottomBox_Title">膳食纖維</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="blog_Rank_ContentBox_Desc">
-                                                <p>熱量共50Cals</p>
-                                            </div>
+                                         <div class="chart diy_pickFruit_rightBox">
+                                            <canvas class="chartcanvas" id="myChart<?php echo $blogRankRow["artNo"]?>" height="300"></canvas>
                                         </div>
+                                        <input type="hidden" id="chartcal<?php echo $blogRankRow["artNo"]?>" class='chartCal' value="<?php echo $blogRankRow["cal"]?>">
+                                        <input type="hidden" id="chartiron<?php echo $blogRankRow["artNo"]?>" class='chartIron' value="<?php echo $blogRankRow["iron"]?>">
+                                        <input type="hidden" id="chartfiber<?php echo $blogRankRow["artNo"]?>" class='chartFiber' value="<?php echo $blogRankRow["fiber"]?>">
+                                        <input type="hidden" id="chartvinc<?php echo $blogRankRow["artNo"]?>" class='chartVinc' value="<?php echo $blogRankRow["vinC"]?>">
                                     </div>
                                 </div>
                             </div>
@@ -292,7 +258,7 @@ $i++;
 
             </div>
             <div class="blog_Forum_ButtonContainer">
-                <a class="common_btn common_btn_first" href="blogSubmit.html">
+                <a class="common_btn common_btn_first" href="blogSubmit.php">
                     <span class="common_btn_txt">分享配方</span>
                     <div class="common_btn_blobs">
                         <div></div>
@@ -522,7 +488,7 @@ $id("NewShare").onclick = sendFormShare;
 
                                            
 
-                                        <a href='blogIn.php?artNo=<?php echo $blogRow ->artNo?>#message' class='blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6'>
+                                        <a href='blogIn.php?artNo=<?php echo $blogRow ->artNo?>#messagearea' class='blog_Forum_SubButtonContainer_Box cl-s-6 cl-md-6'>
                                             <div class='blog_Forum_SubButtonContainer_Pic'>
                                                 <img src='images/blogImg/messagewhite.png' alt='留言圖示' class='blog_Score_Img'>
                                             </div>

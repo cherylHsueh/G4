@@ -336,61 +336,9 @@ body {
 
     .blog_Rank_ContentBox {
         width: 100%;
-        // margin: 5%;
-        padding-top: 5%;
-        border: 1px solid grey;
-
-        .blog_Rank_ContentBox_Item {
-            @extend %float_L;
-            width: 33.3333%;
-            box-sizing: border-box;
-            text-align: center;
-
-            .blog_Rank_ContentBox_Container {
-                height: 0;
-                padding-bottom: 200%;
-                padding-left: 25%;
-                position: relative;
-
-                // background-color: #ff0;
-                .blog_Rank_ContentBox_Columnar {
-                    @extend %float_L;
-                    width: 50%;
-                    height: 100%;
-                    position: absolute;
-                }
-
-                .blog_Rank_ContentBox_Columnar1 {
-                    background-color: rgba(255, 99, 132, 0.8);
-                }
-
-                .blog_Rank_ContentBox_Columnar2 {
-                    background-color: rgba(54, 162, 235, 0.8);
-                }
-
-                .blog_Rank_ContentBox_Columnar3 {
-                    background-color: rgba(255, 206, 86, 0.8);
-                }
-
-            }
-
-
-
-            // .blog_Rank_BottomBox_Title {
-            //     width: 100%;
-            //     padding: 5% 0;
-            //     color: rgba(117, 119, 82, 0.685);
-            //     font-size: 2.3vw;
-            //     text-align: center;
-            // }
-        }
-
-        .blog_Rank_ContentBox_Desc {
-            p {
-                margin: 5%;
-                text-align: right;
-                font-size: 3vw;
-            }
+        
+        .chartcanvasM{
+            width: 180%;
         }
     }
 
@@ -472,13 +420,15 @@ body {
             .blog_Forum_OptionLeftBox_NewShare {
                 @extend %float_L;
                 margin: 0 10px;
+                background-color: transparent;
+                border: 0px solid transparent;
                 border-bottom: 5px solid #fff100;
                 @extend %OptionLeftBox;
-                // border-bottom: 5px solid #fff100;
 
                 &:hover {
-                    border-bottom: 5px solid #f1900f;
-                    transition: 1s;
+                    background-color:#f1900f;
+                    color: #fff;
+                    cursor: pointer;
 
 
                 }
@@ -487,16 +437,16 @@ body {
 
             .blog_Forum_OptionLeftBox_HighScore {
                 @extend %float_L;
-                margin: 0 10px;
+                margin: 0 10px; 
+                background-color: transparent;
+                border: 0px solid transparent;
                 border-bottom: 5px solid #fff100;
                 @extend %OptionLeftBox;
 
-
                 &:hover {
-                    border-bottom: 5px solid #f1900f;
-                    transition: 1s;
-
-
+                    background-color: #f1900f;
+                    color: #fff;
+                    cursor: pointer;
                 }
 
             }
@@ -1394,45 +1344,45 @@ body {
             background-color: #b97b18;
             text-align: center;
 
-            .imgSize {
-                width: 90%;
-                // height: 50%;
-            }
+        }
 
-            .upload {
-                width: 50%;
-                margin: 25% 0;
-                transition: .5s;
+        .imgSize {
+            width: 90%;
+            // height: 50%;
+        }
 
-                &:hover {
-                    transform: scale(1.1);
+        .upload {
+            width: 50%;
+            margin: 25% 0;
+            transition: .5s;
 
-                }
-            }
+            &:hover {
+                transform: scale(1.1);
 
-            .upload_active {
-                width: 10%;
-                position: absolute;
-                bottom: -20%;
-                right: 5%;
-                animation: upload .5s linear forwards;
-            }
-
-            @keyframes upload {
-                from {
-                    width: 50%;
-                }
-
-                ;
-
-                to {
-                    width: 10%
-                }
-
-                ;
             }
         }
 
+        .upload_active {
+            width: 10%;
+            position: absolute;
+            bottom: -20%;
+            right: 5%;
+            animation: upload .5s linear forwards;
+        }
+
+        @keyframes upload {
+            from {
+                width: 50%;
+            }
+
+            ;
+
+            to {
+                width: 10%
+            }
+
+            ;
+        }
         .blogSubmit_LeftBox_NameContainer {
             width: 70%;
             margin: 0 auto;
@@ -1883,7 +1833,7 @@ body {
             // width: 58px;
             position: absolute;
             z-index: 10;
-            bottom: 20px;
+            bottom: 10px;
             left: calc(50%);
             // margin-left: -1%;
 
@@ -3379,44 +3329,43 @@ body {
             // padding: 30% 10%;
             background-color: #b97b18;
             text-align: center;
+        }
+        .imgSize {
+            width: 90%;
+            // height: 50%;
+        }
 
-            .imgSize {
-                width: 90%;
-                // height: 50%;
+        .upload {
+            width: 50%;
+            margin: 25% 0;
+            transition: .5s;
+
+            &:hover {
+                transform: scale(1.1);
+
             }
+        }
 
-            .upload {
+        .upload_active {
+            width: 10%;
+            position: absolute;
+            bottom: -20%;
+            right: 5%;
+            animation: upload .5s linear forwards;
+        }
+
+        @keyframes upload {
+            from {
                 width: 50%;
-                margin: 25% 0;
-                transition: .5s;
-
-                &:hover {
-                    transform: scale(1.1);
-
-                }
             }
 
-            .upload_active {
-                width: 10%;
-                position: absolute;
-                bottom: -20%;
-                right: 5%;
-                animation: upload .5s linear forwards;
+            ;
+
+            to {
+                width: 10%
             }
 
-            @keyframes upload {
-                from {
-                    width: 50%;
-                }
-
-                ;
-
-                to {
-                    width: 10%
-                }
-
-                ;
-            }
+            ;
         }
 
     }

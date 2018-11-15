@@ -52,7 +52,10 @@ table {
 #lightbox_section {
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); }
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 4;
+  display: none; }
 
 .lightbox_logo img {
   width: 35%;
@@ -91,7 +94,7 @@ table {
     display: inline-block;
     vertical-align: middle; }
 
-.close {
+#close {
   position: absolute;
   right: 19px;
   top: -32px;
@@ -99,9 +102,6 @@ table {
   color: #000;
   font-size: 42px;
   font-weight: bold; }
-
-.logoContainer {
-  padding-top: 30px; }
 
 .loginContainer {
   padding-top: 11%; }
@@ -111,8 +111,8 @@ table {
   border-radius: 10px;
   width: 100%; }
 
-input[type=text],
-input[type=password] {
+input[type="text"],
+input[type="password"] {
   width: 90%;
   padding: 10px 20px;
   margin: 8px 0;
@@ -143,10 +143,6 @@ input[type=password] {
 
 .regPsw > a {
   padding: 0 2%; }
-
-.clearfix {
-  display: block;
-  clear: both; }
 
 .orange img {
   width: 15%; }
@@ -215,20 +211,20 @@ input[type=password] {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #C40000;
+    background: #c40000;
     position: relative;
     left: 17px;
     top: 3px;
     animation: float-simple 5s infinite alternate linear; }
     .cocktail .cherry:before {
-      content: '';
+      content: "";
       background-color: transparent;
       width: 23px;
       height: 17px;
       border-radius: 50% / 100%;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
-      border: 1px solid #C40000;
+      border: 1px solid #c40000;
       border-right: none;
       border-top: none;
       border-bottom: none;
@@ -246,7 +242,7 @@ input[type=password] {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px; }
     .cocktail .cocktail__glass-long:after {
-      content: '';
+      content: "";
       background: rgba(255, 195, 0, 0.5);
       position: absolute;
       left: 0;
@@ -281,7 +277,7 @@ input[type=password] {
   border-top: 25px solid rgba(255, 255, 255, 0.3);
   /* 填滿果汁 */ }
   .cocktail__glass-classic:before {
-    content: '';
+    content: "";
     width: 0;
     height: 0;
     border-left: 18px solid transparent;
