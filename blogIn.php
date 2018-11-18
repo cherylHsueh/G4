@@ -1,10 +1,19 @@
 <?php
+ob_start();
+// session_start();
 $artNo = $_REQUEST['artNo'];
 try {
-	require_once("connectBooks.php");
-    $sql = "SELECT b.artNo, b.photo, b.artTitle, b.artContent, b.thumbFq, b.artReportFq, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3, me.mesNo, me.mesContent, me.mesTime, me.mesReportFq From blog b, member m, message me,fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo and b.artNo = me.artNo and b.artNo = $artNo
+    require_once("connectBooks.php");
+    $sql = "SELECT b.artNo, b.photo, b.artTitle, b.artContent, b.thumbFq, b.artReportFq,b.fruitRatio1 fruitRatio1,
+    b.fruitRatio2 fruitRatio2, b.fruitRatio3 fruitRatio3, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2,
+     f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3, me.mesNo, 
+     me.mesContent, me.mesTime, me.mesReportFq, f1.cal cal1,f1.iron iron1, f1.fiber fiber1, f1.vinC vinC1, f2.cal cal2,
+    f2.iron iron2, f2.fiber fiber2, f2.vinC vinC2,f3.cal cal3, f3.iron iron3, f3.fiber fiber3, f3.vinC vinC3  
+    From blog b, member m, message me,fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo 
+    and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo and b.artNo = $artNo
     ";
     $blogs = $pdo -> query( $sql );
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +26,7 @@ try {
     <link rel="stylesheet" type="text/css" href="css/loginFruit.css">
     <link rel="stylesheet" href="css/blog.css">
     <script src='js/global.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
     <script src="js/plugin/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script src="js/blog.js"></script>
 </head>
@@ -97,33 +107,28 @@ try {
 
                             <!-- 私藏分頁的 -->
                             <div class="blog_Rank_ContentBox cl-s-12 clearfix">
-                                <div class="blog_Rank_ContentBox_Block clearfix">
-                                    <div class="blog_Rank_ContentBox_Box">
-                                        <div class="blog_Rank_ContentBox_Item">
-                                            <div class="blog_Rank_ContentBox_Container">
-                                                <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar1"></div>
-                                            </div>
-                                            <p class="blog_Rank_BottomBox_Title">維他命C</p>
-                                        </div>
-                                        <div class="blog_Rank_ContentBox_Item">
-                                            <div class="blog_Rank_ContentBox_Container">
-                                                <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar2"></div>
-                                            </div>
-                                            <p class="blog_Rank_BottomBox_Title">鐵質</p>
-                                        </div>
-                                        <div class="blog_Rank_ContentBox_Item">
-                                            <div class="blog_Rank_ContentBox_Container">
-                                                <div class="blog_Rank_ContentBox_Columnar blog_Rank_ContentBox_Columnar3"></div>
-                                            </div>
-                                            <div class="blog_Rank_BottomBox_Title">膳食纖維</div>
-                                        </div>
-                                    </div>
+                                <div class="chart diy_pickFruit_rightBox">
+                                    <canvas class="blogcanvas" id="blogmyChart" height="300"></canvas>
                                 </div>
-                                <div class="blog_Rank_ContentBox_Desc">
-                                    <p>熱量共50Cals</p>
-                                </div>
-                            </div>
 
+                                <input type="hidden" id="blogratio1" class='blogratio1' value="<?php echo $blogRow["fruitRatio1"]?>">
+                                <input type="hidden" id="blogratio2" class='blogratio2' value="<?php echo $blogRow["fruitRatio2"]?>">
+                                <input type="hidden" id="blogratio3" class='blogratio3' value="<?php echo $blogRow["fruitRatio3"]?>">
+                                <input type="hidden" id="blogcal1" class='blogCal1' value="<?php echo $blogRow["cal1"]?>">
+                                <input type="hidden" id="blogcal2" class='blogCal2' value="<?php echo $blogRow["cal2"]?>">
+                                <input type="hidden" id="blogcal3" class='blogCal3' value="<?php echo $blogRow["cal3"]?>">
+                                <input type="hidden" id="blogiron1" class='blogIron1' value="<?php echo $blogRow["iron1"]?>">
+                                <input type="hidden" id="blogiron2" class='blogIron2' value="<?php echo $blogRow["iron2"]?>">
+                                <input type="hidden" id="blogiron3" class='blogIron3' value="<?php echo $blogRow["iron3"]?>">
+                                <input type="hidden" id="blogfiber1" class='blogFiber1' value="<?php echo $blogRow["fiber1"]?>">
+                                <input type="hidden" id="blogfiber2" class='blogFiber2' value="<?php echo $blogRow["fiber2"]?>">
+                                <input type="hidden" id="blogfiber3" class='blogFiber3' value="<?php echo $blogRow["fiber3"]?>">
+                                <input type="hidden" id="blogvinc1" class='blogVinc1' value="<?php echo $blogRow["vinC1"]?>">
+                                <input type="hidden" id="blogvinc2" class='blogVinc2' value="<?php echo $blogRow["vinC2"]?>">
+                                <input type="hidden" id="blogvinc3" class='blogVinc3' value="<?php echo $blogRow["vinC3"]?>">
+
+
+                            </div>
 
                             <form action="post">
                             <div class="blogIn_RightBox_ShareContainer clearfix">
@@ -138,30 +143,28 @@ try {
                                         <span id="spanNum">按讚</span>
                                     </a>
                                     <?php 
-                                        $sql = "select me.mesContent, b.artNo, b.thumbFq from blog b, message me where b.artNo=me.artNo and b.artNo = $artNo" ;
+                                        $sql = "select me.mesContent, b.artNo, b.thumbFq, m.memimg from blog b, message me,member m where b.artNo=me.artNo and b.memNo=m.memNo and b.artNo =$artNo" ;
                                         $message = $pdo -> query( $sql );    
-                                        $mesRow = $message->fetchObject()
+                                        while($mesRow = $message->fetchObject()){
                                      ?>                                        
                                         <input id="thumbArtNo" type="hidden" name="thumbArtNo" value="<?php echo $mesRow->artNo?>">
                                         <input id="thumbNo" type="hidden" name="thumbNo" value="<?php echo $mesRow->thumbFq?>">
-                                     <?php
-                                        
+                                   <?php
+                                        };
                                     ?>
 
 
-                                    <a href="javascript:;" class="blogIn_RightBox_subButtonItem">
-                                        <div>
-                                            <img src="images/blogImg/messagewhite.png" alt="留言">
-                                        </div>
+                                    <a href="#messagearea" class="blogIn_RightBox_subButtonItem">
                                         <span>留言</span>
-                                    </a>
-                                    <a href="javascript:;" class="blogIn_RightBox_subButtonItem">
+                                    </a>  
+                                    
+                                    <a id="ReportNum" href="javascript:;" class="blogIn_RightBox_subButtonItem">
                                         <div>
                                             <img src="images/blogImg/alertwhite.png" alt="檢舉">
                                         </div>
                                         <span>檢舉</span>
                                     </a>
-
+                                    <input type="hidden" id="FqNum" name='Fqnum' value="<?php echo $blogRow["artReportFq"]?>">
                                 </div>
                             </div>
                             </form>
@@ -171,6 +174,51 @@ try {
             </div>
 
         </section>
+
+<script>
+function $id(id){
+  	return document.getElementById(id);
+  };
+$id('ReportNum').onclick = sendFormFq;
+
+function sendFormFq(){
+    
+    if($id('FqNum').value == ''){
+        $id('FqNum').value = 0;
+
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function (){
+        if( xhr.status == 200){
+            alert('plus');
+            doreport();
+            
+        }else{
+            alert(xhr.status);
+            }
+        };
+        xhr.open("post", "blogartreportNumPlus.php", true);
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        var data = "artNo=" + $id("artNo").value + "&artReportFq=" + $id('FqNum').value;
+        // alert(data);
+        xhr.send(data);     
+    }else if($id('FqNum').value != ''){
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function (){
+        if( xhr.status == 200){
+            doreport();
+        }else{
+            alert(xhr.status);
+            }
+        };
+        xhr.open("post", "blogartreportNumPlus.php", true);
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        var data = "artNo=" + $id("artNo").value + "&artReportFq=" + $id('FqNum').value;
+        // alert(data);
+        xhr.send(data);     
+    }
+}
+</script>
+
 
 
 <script>
@@ -237,104 +285,129 @@ function sendFormthumb(){
 
 
 
-        <section class="blogIn_Msg">
+        <section id="messagearea" class="blogIn_Msg">
             <div class="umbrellaOrange">
                 <img src="images/blogImg/umbrellaOrange.png" alt="降落傘柳橙">
             </div>
               
             <div class="wrapper">
                 <div class="blogIn_Msg_sendContainer">
-                    <div id="blogIn_Msg_SendBlock" class="blogIn_Msg_SendBlock clearfix">
+                    <div id="blogIn_Msg_SendBlock_id" class="blogIn_Msg_SendBlock clearfix">
   
                         <?php
-                                while($blogRow = $blogs->fetchObject()){
+                            $sql = "SELECT b.artNo, b.photo, b.artTitle, b.artContent, b.thumbFq, b.artReportFq, 
+                            m.memNo, m.memName, m.memImg, me.mesNo, me.mesContent, me.mesTime, me.mesReportFq From blog b,
+                             member m, message me where m.memNo = me.memNo and b.artNo = me.artNo and me.mesResult = '0' and b.artNo = $artNo order by mesNo
+                            ";
+                            $mess = $pdo -> query( $sql );
+                            while($mesRow = $mess->fetchObject()){
                         ?>   
                             <div class="blogIn_Msg_SendWrapper clearfix">
                         
                             <div class="blogIn_Msg_SendBox cl-s-2 cl-md-2">
                                 <div class="blogIn_Msg_SendPic">
-                                    <img src="images/blogImg/memberPic.png" alt="留言者">
+                                    <img id="blogIn_Img_<?php echo $mesRow->memNo?>" src="images/member/photo/<?php echo $mesRow->memImg?>" alt="留言者">
+                                    <input type="hidden" value="<?php echo $mesRow->memNo?>">
                                 </div>
-                                <p><?php echo $blogRow->mesNo?></p>
+                                <p class="memname"><?php echo $mesRow->memName?></p>
                             </div>
                             <div class="blogIn_Msg_SendBox blogIn_Msg_SendBox2 cl-s-7 cl-md-8">
                                 <div class="blogIn_Msg_SendContent">
-                                    <p><?php echo $blogRow->mesContent?></p>
+                                    <p><?php echo $mesRow->mesContent?></p>
                                 </div>
                                 <div class="blogIn_Msg_SendDate">
-                                    <p><?php echo $blogRow->mesTime?></p>
+                                    <p><?php echo $mesRow->mesTime?></p>
                                 </div>
                             </div>
                             <!-- <a href="javascript:;" > -->
-                            <input type="button" id="reportNum<?php echo $blogRow->mesNo?>" class="blogIn_Msg_SendBox subButtonItem cl-s-2 cl-md-1" name="report" value="檢舉">
-                            <input type="hidden" class="mesreportbtn" name="mesreportbtn" value="<?php echo $blogRow->mesReportFq?>">
-                            <input type="hidden" class="mesreportNum" value="<?php echo $blogRow->mesNo?>">
+                            <input type="button" id="Nmu<?php echo $mesRow->mesNo?>" class="blogIn_Msg_SendBox subButtonItem reportNum cl-s-2 cl-md-1" name="report" value="檢舉">
+                            <input type="hidden" id="FqNum<?php echo $mesRow->mesNo?>" name='Fqnum' value="<?php echo $mesRow->mesReportFq?>">
+                            <input type="hidden" class="mesNo" id="mesNum<?php echo $mesRow->mesNo?>" name="mesNum" value="<?php echo $mesRow->mesNo?>">
+                           <!-- </a> -->
                       </div>
                         <?php
                                 };     
                         ?> 
+     </div>
+
+
 <script>
 function $id(id){
   	return document.getElementById(id);
   };
-  alert(document.('.mesreportNum');
-var reportNum = $id('reportNum')
-var mesreportNum = document.querySelectorAll('.mesreportNum');  
-    for( i=0 ; i<mesreportNum.length; i++){  
-        alert(mesreportNum.value);
-    };
-// var pushreport = document.querySelectorAll('.reportNum');  
-//     for( i=0 ; i<pushreport.length; i++){  
-//         pushreport[i].addEventListener('click',function(){
-//             alert(pushreport.length); 
-//             alert(mesreportNum.length);
-//             // alert(mesreportNum.length);
-//             sendFormReport();
-//      });
-//     };
+window.addEventListener('load', sendFormReportclick);
+
+function sendFormReportclick(){
+    var pushreport = document.querySelectorAll('.reportNum');  
+        for( i=0 ; i<pushreport.length; i++){  
+            pushreport[i].addEventListener('click',function(){
+                num = this.id
+                // alert(num);
+                mesnum = 'mes' + this.id;
+                // alert($id(mesnum).value);
+                Fqnum = 'Fq' + this.id;
+                // alert($id(Fqnum).value);
+                sendFormReport();
+        });
+        };
+};
 
     function sendFormReport(){
-        alert($id("mesreportbtn").value);
-        alert(pushreport.length);
-        // if($id("mesreportbtn").value == ''){
-        if($id("mesreportbtn").value == ''){
-            $id("mesreportbtn").value = 0;
+        // alert($id(Fqnum).value);
+        // alert(pushreport.length);
+        // if($id(Fqnum).value == ''){
+        if($id(Fqnum).value == ''){
+            $id(Fqnum).value = 0;
 
             var xhr = new XMLHttpRequest();
             xhr.onload = function (){
             if( xhr.status == 200){
-                alert('plus');
+                // alert('plus');
             }else{
                 alert(xhr.status);
                 }
             };
             xhr.open("post", "blogmesreportNumPlus.php", true);
             xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-            var data = "artNo=" + $id("artNo").value + "&mesReportFq=" + $id("mesreportbtn").value +"&mesNo=" + $id("mesNo").value;
-            alert(data);
+            var data = "artNo=" + $id("artNo").value + "&mesReportFq=" + $id(Fqnum).value +"&mesNo="+$id(mesnum).value;
+            // alert(data);
             xhr.send(data);     
         }else{
             var xhr = new XMLHttpRequest();
             xhr.onload = function (){
             if( xhr.status == 200){
-                alert('add');
+                // alert('add');
             }else{
                 alert(xhr.status);
                 }
             };
             xhr.open("post", "blogmesreportNumPlus.php", true);
             xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-            var data = "artNo=" + $id("artNo").value + "&mesReportFq=" + $id("mesreportbtn").value +"&mesNo=" + $id("mesNo").value;
-            alert(data);
+            var data = "artNo=" + $id("artNo").value + "&mesReportFq=" + $id(Fqnum).value +"&mesNo=" + $id(mesnum).value;
+            // alert(data);
             xhr.send(data);     
         }
     }
+    // else if($id(Fqnum).value != ''){
+    //     var xhr = new XMLHttpRequest();
+    //   xhr.onload = function (){
+    //     if( xhr.status == 200){
+    //      alert('delete');
+    //     }else{
+    //       alert(xhr.status);
+    //     }
+    //     };
+    //     xhr.open("post", "reportNumDelete.php", true);
+    //   xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+      
+    //   var data = "artNo=" + $id("artNo").value +"&mesNo=" + $id("mesNo").value+ "&artReportFq=" + $id(Fqnum).value;
+    //   alert(data);
+    //   xhr.send(data);    
+    
+    // }
     
 </script>   
-                    </div>
-
-
-
+               
 
                     <form method="post">
                         <div id="blogIn_Msg_Container" class="blogIn_Msg_Containerc clearfix">
@@ -344,19 +417,18 @@ var mesreportNum = document.querySelectorAll('.mesreportNum');
                                     <div class="blogIn_Msg_ContentInput">
 
                                      <?php 
-                                        $sql = "select me.mesContent, b.artNo, b.thumbFq from blog b, message me where b.artNo=me.artNo and b.artNo = $artNo" ;
+                                        $sql = "select b.artNo, b.thumbFq, m.memName, m.memImg, me.mesNo from blog b,member m, message me where m.memNo = me.memNo and b.artNo= $artNo order by mesNo DESC limit 1";
                                         $message = $pdo -> query( $sql );    
-                                        while($mesRow = $message->fetchObject()){
+                                        $mesRow = $message->fetchObject()
                                      ?>                                        
                                         <input id="artNo" type="hidden" name="artNo" value="<?php echo $mesRow->artNo?>">
-                                     <?php
-                                        };
-                                    ?>
+
 
                                         <textarea id="blogIn_Msg_Content" type="text" placeholder="嚐分享" name="mes"></textarea>
                                     </div>
                                 </div>
                                     <input type="button" id="blogIn_Msg_BoxBtn" class="blogIn_Msg_Box subButtonItem cl-s-2 cl-md-1" name="btnChange" value="留言">
+                                    <input type="hidden" id="blogIn_Msg_MesNo" value="images/member/photo/<?php echo $mesRow->memImg?>">
                             </div>
                         </div>
 
@@ -368,7 +440,6 @@ var mesreportNum = document.querySelectorAll('.mesreportNum');
 function $id(id){
   	return document.getElementById(id);
   }	
-
   function keydown(event){
         if (event.keyCode == 13) { 
             sendForm();
@@ -376,12 +447,21 @@ function $id(id){
   };
 
  function sendForm(){
+    // alert(document.getElementById('spanLogin').innerHTML);
+    if(document.getElementById('spanLogin').innerHTML == '登入'){
+        document.getElementById('lightbox_section').style.display = 'block';
+    }else{
       var xhr = new XMLHttpRequest();
       xhr.onload = function (){
         if( xhr.status == 200){
             addItem();
-            // sendFormReport();
+            sendFormReportclick();
+            // alert('ok');
             $id('blogIn_Msg_Content').value='';
+            // getmemName();
+            // alert('nameok');
+            // memName.innerHTML =memchild;
+
         }else{
           alert(xhr.status);
         }
@@ -389,9 +469,12 @@ function $id(id){
       xhr.open("post", "blogInMes.php", true);
       xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
       
-      var data = "artNo=" + $id("artNo").value + "&mes=" + $id("blogIn_Msg_Content").value;
+      var data = "artNo=" + $id("artNo").value +
+       "&mes=" + $id("blogIn_Msg_Content").value;
+    //   alert(data);
       xhr.send(data);    
     }
+};
  function init(){
     $id("blogIn_Msg_BoxBtn").onclick = sendForm;
     $id("blogIn_Msg_Content").onkeydown= keydown;
@@ -406,13 +489,7 @@ function $id(id){
 
 
 
- <?php 
-}catch (PDOException $e) {
-            echo "錯誤原因 : ", $e -> getMessage(), "<br>";
-            echo "錯誤行號 : ", $e -> getLine(), "<br>";
-            // echo "請聯絡系通人員";
-        }
-?>                        
+                       
                     </form>
 
                 </div>
@@ -461,7 +538,13 @@ function $id(id){
         </div>
 
     </footer>
-
+    <?php 
+}catch (PDOException $e) {
+            echo "錯誤原因 : ", $e -> getMessage(), "<br>";
+            echo "錯誤行號 : ", $e -> getLine(), "<br>";
+            // echo "請聯絡系通人員";
+        };
+?> 
    
 
 </body>

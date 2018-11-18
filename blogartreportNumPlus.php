@@ -1,8 +1,7 @@
 <?php
 //  $mesNo = $_POST["mesNo"];
- $mesNo = $_POST["mesNo"];
  $artNo = $_POST["artNo"];
- $mesReportFq = $_POST["mesReportFq"];
+ $artReportFq = $_POST["artReportFq"];
 try{
     // echo $thumbFq .$artNo;
     require_once("connectBooks.php");
@@ -10,9 +9,9 @@ try{
     // $thumbFqNo = $pdo->prepare($sql);
     // $thumbFqNo->execute();
 
-    $sql = "update message set mesReportFq = :mesReportFq where message.mesNo=$mesNo and artNo=$artNo";
+    $sql = "update blog set artReportFq = :artReportFq where artNo=$artNo";
     $thumFqPlus = $pdo->prepare($sql);
-    $thumFqPlus->bindValue(":mesReportFq", $mesReportFq+1);
+    $thumFqPlus->bindValue(":artReportFq", $artReportFq+1);
     $thumFqPlus->execute();
     // echo 'success'.$thumbFq .$artNo;
     // echo "異動成功~<br> /",$thumbFq ;
@@ -22,5 +21,3 @@ try{
       echo "錯誤行列:",$e ->getLine();
    }
 ?>
-
-
