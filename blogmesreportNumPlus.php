@@ -1,4 +1,5 @@
 <?php
+//  $mesNo = $_POST["mesNo"];
  $mesNo = $_POST["mesNo"];
  $artNo = $_POST["artNo"];
  $mesReportFq = $_POST["mesReportFq"];

@@ -70,13 +70,13 @@ try {
                         <div class="blogSubmit_RightBox_TitleContainer clearfix">
                             <div class="blogSubmit_RightBox_TitleContent clearfix">
                                 <div class="blogSubmit_RightBox_TitleName">
-                                    <input id="fruitTitle" type="text" placeholder="請輸入果汁名稱">
+                                    <input id="fruitTitle" type="text" placeholder="請輸入果汁名稱" name="fruitTitle" maxlength='10'>
                                 </div>
                                 
                         
                                 <div class="blogSubmit_RightBox_TitlePic cl-s-8  cl-md-8 clearfix">
                                     <div class="blogSubmit_RightBox_PicItem cl-s-4 cl-md-4">
-                                        <select name="fruitselect" id="fruitselect1">
+                                        <select name="fruitselect1" id="fruitselect1">
                                             <?php
                                                 $sql = "select f.fruitName, f.fruitNo From fruititem f";
                                                 $blogs = $pdo -> query( $sql );
@@ -89,7 +89,7 @@ try {
                                         </select>
                                     </div>
                                     <div class="blogSubmit_RightBox_PicItem cl-s-4 cl-md-4">
-                                        <select name="fruitselect" id="fruitselect2">
+                                        <select name="fruitselect2" id="fruitselect2">
                                             <?php
                                                 $sql = "select f.fruitName, f.fruitNo From fruititem f";
                                                 $blogs = $pdo -> query( $sql );
@@ -102,7 +102,7 @@ try {
                                         </select>
                                     </div>
                                     <div class="blogSubmit_RightBox_PicItem cl-s-4 cl-md-4">
-                                        <select name="fruitselect" id="fruitselect3">
+                                        <select name="fruitselect3" id="fruitselect3">
                                              <?php
                                                 $sql = "select f.fruitName, f.fruitNo From fruititem f";
                                                 $blogs = $pdo -> query( $sql );
@@ -116,7 +116,10 @@ try {
                                     </div>
                                 </div>
                             </div>
-
+                            
+                           <input type="hidden" id="fruitRatio1" name="fruitRatio1" value="">
+                           <input type="hidden" id="fruitRatio2" name="fruitRatio2" value="">
+                           <input type="hidden" id="fruitRatio3" name="fruitRatio3" value="">
                             <!-- 私藏分頁的 -->
                             <!-- <div class="blog_Rank_ContentBox cl-s-12 clearfix">
                                 <div class="blog_Rank_ContentBox_Block clearfix">
@@ -145,10 +148,16 @@ try {
                                     <p>熱量共50Cals</p>
                                 </div>
                             </div> -->
-                           
+                            <div class="blogSubmit_RightBox_ratio">
+                                <div class="full">
+                                    <span class="cursor cursorone" id="cursor1">1</span>
+                                    <span class="cursor cursortwo" id="cursor2">2</span>
+                                </div>
+                            </div>
+
                             <div class="blogSubmit_RightBox_ShareContainer clearfix">
                                 <div class="blogSubmit_RightBox_ShareContent clearfix">
-                                    <textarea id="blogIn_Msg_Content" type="text" placeholder="嚐分享" name="mes"></textarea> 
+                                    <textarea id="blogIn_Msg_Content" type="text" placeholder="嚐分享(100字以內)" name="mes" maxlength="100"></textarea> 
                                 </div>
                             </div>
 
@@ -161,20 +170,22 @@ try {
 document.getElementById('picture').onchange = uploadimage;
 // document.getElementById('picture').onclick = uploadPic;
 function uploadimage(e){
-    // alert('ok');
+    
     box = document.getElementById('viewimg');
     box.textContent='';
     var file = e.target.files[0];
     var reader = new FileReader();
     reader.onload=function(){
-     var image = document.createElement('img');
-     image.id = 'image';
-     box.appendChild(image);
-     image.src=reader.result;
-     alert(reader.result);
-     image.style.width='150px';
-     document.getElementById('viewimg').classList.add('imgSize');
-     document.getElementById('upLoad').classList.add( "upload_active");
+    var image = document.createElement('img');
+    image.id = 'image';
+    box.appendChild(image);
+    image.src=reader.result;
+    alert(reader.result);
+    image.style.width='150px';
+    document.getElementById('viewimg').classList.add('imgSize');
+    document.getElementById('upLoad').classList.add( "upload_active");
+    
+    
                  
     };
     reader.readAsDataURL(file);
@@ -184,27 +195,6 @@ function uploadimage(e){
 function $id(id){
   	return document.getElementById(id);
   }	
-
-// function uploadPic(e){
-//     var input=document.getElementById('picture');
-//     var file=input.files[0];
-//     alert(file);
-//     formdata=new FormData();
-//     if(formdata){
-//         formdata.append('image',file);
-//         jQuery.ajax({
-//             url: 'blogupimage.php',
-//             type: 'post',
-//             data: formdata,
-//             processData: false,
-//             contentType: false,
-//             dataType: 'json',
-//             success:function(data){
-//                 $('#image').attr('src',data['file']);
-//             }
-//         });
-//     }
-// }
  
 </script>
 
@@ -236,26 +226,32 @@ function $id(id){
 
 <script>
 function sendForm(){
-      alert('ok');
-      var xhr = new XMLHttpRequest();
-      xhr.onload = function (){
-        if( xhr.status == 200){
-            alert('ok');
-        }else{
-          alert(xhr.status);
-        }
-      }
-      xhr.open("post", "bloguptext.php", true);
-      xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+    // alert(document.getElementById('spanLogin').innerHTML);
+    if(document.getElementById('spanLogin').innerHTML == '登入'){
+        document.getElementById('lightbox_section').style.display = 'block';
+    }else{
+    $id("blogSubmit_form").submit();
+    };
+    //   alert('ok');
+    //   var xhr = new XMLHttpRequest();
+    //   xhr.onload = function (){
+    //     if( xhr.status == 200){
+    //         alert('ok');
+    //     }else{
+    //       alert(xhr.status);
+    //     }
+    //   }
+    //   xhr.open("post", "bloguptext.php", true);
+    //   xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
       
-      var data ="fruitTitle=" + $id("fruitTitle").value + 
-                "&fruitselect1=" + $id("fruitselect1").value+
-                "&fruitselect2=" + $id("fruitselect2").value+
-                "&fruitselect3=" + $id("fruitselect3").value+
-                "&mes=" + $id("blogIn_Msg_Content").value;
-                // "&img=" + $id('image').src;
-      alert(data);
-      xhr.send(data);    
+    //   var data ="fruitTitle=" + $id("fruitTitle").value + 
+    //             "&fruitselect1=" + $id("fruitselect1").value+
+    //             "&fruitselect2=" + $id("fruitselect2").value+
+    //             "&fruitselect3=" + $id("fruitselect3").value+
+    //             "&mes=" + $id("blogIn_Msg_Content").value;
+    //             // "&img=" + $id('image').src;
+    //   alert(data);
+    //   xhr.send(data);    
     }
 // function init(){
 //     alert('ok');

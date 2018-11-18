@@ -5,7 +5,7 @@ ob_start();
 
 try {
     require_once("../connectBooks.php");
-    $sql = "SELECT * FROM blog b, message mes, member m WHERE b.artNo=mes.artNo and b.memNo=m.memNo and not(mes.mesReportFq=0) and mes.mesResult=0 order by mes.mesNo";
+    $sql = "SELECT * FROM blog b, member m WHERE b.memNo=m.memNo and not(b.artReportFq=0) and b.artResult=0 order by b.artNo";
     $blogs = $pdo -> query( $sql );
 ?>
 <!DOCTYPE html>
@@ -79,7 +79,7 @@ try {
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>被檢舉留言</th>
+                            <th>被檢舉文章</th>
                             <th>被檢舉人名稱</th>
                             <th>檢舉內容</th>
                             <th>狀態</th>
@@ -91,13 +91,13 @@ try {
 ?>
 
                 <tr>
-                    <td><?php echo $blogRow ->mesNo; ?></td>
+                    <td><?php echo $blogRow ->artNo; ?></td>
                     <td><?php echo $blogRow ->memName; ?></td>
-                    <td class="content"><?php echo $blogRow ->mesContent; ?></td>
-                    <td class="status<?php echo $blogRow ->mesNo; ?>"></td>
+                    <td class="content"><?php echo $blogRow ->artContent; ?></td>
+                    <td class="status<?php echo $blogRow ->artNo; ?>"></td>
                     <td>
-                        <button class="agreeResult" id="agree_<?php echo $blogRow ->mesNo;?>">停權</button>
-                        <button class="rejectResult" id="reject_<?php echo $blogRow ->mesNo;?>">駁回</button>
+                        <button class="agreeResult" id="agree_<?php echo $blogRow ->artNo;?>">停權</button>
+                        <button class="rejectResult" id="reject_<?php echo $blogRow ->artNo;?>">駁回</button>
                     </td>
                 </tr>
 
@@ -141,31 +141,34 @@ try {
 //文章檢舉-停權狀態改變
 $('.agreeResult').click(function () {
 
-var mesNo=this.id.split('_')[1];
-var mesResult= '1' ;
+var artNo=this.id.split('_')[1];
+var artResult= '1' ;
 this.parentNode.previousElementSibling.innerText='停權';
-agreeResult(mesNo,mesResult);
+agreeResult(artNo,artResult);
 });
 
 //文章檢舉-停權ajax改變資料庫
-function agreeResult(mesNo,mesResult){
+function agreeResult(artNo,artResult){
 alert('ok');
 var xhr = new XMLHttpRequest();
 xhr.onload = function(){
     // console.log(this.parentNode.previousSibling.previousSibling);
     if(xhr.status == 200){
         if( xhr.responseText.indexOf("succes") != -1){
-            console.log('succes');         
+            console.log('succes');
+            if(artNo = '1'){
+
+            }            
         }
     }else{
         alert(xhr.status);
     }
 }
-xhr.open('post','backMesAgreeResult.php',true);
+xhr.open('post','backBlogAgreeResult.php',true);
 xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
 var obj = {
-    mesNo:mesNo,
-    mesResult:mesResult,
+    artNo:artNo,
+    artResult:artResult,
 }
 var loginInfo = JSON.stringify(obj);
 var data_info = "loginInfo=" + loginInfo;
@@ -179,14 +182,14 @@ xhr.send(data_info);
 //文章檢舉-駁回狀態改變
 $('.rejectResult').click(function () {
 
-var mesno=this.id.split('_')[1];
-var mesresult= '0' ;
+var artno=this.id.split('_')[1];
+var artresult= '0' ;
 this.parentNode.previousElementSibling.innerText='駁回';
-rejectResult(mesno,mesresult);
+rejectResult(artno,artresult);
 });
 
 //文章檢舉-駁回ajax改變資料庫
-function rejectResult(mesno,mesresult){
+function rejectResult(artno,artresult){
 alert('ok');
 var xhr = new XMLHttpRequest();
 xhr.onload = function(){
@@ -199,11 +202,11 @@ xhr.onload = function(){
         alert(xhr.status);
     }
 }
-xhr.open('post','backMesRejectResult.php',true);
+xhr.open('post','backBlogRejectResult.php',true);
 xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
 var obj = {
-    mesno:mesno,
-    mesresult:mesresult,
+    artno:artno,
+    artresult:artresult,
 }
 var loginInfo = JSON.stringify(obj);
 var data_info = "loginInfo=" + loginInfo;

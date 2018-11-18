@@ -5,9 +5,9 @@ ob_start();
 
 try {
     require_once("connectBooks.php");
-    $sql = "SELECT b.artNo, b.photo, b.artTitle, b.artContent, b.thumbFq, b.postTime, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3 From blog b, member m, fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo
+    $sql = "SELECT b.artNo, b.photo, b.artTitle, b.artContent,b.artResult, b.thumbFq, b.postTime, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3 From blog b, member m, fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo and b.artResult='0'
     ";
-    $blogs = $pdo -> query( $sql );
+    $blogone = $pdo -> query( $sql );
 ?>
 
 <!DOCTYPE html>
@@ -55,13 +55,15 @@ try {
 
             <!-- 手機輪播 -->
             <section id="phone" class="phone clearfix">
+            
 <?php
-$sql = "SELECT b.artNo, b.photo, b.artTitle, b.artContent, b.thumbFq, b.postTime, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3 From blog b, member m, fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo
-    ";
-$blogs = $pdo -> query( $sql );
-$sql ="select b.artNo, b.photo, b.cal, b.iron, b.fiber, b.vinC, b.artTitle, b.artContent, b.postTime, b.thumbFq, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3
-from blog b, member m,fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo 
-order by thumbFq desc LIMIT  3";
+$sql ="select b.artNo, b.photo, b.artTitle, b.artContent, b.postTime, b.thumbFq, b.fruitRatio1 fruitRatio1,
+ b.fruitRatio2 fruitRatio2, b.fruitRatio3 fruitRatio3, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2,
+  f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3, f1.cal cal1,
+   f1.iron iron1, f1.fiber fiber1, f1.vinC vinC1, f2.cal cal2, f2.iron iron2, f2.fiber fiber2, f2.vinC vinC2,
+    f3.cal cal3, f3.iron iron3, f3.fiber fiber3, f3.vinC vinC3 from blog b, member m,fruititem f1, fruititem f2,
+     fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and 
+     b.fruitNo3=f3.fruitNo order by thumbFq desc LIMIT 3";
 $blogRankM = $pdo -> query( $sql );
 $i=1;
 while($blogRankMRow = $blogRankM->fetch(PDO:: FETCH_ASSOC)){
@@ -118,10 +120,21 @@ while($blogRankMRow = $blogRankM->fetch(PDO:: FETCH_ASSOC)){
                                     <div class="chart diy_pickFruit_rightBox">
                                         <canvas class="chartcanvasM" id="myChartM<?php echo $blogRankMRow["artNo"]?>" height="300"></canvas>
                                     </div>
-                                    <input type="hidden" id="chartcalM<?php echo $blogRankMRow["artNo"]?>" class='chartCalM' value="<?php echo $blogRankMRow["cal"]?>">
-                                    <input type="hidden" id="chartironM<?php echo $blogRankMRow["artNo"]?>" class='chartIronM' value="<?php echo $blogRankMRow["iron"]?>">
-                                    <input type="hidden" id="chartfiberM<?php echo $blogRankMRow["artNo"]?>" class='chartFiberM' value="<?php echo $blogRankMRow["fiber"]?>">
-                                    <input type="hidden" id="chartvincM<?php echo $blogRankMRow["artNo"]?>" class='chartVincM' value="<?php echo $blogRankMRow["vinC"]?>">
+                                    <input type="hidden" id="chartratio1M<?php echo $blogRankMRow["artNo"]?>" class='chartratio1M' value="<?php echo $blogRankMRow["fruitRatio1"]?>">
+                                    <input type="hidden" id="chartratio2M<?php echo $blogRankMRow["artNo"]?>" class='chartratio2M' value="<?php echo $blogRankMRow["fruitRatio2"]?>">
+                                    <input type="hidden" id="chartratio3M<?php echo $blogRankMRow["artNo"]?>" class='chartratio3M' value="<?php echo $blogRankMRow["fruitRatio3"]?>">
+                                    <input type="hidden" id="chartcal1M<?php echo $blogRankMRow["artNo"]?>" class='chartCal1M' value="<?php echo $blogRankMRow["cal1"]?>">
+                                    <input type="hidden" id="chartcal2M<?php echo $blogRankMRow["artNo"]?>" class='chartCal2M' value="<?php echo $blogRankMRow["cal2"]?>">
+                                    <input type="hidden" id="chartcal3M<?php echo $blogRankMRow["artNo"]?>" class='chartCal3M' value="<?php echo $blogRankMRow["cal3"]?>">
+                                    <input type="hidden" id="chartiron1M<?php echo $blogRankMRow["artNo"]?>" class='chartIron1M' value="<?php echo $blogRankMRow["iron1"]?>">
+                                    <input type="hidden" id="chartiron2M<?php echo $blogRankMRow["artNo"]?>" class='chartIron2M' value="<?php echo $blogRankMRow["iron2"]?>">
+                                    <input type="hidden" id="chartiron3M<?php echo $blogRankMRow["artNo"]?>" class='chartIron3M' value="<?php echo $blogRankMRow["iron3"]?>">
+                                    <input type="hidden" id="chartfiber1M<?php echo $blogRankMRow["artNo"]?>" class='chartFiber1M' value="<?php echo $blogRankMRow["fiber1"]?>">
+                                    <input type="hidden" id="chartfiber2M<?php echo $blogRankMRow["artNo"]?>" class='chartFiber2M' value="<?php echo $blogRankMRow["fiber2"]?>">
+                                    <input type="hidden" id="chartfiber3M<?php echo $blogRankMRow["artNo"]?>" class='chartFiber3M' value="<?php echo $blogRankMRow["fiber3"]?>">
+                                    <input type="hidden" id="chartvinc1M<?php echo $blogRankMRow["artNo"]?>" class='chartVinc1M' value="<?php echo $blogRankMRow["vinC1"]?>">
+                                    <input type="hidden" id="chartvinc2M<?php echo $blogRankMRow["artNo"]?>" class='chartVinc2M' value="<?php echo $blogRankMRow["vinC2"]?>">
+                                    <input type="hidden" id="chartvinc3M<?php echo $blogRankMRow["artNo"]?>" class='chartVinc3M' value="<?php echo $blogRankMRow["vinC3"]?>">
                                 </div>
                             </div>
                         </div>
@@ -134,22 +147,24 @@ $i++;
             </section>
 
 
-
-
-
             <!-- 桌機輪播 -->
             <div class="blog_Rank_bg">
                 <section id="dg-container" class="dg-container">
                     <div class="dg-wrapper">
 <?php
-$sql ="select b.artNo, b.photo, b.cal, b.iron, b.fiber, b.vinC, b.artTitle, b.artContent, b.postTime, b.thumbFq, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2, f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3
-from blog b, member m,fruititem f1, fruititem f2, fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and b.fruitNo3=f3.fruitNo 
-order by thumbFq desc LIMIT  3";
+$sql ="select b.artNo, b.photo, b.artTitle, b.artContent, b.postTime, b.thumbFq, b.fruitRatio1 fruitRatio1,
+b.fruitRatio2 fruitRatio2, b.fruitRatio3 fruitRatio3, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2,
+ f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3, f1.cal cal1,
+  f1.iron iron1, f1.fiber fiber1, f1.vinC vinC1, f2.cal cal2, f2.iron iron2, f2.fiber fiber2, f2.vinC vinC2,
+   f3.cal cal3, f3.iron iron3, f3.fiber fiber3, f3.vinC vinC3 from blog b, member m,fruititem f1, fruititem f2,
+    fruititem f3 where m.memNo=b.memNo and b.fruitNo1=f1.fruitNo and b.fruitNo2=f2.fruitNo and 
+    b.fruitNo3=f3.fruitNo order by thumbFq desc LIMIT 3";
 $blogRank = $pdo -> query( $sql );
 $i=1;
 while($blogRankRow = $blogRank->fetch(PDO:: FETCH_ASSOC)){
+
 ?>                        
-                        <a class="blog_Rank_Container blog_Rank_Container1 cl-md-12" data-rank=<?php echo $i?>>
+                        <a class="blog_Rank_ContainerLap blog_Rank_Container1 cl-md-12" data-rank=<?php echo $i?>>
                             <div class="blog_Rank_Block cl-md-12 clearfix">
                                 <div class="blog_Rank_Prize">
                                     <img src="images/tag<?php echo $i?>.png" alt="第一名">
@@ -200,10 +215,21 @@ while($blogRankRow = $blogRank->fetch(PDO:: FETCH_ASSOC)){
                                          <div class="chart diy_pickFruit_rightBox">
                                             <canvas class="chartcanvas" id="myChart<?php echo $blogRankRow["artNo"]?>" height="300"></canvas>
                                         </div>
-                                        <input type="hidden" id="chartcal<?php echo $blogRankRow["artNo"]?>" class='chartCal' value="<?php echo $blogRankRow["cal"]?>">
-                                        <input type="hidden" id="chartiron<?php echo $blogRankRow["artNo"]?>" class='chartIron' value="<?php echo $blogRankRow["iron"]?>">
-                                        <input type="hidden" id="chartfiber<?php echo $blogRankRow["artNo"]?>" class='chartFiber' value="<?php echo $blogRankRow["fiber"]?>">
-                                        <input type="hidden" id="chartvinc<?php echo $blogRankRow["artNo"]?>" class='chartVinc' value="<?php echo $blogRankRow["vinC"]?>">
+                                        <input type="hidden" id="chartratio1<?php echo $blogRankRow["artNo"]?>" class='chartratio1' value="<?php echo $blogRankRow["fruitRatio1"]?>">
+                                        <input type="hidden" id="chartratio2<?php echo $blogRankRow["artNo"]?>" class='chartratio2' value="<?php echo $blogRankRow["fruitRatio2"]?>">
+                                        <input type="hidden" id="chartratio3<?php echo $blogRankRow["artNo"]?>" class='chartratio3' value="<?php echo $blogRankRow["fruitRatio3"]?>">
+                                        <input type="hidden" id="chartcal1<?php echo $blogRankRow["artNo"]?>" class='chartCal1' value="<?php echo $blogRankRow["cal1"]?>">
+                                        <input type="hidden" id="chartcal2<?php echo $blogRankRow["artNo"]?>" class='chartCal2' value="<?php echo $blogRankRow["cal2"]?>">
+                                        <input type="hidden" id="chartcal3<?php echo $blogRankRow["artNo"]?>" class='chartCal3' value="<?php echo $blogRankRow["cal3"]?>">
+                                        <input type="hidden" id="chartiron1<?php echo $blogRankRow["artNo"]?>" class='chartIron1' value="<?php echo $blogRankRow["iron1"]?>">
+                                        <input type="hidden" id="chartiron2<?php echo $blogRankRow["artNo"]?>" class='chartIron2' value="<?php echo $blogRankRow["iron2"]?>">
+                                        <input type="hidden" id="chartiron3<?php echo $blogRankRow["artNo"]?>" class='chartIron3' value="<?php echo $blogRankRow["iron3"]?>">
+                                        <input type="hidden" id="chartfiber1<?php echo $blogRankRow["artNo"]?>" class='chartFiber1' value="<?php echo $blogRankRow["fiber1"]?>">
+                                        <input type="hidden" id="chartfiber2<?php echo $blogRankRow["artNo"]?>" class='chartFiber2' value="<?php echo $blogRankRow["fiber2"]?>">
+                                        <input type="hidden" id="chartfiber3<?php echo $blogRankRow["artNo"]?>" class='chartFiber3' value="<?php echo $blogRankRow["fiber3"]?>">
+                                        <input type="hidden" id="chartvinc1<?php echo $blogRankRow["artNo"]?>" class='chartVinc1' value="<?php echo $blogRankRow["vinC1"]?>">
+                                        <input type="hidden" id="chartvinc2<?php echo $blogRankRow["artNo"]?>" class='chartVinc2' value="<?php echo $blogRankRow["vinC2"]?>">
+                                        <input type="hidden" id="chartvinc3<?php echo $blogRankRow["artNo"]?>" class='chartVinc3' value="<?php echo $blogRankRow["vinC3"]?>">
                                     </div>
                                 </div>
                             </div>
@@ -433,7 +459,7 @@ $id("NewShare").onclick = sendFormShare;
                 <div id="container" style="overflow:hidden; margin:0 auto;">
 
 <?php
-        while($blogRow = $blogs->fetchObject()){
+        while($blogRow = $blogone->fetchObject()){
 
 ?>
                     
@@ -535,9 +561,9 @@ $id("NewShare").onclick = sendFormShare;
       xhr.onload = function (){
         if( xhr.status == 200){
 
-            alert($id(greatNum).innerHTML);
+            // alert($id(greatNum).innerHTML);
             dodelete();
-            alert($id(greatNum).innerHTML);
+            // alert($id(greatNum).innerHTML);
             
         }else{
           alert(xhr.status);
@@ -555,9 +581,9 @@ $id("NewShare").onclick = sendFormShare;
     var xhr = new XMLHttpRequest();
       xhr.onload = function (){
         if( xhr.status == 200){
-            alert($id(greatNum).innerHTML);
+            // alert($id(greatNum).innerHTML);
             doplus();
-            alert($id(greatNum).innerHTML);
+            // alert($id(greatNum).innerHTML);
         }else{
         //   alert(xhr.status);
         }
@@ -575,7 +601,7 @@ $id("NewShare").onclick = sendFormShare;
     var pushGreat = document.querySelectorAll('.pushGreat');  
     for( i=0 ; i<pushGreat.length; i++){  
         pushGreat[i].addEventListener('click',function(){
-            alert(('#'+this.id+' input').value);
+            // alert(('#'+this.id+' input').value);
             arvalue = document.querySelector('#'+this.id+' input').value;
             Num = this.id;
             spanNum = 'span' +this.id;

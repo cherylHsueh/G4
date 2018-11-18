@@ -592,6 +592,267 @@ footer {
         .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
           font-size: 12px; } }
 
+#lightbox_section {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 4;
+  display: none; }
+
+.lightbox_logo img {
+  width: 35%;
+  margin-right: 14px; }
+
+.lightbox {
+  background-color: #d7eab2;
+  width: 80%;
+  max-width: 350px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 5px 5px 0px 30px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 30px;
+  transform: translate(-50%, -50%); }
+
+#fruit,
+#fruit2 {
+  opacity: 0; }
+
+.account {
+  font-size: 0; }
+  .account img {
+    margin-left: 5px;
+    width: 8%;
+    display: inline-block;
+    vertical-align: middle; }
+
+.secret {
+  font-size: 0; }
+  .secret img {
+    margin-left: 5px;
+    width: 8%;
+    display: inline-block;
+    vertical-align: middle; }
+
+#close {
+  position: absolute;
+  right: 19px;
+  top: -32px;
+  top: 7px;
+  color: #000;
+  font-size: 42px;
+  font-weight: bold; }
+
+.loginContainer {
+  padding-top: 11%; }
+
+.memeber {
+  display: block;
+  border-radius: 10px;
+  width: 100%; }
+
+input[type="text"],
+input[type="password"] {
+  width: 90%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  vertical-align: middle; }
+
+.login_btn {
+  display: inline-block;
+  width: 90%;
+  background-color: #fff100;
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin: 8px 0;
+  position: relative;
+  left: -5%; }
+
+.lightbox_signUp,
+.lightbox_forgrtPsw {
+  color: black;
+  text-decoration: none; }
+
+.regPsw {
+  padding: 3% 12% 5% 5%;
+  text-align: right;
+  font-size: 15px; }
+
+.regPsw > a {
+  padding: 0 2%; }
+
+.orange img {
+  width: 15%; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+/* 橘子 */
+/* 冰塊 */
+/* 果汁的顏色*/
+.cocktail {
+  padding: 7px 0 0; }
+  @media all and (max-width: 600px) {
+    .cocktail {
+      width: 50%; } }
+  @media all and (max-width: 400px) {
+    .cocktail {
+      width: 100%; } }
+  .cocktail .cocktail__glass {
+    margin: 0 auto; }
+  .cocktail.negroni {
+    padding-top: 113px; }
+  .cocktail.martini {
+    padding-top: 89px; }
+    .cocktail.martini .description {
+      padding-top: 42px; }
+  .cocktail .ice .ice__cube {
+    background: rgba(255, 255, 255, 0.5);
+    width: 14px;
+    height: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    position: absolute;
+    bottom: 0; }
+    .cocktail .ice .ice__cube:nth-child(1) {
+      left: 0px;
+      transform: rotate(20deg) translate3d(0, 0, 0); }
+    .cocktail .ice .ice__cube:nth-child(2) {
+      left: 14px;
+      transform: rotate(40deg) translate3d(0, 0, 0); }
+    .cocktail .ice .ice__cube:nth-child(3) {
+      left: 28px;
+      transform: rotate(60deg) translate3d(0, 0, 0); }
+    .cocktail .ice .ice__cube.cube-3 {
+      transform: rotate(60deg) translate3d(-18px, 9px, 0); }
+  .cocktail .orange {
+    position: absolute;
+    right: 8px;
+    top: 2px;
+    transform: rotate(250deg);
+    overflow: hidden;
+    width: 28px;
+    height: 14px;
+    animation: float 3s infinite alternate linear; }
+    .cocktail .orange:before {
+      content: "";
+      position: absolute;
+      background-color: orange;
+      width: 100%;
+      height: 200%;
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 2px #ffc04d, inset 0 0 0 10px #ffdb99; }
+  .cocktail .cherry {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #c40000;
+    position: relative;
+    left: 17px;
+    top: 3px;
+    animation: float-simple 5s infinite alternate linear; }
+    .cocktail .cherry:before {
+      content: "";
+      background-color: transparent;
+      width: 23px;
+      height: 17px;
+      border-radius: 50% / 100%;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border: 1px solid #c40000;
+      border-right: none;
+      border-top: none;
+      border-bottom: none;
+      display: block;
+      position: absolute;
+      top: -11px;
+      left: 3px;
+      transform: rotate(15deg); }
+  .cocktail .cocktail__glass-long {
+    position: relative;
+    width: 32px;
+    height: 65px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-top: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; }
+    .cocktail .cocktail__glass-long:after {
+      content: "";
+      background: rgba(255, 195, 0, 0.5);
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 0;
+      animation: fill-long 0.6s forwards ease; }
+  .cocktail .orange {
+    position: absolute;
+    right: 12px;
+    top: -4px;
+    transform: rotate(15deg);
+    overflow: hidden;
+    width: 28px;
+    height: 14px;
+    animation: float-simple 3s infinite alternate linear; }
+    .cocktail .orange:before {
+      content: "";
+      position: absolute;
+      background-color: orange;
+      width: 100%;
+      height: 200%;
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 2px #ffc04d, inset 0 0 0 10px #ffdb99; }
+
+.cocktail__glass-classic {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 25px solid rgba(255, 255, 255, 0.3);
+  /* 填滿果汁 */ }
+  .cocktail__glass-classic:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 18px solid rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: -20px;
+    left: -18px;
+    animation: fill-classic 0.6s forwards ease;
+    transform: translate3d(0, 0, 0) scale(0);
+    transform-origin: 50% bottom; }
+
+@keyframes float {
+  50% {
+    transform: rotate(260deg) translate3d(-2px, 1px, 0); } }
+
+@keyframes float-simple {
+  50% {
+    transform: rotate(15deg) translate3d(0px, 2px, 0); } }
+
+@keyframes fill-classic {
+  100% {
+    transform: translate3d(0, 0, 0) scale(1); } }
+
+@keyframes fill-long {
+  100% {
+    height: 55px; } }
+
+@keyframes fill-short {
+  100% {
+    height: 27px; } }
+
 header nav li:nth-child(4) > a:after {
   transform: scaleX(1); }
 
@@ -1414,6 +1675,44 @@ body {
           background-color: #fefefe;
           color: #624b09;
           font-size: 3vw; }
+    .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ratio {
+      margin: 5% 10% 15%; }
+      .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ratio .full {
+        height: 50px;
+        background-color: orange;
+        position: relative; }
+        .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ratio .full .cursor {
+          position: absolute;
+          top: 60px;
+          height: 20px;
+          width: 20px;
+          background-color: brown;
+          color: white;
+          text-align: center;
+          line-height: 20px;
+          cursor: pointer; }
+        .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ratio .full .cursorone {
+          left: calc(33.3333% - 15px/2); }
+          .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ratio .full .cursorone:before {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            display: inline-block;
+            border-bottom: 10px solid brown;
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent; }
+        .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ratio .full .cursortwo {
+          left: calc(66.6666% - 15px/2); }
+          .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ratio .full .cursortwo:before {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            display: inline-block;
+            border-bottom: 10px solid brown;
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent; }
     .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer {
       text-align: center; }
       .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer .blogSubmit_RightBox_ShareContent {
@@ -1476,7 +1775,7 @@ body {
     text-align: center;
     line-height: 1.5;
     font-weight: bold; }
-  .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Pic, .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Num, .blog_Rank_ContentBox .blog_Rank_ContentBox_Item, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_NewShare, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_HighScore, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Pic, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Num, .blog_Forum_SubButtonContainer_Pic, .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_Rank_Score .blog_Score_Pic {
+  .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Pic, .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Num, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_NewShare, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_HighScore, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Pic, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Num, .blog_Forum_SubButtonContainer_Pic, .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_Rank_Score .blog_Score_Pic {
     float: left; }
   .space {
     width: 100%;
@@ -1530,7 +1829,7 @@ body {
       -o-perspective: 1000px;
       -ms-perspective: 1000px;
       perspective: 1000px; }
-      .dg-container .dg-wrapper .blog_Rank_Container {
+      .dg-container .dg-wrapper .blog_Rank_ContainerLap {
         width: 500px;
         display: block;
         position: absolute;
@@ -1546,7 +1845,7 @@ body {
     .dg-container nav {
       position: absolute;
       z-index: 10;
-      bottom: 10px;
+      bottom: 0px;
       left: calc(50%); }
       .dg-container nav span {
         display: block;
@@ -1574,7 +1873,7 @@ body {
       transform: translate(-20%, -50%);
       z-index: -1;
       width: 130%; }
-  .blog_Rank_Container {
+  .blog_Rank_ContainerLap {
     border-radius: 20px;
     padding: 10px;
     background-color: #fff; }
@@ -1659,37 +1958,9 @@ body {
       .blog_Rank_RightBox .blog_Rank_Content .blog_Rank_Desc p {
         font-size: 18px; }
   .blog_Rank_ContentBox {
-    padding: 5%;
-    border: 1px solid grey; }
-    .blog_Rank_ContentBox .blog_Rank_ContentBox_Item {
-      width: 33.3333%;
-      box-sizing: border-box;
-      margin: 0 auto;
-      text-align: center; }
-      .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container {
-        height: 0;
-        padding-bottom: 100px;
-        padding-left: 25%;
-        position: relative; }
-        .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar {
-          width: 50%;
-          height: 100%;
-          position: absolute; }
-        .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar1 {
-          background-color: rgba(255, 99, 132, 0.8); }
-        .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar2 {
-          background-color: rgba(54, 162, 235, 0.8); }
-        .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar3 {
-          background-color: rgba(255, 206, 86, 0.8); }
-      .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_BottomBox_Title {
-        width: 100%;
-        padding-top: 5px;
-        color: rgba(117, 119, 82, 0.685);
-        font-size: 12px;
-        text-align: center; }
-    .blog_Rank_ContentBox .blog_Rank_ContentBox_Desc p {
-      margin: 5%;
-      text-align: right; }
+    padding: 5%; }
+    .blog_Rank_ContentBox .blogcanvas {
+      width: 120%; }
   .blog_Forum {
     margin: 200px 0 0px;
     padding-bottom: 50px; }
@@ -2242,7 +2513,7 @@ body {
   .blogIn_Msg_Block {
     padding: 20px 0; }
     .blogIn_Msg_Block .blogIn_Msg_Box #blogIn_Msg_Content {
-      width: 80%;
+      width: 90%;
       max-width: 1000px;
       margin-left: 50px;
       padding: 20px 50px 20px 10px; }
@@ -2419,7 +2690,7 @@ body {
     width: 100%; }
     .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic .blogSubmit_RightBox_PicItem {
       width: 20%;
-      margin: 0 5% 3%; }
+      margin: 0 0 3% 10%; }
       .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic .blogSubmit_RightBox_PicItem select {
         border: 1px solid grey;
         padding: 1%;
@@ -2428,12 +2699,46 @@ body {
         color: #624b09; }
   .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer {
     text-align: center; }
-    .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer .blogSubmit_RightBox_ShareContent input {
-      padding: 2% 10% 10% 1%;
-      border: 1px solid #009944;
-      font-size: 1vw;
-      text-align: left;
-      color: #888; }
+    .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer .blogSubmit_RightBox_ShareContent #blogIn_Msg_Content {
+      width: 70%; }
+  .blogSubmit_RightBox_ratio {
+    margin: 5% 10% 10%; }
+    .blogSubmit_RightBox_ratio .full {
+      height: 50px;
+      background-color: orange;
+      position: relative; }
+      .blogSubmit_RightBox_ratio .full .cursor {
+        position: absolute;
+        top: 60px;
+        height: 20px;
+        width: 20px;
+        background-color: brown;
+        color: white;
+        text-align: center;
+        line-height: 20px;
+        cursor: pointer; }
+      .blogSubmit_RightBox_ratio .full .cursorone {
+        left: calc(33.3333% - 15px/2); }
+        .blogSubmit_RightBox_ratio .full .cursorone:before {
+          content: '';
+          position: absolute;
+          bottom: 20px;
+          left: 0;
+          display: inline-block;
+          border-bottom: 10px solid brown;
+          border-right: 10px solid transparent;
+          border-left: 10px solid transparent; }
+      .blogSubmit_RightBox_ratio .full .cursortwo {
+        left: calc(66.6666% - 15px/2); }
+        .blogSubmit_RightBox_ratio .full .cursortwo:before {
+          content: '';
+          position: absolute;
+          bottom: 20px;
+          left: 0;
+          display: inline-block;
+          border-bottom: 10px solid brown;
+          border-right: 10px solid transparent;
+          border-left: 10px solid transparent; }
   .blogSubmit_Share form {
     height: 100%;
     text-align: center; }
