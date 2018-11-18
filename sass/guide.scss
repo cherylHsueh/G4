@@ -1,0 +1,577 @@
+@import "reset";
+@import "global";
+// @import "nav";
+
+
+@include rwd(mobile) {
+    // * {
+    //     outline: 1px solid #F00;
+    // }
+    .gudie_control {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        background-color: $sky;
+        .gudie_blackboard {
+            max-width: 1920px;
+            width: 200%;
+            position: absolute;
+            top: 10%;
+            left: -50%;
+            overflow: hidden;
+            img {
+                width: 100%;
+            }
+        }
+
+        .gudie_classmate {
+            width: 100%;
+
+            img {
+                width: 80%;
+            }
+
+            .gudie_student {
+                position: absolute;
+                top: 55%;
+                left: 6%;
+                z-index: 1;
+                // opacity: 0;
+            }
+
+            .gudie_student01 {
+                position: absolute;
+                top: 48%;
+                left: 10%;
+                z-index: 1;
+                opacity: 0;
+
+            }
+
+            .gudie_student02 {
+                position: absolute;
+                top: 48%;
+                left: 5%;
+                z-index: 1;
+                opacity: 0;
+
+            }
+
+            .gudie_front_btn {
+                max-width: 150px;
+                width: 100%;
+                position: absolute;
+                left: 33%;
+                top: 25%;
+                z-index: 6;
+
+                img {
+                    width: 100%;
+
+                }
+
+                // &:hover~.gudie_student {
+                //     opacity: 0;
+                // }
+
+                // &:hover~.gudie_student01 {
+                //     opacity: 1;
+                // }
+
+
+            }
+
+            .gudie_rear_btn {
+                max-width: 150px;
+                width: 100%;
+                position: absolute;
+                left: 33%;
+                top: 40%;
+                z-index: 6;
+
+                img {
+                    width: 100%;
+                }
+                // &:hover~.gudie_student {
+                //     opacity: 0;
+                // }
+
+                // &:hover~.gudie_student02 {
+                //     opacity: 1;
+                // }
+            }
+        }
+
+
+
+        .gudie_duty {
+            max-width: 25px;
+            position: absolute;
+            top: 30%;
+            right: 3%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .gudie_podium {
+            width: 100%;
+            height: 6vh;
+            position: absolute;
+            bottom: 0;
+            background-color: #722a0a;
+        }
+        .guide_logo {
+            width: 150px;
+            position: absolute;
+            top: 0% !important;
+            left: 35% !important;
+            // transform: rotate(10deg);
+            img {
+                width: 100% !important;
+            }
+        }
+
+        // .gudie_fruit {
+        //     .gudie_fruit_banana {
+        //         position: absolute;
+        //         top: 25%;
+        //         left: 0%;
+        //         transform: rotate(5deg);
+        //         img {
+        //             width: 10%;
+        //         }
+        //     }
+
+        //     .gudie_fruit_guava {
+        //         position: absolute;
+        //         top: 55%;
+        //         left: -60%;
+        //         transform: rotate(-15deg);
+        //         img {
+        //             width: 4%;
+        //         }
+        //     }
+
+        //     .gudie_fruit_grape {
+        //         position: absolute;
+        //         top: 55%;
+        //         left: 55%;
+        //         transform: rotate(15deg);
+        //         img {
+        //             width: 18%;
+        //         }
+        //     }
+
+        //     .gudie_fruit_apple {
+        //         position: absolute;
+        //         top: 15%;
+        //         left: 60%;
+        //         transform: rotate(10deg);
+        //         img {
+        //             width: 15%;
+        //         }
+        //     }
+
+        //     .gudie_fruit_orange {
+        //         position: absolute;
+        //         top: 15%;
+        //         left: -60%;
+        //         transform: rotate(-20deg);
+        //         img {
+        //             width: 4%;
+        //         }
+        //     }
+        // }
+
+        .section02 {
+            opacity: 0;
+            max-width: 1920px;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            z-index: 5;
+            
+            // background-color: rgb(234, 188, 255);
+            // .box {
+            //     img {
+            //         width: 15% !important;
+            //     }
+            // }
+            .box_01 {
+                width: 300px;
+                position: absolute;
+                top: 30% !important;
+                left: 65% !important;
+                transform: rotate(10deg);
+                opacity: 0;
+
+                img {
+                    width: 40% !important;
+                }
+            }
+
+            .box_02 {
+                max-width: 150px;
+                width: 100%;
+                position: absolute;
+                top: 50% !important;
+                left: 20% !important;
+                transform: rotate(10deg);
+
+                img {
+                    width: 100% !important;
+                }
+            }
+
+            .box_03 {
+                width: 150px;
+                position: absolute;
+                top: 10% !important;
+                left: 15% !important;
+                transform: rotate(10deg);
+
+                img {
+                    width: 100% !important;
+                }
+            }
+
+            .box_04 {
+                width: 300px;
+                position: absolute;
+                top: 10% !important;
+                left: 40% !important;
+                transform: rotate(10deg);
+
+                img {
+                    width: 100% !important;
+                }
+            }
+
+            .box_05 {
+                width: 200px;
+                position: absolute;
+                top: 55% !important;
+                left: 70% !important;
+                transform: rotate(10deg);
+
+                img {
+                    width: 100% !important;
+                }
+            }
+
+            .box_06 {
+                width: 180px;
+                position: absolute;
+                top: 10% !important;
+                left: 70% !important;
+                transform: rotate(10deg);
+
+                img {
+                    width: 90% !important;
+                }
+            }
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+}
+
+@include rwd(medium) {
+    // * {
+    //     outline: 1px solid #F00;
+    // }
+    .gudie_control {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        background-color: $sky;
+        .gudie_blackboard {
+            // max-width: 1920px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+
+            img {
+                width: 80%;
+            }
+        }
+
+        .gudie_classmate {
+            width: 100%;
+
+            img {
+                width: 120%;
+            }
+
+            .gudie_student {
+                position: absolute;
+                top: 37%;
+                left: 34.5%;
+                z-index: 1;
+                // opacity: 0;
+            }
+
+            .gudie_student01 {
+                position: absolute;
+                top: 37.8%;
+                left: 33.8%;
+                z-index: 1;
+                opacity: 0;
+                img {
+                    width: 118%;
+                }
+
+            }
+
+            .gudie_student02 {
+                position: absolute;
+                top: 37%;
+                left: 35.6%;
+                z-index: 1;
+                opacity: 0;
+                img {
+                    width: 120%;
+                }
+
+
+            }
+
+            .gudie_front_btn {
+                max-width: 300px;
+                width: 100%;
+                position: absolute;
+                right: 60%;
+                top: 30%;
+                z-index: 6;
+
+                img {
+                    width: 100%;
+
+                }
+
+                &:hover~.gudie_student {
+                    opacity: 0;
+                }
+
+                &:hover~.gudie_student01 {
+                    opacity: 1;
+                }
+
+
+            }
+
+            .gudie_rear_btn {
+                max-width: 300px;
+                width: 100%;
+                position: absolute;
+                left: 60%;
+                top: 30%;
+                z-index: 6;
+
+                img {
+                    width: 100%;
+                }
+                &:hover~.gudie_student {
+                    opacity: 0;
+                }
+
+                &:hover~.gudie_student02 {
+                    opacity: 1;
+                }
+            }
+        }
+
+
+
+        .gudie_duty {
+            max-width: 50px;
+            position: absolute;
+            top: 30%;
+            right: 13%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .gudie_podium {
+            width: 100%;
+            height: 6vh;
+            position: absolute;
+            bottom: 0;
+            background-color: #722a0a;
+        }
+        .guide_logo {
+            width: 250px;
+            position: absolute;
+            top: 5% !important;
+            left: 43.5% !important;
+            // transform: rotate(10deg);
+            img {
+                width: 100% !important;
+            }
+        }
+
+        // .gudie_fruit {
+        //     .gudie_fruit_banana {
+        //         position: absolute;
+        //         top: 25%;
+        //         left: 0%;
+        //         transform: rotate(5deg);
+        //         img {
+        //             width: 10%;
+        //         }
+        //     }
+
+        //     .gudie_fruit_guava {
+        //         position: absolute;
+        //         top: 55%;
+        //         left: -60%;
+        //         transform: rotate(-15deg);
+        //         img {
+        //             width: 4%;
+        //         }
+        //     }
+
+        //     .gudie_fruit_grape {
+        //         position: absolute;
+        //         top: 55%;
+        //         left: 55%;
+        //         transform: rotate(15deg);
+        //         img {
+        //             width: 18%;
+        //         }
+        //     }
+
+        //     .gudie_fruit_apple {
+        //         position: absolute;
+        //         top: 15%;
+        //         left: 60%;
+        //         transform: rotate(10deg);
+        //         img {
+        //             width: 15%;
+        //         }
+        //     }
+
+        //     .gudie_fruit_orange {
+        //         position: absolute;
+        //         top: 15%;
+        //         left: -60%;
+        //         transform: rotate(-20deg);
+        //         img {
+        //             width: 4%;
+        //         }
+        //     }
+        // }
+
+        .section02 {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            z-index: 5;
+
+            // background-color: rgb(234, 188, 255);
+            // .box {
+            //     img {
+            //         width: 15% !important;
+            //     }
+            // }
+            .box_01 {
+                width: 300px;
+                position: absolute;
+                top: 30% !important;
+                left: 65% !important;
+                transform: rotate(10deg);
+                opacity: 0;
+
+                img {
+                    width: 100% !important;
+                }
+            }
+
+            .box_02 {
+                max-width: 150px;
+                width: 100%;
+                position: absolute;
+                top: 50% !important;
+                left: 18% !important;
+                transform: rotate(10deg);
+
+                img {
+                    width: 100% !important;
+                }
+            }
+
+            .box_03 {
+                width: 150px;
+                position: absolute;
+                top: 10% !important;
+                left: 20% !important;
+                transform: rotate(10deg);
+
+                img {
+                    width: 100% !important;
+                }
+            }
+
+            .box_04 {
+                width: 200px;
+                position: absolute;
+                top: 10% !important;
+                left: 40% !important;
+                transform: rotate(10deg);
+
+                img {
+                    width: 100% !important;
+                }
+            }
+
+            .box_05 {
+                width: 200px;
+                position: absolute;
+                top: 55% !important;
+                left: 70% !important;
+                transform: rotate(10deg);
+
+                img {
+                    width: 100% !important;
+                }
+            }
+
+            .box_06 {
+                width: 150px;
+                position: absolute;
+                top: 10% !important;
+                left: 70% !important;
+                transform: rotate(10deg);
+
+                img {
+                    width: 100% !important;
+                }
+            }
+           
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+}
