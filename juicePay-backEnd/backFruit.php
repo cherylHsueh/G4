@@ -39,7 +39,7 @@
                                 </tr>
                                 <tr class="newPd">
                                     <th>色碼</th>
-                                    <td style="vertical-align: middle;"><input type="text" name="fruitCol" id="upColor"><div class="colorShow"></div></td>
+                                    <td style="vertical-align: middle;"><input type="text" name="fruitCol"><div class="colorShow"></div></td>
                                 </tr>
                                 <tr class="newPd">
                                     <th>照片</th>
@@ -100,21 +100,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <form id="fruitInfoForm" action="backFruitInfo.php" method="post">
 <?php   
     $sql = "select * from fruititem";
     $fruit = $pdo ->query($sql);
     while($rowFruit=$fruit->fetch(PDO::FETCH_ASSOC)){
-    ?>                        <tr>
-                                <td><?php echo $rowFruit['fruitNo'] ?></td>
-                                <td><?php echo $rowFruit['fruitName'] ?></td>
-                                <td><div style="background-color: #<?php echo $rowFruit['fruitCol'] ?>;width: 30px;height: 30px;"></div></td>
-                                <td><?php echo $rowFruit['cal'] ?></td>
-                                <td><?php echo $rowFruit['iron'] ?></td>
-                                <td><?php echo $rowFruit['fiber'] ?></td>
-                                <td><?php echo $rowFruit['vinC'] ?></td>
-                                <td class="fruit_info"><?php echo $rowFruit['fruitInfo'] ?></td>
-                                <td class="fruit_pic"><img src="../images/<?php echo $rowFruit['fruitImg'] ?>" alt="<?php echo $rowFruit['fruitName'] ?>"></td>
+    ?>                        
+                    <tr>
+                                <form action="backFruitInfo.php" method="post" id="changeInfo<?php echo $rowFruit['fruitNo'] ?>">
+                                    <td ><input style="display: none;" name="fruitNo" value="<?php echo $rowFruit['fruitNo'] ?>"><?php echo $rowFruit['fruitNo'] ?></td>
+                                    <td><input class="fruitNotRead" type="text" name="fruitName" readonly value="<?php echo $rowFruit['fruitName'] ?>"></td>
+                                    <td><input class="fruitNotRead" type="text" name="fruitCol" readonly value="<?php echo $rowFruit['fruitCol'] ?>"><div class="colorShow" style="background-color: #<?php echo $rowFruit['fruitCol'] ?>"></div></td>
+                                    <td><input class="fruitNotRead" type="text" name="cal" readonly value="<?php echo $rowFruit['cal'] ?>"></td>
+                                    <td><input class="fruitNotRead" type="text" name="iron" readonly value="<?php echo $rowFruit['iron'] ?>"></td>
+                                    <td><input class="fruitNotRead" type="text" name="fiber" readonly value="<?php echo $rowFruit['fiber'] ?>"></td>
+                                    <td><input class="fruitNotRead" type="text" name="vinC" readonly value="<?php echo $rowFruit['vinC'] ?>"></td>
+                                    <td class="fruit_info"><textarea class="fruitNotRead" readonly name="fruitInfo"><?php echo $rowFruit['fruitInfo'] ?></textarea></td>
+                                    <td class="fruit_pic"><img src="../images/<?php echo $rowFruit['fruitImg'] ?>" alt="<?php echo $rowFruit['fruitName'] ?>"></td>
+                                </form>
                                 <td class="status<?php echo $rowFruit['fruitNo'] ?>">
                                     <?php if($rowFruit['fruitStatus']==1){
                                         echo "上架";
@@ -122,10 +124,10 @@
                                         echo "下架";
                                     } ?></td>
                                 <td>
-                                    <button id="turnFruitInfo">水果詳情</button>
+                                    <button class="turnFruitInfo" id="<?php echo $rowFruit['fruitNo']?>">修改</button>
                                     <input style="display:none;" name="fruitNo" value="">
                                 </td>
-                                <td><button class="changeStatus">
+                                <td><button class="changeStatus" id="status_<?php echo $rowFruit['fruitNo']?>">
                                     <?php if($rowFruit['fruitStatus']==1){
                                         echo "下架";
                                     }else{
@@ -135,7 +137,7 @@
 <?php
 }
 ?>   
-                        </form>
+                        
                     </tbody>
                 </table>
                 <!-- <ul class="pagination justify-content-center">
@@ -180,18 +182,23 @@
 			reader.readAsDataURL(file);
 		};
 //即時看到水果顏色
-    $("#upColor").change(function(){
+    $('input[name="fruitCol"]').change(function(){
         this.nextElementSibling.style.backgroundColor="#"+this.value;
     });
-//更改水果詳情
-    $('#turnFruitInfo').click(function(){
-        this.nextElementSibling.value=this.parentNode.parentNode.firstElementChild.innerText;
-        $('#fruitInfoForm').submit();
+//更改內容
+    $('.fruitNotRead').click(function(){
+        this.className+=' info';
+        this.removeAttribute('readonly');
+    })
+    $('.turnFruitInfo').click(function(){
+        $('#changeInfo'+this.id).submit();
+
     })
 //水果上下架狀態改變
         $('.changeStatus').click(function () {
-            $fruitNo=this.parentNode.parentNode.firstElementChild.innerText;
-            $fruitStatus=this.innerText;
+
+            var fruitNo=this.id.split('_')[1];
+            var fruitStatus=this.innerText;
             if(this.innerText=='下架'){
                 this.innerText='上架';
                 this.parentNode.previousElementSibling.previousElementSibling.innerText='下架';
@@ -199,7 +206,7 @@
                 this.innerText='下架';
                 this.parentNode.previousElementSibling.previousElementSibling.innerText='上架';
             } 
-            changeStatus($fruitNo,$fruitStatus);
+            changeStatus(fruitNo,fruitStatus);
          });
 //水果上下架ajax改變資料庫
         function changeStatus(fruitNo,fruitStatus){

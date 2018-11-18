@@ -1,5 +1,9 @@
 //柱狀圖
  function chart() {
+    var diyButton = document.getElementById('nextButton');
+    diyButton.addEventListener('click',diySubmit);
+
+
     var ctx = document.getElementById('myChart');
     var myChart = new Chart(ctx, {
         type: 'bar',
@@ -98,6 +102,7 @@
         $(bgc1).css('background-color', "rgb(199, 129, 50)");
     }
 
+
 //點選果汁
     function addJuice(e){
         var fruit =this.id;
@@ -169,7 +174,7 @@
             swal({
                 type: 'error',
                 title: '果汁已經滿了哦!',
-                confirmButtonText: '<a href="diyDesignBottle.html">下一步!</a>',
+                confirmButtonText: '<a href="diyDesignBottle.php">下一步!</a>',
                 confirmButtonColor: '#ffd700',
                 showCancelButton: true,
                 cancelButtonColor: '#d33',
@@ -367,6 +372,29 @@
 
 };
 
+function diySubmit(){
+    var bottlec3 = $('.diy_pickFruit_bottle3').css('background-color');
+    var bottlec2 = $('.diy_pickFruit_bottle2').css('background-color');
+    var bottlec1 = $('.diy_pickFruit_bottle1').css('background-color');
+    var bottleh3 = $('.diy_pickFruit_bottle3').css('height').replace('px','');
+    var bottleh2 = $('.diy_pickFruit_bottle2').css('height').replace('px','');
+    var bottleh1 = $('.diy_pickFruit_bottle1').css('height').replace('px','');
+    
+    var bottleHeight1 =  $('.diy_pickFruit_bottleBox').css('height').replace('px','');
+
+    document.getElementById( 'bottleh1' ).value = Math.round((bottleh1/bottleHeight1)*100);
+    document.getElementById( 'bottleh2' ).value = Math.round((bottleh2/bottleHeight1)*100);
+    document.getElementById( 'bottleh3' ).value = Math.round((bottleh3/bottleHeight1)*100);
+    document.getElementById( 'bottlec1' ).value = bottlec1;
+    document.getElementById( 'bottlec2' ).value = bottlec2;
+    document.getElementById( 'bottlec3' ).value = bottlec3;
+
+    document.getElementById('diySubmit').submit();
+}
+
+
+
+
 window.addEventListener('load', chart);
 
 
@@ -381,9 +409,6 @@ if ($(window).width() < 768) {
         nextArrow: '<div class="diy_pickFruit_rightArrow"><img src="images/right01.png" alt="右箭頭"></div>',
     });
 }
-
-
-
 
 
 

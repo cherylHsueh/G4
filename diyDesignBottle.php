@@ -14,10 +14,10 @@
 	<script src="js/plugin/jquery-1.7.2.min.js"></script>
 	<!-- <script src="js/plugin/jquery-3.3.1.min.js"></script> -->
 	<script src="js/plugin/jquery-ui.min.js"></script>
-	<script src="js/plugin/colpick.js"></script>
 	<script src="js/plugin/html2canvas.js"></script>
 	<script src="js/plugin/jquery.ui.touch-punch.js"></script>
-	<script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js "></script>
+	<script src="js/plugin/knockout-3.0.0.js"></script>
+	<script src="js/plugin/colpick.js"></script>
 </head>
 <body>
 	<?php
@@ -59,6 +59,7 @@ try{
 				<img src="images/About_Png/cloud(04).png">
 			</div>
 		</div>
+		
 		<!-- 設計瓶身、上傳圖檔及新增文字即時顯示調整效果 -->
 		<div class="wrapper clearfix">
 			<div class="diy_designBottle_bgcBox">
@@ -83,7 +84,7 @@ try{
 							</div>
 						</div>
 						<div class="diy_designBottle_textBlock cl-s-6 cl-md-12 cl-xl-12">
-							<form id="diy_designBottle_textForm" class="diy_designBottle_createTextBlock" name="textForm" method="post">
+							<form id="diy_designBottle_textForm" class="diy_designBottle_createTextBlock" name="textForm" method="_post">
 								<p>文字：</p>
 								<input type="text" name="e" class="diy_designBottle_textLength ">
 								<input type="button" value="新增文字" onclick="createText(this.form.e.value);">
@@ -93,20 +94,34 @@ try{
 				</div>
 <?php
 }catch(PDOException $e){
-  echo "error~<br>";
   echo $e->getMessage() , "<br>";
 }
-?>				
+?>
+					<svg id="diy_designBottle_botSvg"  xmlns="http://www.w3.org/2000/svg"  style="position:absolute;">
+					<g>
+					<defs>
+					<clipPath id="svgPath">
+					<path class="cls-1" d="M7.06,65.83V400.5A15.52,15.52,0,0,0,22.56,416h105A15.52,15.52,0,0,0,143,400.5V65.83a26.45,26.45,0,0,0-3.74-13.55L129.57,36a28.42,28.42,0,0,1-4-14.56V15h-101v6.47a28.43,28.43,0,0,1-4,14.56L10.8,52.28A26.45,26.45,0,0,0,7.06,65.83Z" transform="translate(-3.08 -4)"/>
+					<rect class="cls-1" x="9.92" y="4" width="125" height="5" rx="1.95" ry="1.95"/>
+					<path class="cls-2" d="M142.31,50.89l-9.67-16.17a24.28,24.28,0,0,1-3.44-12.45V15.83h5.5A5.91,5.91,0,0,0,134.7,4H15a5.91,5.91,0,1,0,0,11.83h5.5v6.44A24.28,24.28,0,0,1,17,34.72L7.37,50.89A30.28,30.28,0,0,0,3.08,66.43V399.57A19.46,19.46,0,0,0,22.51,419H127.16a19.46,19.46,0,0,0,19.43-19.43V66.43A30.28,30.28,0,0,0,142.31,50.89ZM15,11.84A1.93,1.93,0,0,1,15,8H134.7a1.93,1.93,0,0,1,0,3.86H15ZM142.61,399.57A15.47,15.47,0,0,1,127.16,415H22.51A15.47,15.47,0,0,1,7.06,399.57V66.43a26.29,26.29,0,0,1,3.72-13.49l9.67-16.17a28.26,28.26,0,0,0,4-14.5V15.83H125.21v6.44a28.26,28.26,0,0,0,4,14.5l9.67,16.17a26.29,26.29,0,0,1,3.72,13.49Z" transform="translate(-3.08 -4)"/>
+			</clipPath>
+		</defs>
+	</g>
+</svg>		
 				<div class="diy_designBottle_container cl-s-6 cl-md-6 cl-xl-6">
 					<div id="diy_containmentBlock" class="diy_designBottle_pic cl-s-11 cl-md-9 cl-xl-9">
-						<div id="diy_designBottle_wrapper" class="diy_designBottle_bottleItem">
-							<div class="diy_pickFruit_bottle diy_pickFruit_bottle3"></div>
-							<div class="diy_pickFruit_bottle diy_pickFruit_bottle2"></div>
-							<div class="diy_pickFruit_bottle diy_pickFruit_bottle1"></div>
-							<img src="images/bottle.png" id="dragRange" alt="瓶子">
-						</div>
-						<img id="diy_designBottle_diyImg" class="diy_designBottle_changePic draggable  ui-draggable ui-widget-header ui-widget-content" style="position:relative; top:-240px;right:-90px; ">
-						<div id="diy_designBottle_dragText" class="diy_designBottle_createBlock" style="top:-150px;right:-120px;margin:0;"></div>
+						<div  id="diy_designBottle_wrapper" class="diy_pickFruit_wrapperBottleBox" style="clip-path: url(#svgPath);">
+							<div class="diy_pickFruit_bottleBox">
+								<div class="diy_pickFruit_bottle diy_pickFruit_bottle3" style="height:<?php echo $_POST['bottleh3']?>%; background-color:<?php echo $_POST['bottlec3']?>;"></div>
+								<div class="diy_pickFruit_bottle diy_pickFruit_bottle2" style="height:<?php echo $_POST['bottleh2']?>%; background-color:<?php echo $_POST['bottlec2']?>;"></div>
+								<div class="diy_pickFruit_bottle diy_pickFruit_bottle1" style="height:<?php echo $_POST['bottleh1']?>%; background-color:<?php echo $_POST['bottlec1']?>;"></div>
+							</div>
+
+							<img src="images/bottle.png" id="dragRange" alt="空瓶" >
+							<img id="diy_designBottle_diyImg" class="diy_designBottle_changePic draggable  ui-draggable ui-widget-header ui-widget-content">
+							
+							<div id="diy_designBottle_dragText" class="diy_designBottle_createBlock draggable  ui-draggable ui-widget-header ui-widget-content" ></div>
+						</div>	
 					</div>
 					<div class="diy_designBottle_controlBlock cl-s-1 cl-md-3 cl-xl-3 clearfix">
 						<i id="zoomInButton" class="fas fa-search-plus cl-xl-12"></i>
@@ -137,6 +152,21 @@ try{
 				</div>
 			</div>
 		</div>
+		<script>
+	$("#diy_copyPicButton").click(function() {
+		popCenterWindow();
+  $('.diy_customizeBox-lightActive2').css("opacity","1");
+
+	});
+$("#diy_copyPicButton").click(function() {
+  html2canvas($("#diy_containmentBlock")[0]).then(function(canvas) {
+    var $div = $(".diy_customizeBox_finishPic");
+    $div.empty();
+    $("<img />", { src: canvas.toDataURL("image/png") }).appendTo($div);
+  });
+
+});	
+	</script>
 		<!-- 客製完成跳出蓋滿視窗 -->
 		<div class="wrapper">
 			<div id="center" class=" diy_customizePopUp" >
@@ -156,29 +186,9 @@ try{
 									<div></div>
 								</div>
 							</a>
-							<a class="common_btn common_btn_first diy_addCartBtn" href="cart.php">
+							<a class="common_btn common_btn_first diy_addCartBtn" href="diy.php">
 								<span class="
-							 common_btn_txt">我要結帳</span>
-								<div class="common_btn_blobs">
-									<div></div>
-									<div></div>
-									<div></div>
-								</div>
-							</a>
-						</div>
-						<div class="diy_customizeFinishBox_customizeBtns">
-							<a class="common_btn common_btn_second diy_doMoreBtn" href="diy.php">
-								<span class="common_btn_txt">再做一瓶<i class="fas fa-reply"></i></span>
-								<div class="common_btn_blobs">
-									<div></div>
-									<div></div>
-									<div></div>
-								</div>
-							</a>
-							<a class="common_btn common_btn_second diy_doMoreBtn" href="blog.php">
-								<span class="
-									 common_btn_txt">看看別人怎麼做
-									 <div class="bottleIcon"><img src="images/diy/bottleBtn.png"></div></span>
+							 common_btn_txt">重新製作</span>
 								<div class="common_btn_blobs">
 									<div></div>
 									<div></div>
@@ -219,6 +229,7 @@ try{
             </div>
         </div>
 	</footer>
+	<script src="js/global.js"></script>
 	<script src="js/diyDesignBottle.js"></script>
 </body>
 </html>

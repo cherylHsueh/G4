@@ -3,10 +3,6 @@
 @import "nav";
 @import "footer";
 
-* {
-  // outline: 1px solid red;
-}
-
 
 section {
   width: 100%;
@@ -297,9 +293,30 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-
+        .diy_pickFruit_bottle {
+          width: auto;
+          max-width: 100%;
+          height: 1px;
+        }
+    
+        .diy_pickFruit_bottle1 {
+          background-color: transparent;
+          height: 0;
+          transition: 1s;
+        }
+    
+        .diy_pickFruit_bottle2 {
+          background-color: transparent;
+          height: 0;
+          transition: 1s;
+        }
+    
+        .diy_pickFruit_bottle3 {
+          background-color: transparent;
+          height: 0;
+          transition: 1s;
+        }
       }
-
       img {
         position: relative;
         width: 100%;
@@ -309,38 +326,6 @@ body {
     }
     }
   }
-
-  .diy_pickFruit_bottleBox {
-    diy_pickFruit_bottle {
-      width: auto;
-      max-width: 100%;
-      height: 1px;
-    }
-
-    .diy_pickFruit_bottle1 {
-      background-color: transparent;
-      // flex-grow: 0;
-      height: 0;
-      transition: 1s;
-      // border-radius: 0px 0px 10px 10px;
-    }
-
-    .diy_pickFruit_bottle2 {
-      background-color: transparent;
-      height: 0;
-      // flex-grow: 0;
-      transition: 1s;
-    }
-
-    .diy_pickFruit_bottle3 {
-      background-color: transparent;
-      height: 0;
-      // flex-grow: 0;
-      transition: 1s;
-    }
-  }
-
-
 
   //水果功效
   .diy_pickFruit_rightBox {
@@ -840,12 +825,7 @@ body {
   // 動態呈現
   // 瓶子
 
-  .diy_pickFruit_rightBlock {
-    // display: flex;
-    // width: 70%;
-    // max-width: 600px;
-    // margin-top: -23px;
-  }
+
 
   .diy_pickFruit_leftBox {
     position: relative;
@@ -871,6 +851,30 @@ body {
         flex-direction: column;
         justify-content: flex-end;
         transition: 1s;
+        .diy_pickFruit_bottle {
+          width: auto;
+          max-width: 100%;
+          height: 1px;
+        }
+    
+        .diy_pickFruit_bottle1 {
+          border-radius: 0px 0px 10px 10px;
+          background-color: transparent;
+          flex-grow: 0;
+          transition: 1s;
+        }
+    
+        .diy_pickFruit_bottle2 {
+          background-color: transparent;
+          flex-grow: 0;
+          transition: 1s;
+        }
+    
+        .diy_pickFruit_bottle3 {
+          background-color: transparent;
+          flex-grow: 0;
+          transition: 1s;
+        }
       }
 
       img {
@@ -882,39 +886,8 @@ body {
     }
   }
 
-  .diy_pickFruit_bottleBox {
-
-    // transition: 1s;
-    .diy_pickFruit_bottle {
-      width: auto;
-      max-width: 100%;
-      height: 1px;
-    }
-
-    .diy_pickFruit_bottle1 {
-      border-radius: 0px 0px 10px 10px;
-      background-color: transparent;
-      flex-grow: 0;
-      transition: 1s;
-    }
-
-    .diy_pickFruit_bottle2 {
-      background-color: transparent;
-      flex-grow: 0;
-      transition: 1s;
-    }
-
-    .diy_pickFruit_bottle3 {
-      background-color: transparent;
-      flex-grow: 0;
-      transition: 1s;
-    }
-  }
-
-
   //水果功效
   .diy_pickFruit_rightBox {
-    // width: 0%;
     padding: 4% 6%;
   }
 
