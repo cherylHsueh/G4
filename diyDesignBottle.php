@@ -14,11 +14,10 @@
 	<script src="js/plugin/jquery-1.7.2.min.js"></script>
 	<!-- <script src="js/plugin/jquery-3.3.1.min.js"></script> -->
 	<script src="js/plugin/jquery-ui.min.js"></script>
-	<script src="js/plugin/colpick.js"></script>
-	<script type="text/javascript" src="js/global.js"></script>
 	<script src="js/plugin/html2canvas.js"></script>
 	<script src="js/plugin/jquery.ui.touch-punch.js"></script>
-	<script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js "></script>
+	<script src="js/plugin/knockout-3.0.0.js"></script>
+	<script src="js/plugin/colpick.js"></script>
 </head>
 <body>
 	<?php
@@ -153,6 +152,21 @@ try{
 				</div>
 			</div>
 		</div>
+		<script>
+	$("#diy_copyPicButton").click(function() {
+		popCenterWindow();
+  $('.diy_customizeBox-lightActive2').css("opacity","1");
+
+	});
+$("#diy_copyPicButton").click(function() {
+  html2canvas($("#diy_containmentBlock")[0]).then(function(canvas) {
+    var $div = $(".diy_customizeBox_finishPic");
+    $div.empty();
+    $("<img />", { src: canvas.toDataURL("image/png") }).appendTo($div);
+  });
+
+});	
+	</script>
 		<!-- 客製完成跳出蓋滿視窗 -->
 		<div class="wrapper">
 			<div id="center" class=" diy_customizePopUp" >
@@ -166,7 +180,7 @@ try{
 						<div class="diy_proToCartBtns">
 						<form method="post" action="diy_photo_upload.php" id="imgRULForm">
 							<input style="display:none;" name="imgRUL" id="imgRUL">
-						</form>
+						</form>	
 							<a id="addToCartBtn" class="common_btn common_btn_first diy_addCartBtn" >
 								<span class="common_btn_txt">加入購物車</span>
 								<div class="common_btn_blobs">
@@ -218,6 +232,7 @@ try{
             </div>
         </div>
 	</footer>
+	<script src="js/global.js"></script>
 	<script src="js/diyDesignBottle.js"></script>
 </body>
 </html>

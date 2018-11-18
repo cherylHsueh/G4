@@ -155,8 +155,6 @@ if(isset($_GET["fruit1"])==true){
 									<div class="diy_pickFruit_bottle diy_pickFruit_bottle1"></div>
 									<div class="diy_pickFruit_cursor diy_pickFruit_cursor1" id="cursor1">1</div>
 									<div class="diy_pickFruit_cursor diy_pickFruit_cursor2" id="cursor2">2</div>
-
-									<!-- <img src="images/diy/emptyBottle.png" alt="空瓶"> -->
 								</div>
 								<img src="images/bottle.png" alt="空瓶" >
 							</div>
@@ -172,17 +170,18 @@ if(isset($_GET["fruit1"])==true){
 
 					</div>
 				</div>
-				<form method="post" action="diyDesignBottle.php" id="diySubmit"  autocomplete="off">
+
+				
+				<form method="post" action="diyDesignBottle.php" id="diySubmit" >
 					<input type="hidden" name="bottleh1" id="bottleh1" value="">
 					<input type="hidden" name="bottleh2" id="bottleh2" value="">
 					<input type="hidden" name="bottleh3" id="bottleh3" value="">
 					<input type="hidden" name="bottlec1" id="bottlec1" value="">
 					<input type="hidden" name="bottlec2" id="bottlec2" value="">
 					<input type="hidden" name="bottlec3" id="bottlec3" value="">
-				</form>					
-
+				</form>
 				<div class="diy_pickFruit_nextButton">
-					<a id="nextButton" class="common_btn common_btn_first" href="diyDesignBottle.php">
+					<a id="nextButton" class="common_btn common_btn_first">
 						<span class="common_btn_txt">下一步</span>
 						<div class="common_btn_blobs">
 							<div></div>
