@@ -252,7 +252,7 @@ a {
   .common_btn_second:hover .common_btn_txt {
     color: #603813; }
 
-.menu h1.menu_logo {
+.menu h1.menu_logo, .ph_nav h1.phone_logo {
   font-size: 0; }
 
 #hb_control {
@@ -400,13 +400,17 @@ header {
       width: 80%;
       border: 1px solid #fff;
       border-left: 6px solid #f4d66d;
-      border-top: 3px solid #f4d66d; }
+      border-top: 3px solid #f4d66d;
+      margin: 0;
+      height: 100%; }
     .robot_container .robot_inputBlock button {
       display: inline-block;
       height: 100%;
       width: 20%;
       line-height: 40px;
-      background-color: #ffd700; }
+      background-color: #ffd700;
+      margin: 0;
+      padding: 0.3rem 0; }
 
 #robotControl, #hb_control {
   display: none; }
@@ -417,6 +421,10 @@ header {
   top: 110px;
   right: 2%;
   z-index: 100; }
+
+#loginName, #spanLogin {
+  margin-top: 5px;
+  margin-right: 20px; }
 
 @media only screen and (max-width: 767px) {
   .robot_container {

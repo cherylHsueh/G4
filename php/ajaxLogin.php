@@ -23,6 +23,7 @@ try{
     $_SESSION["memTel"] = $memRow["memTel"];
   	//送出登入者的姓名資料
     echo $memRow["memName"];
+    
   }
 }catch(PDOException $e){
   echo $e->getMessage();

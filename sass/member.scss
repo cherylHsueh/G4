@@ -25,6 +25,8 @@ footer{
 
 .member_memberInfo_Features_box_item{
 	text-align: center;
+    position: relative;
+    bottom: -30px;
 		a{
 			text-decoration: none;
 		}
@@ -35,11 +37,11 @@ footer{
 }
 
 .member_memberInfo_box{
-	width: 50%;
+	width: 300px;
 	border:5px solid #aaa;
 	border-radius: 50px;
 	margin:auto;
-	padding: 10px 0;
+	padding: 10px 0 50px 0;
 }
 .member_orderSearch_wrpaper{
 	display: none;
@@ -51,7 +53,9 @@ footer{
 .fa-photo{
 	color:#fff;
 }
-
+#imgContainer{
+	position: relative;
+}
 
 
 @include rwd(mobile){
@@ -80,16 +84,18 @@ footer{
 	.member_memberInfo_photo_box{
 		width: 100px;
 		height: 100px;
-		background-color: orange;
 		border-radius: 50%;
 		margin:auto;
 			img{
 				width: 100%;
+				border:3px solid #aaa;
+				border-radius:50%; 
+				
 			}
 	}
 	.uploadBtn{
 		position: relative;
-		top: 30px;
+		bottom: -45px;
 		left: 17px;
 		padding: 14px 0px;
 	}	
@@ -130,7 +136,7 @@ footer{
 	.member_personalInfo_basicInfo_block{
 		width: 300px;
 		margin: 20px auto 0;
-		border:1px solid #ccc;
+		border:5px solid #aaa;
 		border-radius: 50px;
 		text-align: center;
 		padding:40px 0;
@@ -139,11 +145,11 @@ footer{
 
 	.member_personalInfo_password_block{
 		width: 300px;
-		border:1px solid #ccc;
+		border:5px solid #aaa;
 		border-radius: 50px;
 		text-align: center;
 		margin:20px auto;
-		padding: 20px 0;
+		padding: 20px 0 40px 0;
 		font-size: 18px;
 	}
 	.member_personalInfo_password_block_item{
@@ -175,10 +181,11 @@ footer{
 			z-index: -1;
 		}
 		.member_background_bottom_cloud{
-			width: 50%;
-			position: absolute;
-			bottom: 120px;
-			right: 30px;
+			// width: 50%;
+			// position: absolute;
+			// bottom: 120px;
+			// right: 30px;
+			display: none;
 		}
 		.member_background_bottom_orchard{
 			display: none;
@@ -229,9 +236,6 @@ footer{
 	#member_orderSearch_block_box_item_orderNo{
 		display: inline-block;
 	}
-	#member_orderSearch_block_box_item_memName{
-		display: inline-block;
-	}
 	#member_orderSearch_block_box_item_orderPrice{
 		display: inline-block;
 	}
@@ -242,14 +246,14 @@ footer{
 //手機版 訂單詳情跳窗
 .member_orderSearch_block_lightbox{
 	width: 100vw;
-	height: 100vh;
+	// height: 100vh;
 	// background-color:yellow;
 	display:none;
 	text-align: center;
 	position: relative;
 	.member_orderSearch_block_lightbox_box{
 		width: 90%;
-		background-color:rgba(0,0,0,0.5 );; 
+		background-color:rgba(0,0,0,0.5); 
 		position: fixed;
 		right: 0;
 		left: 0;
@@ -273,6 +277,7 @@ footer{
 	font-size: 16px;
 	color:#fff;
 	border:1px solid #ccc;
+	text-align: center;
 }
 .member_orderSearch_block_lightbox_picture {
 	img{
@@ -330,8 +335,7 @@ footer{
 	.modifyInfo_btn{
 		padding: 0;
 		position: relative;
-		top: 20px;
-		left: 3%;
+		top: 9px;
 	}
 	.modifyPsw_btn{
 		padding: 0;
@@ -343,7 +347,7 @@ footer{
 		padding: 10px;
 		position: relative;
 		top: 20px;
-		left: 3%;
+		left: -8%;
 	}
 	.member_memberInfo_box{
 		width: 300px;
@@ -419,7 +423,7 @@ x
 		border:5px solid #aaa;
 		margin:20px auto;
 		text-align: center;
-		padding:20px ;
+		padding:30px ;
 		font-size: 18px;
 		line-height: 3;
 		position: relative;
@@ -449,7 +453,7 @@ x
 		.member_orderSearch_block_box{
 			width: 200px;
 			border: 1px solid #aaa;
-			border-radius: 50px;
+			border-radius: 30px;
 			padding: 34px;
 			margin: 2% ;
 			display: inline-block;
@@ -461,9 +465,6 @@ x
 			line-height: 2;
 		}
 		#member_orderSearch_block_box_item_orderNo{
-			display: inline-block;
-		}
-		#member_orderSearch_block_box_item_memName{
 			display: inline-block;
 		}
 		#member_orderSearch_block_box_item_orderPrice{
@@ -484,18 +485,20 @@ x
 //桌機版 訂單詳情跳窗
 .member_orderSearch_block_lightbox{
 	width: 100vw;
-	height: 100vh;
+	// height: 100vh;
 	// background-color:yellow;
 	display:none;
 	text-align: center;
-	position: relative;
+	position: absolute;
+	z-index: 5;
 	.member_orderSearch_block_lightbox_box{
 		width: 55%;
-		background-color:rgba(0,0,0,0.5 );; 
+		background-color:rgba(0,0,0,0.5);
 		position: fixed;
-		right: 0;
-		left: 0;
-		margin: 15% auto;
+		top:50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		margin:auto;
 	
 	}
 }
@@ -515,10 +518,11 @@ x
 	font-size: 16px;
 	color:#fff;
 	border:1px solid #ccc;
+	text-align: center;
 }
 .member_orderSearch_block_lightbox_picture {
 	img{
-		width: 20%;
+		width: 100%;
 		vertical-align: middle;
 		padding: 8%;
 	}

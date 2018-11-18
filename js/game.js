@@ -32,25 +32,25 @@
         this.FruitMove = null;
         /*全局参数设置*/
         this.Setting = $.extend({
-            //游戏盒子
+            //遊戲盒子
             GameBox:$('div#game_box'),
-            //水果篮
+            //水果籃
             CarBox:$('div#carBox'),
-            //水果藍移动像素
+            //水果籃子移动像素
             CarMoveWidth:50,
             //水果籃寬度
             CarBoxWidth:$('div#carBox').width(),
-            //游戏盒子宽度
+            //遊戲盒宽度
             BoxWidth:1920,
-            //游戏盒子高度
+            //遊戲盒高度
             BoxHeight:500,
             //水果寬度
             FruitWidth:80,
-            //当前总得分
+            //當前總得分
             CountCent:0,
-            //当前關卡级别
+            //關卡级别
             LevelNum:1,
-            //当前关卡级别-升级监听变量
+            //關卡卡级别-升级監聽变量
             ListenerLevelNum:1,
             //玩家姓名
             UserName:'果然',
@@ -64,7 +64,7 @@
     }
 
     /**
-     * 遊戲等級對象,改寫成只有一關
+     * 遊戲等級對象,改寫只有一關
      */
     fruitGame.prototype.GetLevelModel = function(level){
         var _levels = this.LevelList,
@@ -155,8 +155,95 @@
         });
     }
 
+    // 手機模式
+    if(window.screen.width<1440){
+    //手機橫式
+        function changeOrientation($print) {  
+            var width = document.documentElement.clientWidth;
+            var height =  document.documentElement.clientHeight;
+            if(width < height) {
+                $print.width(height);
+                $print.height(width);
+                $print.css('top',  (height - width) / 2 );
+                $print.css('left',  0 - (height - width) / 2 );
+                $print.css('transform', 'rotate(90deg)');
+                $print.css('transform-origin', '50% 50%');
+            } 
+           
+            var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+                
+                window.addEventListener(evt, function() {
+          
+                setTimeout(function() {
+                    var width = document.documentElement.clientWidth;
+                    var height =  document.documentElement.clientHeight;
+                    // 刷新城市的宽度
+                    initCityWidth();
+                    // 初始化每个气泡和自行车碰撞的距离
+                    cityCrashDistanceArr = initCityCrashDistance();
+              
+                //   if( width > height ){
+                //       $print.width(width);
+                //       $print.height(height);
+                //       $print.css('top',  0 );
+                //       $print.css('left',  0 );
+                //       $print.css('transform' , 'none');
+                //       $print.css('transform-origin' , '50% 50%');
+                //    }
+                //    else {
+                    $print.width(height);
+                      $print.height(width);
+                      $print.css('top',  (height-width)/2 );
+                      $print.css('left',  0-(height-width)/2 );
+                      $print.css('transform' , 'rotate(90deg)');
+                      $print.css('transform-origin' , '50% 50%');
+                //    }
+              }, 300);  
+             }, false);
+            }
+
+
+    //  使用陀螺儀
+    var width = document.documentElement.clientWidth;
+    var height =  document.documentElement.clientHeight;
+    if(width < height) {
+
+        if(window.DeviceOrientationEvent) {
+            console.log($('div#carBox').width());
+            $('div#carBox').css({ left:window.screen.width+ $('div#carBox').width()/2 });
+            window.addEventListener('deviceorientation', function(event) {
+                var gamma = event.gamma;
+
+                $('div#carBox').css({ left:(gamma*6+400) + 'px' });
+                
+            }, false);
+        }else{
+            document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
+        }
+    }else{
+        if(window.DeviceOrientationEvent) {
+            console.log($('div#carBox').width());
+            $('div#carBox').css({ left:window.screen.width+ $('div#carBox').width()/2 });
+            window.addEventListener('deviceorientation', function(event) {
+                var beta = event.beta;
+
+                $('div#carBox').css({ left:(beta*10+400) + 'px' });
+                
+            }, false);
+        }else{
+            document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
+        }
+    }
+
+
+
+
+
+    }
+    
+
     /**
-     * 水果篮位置
+     * 水果籃位置
      */
     fruitGame.prototype.CarBoxMove = function(action){
         var _this = this,
@@ -198,6 +285,8 @@
         // 控制速度
     }
 
+ 
+
     /**
      * 水果炸弹,血量减少
      */
@@ -222,10 +311,10 @@
                 }else if(aa >=0){
                     c = 9;
                 }
-                _this.Setting.GameBox.append('<span class="game_over_tip">恭喜你得到積分'+document.getElementById('gameCent').innerText+'分~拿到'+c+'折優惠券</span>');
-                _this.Setting.GameBox.append('<span class="game_over_tip2">立刻前往果汁DIY頁面</span>');
-                _this.Setting.GameBox.append('<a href="diy.html" class="game_over_tip3">'+'GO'+'</a>');
-                _this.Setting.GameBox.append('<img class="special" src="images/coupon.png" alt="">')
+                $("div#game_box").append('<span class="game_over_tip">恭喜你得到積分'+document.getElementById('gameCent').innerText+'分~拿到'+c+'折優惠券</span>');
+                $("div#game_box").append('<span class="game_over_tip2">立刻前往果汁DIY頁面</span>');
+                $("div#game_box").append('<a href="diy.html" class="game_over_tip3">'+'GO'+'</a>');
+                $("div#game_box").append('<img class="special" src="images/coupon.png" alt="">')
 
                 
             });
@@ -266,7 +355,7 @@
     }
 
     /**
-     * 计算投入到篮里的水果
+     * 計算籃子接到的水果
      */
     fruitGame.prototype.FruitPutCount = function(element,elementMove){
         var _this = this,
@@ -306,9 +395,27 @@
      * 開始遊戲
      */
     fruitGame.prototype.Start = function(){
+       // 倒數三十秒計時器 
+        var num = 30;
+        var time;
+        function bye(){
+ 	        num--;
+ 	        if(num == 0){ 
+ 		    num = "時間到!";
+ 		clearInterval( time )
+		// 到這邊取消計時器標號
+        }
+	    document.getElementById("divNum").
+		innerHTML = num;
+		// 用innerHTML來更改數字
+		console.log(num)
+    }
+	    time = setInterval( bye,1000);
+        // 寫下一個數字 就會是10的-3次方,所以我們寫1000會等於一秒	
+        // 倒數三十秒計時器結束  
         var _this = this,
             _setting = this.Setting;
-
+        // 遊戲部分
         _this.BindControlMove();
         _this.BuilderFruit = setInterval(function(){
             var _domDiv = document.createElement('div'),
@@ -325,8 +432,15 @@
             _setting.GameBox.append(_domDiv);
             _this.FruitDownMove(_domDiv);
         },_this.GetLevelModel(_setting.LevelNum).Speed);
+        // 這邊寫一個遊戲本身停止的計時器
+        // 30000毫秒過後執行吃到炸彈的function，這function是給生命life，要扣多少就給多少，滿是80，所以可以給80，但我94要給100(怪人)
+        setTimeout(function() {
+        clearInterval(_this.BuilderFruit);
+        console.log(fruitGame.prototype.FruitBomb(100));
+        }, 30000);
         return this;
-    }
+    };
+
 
     /**
      * 遊戲初始化

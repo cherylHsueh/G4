@@ -15,7 +15,7 @@
              </div>
             <div class='ph_nav'>
                 <label for='hb_control' class='hb'><span></span></label>
-                <a href='index.html'>
+                <a href='homepage.php'>
                     <h1 class='phone_logo'><img src='images/logo.png' alt='果然配'>果然配</h1>
                 </a>
             </div>
@@ -24,7 +24,7 @@
                 <ul>
                     <li class='menu_item'><a href='diy.php'>果汁DIY</a></li>
                     <li class='menu_item'><a href='product.php'>果然特調</a></li>
-                    <li><a href='index.php'>
+                    <li><a href='homepage.php'>
                             <h1 class='menu_logo'><img src='images/logo.png' alt='果然配'>果然配</h1>
                         </a> </li>
                     <li class='menu_item'><a href='blog.php'>果然私藏</a></li>
@@ -40,7 +40,7 @@
                 <div class='mem_pic'><a href='cart.php'><img src='images/cart.png' alt='購物車'></a></div>
             </div>
         </nav>
-        <div class='coupon'><a href='game.html'><img src='images/coupon.png' alt='優惠小遊戲'></a></div>
+        <div class='coupon'><a href='game.php'><img src='images/coupon.png' alt='優惠小遊戲'></a></div>
         <!-- 機器人 -->
         <input type='checkbox' id='robotControl'>
         <div class='robot_container'>

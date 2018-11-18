@@ -1,0 +1,524 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.clearfix:after {
+  display: block;
+  content: '';
+  clear: both; }
+
+body {
+  font-family: "Microsoft JhengHei"; }
+
+.wrapper {
+  margin: 0 auto; }
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%; }
+
+@media only screen and (max-width: 767px) {
+  .cl-s-1, .cl-s-2, .cl-s-3, .cl-s-4, .cl-s-5, .cl-s-6,
+  .cl-s-7, .cl-s-8, .cl-s-9, .cl-s-10, .cl-s-11, .cl-s-12 {
+    float: left;
+    box-sizing: border-box; }
+  .cl-s-1 {
+    width: 8.33333%; }
+  .cl-s-2 {
+    width: 16.66667%; }
+  .cl-s-3 {
+    width: 25%; }
+  .cl-s-4 {
+    width: 33.33333%; }
+  .cl-s-5 {
+    width: 41.66667%; }
+  .cl-s-6 {
+    width: 50%; }
+  .cl-s-7 {
+    width: 58.33333%; }
+  .cl-s-8 {
+    width: 66.66667%; }
+  .cl-s-9 {
+    width: 75%; }
+  .cl-s-10 {
+    width: 83.33333%; }
+  .cl-s-11 {
+    width: 91.66667%; }
+  .cl-s-12 {
+    width: 100%; }
+  h2 {
+    font-size: 26px; }
+  h3 {
+    font-size: 20px; }
+  h4 {
+    font-size: 18px; }
+  p {
+    font-size: 16px; } }
+
+@media all and (min-width: 768px) {
+  .cl-md-1, .cl-md-2, .cl-md-3, .cl-md-4, .cl-md-5, .cl-md-6,
+  .cl-md-7, .cl-md-8, .cl-md-9, .cl-md-10, .cl-md-11, .cl-md-12 {
+    float: left;
+    box-sizing: border-box; }
+  .cl-md-1 {
+    width: 8.33333%; }
+  .cl-md-2 {
+    width: 16.66667%; }
+  .cl-md-3 {
+    width: 25%; }
+  .cl-md-4 {
+    width: 33.33333%; }
+  .cl-md-5 {
+    width: 41.66667%; }
+  .cl-md-6 {
+    width: 50%; }
+  .cl-md-7 {
+    width: 58.33333%; }
+  .cl-md-8 {
+    width: 66.66667%; }
+  .cl-md-9 {
+    width: 75%; }
+  .cl-md-10 {
+    width: 83.33333%; }
+  .cl-md-11 {
+    width: 91.66667%; }
+  .cl-md-12 {
+    width: 100%; }
+  h2 {
+    font-size: 32px; }
+  h3 {
+    font-size: 24px; }
+  h4 {
+    font-size: 18px; }
+  p {
+    font-size: 16px; } }
+
+@media all and (min-width: 1024px) {
+  .cl-xl-1, .cl-xl-2, .cl-xl-3, .cl-xl-4, .cl-xl-5, .cl-xl-6,
+  .cl-xl-7, .cl-xl-8, .cl-xl-9, .cl-xl-10, .cl-xl-11, .cl-xl-12 {
+    float: left;
+    box-sizing: border-box; }
+  .cl-xl-1 {
+    width: 8.33333%; }
+  .cl-xl-2 {
+    width: 16.66667%; }
+  .cl-xl-3 {
+    width: 25%; }
+  .cl-xl-4 {
+    width: 33.33333%; }
+  .cl-xl-5 {
+    width: 41.66667%; }
+  .cl-xl-6 {
+    width: 50%; }
+  .cl-xl-7 {
+    width: 58.33333%; }
+  .cl-xl-8 {
+    width: 66.66667%; }
+  .cl-xl-9 {
+    width: 75%; }
+  .cl-xl-10 {
+    width: 83.33333%; }
+  .cl-xl-11 {
+    width: 91.66667%; }
+  .cl-xl-12 {
+    width: 100%; } }
+
+img {
+  width: 100%;
+  vertical-align: middle; }
+
+a {
+  text-decoration: none;
+  color: #5e4909; }
+
+.common_btn {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding: 14px;
+  width: 160px;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: .1rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 11px;
+  overflow: hidden; }
+  .common_btn .common_btn_blobs {
+    height: 100%;
+    -webkit-filter: url(#goo);
+    filter: url(#goo);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: -3px;
+    right: -1px;
+    border-radius: 11px;
+    width: 110%; }
+    .common_btn .common_btn_blobs div {
+      width: 34%;
+      height: 100%;
+      border-radius: 100%;
+      position: absolute;
+      -webkit-transform: scale(1.4) translateY(125%) translateZ(0);
+      transform: scale(1.4) translateY(125%) translateZ(0);
+      -webkit-transition: all 700ms ease;
+      transition: all 700ms ease; }
+    .common_btn .common_btn_blobs div:nth-child(1) {
+      left: -5%; }
+    .common_btn .common_btn_blobs div:nth-child(2) {
+      left: 30%;
+      -webkit-transition-delay: 60ms;
+      transition-delay: 60ms; }
+    .common_btn .common_btn_blobs div:nth-child(3) {
+      left: 66%;
+      -webkit-transition-delay: 25ms;
+      transition-delay: 25ms; }
+  .common_btn .common_btn_txt {
+    position: relative;
+    z-index: 1;
+    -webkit-transition: color .3s;
+    transition: color .3s;
+    -webkit-transition-delay: .2s;
+    transition-delay: .2s; }
+  .common_btn:hover .common_btn_blobs div {
+    -webkit-transform: scale(1.5) translateY(0) translateZ(0);
+    transform: scale(1.5) translateY(0) translateZ(0); }
+
+/* 一級按鈕背景文字 */
+.common_btn_first {
+  background-color: #ffd700;
+  /* 一級按鈕hover過去的背景和文字顏色 */ }
+  .common_btn_first .common_btn_txt {
+    color: #603813; }
+  .common_btn_first .common_btn_blobs div {
+    background-color: #90A30B; }
+  .common_btn_first:hover .common_btn_txt {
+    color: #fff; }
+
+/* 二級按鈕背景文字 */
+.common_btn_second {
+  background-color: #90A30B;
+  /* 二級按鈕hover過去的背景和文字顏色 */ }
+  .common_btn_second .common_btn_txt {
+    color: #fff; }
+  .common_btn_second .common_btn_blobs div {
+    background-color: #ffd700; }
+  .common_btn_second:hover .common_btn_txt {
+    color: #603813; }
+
+@media only screen and (max-width: 767px) {
+  .gudie_control {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    background-color: #a4ddfa; }
+    .gudie_control .gudie_blackboard {
+      max-width: 1920px;
+      width: 200%;
+      position: absolute;
+      top: 10%;
+      left: -50%;
+      overflow: hidden; }
+      .gudie_control .gudie_blackboard img {
+        width: 100%; }
+    .gudie_control .gudie_classmate {
+      width: 100%; }
+      .gudie_control .gudie_classmate img {
+        width: 80%; }
+      .gudie_control .gudie_classmate .gudie_student {
+        position: absolute;
+        top: 55%;
+        left: 6%;
+        z-index: 1; }
+      .gudie_control .gudie_classmate .gudie_student01 {
+        position: absolute;
+        top: 48%;
+        left: 10%;
+        z-index: 1;
+        opacity: 0; }
+      .gudie_control .gudie_classmate .gudie_student02 {
+        position: absolute;
+        top: 48%;
+        left: 5%;
+        z-index: 1;
+        opacity: 0; }
+      .gudie_control .gudie_classmate .gudie_front_btn {
+        max-width: 150px;
+        width: 100%;
+        position: absolute;
+        left: 33%;
+        top: 25%;
+        z-index: 6; }
+        .gudie_control .gudie_classmate .gudie_front_btn img {
+          width: 100%; }
+      .gudie_control .gudie_classmate .gudie_rear_btn {
+        max-width: 150px;
+        width: 100%;
+        position: absolute;
+        left: 33%;
+        top: 40%;
+        z-index: 6; }
+        .gudie_control .gudie_classmate .gudie_rear_btn img {
+          width: 100%; }
+    .gudie_control .gudie_duty {
+      max-width: 25px;
+      position: absolute;
+      top: 30%;
+      right: 3%; }
+      .gudie_control .gudie_duty img {
+        width: 100%; }
+    .gudie_control .gudie_podium {
+      width: 100%;
+      height: 6vh;
+      position: absolute;
+      bottom: 0;
+      background-color: #722a0a; }
+    .gudie_control .guide_logo {
+      width: 150px;
+      position: absolute;
+      top: 0% !important;
+      left: 35% !important; }
+      .gudie_control .guide_logo img {
+        width: 100% !important; }
+    .gudie_control .section02 {
+      opacity: 0;
+      max-width: 1920px;
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      z-index: 5; }
+      .gudie_control .section02 .box_01 {
+        width: 300px;
+        position: absolute;
+        top: 30% !important;
+        left: 65% !important;
+        transform: rotate(10deg);
+        opacity: 0; }
+        .gudie_control .section02 .box_01 img {
+          width: 40% !important; }
+      .gudie_control .section02 .box_02 {
+        max-width: 150px;
+        width: 100%;
+        position: absolute;
+        top: 50% !important;
+        left: 20% !important;
+        transform: rotate(10deg); }
+        .gudie_control .section02 .box_02 img {
+          width: 100% !important; }
+      .gudie_control .section02 .box_03 {
+        width: 150px;
+        position: absolute;
+        top: 10% !important;
+        left: 15% !important;
+        transform: rotate(10deg); }
+        .gudie_control .section02 .box_03 img {
+          width: 100% !important; }
+      .gudie_control .section02 .box_04 {
+        width: 300px;
+        position: absolute;
+        top: 10% !important;
+        left: 40% !important;
+        transform: rotate(10deg); }
+        .gudie_control .section02 .box_04 img {
+          width: 100% !important; }
+      .gudie_control .section02 .box_05 {
+        width: 200px;
+        position: absolute;
+        top: 55% !important;
+        left: 70% !important;
+        transform: rotate(10deg); }
+        .gudie_control .section02 .box_05 img {
+          width: 100% !important; }
+      .gudie_control .section02 .box_06 {
+        width: 180px;
+        position: absolute;
+        top: 10% !important;
+        left: 70% !important;
+        transform: rotate(10deg); }
+        .gudie_control .section02 .box_06 img {
+          width: 90% !important; } }
+
+@media all and (min-width: 768px) {
+  .gudie_control {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    background-color: #a4ddfa; }
+    .gudie_control .gudie_blackboard {
+      width: 100%;
+      position: absolute;
+      top: 0; }
+      .gudie_control .gudie_blackboard img {
+        width: 80%; }
+    .gudie_control .gudie_classmate {
+      width: 100%; }
+      .gudie_control .gudie_classmate img {
+        width: 120%; }
+      .gudie_control .gudie_classmate .gudie_student {
+        position: absolute;
+        top: 37%;
+        left: 34.5%;
+        z-index: 1; }
+      .gudie_control .gudie_classmate .gudie_student01 {
+        position: absolute;
+        top: 37.8%;
+        left: 33.8%;
+        z-index: 1;
+        opacity: 0; }
+        .gudie_control .gudie_classmate .gudie_student01 img {
+          width: 118%; }
+      .gudie_control .gudie_classmate .gudie_student02 {
+        position: absolute;
+        top: 37%;
+        left: 35.6%;
+        z-index: 1;
+        opacity: 0; }
+        .gudie_control .gudie_classmate .gudie_student02 img {
+          width: 120%; }
+      .gudie_control .gudie_classmate .gudie_front_btn {
+        max-width: 300px;
+        width: 100%;
+        position: absolute;
+        right: 60%;
+        top: 30%;
+        z-index: 6; }
+        .gudie_control .gudie_classmate .gudie_front_btn img {
+          width: 100%; }
+        .gudie_control .gudie_classmate .gudie_front_btn:hover ~ .gudie_student {
+          opacity: 0; }
+        .gudie_control .gudie_classmate .gudie_front_btn:hover ~ .gudie_student01 {
+          opacity: 1; }
+      .gudie_control .gudie_classmate .gudie_rear_btn {
+        max-width: 300px;
+        width: 100%;
+        position: absolute;
+        left: 60%;
+        top: 30%;
+        z-index: 6; }
+        .gudie_control .gudie_classmate .gudie_rear_btn img {
+          width: 100%; }
+        .gudie_control .gudie_classmate .gudie_rear_btn:hover ~ .gudie_student {
+          opacity: 0; }
+        .gudie_control .gudie_classmate .gudie_rear_btn:hover ~ .gudie_student02 {
+          opacity: 1; }
+    .gudie_control .gudie_duty {
+      max-width: 50px;
+      position: absolute;
+      top: 30%;
+      right: 13%; }
+      .gudie_control .gudie_duty img {
+        width: 100%; }
+    .gudie_control .gudie_podium {
+      width: 100%;
+      height: 6vh;
+      position: absolute;
+      bottom: 0;
+      background-color: #722a0a; }
+    .gudie_control .guide_logo {
+      width: 250px;
+      position: absolute;
+      top: 5% !important;
+      left: 43.5% !important; }
+      .gudie_control .guide_logo img {
+        width: 100% !important; }
+    .gudie_control .section02 {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      z-index: 5; }
+      .gudie_control .section02 .box_01 {
+        width: 300px;
+        position: absolute;
+        top: 30% !important;
+        left: 65% !important;
+        transform: rotate(10deg);
+        opacity: 0; }
+        .gudie_control .section02 .box_01 img {
+          width: 100% !important; }
+      .gudie_control .section02 .box_02 {
+        max-width: 150px;
+        width: 100%;
+        position: absolute;
+        top: 50% !important;
+        left: 18% !important;
+        transform: rotate(10deg); }
+        .gudie_control .section02 .box_02 img {
+          width: 100% !important; }
+      .gudie_control .section02 .box_03 {
+        width: 150px;
+        position: absolute;
+        top: 10% !important;
+        left: 20% !important;
+        transform: rotate(10deg); }
+        .gudie_control .section02 .box_03 img {
+          width: 100% !important; }
+      .gudie_control .section02 .box_04 {
+        width: 200px;
+        position: absolute;
+        top: 10% !important;
+        left: 40% !important;
+        transform: rotate(10deg); }
+        .gudie_control .section02 .box_04 img {
+          width: 100% !important; }
+      .gudie_control .section02 .box_05 {
+        width: 200px;
+        position: absolute;
+        top: 55% !important;
+        left: 70% !important;
+        transform: rotate(10deg); }
+        .gudie_control .section02 .box_05 img {
+          width: 100% !important; }
+      .gudie_control .section02 .box_06 {
+        width: 150px;
+        position: absolute;
+        top: 10% !important;
+        left: 70% !important;
+        transform: rotate(10deg); }
+        .gudie_control .section02 .box_06 img {
+          width: 100% !important; } }

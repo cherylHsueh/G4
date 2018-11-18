@@ -85,7 +85,7 @@
 
 input[type="text"],
 input[type="password"] {
-  width: 90%;
+  width: 80%;
   padding: 10px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -96,7 +96,7 @@ input[type="password"] {
 
 .login_btn {
   display: inline-block;
-  width: 90%;
+  width: 80%;
   background-color: rgb(255, 241, 0);
   padding: 12px 20px;
   border-radius: 10px;
@@ -145,7 +145,7 @@ input[type="password"] {
 }
 
 
-/* 橘子 */
+/* ��l */
 
 @mixin orange($right, $top, $rotate, $animation) {
   position: absolute;
@@ -167,7 +167,7 @@ input[type="password"] {
   }
 }
 
-/* 冰塊 */
+/* �B�� */
 
 @mixin icecube($ice-num) {
   .ice__cube {
@@ -206,11 +206,11 @@ $cherry-color: #c40000;
 $olive-r: 10px;
 $olive-color: rgba(128, 128, 0, 0.5);
 $toothpick-color: #deb887;
-/* 果汁的顏色*/
+/* �G�Ī��C��*/
 
 $tom-collins: rgba(255, 195, 0, 0.5);
 $negroni: rgba(230, 45, 13, 0.7);
-$martini: rgba(255, 255, 255, 0.3); // 果汁本身
+$martini: rgba(255, 255, 255, 0.3); // �G�ĥ���
 .cocktail {
   // float: left;
   // min-width: 200px;
@@ -325,7 +325,7 @@ $martini: rgba(255, 255, 255, 0.3); // 果汁本身
   border-left: $glass-classic-w solid transparent;
   border-right: $glass-classic-w solid transparent;
   border-top: $glass-classic-w solid rgba(255, 255, 255, 0.3);
-  /* 填滿果汁 */
+  /* �񺡪G�� */
   &:before {
     content: "";
     width: 0;

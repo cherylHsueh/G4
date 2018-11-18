@@ -1,0 +1,120 @@
+.left{
+    padding: 20px;
+    background-color: hsla(145, 68%, 45%, 0.753);
+    color:white;
+    font-weight: bold;
+}
+.left img{
+    width: 80%;
+}
+
+img{
+    width: 100%;
+}
+.banner{
+   margin-top: 50px;
+}
+/* #changeInfo1 :nth-child(3) input{
+    width: px;
+} */
+
+table{
+    text-align: center;
+}
+button{
+    border:#26c029 2px solid;
+    border-radius: 10px;
+    padding:  10px 20px;
+    background-color: transparent;
+}
+
+li{
+    display: inline;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1240px;
+  }
+}
+
+/* backFruit */
+.newPd_status p{
+    /* display: inline-block; */
+    line-height: 1.3;
+}
+.newPd_status input{
+    display: inline-block;
+    width: auto;
+    margin-right: 20px;
+
+}
+.newPd_status{
+    text-align: left;
+}
+
+
+.newPdUp .colorShow{
+    margin-left:10px;
+ 
+    background-color: #fff;
+}
+.colorShow{
+    width: 30px;
+    height: 30px; 
+    display: inline-block;
+    vertical-align: bottom;
+}
+.newPdUp{
+/*     position: fixed;
+    top: 50%;
+    left:50%;
+    background-color: #fff;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    margin-top: 10%; */
+    display: none;
+    /* overflow-y:auto;  */
+
+}
+.newPdUpArea{
+    margin: 20px 0;
+    text-align: center;
+    padding: 20px;
+}
+input.fruitNotRead{
+    width: 65px;
+}
+textarea.fruitNotRead{
+    width: 100%;
+}
+input.info,textarea.info{
+    border:#26c029 2px solid;
+    border-radius: 10px;
+    padding:  0 10px;
+    background-color: transparent;
+}
+.newPd textarea,.newPd input{
+    border:#26c029 2px solid;
+    border-radius: 10px;
+    padding:  0 10px;
+    background-color: transparent;
+    width: 80%;
+}
+td.fruit_info{
+    width: 20%; 
+}
+td.fruit_pic{
+    padding: 5px 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.fruit_pic img{
+    width: 70px;
+}
+.changeImg_btn{
+    border:1px solid #ddd;
+    cursor:pointer;
+    border-radius: 7px;
+    padding:2px;
+}

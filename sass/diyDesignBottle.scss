@@ -26,26 +26,9 @@ body {
   background-color: $sky;
   overflow-x: hidden;
   -moz-user-select: none;
+  font-family: "微軟正黑體";
 }
-@keyframes bounceOutUp {
-  20% {
-    -webkit-transform: translate3d(0, -10px, 0);
-    transform: translate3d(0, -10px, 0);
-  }
 
-  40%,
-  45% {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 20px, 0);
-    transform: translate3d(0, 20px, 0);
-  }
-
-  to {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -2000px, 0);
-    transform: translate3d(0, -2000px, 0);
-  }
-}
 
 @keyframes mobBottleMove {
   0% {
@@ -174,7 +157,6 @@ body {
     cursor: pointer;
   }
   &_createBlock {
-    width: 60px;
     cursor: pointer;
   }
   &_controlBlock {
@@ -191,11 +173,11 @@ body {
   &_uploadItem {
     margin: 5px 5px 15px;
     p {
-      width: 80px;
-      height: 20px;
-      line-height: 20px;
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
       outline: 1px solid #f09824;
-      padding: 7px 7px 7px 10px;
+      padding: 0 0 0 12px;
       color: #f09824;
       cursor: pointer;
       &:hover {
@@ -217,7 +199,7 @@ body {
       border: 1px solid #aeaeae;
       width: 100%;
       position: absolute;
-      bottom: 105px;
+      bottom: 116px;
       left: 0;
     }
   }
@@ -237,8 +219,11 @@ body {
     margin: 5px 0 15px;
   }
   &_btnBlock {
+    position: absolute;
     text-align: center;
-    margin-top: -30px;
+    a{
+      margin-right: 10px;
+    }
   }
   &_createTextBlock {
     margin-left: 5px;
@@ -254,6 +239,7 @@ body {
       padding: 5px 15px;
       color: #f09824;
       font-size: 16px;
+      margin: 10px 0 0;
       cursor: pointer;
       &:hover {
         color: #fefefe;
@@ -266,15 +252,17 @@ body {
     padding: 10px;
   }
   &_bgcBox {
-    width: 360px;
+    width: 95%;
     height: 510px;
     border-radius: 10px;
     box-sizing: border-box;
-    margin: 40px auto 120px;
+    margin: 40px auto 200px;
+    position: relative;
     background-color: #fff;
   }
   &_conveyorMoveContainer {
     position: relative;
+    margin-top: 80px;
     .diy_designBottle_conveyorPic {
       position: absolute;
       bottom: 0;
@@ -348,7 +336,7 @@ body {
 //客製完成燈箱
 .diy {
   &_customizePopUp {
-    width: 100%;
+    width: 95%;
     position: absolute;
     display: none;
   }
@@ -438,7 +426,7 @@ body {
     position: relative;
     z-index: 20;
     a {
-      width: 100px;
+      width: 125px;
       margin: 0 5px;
       display: inline-block;
     }
@@ -480,8 +468,126 @@ body {
 }
 #diy_designBottle_diyImg {
   background: transparent;
+}  
+.diy_designBottle_officalPicBlock{
+  max-height: 255px;
+  overflow-y: auto;
 }
+.diy_designBottle_pic {
+  position: relative;
+  z-index: 0;
+  padding: 10% 20%;
 
+  .diy_pickFruit_wrapperBottleBox {
+    position: relative;
+
+    .diy_pickFruit_bottleBox {
+      width: 95%;
+      height: 85%;
+      position: absolute;
+      left: 2%;
+      bottom: 1%;
+      z-index: -5;
+      border: 1px solid grey;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: 1s;
+
+      .diy_pickFruit_bottle1 {
+        border-radius: 0px 0px 10px 10px;
+        flex-grow: 0;
+        transition: 1s;
+      }
+
+      .diy_pickFruit_bottle2 {
+        background-color: transparent;
+        flex-grow: 0;
+        transition: 1s;
+      }
+
+      .diy_pickFruit_bottle3 {
+        background-color: transparent;
+        flex-grow: 0;
+        transition: 1s;
+      }
+    }
+    img {
+      position: relative;
+      width: 100%;
+    }
+  }
+}
+#diy_designBottle_diyImg {
+  position: absolute;
+  top:0;
+}  
+#diy_designBottle_dragText{
+  position: absolute;
+  left: 10px;
+  bottom:0;
+}
+.diy_designBottle_pic {
+  position: relative;
+  z-index: 0;
+  padding: 10% 20%;
+
+  .diy_pickFruit_wrapperBottleBox {
+    position: relative;
+
+    .diy_pickFruit_bottleBox {
+      width: 95%;
+      height: 85%;
+      position: absolute;
+      left: 2%;
+      bottom: 1%;
+      z-index: -5;
+      border: 1px solid grey;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: 1s;
+
+      .diy_pickFruit_bottle1 {
+        border-radius: 0px 0px 10px 10px;
+        flex-grow: 0;
+        transition: 1s;
+      }
+
+      .diy_pickFruit_bottle2 {
+        background-color: transparent;
+        flex-grow: 0;
+        transition: 1s;
+      }
+
+      .diy_pickFruit_bottle3 {
+        background-color: transparent;
+        flex-grow: 0;
+        transition: 1s;
+      }
+    }
+    img {
+      position: relative;
+      width: 100%;
+    }
+  }
+}
+#diy_designBottle_diyImg {
+  position: absolute;
+  top:0;
+}  
+#diy_designBottle_dragText{
+  position: absolute;
+  left: 10px;
+  bottom:0;
+}
+// #diy_designBottle_botSvg{
+//   height: 420px;
+// }
 //行動版----------------------------------------------------------------------------
 @include rwd(mobile) {
   .diy_customizeBox {
@@ -490,7 +596,7 @@ body {
     }
     &_finishTextPic {
       width: 150px;
-      margin: 10px auto;
+      margin: 10px auto 15px;
       img {
         width: 100%;
       }
@@ -498,8 +604,8 @@ body {
     &-lightActive {
       width: 300px;
       position: absolute;
-      top: 35px;
-      left: 32px;
+      top: 52px;
+      left: 25px;
       img {
         width: 100%;
       }
@@ -512,10 +618,10 @@ body {
       position: absolute;
       z-index: 50;
       width: 300px;
-      top: 50px;
-      left: 30px;
+      top: 61px;
+      left: 15px;
       opacity: 0;
-      transition:  opacity 0.9s;
+      transition: opacity 0.9s;
       img {
         width: 100%;
       }
@@ -562,10 +668,12 @@ body {
       display: none;
     }
     &_btnBlock {
+      position: absolute;
+      bottom:-15%;
       a {
-        width: 75px;
+        width: 110px;
         display: inline-block;
-        margin: 40px 5px 0;
+        margin: 40px 0 0;
       }
     }
     &_conveyorMoveContainer {
@@ -575,32 +683,26 @@ body {
         bottom: 0;
       }
     }
+    &_createTextBlock{
+      & input:nth-child(2) {
+        width: 200%;
+      }
+    }
   }
   #diy_designBottle_wrapper {
     width: 100%;
   }
-  .diy_customizeFinishBox_customizeBtns {
-    position: absolute;
-    transition: opacity 1s;
-    .common_btn {
-      width: 140px;
-    }
-    .common_btn_txt {
-      .bottleIcon {
-        transform: rotate(5deg);
-        img {
-          width: 10px;
-        }
-        position: absolute;
-        right: -15px;
-        top: -5px;
-      }
-    }
-  }
+  
   .colpick.colpick_rgbhex {
     position: absolute;
     top: 500px;
     left: 45px;
+  }
+  #diy_designBottle_botSvg{
+    width: 69px;
+  }
+  svg{
+    display: none;
   }
 }
 //平板--------------------------------------------------------------------------------------------
@@ -751,11 +853,12 @@ body {
       }
     }
     &_bgcBox {
+      position: relative;
       margin: 50px auto 550px;
       box-sizing: border-box;
       padding: 30px;
       width: 700px;
-      height: 655px;
+      height: 550px;
     }
     &_textLength {
       margin: 15px 0;
@@ -779,14 +882,18 @@ body {
         margin-left: calc(100vw - 400px);
       }
     }
+    &_btnBlock{
+      position: absolute;
+      left:0;
+      bottom: -15%;
+    }
   }
-
   //客製完成跳窗尺寸
   .diy {
     &_customizeBox {
       &_content {
         width: 600px;
-        height: 560px;
+        height: 600px;
         background-color: #fff;
         position: absolute;
         border-radius: 20px;
@@ -802,7 +909,7 @@ body {
       &-lightActive {
         position: absolute;
         width: 500px;
-        top: 25px;
+        top: 84px;
         left: 49px;
         img {
           width: 100%;
@@ -812,12 +919,12 @@ body {
         -webkit-animation-duration: 0.7s;
         animation-duration: 0.7s;
       }
-      &-lightActive2{
+      &-lightActive2 {
         position: absolute;
-        z-index: 8;
         width: 500px;
-        top: 49px;
-        left: 49px;
+        top: 95px;
+        left: 37px;
+        z-index: 7;
         img {
           width: 100%;
         }
@@ -827,62 +934,7 @@ body {
         animation-duration: 0.79s;
       }
     }
-    &_customizeFinishBox {
-      margin: 0 auto;
-      &_customizeBtns {
-        position: absolute;
-        left: 35px;
 
-        .common_btn {
-          width: 200px;
-          height: 40px;
-          display: inline-block;
-          border-radius: 10px;
-          position: relative;
-          padding: 0;
-          margin: 0 30px;
-          line-height: 40px;
-          overflow: visible;
-          a {
-            width: 200px;
-          }
-          .common_btn_blobs {
-            width: 101%;
-          }
-          .common_btn_txt {
-            position: relative;
-            left: -5px;
-            i {
-              position: absolute;
-              top: -5px;
-              font-size: 30px;
-              margin-left: 5px;
-            }
-            .bottleIcon {
-              transform: rotate(5deg);
-              position: relative;
-              img {
-                width: 15px;
-              }
-              position: absolute;
-              right: -30px;
-              top: -25px;
-            }
-          }
-          .diy_toBlogBtn {
-            .btnPic {
-              transform: rotate(45deg);
-              img {
-                position: absolute;
-                right: 0;
-                top: 0;
-                width: 20px;
-              }
-            }
-          }
-        }
-      }
-    }
     &_textLength {
       width: 415px;
     }
@@ -892,10 +944,21 @@ body {
       }
     }
   }
-  .diy_designBottle_pic {
-    position: relative;
-    z-index: 0;
+
+  .diy_designBottle_officalPicBlock{
+    max-height: 255px;
+    overflow-y: auto;
   }
+  #diy_designBottle_diyImg {
+    position: absolute;
+    top:0;
+  }  
+  #diy_designBottle_dragText{
+    position: absolute;
+    left: 10px;
+    bottom:50px;
+  }
+
 }
 //桌機---------------------------------------------------------------------------------------------
 @include rwd(desktop) {
@@ -914,6 +977,7 @@ body {
       }
     }
     &_btnBlock {
+      
       margin: 0 0 10px;
       a {
         margin: 5px 20px;
@@ -932,7 +996,7 @@ body {
       }
     }
     &_itemBottleBlock {
-      position: absolute;
+      position:absolute;
       top: -50px;
       .item1 {
         animation: bottleMove 7s linear 0s infinite;
@@ -956,5 +1020,9 @@ body {
         animation: bottleMove 7s linear 6s infinite;
       }
     }
+  }
+
+  .diy_designBottle_pic {
+    padding: 10% 20%;
   }
 }

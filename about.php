@@ -10,9 +10,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>關於果然</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,shrink-to-fit=no">
+	<link rel="stylesheet" href="css/realtaiwan.css">
 	<link rel="stylesheet" href="css/loginFruit.css">
 	<link rel="stylesheet" href="css/aboutNew.css">
-	<link rel="stylesheet" href="css/realtaiwan.css">
+	
 
 	<script type="text/javascript" src="js/global.js"></script>
 	<script src="js/plugin/jquery-3.3.1.min.js"></script>

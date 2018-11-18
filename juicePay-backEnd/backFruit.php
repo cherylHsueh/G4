@@ -8,7 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="css/backEnd.css">
+    <link rel="stylesheet" href="css/backEndFruit.css">
     <script src="../js/plugin/jquery-3.3.1.min.js"></script>
 </head>
 <style>
@@ -116,8 +116,9 @@
                                     <td><input class="fruitNotRead" type="text" name="fiber" readonly value="<?php echo $rowFruit['fiber'] ?>"></td>
                                     <td><input class="fruitNotRead" type="text" name="vinC" readonly value="<?php echo $rowFruit['vinC'] ?>"></td>
                                     <td class="fruit_info"><textarea class="fruitNotRead" readonly name="fruitInfo"><?php echo $rowFruit['fruitInfo'] ?></textarea></td>
-                                    <td class="fruit_pic"><label for="changeImg<?php echo $i; ?>"><img src="../images/<?php echo $rowFruit['fruitImg'] ?>" alt="<?php echo $rowFruit['fruitName'] ?>"><input type="file" name="fruitImg"  style="opacity: 0; position:absolute;left:-1000000000px; " class="upFile<?php echo $i; ?>" id="changeImg<?php echo $i; ?>">
+                                    <td class="fruit_pic"><label for="changeImg<?php echo $i; ?>"><img src="../images/<?php echo $rowFruit['fruitImg'] ;?>" alt="<?php echo $rowFruit['fruitName'] ;?>"><input type="file" name="fruitImg"  style="opacity: 0; position:absolute;left:-1000000000px; " class="upFile<?php echo $i; ?>" id="changeImg<?php echo $i; ?>">
                                         <div class="changeImg_btn">修改圖檔</div></label><div class="changeImg<?php echo $i; ?>"></div></td>
+                                        <input style="display: none;" name="fruitImg2" value="<?php echo $rowFruit['fruitImg'] ;?>">
                                     
                                 </form>
                                 <td class="status<?php echo $rowFruit['fruitNo'] ?>">
