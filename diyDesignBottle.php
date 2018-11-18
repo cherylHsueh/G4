@@ -163,6 +163,7 @@ $("#diy_copyPicButton").click(function() {
     var $div = $(".diy_customizeBox_finishPic");
     $div.empty();
     $("<img />", { src: canvas.toDataURL("image/png") }).appendTo($div);
+    $('#imgRUL').attr("value",canvas.toDataURL("image/png"));
   });
 
 });	

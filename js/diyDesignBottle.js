@@ -1,7 +1,4 @@
-//點選加入購物車
-$('#addToCartBtn').click(function(){
-  $('#imgRULForm').submit();
-});
+
 //跳窗畫面獲取視窗
 var windowHeight;
 var windowWidth;
@@ -58,6 +55,13 @@ var picTextControll = {
     textDegree: 1
 }
 function doFirst() {
+
+    //點選加入購物車
+    $('#addToCartBtn').click(function(){
+        alert('aa');
+        $('#imgRULForm').submit();
+    });
+
     zoomInButton = document.getElementById('zoomInButton');
     zoomOutButton = document.getElementById('zoomOutButton');
     rotateLeftButton = document.getElementById('rotateLeftButton');
