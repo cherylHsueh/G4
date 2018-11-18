@@ -66,18 +66,18 @@ function addItem() {
     var blogIn_Msg_SendPic = document.createElement('div');
     blogIn_Msg_SendPic.className = 'blogIn_Msg_SendPic';
     var image = document.createElement('img');
-    var memImg = document.getElementById('blogIn_Msg_MesNo').value;
-    alert(memImg);
-    var memsrc = 'images/member/photo/'+memImg
-    alert(memsrc);
-    image.src = memsrc;
-    alert(image.src);
+    // var memImg = document.getElementById('blogIn_Msg_MesNo').value;
+    // alert(memImg);
+    // var memsrc = 'images/member/photo/'+memImg;
+    // alert(memsrc);
+    image.src = 'images/member/photo/profile.png';
+    // alert(image.src);
     image.alt = '留言者';
 
     var memName = document.createElement('p');
     memName.className = 'blogmemname';
     var msgmemname = document.getElementById('loginName').innerHTML;
-    alert(msgmemname);
+    // alert(msgmemname);
     memName.innerHTML =msgmemname;
 
     document.getElementById('blogIn_Msg_SendBlock_id').appendChild(blogIn_Msg_SendWrapper);

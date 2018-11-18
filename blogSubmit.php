@@ -228,31 +228,11 @@ function $id(id){
 function sendForm(){
     // alert(document.getElementById('spanLogin').innerHTML);
     if(document.getElementById('spanLogin').innerHTML == '登入'){
-        document.getElementById('lightbox_section').style.display = 'block';
+        showLoginForm();
     }else{
     $id("blogSubmit_form").submit();
-    };
-    //   alert('ok');
-    //   var xhr = new XMLHttpRequest();
-    //   xhr.onload = function (){
-    //     if( xhr.status == 200){
-    //         alert('ok');
-    //     }else{
-    //       alert(xhr.status);
-    //     }
-    //   }
-    //   xhr.open("post", "bloguptext.php", true);
-    //   xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-      
-    //   var data ="fruitTitle=" + $id("fruitTitle").value + 
-    //             "&fruitselect1=" + $id("fruitselect1").value+
-    //             "&fruitselect2=" + $id("fruitselect2").value+
-    //             "&fruitselect3=" + $id("fruitselect3").value+
-    //             "&mes=" + $id("blogIn_Msg_Content").value;
-    //             // "&img=" + $id('image').src;
-    //   alert(data);
-    //   xhr.send(data);    
-    }
+    }; 
+}
 // function init(){
 //     alert('ok');
     $id("uploadBtn").onclick = sendForm;

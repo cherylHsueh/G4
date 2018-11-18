@@ -25,7 +25,9 @@ try {
     <title>果然配</title>
     <link rel="stylesheet" type="text/css" href="css/loginFruit.css">
     <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
     <script src='js/global.js'></script>
+    <script src="js/plugin/sweetalert2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
     <script src="js/plugin/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script src="js/blog.js"></script>
@@ -189,9 +191,8 @@ function sendFormFq(){
         var xhr = new XMLHttpRequest();
         xhr.onload = function (){
         if( xhr.status == 200){
-            alert('plus');
+            swal('檢舉+1');
             doreport();
-            
         }else{
             alert(xhr.status);
             }
@@ -199,12 +200,12 @@ function sendFormFq(){
         xhr.open("post", "blogartreportNumPlus.php", true);
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         var data = "artNo=" + $id("artNo").value + "&artReportFq=" + $id('FqNum').value;
-        // alert(data);
         xhr.send(data);     
     }else if($id('FqNum').value != ''){
         var xhr = new XMLHttpRequest();
         xhr.onload = function (){
         if( xhr.status == 200){
+            swal('檢舉+1');
             doreport();
         }else{
             alert(xhr.status);
@@ -233,12 +234,7 @@ function sendFormthumb(){
    var xhr = new XMLHttpRequest();
      xhr.onload = function (){
        if( xhr.status == 200){
-
-        //    alert($id('greatNum').innerHTML);
-           dodeleteIn();
-        //    alert('ok');
-        //    alert($id('greatNum').innerHTML);
-           
+        dodeleteIn();
        }else{
          alert(xhr.status);
        }
@@ -256,10 +252,7 @@ function sendFormthumb(){
 //    alert('123');
      xhr.onload = function (){
        if( xhr.status == 200){
-        //    alert($id('greatNum').innerHTML);
            doplusIn();
-        //    alert('ok');
-        //    alert($id('greatNum').innerHTML);
        }else{
          alert(xhr.status);
        }
@@ -320,10 +313,11 @@ function sendFormthumb(){
                                 </div>
                             </div>
                             <!-- <a href="javascript:;" > -->
-                            <input type="button" id="Nmu<?php echo $mesRow->mesNo?>" class="blogIn_Msg_SendBox subButtonItem reportNum cl-s-2 cl-md-1" name="report" value="檢舉">
-                            <input type="hidden" id="FqNum<?php echo $mesRow->mesNo?>" name='Fqnum' value="<?php echo $mesRow->mesReportFq?>">
-                            <input type="hidden" class="mesNo" id="mesNum<?php echo $mesRow->mesNo?>" name="mesNum" value="<?php echo $mesRow->mesNo?>">
-                           <!-- </a> -->
+                            <form>
+                                <input type="button" id="Num<?php echo $mesRow->mesNo?>" class="blogIn_Msg_SendBox subButtonItem reportNum cl-s-2 cl-md-1" name="report" value="檢舉">
+                                <input type="hidden" id="FqNum<?php echo $mesRow->mesNo?>" name='Fqnum' value="<?php echo $mesRow->mesReportFq?>">
+                                <input type="hidden" class="mesNo" id="mesNum<?php echo $mesRow->mesNo?>" name="mesNum" value="<?php echo $mesRow->mesNo?>">
+                           </form><!-- </a> -->
                       </div>
                         <?php
                                 };     
@@ -332,25 +326,28 @@ function sendFormthumb(){
 
 
 <script>
-function $id(id){
-  	return document.getElementById(id);
-  };
-window.addEventListener('load', sendFormReportclick);
+    window.addEventListener('load',function(){
+        $id();
+        sendFormReportclick();
+    })
 
-function sendFormReportclick(){
-    var pushreport = document.querySelectorAll('.reportNum');  
+    function $id(id){
+        return document.getElementById(id);
+    };
+    function sendFormReportclick(){
+        var pushreport = document.querySelectorAll('.reportNum');  
         for( i=0 ; i<pushreport.length; i++){  
             pushreport[i].addEventListener('click',function(){
                 num = this.id
                 // alert(num);
                 mesnum = 'mes' + this.id;
-                // alert($id(mesnum).value);
+                // alert(mesnum);
                 Fqnum = 'Fq' + this.id;
                 // alert($id(Fqnum).value);
                 sendFormReport();
         });
         };
-};
+    }
 
     function sendFormReport(){
         // alert($id(Fqnum).value);
@@ -362,7 +359,7 @@ function sendFormReportclick(){
             var xhr = new XMLHttpRequest();
             xhr.onload = function (){
             if( xhr.status == 200){
-                // alert('plus');
+                swal('檢舉+1');
             }else{
                 alert(xhr.status);
                 }
@@ -376,7 +373,7 @@ function sendFormReportclick(){
             var xhr = new XMLHttpRequest();
             xhr.onload = function (){
             if( xhr.status == 200){
-                // alert('add');
+                swal('檢舉+1');
             }else{
                 alert(xhr.status);
                 }
@@ -388,23 +385,6 @@ function sendFormReportclick(){
             xhr.send(data);     
         }
     }
-    // else if($id(Fqnum).value != ''){
-    //     var xhr = new XMLHttpRequest();
-    //   xhr.onload = function (){
-    //     if( xhr.status == 200){
-    //      alert('delete');
-    //     }else{
-    //       alert(xhr.status);
-    //     }
-    //     };
-    //     xhr.open("post", "reportNumDelete.php", true);
-    //   xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-      
-    //   var data = "artNo=" + $id("artNo").value +"&mesNo=" + $id("mesNo").value+ "&artReportFq=" + $id(Fqnum).value;
-    //   alert(data);
-    //   xhr.send(data);    
-    
-    // }
     
 </script>   
                
@@ -417,7 +397,7 @@ function sendFormReportclick(){
                                     <div class="blogIn_Msg_ContentInput">
 
                                      <?php 
-                                        $sql = "select b.artNo, b.thumbFq, m.memName, m.memImg, me.mesNo from blog b,member m, message me where m.memNo = me.memNo and b.artNo= $artNo order by mesNo DESC limit 1";
+                                        $sql = "select b.artNo, b.thumbFq, m.memName, me.mesNo from blog b,member m, message me where m.memNo = me.memNo and b.artNo= $artNo order by mesNo DESC limit 1";
                                         $message = $pdo -> query( $sql );    
                                         $mesRow = $message->fetchObject()
                                      ?>                                        
@@ -428,7 +408,6 @@ function sendFormReportclick(){
                                     </div>
                                 </div>
                                     <input type="button" id="blogIn_Msg_BoxBtn" class="blogIn_Msg_Box subButtonItem cl-s-2 cl-md-1" name="btnChange" value="留言">
-                                    <input type="hidden" id="blogIn_Msg_MesNo" value="images/member/photo/<?php echo $mesRow->memImg?>">
                             </div>
                         </div>
 
@@ -449,31 +428,33 @@ function $id(id){
  function sendForm(){
     // alert(document.getElementById('spanLogin').innerHTML);
     if(document.getElementById('spanLogin').innerHTML == '登入'){
-        document.getElementById('lightbox_section').style.display = 'block';
+        showLoginForm();
     }else{
-      var xhr = new XMLHttpRequest();
-      xhr.onload = function (){
-        if( xhr.status == 200){
-            addItem();
-            sendFormReportclick();
-            // alert('ok');
-            $id('blogIn_Msg_Content').value='';
-            // getmemName();
-            // alert('nameok');
-            // memName.innerHTML =memchild;
-
+        if($id('blogIn_Msg_Content').value == ''){
+            swal('請填寫內容');
         }else{
-          alert(xhr.status);
+             var xhr = new XMLHttpRequest();
+            xhr.onload = function (){
+                if( xhr.status == 200){
+                    // alert($id('blogIn_Msg_Content').value);
+                    addItem();
+                    alert('ok');
+                    sendFormReportclick();
+                    $id('blogIn_Msg_Content').value = '';
+                    alert('ok');
+                }else{
+                alert(xhr.status);
+                }
+            }
+            xhr.open("post", "blogInMes.php", true);
+            xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+            
+            var data = "artNo=" + $id("artNo").value +
+            "&mes=" + $id("blogIn_Msg_Content").value;
+            //   alert(data);
+            xhr.send(data);    
         }
-      }
-      xhr.open("post", "blogInMes.php", true);
-      xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-      
-      var data = "artNo=" + $id("artNo").value +
-       "&mes=" + $id("blogIn_Msg_Content").value;
-    //   alert(data);
-      xhr.send(data);    
-    }
+    }   
 };
  function init(){
     $id("blogIn_Msg_BoxBtn").onclick = sendForm;
