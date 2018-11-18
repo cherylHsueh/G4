@@ -422,6 +422,10 @@ header {
   right: 2%;
   z-index: 100; }
 
+#loginName, #spanLogin {
+  margin-top: 5px;
+  margin-right: 20px; }
+
 @media only screen and (max-width: 767px) {
   .robot_container {
     display: none; }

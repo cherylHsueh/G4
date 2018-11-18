@@ -422,6 +422,10 @@ header {
   right: 2%;
   z-index: 100; }
 
+#loginName, #spanLogin {
+  margin-top: 5px;
+  margin-right: 20px; }
+
 @media only screen and (max-width: 767px) {
   .robot_container {
     display: none; }
@@ -745,7 +749,7 @@ body {
   border: 1px solid #aeaeae;
   width: 100%;
   position: absolute;
-  bottom: 105px;
+  bottom: 116px;
   left: 0; }
 
 .diy_designBottle_officalPicBlock {
@@ -763,8 +767,10 @@ body {
   margin: 5px 0 15px; }
 
 .diy_designBottle_btnBlock {
-  text-align: center;
-  margin-top: -30px; }
+  position: absolute;
+  text-align: center; }
+  .diy_designBottle_btnBlock a {
+    margin-right: 10px; }
 
 .diy_designBottle_createTextBlock {
   margin-left: 5px; }
@@ -795,6 +801,7 @@ body {
   border-radius: 10px;
   box-sizing: border-box;
   margin: 40px auto 200px;
+  position: relative;
   background-color: #fff; }
 
 .diy_designBottle_conveyorMoveContainer {
@@ -1015,6 +1022,51 @@ body {
   left: 10px;
   bottom: 0; }
 
+.diy_designBottle_pic {
+  position: relative;
+  z-index: 0;
+  padding: 10% 20%; }
+  .diy_designBottle_pic .diy_pickFruit_wrapperBottleBox {
+    position: relative; }
+    .diy_designBottle_pic .diy_pickFruit_wrapperBottleBox .diy_pickFruit_bottleBox {
+      width: 95%;
+      height: 85%;
+      position: absolute;
+      left: 2%;
+      bottom: 1%;
+      z-index: -5;
+      border: 1px solid grey;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: 1s; }
+      .diy_designBottle_pic .diy_pickFruit_wrapperBottleBox .diy_pickFruit_bottleBox .diy_pickFruit_bottle1 {
+        border-radius: 0px 0px 10px 10px;
+        flex-grow: 0;
+        transition: 1s; }
+      .diy_designBottle_pic .diy_pickFruit_wrapperBottleBox .diy_pickFruit_bottleBox .diy_pickFruit_bottle2 {
+        background-color: transparent;
+        flex-grow: 0;
+        transition: 1s; }
+      .diy_designBottle_pic .diy_pickFruit_wrapperBottleBox .diy_pickFruit_bottleBox .diy_pickFruit_bottle3 {
+        background-color: transparent;
+        flex-grow: 0;
+        transition: 1s; }
+    .diy_designBottle_pic .diy_pickFruit_wrapperBottleBox img {
+      position: relative;
+      width: 100%; }
+
+#diy_designBottle_diyImg {
+  position: absolute;
+  top: 0; }
+
+#diy_designBottle_dragText {
+  position: absolute;
+  left: 10px;
+  bottom: 0; }
+
 @media only screen and (max-width: 767px) {
   .diy_customizeBox_finishPic {
     width: 100px; }
@@ -1067,10 +1119,13 @@ body {
       display: none; }
   .diy_designBottle_disNone {
     display: none; }
-  .diy_designBottle_btnBlock a {
-    width: 110px;
-    display: inline-block;
-    margin: 40px 0 0; }
+  .diy_designBottle_btnBlock {
+    position: absolute;
+    bottom: -15%; }
+    .diy_designBottle_btnBlock a {
+      width: 110px;
+      display: inline-block;
+      margin: 40px 0 0; }
   .diy_designBottle_conveyorMoveContainer {
     position: relative; }
     .diy_designBottle_conveyorMoveContainer .diy_designBottle_conveyorPic {
@@ -1191,7 +1246,7 @@ body {
     box-sizing: border-box;
     padding: 30px;
     width: 700px;
-    height: 655px; }
+    height: 550px; }
   .diy_designBottle_textLength {
     margin: 15px 0;
     width: 315px;
@@ -1207,7 +1262,7 @@ body {
   .diy_designBottle_btnBlock {
     position: absolute;
     left: 0;
-    bottom: 5%; }
+    bottom: -15%; }
   .diy_customizeBox_content {
     width: 600px;
     height: 600px;
@@ -1237,6 +1292,7 @@ body {
     width: 500px;
     top: 95px;
     left: 37px;
+    z-index: 7;
     -webkit-animation-name: lightOpcity;
     animation-name: lightOpcity;
     -webkit-animation-duration: 0.79s;

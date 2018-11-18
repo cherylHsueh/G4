@@ -41,11 +41,10 @@ try{
 	$_SESSION["memNo"]=$memNo;
 
 
-	  echo $memName;
-
-	?>
-	<meta http-equiv = "refresh" content = "0.1;url=http://localhost/G4/index.php">
-<?php
+	 // echo $memName;
+	echo "<script type='text/javascript'>";
+	echo "window.location.href='../homepage.php'";
+	echo "</script>";
 
 	// echo "註冊失敗";
 

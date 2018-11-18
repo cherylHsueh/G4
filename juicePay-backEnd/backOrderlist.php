@@ -19,37 +19,11 @@
 <body>
 
     <div class="d-flex">
-        <div class="col-xl-2">
-            <ul class="list-group selector">
-                <a href="#">
-                    <li class="left list-group-item text-center"><img src="images/logo.png" alt=""></li>
-                </a>
-                <a href="backFruit.html">
-                    <li class="left list-group-item text-center">水果管理</li>
-                </a>
-                <a href="backBottle.html">
-                    <li class="left list-group-item text-center">瓶子圖片管理</li>
-                </a>
-                <a href="backProduct.html">
-                    <li class="left list-group-item text-center">官方商品管理</li>
-                </a>
-                <a href="backFarmer.html">
-                    <li class="left list-group-item text-center">小農管理</li>
-                </a>
-                <a href="backReport.html">
-                    <li class="left list-group-item text-center">檢舉審核</li>
-                </a>
-                <a href="backOrderlist.html">
-                    <li class="left list-group-item text-center">訂單管理</li>
-                </a>
-                <a href="backMemManage.html">
-                    <li class="left list-group-item text-center">會員帳號管理</li>
-                </a>
-                <a href="backEmpManage.html">
-                    <li class="left list-group-item text-center">管理員帳號管理</li>
-                </a>
-            </ul>
-        </div>
+<?php
+ try{
+    require_once("../connectBooks.php");
+    require_once('backNav.php'); 
+ ?>
         <div class="col-xl-10">
             <div class="container">
                 <div class="banner">
@@ -60,24 +34,39 @@
                     <thead>
                         <tr>
                             <th>訂單編號</th>
-                            <th>客戶名子</th>
+                            <th>客戶名字</th>
+                            <th>收件人</th>
                             <th>購買金額</th>
                             <th>訂單時間</th>
                             <th>訂單狀態</th>
-                            <th>訂單明細</th>
                             <th>確認出貨</th>
                         </tr>
                     </thead>
                     <tbody>
+     <?php   
+    $sql = "select * from ordermaster, member where ordermaster.memNo=member.memNo order by ordermaster.orderNo";
+    $order = $pdo ->query($sql);
+    while($rowOrder=$order->fetch(PDO::FETCH_ASSOC)){
+    ?> 
                         <tr>
-                            <td>1</td>
-                            <td>sara</td>
-                            <td>270</td>
-                            <td>2018-11-28</td>
-                            <td>未出貨</td>
-                            <td><button>查看詳情</button></td>
-                            <td><button>出貨</button></td>
+                            <td><?php echo $rowOrder['orderNo'] ?></td>
+                            <td><?php echo $rowOrder['memName'] ?></td>
+                            <td><?php echo $rowOrder['receiverName'] ?></td>
+                            <td><?php echo $rowOrder['orderPrice'] ?></td>
+                            <td><?php echo $rowOrder['orderDate'] ?></td>
+                            <td>
+                            <?php if($rowOrder['orderStatus']==1){
+                                        echo "已出貨";
+                                    }else{
+                                        echo "未出貨";
+                                    } ?>
+                            </td>
+                            <td><button class="changeStatus" id="deliver_<?php echo $rowOrder['orderNo'] ?>" value='<?php echo $rowOrder['orderStatus'] ?>'>確認</button></td>
                         </tr>
+    <?php
+      };
+    ?>
+
                     </tbody>
                 </table>
                 <ul class="pagination justify-content-center">
@@ -106,6 +95,43 @@
         });
     </script>
 
+    <script>
+    //訂單出貨狀態改變
+    $('.changeStatus').click(function () {
+
+        orderNo=this.id.split('_')[1];
+        orderStatus=this.value;
+        this.parentNode.previousElementSibling.previousElementSibling.innerText='已出貨';
+        // alert('ok');
+        changeStatus();
+        });
+
+
+    //訂單出貨ajax改變資料庫
+    function changeStatus(){
+        // alert('ok');
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function(){
+        // console.log(this.parentNode.previousSibling.previousSibling);
+        if(xhr.status == 200){
+            console.log('succes');
+        }else{
+            alert(xhr.status);
+        }
+    }
+    xhr.open('post','backChangeOrderStatus.php',true);
+    xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
+    var data_info = "orderNo=" + orderNo + "&orderStatus=" + orderStatus;
+    // alert(data_info);
+    xhr.send(data_info);
+
+    }   
+    </script>
+<?php
+}catch(PDOException $e){
+  echo $e->getMessage();
+}
+?> 
 </body>
 
 </html>

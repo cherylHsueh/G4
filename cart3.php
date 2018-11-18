@@ -59,6 +59,7 @@
         $ordermaster->bindValue(":receiverPhone", $_POST["receiverPhone"]);
         $ordermaster->bindValue(":total", $_POST["total"]);
         $ordermaster->execute();
+        $orderNo = $pdo->lastInsertId();
 
         //delete coupon
         if(isset( $_POST["coupon"])==true){
@@ -71,7 +72,6 @@
 
       
 	    //寫入訂單明細
-		$orderNo = $pdo->lastInsertId();
 		$sql = "insert into orderdetails values (null , :orderNo , :offPdName , :orderQty, :pdPrice , :subTotal, :pdClassNo , '2', :offPdImg)";
         $orderitems = $pdo->prepare( $sql );
 		foreach( $_SESSION["quantity"] as $offPdNo => $quantity ){

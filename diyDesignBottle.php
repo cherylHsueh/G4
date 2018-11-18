@@ -27,7 +27,7 @@
 <div class="navSpace"></div>
 <?php
 try{
-  $sql = "select * from bottleimg";
+  $sql = "select * from bottleimg where bottleStatus = 1";
   $bottlePics = $pdo->query($sql);
 ?>
 	<!-- SCR2--設計瓶身文字敘述 -->
