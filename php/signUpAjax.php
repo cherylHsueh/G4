@@ -23,7 +23,7 @@ try{
 	$member ->bindValue(":memName",$memName);
 	$member ->bindValue(":memTel",$memTel);
 	$member ->execute();
-
+	$memNo = $pdo->lastInsertId();
 	  	//將登入者的資訊寫入session暫存區
   	$_SESSION["memId"] = $memId;
   	$_SESSION["memPsw"] = $memPsw;
@@ -31,7 +31,18 @@ try{
 	$_SESSION["memTel"] = $memTel;
 	// $_SESSION["memNo"] = $memNo;
   	//送出登入者的姓名資料
+
+
+	// $sql = "select memNo from member where memId = :memId";
+	// $member = $pdo ->prepare($sql);
+	// $member ->bindValue(":memId",$_SESSION["memId"]);
+	// $member ->execute();
+	// $memberRow=$member->fetchObject();
+	$_SESSION["memNo"]=$memNo;
+
+
 	  echo $memName;
+
 	?>
 	<meta http-equiv = "refresh" content = "0.1;url=http://localhost/G4/index.php">
 <?php

@@ -48,27 +48,32 @@ try{
                 </div>
                 <div class="pdItem_textBlock cl-s-12 cl-md-5">
                     <h2 class="pdName"><?php echo $prodRow->offPdName ?></h2>
-                    <h3>$90</h3>
+                    <h3> $<?php echo $prodRow->pdPrice ?></h3>
                     <h4 class="pdInfo">
                         <?php echo $prodRow->offPdInfo ?>
                     </h4>
                 </div>
                 <div class="pdItem_buyBlock cl-s-12 cl-md-3">
 
-                    <form action="cartAdd.php">
+                    <form action="cartAdd.php"  id="buyform">
                         
 		    	        <span>數量 : </span>
-                        <input type="text" name="Pdcount" class="pdItem_buyBlock_qty" size="2" value="1">
+                        <input type="text" name="quantity" class="pdItem_buyBlock_qty" size="2" value="1">
                         <input type="hidden" name="offPdNo" value='<?php echo $prodRow->offPdNo;?>'>
-			            <input type="hidden" name="offPdName" value='<?php echo $prodRow->offPdName;?>'>
-                        <input class="common_btn common_btn_first" type="submit" value="放入購物車">
-                        <span class="common_btn_txt"></span>
+                        <input type="hidden" name="offPdName" value='<?php echo $prodRow->offPdName;?>'>
+                        <input type="hidden" name="offPdImg" value='<?php echo $prodRow->offPdImg;?>'>
+                        <input type="hidden" name="pdPrice" value='<?php echo $prodRow->pdPrice;?>'>
+                        
+                        <a id="nextButton" class="common_btn common_btn_first">
+                        <span class="common_btn_txt">放入購物車</span>
                         <div class="common_btn_blobs">
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                         </div>
-	                </form>
+                        </a>
+	                
+                    </form>
 
                 </div>
             </div>
@@ -98,6 +103,17 @@ try{
 
     </footer>
 
+<script>
+function doFirst(){
+    var fromButton = document.getElementById('nextButton');
+    fromButton.addEventListener('click',fromSubmit);
+}
+function fromSubmit(){
+           document.getElementById('buyform').submit();
+}
+
+window.addEventListener('load',doFirst);
+</script>
 </body>
 
 </html>

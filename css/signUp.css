@@ -252,7 +252,7 @@ a {
   .common_btn_second:hover .common_btn_txt {
     color: #603813; }
 
-h1 {
+.menu h1.menu_logo, .ph_nav h1.phone_logo {
   font-size: 0; }
 
 #hb_control {
@@ -332,12 +332,88 @@ header {
   -webkit-animation: move 10s linear infinite alternate;
   animation: move 10s linear infinite alternate; }
 
-.robot {
-  position: fixed;
-  width: 110px;
+#robotControl:checked ~ .robot_container .robot_toggle {
+  transform: rotate(180deg);
+  transition: .5s; }
+
+#robotControl:checked ~ .robot_container {
   bottom: 0;
+  transition: 1s; }
+
+.robot_container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  transition: 1s;
+  bottom: -450px;
   right: 0;
-  z-index: 50; }
+  z-index: 50;
+  width: 350px;
+  height: 500px; }
+  .robot_container div {
+    width: 100%; }
+  .robot_container .robot_titleBlock {
+    display: flex;
+    height: 10%;
+    position: relative;
+    line-height: 50px;
+    background-color: #f4d66d;
+    border-radius: 10px 10px 0 0; }
+    .robot_container .robot_titleBlock .robot_toggle {
+      width: 10%;
+      padding: 0 20px;
+      transition: .5s; }
+    .robot_container .robot_titleBlock .robot_pic {
+      position: absolute;
+      bottom: 0;
+      right: 1%;
+      width: 110px; }
+  .robot_container .robot_conversationBlock {
+    height: 82%;
+    background-color: #fff;
+    overflow: auto;
+    border: 6px solid #f4d66d;
+    border-bottom: 2px solid #f4d66d;
+    border-top: 0px; }
+    .robot_container .robot_conversationBlock .robot_text {
+      margin: 4% 2%;
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background-color: rgba(244, 214, 109, 0.8); }
+    .robot_container .robot_conversationBlock .robot_textTime {
+      color: #ddd;
+      position: relative;
+      bottom: -7px; }
+    .robot_container .robot_conversationBlock .user_conversation {
+      text-align: right; }
+      .robot_container .robot_conversationBlock .user_conversation .user_text {
+        display: inline-block;
+        background-color: rgba(244, 214, 109, 0.6);
+        padding: 8px 12px;
+        border-radius: 10px;
+        margin: 2% 2%; }
+  .robot_container .robot_inputBlock {
+    height: 8%;
+    display: flex; }
+    .robot_container .robot_inputBlock textarea {
+      width: 80%;
+      border: 1px solid #fff;
+      border-left: 6px solid #f4d66d;
+      border-top: 3px solid #f4d66d;
+      margin: 0;
+      height: 100%; }
+    .robot_container .robot_inputBlock button {
+      display: inline-block;
+      height: 100%;
+      width: 20%;
+      line-height: 40px;
+      background-color: #ffd700;
+      margin: 0;
+      padding: 0.3rem 0; }
+
+#robotControl, #hb_control {
+  display: none; }
 
 .coupon {
   position: fixed;
@@ -347,10 +423,10 @@ header {
   z-index: 100; }
 
 @media only screen and (max-width: 767px) {
-  .robot {
-    width: 80px; }
+  .robot_container {
+    display: none; }
   .coupon {
-    top: 140px;
+    top: 75px;
     width: 70px; }
   #svg-2 {
     transition: height 1.3s 0.5s ,width 2s; }
@@ -471,51 +547,30 @@ header {
   100% {
     transform: translate(0%, 0%); } }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> member
-=======
-=======
->>>>>>> blog
-/*分頁做法
-header nav  li:nth-child(2) > a:after {
-    transform: scaleX(1);
-}
-*/
-<<<<<<< HEAD
->>>>>>> diy
-=======
->>>>>>> 6a047bf83ca6a4f5d20759417a9bec51470ac612
->>>>>>> blog
-=======
->>>>>>> 280a4a4c1247a2dea80405e899b323e7ca4b1a49
->>>>>>> member
-=======
->>>>>>> cart
-=======
->>>>>>> 1105homepage(having about)
-=======
->>>>>>> cart
 footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   right: 0;
   left: 0; }
+
+.footer_wrapper::before {
+  position: absolute;
+  top: -40px;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 40px;
+  background-image: url("../images/footershadow.png");
+  background-size: contain;
+  background-position: bottom center;
+  background-repeat: repeat-x; }
 
 @media only screen and (max-width: 767px) {
   .footer_wrapper {
     text-align: center; }
     .footer_wrapper .footer_block {
-      margin: 0 auto; }
+      margin: 0 auto;
+      background-color: #f4d66d; }
       .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
         padding: 8px 0; }
         .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
@@ -531,7 +586,8 @@ footer {
     text-align: center;
     margin: 0 auto; }
     .footer_wrapper .footer_block {
-      margin: 0 auto; }
+      margin: 0 auto;
+      background-color: #f4d66d; }
       .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
         padding: 8px 0; }
         .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
@@ -546,16 +602,46 @@ footer {
   right: 0;
   left: 0; }
 
+@keyframes shake {
+  0% {
+    transform: translate(0px, 0px); }
+  100% {
+    transform: translate(0px, -5px); } }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
 @media only screen and (max-width: 767px) {
   .nav_space {
-    margin-top: 95px; }
+    height: 130px;
+    background-color: #a4ddfa; }
   .cloud {
-    text-align: right;
-    padding: 5%; }
-  .cloud img {
+    position: relative;
+    right: 71%;
+    animation: mymoveright 80s infinite;
+    -webkit-animation: mymoveright 80s infinite;
     width: 20%; }
+  .grassthree {
+    max-width: 300px;
+    max-height: 300px;
+    display: block;
+    position: absolute;
+    bottom: -36%;
+    left: 20%;
+    display: none; }
+  .cloud img {
+    width: 100%; }
+  .car {
+    display: none; }
+  .tire1 {
+    display: none; }
+  .tire2 {
+    display: none; }
   .signUp {
-    background-color: #00B5BD;
+    background-color: #a4ddfa;
     width: 100%; }
   .signUp_newmem_box {
     text-align: center;
@@ -563,7 +649,7 @@ footer {
     width: 80%;
     box-sizing: border-box;
     padding: 5% 3%;
-    margin: auto; }
+    margin: 5% auto; }
     .signUp_newmem_box div {
       margin: 15px; }
   .signUp_explain_box {
@@ -578,21 +664,82 @@ footer {
     background-color: #fff100;
     width: 120px;
     height: 35px; }
-  .orchard img,
-  .orchard2 img {
+  .cloud2 {
+    margin-top: 5%;
+    position: relative;
+    animation: mymove 80s infinite;
+    -webkit-animation: mymove 80s infinite;
+    width: 25%; }
+    .cloud2 img {
+      width: 100%; }
+  @keyframes mymove {
+    from {
+      left: 0px; }
+    to {
+      left: 100%;
+      top: 5%; } }
+  @keyframes mymoveright {
+    from {
+      left: 80%; }
+    to {
+      left: 5%;
+      top: 5%; } }
+  .windmill {
+    width: 50%;
+    position: relative;
+    margin: 15% auto 0 auto;
+    z-index: 1; }
+    .windmill img {
+      width: 100%; }
+  .fan {
+    position: absolute;
+    top: -20%;
+    left: -16%;
+    width: 140%;
+    animation: wind 1.25s linear infinite; }
+    .fan img {
+      width: 100%; }
+  @keyframes wind {
+    0% {
+      transform: rotate(0deg); }
+    25% {
+      transform: rotate(90deg); }
+    50% {
+      transform: rotate(180deg); }
+    75% {
+      transform: rotate(270deg); }
+    100% {
+      transform: rotate(360deg); } }
+  .grass {
+    display: none; }
+  .orchard img {
     display: none; }
   .confirm {
     position: relative;
     right: 14px; }
+  .tree {
+    display: none; }
+    .tree img {
+      width: 100%; }
+    .tree .orange {
+      display: none; }
+      .tree .orange img {
+        width: 100%; }
+    .tree .orange2 {
+      display: none; }
+      .tree .orange2 img {
+        width: 100%; }
+    .tree .orange3 {
+      display: none; }
+      .tree .orange3 img {
+        width: 100%; }
+    .tree .orange4 {
+      display: none; }
+      .tree .orange4 img {
+        width: 100%; }
   input {
     margin: 4px 2px;
     padding: 5px 0px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    display: inline-block; } }
-=======
     display: inline-block; }
   footer {
     background-color: #dde4b7; }
@@ -600,23 +747,77 @@ footer {
     display: none; }
   .grassb {
     display: none; } }
->>>>>>> member
-=======
-    display: inline-block; } }
->>>>>>> cart
-=======
-    display: inline-block; } }
->>>>>>> 1105homepage(having about)
-=======
-    display: inline-block; } }
->>>>>>> cart
 
 @media all and (min-width: 768px) {
   .nav_space {
     height: 110px; }
+  .car {
+    bottom: 6%;
+    width: 31%;
+    left: 5%;
+    position: absolute;
+    animation: shake .3s alternate infinite;
+    z-index: 2; }
+    .car img {
+      width: 100%; }
+  .tire1 {
+    width: 19%;
+    z-index: 2;
+    bottom: -7%;
+    right: 6%;
+    position: absolute;
+    animation: rotate 5s linear infinite; }
+    .tire1 img {
+      width: 100%; }
+  .tire2 {
+    width: 19%;
+    z-index: 2;
+    bottom: -6%;
+    right: 49%;
+    position: absolute;
+    animation: rotate 5s linear infinite; }
+    .tire2 img {
+      width: 100%; }
+  .tree {
+    width: 20%;
+    position: absolute;
+    bottom: 16%;
+    right: 3%;
+    z-index: 0; }
+    .tree img {
+      width: 100%; }
+    .tree .orange {
+      position: absolute;
+      top: 10%;
+      left: 17%;
+      width: 20%; }
+      .tree .orange img {
+        width: 100%; }
+    .tree .orange2 {
+      position: absolute;
+      top: 22%;
+      left: 58%;
+      width: 20%; }
+      .tree .orange2 img {
+        width: 100%; }
+    .tree .orange3 {
+      position: absolute;
+      top: 35%;
+      left: 24%;
+      width: 20%; }
+      .tree .orange3 img {
+        width: 100%; }
+    .tree .orange4 {
+      position: absolute;
+      top: 43%;
+      left: 54%;
+      width: 20%; }
+      .tree .orange4 img {
+        width: 100%; }
   .signUp_section {
     background-color: #a4ddfa;
-    overflow: hidden; }
+    overflow: hidden;
+    position: relative; }
   .cloud {
     text-align: left;
     padding: 5%;
@@ -640,7 +841,8 @@ footer {
     display: inline-block; }
   .signUp_newmem {
     position: relative;
-    left: 58%; }
+    left: 58%;
+    z-index: 1; }
   .signUp_newmem_box h2 {
     position: relative;
     top: -30px; }
@@ -688,7 +890,7 @@ footer {
   .windmill {
     width: 20%;
     position: relative;
-    margin: 5% auto;
+    margin: 10% auto;
     z-index: 1; }
     .windmill img {
       width: 100%; }
@@ -697,7 +899,7 @@ footer {
     top: -20%;
     left: -14%;
     width: 140%;
-    animation: wind 1.25s linear infinite; }
+    animation: wind 5s linear infinite; }
     .fan img {
       width: 100%; }
   @keyframes wind {
@@ -717,7 +919,7 @@ footer {
     max-height: 350px;
     margin: auto;
     position: absolute;
-    bottom: -15%;
+    bottom: 0%;
     left: 56%;
     z-index: 0; }
   .grassb {
@@ -726,8 +928,27 @@ footer {
     max-height: 350px;
     margin: auto;
     position: absolute;
-    bottom: -15%;
+    bottom: 0%;
     left: 11%;
     z-index: 0; }
+  .grassthree {
+    max-width: 350px;
+    max-height: 350px;
+    display: block;
+    position: absolute;
+    bottom: -36%;
+    left: 20%;
+    z-index: -1; }
+  .sign_earth {
+    position: absolute;
+    bottom: 0%; }
+  .sign_up_dirt {
+    width: 100%;
+    height: 8px;
+    bottom: 8%;
+    position: absolute; }
+    .sign_up_dirt img {
+      width: 100%;
+      height: 80px; }
   footer {
-    background-color: #dde4b7; } }
+    background-color: #f4d66d; } }

@@ -3,9 +3,81 @@ function doFirst() {
 	var fruits = document.querySelectorAll('.diy_pickFruit_leftItem');
 	var diyButton = document.querySelector('.diy_start');
 	diyButton.addEventListener('click',diySubmit);
+	windowWidth = window.screen.width;
 	for(var i=0;i<fruits.length;i++){
-		fruits[i].addEventListener('click',addJuice);
-		// infoArea = document.querySelector('.diy_pickFruit_rightItem');
+		if(windowWidth>=1024){	
+			fruits[i].addEventListener('dragstart',startDrag);
+			// fruits[i].addEventListener('dragend',endDrag);
+		}else if(windowWidth<1024){
+			fruits[i].addEventListener('click',addJuice);
+			// infoArea = document.querySelector('.diy_pickFruit_rightItem');
+		}
+	}
+//水果輪播
+if(windowWidth<768){
+	// $('.homepage_diy_fruitBox').addClass('item');
+	$('.homepage_diy_Box').addClass('owl-carousel owl-theme');
+	$('.homepage_diy_fruitContent').css('display','none');
+	// $('.homepage_diy_labaPhone').addClass('item');
+	
+	owl = $('.owl-carousel');
+	owl.owlCarousel({
+    items:1,
+    nav:true,
+	// center: true,
+	// dots: true,
+    loop:true,
+    // margin:2,
+    autoWidth:true,
+    // merge:true,
+    navText: ["<img src='images/left01.png'>","<img src='images/right01.png'>"],
+	})
+	// $(".homepage_diy_arrowRight").click(function(){
+    //     console.log(owl.width());
+    //     $('.owl-stage').css('transform','transition3d(-80px,0,0)');
+    //      console.log( $('.owl-stage'));
+    // })
+    // $(".homepage_diy_arrowLeft").click(function(){
+    // 	owl.trigger('owl.prev');
+    // })
+}
+//水果拖拉
+if(windowWidth>=1024){
+	rightBox = document.querySelector('.homepage_diy_pickFruit_wrapperBottleBox');
+	rightBox.addEventListener('dragenter',function (e){e.preventDefault();});
+	rightBox.addEventListener('dragover',function (e){e.preventDefault();});
+	rightBox.addEventListener('drop',dropped);
+}
+//首頁功能區
+//水果拖拉
+	i=0;
+	no=[];
+	color=[];
+	svg=[];
+	function startDrag(e){
+		var fruit=this.id;
+		var content = this.nextElementSibling.value;
+		no[i]= content.split(',')[0];
+		color[i] = content.split(',')[1];
+		var info = content.split(',')[2];
+		this.style.scale='1.2';
+		svg[i] = this.nextElementSibling.nextElementSibling;	
+	}
+	function dropped(e){
+		e.preventDefault();
+		filljuice(color[i],no[i],svg[i]);
+		i++;
+	}
+//點選果汁
+	function addJuice(e){
+			var fruit =this.id;
+			var content = this.nextElementSibling.value;
+			var no= content.split(',')[0];
+			var color = content.split(',')[1];
+			var info = content.split(',')[2];
+			this.style.scale='1.2';
+			svg = this.nextElementSibling.nextElementSibling;
+			filljuice(color,no,svg);
 	}
 //hoer
 	$(".diy_pickFruit_leftItem").hover(function(e){
@@ -14,22 +86,12 @@ function doFirst() {
 		var info = content.split(',')[2];
 		var fruit = this.alt;
 		$("body .homepage_diy_fruitContent.homepage_diy_fruitContent-active").html('<h3>'+fruit+'</h3><h4>'+info+'</h4>');
-		console.log('<h3>'+fruit+':</h3><h4>'+info+'</h4>');
 	},function(){
-		this.scale='1';
+		// this.scale='1';
 		$("body .homepage_diy_fruitContent").html('<h4>任選<span>3</span>種水果</h4><h4>客製您的專屬果汁</h4>');
 	})
-//點選果汁
-	function addJuice(e){
-			var fruit =this.id;
-			var content = this.nextElementSibling.value;
-			var no= content.split(',')[0];
-			var color = content.split(',')[1];
-			var info = content.split(',')[2];
-			filljuice(color,no);
-	}
 //裝果汁
-	function filljuice(color,fruit){
+	function filljuice(color,fruit,svg){
         if ($(".diy_pickFruit_bottle1").css('background-color') == "rgba(0, 0, 0, 0)") {
             $('#bottle1').attr('value', fruit);
             $('.diy_pickFruit_bottle1').css('background-color', '#' + color);
@@ -38,6 +100,8 @@ function doFirst() {
                 'display':'none'});
             $('.diy_pickFruit_cursor2').css({
                 'display':'none'});
+            svg.className+=" drawn";
+             $('.homepage_diy .common_btn').css('display','inline-block');
             // var info = document.createElement('p');
             // infoArea.append(info);
             // info.innerText=fruitInfo[fruit];
@@ -52,6 +116,7 @@ function doFirst() {
                 'top':'calc(50% - 10px)'});
             $('.diy_pickFruit_cursor2').css({
                 'display':'none'});
+            svg.className+=" drawn";
             // var info = document.createElement('p');
             // infoArea.append(info);
             // info.innerText=fruitInfo[fruit];
@@ -67,6 +132,7 @@ function doFirst() {
             $('.diy_pickFruit_cursor2').css({
                 'display':'block',
                 'top':'calc(33.3333% - 10px)'});
+            svg.className+=" drawn";
             // var info = document.createElement('p');
             // infoArea.append(info);
             // info.innerText=fruitInfo[fruit];
@@ -90,6 +156,172 @@ function doFirst() {
 //點選開始製作
 	function diySubmit(){
 		document.getElementById('diyForm').submit();
+	}
+//顯示拉霸機
+	$('.homepage_diy_labaPic,.homepage_diy_labaPhone').click(function(){
+		$('.homepage_labaBlockPre').attr('class','homepage_labaBlock');
+	});
+///從拉霸機傳值到下一頁
+	$('#labaNext').click(function(){
+		$('#diyForm2').submit();
+	});
+///放棄
+	$('#labaCancle').click(function(){
+		$('#labaFruit1').attr('value','');
+		$('#labaFruit2').attr('value','');
+		$('#labaFruit3').attr('value','');
+		$('.homepage_labaBlock').attr('class','homepage_labaBlockPre');
+		// $('.resultFruit span').remove();
+		$('.homepage_startBtn1').css('display','block');
+		$('.homepage_startBtn2').css({'opacity':'0',
+										'position':'absolute',
+										'z-index':'-1'
+									});
+	});
+//拉霸機程式
+	var fruit1 = document.getElementById('fruit1').value;
+	var fruit2 = document.getElementById('fruit2').value;
+	var fruit3 = document.getElementById('fruit3').value;
+	var fruit4 = document.getElementById('fruit4').value;
+	var fruit5 = document.getElementById('fruit5').value;
+	var fruit6 = document.getElementById('fruit6').value;
+	var fruit7 = document.getElementById('fruit7').value;
+	var fruit8 = document.getElementById('fruit8').value;
+	var fruit9 = document.getElementById('fruit9').value;
+
+	var fruitObject= {
+			'0': fruit1,
+			'1': fruit2,
+			'2': fruit3,
+			'3': fruit4,
+			'4': fruit5,
+			'5': fruit6,
+			'6': fruit7,
+			'7': fruit8,
+			'8': fruit9,
+	};
+	console.log(fruit1);
+	console.log(fruit2);
+	console.log(fruit3);
+	console.log(fruit4);
+	console.log(fruit5);
+	console.log(fruit6);
+	console.log(fruit7);
+	console.log(fruit8);
+	console.log(fruit9);
+
+	// $('.resultFruit').innerHTML= '';
+	var machine4 = $("#machine4").slotMachine({
+		active	: 0,
+		delay	: 500
+	});
+		
+	var machine5 = $("#machine5").slotMachine({
+		active	: 1,
+		delay	: 500
+	});
+		
+	window.machine6 = $("#machine6").slotMachine({
+		active	: 2,
+		delay	: 500
+	});
+		
+	$("#slotMachineButtonShuffle").click(function(){
+		$('#slotMachineButtonShuffle span').text('');
+		machine4.shuffle();
+		machine5.shuffle();
+		machine6.shuffle();
+	});
+		
+	$("#slotMachineButtonStop").click(function(){
+		var result =  machine4.stop();
+		var result1 = machine5.stop();
+		var result2 = machine6.stop();
+		$('.homepage_startBtn1').css('display','none');
+		$('.homepage_startBtn2').css({'opacity':'1',
+										'position':'relative',
+										'z-index':'20'
+									});
+
+		// alert(result);
+		// alert(result1);
+		// alert(result2);
+		$('#labaFruit1').attr('value',result+1);
+		$('#labaFruit2').attr('value',result1+1);
+		$('#labaFruit3').attr('value',result2+1);
+
+		var chooseFruits = Array(result, result1,result2);
+		// var length = chooseFruits.length;
+		// for (var i = 0;i<2; i++) {
+		// 	var pickFruit =fruitObject[(chooseFruits[i])];
+		// 	$('.resultFruit').append('<span>' + pickFruit + ',</span>');
+		// }
+		// 	var pickFruit =fruitObject[(chooseFruits[2])];
+		// 	$('.resultFruit').append('<span>' + pickFruit + '</span>');
+
+	});
+		
+//果然特調問答
+	var a1=document.getElementById('1_1');
+	var a2=document.getElementById('1_2');
+	var a3=document.getElementById('1_3');
+	var a4=document.getElementById('1_4');
+	a1.addEventListener('click',showQuestion2);
+	a2.addEventListener('click',showQuestion2);
+	a3.addEventListener('click',showQuestion2);
+	a4.addEventListener('click',showQuestion2);
+
+	function showQuestion2(e){
+		answer1 = this.id.split('_')[1];
+		document.getElementById('question').innerText='你想吃大便嗎';
+		document.querySelector('.homepage_test_answerBlock').innerHTML='<div class="homepage_test_answerBox"><h4 id="2_1">1.想</h4><h4 id="2_2">2.想吃</h4></div><div class="homepage_test_answerBox"><h4 id="2_3">3.你吃</h4><h4 id="2_4">4.不要</h4></div></div>';
+		var a21=document.getElementById('2_1');
+		var a22=document.getElementById('2_2');
+		var a23=document.getElementById('2_3');
+		var a24=document.getElementById('2_4');
+		a21.addEventListener('click',haveTwoAnswer);
+		a22.addEventListener('click',haveTwoAnswer);
+		a23.addEventListener('click',haveTwoAnswer);
+		a24.addEventListener('click',haveTwoAnswer);
+	}
+	function haveTwoAnswer(e){
+		answer2 = this.id.split('_')[1];
+		findProduct(answer1,answer2);
+	}
+	function findProduct(answer1,answer2){
+	  	xhr = new XMLHttpRequest();
+	  	xhr.onload = function(){
+            if(xhr.status == 200){
+                showProduct(xhr.responseText);
+            }else{
+                alert(xhr.status);
+            }
+        }
+	  	var url = "findTextAnswer.php?answer1="+answer1+"&answer2="+answer2;
+	  	xhr.open("get", url, true);
+	  	//送出資料
+	  	xhr.send( null)
+	}
+	function showProduct(jsonStr){
+		console.log(jsonStr);
+		var pd = JSON.parse( jsonStr );
+		console.log(pd);
+
+		if(pd.offPdNo){//檢查是否有這筆資料
+	      var htmlStr = `<a class="clearfix" href="productitem.php?offPdNo=${pd.offPdNo}"><div class='pdPic'>
+	      					<img src="images/pd/${pd.offPdImg}" alt="">
+	      				</div>
+	      				<div class='pd'>
+	                        <h3>${pd.offPdName}</h3>
+	                        <h3>$90</h3>
+	                        <p>${pd.offPdInfo}</p>
+	                     </div></a>`;
+	      document.querySelector(".homepage_test_questionContainer").innerHTML = htmlStr;              
+
+	  	}else{
+	      document.querySelector(".homepage_test_questionContainer").innerHTML = '查無此商品';              
+
+  } 
 	}
 
 //首頁動畫區
@@ -130,7 +362,7 @@ function doFirst() {
     // })
 	.addTo(controller);
 //果然特調	
-	var windowWidth = window.screen.width;
+
 	var ship = document.getElementById('homepageTestShip');
 	if(windowWidth<768){
 		var cloud2 = TweenMax.to('.homepage_test_animatePic2',2,{x:30});
@@ -485,6 +717,12 @@ function doFirst() {
 	blogPerson3.addEventListener('click',blogActive);
 
 };
+window.addEventListener('load', doFirst);
+
+
+
+
+
 
 //第一瓶字的動畫
 function typeAnimation() {
@@ -649,4 +887,3 @@ function blogActive(e) {
 
 
 
-window.addEventListener('load', doFirst);

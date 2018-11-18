@@ -1,5 +1,9 @@
 //柱狀圖
  function chart() {
+     //傳值事件
+    var diyButton = document.getElementById('nextButton');
+    diyButton.addEventListener('click',diySubmit);
+
     var ctx = document.getElementById('myChart');
     var myChart = new Chart(ctx, {
         type: 'bar',
@@ -26,6 +30,10 @@
             }
         }
     });
+
+
+
+
     var fruits = document.querySelectorAll('.diy_pickFruit_leftItem');
     content=[];
     color=[];
@@ -89,7 +97,7 @@
             bgc2 = '.diy_pickFruit_leftItem' + $('#f'+homeFruitNo2).attr('id');
             $(bgc2).css('background-color', "rgb(199, 129, 50)");
         },50);
-    }else{
+    }else if(document.getElementById('homeFruit1')){
        homeFruitContent1 = document.getElementById('homeFruit1').value;
         var homeFruitNo1 = homeFruitContent1.split(',')[0];
         var homeFruitColor1 = homeFruitContent1.split(',')[1];
@@ -278,7 +286,7 @@
         document.onmouseup = function(){
             dragging = false;
             var bottleHeight = document.querySelector('.diy_pickFruit_bottleBox').clientHeight;
-            if($('.diy_pickFruit_bottle3').css('height')=='0px'){
+            if($('.diy_pickFruit_bottle3').css('background-color') == "rgba(0, 0, 0, 0)"){
                 var fruit1=$('.diy_pickFruit_bottle1').attr('id');
                 var fruit2=$('.diy_pickFruit_bottle2').attr('id');
                 var height1=$('.diy_pickFruit_bottle1').css('height').replace('px','')/bottleHeight;
@@ -363,6 +371,41 @@
         }
 
     })
+    //手機水果輪播
+    if ($(window).width() < 768) {
+        // alert('aa');
+        $('.diy_pickFruit_leftPic').slick({
+
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            prevArrow: '<div class="diy_pickFruit_leftArrow"><img src="images/left01.png" alt="左箭頭"></div>',
+            nextArrow: '<div class="diy_pickFruit_rightArrow"><img src="images/right01.png" alt="右箭頭"></div>',
+        });
+    }
+
+//傳值事件
+
+    function diySubmit(){
+        var bottlec3 = $('.diy_pickFruit_bottle3').css('background-color');
+        var bottlec2 = $('.diy_pickFruit_bottle2').css('background-color');
+        var bottlec1 = $('.diy_pickFruit_bottle1').css('background-color');
+        var bottleh3 = $('.diy_pickFruit_bottle3').css('height').replace('px','');
+        var bottleh2 = $('.diy_pickFruit_bottle2').css('height').replace('px','');
+        var bottleh1 = $('.diy_pickFruit_bottle1').css('height').replace('px','');
+        
+        var bottleHeight1 =  $('.diy_pickFruit_bottleBox').css('height').replace('px','');
+    
+        document.getElementById( 'bottleh1' ).value = Math.round((bottleh1/bottleHeight1)*100);
+        document.getElementById( 'bottleh2' ).value = Math.round((bottleh2/bottleHeight1)*100);
+        document.getElementById( 'bottleh3' ).value = Math.round((bottleh3/bottleHeight1)*100);
+        document.getElementById( 'bottlec1' ).value = bottlec1;
+        document.getElementById( 'bottlec2' ).value = bottlec2;
+        document.getElementById( 'bottlec3' ).value = bottlec3;
+    
+        document.getElementById('diySubmit').submit();
+    }
+
 
 
 };
@@ -370,17 +413,7 @@
 window.addEventListener('load', chart);
 
 
-//手機水果輪播
-if ($(window).width() < 768) {
-    $('.diy_pickFruit_leftPic').slick({
 
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        prevArrow: '<div class="diy_pickFruit_leftArrow"><img src="images/left01.png" alt="左箭頭"></div>',
-        nextArrow: '<div class="diy_pickFruit_rightArrow"><img src="images/right01.png" alt="右箭頭"></div>',
-    });
-}
 
 
 

@@ -87,6 +87,9 @@
 			
 			';
 			$i++;
+	if($i>9){
+		break;
+	}
 };
 if(isset($_GET["fruit1"])==true){
     	
@@ -169,10 +172,17 @@ if(isset($_GET["fruit1"])==true){
 
 					</div>
 				</div>
-
+				<form method="post" action="diyDesignBottle.php" id="diySubmit"  autocomplete="off">
+					<input type="hidden" name="bottleh1" id="bottleh1" value="">
+					<input type="hidden" name="bottleh2" id="bottleh2" value="">
+					<input type="hidden" name="bottleh3" id="bottleh3" value="">
+					<input type="hidden" name="bottlec1" id="bottlec1" value="">
+					<input type="hidden" name="bottlec2" id="bottlec2" value="">
+					<input type="hidden" name="bottlec3" id="bottlec3" value="">
+				</form>					
 
 				<div class="diy_pickFruit_nextButton">
-					<a id="nextButton" class="common_btn common_btn_first" href="diyDesignBottle.html">
+					<a id="nextButton" class="common_btn common_btn_first" href="diyDesignBottle.php">
 						<span class="common_btn_txt">下一步</span>
 						<div class="common_btn_blobs">
 							<div></div>

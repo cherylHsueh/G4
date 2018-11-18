@@ -15,11 +15,15 @@
     <script src="js/plugin/scrollMagic/animation.gsap.min.js"></script>
     <script src="js/plugin/scrollMagic/debug.addIndicators.min.js"></script>
     <script src="js/plugin/sweetalert2.min.js"></script>
+    <script src="js/plugin/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/plugin/jquery.slotmachine.min.js"></script>
     <script src="js/global.js"></script>
     <script src="js/homepage.js"></script>
 
-
-
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/docs.theme.min.css">
+    
     <link rel="stylesheet" href="css/sweetalert2.min.css">
     <link rel="stylesheet" href="css/tweenmax.css">
     <link rel="stylesheet" href="css/parallax.css">
@@ -106,68 +110,132 @@ try{
                 </div>
                 <div class="homepage_diy_container clearfix">
                     <div class="homepage_diy_fruitBlock cl-xl-7">
-                        <div class="homepage_diy_arrowLeft cl-s-1"><img src="images/left01.png" alt="左箭頭"></div>
-                        <div class="homepage_diy_Box cl-s-10 clearfix" id="lightRotation">
-                            <div class="homepage_diy_fruitBox clearfix cl-md-4">
-                                <div class="homepage_diy_fruitPic homepage_diy_1Pic cl-s-4">
-                                    <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[0];?>"
-                                        alt="<?php echo $arrName[0];?>">
-                                    <input style="display:none;" value="<?php echo $arrNo[0],',',$arrCol[0],',',$arrInfo[0];?>">
-                                </div>
-                                <div class="homepage_diy_fruitPic homepage_diy_2Pic cl-s-4">
-                                    <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[1]; ?>"
-                                        alt="<?php echo $arrName[1];?>">
-                                    <input style="display:none;" value="<?php echo $arrNo[1],',',$arrCol[1],',',$arrInfo[1];?>">
+                        <div style="position:relative;">
+                            <div class="homepage_diy_Box cl-s-12 clearfix" id="lightRotation">
+                                <div class="homepage_diy_fruitBox clearfix cl-md-4">
+                                    <div class="homepage_diy_fruitPic homepage_diy_1Pic cl-s-4">
+                                        <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[0];?>"
+                                            alt="<?php echo $arrName[0];?>">
+                                        <input style="display:none;" value="<?php echo $arrNo[0],',',$arrCol[0],',',$arrInfo[0];?>">
+                                        <div class="trigger"></div>
+                                        <svg version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
+                                            <polyline class="tick path" style="fill:none;stroke:#56ea23;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+                                            11.6,20 15.9,24.2 26.4,13.8 "/>
+                                        </svg>
+
                                     </div>
-                                <div class="homepage_diy_fruitPic homepage_diy_3Pic cl-s-4">
-                                    <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[2]; ?>"
-                                        alt="<?php echo $arrName[2];?>">
-                                    <input style="display:none;" value="<?php echo $arrNo[2],',',$arrCol[2],',',$arrInfo[2];?>">
+                                    <div class="homepage_diy_fruitPic homepage_diy_2Pic cl-s-4">
+                                        <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[1]; ?>"
+                                            alt="<?php echo $arrName[1];?>">
+                                        <input style="display:none;" value="<?php echo $arrNo[1],',',$arrCol[1],',',$arrInfo[1];?>">
+                                        <div class="trigger"></div>
+                                        <svg version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
+                                            <polyline class="tick path" style="fill:none;stroke:#56ea23;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+                                            11.6,20 15.9,24.2 26.4,13.8 "/>
+                                        </svg>
+
+                                        </div>
+                                    <div class="homepage_diy_fruitPic homepage_diy_3Pic cl-s-4">
+                                        <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[2]; ?>"
+                                            alt="<?php echo $arrName[2];?>">
+                                        <input style="display:none;" value="<?php echo $arrNo[2],',',$arrCol[2],',',$arrInfo[2];?>">
+                                        <div class="trigger"></div>
+                                        <svg version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
+                                            <polyline class="tick path" style="fill:none;stroke:#56ea23;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+                                            11.6,20 15.9,24.2 26.4,13.8 "/>
+                                        </svg>
+
+                                        </div>
+                                </div>
+                                <div class="homepage_diy_fruitBox clearfix cl-md-4">
+                                    <div class="homepage_diy_fruitPic homepage_diy_4Pic cl-s-4">
+                                        <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[3]; ?>"
+                                            alt="<?php echo $arrName[3];?>">
+                                        <input style="display:none;" value="<?php echo $arrNo[3],',',$arrCol[3],',',$arrInfo[3];?>">
+                                        <div class="trigger"></div>
+                                        <svg version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
+                                            <polyline class="tick path" style="fill:none;stroke:#56ea23;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+                                            11.6,20 15.9,24.2 26.4,13.8 "/>
+                                        </svg>
+
                                     </div>
-                            </div>
-                            <div class="homepage_diy_fruitBox clearfix cl-md-4">
-                                <div class="homepage_diy_fruitPic homepage_diy_4Pic cl-s-4">
-                                    <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[3]; ?>"
-                                        alt="<?php echo $arrName[3];?>">
-                                     <input style="display:none;" value="<?php echo $arrNo[3],',',$arrCol[3],',',$arrInfo[3];?>">   
+                                    <div class="homepage_diy_fruitPic homepage_diy_5Pic cl-s-4">
+                                        <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[4]; ?>"
+                                            alt="<?php echo $arrName[4];?>">
+                                        <input style="display:none;" value="<?php echo $arrNo[4],',',$arrCol[4],',',$arrInfo[4];?>">
+                                        <div class="trigger"></div>
+                                        <svg version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
+                                            <polyline class="tick path" style="fill:none;stroke:#56ea23;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+                                            11.6,20 15.9,24.2 26.4,13.8 "/>
+                                        </svg>
+
+                                    </div>
+                                    <div class="homepage_diy_fruitPic homepage_diy_6Pic cl-s-4">
+                                        <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[5]; ?>"
+                                            alt="<?php echo $arrName[5];?>">
+                                        <input style="display:none;" value="<?php echo $arrNo[5],',',$arrCol[5],',',$arrInfo[5];?>">
+                                        <div class="trigger"></div>
+                                        <svg version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
+                                            <polyline class="tick path" style="fill:none;stroke:#56ea23;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+                                            11.6,20 15.9,24.2 26.4,13.8 "/>
+                                        </svg>
+
+                                    </div>
                                 </div>
-                                <div class="homepage_diy_fruitPic homepage_diy_5Pic cl-s-4">
-                                    <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[4]; ?>"
-                                        alt="<?php echo $arrName[4];?>">
-                                    <input style="display:none;" value="<?php echo $arrNo[4],',',$arrCol[4],',',$arrInfo[4];?>">
+                                <div class="homepage_diy_fruitBox clearfix cl-md-4">
+                                    <div class="homepage_diy_fruitPic homepage_diy_7Pic cl-s-4">
+                                        <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[6]; ?>"
+                                            alt="<?php echo $arrName[6];?>">
+                                        <input style="display:none;" value="<?php echo $arrNo[6],',',$arrCol[6],',',$arrInfo[6];?>">
+                                        <div class="trigger"></div>
+                                        <svg version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
+                                            <polyline class="tick path" style="fill:none;stroke:#56ea23;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+                                            11.6,20 15.9,24.2 26.4,13.8 "/>
+                                        </svg>
+                                        
+
+                                    </div>
+                                    <div class="homepage_diy_fruitPic homepage_diy_8Pic cl-s-4">
+                                        <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[7]; ?>"
+                                            alt="<?php echo $arrName[7];?>">
+                                        <input style="display:none;" value="<?php echo $arrNo[7],',',$arrCol[7],',',$arrInfo[7];?>">
+                                        <div class="trigger"></div>
+                                        <svg version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
+                                            <polyline class="tick path" style="fill:none;stroke:#56ea23;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+                                            11.6,20 15.9,24.2 26.4,13.8 "/>
+                                        </svg>
+
+                                    </div>
+                                    <div class="homepage_diy_fruitPic homepage_diy_9Pic cl-s-4">
+                                        <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[8]; ?>"
+                                            alt="<?php echo $arrName[8];?>">
+                                        <input style="display:none;" value="<?php echo $arrNo[8],',',$arrCol[8],',',$arrInfo[8];?>">
+                                        <div class="trigger"></div>
+                                        <svg version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
+                                            <polyline class="tick path" style="fill:none;stroke:#56ea23;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+                                            11.6,20 15.9,24.2 26.4,13.8 "/>
+                                        </svg>
+
+                                    </div>
                                 </div>
-                                <div class="homepage_diy_fruitPic homepage_diy_6Pic cl-s-4">
-                                    <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[5]; ?>"
-                                        alt="<?php echo $arrName[5];?>">
-                                    <input style="display:none;" value="<?php echo $arrNo[5],',',$arrCol[5],',',$arrInfo[5];?>">
+                                <div class="homepage_diy_labaPhone clearfix">
+                                    <img src="images/homepage/game.png" alt="隨機選三個水果">
                                 </div>
-                            </div>
-                            <div class="homepage_diy_fruitBox clearfix cl-md-4">
-                                <div class="homepage_diy_fruitPic homepage_diy_7Pic cl-s-4">
-                                    <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[6]; ?>"
-                                        alt="<?php echo $arrName[6];?>">
-                                    <input style="display:none;" value="<?php echo $arrNo[6],',',$arrCol[6],',',$arrInfo[6];?>">
-                                </div>
-                                <div class="homepage_diy_fruitPic homepage_diy_8Pic cl-s-4">
-                                    <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[7]; ?>"
-                                        alt="<?php echo $arrName[7];?>">
-                                    <input style="display:none;" value="<?php echo $arrNo[7],',',$arrCol[7],',',$arrInfo[7];?>">
-                                </div>
-                                <div class="homepage_diy_fruitPic homepage_diy_9Pic cl-s-4">
-                                    <img class="diy_pickFruit_leftItem" src="images/<?php echo $arrImg[8]; ?>"
-                                        alt="<?php echo $arrName[8];?>">
-                                    <input style="display:none;" value="<?php echo $arrNo[8],',',$arrCol[8],',',$arrInfo[8];?>">
-                                </div>
-                            </div>
-                            <div class="homepage_diy_labaPhone clearfix">
-                                <img src="images/homepage/game.png" alt="隨機選三個水果">
                             </div>
                             <div class="homepage_diy_fruitContent">
                                 <h4>任選<span>3</span>種水果</h4>
                                 <h4>客製您的專屬果汁</h4>
                             </div>
                         </div>
-                        <div class="homepage_diy_arrowRight cl-s-1"><img src="images/right01.png" alt="右箭頭"></div>
                     </div>
                     <div class="homepage_diy_arrowBox">
                         <h4>
@@ -211,7 +279,113 @@ try{
                     </div>
                     <p class="homepage_diy_labaContent">還在猶豫嗎？拉霸機幫你挑水果！</p>
                 </div>
-                
+<!-- 拉霸 -->
+                <div class="homepage_labaBlockPre">
+                        <div class="homepage_gameBlock">
+                            <div class="content homepage_gameBox" id="homepage_gameContainer">
+                                <div class="homepage_labaPic"><img src="images/homepage/test.png" alt="拉霸"></div>
+                                <div  class="homepage_threeFruitBlcok" >
+                                    <div id="machine4" class="slotMachine">
+                <?php
+                    $sql = "select * from fruititem where fruitStatus=1";
+                    $fruit = $pdo ->query($sql);
+                    $i=1;
+                    while($rowFruit=$fruit->fetch(PDO::FETCH_ASSOC)){
+                ?>
+                                        <div class="fruit fruit<?php echo $i?>"><img src="images/<?php echo $rowFruit["fruitImg"]?>" alt="<?php echo $rowFruit["fruitName"]?>"></div>
+                <?php
+                $i++;
+                    if ($i==10) {
+                        break;
+                    }
+                }
+                ?>
+                                    </div>
+                                    <div id="machine5" class="slotMachine">
+                <?php
+                    $sql= "select * from fruititem where fruitStatus=1";
+                    $fruit = $pdo ->query($sql);
+                    $i=1;
+                    while($rowFruit=$fruit->fetch(PDO::FETCH_ASSOC)){
+                ?>
+                                        <div class="fruit fruit<?php echo $i?>"><img src="images/<?php echo $rowFruit["fruitImg"]?>" alt="<?php echo $rowFruit["fruitName"]?>"></div>
+                <?php
+                $i++;
+                    if ($i==10) {
+                        break;
+                    }
+                }
+                ?>
+                                    </div>
+                                    <div id="machine6" class="slotMachine">
+                <?php
+                    $sql= "select * from fruititem where fruitStatus=1";
+                    $fruit = $pdo ->query($sql);
+                    $i=1;
+                    while($rowFruit=$fruit->fetch(PDO::FETCH_ASSOC)){
+                ?>
+                                        <div class="fruit fruit<?php echo $i?>"><img src="images/<?php echo $rowFruit["fruitImg"]?>" alt="<?php echo $rowFruit["fruitName"]?>"></div>
+                <?php
+                $i++;
+                    if ($i==9) {
+                        break;
+                    }
+                }
+                ?>
+                                    </div>	
+                <?php
+                    $sql= "select * from fruititem where fruitStatus=1";
+                    $fruit = $pdo ->query($sql);
+                    $i=1;
+                    while($rowFruit=$fruit->fetch(PDO::FETCH_ASSOC)){
+                ?>
+                                    <input id="fruit<?php echo $i?>" style="display: none;" value="<?php echo $rowFruit["fruitName"]?>">
+                <?php
+                $i++;
+                    if ($i==10) {
+                        break;
+                    }
+                }
+                ?>			
+                                </div>		
+                            </div>	
+                            <div class="text-center homepage_labaBtn">
+                                <div class="content text-center homepage_startBtn homepage_startBtn1">
+                                    <div id="slotMachineButtonShuffle" class="slotMachineButton">Shuffle!</div>
+                                    <div id="slotMachineButtonStop" class="slotMachineButton">Stop!</div>
+                                </div>
+                                <div class="homepage_startBtn2">
+                                    <a class="common_btn common_btn_first" id="labaNext">
+                                        <span class="common_btn_txt">開始製作</span>
+                                        <div class="common_btn_blobs">
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+                                    <a class="common_btn common_btn_second" id="labaCancle">
+                                        <span class="common_btn_txt">返回首頁</span>
+                                        <div class="common_btn_blobs">
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <form method="get" action="diy.php" id="diyForm2">
+                                <input style="display:none" name="fruit1" id="labaFruit1" value="">
+                                <input style="display:none" name="fruit2" id="labaFruit2" value="">
+                                <input style="display:none" name="fruit3" id="labaFruit3" value="">
+                            </form>
+                            <div class="clearfix"></div>
+                            
+                        </div>
+                        <!-- <h3 class="resultFruit">你挑到的水果是:</h3> -->
+                    
+                    
+                    
+                    </div>
 
         </section>
         <div class="homepage_animate">
@@ -232,17 +406,17 @@ try{
                                     <!-- <img src="images/homepage/question.png" alt="測驗問題">： -->
                                 </div>
                                 <div class="homepage_test_questionContent">
-                                    <h3>你最近有沒有以下情況呢？</h3>
+                                    <h3 id="question">你最近有沒有以下情況呢？</h3>
                                 </div>
                             </div>
                             <div class="homepage_test_answerBlock clearfix">
                                 <div class="homepage_test_answerBox">
-                                    <h4>1.牙齦常出血</h4>
-                                    <h4>2.常常睡不好</h4>
+                                    <h4 id="1_1">1.牙齦常出血</h4>
+                                    <h4 id="1_2">2.常常睡不好</h4>
                                 </div>
                                 <div class="homepage_test_answerBox">
-                                    <h4>3.排便不順暢</h4>
-                                    <h4>4.視力模糊</h4>
+                                    <h4 id="1_3">3.排便不順暢</h4>
+                                    <h4 id="1_4">4.視力模糊</h4>
                                 </div>
                             </div>
                         </div>
@@ -274,6 +448,8 @@ try{
                             <img src="images/homepage/plat.png" alt="">
                         </div>
                     </div>
+
+    
 
                    
 <?php  

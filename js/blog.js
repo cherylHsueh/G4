@@ -20,6 +20,51 @@ $(window).ready(function(){
                     $(this).text(text);
                 }
              });
+
+
+
+             $(".blog_Rank_Container").click(function () {
+
+                if ($(this).attr('data-rank') == 2) {
+                    for (var i = 1; i <= 3; i++) {
+                        var rankBox = $("#phone .blog_Rank_Container:nth-child(" + i + ")");
+                        // 抓值
+                        var num = rankBox.attr("data-rank");
+                        // alert(num);
+                        // removeClass
+                        rankBox.removeClass("blog_Rank_Container" + num);
+                        // 值+1(判斷值==4,值變1)
+                        num++;
+                        if (num == 4) {
+                            num = 1;
+                        }
+                        // addClass
+                        rankBox.addClass("blog_Rank_Container" + num);
+                        // 傳回值
+                        rankBox.attr("data-rank", num);
+                    }
+                } else if ($(this).attr('data-rank') == 3) {
+                    for (var i = 1; i <= 3; i++) {
+                        var rankBox = $("#phone .blog_Rank_Container:nth-child(" + i + ")");
+                        // 抓值
+                        var num = rankBox.attr("data-rank");
+                        // alert(num);
+                        // removeClass
+                        rankBox.removeClass("blog_Rank_Container" + num);
+                        // 值-1(判斷值==0,值變3)
+                        num--;
+                        if (num == 0) {
+                            num = 3;
+                        }
+                        // addClass
+                        rankBox.addClass("blog_Rank_Container" + num);
+                        // 傳回值
+                        rankBox.attr("data-rank", num);
+                    }
+            
+                }
+            })
+            
 })
 
 
@@ -156,47 +201,6 @@ $(function () {
 
 //手機輪播
 
-$(".blog_Rank_Container").click(function () {
-
-    if ($(this).attr('data-rank') == 2) {
-        for (var i = 1; i <= 3; i++) {
-            var rankBox = $("#phone .blog_Rank_Container:nth-child(" + i + ")");
-            // 抓值
-            var num = rankBox.attr("data-rank");
-            // alert(num);
-            // removeClass
-            rankBox.removeClass("blog_Rank_Container" + num);
-            // 值+1(判斷值==4,值變1)
-            num++;
-            if (num == 4) {
-                num = 1;
-            }
-            // addClass
-            rankBox.addClass("blog_Rank_Container" + num);
-            // 傳回值
-            rankBox.attr("data-rank", num);
-        }
-    } else if ($(this).attr('data-rank') == 3) {
-        for (var i = 1; i <= 3; i++) {
-            var rankBox = $("#phone .blog_Rank_Container:nth-child(" + i + ")");
-            // 抓值
-            var num = rankBox.attr("data-rank");
-            // alert(num);
-            // removeClass
-            rankBox.removeClass("blog_Rank_Container" + num);
-            // 值-1(判斷值==0,值變3)
-            num--;
-            if (num == 0) {
-                num = 3;
-            }
-            // addClass
-            rankBox.addClass("blog_Rank_Container" + num);
-            // 傳回值
-            rankBox.attr("data-rank", num);
-        }
-
-    }
-})
 
 
 //cloud animation

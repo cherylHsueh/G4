@@ -252,7 +252,7 @@ a {
   .common_btn_second:hover .common_btn_txt {
     color: #603813; }
 
-h1 {
+.menu h1.menu_logo, .ph_nav h1.phone_logo {
   font-size: 0; }
 
 #hb_control {
@@ -332,12 +332,88 @@ header {
   -webkit-animation: move 10s linear infinite alternate;
   animation: move 10s linear infinite alternate; }
 
-.robot {
-  position: fixed;
-  width: 110px;
+#robotControl:checked ~ .robot_container .robot_toggle {
+  transform: rotate(180deg);
+  transition: .5s; }
+
+#robotControl:checked ~ .robot_container {
   bottom: 0;
+  transition: 1s; }
+
+.robot_container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  transition: 1s;
+  bottom: -450px;
   right: 0;
-  z-index: 50; }
+  z-index: 50;
+  width: 350px;
+  height: 500px; }
+  .robot_container div {
+    width: 100%; }
+  .robot_container .robot_titleBlock {
+    display: flex;
+    height: 10%;
+    position: relative;
+    line-height: 50px;
+    background-color: #f4d66d;
+    border-radius: 10px 10px 0 0; }
+    .robot_container .robot_titleBlock .robot_toggle {
+      width: 10%;
+      padding: 0 20px;
+      transition: .5s; }
+    .robot_container .robot_titleBlock .robot_pic {
+      position: absolute;
+      bottom: 0;
+      right: 1%;
+      width: 110px; }
+  .robot_container .robot_conversationBlock {
+    height: 82%;
+    background-color: #fff;
+    overflow: auto;
+    border: 6px solid #f4d66d;
+    border-bottom: 2px solid #f4d66d;
+    border-top: 0px; }
+    .robot_container .robot_conversationBlock .robot_text {
+      margin: 4% 2%;
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background-color: rgba(244, 214, 109, 0.8); }
+    .robot_container .robot_conversationBlock .robot_textTime {
+      color: #ddd;
+      position: relative;
+      bottom: -7px; }
+    .robot_container .robot_conversationBlock .user_conversation {
+      text-align: right; }
+      .robot_container .robot_conversationBlock .user_conversation .user_text {
+        display: inline-block;
+        background-color: rgba(244, 214, 109, 0.6);
+        padding: 8px 12px;
+        border-radius: 10px;
+        margin: 2% 2%; }
+  .robot_container .robot_inputBlock {
+    height: 8%;
+    display: flex; }
+    .robot_container .robot_inputBlock textarea {
+      width: 80%;
+      border: 1px solid #fff;
+      border-left: 6px solid #f4d66d;
+      border-top: 3px solid #f4d66d;
+      margin: 0;
+      height: 100%; }
+    .robot_container .robot_inputBlock button {
+      display: inline-block;
+      height: 100%;
+      width: 20%;
+      line-height: 40px;
+      background-color: #ffd700;
+      margin: 0;
+      padding: 0.3rem 0; }
+
+#robotControl, #hb_control {
+  display: none; }
 
 .coupon {
   position: fixed;
@@ -347,10 +423,10 @@ header {
   z-index: 100; }
 
 @media only screen and (max-width: 767px) {
-  .robot {
-    width: 80px; }
+  .robot_container {
+    display: none; }
   .coupon {
-    top: 140px;
+    top: 75px;
     width: 70px; }
   #svg-2 {
     transition: height 1.3s 0.5s ,width 2s; }
@@ -471,46 +547,30 @@ header {
   100% {
     transform: translate(0%, 0%); } }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-* {
-  outline: 1px solid red; }
-
->>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
-=======
->>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
-header nav li:nth-child(4) > a:after {
-  transform: scaleX(1); }
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-/*分頁做法
-header nav  li:nth-child(2) > a:after {
-    transform: scaleX(1);
-}
-*/
->>>>>>> diy
-=======
->>>>>>> blog
 footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   right: 0;
   left: 0; }
+
+.footer_wrapper::before {
+  position: absolute;
+  top: -40px;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 40px;
+  background-image: url("../images/footershadow.png");
+  background-size: contain;
+  background-position: bottom center;
+  background-repeat: repeat-x; }
 
 @media only screen and (max-width: 767px) {
   .footer_wrapper {
     text-align: center; }
     .footer_wrapper .footer_block {
-      margin: 0 auto; }
+      margin: 0 auto;
+      background-color: #f4d66d; }
       .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
         padding: 8px 0; }
         .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
@@ -526,7 +586,8 @@ footer {
     text-align: center;
     margin: 0 auto; }
     .footer_wrapper .footer_block {
-      margin: 0 auto; }
+      margin: 0 auto;
+      background-color: #f4d66d; }
       .footer_wrapper .footer_block .footer_rightBox .footer_rightContent {
         padding: 8px 0; }
         .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .desc {
@@ -534,45 +595,12 @@ footer {
           padding: 5px; }
         .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
           font-size: 12px; } }
-=======
-/*分頁做法
-header nav  li:nth-child(2) > a:after {
-    transform: scaleX(1);
-}
-*/
+
 header nav li:nth-child(4) > a:after {
   transform: scaleX(1); }
->>>>>>> blog
-=======
-/*分頁做法
-header nav  li:nth-child(2) > a:after {
-    transform: scaleX(1);
-}
-*/
-header nav li:nth-child(4) > a:after {
-  transform: scaleX(1); }
->>>>>>> 6a047bf83ca6a4f5d20759417a9bec51470ac612
-=======
-header nav li:nth-child(4) > a:after {
-  transform: scaleX(1); }
->>>>>>> 280a4a4c1247a2dea80405e899b323e7ca4b1a49
->>>>>>> member
-=======
-header nav li:nth-child(4) > a:after {
-  transform: scaleX(1); }
->>>>>>> cart
-=======
-header nav li:nth-child(4) > a:after {
-  transform: scaleX(1); }
->>>>>>> 1105homepage(having about)
-=======
-header nav li:nth-child(4) > a:after {
-  transform: scaleX(1); }
->>>>>>> cart
 
 body {
   background: #a4ddfa;
-  background: linear-gradient(0deg, #a4ddfa 1%, #73c9f5 36%, #6ec9f7 71%, #45b0e6 100%);
   overflow-x: hidden; }
 
 .space {
@@ -589,30 +617,19 @@ body {
   display: none; }
 
 @media only screen and (max-width: 767px) {
-  .blog_Heading, .blog_Subheading, .blogSubmit_Headingbox .blog_Heading {
-    color: #fff;
+  .blog_Heading, .blog_Subheading {
+    color: #fefefe;
     text-align: center;
     line-height: 1.5;
     font-weight: bold; }
-  .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Pic, .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Num, .blog_Rank_ContentBox .blog_Rank_ContentBox_Item, .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_NewShare, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_HighScore, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Pic, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Num, .blog_Forum_SubButtonContainer_Box .blog_Forum_SubButtonContainer_Pic {
+  .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Pic, .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Num, .blog_Rank_ContentBox .blog_Rank_ContentBox_Item, .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_NewShare, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_HighScore, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Pic, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Num, .blog_Forum_SubButtonContainer .blog_Forum_SubButtonContainer_Pic, .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_Rank_Score .blog_Score_Pic {
     float: left; }
   .space {
     width: 100%;
     height: 130px; }
   .blog_Heading {
     width: 90%;
-<<<<<<< HEAD
-<<<<<<< HEAD
     margin: 10px auto 0; }
-=======
-    margin: 10px auto 0;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    background-color: #f5ba5b; }
->>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
-=======
-    margin: 10px auto 0; }
->>>>>>> commit blog 微修
   .blog_Subheading {
     margin-bottom: 20px; }
   .blog_Rank {
@@ -620,30 +637,31 @@ body {
     padding: 80px 0; }
   .blog_Rank {
     display: block; }
-    .blog_Rank .blog_Heading {
-      width: 50%;
+    .blog_Rank .blog_Heading_pic {
       position: relative;
-      margin: 0 auto; }
-      .blog_Rank .blog_Heading .num1 {
-        position: absolute;
-        transform: translate(-250%, -100%);
-        width: 50px; }
-      .blog_Rank .blog_Heading .num2 {
-        position: absolute;
-        transform: translate(-800%, 0%);
-        width: 25px; }
-      .blog_Rank .blog_Heading .num3 {
-        position: absolute;
-        transform: translate(0%, 0%);
-        width: 50px; }
+      font-weight: bold;
+      background-image: url(../images/homepage/headerBac.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 70%;
+      margin-bottom: 7%; }
+      .blog_Rank .blog_Heading_pic .blog_Heading {
+        padding-bottom: 7%;
+        font-size: 5vw;
+        color: #6abee7; }
+    .blog_Rank .blog_Subheading {
+      margin: -10% 0 5%;
+      color: #32a8e2;
+      font-size: 3vw; }
   #phone {
-    height: 70vh;
+    height: 100vh;
     width: 100%;
     position: relative;
     margin-top: -10%; }
     #phone .blog_Rank_Container {
       width: calc(100% - 40px);
       margin: 0 15px;
+      border-radius: 20px;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
       background-color: #fff;
@@ -667,7 +685,7 @@ body {
       -ms-transform: scale(0.8);
       transform: scale(0.8); }
     #phone .blog_Rank_Container3 {
-      top: 45%;
+      top: 50%;
       z-index: 1;
       -webkit-transform: scale(0.8);
       -ms-transform: scale(0.8);
@@ -689,6 +707,25 @@ body {
         width: 50%; }
   .blog_Rank_LeftBox {
     position: relative; }
+    .blog_Rank_LeftBox .blog_Rank_Content {
+      margin: 0 10px; }
+      .blog_Rank_LeftBox .blog_Rank_Content .blog_Rank_Title {
+        padding: 5%;
+        color: #f1900f;
+        font-weight: bold;
+        line-height: 1; }
+        .blog_Rank_LeftBox .blog_Rank_Content .blog_Rank_Title h4 {
+          font-size: 3vw; }
+      .blog_Rank_LeftBox .blog_Rank_Content .blog_Rank_Item {
+        display: block;
+        width: 50%;
+        margin: 0 auto; }
+        .blog_Rank_LeftBox .blog_Rank_Content .blog_Rank_Item .blog_Rank_ItemPic {
+          width: 33%;
+          float: left; }
+          .blog_Rank_LeftBox .blog_Rank_Content .blog_Rank_Item .blog_Rank_ItemPic img {
+            width: 100%;
+            vertical-align: bottom; }
     .blog_Rank_LeftBox .blog_Rank_Date {
       float: left;
       vertical-align: bottom;
@@ -699,7 +736,7 @@ body {
       width: 100%; }
     .blog_Rank_LeftBox .blog_Rank_Score {
       position: absolute;
-      bottom: 1%;
+      bottom: 15%;
       left: 0;
       width: 20%;
       padding-left: 10px;
@@ -722,27 +759,11 @@ body {
     .blog_Rank_LeftBox .blog_Rank_Name p {
       float: left;
       padding: 8px 5%;
-      color: #333;
+      color: #aaa;
       font-size: 3vw; }
-  .blog_Rank_RightBox .blog_Rank_Item {
-    display: block;
-    width: 50%;
-    margin: 0 auto; }
-    .blog_Rank_RightBox .blog_Rank_Item .blog_Rank_ItemPic {
-      width: 33%;
-      float: left; }
-      .blog_Rank_RightBox .blog_Rank_Item .blog_Rank_ItemPic img {
-        width: 100%;
-        vertical-align: bottom; }
-  .blog_Rank_RightBox .blog_Rank_Content {
-    margin: 0 10px; }
-    .blog_Rank_RightBox .blog_Rank_Content .blog_Rank_Title {
-      padding: 5%;
-      color: #f1900f;
-      font-weight: bold;
-      line-height: 1; }
-      .blog_Rank_RightBox .blog_Rank_Content .blog_Rank_Title h4 {
-        font-size: 3vw; }
+  .blog_Rank_RightBox {
+    box-sizing: border-box;
+    padding: 0 10px; }
     .blog_Rank_RightBox .blog_Rank_Content .blog_Rank_Desc {
       margin-bottom: 10px;
       padding: 5%;
@@ -753,11 +774,12 @@ body {
         font-size: 2vw; }
   .blog_Rank_ContentBox {
     width: 100%;
-    padding: 0 5%; }
+    padding-top: 5%;
+    border: 1px solid grey; }
     .blog_Rank_ContentBox .blog_Rank_ContentBox_Item {
       width: 33.3333%;
       box-sizing: border-box;
-      padding: 0 2%; }
+      text-align: center; }
       .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container {
         height: 0;
         padding-bottom: 200%;
@@ -768,40 +790,11 @@ body {
           height: 100%;
           position: absolute; }
         .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar1 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          background-color: rgba(255, 99, 132, 0.8);
-          margin: auto; }
-=======
           background-color: rgba(255, 99, 132, 0.8); }
->>>>>>> cart
-=======
-          background-color: rgba(255, 99, 132, 0.8);
-          margin: auto; }
->>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
-=======
-          background-color: rgba(255, 99, 132, 0.8); }
->>>>>>> cart
         .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar2 {
           background-color: rgba(54, 162, 235, 0.8); }
         .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container .blog_Rank_ContentBox_Columnar3 {
           background-color: rgba(255, 206, 86, 0.8); }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> cart
-      .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_BottomBox_Title {
-        width: 100%;
-        padding: 5% 0;
-        color: rgba(117, 119, 82, 0.685);
-        font-size: 2.3vw;
-        text-align: center; }
->>>>>>> cart
-=======
->>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
     .blog_Rank_ContentBox .blog_Rank_ContentBox_Desc p {
       margin: 5%;
       text-align: right;
@@ -825,15 +818,23 @@ body {
   .blog_Forum_OptionContainer {
     margin: 0 auto; }
     .blog_Forum_OptionContainer .blog_Forum_SearchBar {
+      position: relative;
       text-align: center; }
       .blog_Forum_OptionContainer .blog_Forum_SearchBar input {
-        width: 150px;
+        width: 30%;
         height: 30px;
         margin-bottom: 40px;
         border: 1px solid #aaa;
         border-radius: 5px;
         padding-left: 5px; }
-    .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_NewShare a, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_HighScore a {
+      .blog_Forum_OptionContainer .blog_Forum_SearchBar i {
+        position: absolute;
+        top: 12%;
+        right: 36%;
+        cursor: pointer; }
+        .blog_Forum_OptionContainer .blog_Forum_SearchBar i:hover {
+          color: grey; }
+    .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_NewShare, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_HighScore {
       display: block;
       width: 100px;
       padding: 10px 0; }
@@ -908,26 +909,25 @@ body {
       margin: 10px;
       color: #888;
       line-height: 1.5; }
-  .blog_Forum_SubButtonContainer_Box {
+  .blog_Forum_SubButtonContainer .blog_Forum_SubButtonContainer_Box {
     border: 1px solid #eee;
     padding: 2% 2%;
     background-color: #fbb03b;
     vertical-align: center;
     text-align: center;
-    color: #5e4909; }
-    .blog_Forum_SubButtonContainer_Box .blog_Forum_SubButtonContainer_Pic {
-      width: 20%; }
-      .blog_Forum_SubButtonContainer_Box .blog_Forum_SubButtonContainer_Pic img {
-        width: 100%;
-        vertical-align: bottom; }
-    .blog_Forum_SubButtonContainer_Box span {
-      padding: 7% 0;
-      vertical-align: middle;
-      font-size: 2.5vw;
-      line-height: 1.7; }
-    .blog_Forum_SubButtonContainer_Box:hover {
-      background-color: #fff100;
-      color: #fbb03b; }
+    color: #fff; }
+    .blog_Forum_SubButtonContainer .blog_Forum_SubButtonContainer_Box:hover {
+      background-color: #90A30B; }
+  .blog_Forum_SubButtonContainer .blog_Forum_SubButtonContainer_Pic {
+    width: 20%; }
+    .blog_Forum_SubButtonContainer .blog_Forum_SubButtonContainer_Pic img {
+      width: 100%;
+      vertical-align: bottom; }
+  .blog_Forum_SubButtonContainer span {
+    padding: 7% 0;
+    vertical-align: middle;
+    font-size: 2.5vw;
+    line-height: 1.7; }
   .blog_Forum {
     position: relative; }
     .blog_Forum .blog_Forum_bg .city {
@@ -989,6 +989,22 @@ body {
         position: absolute;
         top: -60px;
         right: 70px; }
+    .blog_Forum_wrapper .blog_Heading_pic {
+      position: relative;
+      font-weight: bold;
+      background-image: url(../images/homepage/headerBac.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 70%;
+      margin: 5% 0 7%; }
+      .blog_Forum_wrapper .blog_Heading_pic .blog_Heading {
+        padding-bottom: 7%;
+        font-size: 5vw;
+        color: #6abee7; }
+    .blog_Forum_wrapper .blog_Subheading {
+      margin: -10% 0 5%;
+      color: #32a8e2;
+      font-size: 3vw; }
   .umbrellaApple img {
     width: 100px;
     position: absolute;
@@ -1025,8 +1041,6 @@ body {
       transform: rotate(9deg);
       opacity: 0; } }
   .blogIn_Share {
-<<<<<<< HEAD
-<<<<<<< HEAD
     margin: 5% 0; }
     .blogIn_Share .blogIn_Headingbox {
       margin: 0 5%;
@@ -1034,20 +1048,6 @@ body {
       border-top-right-radius: 10px;
       border-top-left-radius: 10px;
       background-color: #f5ba5b; }
-=======
-    margin: 5%; }
-    .blogIn_Share .blogIn_Headingbox {
-      position: relative; }
->>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
-=======
-    margin: 5% 0; }
-    .blogIn_Share .blogIn_Headingbox {
-      margin: 0 5%;
-      position: relative;
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px;
-      background-color: #f5ba5b; }
->>>>>>> commit blog 微修
       .blogIn_Share .blogIn_Headingbox .blogIn_umbrellaguava {
         width: 20%;
         position: absolute;
@@ -1077,7 +1077,7 @@ body {
     .blogIn_LeftBox .blogIn_LeftBox_NameContainer {
       width: 90%;
       margin: 0 auto;
-      background-color: rgba(245, 195, 121, 0.993); }
+      background-color: #fefefe; }
       .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blogIn_LeftBox_NamePic {
         width: 20%;
         margin-left: 13%; }
@@ -1087,15 +1087,27 @@ body {
       .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_LeftBox_NameTitle {
         text-align: left; }
         .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_LeftBox_NameTitle p {
-          padding: 10px;
-          line-height: 2.3;
+          padding: 3%;
+          line-height: 3.3;
           font-size: 4vw; }
+      .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_Rank_Score {
+        float: right; }
+        .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_Rank_Score .blog_Score_Pic {
+          width: 50%; }
+          .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_Rank_Score .blog_Score_Pic img {
+            width: 100%;
+            vertical-align: bottom; }
+        .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_Rank_Score .blog_Score_Num p {
+          color: #ff9324;
+          font-size: 3vw;
+          text-align: center;
+          line-height: 2.2; }
   .blogIn_RightBox {
     padding: 5% 0; }
     .blogIn_RightBox .blog_Rank_ContentBox {
       margin: 5% 0;
       padding: 5% 0 0;
-      border-bottom: 1px solid #ccc;
+      border: 1px solid transparent;
       background-color: #fefefe;
       border-radius: 5px; }
       .blogIn_RightBox .blog_Rank_ContentBox .blog_Rank_BottomBox_Title {
@@ -1123,9 +1135,9 @@ body {
           margin: 0 5%; }
     .blogIn_RightBox_TitleContainer .blogIn_RightBox_ShareContainer .blogIn_RightBox_ShareContent {
       clear: both;
-      border-bottom: 1px solid #ccc;
       border-radius: 5px;
-      background-color: #fefefe; }
+      background-color: #fefefe;
+      text-align: left; }
       .blogIn_RightBox_TitleContainer .blogIn_RightBox_ShareContainer .blogIn_RightBox_ShareContent p {
         padding: 5% 2%;
         font-size: 3.7vw;
@@ -1152,7 +1164,7 @@ body {
           line-height: 1.8;
           text-align: center; }
         .blogIn_RightBox_TitleContainer .blogIn_RightBox_subButtonContainer a.blogIn_RightBox_subButtonItem:hover {
-          background-color: #487e0a; }
+          background-color: #90A30B; }
   .blogIn_Msg {
     position: relative;
     background-color: rgba(254, 254, 254, 0.6);
@@ -1218,74 +1230,116 @@ body {
       text-align: left;
       font-size: 1.8vw;
       color: #ccc; }
-    .blogIn_Msg_SendBlock a.subButtonItem {
+    .blogIn_Msg_SendBlock input.subButtonItem {
       padding: 1% 0;
+      border: 0;
       background-color: #fbb03b;
       text-align: center;
       font-size: 2.5vw;
       color: #fefefe; }
-      .blogIn_Msg_SendBlock a.subButtonItem:hover {
-        background-color: #487e0a; }
-  .blogIn_Msg_Block {
-    padding: 5% 0; }
-    .blogIn_Msg_Block .blogIn_Msg_Box input {
-      width: 90%;
-      padding: 4% 1%; }
-    .blogIn_Msg_Block a.subButtonItem {
-      padding: 1% 0;
-      background-color: #fbb03b;
-      text-align: center;
-      font-size: 2.5vw;
-      color: #fefefe; }
-      .blogIn_Msg_Block a.subButtonItem:hover {
-        background-color: #487e0a; }
+      .blogIn_Msg_SendBlock input.subButtonItem:hover {
+        background-color: #90A30B; }
+  .blogIn_Msg_Containerc {
+    padding-right: 3%; }
+    .blogIn_Msg_Containerc .blogIn_Msg_Block {
+      padding: 5% 0; }
+      .blogIn_Msg_Containerc .blogIn_Msg_Block .blogIn_Msg_Box .blogIn_Msg_ContentInput input {
+        width: 90%;
+        padding: 4% 1%; }
+      .blogIn_Msg_Containerc .blogIn_Msg_Block input.subButtonItem {
+        padding: 1%;
+        border: 0;
+        background-color: #fbb03b;
+        text-align: center;
+        font-size: 2.5vw;
+        color: #fefefe; }
+        .blogIn_Msg_Containerc .blogIn_Msg_Block input.subButtonItem:hover {
+          background-color: #90A30B; }
   .blogIn_Msg_SendBox2 {
-    margin: 0 3%;
+    margin: 0 3% 1%;
     background-color: #fefefe; }
   .blogIn_ButtonContainer {
     text-align: center; }
     .blogIn_ButtonContainer a.common_btn {
       margin: 10% 1%; }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
+  .umbrellaMandarin img {
+    width: 80px;
+    position: absolute;
+    bottom: 0%;
+    right: -20%;
+    cursor: pointer;
+    animation: umbrellaMandarinScale 3s linear infinite alternate-reverse; }
+  @keyframes umbrellaMandarinScale {
+    from {
+      transform: scale(0.8); }
+    to {
+      transform: scale(1); } }
+  .umbrellaMandarin .umbrellaMandarin_active {
+    animation: umbrellaMandarin 5s linear backwards; }
+  @keyframes umbrellaMandarin {
+    0% {
+      bottom: 0%;
+      right: -20%;
+      transform: scale(1); }
+    99% {
+      opacity: 1; }
+    to {
+      bottom: 100%;
+      right: 100%;
+      opacity: 0;
+      transform: scale(0.1); } }
   .blogSubmit_board {
     display: none; }
-  .blogSubmit_bgc {
-    background: #f2f848;
-    background: linear-gradient(180deg, #f0f56c 1%, #e9fa7a 63%, rgba(122, 230, 69, 0.986432) 82%, #42f163 100%); }
-<<<<<<< HEAD
-=======
->>>>>>> cart
-=======
->>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
-=======
->>>>>>> cart
-  .blogSubmit_Headingbox .blog_Heading {
-    padding: 30px 0;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    background-color: #f5ba5b; }
+  .blogSubmit_Share {
+    position: relative;
+    margin-top: 100px; }
+    .blogSubmit_Share .blogSubmit_Share_cloud1 {
+      display: none; }
+    .blogSubmit_Share .blogSubmit_Share_cloud2 {
+      width: 200px;
+      position: absolute;
+      top: -10%;
+      right: 10%; }
+  .blogSubmit_Headingbox {
+    width: 30%;
+    position: absolute;
+    top: -2%; }
   .blogSubmit_Container {
     margin: 0 5% 5%; }
   .blogSubmit_LeftBox {
     padding: 10% 10%;
     background-color: #d0961c; }
     .blogSubmit_LeftBox p {
-      font-size: 4vw;
-      padding: 2% 0; }
+      width: 100%;
+      background-color: #b97b18;
+      padding: 2% 0;
+      color: #fff; }
     .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic {
+      position: relative;
+      width: 100%;
+      height: 100%;
       display: block;
-      padding: 30% 10%;
       background-color: #b97b18;
       text-align: center; }
-      .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic p {
-        margin: 2%;
-        font-size: 4vw; }
-      .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic img {
-        width: 50%; }
+      .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic .imgSize {
+        width: 90%; }
+      .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic .upload {
+        width: 50%;
+        margin: 25% 0;
+        transition: .5s; }
+        .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic .upload:hover {
+          transform: scale(1.1); }
+      .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic .upload_active {
+        width: 10%;
+        position: absolute;
+        bottom: -20%;
+        right: 5%;
+        animation: upload .5s linear forwards; }
+  @keyframes upload {
+    from {
+      width: 50%; }
+    to {
+      width: 10%; } }
     .blogSubmit_LeftBox .blogSubmit_LeftBox_NameContainer {
       width: 70%;
       margin: 0 auto; }
@@ -1301,20 +1355,36 @@ body {
           font-size: 5vw; }
   .blogSubmit_RightBox {
     position: relative;
+    top: 2.5%;
+    padding: 6% 0 5%;
     background-color: #d0961c; }
+    .blogSubmit_RightBox .blogSubmit_RightBox_TitleContainer {
+      border: 5px solid #c7df5c;
+      background-color: #fefefe;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5); }
+      .blogSubmit_RightBox .blogSubmit_RightBox_TitleContainer:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-right: 50px solid transparent;
+        border-left: 50px solid #c7df5c;
+        border-bottom: 50px solid transparent; }
+      .blogSubmit_RightBox .blogSubmit_RightBox_TitleContainer:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        border-top: 50px solid transparent;
+        border-right: 50px solid #c7df5c;
+        border-left: 50px solid transparent; }
     .blogSubmit_RightBox .blogSubmit_RightBox_pin {
+      width: 50px;
       position: absolute;
-      top: 30px;
-      right: 50px; }
-      .blogSubmit_RightBox .blogSubmit_RightBox_pin img {
-        width: 50px; }
-    .blogSubmit_RightBox .blogSubmit_RightBox_message {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: rotate(10deg); }
-      .blogSubmit_RightBox .blogSubmit_RightBox_message img {
-        max-width: 800px; }
+      top: 6%;
+      left: 7%;
+      z-index: 2;
+      transform: rotate(-110deg); }
     .blogSubmit_RightBox .blog_Rank_ContentBox {
       background-color: transparent;
       padding: 3% 5%; }
@@ -1322,15 +1392,20 @@ body {
         width: 70%;
         float: left; }
         .blogSubmit_RightBox .blog_Rank_ContentBox .blog_Rank_ContentBox_Box .blog_Rank_ContentBox_Item {
-          padding: 0; }
+          padding: 0;
+          text-align: center; }
+          .blogSubmit_RightBox .blog_Rank_ContentBox .blog_Rank_ContentBox_Box .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container {
+            padding-bottom: 100%; }
           .blogSubmit_RightBox .blog_Rank_ContentBox .blog_Rank_ContentBox_Box .blog_Rank_ContentBox_Item .blog_Rank_BottomBox_Title {
-            font-size: 16px; }
+            font-size: 1.4vw; }
     .blogSubmit_RightBox .blog_Rank_ContentBox_Desc {
       position: absolute;
-      top: 60%;
-      right: 10%;
+      top: 40%;
+      right: 5%;
       white-space: nowrap;
       color: #624b09; }
+      .blogSubmit_RightBox .blog_Rank_ContentBox_Desc p {
+        font-size: 2.5vw; }
   .blogSubmit_RightBox_TitleContainer {
     position: relative;
     z-index: 1;
@@ -1342,14 +1417,13 @@ body {
       .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitleName input {
         width: 60%;
         padding-left: 2%;
-        border: 1px solid transparent;
+        border: 1px solid grey;
         font-size: 3vw;
         line-height: 2.5;
-        background-color: #fff000;
+        background-color: #fefefe;
         color: #624b09; }
     .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic {
       width: 100%;
-      margin: 5% 0;
       padding: 0 0 5%;
       border-bottom: 1px solid #222; }
       .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic .blogSubmit_RightBox_PicItem {
@@ -1357,8 +1431,8 @@ body {
         margin: 0 5%; }
         .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic .blogSubmit_RightBox_PicItem select {
           padding: 2px;
-          border: 1px solid transparent;
-          background-color: #fff000;
+          border: 1px solid grey;
+          background-color: #fefefe;
           color: #624b09;
           font-size: 3vw; }
     .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer {
@@ -1376,18 +1450,33 @@ body {
           color: #888; }
   form {
     text-align: center; }
-<<<<<<< HEAD
-<<<<<<< HEAD
     form .common_btn_first {
-      margin-bottom: 50px; }
-=======
-  .common_btn_first {
-    margin-bottom: 50px; }
->>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
-=======
-    form .common_btn_first {
-      margin-bottom: 50px; }
->>>>>>> commit blog 微修
+      margin: 50px 0;
+      animation: buttonscale 1s linear infinite alternate-reverse; }
+      form .common_btn_first:hover {
+        animation-play-state: paused; }
+  @keyframes buttonscale {
+    from {
+      transform: rotate(2deg); }
+    to {
+      transform: rotate(-2deg); } }
+  .flower1 {
+    display: none; }
+  .flower2 {
+    display: none; }
+  .flower3 {
+    display: none; }
+  .flower4 {
+    display: none; }
+  .blogSubmit_grass1 {
+    display: none; }
+  .blogSubmit_grass2 {
+    display: none; }
+  .blogSubmit_grass3 {
+    display: none; }
+  footer {
+    position: relative;
+    z-index: 1; }
   .footer_wrapper {
     text-align: center; }
     .footer_wrapper .footer_block {
@@ -1400,41 +1489,15 @@ body {
           padding: 5px;
           font-size: 2vw; }
         .footer_wrapper .footer_block .footer_rightBox .footer_rightContent .copyright {
-          font-size: 1vw; }
-  .umbrellaMandarin img {
-    width: 80px;
-    position: absolute;
-    bottom: 0%;
-    right: 0;
-    cursor: pointer;
-    animation: umbrellaMandarinScale 3s linear infinite alternate-reverse; }
-  @keyframes umbrellaMandarinScale {
-    from {
-      transform: scale(0.8); }
-    to {
-      transform: scale(1); } }
-  .umbrellaMandarin .umbrellaMandarin_active {
-    animation: umbrellaMandarin 30s linear forwards; }
-  @keyframes umbrellaMandarin {
-    0% {
-      bottom: 0%;
-      right: 0;
-      transform: scale(1); }
-    99% {
-      opacity: 1; }
-    to {
-      bottom: 100%;
-      right: 100%;
-      opacity: 0;
-      transform: scale(0.1); } } }
+          font-size: 1vw; } }
 
 @media all and (min-width: 768px) {
-  .blog_Heading, .blog_Subheading, .blogIn_Headingbox .blog_Heading, .blogSubmit_Share .wrapper .blogSubmit_Headingbox .blog_Heading {
-    color: #5e4909;
+  .blog_Heading, .blog_Subheading, .blogIn_Headingbox .blog_Heading {
+    color: #fefefe;
     text-align: center;
     line-height: 1.5;
     font-weight: bold; }
-  .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Pic, .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Num, .blog_Rank_ContentBox .blog_Rank_ContentBox_Item, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_NewShare, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_HighScore, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Pic, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Num, .blog_Forum_SubButtonContainer_Box .blog_Forum_SubButtonContainer_Pic {
+  .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Pic, .blog_Rank_LeftBox .blog_Rank_Score .blog_Score_Num, .blog_Rank_ContentBox .blog_Rank_ContentBox_Item, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_NewShare, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_HighScore, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Pic, .blog_Share_Box .blog_Forum_Score .blog_Forum_Score_Num, .blog_Forum_SubButtonContainer_Pic, .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_Rank_Score .blog_Score_Pic {
     float: left; }
   .space {
     width: 100%;
@@ -1450,20 +1513,22 @@ body {
   .blog_Rank {
     display: block;
     padding: 100px 0 25px; }
-    .blog_Rank .blog_Heading {
-      position: relative; }
-      .blog_Rank .blog_Heading .num1 {
-        position: absolute;
-        transform: translate(-200%, -90%);
-        width: 60px; }
-      .blog_Rank .blog_Heading .num2 {
-        position: absolute;
-        transform: translate(-800%, 20%);
-        width: 30px; }
-      .blog_Rank .blog_Heading .num3 {
-        position: absolute;
-        transform: translate(0%, 30%);
-        width: 50px; }
+    .blog_Rank .blog_Heading_pic {
+      width: 600px;
+      position: relative;
+      padding: 20px 0;
+      font-weight: bold;
+      background-image: url(../images/homepage/headerBac.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0 auto 20px; }
+      .blog_Rank .blog_Heading_pic .blog_Heading {
+        margin-top: -25px;
+        font-size: 30px;
+        color: #6abee7; }
+    .blog_Rank .blog_Subheading {
+      margin: -20px 0 50px;
+      color: #32a8e2; }
   .dg-container {
     width: 100%;
     max-width: 1200px;
@@ -1502,7 +1567,7 @@ body {
     .dg-container nav {
       position: absolute;
       z-index: 10;
-      bottom: 40px;
+      bottom: 20px;
       left: calc(50%); }
       .dg-container nav span {
         display: block;
@@ -1524,13 +1589,14 @@ body {
       position: absolute;
       transform: translate(-20%, -100%);
       z-index: -1;
-      width: 130%; }
+      width: 140%; }
     .blog_Rank .cloud1 {
       position: absolute;
       transform: translate(-20%, -50%);
       z-index: -1;
       width: 130%; }
   .blog_Rank_Container {
+    border-radius: 20px;
     padding: 10px;
     background-color: #fff; }
   .blog_Rank_Block {
@@ -1548,6 +1614,26 @@ body {
         width: 50%; }
   .blog_Rank_LeftBox {
     position: relative; }
+    .blog_Rank_LeftBox .blog_Rank_Item {
+      display: block;
+      width: 50%;
+      margin: 0 auto; }
+      .blog_Rank_LeftBox .blog_Rank_Item .blog_Rank_ItemPic {
+        width: 33%;
+        padding: 2px;
+        float: left;
+        box-sizing: border-box; }
+        .blog_Rank_LeftBox .blog_Rank_Item .blog_Rank_ItemPic img {
+          width: 100%;
+          vertical-align: bottom; }
+    .blog_Rank_LeftBox .blog_Rank_Content {
+      margin: 0 10px; }
+      .blog_Rank_LeftBox .blog_Rank_Content .blog_Rank_Title {
+        padding: 3% 0;
+        color: #f1900f;
+        font-weight: bold; }
+        .blog_Rank_LeftBox .blog_Rank_Content .blog_Rank_Title h4 {
+          font-size: 24px; }
     .blog_Rank_LeftBox .blog_Rank_Date {
       float: left;
       vertical-align: bottom;
@@ -1558,7 +1644,7 @@ body {
       width: 100%; }
     .blog_Rank_LeftBox .blog_Rank_Score {
       position: absolute;
-      bottom: 10px;
+      bottom: 30px;
       left: 0;
       width: 20%;
       padding-left: 10px;
@@ -1581,28 +1667,10 @@ body {
     .blog_Rank_LeftBox .blog_Rank_Name p {
       float: left;
       padding: 8px;
-      color: #333;
+      color: #aaa;
       font-size: 1vw; }
-  .blog_Rank_RightBox .blog_Rank_Item {
-    display: block;
-    width: 50%;
-    margin: 0 auto; }
-    .blog_Rank_RightBox .blog_Rank_Item .blog_Rank_ItemPic {
-      width: 33%;
-      padding: 2px;
-      float: left;
-      box-sizing: border-box; }
-      .blog_Rank_RightBox .blog_Rank_Item .blog_Rank_ItemPic img {
-        width: 100%;
-        vertical-align: bottom; }
   .blog_Rank_RightBox .blog_Rank_Content {
     margin: 0 10px; }
-    .blog_Rank_RightBox .blog_Rank_Content .blog_Rank_Title {
-      padding: 3% 0;
-      color: #f1900f;
-      font-weight: bold; }
-      .blog_Rank_RightBox .blog_Rank_Content .blog_Rank_Title h4 {
-        font-size: 24px; }
     .blog_Rank_RightBox .blog_Rank_Content .blog_Rank_Desc {
       margin-bottom: 10px;
       padding: 5%;
@@ -1613,13 +1681,12 @@ body {
         font-size: 18px; }
   .blog_Rank_ContentBox {
     padding: 5%;
-    border-radius: 5px;
-    background-color: #fefefe; }
+    border: 1px solid grey; }
     .blog_Rank_ContentBox .blog_Rank_ContentBox_Item {
       width: 33.3333%;
       box-sizing: border-box;
       margin: 0 auto;
-      padding: 0 10px; }
+      text-align: center; }
       .blog_Rank_ContentBox .blog_Rank_ContentBox_Item .blog_Rank_ContentBox_Container {
         height: 0;
         padding-bottom: 100px;
@@ -1664,6 +1731,7 @@ body {
   .blog_Forum_OptionContainer {
     margin: 0 auto; }
     .blog_Forum_OptionContainer .blog_Forum_SearchBar {
+      position: relative;
       text-align: center;
       float: right; }
       .blog_Forum_OptionContainer .blog_Forum_SearchBar input {
@@ -1673,7 +1741,14 @@ body {
         border: 1px solid #aaa;
         border-radius: 5px;
         padding-left: 5px; }
-    .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_NewShare a, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_HighScore a {
+      .blog_Forum_OptionContainer .blog_Forum_SearchBar i {
+        position: absolute;
+        top: 15%;
+        right: 23%;
+        cursor: pointer; }
+        .blog_Forum_OptionContainer .blog_Forum_SearchBar i:hover {
+          color: grey; }
+    .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_NewShare, .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_HighScore {
       display: block;
       width: 100px;
       padding: 10px 0; }
@@ -1684,16 +1759,22 @@ body {
       margin: 0 0 0 50px; }
       .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_NewShare {
         margin: 0 10px;
+        background-color: transparent;
+        border: 0px solid transparent;
         border-bottom: 5px solid #fff100; }
         .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_NewShare:hover {
-          border-bottom: 5px solid #f1900f;
-          transition: 1s; }
+          background-color: #f1900f;
+          color: #fff;
+          cursor: pointer; }
       .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_HighScore {
         margin: 0 10px;
+        background-color: transparent;
+        border: 0px solid transparent;
         border-bottom: 5px solid #fff100; }
         .blog_Forum_OptionContainer .blog_Forum_OptionLeftBox .blog_Forum_OptionLeftBox_HighScore:hover {
-          border-bottom: 5px solid #f1900f;
-          transition: 1s; }
+          background-color: #f1900f;
+          color: #fff;
+          cursor: pointer; }
   .blog_Forum_Container {
     margin: 20px 0px 20px 0px; }
     .blog_Forum_Container .blog_Forum_Block {
@@ -1758,18 +1839,17 @@ body {
     text-align: center;
     color: #fefefe; }
     .blog_Forum_SubButtonContainer_Box:hover {
-      background-color: #487e0a; }
-    .blog_Forum_SubButtonContainer_Box .blog_Forum_SubButtonContainer_Pic {
-      display: block;
-      width: 20px; }
-      .blog_Forum_SubButtonContainer_Box .blog_Forum_SubButtonContainer_Pic img {
-        width: 100%;
-        vertical-align: bottom; }
-    .blog_Forum_SubButtonContainer_Box span {
-      font-size: 16px;
-      line-height: 1.3; }
-    .blog_Forum_SubButtonContainer_Box:hover {
-      background-color: #487e0a; }
+      background-color: #90A30B;
+      cursor: pointer; }
+  .blog_Forum_SubButtonContainer_Pic {
+    display: block;
+    width: 20px; }
+    .blog_Forum_SubButtonContainer_Pic img {
+      width: 100%;
+      vertical-align: bottom; }
+  span {
+    font-size: 16px;
+    line-height: 1.3; }
   .blog_Forum {
     position: relative; }
     .blog_Forum .blog_Forum_bg .city {
@@ -1887,24 +1967,44 @@ body {
       top: -40px; }
     100% {
       top: 0px; } }
+    .blog_Forum_wrapper .blog_Heading_pic {
+      width: 600px;
+      position: relative;
+      padding: 20px 0;
+      font-weight: bold;
+      background-image: url(../images/homepage/headerBac.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0 auto 20px; }
+      .blog_Forum_wrapper .blog_Heading_pic .blog_Heading {
+        margin-top: -25px;
+        font-size: 30px;
+        color: #6abee7; }
+    .blog_Forum_wrapper .blog_Subheading {
+      margin: -20px 0 50px;
+      color: #32a8e2; }
+    .blog_Forum_wrapper .blog_Heading_pic {
+      width: 600px;
+      position: relative;
+      padding: 20px 0;
+      font-weight: bold;
+      background-image: url(../images/homepage/headerBac.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0 auto 20px; }
+      .blog_Forum_wrapper .blog_Heading_pic .blog_Heading {
+        margin-top: -25px;
+        font-size: 30px;
+        color: #6abee7; }
+    .blog_Forum_wrapper .blog_Subheading {
+      margin: -20px 0 50px;
+      color: #32a8e2; }
   .umbrellaApple img {
     width: 50px;
     position: absolute;
     top: 0;
     right: 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     z-index: -1;
-=======
-    z-index: 1;
->>>>>>> cart
-=======
-    z-index: -1;
->>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
-=======
-    z-index: 1;
->>>>>>> cart
     animation: umbrellaApple 30s linear infinite; }
   @keyframes umbrellaApple {
     0% {
@@ -1929,28 +2029,11 @@ body {
     99% {
       opacity: 1; }
     100% {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
       top: 100%;
-=======
-      top: 180%;
->>>>>>> cart
-=======
-      top: 100%;
->>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
-=======
-      top: 180%;
->>>>>>> cart
       right: 1200px;
       width: 250px;
       transform: rotate(9deg);
       opacity: 0; } }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .blogIn_Headingbox {
     position: relative; }
     .blogIn_Headingbox .blog_Heading {
@@ -1985,39 +2068,14 @@ body {
       left: 55%; } }
       .blogIn_Headingbox .blogIn_cloud img {
         width: 200px; }
-<<<<<<< HEAD
-=======
-=======
->>>>>>> cart
-  .blogIn_Headingbox .blog_Heading {
-    padding: 50px 0 0; }
->>>>>>> cart
-=======
->>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
   .blogIn_Share {
     position: relative;
     z-index: 1;
     margin: 5%; }
   .blogIn_Container {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     background-color: rgba(254, 254, 254, 0.6); }
-=======
-    border-radius: 10px;
-    background-color: #fefefe; }
->>>>>>> cart
-=======
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    background-color: rgba(254, 254, 254, 0.6); }
->>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
-=======
-    border-radius: 10px;
-    background-color: #fefefe; }
->>>>>>> cart
   .blogIn_LeftBox {
     padding-bottom: 2%; }
     .blogIn_LeftBox .blogIn_LeftBox_Pic {
@@ -2026,19 +2084,7 @@ body {
     .blogIn_LeftBox .blogIn_LeftBox_NameContainer {
       width: 90%;
       margin: 0 auto;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      background-color: rgba(245, 195, 121, 0.993); }
-=======
-      background-color: rgba(253, 253, 47, 0.938); }
->>>>>>> cart
-=======
-      background-color: rgba(245, 195, 121, 0.993); }
->>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
-=======
-      background-color: rgba(253, 253, 47, 0.938); }
->>>>>>> cart
+      background-color: #fefefe; }
       .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blogIn_LeftBox_NamePic {
         width: 25%;
         margin-left: 13%; }
@@ -2053,6 +2099,20 @@ body {
           font-size: 18px;
           text-align: left;
           line-height: 60px; }
+      .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_Rank_Score {
+        float: right; }
+        .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_Rank_Score .blog_Score_Pic {
+          width: 50%; }
+          .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_Rank_Score .blog_Score_Pic img {
+            width: 100%;
+            vertical-align: bottom; }
+        .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_Rank_Score .blog_Score_Num {
+          vertical-align: bottom; }
+          .blogIn_LeftBox .blogIn_LeftBox_NameContainer .blog_Rank_Score .blog_Score_Num p {
+            padding: 15% 0;
+            color: #ff9324;
+            font-size: 18px;
+            text-align: center; }
   .blogIn_RightBox {
     padding: 1% 0;
     border-left: 1px solid #ccc; }
@@ -2084,6 +2144,7 @@ body {
     .blogIn_RightBox_TitleContainer .blogIn_RightBox_ShareContainer {
       margin: 5% 0; }
       .blogIn_RightBox_TitleContainer .blogIn_RightBox_ShareContainer .blogIn_RightBox_ShareContent {
+        text-align: left;
         border-radius: 5px;
         background-color: #fefefe; }
         .blogIn_RightBox_TitleContainer .blogIn_RightBox_ShareContainer .blogIn_RightBox_ShareContent p {
@@ -2115,7 +2176,7 @@ body {
           line-height: 1.9;
           text-align: center; }
         .blogIn_RightBox_TitleContainer .blogIn_RightBox_subButtonContainer a.blogIn_RightBox_subButtonItem:hover {
-          background-color: #487e0a; }
+          background-color: #90A30B; }
   .blogIn_Msg {
     position: relative; }
     .blogIn_Msg .umbrellaOrange img {
@@ -2123,19 +2184,7 @@ body {
       position: absolute;
       top: 0;
       left: 50px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
       z-index: -1;
-=======
-      z-index: 1;
->>>>>>> cart
-=======
-      z-index: -1;
->>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
-=======
-      z-index: 1;
->>>>>>> cart
       transform: rotate(50deg);
       animation: umbrellaOrange 30s linear infinite; }
   @keyframes umbrellaOrange {
@@ -2167,20 +2216,8 @@ body {
       opacity: 0; } }
     .blogIn_Msg .blogIn_Msg_sendContainer {
       margin: 0 5%;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
       border-radius: 10px;
       background-color: rgba(254, 254, 254, 0.6); }
-=======
-=======
->>>>>>> cart
-      background-color: #ececaa; }
->>>>>>> cart
-=======
-      border-radius: 10px;
-      background-color: rgba(254, 254, 254, 0.6); }
->>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
       .blogIn_Msg .blogIn_Msg_sendContainer .blogIn_Msg_SendBlock {
         border-bottom: 1px solid #ccc; }
   .blogIn_Msg_SendBlock {
@@ -2209,83 +2246,57 @@ body {
           font-size: 12px;
           text-align: left;
           color: #ccc; }
-      .blogIn_Msg_SendBlock .blogIn_Msg_SendWrapper a.subButtonItem {
-        padding: 10px 0;
+      .blogIn_Msg_SendBlock .blogIn_Msg_SendWrapper input.subButtonItem {
+        margin-left: 20px;
+        padding: 10px;
+        border: 0px;
         background-color: #fbb03b;
-        color: #fefefe;
         text-align: center;
-        font-weight: bold; }
-        .blogIn_Msg_SendBlock .blogIn_Msg_SendWrapper a.subButtonItem:hover {
-          background-color: #487e0a; }
+        color: #fefefe;
+        font-weight: bold;
+        cursor: pointer; }
+        .blogIn_Msg_SendBlock .blogIn_Msg_SendWrapper input.subButtonItem:hover {
+          background-color: #90A30B; }
   .blogIn_Msg_SendBox2 {
     margin: 0 3%;
     background-color: #fefefe; }
   .blogIn_Msg_Block {
-    margin: 0 5%;
     padding: 20px 0; }
-    .blogIn_Msg_Block .blogIn_Msg_Box {
-      float: left; }
-      .blogIn_Msg_Block .blogIn_Msg_Box input {
-        width: 80%;
-        padding: 20px 10px; }
-    .blogIn_Msg_Block a.subButtonItem {
-      width: 10%;
+    .blogIn_Msg_Block .blogIn_Msg_Box #blogIn_Msg_Content {
+      width: 80%;
+      max-width: 1000px;
+      margin-left: 50px;
+      padding: 20px 50px 20px 10px; }
+    .blogIn_Msg_Block input.subButtonItem {
+      margin-left: 20px;
       padding: 10px;
+      border: 0px;
       background-color: #fbb03b;
       text-align: center;
       color: #fefefe;
-      font-weight: bold; }
-      .blogIn_Msg_Block a.subButtonItem:hover {
-        background-color: #487e0a; }
+      font-weight: bold;
+      cursor: pointer; }
+      .blogIn_Msg_Block input.subButtonItem:hover {
+        background-color: #90A30B; }
   .blogIn_ButtonContainer {
     position: relative;
     text-align: center; }
     .blogIn_ButtonContainer a.common_btn {
       margin: 50px 20px; }
   .umbrellaMandarin img {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 300px;
+    width: 200px;
     position: absolute;
-    bottom: -10%;
-    right: 0%;
+    bottom: 0%;
+    right: -10%;
     z-index: 1;
     cursor: pointer;
     animation: umbrellaMandarinScale 3s linear infinite alternate-reverse; }
-=======
-    width: 200px;
-=======
-    width: 300px;
->>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
-    position: absolute;
-    bottom: -10%;
-    right: 0%;
-    z-index: 1;
-    cursor: pointer;
-<<<<<<< HEAD
-    animation: umbrellaMandarinScale 3s linear infinite alternate; }
->>>>>>> cart
-=======
-    animation: umbrellaMandarinScale 3s linear infinite alternate-reverse; }
->>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
-=======
-    width: 200px;
-    position: absolute;
-    bottom: -100%;
-    right: 0;
-    cursor: pointer;
-    animation: umbrellaMandarinScale 3s linear infinite alternate; }
->>>>>>> cart
   @keyframes umbrellaMandarinScale {
     from {
       transform: scale(0.8); }
     to {
       transform: scale(1); } }
   .umbrellaMandarin .umbrellaMandarin_active {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     animation: umbrellaMandarin 5s linear backwards; }
   @keyframes umbrellaMandarin {
     0% {
@@ -2299,143 +2310,101 @@ body {
       right: 100%;
       opacity: 0;
       transform: scale(0.1); } }
-  .blogSubmit_bgc {
-<<<<<<< HEAD
-    background: #f2f848;
-    background: linear-gradient(180deg, #f0f56c 1%, #e9fa7a 63%, rgba(122, 230, 69, 0.986432) 82%, #42f163 100%); }
   .blogSubmit_Share {
-    position: relative; }
+    position: relative;
+    margin-top: 100px; }
+    .blogSubmit_Share .blogSubmit_Headingbox {
+      display: none; }
+    .blogSubmit_Share .blogSubmit_Share_cloud1 {
+      width: 200px;
+      position: absolute;
+      top: -10%;
+      left: 20%; }
+    .blogSubmit_Share .blogSubmit_Share_cloud2 {
+      width: 200px;
+      position: absolute;
+      top: 5%;
+      right: 10%; }
     .blogSubmit_Share .wrapper {
       position: relative; }
       .blogSubmit_Share .wrapper .blogSubmit_board {
+        position: relative;
         margin: 0 auto; }
         .blogSubmit_Share .wrapper .blogSubmit_board img {
           width: 100%;
-          max-width: 1200px;
-          position: relative;
-          bottom: 0;
           z-index: 1; }
-      .blogSubmit_Share .wrapper .blogSubmit_Headingbox .blog_Heading {
+      .blogSubmit_Share .wrapper #blogSubmit_form .blogSubmit_Container {
+        width: 90%;
         position: absolute;
-        top: 0px;
-        left: 100px;
-        z-index: 2;
-        color: #fff; }
-      .blogSubmit_Share .wrapper #blogSubmit_form {
-        position: absolute;
-        left: 0;
+        left: 5%;
         right: 0;
-        top: 0px;
-        z-index: 2;
-        margin: atuo; }
-=======
-    animation: umbrellaMandarin 30s linear forwards; }
-=======
-    animation: umbrellaMandarin 5s linear backwards; }
->>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
-  @keyframes umbrellaMandarin {
-    0% {
-      bottom: -10%;
-      right: 0%;
-      transform: scale(1); }
-    99% {
-      opacity: 1; }
-    100% {
-      bottom: 300%;
-      right: 100%;
-      opacity: 0;
-      transform: scale(0.1); } }
-  .blogSubmit_bgc {
-    position: relative;
-=======
->>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
-    background: #f2f848;
-    background: linear-gradient(180deg, #f0f56c 1%, #e9fa7a 63%, rgba(122, 230, 69, 0.986432) 82%, #42f163 100%); }
-  .blogSubmit_Share {
-    position: relative; }
-<<<<<<< HEAD
-=======
-    animation: umbrellaMandarin 30s linear forwards; }
-  @keyframes umbrellaMandarin {
-    0% {
-      bottom: -100%;
-      right: 0;
-      transform: scale(1); }
-    99% {
-      opacity: 1; }
-    to {
-      bottom: 100%;
-      right: 1000px;
-      opacity: 0;
-      transform: scale(0.1); } }
->>>>>>> cart
-  .blogSubmit_Headingbox .blog_Heading {
-    position: absolute;
-    top: -50px;
-    z-index: 2; }
-  #blogSubmit_form {
-    position: relative;
-    top: -50px;
-    z-index: 2; }
-  .blogSubmit_Container {
-    margin: 20px 50px;
-    border: 1px solid #222; }
->>>>>>> cart
-=======
-    .blogSubmit_Share .wrapper {
-      position: relative; }
-      .blogSubmit_Share .wrapper .blogSubmit_board {
-        margin: 0 auto; }
-        .blogSubmit_Share .wrapper .blogSubmit_board img {
-          width: 100%;
-          max-width: 1200px;
-          position: relative;
-          bottom: 0;
-          z-index: 1; }
-      .blogSubmit_Share .wrapper .blogSubmit_Headingbox .blog_Heading {
-        position: absolute;
-        top: 0px;
-        left: 100px;
-        z-index: 2;
-        color: #fff; }
-      .blogSubmit_Share .wrapper #blogSubmit_form {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0px;
-        z-index: 2;
-        margin: atuo; }
->>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
+        top: 10%;
+        bottom: 0; }
   .blogSubmit_LeftBox {
-    padding: 10% 10%; }
+    padding: 14% 10% 10%;
+    text-align: center; }
     .blogSubmit_LeftBox p {
-      padding: 2% 0;
+      padding: 10px 0;
       background-color: #b97b18;
       font-size: 20px;
       color: #fff; }
     .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 400px;
+      max-height: 400px;
       display: block;
-      padding: 30% 10%;
       background-color: #b97b18;
       text-align: center; }
-      .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic img {
-        width: 50%; }
+      .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic .imgSize {
+        width: 90%; }
+      .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic .upload {
+        width: 50%;
+        margin: 25% 0;
+        transition: .5s; }
+        .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic .upload:hover {
+          transform: scale(1.1); }
+      .blogSubmit_LeftBox .blogSubmit_LeftBox_Pic .upload_active {
+        width: 10%;
+        position: absolute;
+        bottom: -20%;
+        right: 5%;
+        animation: upload .5s linear forwards; }
+  @keyframes upload {
+    from {
+      width: 50%; }
+    to {
+      width: 10%; } }
   .blogSubmit_RightBox {
-    position: relative; }
-    .blogSubmit_RightBox .blogSubmit_RightBox_pin {
+    position: relative;
+    top: 2.5%;
+    padding: 6% 0 5%;
+    border: 5px solid #c7df5c;
+    background-color: #fefefe;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5); }
+    .blogSubmit_RightBox:before {
+      content: '';
       position: absolute;
-      top: 30px;
-      right: 50px; }
-      .blogSubmit_RightBox .blogSubmit_RightBox_pin img {
-        width: 50px; }
-    .blogSubmit_RightBox .blogSubmit_RightBox_message {
+      left: 0;
+      top: 0;
+      border-right: 50px solid transparent;
+      border-left: 50px solid #c7df5c;
+      border-bottom: 50px solid transparent; }
+    .blogSubmit_RightBox:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      border-top: 50px solid transparent;
+      border-right: 50px solid #c7df5c;
+      border-left: 50px solid transparent; }
+    .blogSubmit_RightBox .blogSubmit_RightBox_pin {
+      width: 50px;
       position: absolute;
       top: 0;
       left: 0;
-      z-index: -1;
-      transform: rotate(10deg); }
-      .blogSubmit_RightBox .blogSubmit_RightBox_message img {
-        max-width: 800px; }
+      transform: rotate(-110deg); }
     .blogSubmit_RightBox .blog_Rank_ContentBox {
       background-color: transparent;
       padding: 3% 5%; }
@@ -2443,112 +2412,104 @@ body {
         width: 70%;
         float: left; }
         .blogSubmit_RightBox .blog_Rank_ContentBox .blog_Rank_ContentBox_Box .blog_Rank_ContentBox_Item {
+          text-align: center;
           padding: 0; }
           .blogSubmit_RightBox .blog_Rank_ContentBox .blog_Rank_ContentBox_Box .blog_Rank_ContentBox_Item .blog_Rank_BottomBox_Title {
-            font-size: 16px; }
+            font-size: 1vw; }
     .blogSubmit_RightBox .blog_Rank_ContentBox_Desc {
       position: absolute;
-      top: 60%;
-      right: 15%;
+      top: 50%;
+      right: 10%;
       white-space: nowrap;
       color: #624b09; }
-  .blogSubmit_RightBox_TitleContainer {
-    width: 80%;
-    margin: 0 auto; }
-    .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitleName {
-      margin: 5% 0 3%;
-      text-align: center;
-      border-bottom: 1px solid transparent; }
-      .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitleName input {
-        width: 60%;
-        margin-top: 20px;
-        padding-left: 2%;
-        border: 1px solid transparent;
-        background-color: #fff000;
-        font-size: 18px;
-        line-height: 2;
+      .blogSubmit_RightBox .blog_Rank_ContentBox_Desc p {
+        font-size: 1vw; }
+  .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitleName {
+    margin: 0% 0 3%;
+    text-align: center;
+    border-bottom: 1px solid transparent; }
+    .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitleName input {
+      width: 60%;
+      padding-left: 2%;
+      border: 1px solid grey;
+      background-color: #fefefe;
+      font-size: 1vw;
+      line-height: 2;
+      color: #624b09; }
+  .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic {
+    width: 100%; }
+    .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic .blogSubmit_RightBox_PicItem {
+      width: 20%;
+      margin: 0 5% 3%; }
+      .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic .blogSubmit_RightBox_PicItem select {
+        border: 1px solid grey;
+        padding: 1%;
+        font-size: 1vw;
+        background-color: #fefefe;
         color: #624b09; }
-    .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic {
-      width: 100%;
-      border-bottom: 1px solid #222; }
-      .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic .blogSubmit_RightBox_PicItem {
-        width: 20%;
-        margin: 0 5% 3%; }
-        .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_TitlePic .blogSubmit_RightBox_PicItem select {
-          border: 1px solid transparent;
-          padding: 2px;
-          font-size: 16px;
-          background-color: #fff000;
-          color: #624b09; }
-    .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer {
-      text-align: center; }
-      .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer .blogSubmit_RightBox_ShareContent {
-        border-top: 1px solid #222; }
-        .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer .blogSubmit_RightBox_ShareContent input {
-          width: 80%;
-          height: 10px;
-          margin: 2% 0;
-          padding: 2% 0 15% 1%;
-          border: 3px solid #009944;
-          font-size: 16px;
-          text-align: left;
-          color: #888; }
-  form {
+  .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer {
     text-align: center; }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> commit blog 微修
-    form .common_btn_first {
-      max-width: 300px;
-      position: absolute;
-      bottom: -5%;
-      left: 10%;
-      transform: rotate(10deg);
-      animation: buttonscale 2s infinite alternate-reverse; }
-<<<<<<< HEAD
+    .blogSubmit_RightBox_TitleContainer .blogSubmit_RightBox_ShareContainer .blogSubmit_RightBox_ShareContent input {
+      padding: 2% 10% 10% 1%;
+      border: 1px solid #009944;
+      font-size: 1vw;
+      text-align: left;
+      color: #888; }
+  .blogSubmit_Share form {
+    height: 100%;
+    text-align: center; }
+    .blogSubmit_Share form .common_btn_first {
+      margin: 10% 0 0%;
+      font-size: 1vw;
+      animation: buttonscale 1s linear infinite alternate-reverse; }
+      .blogSubmit_Share form .common_btn_first:hover {
+        animation-play-state: paused; }
   @keyframes buttonscale {
     from {
-      transform: rotate(20deg); }
+      transform: rotate(2deg); }
     to {
-      transform: rotate(5deg); } }
-=======
-  a.blogSubmit_ButtonItem {
-    display: inline-block;
-    padding: 2% 8%;
-    margin: 5% auto;
-    border-radius: 10px;
-    background-color: #fff100;
-    color: #5e4909;
-    transition: 1s; }
-    a.blogSubmit_ButtonItem:hover {
-      background-color: #f1900f;
-      color: #fefefe; }
-  .common_btn_first {
-    position: relative; }
->>>>>>> commit: 私藏內頁及分享頁新增動態及背景物件
-=======
-  .common_btn_first {
-    max-width: 300px;
+      transform: rotate(-2deg); } }
+  .flower1 {
+    width: 10%;
     position: absolute;
-    bottom: -5%;
-    left: 10%;
-    transform: rotate(10deg);
-    animation: buttonscale 2s infinite alternate-reverse; }
-=======
->>>>>>> commit blog 微修
-  @keyframes buttonscale {
-    from {
-      transform: rotate(20deg); }
-    to {
-      transform: rotate(5deg); } }
->>>>>>> commit: 私藏上傳頁 新增佈告欄等裝飾
+    left: 140px;
+    bottom: -20px; }
+  .flower2 {
+    width: 3%;
+    position: absolute;
+    right: 100px;
+    bottom: -10px; }
+  .flower3 {
+    width: 2%;
+    position: absolute;
+    right: 150px;
+    bottom: -20px; }
+  .flower4 {
+    width: 3%;
+    position: absolute;
+    right: 170px;
+    bottom: 0px;
+    z-index: 1; }
+  .blogSubmit_grass1 {
+    width: 20%;
+    position: absolute;
+    left: 20%;
+    bottom: -10px; }
+  .blogSubmit_grass2 {
+    width: 20%;
+    position: absolute;
+    right: 13%;
+    bottom: -10px;
+    z-index: 1; }
+  .blogSubmit_grass3 {
+    width: 10%;
+    position: absolute;
+    right: 27%;
+    bottom: -10px; }
   .footer_wrapper {
     position: relative;
     text-align: center;
     margin: 0 auto;
-    overflow: hidden;
     z-index: 2; }
     .footer_wrapper .footer_block {
       margin: 0 auto;

@@ -1,8 +1,3 @@
-<?php
-// ob_start();
-// session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <title>果然配</title>
-	<link rel="stylesheet" type="text/css" href="css/loginFruit.css">
+    <link rel="stylesheet" type="text/css" href="css/loginFruit.css">
     <link rel="stylesheet" href="css/cart.css">
+    <script src="js/plugin/jquery-3.3.1.min.js"></script>
+
     <script src='js/global.js'></script>
 </head>
 
 <body>
+
 <?php
  require_once('php/nav.php');
 ?>
-
     <div class="space"></div>
     <div class="cart_shoppingProcess_control clearfix">
         <div class="cart_shoppingProcess_step2">
@@ -60,80 +56,71 @@
             <tr>
                 <th>商品名稱</th>
                 <th>數量</th>
-                <th>金額</th>
-                <th>取消</th>
+                <th>單品金額</th>
+                <th>合計</th>
+                <th>調整</th>
             </tr>
-
-
 
 <?php 
 if(isset($_SESSION["offPdName"]) == false){ //尚無購物資料
-	echo "<tr><td>尚無購物資料</th></td>";
+    echo "<tr><td>尚無購物資料</th></td>";
+    $total=0;
 }else{
+    $total=0;
 	foreach( $_SESSION["offPdName"] as $offPdNo => $offPdName){
-     
      ?>
+     <form action="cartUpdate.php">
         <tr>
         <td class="cart_productName">  
-            <img src="images/pd/pd_cate1_item3.png" alt="">
-            <p> <?php echo $_SESSION["offPdName"][$offPdNo];?> </p> 
+            <img src='images/pd/<?php echo $_SESSION["offPdImg"][$offPdNo]; ?>' alt="">
+            <p><?php echo $_SESSION["offPdName"][$offPdNo];?> </p> 
         </td>
         <td class="cart_productQuantity">
-            <select>
-                <option value="0">1</option>
-                <option value="1">2</option>
-                <option value="2">3</option>
-                <option value="3">4</option>
-                <option value="4">5</option>
-                <option value="5">6</option>
-                <option value="6">7</option>
-                <option value="7">8</option>
-                <option value="8">9</option>
-                <option value="8">10</option>
-            </select>
+            <input type="text" name="quantity" value="<?php echo $_SESSION["quantity"][$offPdNo]?>">
         </td>
         <td class="cart_productPrice">
-            <p>NT:90</p>
+            <p>$<?php echo $_SESSION["pdPrice"][$offPdNo];?> </p>
+        </td>
+        </td>
+        <td class="cart_productPrice">
+            <p>$<?php echo $_SESSION["pdPrice"][$offPdNo]*$_SESSION["quantity"][$offPdNo];?> </p>
         </td>
         <td class="cart_productCancel">
-            <a href="javascript:;"><img src="images/cart/trashcan.png" alt=""></a>
+               <input type="hidden" value="<?php echo $_SESSION["offPdNo"][$offPdNo]?>" name="offPdNo">
+
+               <input type="submit" name="btnUpdate" value="修改">
+               <input type="submit" name="btnDelete" value="刪除">
         </td>
         </tr>
-
-
-	<?php 
+    </form>
+    <?php 
+    $total = $total + $_SESSION["pdPrice"][$offPdNo]* $_SESSION["quantity"][$offPdNo];
 	}//foreach
-	
 }
 ?>	   
 
         </table>
     </div>
     <div class="cart_priceCalculation clearfix">
+    
         <div class="cart_priceCalculation_content">
-            <p>小計:</p>
-            <span>選擇優惠卷
-                <select>
-                    <option value="0">9折</option>
-                    <option value="1">8折</option>
-                    <option value="2">7折</option>
-                    <option value="3">6折</option>
-                </select>
-            </span>
-            <p>折數:</p>
-            <p>總金額(含運):</p>
-            <p>&nbsp</p>
-        
-            <a id="nextButton" class="common_btn common_btn_first" href="cart2.html">
-                <span class="common_btn_txt">下一步</span>
+            <p>小計: $<?php echo $total;?> </p>
+            <p>運費: $100 </p>
+            <p>總金額(含運):$<?php echo $total+100;?></p>
+            <br>
+            <form action="cart2.php" id="myForm">
+                <input type="text" value="<?php echo $total+100;?>" name="total">
+            </form>
+            <a id="nextButton" class="common_btn common_btn_first">
+                <span class="common_btn_txt" >下一步</span>
                 <div class="common_btn_blobs">
                     <div></div>
                     <div></div>
                     <div></div>
                 </div>
             </a>
-            
         </div>
+
         <img src="images/cart/3box3.png" alt="">
     </div>
     <footer>
@@ -148,7 +135,28 @@ if(isset($_SESSION["offPdName"]) == false){ //尚無購物資料
         </div>
     </footer>
    
+<script>
+    function doFirst(){
+
+        document.getElementById('nextButton').addEventListener('click',ss);
+
+
+    }
+     
+   function ss(){
+        alert('11');
+        var loginStatus = document.getElementById('spanLogin');
+        if( loginStatus.innerHTML == "登入"){
+            alert('22');
+            showLoginForm();
+        }else{
+            document.getElementById('myForm').submit();
+        }
+    }
     
+    window.addEventListener('load',doFirst);
+   
+</script>
 </body>
 
 </html>
