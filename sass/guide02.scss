@@ -1,0 +1,313 @@
+@import "reset";
+@import "global";
+// @import "nav";
+
+// * {
+//     outline: 1px solid #F00;
+// }
+* {
+    color: #722a0a;
+    text-decoration: none;
+}
+
+body {
+    // background-color: #f9d659;
+    background-color: $sky;
+    text-align: center;
+    padding-top: 10em;
+    overflow: hidden;
+    color: #41210d;
+    font-weight: bold;
+}
+
+.animate {
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+}
+
+.action-button {
+    padding: 10px 40px;
+    float: left;
+    border-radius: 10px;
+    font-family: 'Pacifico', cursive;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.green {
+    background-color: #82BF56;
+    border-bottom: 5px solid #669644;
+    text-shadow: 0px -2px #669644;
+}
+
+.yellow {
+    background-color: #F2CF66;
+    border-bottom: 5px solid #D1B358;
+    text-shadow: 0px -2px #D1B358;
+}
+
+// .action-button:active {
+//     &:hover {
+//         transform: translate(0px, 5px);
+//         -webkit-transform: translate(0px, 5px);
+//         border-bottom: 1px solid #669644;
+//     }
+
+// }
+
+@include rwd(mobile) {
+    .gudie_animation_box {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+
+        #waterMalon {
+            position: absolute;
+            width: 35%;
+            left: 31%;
+            bottom: -20%;
+            animation: waterMalonUp 4s ease 0s infinite alternate;
+            // animation: hideshow 6s ease infinite;
+            // @include transition(all 600ms ceaser($Easing easeInBounce));
+        }
+
+        h1 {
+            margin-top: -20%;
+            font-size: 40px;
+        }
+
+        .gudie_bottonBox {
+            width: 100%;
+            margin-top: 30%;
+            cursor: pointer;
+
+            .gudie_front {
+                display: inline-block;
+                // width: 200px;
+                // background-color: #3d9955;
+                // border-radius: 15px;
+                margin: 10% 10% 5% 30%;
+    
+
+                &:hover {
+                    transform: translate(0px, 5px);
+                    -webkit-transform: translate(0px, 5px);
+                    border-bottom: 1px solid #669644;
+                }
+
+                p {
+                    color: #FFF;
+                    font-size: 35px;
+                    padding: 10px;
+                    font-family: 微軟正黑體;
+                }
+            }
+
+            .gudie_rear {
+                display: inline-block;
+                margin: 10% 10% 5% 30%;
+
+                // width: 200px;
+                // background-color: #3d9955;
+                // border-radius: 15px;
+                &:hover {
+                    transform: translate(0px, 5px);
+                    -webkit-transform: translate(0px, 5px);
+                    border-bottom: 1px solid #D1B358;
+                }
+
+
+                p {
+                    color: #FFF;
+                    font-size: 35px;
+                    padding: 10px;
+                    font-family: 微軟正黑體;
+                }
+            }
+        }
+
+        .orange {
+            position: absolute;
+            right: -1%;
+            width: 25%;
+            animation: orangeUp 4s ease 0s infinite alternate;
+        }
+
+        .banana {
+            position: absolute;
+            left: 3%;
+            width: 25%;
+            animation: bananaUp 4s ease 0s infinite alternate;
+        }
+
+        .gudie_back {
+            position: absolute;
+            bottom: 0;
+            z-index: -1;
+        }
+    }
+}
+
+@include rwd(medium) {
+
+    .gudie_animation_box {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+
+        #waterMalon {
+            position: absolute;
+            width: 30%;
+            left: 33%;
+            bottom: -20%;
+            animation: waterMalonUp 4s ease 0s infinite alternate;
+            // animation: hideshow 6s ease infinite;
+            // @include transition(all 600ms ceaser($Easing easeInBounce));
+        }
+
+        h1 {
+            margin-top: -5%;
+            font-size: 150px;
+        }
+
+        .gudie_bottonBox {
+            width: 100%;
+            cursor: pointer;
+
+            .gudie_front {
+                display: inline-block;
+                // width: 200px;
+                // background-color: #3d9955;
+                // border-radius: 15px;
+                margin-top: 5%;
+                margin-left: 25%;
+                margin-right: 25%;
+
+                &:hover {
+                    transform: translate(0px, 5px);
+                    -webkit-transform: translate(0px, 5px);
+                    border-bottom: 1px solid #669644;
+                }
+
+                p {
+                    color: #FFF;
+                    font-size: 70px;
+                    padding: 10px;
+                    font-family: 微軟正黑體;
+                }
+            }
+
+            .gudie_rear {
+                display: inline-block;
+                margin-top: 5%;
+
+                // width: 200px;
+                // background-color: #3d9955;
+                // border-radius: 15px;
+                &:hover {
+                    transform: translate(0px, 5px);
+                    -webkit-transform: translate(0px, 5px);
+                    border-bottom: 1px solid #D1B358;
+                }
+
+
+                p {
+                    color: #FFF;
+                    font-size: 70px;
+                    padding: 10px;
+                    font-family: 微軟正黑體;
+                }
+            }
+        }
+
+        .orange {
+            position: absolute;
+            right: -1%;
+            width: 20%;
+            animation: orangeUp 4s ease 0s infinite alternate;
+        }
+
+        .banana {
+            position: absolute;
+            left: 3%;
+            width: 20%;
+            animation: bananaUp 4s ease 0s infinite alternate;
+        }
+
+        .gudie_back {
+            position: absolute;
+            bottom: 0;
+            z-index: -1;
+        }
+    }
+
+
+
+
+}
+
+@keyframes waterMalonUp {
+    0% {
+        bottom: -15%;
+    }
+
+    25% {
+        bottom: -25%;
+    }
+
+    50% {
+        bottom: -15%;
+    }
+
+    75% {
+        bottom: -25%;
+    }
+
+    100% {
+        bottom: 15%;
+    }
+}
+
+@keyframes orangeUp {
+    0% {
+        bottom: -5%;
+    }
+
+    25% {
+        bottom: -15%;
+    }
+
+    50% {
+        bottom: -5%;
+    }
+
+    75% {
+        bottom: -15%;
+    }
+
+    100% {
+        bottom: 45%;
+    }
+}
+
+@keyframes bananaUp {
+    0% {
+        bottom: -25%;
+    }
+
+    25% {
+        bottom: -35%;
+    }
+
+    50% {
+        bottom: -25%;
+    }
+
+    75% {
+        bottom: -35%;
+    }
+
+    100% {
+        bottom: 15%;
+    }
+}

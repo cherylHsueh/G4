@@ -271,9 +271,7 @@ body{
     transform: translate(-50%,-50%);
     z-index: 10;
 }
-.homepage_diy_1Pic .drawn + svg,.homepage_diy_7Pic .drawn + svg{
-    top: 81%;
-}
+
 .drawn + svg .path{
     opacity: 1;
     stroke-dashoffset: 0.2;
@@ -1942,6 +1940,9 @@ body{
         animation-name: textBounceIn;
         -webkit-animation-duration: .75s;
         animation-duration: .75s;
+    }
+    .homepage_diy_1Pic .drawn + svg,.homepage_diy_7Pic .drawn + svg{
+        top: 81%;
     }
         //光環轉的動畫
     @keyframes lightRtation{

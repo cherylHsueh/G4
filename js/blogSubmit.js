@@ -9,13 +9,12 @@ function doFirst(){
     // alert('ok');
     var cursor1 = document.getElementById('cursor1');
     var cursor2 = document.getElementById('cursor2');
-    if(window..screen.width>1024){
+    if(window.screen.width>1024){
         cursor1.onmousedown = down;
         cursor2.onmousedown = down;
     }else{
         cursor1.ontouchstart= down;
         cursor2.ontouchstart= down;
-        alert('1');
     }
     
     //比例預設0.33333
@@ -33,7 +32,6 @@ window.addEventListener('load',doFirst);
 
 //點擊比例拖拉事件
 function down(e){
-    alert('2');
 
     //    alert('a');
         dragging = true;
@@ -47,7 +45,7 @@ function down(e){
         // alert(cursorX);
         offsetX = mouseX - cursorX;
         // console.log(cursor);
-        if(window..screen.width>1024){
+        if(window.screen.width>1024){
             document.onmousemove = move;
         }else{
             document.ontouchmove= move;
@@ -112,7 +110,7 @@ function down(e){
             };
         };
     //放開滑鼠事件
-    if(window..screen.width>1024){
+    if(window.screen.width>1024){
         document.onmouseup = function(){
             dragging = false;
             

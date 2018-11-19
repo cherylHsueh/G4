@@ -8,6 +8,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 	<title>關於果然</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,shrink-to-fit=no">
 	<link rel="stylesheet" href="css/realtaiwan.css">
@@ -404,6 +405,18 @@
 					 event.preventDefault();
 					});
 				})	
+			//禁止手機端左右滑動
+				var xStart,xEnd,yStart,yEnd;
+				document.addEventListener('touchmove',function(evt){
+					xEnd=evt.touches[0].pageX;
+					yEnd=evt.touches[0].pageY;
+					Math.abs(xStart-xEnd)> Math.abs(yStart-yEnd)&&
+					evt.preventDefault();
+				},false);
+				document.addEventListener("touchstart",function(evt){
+					xStart=evt.touches[0].pageX;
+					yStart=evt.touches[0].pageY;
+				},false);
 			</script>
 
 
