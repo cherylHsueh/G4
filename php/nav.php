@@ -39,6 +39,9 @@
                 <div class='mem_pic'><a href='member.php'><img src='images/user.png' alt='會員中心'></a></div>
                 <div class='mem_pic'><a href='cart.php'><img src='images/cart.png' alt='購物車'></a></div>
             </div>
+            <?php if( isset($_SESSION["memName"])){ echo "<img id='loginImg' style='display:none;' src='images/member/photo/", $_SESSION["memImg"],"' />";
+                }else{echo "";}?>
+            
         </nav>
         <div class='coupon'><a href='game.php'><img src='images/coupon.png' alt='優惠小遊戲'></a></div>
         <!-- 機器人 -->
@@ -285,12 +288,14 @@
             alert("帳密錯誤");
           }else{ //登入成功
             // $id("memName").innerHTML = xhr.responseText;
+            // alert(xhr.responseText);
             //將登箱中表單上的資料清空，並隱藏起來
             $id('lightbox_section').style.display = 'none';
             $id('loginMemId').value = '';
             $id('LoginMemPsw').value = '';  
-            $id("loginName").innerHTML = xhr.responseText;
+            $id("loginName").innerHTML = xhr.responseText.split(',')[0] ;
             $id('spanLogin').innerHTML = '登出'; 
+            $id('loginImg').src='images/member/photo/'+ xhr.responseText.split(',')[1];
           }
         }else{
           alert(xhr.status);

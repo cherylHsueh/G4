@@ -1,17 +1,6 @@
 <?php
 ob_start();
 session_start();
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <?php
 try{
   require_once("connectBooks.php");
   $sql = "insert into message (artNo, memNo, mesContent, mesTime, mesReportFq, mesResult) values (:artNo, :memNo, :mesContent, NOW(), '0', '0')";
@@ -20,6 +9,9 @@ try{
   $blogmes->bindValue(":memNo", $_SESSION["memNo"]);
   $blogmes->bindValue(":mesContent", $_POST["mes"]);
   $blogmes->execute();
+
+  $blogmesno = $pdo->lastInsertId();
+  echo $blogmesno;
   //  header("location:blogIn.php?artNo=$artNo");
 // header(location:getenv("HTTP_REFERER"));
 }
@@ -29,7 +21,5 @@ catch(PDOException $e){
  }
 ?>
 
-</body>
-</html>
 
 

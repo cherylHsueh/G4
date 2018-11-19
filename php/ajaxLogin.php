@@ -19,10 +19,11 @@ try{
     $_SESSION["memNo"] = $memRow["memNo"];
   	$_SESSION["memId"] = $memRow["memId"];
     $_SESSION["memPsw"] = $memRow["memPsw"];
+    $_SESSION["memImg"] = $memRow["memImg"];
     $_SESSION["memName"] = $memRow["memName"];
     $_SESSION["memTel"] = $memRow["memTel"];
   	//送出登入者的姓名資料
-    echo $memRow["memName"];
+    echo $memRow["memName"],',',$memRow["memImg"];
     
   }
 }catch(PDOException $e){

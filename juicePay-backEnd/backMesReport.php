@@ -118,7 +118,7 @@ agreeResult(mesNo,mesResult);
 
 //文章檢舉-停權ajax改變資料庫
 function agreeResult(mesNo,mesResult){
-alert('ok');
+// alert('ok');
 var xhr = new XMLHttpRequest();
 xhr.onload = function(){
     // console.log(this.parentNode.previousSibling.previousSibling);
@@ -138,7 +138,7 @@ var obj = {
 }
 var loginInfo = JSON.stringify(obj);
 var data_info = "loginInfo=" + loginInfo;
-alert(data_info);
+// alert(data_info);
 xhr.send(data_info);
 
 };
@@ -156,7 +156,7 @@ rejectResult(mesno,mesresult);
 
 //文章檢舉-駁回ajax改變資料庫
 function rejectResult(mesno,mesresult){
-alert('ok');
+// alert('ok');
 var xhr = new XMLHttpRequest();
 xhr.onload = function(){
     // console.log(this.parentNode.previousSibling.previousSibling);
@@ -176,7 +176,7 @@ var obj = {
 }
 var loginInfo = JSON.stringify(obj);
 var data_info = "loginInfo=" + loginInfo;
-alert(data_info);
+// alert(data_info);
 xhr.send(data_info);
 
 };

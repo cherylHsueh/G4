@@ -5,7 +5,7 @@ $artNo = $_REQUEST['artNo'];
 try {
     require_once("connectBooks.php");
     $sql = "SELECT b.artNo, b.photo, b.artTitle, b.artContent, b.thumbFq, b.artReportFq,b.fruitRatio1 fruitRatio1,
-    b.fruitRatio2 fruitRatio2, b.fruitRatio3 fruitRatio3, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2,
+    b.fruitRatio2 fruitRatio2, b.fruitRatio3 fruitRatio3, m.memName, m.memImg, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2,
      f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3, me.mesNo, 
      me.mesContent, me.mesTime, me.mesReportFq, f1.cal cal1,f1.iron iron1, f1.fiber fiber1, f1.vinC vinC1, f2.cal cal2,
     f2.iron iron2, f2.fiber fiber2, f2.vinC vinC2,f3.cal cal3, f3.iron iron3, f3.fiber fiber3, f3.vinC vinC3  
@@ -30,7 +30,7 @@ try {
     <script src="js/plugin/sweetalert2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
     <script src="js/plugin/jquery-3.3.1.min.js" type="text/javascript"></script>
-    <script src="js/blog.js"></script>
+    <script src="js/blogIn.js"></script>
 </head>
 
 <body>
@@ -48,6 +48,7 @@ try {
 
         <!-- SHARE_ARTICAL -->
 
+    <input type="hidden" id="hiddenmemNo" value="<?php if( isset($_SESSION["memName"])){ echo $_SESSION["memNo"];}else{echo "";}?>">
 
         <section class="blogIn_Share">
             <div class="wrapper">
@@ -73,7 +74,7 @@ try {
                         </div>
                         <div class="blogIn_LeftBox_NameContainer clearfix">
                             <div class="blogIn_LeftBox_NamePic cl-s-6 cl-md-6">
-                                <img src="images/blogImg/memberPic.png" alt="分享者">
+                                <img src="images/member/photo/<?php echo $blogRow["memImg"]?>" alt="分享者">
                             </div>
                             <div class="blog_LeftBox_NameTitle cl-s-5 cl-md-5">
                                 <p><?php echo $blogRow["memName"]?></p>
@@ -145,14 +146,14 @@ try {
                                         <span id="spanNum">按讚</span>
                                     </a>
                                     <?php 
-                                        $sql = "select me.mesContent, b.artNo, b.thumbFq, m.memimg from blog b, message me,member m where b.artNo=me.artNo and b.memNo=m.memNo and b.artNo =$artNo" ;
+                                        $sql = "select me.mesContent, b.artNo, b.thumbFq, m.memimg from blog b, message me,member m where b.memNo=m.memNo and b.artNo =$artNo" ;
                                         $message = $pdo -> query( $sql );    
-                                        while($mesRow = $message->fetchObject()){
+                                        $mesRow = $message->fetchObject();
                                      ?>                                        
                                         <input id="thumbArtNo" type="hidden" name="thumbArtNo" value="<?php echo $mesRow->artNo?>">
                                         <input id="thumbNo" type="hidden" name="thumbNo" value="<?php echo $mesRow->thumbFq?>">
                                    <?php
-                                        };
+                                        
                                     ?>
 
 
@@ -328,7 +329,7 @@ function sendFormthumb(){
 <script>
     window.addEventListener('load',function(){
         $id();
-        sendFormReportclick();
+        sendFormReportclick()
     })
 
     function $id(id){
@@ -360,6 +361,7 @@ function sendFormthumb(){
             xhr.onload = function (){
             if( xhr.status == 200){
                 swal('檢舉+1');
+                
             }else{
                 alert(xhr.status);
                 }
@@ -402,7 +404,7 @@ function sendFormthumb(){
                                         $mesRow = $message->fetchObject()
                                      ?>                                        
                                         <input id="artNo" type="hidden" name="artNo" value="<?php echo $mesRow->artNo?>">
-
+                                        <input id="hidmesNo" type="hidden" name="artNo" value="<?php echo $mesRow->mesNo?>">
 
                                         <textarea id="blogIn_Msg_Content" type="text" placeholder="嚐分享" name="mes"></textarea>
                                     </div>
@@ -436,12 +438,14 @@ function $id(id){
              var xhr = new XMLHttpRequest();
             xhr.onload = function (){
                 if( xhr.status == 200){
-                    // alert($id('blogIn_Msg_Content').value);
+                    mesno = xhr.responseText;
+                    // alert(mesno);
                     addItem();
-                    alert('ok');
+                    // alert('ok');
                     sendFormReportclick();
                     $id('blogIn_Msg_Content').value = '';
-                    alert('ok');
+                    // alert('ok');
+                   
                 }else{
                 alert(xhr.status);
                 }

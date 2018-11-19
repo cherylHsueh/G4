@@ -6,6 +6,7 @@ try{
 	require_once("../connectBooks.php");
 	$memId=$_POST["memId"];
 	$memPsw=$_POST["memPsw"];
+	$memImg=$_POST["memImg"];
 	$memName=$_POST["memName"];
 	$memTel=$_POST["memTel"];
 	$sql = "select * from member where memId = :memId";
@@ -16,17 +17,19 @@ try{
 		echo "註冊失敗";
 	}else{
 
-	$sql = "insert into member(memId,memPsw,memName,memTel)values(:memId,:memPsw,:memName,:memTel)";
+	$sql = "insert into member(memId,memPsw,memImg,memName,memTel)values(:memId,:memPsw,:memImg,:memName,:memTel)";
 	$member = $pdo ->prepare($sql);
 	$member ->bindValue(":memId",$memId);
 	$member ->bindValue(":memPsw",$memPsw);
+	$member ->bindValue(":memImg",$memImg);
 	$member ->bindValue(":memName",$memName);
 	$member ->bindValue(":memTel",$memTel);
 	$member ->execute();
 	$memNo = $pdo->lastInsertId();
 	  	//將登入者的資訊寫入session暫存區
   	$_SESSION["memId"] = $memId;
-  	$_SESSION["memPsw"] = $memPsw;
+	$_SESSION["memPsw"] = $memPsw;
+	$_SESSION["memImg"] = $memImg;
   	$_SESSION["memName"] = $memName;
 	$_SESSION["memTel"] = $memTel;
 	// $_SESSION["memNo"] = $memNo;
