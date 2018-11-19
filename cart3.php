@@ -50,9 +50,10 @@
         require_once("connectBooks.php");
         $pdo->beginTransaction();
 	    //寫入訂單主檔
-        $sql = "insert into ordermaster values (null, :memNo , '0', NOW(), :receiverName , :address , :payment , :receiverPhone, :total)";
+        $sql = "insert into ordermaster values (null, :memId , :memNo ,'0', NOW(), :receiverName , :address , :payment , :receiverPhone, :total)";
         $ordermaster = $pdo->prepare($sql);
         $ordermaster->bindValue(":memNo", $_SESSION["memNo"] );
+        $ordermaster->bindValue(":memId", $_SESSION["memId"] );
         $ordermaster->bindValue(":receiverName", $_POST["receiverName"]);
         $ordermaster->bindValue(":address", $_POST["address"]);
         $ordermaster->bindValue(":payment", $_POST["paymentMethod"]);
@@ -72,7 +73,7 @@
 
       
 	    //寫入訂單明細
-		$sql = "insert into orderdetails values (null , :orderNo , :offPdName , :orderQty, :pdPrice , :subTotal, :pdClassNo , '2', :offPdImg)";
+		$sql = "insert into orderdetails values (null , :orderNo , :offPdName , :orderQty, :pdPrice , :subTotal, :pdClassNo , :offPdImg)";
         $orderitems = $pdo->prepare( $sql );
 		foreach( $_SESSION["quantity"] as $offPdNo => $quantity ){
             if( strstr($offPdNo,'c') == true){

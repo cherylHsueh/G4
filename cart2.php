@@ -8,8 +8,10 @@
     <title>果然配</title>
     <link rel="stylesheet" type="text/css" href="css/loginFruit.css">
     <link rel="stylesheet" href="css/cart2.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
     <script src="js/plugin/jquery-3.3.1.min.js"></script>
     <script src='js/global.js'></script>
+    <script src="js/plugin/sweetalert2.min.js"></script>
 </head>
 
 
@@ -86,13 +88,12 @@
                 <h4>郵寄地址</h4>
                 <input type="text" id="address" name="address">
             </div>
-            <div class="cart_fillInData_content">
-                <h5>商品金額</h5>
+            <div class="cart_fillInData_content d-flex">
+                <h4>商品金額</h5>
                 <p id="price"><?php echo $_GET["total"];?></p>
             </div>
-            <div class="cart_fillInData_content">
-                
-                <h5>折價卷</h5>
+            <div class="cart_fillInData_content d-flex">
+                <h4>折價卷</h4>
             
                 
 <?php 
@@ -120,15 +121,15 @@
                 </select>
 <?php
         }else{
-            echo "<p>您尚未有優惠卷</p>";
+            echo "<p>您尚未有優惠卷!!</p>";
         }
 ?>
                     
                  
             </div>
-            <div class="cart_fillInData_content">
-                <h4>總計</h4>
-                <p id="total"></p>
+            <div class="cart_fillInData_content d-flex">
+                <h4>總計 :$</h4>
+                <p class="total" id="total"></p>
                 <input style="display:none;" name="total" id="total2">
             </div>
             
@@ -166,6 +167,9 @@
 
     <script>
         function doFirst(){
+            phonerule =/^[09]{2}[0-9]{8}$/;
+
+
             var fromButton = document.getElementById('nextButton');
             fromButton.addEventListener('click',fromSubmit);
             var couponNo = $('#coupon').val();
@@ -177,12 +181,17 @@
                 $('#total').text($('#price').text());
                 $('#total2').val($('#price').text());
             }
-
-            $('#coupon').change(function(){
-                $('#total').text($('#price').text()*discount/10);
-                $('#total2').val($('#price').text()*discount/10);
-            })
         }
+
+        $('#coupon').change(function(){
+            var couponNo = $('#coupon').val();
+            discount = $('#'+couponNo).text().replace('折','');
+            $('#total').text($('#price').text()*discount/10);
+            $('#total2').val($('#price').text()*discount/10);
+        })
+
+
+
 
         var paymentMethod = document.getElementById('paymentMethod');
         var paymentMethod2 = document.getElementById('paymentMethod2');
@@ -202,9 +211,17 @@
         }
 
         function fromSubmit(){
+            
             var loginStatus = document.getElementById('spanLogin');
             if( loginStatus.innerHTML == "登入"){
                 showLoginForm();
+            }
+            else if(phonerule.test($('#recePhone').val()) == false){
+                    swal({
+                    type: 'error',
+                    title: '手機格式不對哦!',
+                    text: '請輸入正確格式',
+                    })
             }
             else{
            document.getElementById('fillData').submit();
