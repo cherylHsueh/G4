@@ -109,7 +109,7 @@ if(isset($_SESSION["offPdName"]) == false){ //尚無購物資料
             <p>總金額(含運):$<?php echo $total+100;?></p>
             <br>
             <form action="cart2.php" id="myForm">
-                <input type="text" value="<?php echo $total+100;?>" name="total">
+                <input style="display:none;" value="<?php echo $total+100;?>" name="total">
             </form>
             <a id="nextButton" class="common_btn common_btn_first">
                 <span class="common_btn_txt" >下一步</span>
@@ -144,10 +144,8 @@ if(isset($_SESSION["offPdName"]) == false){ //尚無購物資料
     }
      
    function ss(){
-        alert('11');
         var loginStatus = document.getElementById('spanLogin');
         if( loginStatus.innerHTML == "登入"){
-            alert('22');
             showLoginForm();
         }else{
             document.getElementById('myForm').submit();

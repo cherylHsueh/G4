@@ -31,7 +31,9 @@ body{
     background-color: $sky;
     position: fixed;
     .homepage_header_container{
-        
+        h3{
+            color:#fff;
+        }
     }
     .homepage_header_ballBox{
         position: absolute;
@@ -1888,6 +1890,11 @@ body{
 
         .homepage_diy_labaPic{
             width: 25%;
+            &:hover{
+                transform: scale(1.2);
+                transition: .6s;
+                cursor: pointer;
+            }
         }
         .homepage_diy_labaContent{
             margin-left:10px;

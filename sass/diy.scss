@@ -50,10 +50,27 @@ body {
 .diy_pickFruit_rightItem {
   display: none;
 }
-
+//比例
+.diy_pickFruit_cursor{
+  position: absolute;
+  width: 25px;
+  height:25px;
+  background-color: #593100;
+  border-radius:50%;
+  display: none;
+  left:118%;
+  transition: 1s;
+  color:#fff;
+  text-align: center;
+  line-height: 25px;
+}
 
 //手機開始
 @include rwd(mobile) {
+  //比例
+#cursor1,#cursor2{
+  opacity:0;
+}
   .diy_pickFruit {
     height: 100%;
   }
@@ -209,6 +226,7 @@ body {
     // }
   }
 
+  
   @for $i from 1 through 9 {
     .diy_pickFruit_leftItem#{$i} {
       position: relative;
@@ -1312,18 +1330,4 @@ body {
 
 
 
-//test
 
-.diy_pickFruit_cursor{
-  position: absolute;
-  width: 25px;
-  height:25px;
-  background-color: #593100;
-  border-radius:50%;
-  display: none;
-  left:118%;
-  transition: 1s;
-  color:#fff;
-  text-align: center;
-  line-height: 25px;
-}

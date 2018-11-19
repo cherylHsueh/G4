@@ -58,7 +58,6 @@ function doFirst() {
 
     //點選加入購物車
     $('#addToCartBtn').click(function(){
-        alert('aa');
         $('#imgRULForm').submit();
     });
 

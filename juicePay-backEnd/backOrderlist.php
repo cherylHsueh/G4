@@ -101,7 +101,7 @@
 
         orderNo=this.id.split('_')[1];
         orderStatus=this.value;
-        this.parentNode.previousElementSibling.previousElementSibling.innerText='已出貨';
+        this.parentNode.previousElementSibling.innerText='已出貨';
         // alert('ok');
         changeStatus();
         });

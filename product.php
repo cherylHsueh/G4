@@ -95,7 +95,7 @@
 try {
 
     require_once("connectBooks.php");
-    $sql = "select * from offcialpd where offCateNo = 1";
+    $sql = "select * from offcialpd where offCateNo = 1 and offPdStatus = 1 ";
     $products = $pdo -> query( $sql );
     while($prodRow = $products->fetchObject()){
 
@@ -103,7 +103,7 @@ try {
                     <div class="pd_cate_item cl-s-6 cl-md-3">
                         <div class="item">
                             <div class="pd_cate_item_itemimg">
-                                <img src='images/pd/<?php echo $prodRow->offPdImg?>' >
+                                <a href="productitem.php?offPdNo=<?php echo $prodRow->offPdNo ?>"><img src='images/pd/<?php echo $prodRow->offPdImg?>'></a>
                             </div>
                             <h3><?php echo $prodRow->offPdName ?></h3>
                             <div class="buttonArea">
@@ -145,7 +145,7 @@ try {
 
 try {
 
-    $sql = "select * from offcialpd where offCateNo = 2";
+    $sql = "select * from offcialpd where offCateNo = 2 and offPdStatus = 1";
     $products = $pdo -> query( $sql );
 
     while($prodRow = $products->fetchObject()){
@@ -154,7 +154,7 @@ try {
                     <div class="pd_cate_item cl-s-6 cl-md-3">
                         <div class="item">
                             <div class="pd_cate_item_itemimg">
-                                <img src='images/pd/<?php echo $prodRow->offPdImg?>' >
+                                <a href="productitem.php?offPdNo=<?php echo $prodRow->offPdNo ?>"><img src='images/pd/<?php echo $prodRow->offPdImg?>'></a>
                             </div>
                             <h3><?php echo $prodRow->offPdName ?></h3>
                             <div class="buttonArea">
@@ -198,7 +198,7 @@ try {
 
 try {
 
-    $sql = "select * from offcialpd where offCateNo = 3";
+    $sql = "select * from offcialpd where offCateNo = 3 and offPdStatus = 1";
     $products = $pdo -> query( $sql );
 
     while($prodRow = $products->fetchObject()){
@@ -208,7 +208,7 @@ try {
                     <div class="pd_cate_item cl-s-6 cl-md-3">
                         <div class="item">
                             <div class="pd_cate_item_itemimg">
-                                <img src='images/pd/<?php echo $prodRow->offPdImg?>' >
+                               <a href="productitem.php?offPdNo=<?php echo $prodRow->offPdNo ?>"><img src='images/pd/<?php echo $prodRow->offPdImg?>'></a>
                             </div>
                             <h3><?php echo $prodRow->offPdName ?></h3>
                             <div class="buttonArea">
@@ -247,7 +247,7 @@ try {
 
 try {
 
-    $sql = "select * from offcialpd where offCateNo = 4";
+    $sql = "select * from offcialpd where offCateNo = 4 and offPdStatus = 1";
     $products = $pdo -> query( $sql );
 
     while($prodRow = $products->fetchObject()){
@@ -256,7 +256,7 @@ try {
                     <div class="pd_cate_item cl-s-6 cl-md-3">
                         <div class="item">
                             <div class="pd_cate_item_itemimg">
-                                <img src='images/pd/<?php echo $prodRow->offPdImg?>' >
+                                <a href="productitem.php?offPdNo=<?php echo $prodRow->offPdNo ?>"><img src='images/pd/<?php echo $prodRow->offPdImg?>'></a>
                             </div>
                             <h3><?php echo $prodRow->offPdName ?></h3>
                             <div class="buttonArea">

@@ -70,7 +70,7 @@
 
 							<div class="diy_pickFruit_leftPic clearfix">
 <?php    
-    $sql1 = "select * from fruititem";
+    $sql1 = "select * from fruititem where fruitStatus = 1";
     $fruit = $pdo ->query($sql1);
     $i=1;
     while($rowFruit=$fruit->fetch(PDO::FETCH_ASSOC)){

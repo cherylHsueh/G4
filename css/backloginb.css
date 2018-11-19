@@ -1,0 +1,339 @@
+@charset "UTF-8"
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*{
+  font-family:微軟正黑體;
+}
+
+
+@media all and (max-width: 767px){
+  .wrapback {
+  width: 100%;
+  margin: auto;
+  padding-top: 190px; 
+  }
+  .loginback input[type=text],
+  .loginback input[type=password]{
+    width:200px;
+  }
+    .wrapback img{
+      width:30%;
+      padding-bottom: 20px;
+    }
+    .loginback{
+      width:80%;
+    }
+    .loginback h2{
+      padding-bottom: 10px;
+    }
+    
+     .balloon{
+    width: 40%;
+    position: absolute;
+    top: 16%;
+    right: 11%;
+  }
+  .balloon img{
+    width:100%;
+  }.backendFull {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height:100vh;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+ background-image: linear-gradient(to top, #fff1eb -92%, skyblue 100%);
+  background-image: url("../images/T_29.png");
+ background-size: cover; }
+
+
+/*.wrapback {
+  width: 100%;
+  margin: auto;
+  padding-top: 200px; 
+  }*/
+  .wrapback img {
+    display: block;
+    margin: auto;
+    padding-bottom: 50px; }
+
+.loginback {
+  width: 300px;
+  margin: auto;
+  position:relative;
+  color:#585858;
+  border-radius: 20px;
+  background-color: #F5DA81;
+  border: 1px solid #6cd5ff;
+  padding: 10px; }
+
+#owlface{
+    position: absolute;
+    left: 28%;
+    top: -24%;
+    width: 40%;
+}
+
+#owlface img{
+  width:100%;
+}
+#left_down{
+    position: absolute;
+    left: 15%;
+    top: -4%;
+    width: 14%;
+}
+#left_down img{
+  width:100%;
+}
+#right_down{
+   position: absolute;
+   left: 70%;
+   top: -5%;
+   width: 16%;
+}
+#right_down img{
+  width:100%;
+}
+
+
+.loginback h2 {
+    font-size: 30px;
+    padding-bottom: 20px;
+    text-align: center; }
+.loginback span {
+    font-size: 18px;
+    display: block;
+    padding-top: 10px; }
+.loginback input[type=text],
+  .loginback input[type=password] {
+    font-size: 16px;
+    width: 250px;
+    color:black;
+    text-decoration: none;
+    border: none;
+    border-bottom: 2px solid rgba(147, 147, 147, 0.8);
+    background-color: transparent;
+    padding: 10px;
+    outline: none;
+    -webkit-transition: 0.2s; }
+  .loginback input[type=text]:focus,
+  .loginback input[type=password]:focus{
+    border-bottom: 2px solid skyblue; }
+  .loginback span:last-child {
+    padding-top: 60px;
+    text-align: center; }
+  .loginback input[type=submit] {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    line-height: 30px;
+    width: 100px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    outline: none;
+    -webkit-transition: 0.2s; }
+  .loginback input[type=submit]:hover {
+    background-color: #6cd5ff; }
+
+  .guava{
+    width: 28%;
+    position: absolute;
+    top: 1%;
+    left: 5%;
+  }
+  .guava img{
+    width:100%;
+  }
+  .balloon{
+    width: 22%;
+    position: absolute;
+    top: 81%;
+    right: 11%;
+  }
+  .balloon img{
+    width:100%;
+  }
+  
+
+}
+
+
+@media all and (min-width: 768px){
+   .wrapback {
+  width: 100%;
+  margin: auto;
+  padding-top: 250px; 
+  }
+.backendFull {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height:100vh;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+ background-image: linear-gradient(to top, #fff1eb -92%, skyblue 100%);
+  background-image: url("../images/T_29.png");
+ background-size: cover; }
+
+
+/*.wrapback {
+  width: 100%;
+  margin: auto;
+  padding-top: 200px; 
+  }*/
+  .wrapback img {
+    display: block;
+    margin: auto;
+    padding-bottom: 50px; }
+
+.loginback {
+  width: 300px;
+  margin: auto;
+  position:relative;
+  color:#585858;
+  border-radius: 20px;
+  background-color: #F5DA81;
+  border: 1px solid #6cd5ff;
+  padding: 10px; }
+
+#owlface{
+    position: absolute;
+    left: 28%;
+    top: -24%;
+    width: 40%;
+}
+
+#owlface img{
+  width:100%;
+}
+#left_down{
+    position: absolute;
+    left: 15%;
+    top: -4%;
+    width: 14%;
+}
+#left_down img{
+  width:100%;
+}
+#right_down{
+   position: absolute;
+   left: 70%;
+   top: -5%;
+   width: 16%;
+}
+#right_down img{
+  width:100%;
+}
+
+
+.loginback h2 {
+    font-size: 30px;
+    padding-bottom: 20px;
+    text-align: center; }
+.loginback span {
+    font-size: 18px;
+    display: block;
+    padding-top: 10px; }
+.loginback input[type=text],
+  .loginback input[type=password] {
+    font-size: 16px;
+    width: 250px;
+    color:black;
+    text-decoration: none;
+    border: none;
+    border-bottom: 2px solid rgba(147, 147, 147, 0.8);
+    background-color: transparent;
+    padding: 10px;
+    outline: none;
+    -webkit-transition: 0.2s; }
+  .loginback input[type=text]:focus,
+  .loginback input[type=password]:focus{
+    border-bottom: 2px solid skyblue; }
+  .loginback span:last-child {
+    padding-top: 60px;
+    text-align: center; }
+  .loginback input[type=submit] {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    line-height: 30px;
+    width: 100px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    outline: none;
+    -webkit-transition: 0.2s; }
+  .loginback input[type=submit]:hover {
+    background-color: #6cd5ff; }
+
+  .guava{
+    width: 18%;
+    position: absolute;
+    top: 12%;
+    left: 5%;
+  }
+  .guava img{
+    width:100%;
+  }
+  .balloon{
+    width: 18%;
+    position: absolute;
+    top: 16%;
+    right: 11%;
+  }
+  .balloon img{
+    width:100%;
+  }
+}
+

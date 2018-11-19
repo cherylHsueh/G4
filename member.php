@@ -25,7 +25,12 @@
 <?php 
 	require_once("php/nav.php");
 	 require_once("connectBooks.php");
-	 if(isset($_SESSION["memId"])){
+	 if(isset($_SESSION["memId"])==null){
+		echo "<script>
+				alert('尚未登入');
+				showLoginForm();
+		</script>";
+	 }else{
 	 $sql = "select * from member where memId=:memId";
 	 $member = $pdo->prepare($sql);
 	 $member -> bindValue(":memId",$_SESSION["memId"]);
@@ -398,8 +403,4 @@
 
 </html>
  <?php 
-	}else{
-
- 	echo"尚未登入";
-
- }  ?>
+	} ?>

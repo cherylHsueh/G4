@@ -18,9 +18,6 @@
                 <a href="backMesReport.php">
                     <li class="left list-group-item text-center">留言檢舉審核</li>
                 </a>
-                <a href="backReport.php">
-                    <li class="left list-group-item text-center">檢舉審核</li>
-                </a>
                 <a href="backOrderlist.php">
                     <li class="left list-group-item text-center">訂單管理</li>
                 </a>
