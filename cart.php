@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>果然配</title>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
     <link rel="stylesheet" type="text/css" href="css/loginFruit.css">
     <link rel="stylesheet" href="css/cart.css">
     <script src="js/plugin/jquery-3.3.1.min.js"></script>
     <script src='js/global.js'></script>
+    <script src="js/plugin/sweetalert2.min.js"></script>
 
 </head>
 
@@ -59,12 +61,12 @@
                 <th>數量</th>
                 <th>單品金額</th>
                 <th>合計</th>
-                <th></th>
+                <th>刪除</th>
             </tr>
 
 <?php 
-if(isset($_SESSION["offPdName"]) == false){ //尚無購物資料
-    echo "<tr><td>尚無購物資料</td></tr>";
+if(isset($_SESSION["offPdName"]) == false || $_SESSION["offPdName"] == []){ //尚無購物資料
+    echo "<tr><td id='noProduct'>尚無購物資料</td></tr>";
     $total=0;
 }else{
     $total=0;
@@ -156,6 +158,12 @@ if(isset($_SESSION["offPdName"]) == false){ //尚無購物資料
         var loginStatus = document.getElementById('spanLogin');
         if( loginStatus.innerHTML == "登入"){
             showLoginForm();
+        }else if(document.getElementById('noProduct')){
+            swal({
+                    type: 'error',
+                    title: '您尚未買東西喔!',
+                    text: '歡迎至果然特調逛逛喔～',
+                    })
         }else{
             document.getElementById('myForm').submit();
         }

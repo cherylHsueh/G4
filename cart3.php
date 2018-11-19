@@ -120,7 +120,7 @@
             </div>
         </div>
         <div class="cart_button">
-             <a id="nextButton" class="common_btn common_btn_first" href="cart2.html">
+             <a id="nextButton" class="common_btn common_btn_first" href="game.php">
             <span class="common_btn_txt">去玩每日小遊戲 ➜</span>
             <div class="common_btn_blobs">
                 <div></div>
