@@ -495,8 +495,8 @@ function $id(id){
                     <div></div>
                 </div>
             </a>
-            <a class="common_btn common_btn_second">
-                <span class="common_btn_txt">試試他的配方</span>
+            <a class="common_btn common_btn_second" href="diy.php">
+                <span class="common_btn_txt">我也要自己做</span>
                 <div class="common_btn_blobs">
                     <div></div>
                     <div></div>

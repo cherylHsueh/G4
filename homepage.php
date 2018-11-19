@@ -644,7 +644,7 @@ $j++;
                                     <input type="button" value="back▲" id="a4">
                                 </div>
                                 <div class="homepage_about_btn3 aaa">
-                                    <a href="about.html">more&nbsp➥ </a>
+                                    <a href="about.php">more&nbsp➥ </a>
                                 </div>
                             </div>
 

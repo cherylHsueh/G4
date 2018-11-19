@@ -27,7 +27,7 @@
                     <li><a href='homepage.php'>
                             <h1 class='menu_logo'><img src='images/logo.png' alt='果然配'>果然配</h1>
                         </a> </li>
-                    <li class='menu_item'><a href='blog.php'>果然私藏</a></li>
+                    <li class='menu_item'><a href='blog.php'>果粉私藏</a></li>
                     <li class='menu_item'><a href='about.php'>關於果然</a></li>
                 </ul>
             </div>
