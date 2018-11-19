@@ -156,7 +156,52 @@
     }
 
 // 手機模式
+    //  使用陀螺儀
     if(window.screen.width<1440){
+        $('#game_control_txt').text('請將手機改成橫式，左右搖擺移動菜籃');
+        var mql = window.matchMedia('(orientation: portrait)');
+        console.log(mql);
+        //判斷手機是直式或橫式
+        function handleOrientationChange(mql) {
+            if(mql.matches) {
+            // 豎屏
+                console.log('portrait'); 
+                if(window.DeviceOrientationEvent) {
+                    console.log($('div#carBox').width());
+                    $('div#carBox').css({ left:window.screen.width+ $('div#carBox').width()/2 });
+                    window.addEventListener('deviceorientation', function(event) {
+                        var gamma = event.gamma;
+
+                        $('div#carBox').css({ left:(gamma*6+400) + 'px' });
+                        
+                    }, false);
+                }else{
+                    document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
+                }
+            }else {
+             // 橫屏
+                console.log('landscape');
+                if(window.DeviceOrientationEvent) {
+                    console.log($('div#carBox').width());
+                    $('div#carBox').css({ left:window.screen.width+ $('div#carBox').width()/2 });
+                    window.addEventListener('deviceorientation', function(event) {
+                        var beta = event.beta;
+
+                        $('div#carBox').css({ left:(beta*10+400) + 'px' });
+                        
+                    }, false);
+                }else{
+                    document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
+                }
+            }
+
+        }
+// 列印日誌
+handleOrientationChange(mql);
+// 監聽螢幕模式的變化
+mql.addListener(handleOrientationChange);
+
+
     //手機橫式
         function changeOrientation($print) {  
             var width = document.documentElement.clientWidth;
@@ -201,39 +246,6 @@
               }, 300);  
              }, false);
             }
-
-
-    //  使用陀螺儀
-        var width = document.documentElement.clientWidth;
-        var height =  document.documentElement.clientHeight;
-        if(width < height) {
-
-            if(window.DeviceOrientationEvent) {
-                console.log($('div#carBox').width());
-                $('div#carBox').css({ left:window.screen.width+ $('div#carBox').width()/2 });
-                window.addEventListener('deviceorientation', function(event) {
-                    var gamma = event.gamma;
-
-                    $('div#carBox').css({ left:(gamma*6+400) + 'px' });
-                    
-                }, false);
-            }else{
-                document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
-            }
-        }else{
-            if(window.DeviceOrientationEvent) {
-                console.log($('div#carBox').width());
-                $('div#carBox').css({ left:window.screen.width+ $('div#carBox').width()/2 });
-                window.addEventListener('deviceorientation', function(event) {
-                    var beta = event.beta;
-
-                    $('div#carBox').css({ left:(beta*10+400) + 'px' });
-                    
-                }, false);
-            }else{
-                document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
-            }
-        }
     }
 
 

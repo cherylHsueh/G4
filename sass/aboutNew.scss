@@ -175,12 +175,12 @@ path:hover {
   }
 }
 //ru
-// h3{
-//   color: #009245;
-//   padding: 10px;
-//   font-weight: bold;
-//   text-align: center;
-// }
+h3 {
+  color: #009245;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+}
 
 @keyframes bounce {
   from {
@@ -1000,6 +1000,16 @@ path:hover {
     display:none;
   }
 
+  .about_end_background_stop{
+    width: 10%;
+    position: absolute;
+    bottom: 10%;
+    right: 0%;
+    z-index: 5;
+    img{
+      width: 100%;
+    }
+  }
   
 
   .title_area {
@@ -2006,6 +2016,18 @@ path:hover {
       }
     }
   }
+
+  .about_end_background_stop{
+    width: 7%;
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    z-index: 3;
+    img{
+      width: 100%;
+    }
+}
+  
 
   .about_end_formInfo {
     margin: 2% auto 0;

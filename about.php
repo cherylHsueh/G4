@@ -376,17 +376,17 @@
 				var step = 25;
 				$(function() {
 				//使用mousewheel插件捕捉滾輪事件
-					$( window ).resize(function() {
-		  			let screenWidth = document.body.clientWidth;
-
-					});
 					$("body").mousewheel(function(event, delta) {
 					//計算要滾動的距離
+
+					var screenWidth = document.body.clientWidth;
+					console.log(screenWidth);
+
 					console.log('Mouse Delta:' + delta);
 					if (delta < 0){
 						distance += step;
-						if(distance>=screenWidth*3){
-							distance=screenWidth*3;
+						if(distance>=screenWidth*2.2){
+							distance=screenWidth*2.2;
 						}
 					
 					}else{
