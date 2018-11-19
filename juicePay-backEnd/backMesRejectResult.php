@@ -10,7 +10,7 @@ try{
   	$fruitStatus->bindValue(':mesno',$mesInfo->mesno);
     $fruitStatus->execute();
   
-  echo "succes";
+  // echo "succes";
 }catch(PDOException $e){
   echo $e->getMessage();
 }

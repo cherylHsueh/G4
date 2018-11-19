@@ -10,7 +10,7 @@ try{
     $fruitStatus->bindValue(':artNo',$artInfo->artno);
     $fruitStatus->execute();
   
-  echo "succes";
+  // echo "succes";
 }catch(PDOException $e){
   echo $e->getMessage();
 }

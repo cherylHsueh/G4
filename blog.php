@@ -68,7 +68,7 @@ $blogRankM = $pdo -> query( $sql );
 $i=1;
 while($blogRankMRow = $blogRankM->fetch(PDO:: FETCH_ASSOC)){
 ?>           
-                <a class="blog_Rank_Container blog_Rank_Container<?php echo $i?>  cl-s-12" data-rank="<?php echo $i?>">
+                <div class="blog_Rank_Container blog_Rank_Container<?php echo $i?>  cl-s-12" data-rank="<?php echo $i?>">
                     <div class="blog_Rank_Block cl-s-12 clearfix">
                         <div class="blog_Rank_Prize">
                             <img src="images/tag<?php echo $i?>.png" alt="第一名">
@@ -139,13 +139,12 @@ while($blogRankMRow = $blogRankM->fetch(PDO:: FETCH_ASSOC)){
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
 <?php
 $i++;
 };
 ?>
             </section>
-
 
             <!-- 桌機輪播 -->
             <div class="blog_Rank_bg">
@@ -164,7 +163,7 @@ $i=1;
 while($blogRankRow = $blogRank->fetch(PDO:: FETCH_ASSOC)){
 
 ?>                        
-                        <a class="blog_Rank_ContainerLap blog_Rank_Container1 cl-md-12" data-rank=<?php echo $i?>>
+                        <div class="blog_Rank_ContainerLap blog_Rank_Container1 cl-md-12" data-rank=<?php echo $i?>>
                             <div class="blog_Rank_Block cl-md-12 clearfix">
                                 <div class="blog_Rank_Prize">
                                     <img src="images/tag<?php echo $i?>.png" alt="第一名">
@@ -233,7 +232,7 @@ while($blogRankRow = $blogRank->fetch(PDO:: FETCH_ASSOC)){
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
 
 <?php
 $i++;

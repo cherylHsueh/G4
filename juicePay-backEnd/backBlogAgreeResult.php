@@ -11,7 +11,7 @@ try{
     $fruitStatus->bindValue(':artResult',$artInfo->artResult);
     $fruitStatus->execute();
 
-  echo "succes";
+  // echo "succes";
 }catch(PDOException $e){
   echo $e->getMessage();
 }

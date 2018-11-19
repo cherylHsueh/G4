@@ -5,7 +5,7 @@ $artNo = $_REQUEST['artNo'];
 try {
     require_once("connectBooks.php");
     $sql = "SELECT b.artNo, b.photo, b.artTitle, b.artContent, b.thumbFq, b.artReportFq,b.fruitRatio1 fruitRatio1,
-    b.fruitRatio2 fruitRatio2, b.fruitRatio3 fruitRatio3, m.memName, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2,
+    b.fruitRatio2 fruitRatio2, b.fruitRatio3 fruitRatio3, m.memName, m.memImg, f1.fruitImg fruitImg1, f2.fruitImg fruitImg2,
      f3.fruitImg fruitImg3, f1.fruitName fruitName1, f2.fruitName fruitName2, f3.fruitName fruitName3, me.mesNo, 
      me.mesContent, me.mesTime, me.mesReportFq, f1.cal cal1,f1.iron iron1, f1.fiber fiber1, f1.vinC vinC1, f2.cal cal2,
     f2.iron iron2, f2.fiber fiber2, f2.vinC vinC2,f3.cal cal3, f3.iron iron3, f3.fiber fiber3, f3.vinC vinC3  
@@ -25,10 +25,12 @@ try {
     <title>果然配</title>
     <link rel="stylesheet" type="text/css" href="css/loginFruit.css">
     <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
     <script src='js/global.js'></script>
+    <script src="js/plugin/sweetalert2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
     <script src="js/plugin/jquery-3.3.1.min.js" type="text/javascript"></script>
-    <script src="js/blog.js"></script>
+    <script src="js/blogIn.js"></script>
 </head>
 
 <body>
@@ -46,6 +48,7 @@ try {
 
         <!-- SHARE_ARTICAL -->
 
+    <input type="hidden" id="hiddenmemNo" value="<?php if( isset($_SESSION["memName"])){ echo $_SESSION["memNo"];}else{echo "";}?>">
 
         <section class="blogIn_Share">
             <div class="wrapper">
@@ -71,7 +74,7 @@ try {
                         </div>
                         <div class="blogIn_LeftBox_NameContainer clearfix">
                             <div class="blogIn_LeftBox_NamePic cl-s-6 cl-md-6">
-                                <img src="images/blogImg/memberPic.png" alt="分享者">
+                                <img src="images/member/photo/<?php echo $blogRow["memImg"]?>" alt="分享者">
                             </div>
                             <div class="blog_LeftBox_NameTitle cl-s-5 cl-md-5">
                                 <p><?php echo $blogRow["memName"]?></p>
@@ -143,14 +146,14 @@ try {
                                         <span id="spanNum">按讚</span>
                                     </a>
                                     <?php 
-                                        $sql = "select me.mesContent, b.artNo, b.thumbFq, m.memimg from blog b, message me,member m where b.artNo=me.artNo and b.memNo=m.memNo and b.artNo =$artNo" ;
+                                        $sql = "select me.mesContent, b.artNo, b.thumbFq, m.memimg from blog b, message me,member m where b.memNo=m.memNo and b.artNo =$artNo" ;
                                         $message = $pdo -> query( $sql );    
-                                        while($mesRow = $message->fetchObject()){
+                                        $mesRow = $message->fetchObject();
                                      ?>                                        
                                         <input id="thumbArtNo" type="hidden" name="thumbArtNo" value="<?php echo $mesRow->artNo?>">
                                         <input id="thumbNo" type="hidden" name="thumbNo" value="<?php echo $mesRow->thumbFq?>">
                                    <?php
-                                        };
+                                        
                                     ?>
 
 
@@ -189,9 +192,8 @@ function sendFormFq(){
         var xhr = new XMLHttpRequest();
         xhr.onload = function (){
         if( xhr.status == 200){
-            alert('plus');
+            swal('檢舉+1');
             doreport();
-            
         }else{
             alert(xhr.status);
             }
@@ -199,12 +201,12 @@ function sendFormFq(){
         xhr.open("post", "blogartreportNumPlus.php", true);
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         var data = "artNo=" + $id("artNo").value + "&artReportFq=" + $id('FqNum').value;
-        // alert(data);
         xhr.send(data);     
     }else if($id('FqNum').value != ''){
         var xhr = new XMLHttpRequest();
         xhr.onload = function (){
         if( xhr.status == 200){
+            swal('檢舉+1');
             doreport();
         }else{
             alert(xhr.status);
@@ -233,12 +235,7 @@ function sendFormthumb(){
    var xhr = new XMLHttpRequest();
      xhr.onload = function (){
        if( xhr.status == 200){
-
-        //    alert($id('greatNum').innerHTML);
-           dodeleteIn();
-        //    alert('ok');
-        //    alert($id('greatNum').innerHTML);
-           
+        dodeleteIn();
        }else{
          alert(xhr.status);
        }
@@ -256,10 +253,7 @@ function sendFormthumb(){
 //    alert('123');
      xhr.onload = function (){
        if( xhr.status == 200){
-        //    alert($id('greatNum').innerHTML);
            doplusIn();
-        //    alert('ok');
-        //    alert($id('greatNum').innerHTML);
        }else{
          alert(xhr.status);
        }
@@ -320,10 +314,11 @@ function sendFormthumb(){
                                 </div>
                             </div>
                             <!-- <a href="javascript:;" > -->
-                            <input type="button" id="Nmu<?php echo $mesRow->mesNo?>" class="blogIn_Msg_SendBox subButtonItem reportNum cl-s-2 cl-md-1" name="report" value="檢舉">
-                            <input type="hidden" id="FqNum<?php echo $mesRow->mesNo?>" name='Fqnum' value="<?php echo $mesRow->mesReportFq?>">
-                            <input type="hidden" class="mesNo" id="mesNum<?php echo $mesRow->mesNo?>" name="mesNum" value="<?php echo $mesRow->mesNo?>">
-                           <!-- </a> -->
+                            <form>
+                                <input type="button" id="Num<?php echo $mesRow->mesNo?>" class="blogIn_Msg_SendBox subButtonItem reportNum cl-s-2 cl-md-1" name="report" value="檢舉">
+                                <input type="hidden" id="FqNum<?php echo $mesRow->mesNo?>" name='Fqnum' value="<?php echo $mesRow->mesReportFq?>">
+                                <input type="hidden" class="mesNo" id="mesNum<?php echo $mesRow->mesNo?>" name="mesNum" value="<?php echo $mesRow->mesNo?>">
+                           </form><!-- </a> -->
                       </div>
                         <?php
                                 };     
@@ -332,25 +327,28 @@ function sendFormthumb(){
 
 
 <script>
-function $id(id){
-  	return document.getElementById(id);
-  };
-window.addEventListener('load', sendFormReportclick);
+    window.addEventListener('load',function(){
+        $id();
+        sendFormReportclick()
+    })
 
-function sendFormReportclick(){
-    var pushreport = document.querySelectorAll('.reportNum');  
+    function $id(id){
+        return document.getElementById(id);
+    };
+    function sendFormReportclick(){
+        var pushreport = document.querySelectorAll('.reportNum');  
         for( i=0 ; i<pushreport.length; i++){  
             pushreport[i].addEventListener('click',function(){
                 num = this.id
                 // alert(num);
                 mesnum = 'mes' + this.id;
-                // alert($id(mesnum).value);
+                // alert(mesnum);
                 Fqnum = 'Fq' + this.id;
                 // alert($id(Fqnum).value);
                 sendFormReport();
         });
         };
-};
+    }
 
     function sendFormReport(){
         // alert($id(Fqnum).value);
@@ -362,7 +360,8 @@ function sendFormReportclick(){
             var xhr = new XMLHttpRequest();
             xhr.onload = function (){
             if( xhr.status == 200){
-                // alert('plus');
+                swal('檢舉+1');
+                
             }else{
                 alert(xhr.status);
                 }
@@ -376,7 +375,7 @@ function sendFormReportclick(){
             var xhr = new XMLHttpRequest();
             xhr.onload = function (){
             if( xhr.status == 200){
-                // alert('add');
+                swal('檢舉+1');
             }else{
                 alert(xhr.status);
                 }
@@ -388,23 +387,6 @@ function sendFormReportclick(){
             xhr.send(data);     
         }
     }
-    // else if($id(Fqnum).value != ''){
-    //     var xhr = new XMLHttpRequest();
-    //   xhr.onload = function (){
-    //     if( xhr.status == 200){
-    //      alert('delete');
-    //     }else{
-    //       alert(xhr.status);
-    //     }
-    //     };
-    //     xhr.open("post", "reportNumDelete.php", true);
-    //   xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-      
-    //   var data = "artNo=" + $id("artNo").value +"&mesNo=" + $id("mesNo").value+ "&artReportFq=" + $id(Fqnum).value;
-    //   alert(data);
-    //   xhr.send(data);    
-    
-    // }
     
 </script>   
                
@@ -417,18 +399,17 @@ function sendFormReportclick(){
                                     <div class="blogIn_Msg_ContentInput">
 
                                      <?php 
-                                        $sql = "select b.artNo, b.thumbFq, m.memName, m.memImg, me.mesNo from blog b,member m, message me where m.memNo = me.memNo and b.artNo= $artNo order by mesNo DESC limit 1";
+                                        $sql = "select b.artNo, b.thumbFq, m.memName, me.mesNo from blog b,member m, message me where m.memNo = me.memNo and b.artNo= $artNo order by mesNo DESC limit 1";
                                         $message = $pdo -> query( $sql );    
                                         $mesRow = $message->fetchObject()
                                      ?>                                        
                                         <input id="artNo" type="hidden" name="artNo" value="<?php echo $mesRow->artNo?>">
-
+                                        <input id="hidmesNo" type="hidden" name="artNo" value="<?php echo $mesRow->mesNo?>">
 
                                         <textarea id="blogIn_Msg_Content" type="text" placeholder="嚐分享" name="mes"></textarea>
                                     </div>
                                 </div>
                                     <input type="button" id="blogIn_Msg_BoxBtn" class="blogIn_Msg_Box subButtonItem cl-s-2 cl-md-1" name="btnChange" value="留言">
-                                    <input type="hidden" id="blogIn_Msg_MesNo" value="images/member/photo/<?php echo $mesRow->memImg?>">
                             </div>
                         </div>
 
@@ -449,31 +430,35 @@ function $id(id){
  function sendForm(){
     // alert(document.getElementById('spanLogin').innerHTML);
     if(document.getElementById('spanLogin').innerHTML == '登入'){
-        document.getElementById('lightbox_section').style.display = 'block';
+        showLoginForm();
     }else{
-      var xhr = new XMLHttpRequest();
-      xhr.onload = function (){
-        if( xhr.status == 200){
-            addItem();
-            sendFormReportclick();
-            // alert('ok');
-            $id('blogIn_Msg_Content').value='';
-            // getmemName();
-            // alert('nameok');
-            // memName.innerHTML =memchild;
-
+        if($id('blogIn_Msg_Content').value == ''){
+            swal('請填寫內容');
         }else{
-          alert(xhr.status);
+             var xhr = new XMLHttpRequest();
+            xhr.onload = function (){
+                if( xhr.status == 200){
+                    mesno = xhr.responseText;
+                    // alert(mesno);
+                    addItem();
+                    // alert('ok');
+                    sendFormReportclick();
+                    $id('blogIn_Msg_Content').value = '';
+                    // alert('ok');
+                   
+                }else{
+                alert(xhr.status);
+                }
+            }
+            xhr.open("post", "blogInMes.php", true);
+            xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+            
+            var data = "artNo=" + $id("artNo").value +
+            "&mes=" + $id("blogIn_Msg_Content").value;
+            //   alert(data);
+            xhr.send(data);    
         }
-      }
-      xhr.open("post", "blogInMes.php", true);
-      xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-      
-      var data = "artNo=" + $id("artNo").value +
-       "&mes=" + $id("blogIn_Msg_Content").value;
-    //   alert(data);
-      xhr.send(data);    
-    }
+    }   
 };
  function init(){
     $id("blogIn_Msg_BoxBtn").onclick = sendForm;
