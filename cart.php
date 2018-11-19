@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href="css/loginFruit.css">
     <link rel="stylesheet" href="css/cart.css">
     <script src="js/plugin/jquery-3.3.1.min.js"></script>
-
     <script src='js/global.js'></script>
+
 </head>
 
 <body>
@@ -54,45 +54,54 @@
     <div class="cart_shoppingList_control">
         <table class="cart_shoppingList_content">
             <tr>
+                <th>商品圖片</th>
                 <th>商品名稱</th>
                 <th>數量</th>
                 <th>單品金額</th>
                 <th>合計</th>
-                <th>調整</th>
+                <th></th>
             </tr>
 
 <?php 
 if(isset($_SESSION["offPdName"]) == false){ //尚無購物資料
-    echo "<tr><td>尚無購物資料</th></td>";
+    echo "<tr><td>尚無購物資料</td></tr>";
     $total=0;
 }else{
     $total=0;
 	foreach( $_SESSION["offPdName"] as $offPdNo => $offPdName){
      ?>
-     <form action="cartUpdate.php">
-        <tr>
-        <td class="cart_productName">  
-            <img src='images/pd/<?php echo $_SESSION["offPdImg"][$offPdNo]; ?>' alt="">
+      <tr>
+        <td >
+        <img class="pdimg" src='images/pd/<?php echo $_SESSION["offPdImg"][$offPdNo]; ?>' alt="">
+        </td>
+        <td>  
             <p><?php echo $_SESSION["offPdName"][$offPdNo];?> </p> 
         </td>
-        <td class="cart_productQuantity">
-            <input type="text" name="quantity" value="<?php echo $_SESSION["quantity"][$offPdNo]?>">
-        </td>
-        <td class="cart_productPrice">
-            <p>$<?php echo $_SESSION["pdPrice"][$offPdNo];?> </p>
-        </td>
-        </td>
-        <td class="cart_productPrice">
-            <p>$<?php echo $_SESSION["pdPrice"][$offPdNo]*$_SESSION["quantity"][$offPdNo];?> </p>
-        </td>
-        <td class="cart_productCancel">
-               <input type="hidden" value="<?php echo $_SESSION["offPdNo"][$offPdNo]?>" name="offPdNo">
 
-               <input type="submit" name="btnUpdate" value="修改">
-               <input type="submit" name="btnDelete" value="刪除">
+
+        <td>
+            <input type="hidden" value="<?php echo $_SESSION["offPdNo"][$offPdNo]; ?>">
+            <img src="images/cart/des.png" class="btnMins" alt="">
+            <span class="qty2"><?php echo $_SESSION["quantity"][$offPdNo];?></span>
+            <img src="images/cart/plus.png" class="btnPlus" alt="">
+        </td>
+
+
+        <td>
+            <p><?php echo $_SESSION["pdPrice"][$offPdNo];?></p>
+        </td>
+
+        <td>
+            <p class="cartsubtotal"><?php echo $_SESSION["pdPrice"][$offPdNo]*$_SESSION["quantity"][$offPdNo];?> </p>
+        </td>
+        
+        <td>
+            <form action="cartDelete.php">
+               <input type="hidden" value="<?php echo $_SESSION["offPdNo"][$offPdNo]?>" name="offPdNo">
+               <input class="delete" type="submit" name="btnDelete" value="刪除">
+            </form>
         </td>
         </tr>
-    </form>
     <?php 
     $total = $total + $_SESSION["pdPrice"][$offPdNo]* $_SESSION["quantity"][$offPdNo];
 	}//foreach
@@ -104,12 +113,12 @@ if(isset($_SESSION["offPdName"]) == false){ //尚無購物資料
     <div class="cart_priceCalculation clearfix">
     
         <div class="cart_priceCalculation_content">
-            <p>小計: $<?php echo $total;?> </p>
+            <p id="cartTotal">小計:$<?php echo $total;?> </p>
             <p>運費: $100 </p>
-            <p>總金額(含運):$<?php echo $total+100;?></p>
+            <p id="cartTotalde">總金額(含運):$<?php echo $total+100;?></p>
             <br>
             <form action="cart2.php" id="myForm">
-                <input type="text" value="<?php echo $total+100;?>" name="total">
+                <input type="hidden" value="<?php echo $total+100;?>" name="total" id="formTotal">
             </form>
             <a id="nextButton" class="common_btn common_btn_first">
                 <span class="common_btn_txt" >下一步</span>
@@ -138,21 +147,108 @@ if(isset($_SESSION["offPdName"]) == false){ //尚無購物資料
 <script>
     function doFirst(){
 
-        document.getElementById('nextButton').addEventListener('click',ss);
+        document.getElementById('nextButton').addEventListener('click',loginCheck);
 
 
     }
      
-   function ss(){
-        alert('11');
+   function loginCheck(){
         var loginStatus = document.getElementById('spanLogin');
         if( loginStatus.innerHTML == "登入"){
-            alert('22');
             showLoginForm();
         }else{
             document.getElementById('myForm').submit();
         }
     }
+
+
+    $('.btnPlus').click(function(){
+        var cartTotal=0;
+        var productNo = $(this).prev().prev().prev().val();
+        // alert(productNo);
+        var cartgearQty= parseInt($(this).prev().text());
+        // alert(cartgearQty);
+        var gearPrice = ($(this).parent().next().children().text());
+        // alert(gearPrice);
+        
+        cartgearQty += 1;
+        $(this).prev().text(cartgearQty);
+
+        var cartsubtotal = gearPrice * cartgearQty;
+
+        $(this).parent().next().next().children().text(cartsubtotal);
+    
+        for(var i= 0;i<$('.cartsubtotal').length;i++){
+                cartTotal+=parseInt($('.cartsubtotal').eq(i).text());
+                $('#cartTotal').text('小計:$'+cartTotal);
+                // $('#confirmTotal').text(+Total+'元');
+                $('#cartTotalde').text('總金額(含運):$' + (cartTotal+100));
+                $('#formTotal').val(cartTotal+100);
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function (){   //checking function
+            if( xhr.status == 200){
+                var pNu=document.getElementById("pNu");
+                // window.alert( xhr.status );
+                pNu.innerHTML = xhr.responseText;
+                console.log( xhr.responseText );
+            }
+        }
+        var url = "cartUpdate.php?productNo=" + productNo + "&quantity=" + cartgearQty;
+        console.log(url);
+        xhr.open("get", url, true);
+        xhr.send(null);
+
+    });
+
+
+    $('.btnMins').click(function(){
+        var cartTotal=0;
+        var productNo = $(this).prev().val();
+        // alert(productNo);
+        var cartgearQty= parseInt($(this).next().text());
+        // alert(cartgearQty);
+        var gearPrice = ($(this).parent().next().children().text());
+        // alert(gearPrice);
+        
+        if (cartgearQty >1) {
+
+            cartgearQty -= 1;
+
+            $(this).next().text(cartgearQty);
+
+
+            var cartsubtotal = gearPrice * cartgearQty;
+
+            $(this).parent().next().next().children().text(cartsubtotal);
+
+        for(var i= 0;i<$('.cartsubtotal').length;i++){
+            cartTotal+=parseInt($('.cartsubtotal').eq(i).text());
+            $('#cartTotal').text('小計:$'+cartTotal);
+            // $('#confirmTotal').text(+Total+'元');
+            $('#cartTotalde').text('總金額(含運):$' + (cartTotal+100));
+            $('#formTotal').val(cartTotal+100);
+        }
+        
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function (){   //checking function
+            if( xhr.status == 200){
+                var pNu=document.getElementById("pNu");
+                // window.alert( xhr.status );
+                pNu.innerHTML = xhr.responseText;
+                console.log( xhr.responseText );
+            }
+        }
+        var url = "cartUpdate.php?productNo=" + productNo + "&quantity=" + cartgearQty;
+        console.log(url);
+        xhr.open("get", url, true);
+        xhr.send(null);
+    }
+
+
+
+});
+
     
     window.addEventListener('load',doFirst);
    
