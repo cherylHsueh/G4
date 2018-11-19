@@ -36,11 +36,11 @@
             -->
             <h2>註冊</h2>
             <form action="php/signUpSQL.php" id='myForm' method="post">
-              <div>
+              <div class="singUp_box_1">
                 <label for="memId">帳號</label
                 ><input
                   type="text"
-                  placeholder="英文字母開頭及最少六碼數字"
+                  placeholder="英文開頭及最六位數字"
                   id="memId"
                   class="inputform"
                   name="memId"
@@ -54,11 +54,11 @@
               /><span id="idMsg"></span>
 
               <!-- <div id="checkMemId"></div> -->
-              <div>
+              <div class="singUp_box_2">
                 <label for="memPsw">密碼</label>
                 <input
                   type="password"
-                  placeholder="請輸入最少六碼"
+                  placeholder="英文開頭及最六位數字"
                   name="memPsw"
                   id="memPsw"
                   class="inputform"
@@ -86,7 +86,7 @@
                   class="inputform"
                 />
               </div>
-              <div>
+              <div class="singUp_box_5">
                 <label for="memTel">手機</label>
                 <input
                   type="tel"
@@ -95,8 +95,9 @@
                   placeholder="ex.09xx-xxxxxx"
                   class="inputform"
                 />
+                <span class="error5"></span>
               </div>
-              <span class="error5"></span>
+              
               <div>
                 <button
                   class="common_btn common_btn_first"
@@ -183,11 +184,11 @@
         </div>
       </div>
     </footer>
-    <!--
+    
       <script src="js/grass.js"></script>
       <script src="js/grassleft.js"></script>
-      <script src="js/grassthree.js"></script>
-    -->
+      <!-- <script src="js/grassthree.js"></script> -->
+ 
     <script src="js/signupAjax.js"></script>
     <!-- <script src="js/signUp.js"></script> -->
     <script>

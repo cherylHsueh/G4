@@ -369,39 +369,41 @@
 					.addTo(controller);
 				});	
 			</script>
-			<script>	
-			//初始位置為頁面頂部
-			var distance = 0;
-			//每觸發一次滾動事件的移動距離
-			var step = 25;
-			$(function() {
-			//使用mousewheel插件捕捉滾輪事件
-			$("body").mousewheel(function(event, delta) {
-			//計算要滾動的距離
-			console.log('Mouse Delta:' + delta);
-			if (delta < 0){
-				distance += step;
-				if(distance>=3000){
-					distance=3000;
-				}
-			
-			}else{
-				if(distance > 0){
-						distance -= step;
-						if(distance<0){//小於0 距離就給他0 不要讓他距離變成負的
-							distance=0;
+<script>	
+				//初始位置為頁面頂部
+				var distance = 0;
+				//每觸發一次滾動事件的移動距離
+				var step = 25;
+				$(function() {
+				//使用mousewheel插件捕捉滾輪事件
+					$( window ).resize(function() {
+		  			let screenWidth = document.body.clientWidth;
+
+					});
+					$("body").mousewheel(function(event, delta) {
+					//計算要滾動的距離
+					console.log('Mouse Delta:' + delta);
+					if (delta < 0){
+						distance += step;
+						if(distance>=screenWidth*3){
+							distance=screenWidth*3;
 						}
-				}
-			}
-
-
-			console.log('Distance:' + distance);
-			 //用JS操控頁面滾動
-			 scroll(0, distance);
-			 //阻止默認事件發生
-			 event.preventDefault();
-			});
-		})	
+					
+					}else{
+						if(distance > 0){
+								distance -= step;
+								if(distance<0){//小於0 距離就給他0 不要讓他距離變成負的
+									distance=0;
+								}
+						}
+					}
+					console.log('Distance:' + distance);
+					 //用JS操控頁面滾動
+					 scroll(0, distance);
+					 //阻止默認事件發生
+					 event.preventDefault();
+					});
+				})	
 			</script>
 
 
