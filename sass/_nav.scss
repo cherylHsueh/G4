@@ -227,7 +227,7 @@ header{
     }
     #wave2{
         height: 100px;
-        transition: 1s;
+        transition: width 0s 0s ,height 2s;
     }
     .menu{
         text-align: center;
@@ -252,7 +252,10 @@ header{
         display: relative;
         width: 100%;
         margin-top:7px;
-        .phone_logo{
+        a{
+            display: inline-block;
+        }
+        .ph_logoBox{
             width: 60px;
             margin:auto;  
         }
@@ -293,9 +296,9 @@ header{
             width: 900%;
         }
         & ~ nav #wave{
-            transition: 2s;
-            width: 900%;
-            height: 107vh;
+            transition: width 0s 2s ,height 2s;
+            // width: 900%;
+            // height: 107vh;
             animation: move2 3s 1s linear infinite alternate;
 
         }
@@ -354,7 +357,7 @@ header{
 }
 @keyframes move2{
     0% {
-        transform: translate(-20%,0%);
+        // transform: translate(-20%,0%);
     }
     100% {
         transform: translate(0%,0%);
@@ -370,7 +373,7 @@ header{
 }
 @-webkit-keyframes move2{
     0% {
-        transform: translate(-20%,0%);
+        // transform: translate(-20%,0%);
     }
     100% {
         transform: translate(0%,0%);

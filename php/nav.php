@@ -15,9 +15,11 @@
              </div>
             <div class='ph_nav'>
                 <label for='hb_control' class='hb'><span></span></label>
-                <a href='homepage.php'>
-                    <h1 class='phone_logo'><img src='images/logo.png' alt='果然配'>果然配</h1>
-                </a>
+                <div class="ph_logoBox">
+                    <a href='homepage.php'>
+                        <h1 class='phone_logo'><img src='images/logo.png' alt='果然配'>果然配</h1>
+                    </a>
+                </div>
             </div>
 
             <div class='menu'>

@@ -394,7 +394,7 @@ header {
     transition: 1s; }
   #wave2 {
     height: 100px;
-    transition: 1s; }
+    transition: width 0s 0s ,height 2s; }
   .menu {
     text-align: center;
     height: 80vh;
@@ -414,7 +414,9 @@ header {
     display: relative;
     width: 100%;
     margin-top: 7px; }
-    .ph_nav .phone_logo {
+    .ph_nav a {
+      display: inline-block; }
+    .ph_nav .ph_logoBox {
       width: 60px;
       margin: auto; }
     .ph_nav .hb {
@@ -445,9 +447,7 @@ header {
   width: 900%; }
 
 #hb_control:checked ~ nav #wave {
-  transition: 2s;
-  width: 900%;
-  height: 107vh;
+  transition: width 0s 2s ,height 2s;
   animation: move2 3s 1s linear infinite alternate; }
 
 #hb_control:checked ~ nav #wave2 {
@@ -489,8 +489,7 @@ header {
     transform: translate(0%, 0%); } }
 
 @keyframes move2 {
-  0% {
-    transform: translate(-20%, 0%); }
+  0% { }
   100% {
     transform: translate(0%, 0%); } }
 
@@ -501,8 +500,7 @@ header {
     transform: translate(0%, 0%); } }
 
 @-webkit-keyframes move2 {
-  0% {
-    transform: translate(-20%, 0%); }
+  0% { }
   100% {
     transform: translate(0%, 0%); } }
 

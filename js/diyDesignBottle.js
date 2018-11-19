@@ -176,6 +176,7 @@ function fileChange() {
         image.src = this.result;
         image.style.maxWidth = '60px';
         image.style.transform = 'scale(1) rotate(0deg)';
+        picTextControll.picDegree = 0;
     });
 };
 //新增文字	

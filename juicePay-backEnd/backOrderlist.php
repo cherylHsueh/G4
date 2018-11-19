@@ -44,7 +44,7 @@
                     </thead>
                     <tbody>
      <?php   
-    $sql = "select * from ordermaster, member where ordermaster.memNo=member.memNo order by ordermaster.orderNo";
+    $sql = "select * from ordermaster, member where ordermaster.memNo=member.memNo order by ordermaster.orderNo desc";
     $order = $pdo ->query($sql);
     while($rowOrder=$order->fetch(PDO::FETCH_ASSOC)){
     ?> 
@@ -69,13 +69,7 @@
 
                     </tbody>
                 </table>
-                <ul class="pagination justify-content-center">
 
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-
-                </ul>
             </div>
 
         </div>
