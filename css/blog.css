@@ -1067,13 +1067,14 @@ body {
     .blog_Forum_OptionContainer .blog_Forum_SearchBar {
       position: relative;
       text-align: center; }
-      .blog_Forum_OptionContainer .blog_Forum_SearchBar input {
-        width: 30%;
-        height: 30px;
+      .blog_Forum_OptionContainer .blog_Forum_SearchBar textarea {
+        width: 40%;
+        height: 20px;
         margin-bottom: 40px;
         border: 1px solid #aaa;
         border-radius: 5px;
-        padding-left: 5px; }
+        padding-left: 5px;
+        padding-top: 10px; }
       .blog_Forum_OptionContainer .blog_Forum_SearchBar i {
         position: absolute;
         top: 12%;
@@ -1814,11 +1815,11 @@ body {
       background-position: center;
       margin: 0 auto 20px; }
       .blog_Rank .blog_Heading_pic .blog_Heading {
-        margin-top: -25px;
+        margin-top: -17px;
         font-size: 30px;
         color: #6abee7; }
     .blog_Rank .blog_Subheading {
-      margin: -20px 0 50px;
+      margin: -30px 0 50px;
       color: #32a8e2; }
   .dg-container {
     width: 100%;
@@ -1997,13 +1998,14 @@ body {
       position: relative;
       text-align: center;
       float: right; }
-      .blog_Forum_OptionContainer .blog_Forum_SearchBar input {
+      .blog_Forum_OptionContainer .blog_Forum_SearchBar textarea {
         width: 200px;
         height: 30px;
         margin: 0 50px 40px 0;
         border: 1px solid #aaa;
         border-radius: 5px;
-        padding-left: 5px; }
+        padding-left: 5px;
+        padding-top: 10px; }
       .blog_Forum_OptionContainer .blog_Forum_SearchBar i {
         position: absolute;
         top: 15%;
@@ -2240,27 +2242,11 @@ body {
       background-position: center;
       margin: 0 auto 20px; }
       .blog_Forum_wrapper .blog_Heading_pic .blog_Heading {
-        margin-top: -25px;
+        margin-top: -17px;
         font-size: 30px;
         color: #6abee7; }
     .blog_Forum_wrapper .blog_Subheading {
-      margin: -20px 0 50px;
-      color: #32a8e2; }
-    .blog_Forum_wrapper .blog_Heading_pic {
-      width: 600px;
-      position: relative;
-      padding: 20px 0;
-      font-weight: bold;
-      background-image: url(../images/homepage/headerBac.png);
-      background-repeat: no-repeat;
-      background-position: center;
-      margin: 0 auto 20px; }
-      .blog_Forum_wrapper .blog_Heading_pic .blog_Heading {
-        margin-top: -25px;
-        font-size: 30px;
-        color: #6abee7; }
-    .blog_Forum_wrapper .blog_Subheading {
-      margin: -20px 0 50px;
+      margin: -30px 0 50px;
       color: #32a8e2; }
   .umbrellaApple img {
     width: 50px;

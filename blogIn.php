@@ -152,9 +152,6 @@ try {
                                      ?>                                        
                                         <input id="thumbArtNo" type="hidden" name="thumbArtNo" value="<?php echo $mesRow->artNo?>">
                                         <input id="thumbNo" type="hidden" name="thumbNo" value="<?php echo $mesRow->thumbFq?>">
-                                   <?php
-                                        
-                                    ?>
 
 
                                     <a href="#messagearea" class="blogIn_RightBox_subButtonItem">
@@ -421,7 +418,7 @@ function sendFormthumb(){
 function $id(id){
   	return document.getElementById(id);
   }	
-  function keydown(event){
+  function keypress(event){
         if (event.keyCode == 13) { 
             sendForm();
         }
@@ -462,7 +459,7 @@ function $id(id){
 };
  function init(){
     $id("blogIn_Msg_BoxBtn").onclick = sendForm;
-    $id("blogIn_Msg_Content").onkeypress= keyup;
+    $id("blogIn_Msg_Content").onkeypress= keypress;
     };
  
  window.onload = init;

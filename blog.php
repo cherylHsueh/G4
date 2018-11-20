@@ -298,19 +298,21 @@ $i++;
                   
                        <div class="blog_Forum_SearchBar">
                         
-                            <input id="keyword" type="text" name="keyword" placeholder="輸入關鍵字">
+                            <textarea id="keyword" type="text" name="keyword" placeholder="輸入關鍵字"></textarea>
                             <i id="search" class="fas fa-search"></i>
      
                             
 
                             
 <script type="text/javascript">
-function keyDown(event){
-    event.preventDefault();
+function $id(id){
+  	return document.getElementById(id);
+  }	
+function keyPress(event){
+// event.preventDefault();
         if (event.keyCode == 13) { 
             //  alert("ok");
             sendFormkey();
-            document.getElementById("keyword").value= '';
         }
   };
 
@@ -346,7 +348,7 @@ function keyDown(event){
     }
  
     document.getElementById("search").onclick = sendFormkey;
-    document.getElementById("keyword").onkeydown = keyDown;
+    document.getElementById("keyword").onkeypress = keyPress;
     
 </script>
 
@@ -358,8 +360,8 @@ function keyDown(event){
                 </div>
                 <div class="blog_Forum_OptionLeftBox clearfix">
                   
-                    <input type="button" id="NewShare" class="blog_Forum_OptionLeftBox_NewShare" value="最新分享" />
-                   <input type="button" id="HighScore" class="blog_Forum_OptionLeftBox_HighScore" value="最高評分" />
+                    <button type="button" id="NewShare" class="blog_Forum_OptionLeftBox_NewShare" name="" >最新分享</button>
+                    <button type="button" id="HighScore" class="blog_Forum_OptionLeftBox_HighScore" name="" >最高評分</button>
                 </div>
                 </form>
             
@@ -524,30 +526,8 @@ $id("NewShare").onclick = sendFormShare;
                             </div>
                         </a>
                      </div>
-                
-
-               
 <?php        
     };
-
-    // $sql = "select * from member where memId = 'kellyG4' and memPsw = '111'";
-	// $member = $pdo -> query( $sql );
-    // // if( $member->rowCount() == 0){
-    // // 	echo "帳密錯誤, 請<a href='login.html'>重新輸入</a>";
-    // // }else{
-    // 	$memRow = $member->fetchObject();
-    // 	echo $memRow->memName, ", 您好~~ <br>";
-    //     //登入成功, 寫入session
-    //     //   $_SESSION["memNo"] = $memRow->no;
-    //       $_SESSION["memId"] = $memRow->memId;
-    //       $_SESSION["memName"] = $memRow->memName;
-    //     //是否從別支程式跳轉過來
-    //       if(isset($_SESSION["where"]) == true){
-    //         $where = $_SESSION["where"];
-    //         unset( $_SESSION["where"]);
-    //         header("location:$where");
-    //       }
-    // // }
 ?>
 
 
