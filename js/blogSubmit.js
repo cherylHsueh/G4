@@ -10,6 +10,10 @@ function doFirst(){
     var cursor1 = document.getElementById('cursor1');
     var cursor2 = document.getElementById('cursor2');
     
+    $('#fruitratio1').text(fruitratio1);
+    $('#fruitratio2').text(fruitratio2);
+    $('#fruitratio3').text(fruitratio3);
+
     cursor1.onmousedown = down;
     cursor2.onmousedown = down;
 
@@ -60,23 +64,23 @@ function down(e){
                     if(x>=cursor2.offsetLeft){
                             cursor.style.left = cursor2.offsetLeft+ 'px';
                         }else if(x<=0){
-                            cursor.style.left = 0 + 'px';
+                            cursor.style.left = 10 + 'px';
                         }else{
                             cursor.style.left = (x) + 'px';
                         }
                 }else{
                     // alert(boxWidth);
                     if(x>=boxWidth){
-                        cursor.style.left = boxWidth-15 + 'px';
+                        cursor.style.left = boxWidth+10 + 'px';
                     }else if(x<=cursor1.offsetLeft){
                         cursor.style.left = cursor1.offsetLeft + 'px';
                     }else{
                         cursor.style.left = x + 'px';
                     }
                 }
-                proportion1 = parseInt(cursor1.offsetLeft)/ boxWidth;
+                proportion1 = parseInt(cursor1.offsetLeft-10)/ boxWidth;
                 proportion2 = (parseInt(cursor2.offsetLeft) - parseInt(cursor1.offsetLeft))/ boxWidth;
-                proportion3 =(boxWidth - parseInt(cursor2.offsetLeft))/ boxWidth;
+                proportion3 =(boxWidth - parseInt(cursor2.offsetLeft+10))/ boxWidth;
                 // alert(boxWidth+','+proportion1+','+proportion2+','+proportion3);
     
                 var fruitratio1 = proportion1.toFixed(3);

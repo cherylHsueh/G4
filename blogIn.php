@@ -343,7 +343,7 @@ function sendFormthumb(){
                 // alert(num);
                 mesnum = 'mes' + this.id;
                 // alert(mesnum);
-                Fqnum = 'Fq' + this.id;
+                Fqnum = 'Fq' + this.id;                                                                                                  
                 // alert($id(Fqnum).value);
                 sendFormReport();
         });
@@ -462,7 +462,7 @@ function $id(id){
 };
  function init(){
     $id("blogIn_Msg_BoxBtn").onclick = sendForm;
-    $id("blogIn_Msg_Content").onkeydown= keydown;
+    $id("blogIn_Msg_Content").onkeypress= keyup;
     };
  
  window.onload = init;
@@ -496,7 +496,7 @@ function $id(id){
                 </div>
             </a>
             <a class="common_btn common_btn_second" href="diy.php">
-                <span class="common_btn_txt">試試他的配方</span>
+                <span class="common_btn_txt">我也要自己做</span>
                 <div class="common_btn_blobs">
                     <div></div>
                     <div></div>
