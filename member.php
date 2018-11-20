@@ -7,14 +7,15 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,shrink-to-fit=no">
 	<title>會員中心</title>
-	<link rel="stylesheet" href="css/member.css">
 	<link rel="stylesheet" href="css/loginFruit.css">
+	<link rel="stylesheet" href="css/member.css">
 	<link rel="stylesheet" href="css/sweetalert2.min.css">
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="js/global.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="js/plugin/sweetalert2.min.js"></script>
 	<script src="js/member.js"></script>
+	
 
 
 
@@ -36,7 +37,7 @@
 	 $member -> bindValue(":memId",$_SESSION["memId"]);
 	 $member -> execute();
 	 $memRow = $member->fetchObject();
-	 echo $memRow->memId;
+	//  echo $memRow->memId;
 
 
 
@@ -109,7 +110,7 @@
 				<div class="member_personalInfo_password_block">
 					<h3>變更密碼</h3>
 
-						<input type="hidden" id="hiddenPsw" name=hiddenPsw" value="<?php echo $memRow->memPsw ?>">
+						<input type="hidden" id="hiddenPsw" name="hiddenPsw" value="<?php echo $memRow->memPsw ?>">
 						<div class="member_personalInfo_password_block_item">
 							<span>輸入舊密碼</span>
 							<input type="password" name="memPsw" id="memPsw">
@@ -331,7 +332,7 @@
 <!-- 修改會員密碼 AJAX -->
 <script>
 	function checkPsw(){ 
-		alert('aaa');
+	
 		  //產生XMLHttpRequest物件
 		  xhr = new XMLHttpRequest();
 		  
@@ -363,7 +364,7 @@
 
 	//ajax檢查舊密碼是否輸入正確 
 	function checkFormat(){
-		alert('aaa');
+	
 
 	var hiddenPsw = document.getElementById('hiddenPsw').value;
 	var memNewPsw =document.getElementById('memNewPsw').value;
