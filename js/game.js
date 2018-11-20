@@ -155,8 +155,53 @@
         });
     }
 
-    // 手機模式
+// 手機模式
+    //  使用陀螺儀
     if(window.screen.width<1440){
+        $('#game_control_txt').text('請將手機改成橫式，左右搖擺移動菜籃');
+        var mql = window.matchMedia('(orientation: portrait)');
+        console.log(mql);
+        //判斷手機是直式或橫式
+        function handleOrientationChange(mql) {
+            if(mql.matches) {
+            // 豎屏
+                console.log('portrait'); 
+                if(window.DeviceOrientationEvent) {
+                    console.log($('div#carBox').width());
+                    $('div#carBox').css({ left:window.screen.width+ $('div#carBox').width()/2 });
+                    window.addEventListener('deviceorientation', function(event) {
+                        var gamma = event.gamma;
+
+                        $('div#carBox').css({ left:(gamma*6+400) + 'px' });
+                        
+                    }, false);
+                }else{
+                    document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
+                }
+            }else {
+             // 橫屏
+                console.log('landscape');
+                if(window.DeviceOrientationEvent) {
+                    console.log($('div#carBox').width());
+                    $('div#carBox').css({ left:window.screen.width+ $('div#carBox').width()/2 });
+                    window.addEventListener('deviceorientation', function(event) {
+                        var beta = event.beta;
+
+                        $('div#carBox').css({ left:(beta*10+400) + 'px' });
+                        
+                    }, false);
+                }else{
+                    document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
+                }
+            }
+
+        }
+// 列印日誌
+handleOrientationChange(mql);
+// 監聽螢幕模式的變化
+mql.addListener(handleOrientationChange);
+
+
     //手機橫式
         function changeOrientation($print) {  
             var width = document.documentElement.clientWidth;
@@ -201,46 +246,12 @@
               }, 300);  
              }, false);
             }
-
-
-    //  使用陀螺儀
-    var width = document.documentElement.clientWidth;
-    var height =  document.documentElement.clientHeight;
-    if(width < height) {
-
-        if(window.DeviceOrientationEvent) {
-            console.log($('div#carBox').width());
-            $('div#carBox').css({ left:window.screen.width+ $('div#carBox').width()/2 });
-            window.addEventListener('deviceorientation', function(event) {
-                var gamma = event.gamma;
-
-                $('div#carBox').css({ left:(gamma*6+400) + 'px' });
-                
-            }, false);
-        }else{
-            document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
-        }
-    }else{
-        if(window.DeviceOrientationEvent) {
-            console.log($('div#carBox').width());
-            $('div#carBox').css({ left:window.screen.width+ $('div#carBox').width()/2 });
-            window.addEventListener('deviceorientation', function(event) {
-                var beta = event.beta;
-
-                $('div#carBox').css({ left:(beta*10+400) + 'px' });
-                
-            }, false);
-        }else{
-            document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
-        }
     }
 
 
 
 
 
-    }
-    
 
     /**
      * 水果籃位置
@@ -303,19 +314,18 @@
                 // 把文字轉成數值再來判斷
                 // alert(aa);
                 if(aa >=200){
-                    c = 6;
-                }else if(aa >=150){
                     c = 7;
                 }else if(aa >=100){
                     c = 8;
                 }else if(aa >=0){
                     c = 9;
                 }
-                $("div#game_box").append('<span class="game_over_tip">恭喜你得到積分'+document.getElementById('gameCent').innerText+'分~拿到'+c+'折優惠券</span>');
+                $("div#game_box").append('<span class="game_over_tip">恭喜你得到積分'+document.getElementById('gameCent').innerText+'分~拿到<span id="score">'+c+'</span>折優惠券</span>');
                 $("div#game_box").append('<span class="game_over_tip2">立刻前往果汁DIY頁面</span>');
-                $("div#game_box").append('<a href="diy.html" class="game_over_tip3">'+'GO'+'</a>');
-                $("div#game_box").append('<img class="special" src="images/coupon.png" alt="">')
-
+                // $("div#game_box").append('<a href="javasript:;" id="bonus" class="game_over_tip3">'+'GO'+'</a>');
+                $("div#game_box").append('<img class="special" src="images/coupon.png" alt="">');
+                $('#game_box .game_over_tip3').css("display" , 'block');
+                $("#bonusgo").attr("value",c);
                 
             });
             clearInterval(this.BuilderFruit);

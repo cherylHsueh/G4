@@ -23,8 +23,8 @@ session_start();
     $img = str_replace('data:image/png;base64,', '', $img);
     $img = str_replace(' ', '+', $img);
     $data = base64_decode($img);
-    $file = UPLOAD_PATH . $offPdNo . '.png';
-    $fileName =$offPdNo . '.png';
+    $file = UPLOAD_PATH . date("Ymdhis") . $offPdNo . '.png';
+    $fileName = date("Ymdhis") . $offPdNo . '.png';
 
     file_put_contents($file, $data);
 

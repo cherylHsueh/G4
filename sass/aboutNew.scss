@@ -174,13 +174,7 @@ path:hover {
     transform: translateX(40px)
   }
 }
-//ru
-// h3{
-//   color: #009245;
-//   padding: 10px;
-//   font-weight: bold;
-//   text-align: center;
-// }
+
 
 @keyframes bounce {
   from {
@@ -204,7 +198,6 @@ path:hover {
 }
 
 @include rwd(mobile) {
-
   // .about_bigwrapper {
   //   width: 1600px;
   //   height: 100vh;
@@ -602,7 +595,7 @@ path:hover {
     position: absolute;
     left: 30%;
     bottom: 9%;
-    z-index: 3;
+    z-index: 4;
     img {
       width: 100%;
     }
@@ -643,7 +636,7 @@ path:hover {
 
   .about_factory_info_blcok {
     width: 46%;
-    background-color: #00ac6f;
+    background-color: #17a36D;
     position: absolute;
     top: 22%;
     left: 6%;
@@ -651,7 +644,7 @@ path:hover {
     right: 0;
     margin: 0% auto;
     border: 5px solid #fff;
-    box-shadow: 0 0 0 5px #00ac6f;
+    box-shadow: 0 0 0 5px #17a36D;
   }
   .about_factory_bird {
     width: 40%;
@@ -1000,6 +993,16 @@ path:hover {
     display:none;
   }
 
+  .about_end_background_stop{
+    width: 10%;
+    position: absolute;
+    bottom: 10%;
+    right: 0%;
+    z-index: 5;
+    img{
+      width: 100%;
+    }
+  }
   
 
   .title_area {
@@ -1555,17 +1558,17 @@ path:hover {
   .about_factory_info_blcok {
     width: 35%;
     //   max-width: 800px;
-    background-color: #00ac6f;
+    background-color: #17a36D;
     position: absolute;
     top: 20%;
     left: 5%;
     right: 0;
     margin: 3% auto;
     padding: 1% 0;
-    z-index: 1;
+    z-index: 4;
     border: 10px solid #fff;
     border-radius: 10px;
-    box-shadow: 0 0 0 20px #00ac6f;
+    box-shadow: 0 0 0 20px #17a36D;
     position: relative;
   }
   .about_factory_bird {
@@ -1604,7 +1607,7 @@ path:hover {
   .about_factory_info_item_logo {
     width: 20%;
     display: inline-block;
-    margin-left: 35%;
+    margin-left: 27%;
     img {
       width: 130%;
     }
@@ -2006,6 +2009,18 @@ path:hover {
       }
     }
   }
+
+  .about_end_background_stop{
+    width: 7%;
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    z-index: 3;
+    img{
+      width: 100%;
+    }
+}
+  
 
   .about_end_formInfo {
     margin: 2% auto 0;

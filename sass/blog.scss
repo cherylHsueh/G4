@@ -7,7 +7,12 @@
 * {
     // outline: 1px solid red;
 }
+.dg-center{
+    position: relative;
+    z-index: 10;
+     transform:translateX(0px) translateZ(0px) rotateY(0deg);
 
+}
 //燈箱
 
 #lightbox_section {
@@ -2139,6 +2144,7 @@ body {
 
 
 @include rwd(medium) {
+
     //共用
 
 

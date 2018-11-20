@@ -273,8 +273,8 @@ if(windowWidth>=1024){
 
 	function showQuestion2(e){
 		answer1 = this.id.split('_')[1];
-		document.getElementById('question').innerText='你想吃大便嗎';
-		document.querySelector('.homepage_test_answerBlock').innerHTML='<div class="homepage_test_answerBox"><h4 id="2_1">1.想</h4><h4 id="2_2">2.想吃</h4></div><div class="homepage_test_answerBox"><h4 id="2_3">3.你吃</h4><h4 id="2_4">4.不要</h4></div></div>';
+		document.getElementById('question').innerText='你最近有什麼煩惱？';
+		document.querySelector('.homepage_test_answerBlock').innerHTML='<div class="homepage_test_answerBox"><h4 id="2_1">1.皮膚好暗沉</h4><h4 id="2_2">2.早上沒活力</h4></div><div class="homepage_test_answerBox"><h4 id="2_3">3.甩肉甩不掉</h4><h4 id="2_4">4.心情好鬱悶</h4></div></div>';
 		var a21=document.getElementById('2_1');
 		var a22=document.getElementById('2_2');
 		var a23=document.getElementById('2_3');

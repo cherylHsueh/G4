@@ -9,7 +9,15 @@ function doFirst(){
     // alert('ok');
     var cursor1 = document.getElementById('cursor1');
     var cursor2 = document.getElementById('cursor2');
+    if(window.screen.width>1024){
+        cursor1.onmousedown = down;
+        cursor2.onmousedown = down;
+    }else{
+        cursor1.ontouchstart= down;
+        cursor2.ontouchstart= down;
+    }
     
+<<<<<<< HEAD
     $('#fruitratio1').text(fruitratio1);
     $('#fruitratio2').text(fruitratio2);
     $('#fruitratio3').text(fruitratio3);
@@ -18,6 +26,15 @@ function doFirst(){
     cursor2.onmousedown = down;
 
 
+=======
+    //比例預設0.33333
+    $('#fruitratio1').text('0.333333');
+    $('#fruitratio2').text('0.333333');
+    $('#fruitratio3').text('0.333333');
+    $('#fruitRatio1').attr("value",'0.333333');
+    $('#fruitRatio2').attr("value",'0.333333');
+    $('#fruitRatio3').attr("value",'0.333333');
+>>>>>>> 3d70e7fbac36f67492072e1c8d88a6f077d6d0bd
 
 };
 
@@ -26,6 +43,7 @@ window.addEventListener('load',doFirst);
 
 //點擊比例拖拉事件
 function down(e){
+
     //    alert('a');
         dragging = true;
         if (e.pageX) {
@@ -38,7 +56,12 @@ function down(e){
         // alert(cursorX);
         offsetX = mouseX - cursorX;
         // console.log(cursor);
-        document.onmousemove = move;
+        if(window.screen.width>1024){
+            document.onmousemove = move;
+        }else{
+            document.ontouchmove= move;
+        }
+        
     //移動滑鼠事件
         function move(e) {
         console.log('e');
@@ -64,21 +87,33 @@ function down(e){
                     if(x>=cursor2.offsetLeft){
                             cursor.style.left = cursor2.offsetLeft+ 'px';
                         }else if(x<=0){
+<<<<<<< HEAD
                             cursor.style.left = 10 + 'px';
+=======
+                            cursor.style.left = -10 + 'px';
+>>>>>>> 3d70e7fbac36f67492072e1c8d88a6f077d6d0bd
                         }else{
                             cursor.style.left = (x) + 'px';
                         }
                 }else{
                     // alert(boxWidth);
                     if(x>=boxWidth){
+<<<<<<< HEAD
                         cursor.style.left = boxWidth+10 + 'px';
+=======
+                        cursor.style.left = boxWidth-10 + 'px';
+>>>>>>> 3d70e7fbac36f67492072e1c8d88a6f077d6d0bd
                     }else if(x<=cursor1.offsetLeft){
                         cursor.style.left = cursor1.offsetLeft + 'px';
                     }else{
                         cursor.style.left = x + 'px';
                     }
                 }
+<<<<<<< HEAD
                 proportion1 = parseInt(cursor1.offsetLeft-10)/ boxWidth;
+=======
+                proportion1 = parseInt(cursor1.offsetLeft+10)/ boxWidth;
+>>>>>>> 3d70e7fbac36f67492072e1c8d88a6f077d6d0bd
                 proportion2 = (parseInt(cursor2.offsetLeft) - parseInt(cursor1.offsetLeft))/ boxWidth;
                 proportion3 =(boxWidth - parseInt(cursor2.offsetLeft+10))/ boxWidth;
                 // alert(boxWidth+','+proportion1+','+proportion2+','+proportion3);
@@ -98,8 +133,15 @@ function down(e){
             };
         };
     //放開滑鼠事件
+    if(window.screen.width>1024){
         document.onmouseup = function(){
             dragging = false;
             
         };
+    }else{
+        document.ontouchend = function(){
+            dragging = false;
+            
+        };
+    }
      };

@@ -35,12 +35,12 @@
               <form action="php/memAcountInsert.php" method="POST" id="signupform" onsubmit="return checkForm()">
             -->
             <h2>註冊</h2>
-            <form>
-              <div>
+            <form action="php/signUpSQL.php" id='myForm' method="post">
+              <div class="singUp_box_1">
                 <label for="memId">帳號</label
                 ><input
                   type="text"
-                  placeholder="英文字母開頭及最少六碼數字"
+                  placeholder="英文開頭及最六位數字"
                   id="memId"
                   class="inputform"
                   name="memId"
@@ -54,11 +54,11 @@
               /><span id="idMsg"></span>
 
               <!-- <div id="checkMemId"></div> -->
-              <div>
+              <div class="singUp_box_2">
                 <label for="memPsw">密碼</label>
                 <input
                   type="password"
-                  placeholder="請輸入最少六碼"
+                  placeholder="英文開頭及最六位數字"
                   name="memPsw"
                   id="memPsw"
                   class="inputform"
@@ -86,7 +86,7 @@
                   class="inputform"
                 />
               </div>
-              <div>
+              <div class="singUp_box_5">
                 <label for="memTel">手機</label>
                 <input
                   type="tel"
@@ -95,8 +95,9 @@
                   placeholder="ex.09xx-xxxxxx"
                   class="inputform"
                 />
+                <span class="error5"></span>
               </div>
-              <span class="error5"></span>
+              
               <div>
                 <button
                   class="common_btn common_btn_first"
@@ -183,11 +184,11 @@
         </div>
       </div>
     </footer>
-    <!--
+    
       <script src="js/grass.js"></script>
       <script src="js/grassleft.js"></script>
-      <script src="js/grassthree.js"></script>
-    -->
+      <!-- <script src="js/grassthree.js"></script> -->
+ 
     <script src="js/signupAjax.js"></script>
     <!-- <script src="js/signUp.js"></script> -->
     <script>
@@ -233,40 +234,41 @@
       }
 
       function signUpBtn() {
+        $id('myForm').submit();
         //=====使用Ajax 回server端,取回登入者姓名, 放到頁面上
-        var xhr = new XMLHttpRequest();
-        xhr.onload = function() {
-          if (xhr.status == 200) {
-            if (xhr.responseText.indexOf("註冊失敗") != -1) {
-              //回傳的資料中有not found
-              alert("註冊失敗");
-              console.log("1");
-            } else {
-              //註冊成功
-              console.log("2");
-              alert("註冊成功");
-              $id("memId").value = "";
-              $id("memPsw").value = "";
-              $id("memName").value = "";
-              $id("memTel").value = "";
-							$id("loginName").innerHTML = xhr.responseText;
-              $id("spanLogin").innerHTML="登出"
-              // header('location:http://http://localhost/G4/index.php');
+        // var xhr = new XMLHttpRequest();
+        // xhr.onload = function() {
+        //   if (xhr.status == 200) {
+        //     if (xhr.responseText.indexOf("註冊失敗") != -1) {
+        //       //回傳的資料中有not found
+        //       alert("註冊失敗");
+        //       console.log("1");
+        //     } else {
+        //       //註冊成功
+        //       console.log("2");
+        //       alert("註冊成功");
+        //       $id("memId").value = "";
+        //       $id("memPsw").value = "";
+        //       $id("memName").value = "";
+        //       $id("memTel").value = "";
+				// 			$id("loginName").innerHTML = xhr.responseText;
+        //       $id("spanLogin").innerHTML="登出"
+        //       // header('location:http://http://localhost/G4/index.php');
 
-            }
-          } else {
-            console.log("3");
-            alert(xhr.status);
-          }
-        };
+        //     }
+        //   } else {
+        //     console.log("3");
+        //     alert(xhr.status);
+        //   }
+        // };
 
-        xhr.open("post","php/signUpAjax.php", true);
-        xhr.setRequestHeader(
-          "content-type",
-          "application/x-www-form-urlencoded"
-        );
-        var data_info ="memId="+ $id("memId").value + "&memPsw=" + $id("memPsw").value +"&memName=" +$id("memName").value +"&memTel=" +$id("memTel").value;
-        xhr.send(data_info);
+        // xhr.open("post","php/signUpAjax.php", true);
+        // xhr.setRequestHeader(
+        //   "content-type",
+        //   "application/x-www-form-urlencoded"
+        // );
+        // var data_info ="memId="+ $id("memId").value + "&memPsw=" + $id("memPsw").value +"&memName=" +$id("memName").value +"&memTel=" +$id("memTel").value;
+        // xhr.send(data_info);
       }
 
       function init() {

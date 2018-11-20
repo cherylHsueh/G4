@@ -3,9 +3,9 @@
 @import "nav";
 @import "footer";
 
-// * {
-//     outline: 1px solid #F00;
-// }
+* {
+    // outline: 1px solid #F00;
+}
 
 // footer {
 //     position: relative;
@@ -38,6 +38,22 @@
 }
 
 @include rwd(mobile) {
+    td{
+        text-align: center;
+    }
+    .btnMins{
+        margin: 0 auto;
+        display: block;
+        width:20px;
+        border: none;
+    }
+    .btnPlus{
+        margin: 0 auto;
+        display: block;
+        border: none;
+        background-color:#f4d66d;
+    
+    }
     body {
         background-color: $sky;
     }
@@ -241,7 +257,7 @@
         }
 
         .cart_productName {
-            width: 40%;
+            width: 10%;
             text-align: center;
             vertical-align: middle;
 
@@ -763,4 +779,29 @@
 
 
 
+}
+.pdimg{
+ width: 80px;
+}
+.qty2{
+   margin: 0 3%;
+}
+.btnPlus{
+    border: none;
+    width:20px;
+
+}
+.btnMins{
+    width:20px;
+    border: none;
+}
+.delete{
+    border: none;
+    background-color:#f4d66d;
+
+}
+table td{
+    font-weight: bold;
+    font-size: 16px;
+    color: #6a3906;
 }

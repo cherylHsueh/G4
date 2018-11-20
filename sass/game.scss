@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>水果遊戲</title>
-    <meta name="Name" content="科博网" />
-    <meta name="keywords" />
-    <meta name="description" />
-    <meta name="Author" content="Mr.Co" />
-
-    <style type="text/css">
-      * {
+  
+    @import "global";
+    @import "nav";
+    
+    * {
         padding: 0px;
         margin: 0px;
         /* outline: 1px solid red; */
+      }
+      header{
+          display: none;
       }
 
       .game_container {
@@ -107,10 +103,20 @@
         width: 100%;
         height: 100vh;
         /* border: 1px solid #00415e; */
-        background: url(images/blog_backgroung5.jpg) no-repeat;
+        background: url(../images/blog_backgroung5.jpg) no-repeat;
         background-size: cover;
         /* background-size: 100%; */
         overflow: hidden;
+      }
+
+      #game_result{
+       background-color: pink;
+       position: absolute;
+       left: 31%;
+       top: 20%;
+       /*width: 569px;*/
+       z-index: 5;
+       /*height: 480px;*/
       }
 
       #game_box .bg_layer {
@@ -134,7 +140,7 @@
         position: absolute;
         height: 95px;
         width: 169px;
-        background: url(images/jie.png) no-repeat;
+        background: url(../images/jie.png) no-repeat;
       }
       /* 水果大小 */
       .thing {
@@ -190,7 +196,7 @@
       #game_box .game_over_tip2 {
         display: inline-block;
         position: absolute;
-        z-index: 12;
+        z-index: 0;
         font-family: "微軟正黑體";
         font-size: 40px;
         color: BLACK;
@@ -203,10 +209,10 @@
         text-align: center;
       }
       #game_box .game_over_tip3 {
-        display: inline-block;
-        /* cursor: pointer; */
+        display: none;
+         cursor: pointer; 
         position: absolute;
-        z-index: 12;
+        z-index: 0;
         font-family: "微軟正黑體";
         font-size: 40px;
         color: BLACK;
@@ -215,6 +221,7 @@
         width: 120px;
         height: 68px;
         top: 50%;
+        line-height: 68px;
         background-color: #ffd700;
         left: 45%;
         border-radius: 20px;
@@ -225,7 +232,6 @@
 
       #game_box .game_over_tip {
         color: BLACK;
-        /* text-shadow: 2px 2px 2px black; */
         font-family: "微軟正黑體";
         /* font-family: "Showcard Gothic"; */
         font-size: 40px;
@@ -268,54 +274,23 @@
         background-color: yellow;
         color: black;
       }
-    </style>
-  </head>
-  <body>
-    <div class="game_container">
-      <!-- 遊戲訊息欄 -->
-      <div id="game_info">
-        <div>
-          <div>生命力</div>
-          <div style="text-align: left;">
-            <div class="life_bar_box"><span id="lifeBar"></span></div>
-          </div>
-          <div style="display:none;">關卡</div>
-          <div><strong id="gameLevel">1</strong></div>
-          <div>當前得分</div>
-          <div id="gameCent">0</div>
-        </div>
-      </div>
-      <!-- 遊戲訊息 end -->
-      <!-- 遊戲主螢幕 start -->
-      <div id="game_box">
-        <div class="car_bar"><div id="carBox" class="car"></div></div>
-      </div>
-      <!-- 遊戲螢幕 end -->
-      <!-- 遊戲控制 start -->
-      <div id="game_control">
-        <div id="game_control_txt">
-          使用"→"跟"←"來接住水果,會依照水果數量給不同獎賞唷!
-        </div>
-        <button
-          onclick="document.getElementById('game_control').style.display='none'"
-          id="btnStart"
-        >
-          開始
-        </button>
-      </div>
-      <!-- 手機箭頭 -->
-
-      <!-- 遊戲控制 end -->
-    </div>
-
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/game.js"></script>
-    <script type="text/javascript">
-      $(function() {
-        $("#btnStart").click(function() {
-          FruitGame.Start();
-        });
-      });
-    </script>
-  </body>
-</html>
+      .time_container {    
+        position: absolute;
+        left: 10%;
+        font-family: "微軟正黑體";
+        top: 5%;
+        color: black;
+        height: 50px;
+        font-size: 35px;
+        text-align: center;
+         }
+        .left_arrow{
+          position: absolute;
+          top:84%;
+          left:3%;
+        }
+        .right_arrow{
+          position: absolute;
+          top:84%;
+          left:30%;
+        }

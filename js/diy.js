@@ -66,6 +66,7 @@
         bgc1 = '.diy_pickFruit_leftItem' + $('#f'+homeFruitNo1).attr('id');
         $(bgc1).css('background-color', "rgb(199, 129, 50)");
         setTimeout(function (){
+            // alert(document.getElementById('homeFruit2').value);
             homeFruitContent2 = document.getElementById('homeFruit2').value;
             var homeFruitNo2 = homeFruitContent2.split(',')[0];
             var homeFruitColor2 = homeFruitContent2.split(',')[1];
@@ -73,15 +74,16 @@
             bgc2 = '.diy_pickFruit_leftItem' + $('#f'+homeFruitNo2).attr('id');
             $(bgc2).css('background-color', "rgb(199, 129, 50)");
                 
-        },50);
+        },250);
         setTimeout(function (){
+            // alert(document.getElementById('homeFruit3').value);
             homeFruitContent3 = document.getElementById('homeFruit3').value;
             var homeFruitNo3 = homeFruitContent3.split(',')[0];
             var homeFruitColor3 = homeFruitContent3.split(',')[1];
             filljuice(homeFruitColor3,homeFruitNo3-1);
             bgc3 = '.diy_pickFruit_leftItem' + $('#f'+homeFruitNo3).attr('id');
             $(bgc3).css('background-color', "rgb(199, 129, 50)"); 
-            },100);
+            },450);
     }else if(document.getElementById('homeFruit2')){
         homeFruitContent1 = document.getElementById('homeFruit1').value;
         var homeFruitNo1 = homeFruitContent1.split(',')[0];
@@ -96,7 +98,7 @@
             filljuice(homeFruitColor2,homeFruitNo2-1);
             bgc2 = '.diy_pickFruit_leftItem' + $('#f'+homeFruitNo2).attr('id');
             $(bgc2).css('background-color', "rgb(199, 129, 50)");
-        },50);
+        },150);
     }else if(document.getElementById('homeFruit1')){
        homeFruitContent1 = document.getElementById('homeFruit1').value;
         var homeFruitNo1 = homeFruitContent1.split(',')[0];

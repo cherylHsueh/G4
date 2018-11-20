@@ -742,3 +742,15 @@ body {
         }
     }
 }
+body{
+.d-flex{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    .total{
+        color: #f00;
+        font-size: 30px;
+    }
+
+}
+}

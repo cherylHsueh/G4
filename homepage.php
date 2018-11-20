@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="css/homepage.css">
 </head>
 
-<body>
+<body onselectstart="return false">
 <?php 
     require_once("php/nav.php");
 try{
@@ -98,9 +98,9 @@ try{
         $arrCol[$i]=$rowFruit["fruitCol"];
         $arrInfo[$i]=$rowFruit["fruitInfo"];
         $i++;
-        if ($i==9) {
-            break;
-        }
+        // if ($i==9) {
+        //     break;
+        // }
     };
 ?>
         <section class="homepage_diy" id="homepageDiy">
@@ -644,7 +644,7 @@ $j++;
                                     <input type="button" value="back▲" id="a4">
                                 </div>
                                 <div class="homepage_about_btn3 aaa">
-                                    <a href="about.html">more&nbsp➥ </a>
+                                    <a href="about.php">more&nbsp➥ </a>
                                 </div>
                             </div>
 

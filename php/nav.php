@@ -15,9 +15,11 @@
              </div>
             <div class='ph_nav'>
                 <label for='hb_control' class='hb'><span></span></label>
-                <a href='homepage.php'>
-                    <h1 class='phone_logo'><img src='images/logo.png' alt='果然配'>果然配</h1>
-                </a>
+                <div class="ph_logoBox">
+                    <a href='homepage.php'>
+                        <h1 class='phone_logo'><img src='images/logo.png' alt='果然配'>果然配</h1>
+                    </a>
+                </div>
             </div>
 
             <div class='menu'>
@@ -27,7 +29,7 @@
                     <li><a href='homepage.php'>
                             <h1 class='menu_logo'><img src='images/logo.png' alt='果然配'>果然配</h1>
                         </a> </li>
-                    <li class='menu_item'><a href='blog.php'>果然私藏</a></li>
+                    <li class='menu_item'><a href='blog.php'>果粉私藏</a></li>
                     <li class='menu_item'><a href='about.php'>關於果然</a></li>
                 </ul>
             </div>
@@ -286,9 +288,11 @@
         if( xhr.status == 200){
           if(xhr.responseText.indexOf("not found") != -1){ //回傳的資料中有not found
             alert("帳密錯誤");
+          }else if(xhr.responseText.indexOf("account erro") != -1){
+            alert("此帳號已被停權");
+
           }else{ //登入成功
             // $id("memName").innerHTML = xhr.responseText;
-            // alert(xhr.responseText);
             //將登箱中表單上的資料清空，並隱藏起來
             $id('lightbox_section').style.display = 'none';
             $id('loginMemId').value = '';

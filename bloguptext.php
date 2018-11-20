@@ -46,7 +46,7 @@ try{
     echo $_FILES['blogImg']['error'];
 }
 ?>
-<meta http-equiv = "refresh" content = "0;url=http://localhost/G4/blog.php">
+<meta http-equiv = "refresh" content = "0;url=blog.php">
 <?php
 
 

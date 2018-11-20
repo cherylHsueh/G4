@@ -1,0 +1,776 @@
+@charset "UTF-8";
+.clearfix:after {
+  display: block;
+  content: '';
+  clear: both; }
+
+body {
+  font-family: "Microsoft JhengHei"; }
+
+.wrapper {
+  margin: 0 auto; }
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%; }
+
+@media only screen and (max-width: 767px) {
+  .cl-s-1, .cl-s-2, .cl-s-3, .cl-s-4, .cl-s-5, .cl-s-6,
+  .cl-s-7, .cl-s-8, .cl-s-9, .cl-s-10, .cl-s-11, .cl-s-12 {
+    float: left;
+    box-sizing: border-box; }
+  .cl-s-1 {
+    width: 8.33333%; }
+  .cl-s-2 {
+    width: 16.66667%; }
+  .cl-s-3 {
+    width: 25%; }
+  .cl-s-4 {
+    width: 33.33333%; }
+  .cl-s-5 {
+    width: 41.66667%; }
+  .cl-s-6 {
+    width: 50%; }
+  .cl-s-7 {
+    width: 58.33333%; }
+  .cl-s-8 {
+    width: 66.66667%; }
+  .cl-s-9 {
+    width: 75%; }
+  .cl-s-10 {
+    width: 83.33333%; }
+  .cl-s-11 {
+    width: 91.66667%; }
+  .cl-s-12 {
+    width: 100%; }
+  h2 {
+    font-size: 26px; }
+  h3 {
+    font-size: 20px; }
+  h4 {
+    font-size: 18px; }
+  p {
+    font-size: 16px; } }
+
+@media all and (min-width: 768px) {
+  .cl-md-1, .cl-md-2, .cl-md-3, .cl-md-4, .cl-md-5, .cl-md-6,
+  .cl-md-7, .cl-md-8, .cl-md-9, .cl-md-10, .cl-md-11, .cl-md-12 {
+    float: left;
+    box-sizing: border-box; }
+  .cl-md-1 {
+    width: 8.33333%; }
+  .cl-md-2 {
+    width: 16.66667%; }
+  .cl-md-3 {
+    width: 25%; }
+  .cl-md-4 {
+    width: 33.33333%; }
+  .cl-md-5 {
+    width: 41.66667%; }
+  .cl-md-6 {
+    width: 50%; }
+  .cl-md-7 {
+    width: 58.33333%; }
+  .cl-md-8 {
+    width: 66.66667%; }
+  .cl-md-9 {
+    width: 75%; }
+  .cl-md-10 {
+    width: 83.33333%; }
+  .cl-md-11 {
+    width: 91.66667%; }
+  .cl-md-12 {
+    width: 100%; }
+  h2 {
+    font-size: 32px; }
+  h3 {
+    font-size: 24px; }
+  h4 {
+    font-size: 18px; }
+  p {
+    font-size: 16px; } }
+
+@media all and (min-width: 1024px) {
+  .cl-xl-1, .cl-xl-2, .cl-xl-3, .cl-xl-4, .cl-xl-5, .cl-xl-6,
+  .cl-xl-7, .cl-xl-8, .cl-xl-9, .cl-xl-10, .cl-xl-11, .cl-xl-12 {
+    float: left;
+    box-sizing: border-box; }
+  .cl-xl-1 {
+    width: 8.33333%; }
+  .cl-xl-2 {
+    width: 16.66667%; }
+  .cl-xl-3 {
+    width: 25%; }
+  .cl-xl-4 {
+    width: 33.33333%; }
+  .cl-xl-5 {
+    width: 41.66667%; }
+  .cl-xl-6 {
+    width: 50%; }
+  .cl-xl-7 {
+    width: 58.33333%; }
+  .cl-xl-8 {
+    width: 66.66667%; }
+  .cl-xl-9 {
+    width: 75%; }
+  .cl-xl-10 {
+    width: 83.33333%; }
+  .cl-xl-11 {
+    width: 91.66667%; }
+  .cl-xl-12 {
+    width: 100%; } }
+
+img {
+  width: 100%;
+  vertical-align: middle; }
+
+a {
+  text-decoration: none;
+  color: #5e4909; }
+
+.common_btn {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding: 14px;
+  width: 160px;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: .1rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 11px;
+  overflow: hidden; }
+  .common_btn .common_btn_blobs {
+    height: 100%;
+    -webkit-filter: url(#goo);
+    filter: url(#goo);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: -3px;
+    right: -1px;
+    border-radius: 11px;
+    width: 110%; }
+    .common_btn .common_btn_blobs div {
+      width: 34%;
+      height: 100%;
+      border-radius: 100%;
+      position: absolute;
+      -webkit-transform: scale(1.4) translateY(125%) translateZ(0);
+      transform: scale(1.4) translateY(125%) translateZ(0);
+      -webkit-transition: all 700ms ease;
+      transition: all 700ms ease; }
+    .common_btn .common_btn_blobs div:nth-child(1) {
+      left: -5%; }
+    .common_btn .common_btn_blobs div:nth-child(2) {
+      left: 30%;
+      -webkit-transition-delay: 60ms;
+      transition-delay: 60ms; }
+    .common_btn .common_btn_blobs div:nth-child(3) {
+      left: 66%;
+      -webkit-transition-delay: 25ms;
+      transition-delay: 25ms; }
+  .common_btn .common_btn_txt {
+    position: relative;
+    z-index: 1;
+    -webkit-transition: color .3s;
+    transition: color .3s;
+    -webkit-transition-delay: .2s;
+    transition-delay: .2s; }
+  .common_btn:hover .common_btn_blobs div {
+    -webkit-transform: scale(1.5) translateY(0) translateZ(0);
+    transform: scale(1.5) translateY(0) translateZ(0); }
+
+/* 一級按鈕背景文字 */
+.common_btn_first {
+  background-color: #ffd700;
+  /* 一級按鈕hover過去的背景和文字顏色 */ }
+  .common_btn_first .common_btn_txt {
+    color: #603813; }
+  .common_btn_first .common_btn_blobs div {
+    background-color: #90A30B; }
+  .common_btn_first:hover .common_btn_txt {
+    color: #fff; }
+
+/* 二級按鈕背景文字 */
+.common_btn_second {
+  background-color: #90A30B;
+  /* 二級按鈕hover過去的背景和文字顏色 */ }
+  .common_btn_second .common_btn_txt {
+    color: #fff; }
+  .common_btn_second .common_btn_blobs div {
+    background-color: #ffd700; }
+  .common_btn_second:hover .common_btn_txt {
+    color: #603813; }
+
+.menu h1.menu_logo, .ph_nav h1.phone_logo {
+  font-size: 0; }
+
+#hb_control {
+  display: none; }
+
+header {
+  overflow: hidden; }
+  header nav {
+    position: fixed;
+    width: 100%;
+    z-index: 100; }
+    header nav li a {
+      font-weight: 900;
+      position: relative;
+      letter-spacing: .1em; }
+    header nav li > a:after {
+      content: '';
+      position: absolute;
+      bottom: -0.6em;
+      left: -2%;
+      width: 104%;
+      height: 5px;
+      transform: scaleX(0);
+      background-color: #603813;
+      transition: all .2s ease;
+      opacity: 0.6; }
+    header nav li > a:hover::after {
+      transform: scaleX(1); }
+    header nav li > a:hover {
+      color: #603813; }
+  header .nav_mem {
+    display: flex;
+    position: absolute;
+    z-index: 3;
+    right: 10px;
+    top: 5px; }
+    header .nav_mem p {
+      vertical-align: middle;
+      line-height: 25px;
+      margin-right: 10px; }
+    header .nav_mem .mem_pic {
+      width: 25px;
+      margin-right: 8px; }
+  header .menu {
+    font-size: 20px;
+    position: absolute;
+    width: 100%; }
+
+#svg-2 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 200%;
+  height: 130px;
+  z-index: -2; }
+
+#wave {
+  position: fixed;
+  display: block;
+  vertical-align: middle;
+  left: 0;
+  top: 0;
+  height: 140px;
+  width: 300%;
+  fill: white;
+  -webkit-animation: move 5s 1s linear infinite alternate;
+  animation: move 5s .5s linear infinite alternate; }
+
+#wave2 {
+  position: fixed;
+  display: block;
+  vertical-align: middle;
+  left: 0;
+  top: 0;
+  height: 150px;
+  width: 300%;
+  fill: #f4d66d;
+  -webkit-animation: move 10s linear infinite alternate;
+  animation: move 10s linear infinite alternate; }
+
+#robotControl:checked ~ .robot_container .robot_toggle {
+  transform: rotate(180deg);
+  transition: .5s; }
+
+#robotControl:checked ~ .robot_container {
+  bottom: 0;
+  transition: 1s; }
+
+.robot_container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  transition: 1s;
+  bottom: -450px;
+  right: 0;
+  z-index: 50;
+  width: 350px;
+  height: 500px; }
+  .robot_container div {
+    width: 100%; }
+  .robot_container .robot_titleBlock {
+    display: flex;
+    height: 10%;
+    position: relative;
+    line-height: 50px;
+    background-color: #f4d66d;
+    border-radius: 10px 10px 0 0; }
+    .robot_container .robot_titleBlock .robot_toggle {
+      width: 10%;
+      padding: 0 20px;
+      transition: .5s; }
+    .robot_container .robot_titleBlock .robot_pic {
+      position: absolute;
+      bottom: 0;
+      right: 1%;
+      width: 110px; }
+  .robot_container .robot_conversationBlock {
+    height: 82%;
+    background-color: #fff;
+    overflow: auto;
+    border: 6px solid #f4d66d;
+    border-bottom: 2px solid #f4d66d;
+    border-top: 0px; }
+    .robot_container .robot_conversationBlock .robot_text {
+      margin: 4% 2%;
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background-color: rgba(244, 214, 109, 0.8); }
+    .robot_container .robot_conversationBlock .robot_textTime {
+      color: #ddd;
+      position: relative;
+      bottom: -7px; }
+    .robot_container .robot_conversationBlock .user_conversation {
+      text-align: right; }
+      .robot_container .robot_conversationBlock .user_conversation .user_text {
+        display: inline-block;
+        background-color: rgba(244, 214, 109, 0.6);
+        padding: 8px 12px;
+        border-radius: 10px;
+        margin: 2% 2%; }
+  .robot_container .robot_inputBlock {
+    height: 8%;
+    display: flex; }
+    .robot_container .robot_inputBlock textarea {
+      width: 80%;
+      border: 1px solid #fff;
+      border-left: 6px solid #f4d66d;
+      border-top: 3px solid #f4d66d;
+      margin: 0;
+      height: 100%; }
+    .robot_container .robot_inputBlock button {
+      display: inline-block;
+      height: 100%;
+      width: 20%;
+      line-height: 40px;
+      background-color: #ffd700;
+      margin: 0;
+      padding: 0.3rem 0; }
+
+#robotControl, #hb_control {
+  display: none; }
+
+.coupon {
+  position: fixed;
+  width: 100px;
+  top: 110px;
+  right: 2%;
+  z-index: 100; }
+
+#loginName, #spanLogin {
+  margin-top: 5px;
+  margin-right: 20px; }
+
+@media only screen and (max-width: 767px) {
+  .robot_container {
+    display: none; }
+  .coupon {
+    top: 75px;
+    width: 70px; }
+  #svg-2 {
+    transition: height 1.3s 0.5s ,width 2s; }
+  #wave {
+    height: 95px;
+    transition: 1s; }
+  #wave2 {
+    height: 100px;
+    transition: width 0s 0s ,height 2s; }
+  .menu {
+    text-align: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    margin-top: 40px;
+    position: absolute;
+    left: -1000px;
+    opacity: 0;
+    transition: left 0s 1s,opacity 1s 0s; }
+    .menu .menu_item {
+      margin: 40px; }
+    .menu .menu_logo {
+      display: none; }
+  .ph_nav {
+    display: relative;
+    width: 100%;
+    margin-top: 7px; }
+    .ph_nav a {
+      display: inline-block; }
+    .ph_nav .ph_logoBox {
+      width: 60px;
+      margin: auto; }
+    .ph_nav .hb {
+      padding: 20px 15px;
+      float: left;
+      margin: 14px 0 0 5%; }
+      .ph_nav .hb span {
+        display: block;
+        height: 2px;
+        width: 25px;
+        background-color: #5e4909;
+        position: relative; }
+        .ph_nav .hb span:after, .ph_nav .hb span:before {
+          content: '';
+          display: block;
+          height: 2px;
+          width: 25px;
+          background-color: #5e4909;
+          position: absolute; }
+        .ph_nav .hb span:before {
+          top: -6px; }
+        .ph_nav .hb span:after {
+          top: 6px; } }
+
+#hb_control:checked ~ nav #svg-2 {
+  transition: 2s;
+  height: 110vh;
+  width: 900%; }
+
+#hb_control:checked ~ nav #wave {
+  transition: width 0s 2s ,height 2s;
+  animation: move2 3s 1s linear infinite alternate; }
+
+#hb_control:checked ~ nav #wave2 {
+  height: 108vh;
+  transition: 2s;
+  width: 1000%;
+  animation: move2 5s linear infinite alternate; }
+
+#hb_control:checked ~ nav .menu {
+  transition: left 0s ,opacity 2s 1s;
+  opacity: 1;
+  left: 0; }
+
+@media all and (min-width: 768px) {
+  .ph_nav {
+    display: none; }
+  #svg-2 {
+    height: 150px; }
+  .menu {
+    max-width: 1200px;
+    left: 0;
+    right: 0;
+    margin: 10px auto; }
+    .menu ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      margin: 0px 130px; }
+    .menu li {
+      display: inline-block; }
+    .menu .menu_logo {
+      width: 90px; } }
+
+@keyframes move {
+  0% {
+    transform: translate(-30%, 0%); }
+  100% {
+    transform: translate(0%, 0%); } }
+
+@keyframes move2 {
+  0% { }
+  100% {
+    transform: translate(0%, 0%); } }
+
+@-webkit-keyframes move {
+  0% {
+    transform: translate(-40%, 0%); }
+  100% {
+    transform: translate(0%, 0%); } }
+
+@-webkit-keyframes move2 {
+  0% { }
+  100% {
+    transform: translate(0%, 0%); } }
+
+* {
+  padding: 0px;
+  margin: 0px;
+  /* outline: 1px solid red; */ }
+
+header {
+  display: none; }
+
+.game_container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  /* left: 50%;
+            top: 50%;
+            margin-left: -250px;
+            margin-top: -265px; */
+  /* border: 2px solid #000; */ }
+
+#game_info {
+  left: 86%;
+  top: 68%;
+  font-family: "微軟正黑體";
+  text-align: center;
+  color: white;
+  display: block;
+  position: absolute;
+  z-index: 2; }
+
+#game_info > div {
+  margin-top: 10px; }
+
+#game_info dl dt {
+  font-weight: bold;
+  font-family: "微軟正黑體";
+  font-size: 22px;
+  text-indent: 10px; }
+
+#game_info dl dd {
+  font-size: 12px;
+  line-height: 30px;
+  text-align: center; }
+
+#game_info #gameCent,
+#game_info #gameLevel {
+  font-weight: bold;
+  text-shadow: 2px 1px #ccc;
+  color: #0000ff;
+  font-size: 16px;
+  font-family: "微软雅黑";
+  margin: 0 2px; }
+
+#game_info #gameLevel {
+  color: red; }
+
+#gameLevel {
+  display: none; }
+
+#game_info .life_bar_box {
+  display: inline-block;
+  margin-left: 8px;
+  height: 12px;
+  width: 82px;
+  /* border: 1px solid #000; */
+  box-shadow: 2px 1px 5px #ccc;
+  border-radius: 2px 2px;
+  line-height: normal;
+  overflow: hidden; }
+
+#game_info #lifeBar {
+  display: inline-block;
+  height: 10px;
+  background: green;
+  width: 80px;
+  margin-left: 1px;
+  box-shadow: 1px 1px 10px #ccc; }
+
+#game_info #lifeBar.yellow {
+  background: #ef9c26; }
+
+#game_info #lifeBar.red {
+  background: red; }
+
+/* 主螢幕 */
+#game_box {
+  /* left: 100px; */
+  top: 0px;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  /* border: 1px solid #00415e; */
+  background: url(../images/blog_backgroung5.jpg) no-repeat;
+  background-size: cover;
+  /* background-size: 100%; */
+  overflow: hidden; }
+
+#game_result {
+  background-color: pink;
+  position: absolute;
+  left: 31%;
+  top: 20%;
+  /*width: 569px;*/
+  z-index: 5;
+  /*height: 480px;*/ }
+
+#game_box .bg_layer {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  z-index: 2; }
+
+.car_bar {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  height: 95px;
+  z-index: 9; }
+
+.car_bar .car {
+  position: absolute;
+  height: 95px;
+  width: 169px;
+  background: url(../images/jie.png) no-repeat; }
+
+/* 水果大小 */
+.thing {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: 10; }
+
+.thing img {
+  width: 100%;
+  height: 100%; }
+
+#game_box .tip_box {
+  position: absolute;
+  display: inline-block;
+  background: url(images/kiss.png) no-repeat left top;
+  width: 45px;
+  height: 16px;
+  z-index: 11; }
+
+#game_box .tip_box.miss {
+  background-position: 0px 0px; }
+
+#game_box .tip_box.kiss {
+  background-position: 0px -18px; }
+
+#game_box .tip_box.bomb {
+  background-position: 0px -37px;
+  width: 94px;
+  height: 61px; }
+
+#game_box .upgrade_tip,
+#game_box .game_over_tip {
+  display: inline-block;
+  position: absolute;
+  z-index: 12;
+  font-family: "微軟正黑體";
+  font-size: 40px;
+  color: BLACK;
+  /* font-style: italic; */
+  text-shadow: 1px 1px 5px #fff;
+  width: 100%;
+  height: 40px;
+  top: 18%;
+  margin-top: -20px;
+  text-align: center; }
+
+#game_box .game_over_tip2 {
+  display: inline-block;
+  position: absolute;
+  z-index: 0;
+  font-family: "微軟正黑體";
+  font-size: 40px;
+  color: BLACK;
+  font-family: "Showcard Gothic";
+  text-shadow: 1px 1px 5px #fff;
+  width: 100%;
+  height: 40px;
+  top: 27%;
+  margin-top: -20px;
+  text-align: center; }
+
+#game_box .game_over_tip3 {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  z-index: 0;
+  font-family: "微軟正黑體";
+  font-size: 40px;
+  color: BLACK;
+  /* font-family: "Showcard Gothic"; */
+  text-shadow: 1px 1px 5px #fff;
+  width: 120px;
+  height: 68px;
+  top: 50%;
+  line-height: 68px;
+  background-color: #ffd700;
+  left: 45%;
+  border-radius: 20px;
+  margin-top: 7%;
+  text-align: center;
+  text-decoration: none; }
+
+#game_box .game_over_tip {
+  color: BLACK;
+  font-family: "微軟正黑體";
+  /* font-family: "Showcard Gothic"; */
+  font-size: 40px; }
+
+/* 開始按鈕和背景 */
+#game_control {
+  position: absolute;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  line-height: 21vh;
+  height: 100%;
+  text-align: center;
+  z-index: 11; }
+
+#game_control_txt {
+  font-size: 30px;
+  color: white;
+  font-family: "微軟正黑體";
+  margin-top: 120px; }
+
+.special {
+  width: 23%;
+  position: absolute;
+  top: 36%;
+  left: 38%; }
+
+#game_control button {
+  /* 出現手的游標 */
+  cursor: pointer;
+  height: 100px;
+  width: 150px;
+  border-radius: 20px;
+  border: 3px solid white;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: mintcream;
+  font-size: 30px; }
+
+#game_control button:hover {
+  background-color: yellow;
+  color: black; }
+
+.time_container {
+  position: absolute;
+  left: 10%;
+  font-family: "微軟正黑體";
+  top: 5%;
+  color: black;
+  height: 50px;
+  font-size: 35px;
+  text-align: center; }
+
+.left_arrow {
+  position: absolute;
+  top: 84%;
+  left: 3%; }
+
+.right_arrow {
+  position: absolute;
+  top: 84%;
+  left: 30%; }
