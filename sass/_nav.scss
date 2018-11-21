@@ -208,6 +208,9 @@ header{
     margin-top: 5px;
     margin-right: 5px;
 }
+#spanLogin{
+    cursor: pointer;
+}
 @include rwd(mobile){
     //機器人
     .robot_container{

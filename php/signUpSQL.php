@@ -16,6 +16,10 @@ try{
 	$idAccount ->execute();
 	if(empty($memId)||empty($memPsw)||empty($memName)||empty($memTel)){
 		echo "註冊失敗";
+
+		// header('location:../signUp.php');
+
+
 	}else{
 
 	$sql = "insert into member(memId,memPsw,memImg,memName,memTel)values(:memId,:memPsw,:memImg,:memName,:memTel)";

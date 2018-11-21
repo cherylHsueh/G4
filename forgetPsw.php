@@ -111,7 +111,7 @@
                             <div class="add_mem">
                                 <h3>還沒有會員?
                                     <span class="apply">
-                                        <a href="signUp.html">立即申請</span>
+                                        <a href="signUp.php">立即申請</span>
                                     </a>
                                 </h3>  
                             </div>    
