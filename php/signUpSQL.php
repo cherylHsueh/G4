@@ -17,7 +17,6 @@ try{
 	$idAccount ->execute();
 	if(empty($memId)||empty($memPsw)||empty($memName)||empty($memTel)||$memPsw!=$RememPsw){
 		echo "註冊失敗";
-		header('location:../signUp.php');
 	}else{
 
 	$sql = "insert into member(memId,memPsw,memImg,memName,memTel)values(:memId,:memPsw,:memImg,:memName,:memTel)";
@@ -48,10 +47,7 @@ try{
 
 
 	echo $memName;
-	// echo "<script type='text/javascript'>";
-	// echo "window.location.href='../homepage.php'";
-	// echo "</script>";
-	header('location:../homepage.php');
+
 
 	}
 

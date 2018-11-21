@@ -257,10 +257,12 @@
               alert("註冊成功");
               $id("memId").value = "";
               $id("memPsw").value = "";
+              $id("RememPsw").value = "";
               $id("memName").value = "";
               $id("memTel").value = "";
 							$id("loginName").innerHTML = xhr.responseText;
               $id("spanLogin").innerHTML="登出"
+              window.location.href='homepage.php';
               // header('location:http://http://localhost/G4/index.php');
 
             }
@@ -275,7 +277,7 @@
           "content-type",
           "application/x-www-form-urlencoded"
         );
-        var data_info ="memId="+ $id("memId").value + "&memPsw=" + $id("memPsw").value +"&memName=" +$id("memName").value +"&memTel=" +$id("memTel").value;
+        var data_info ="memId="+ $id("memId").value + "&memPsw=" + $id("memPsw").value +"&memName=" +$id("memName").value +"&memTel=" +$id("memTel").value+"&RememPsw=" +$id("RememPsw").value;
         xhr.send(data_info);
       }
 

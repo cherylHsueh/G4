@@ -55,7 +55,8 @@ table {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   z-index: 4;
-  display: none; }
+  display: none;
+  z-index: 30; }
 
 .lightbox_logo img {
   width: 35%;
@@ -69,10 +70,11 @@ table {
   box-sizing: border-box;
   padding: 5px 5px 0px 30px;
   position: fixed;
-  top: 50%;
+  top: 56%;
   left: 50%;
   border-radius: 30px;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  z-index: 30px; }
 
 #fruit,
 #fruit2 {

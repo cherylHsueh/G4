@@ -403,8 +403,7 @@ header {
       border: 1px solid #fff;
       border-left: 6px solid #f4d66d;
       border-top: 3px solid #f4d66d;
-      margin: 0;
-      height: 100%; }
+      margin: 0; }
     .robot_container .robot_inputBlock button {
       display: inline-block;
       height: 100%;
@@ -426,7 +425,10 @@ header {
 
 #loginName, #spanLogin {
   margin-top: 5px;
-  margin-right: 20px; }
+  margin-right: 5px; }
+
+#spanLogin {
+  cursor: pointer; }
 
 @media only screen and (max-width: 767px) {
   .robot_container {
@@ -654,6 +656,9 @@ footer {
   .signUp {
     background-color: #a4ddfa;
     width: 100%; }
+  #RememPsw {
+    position: relative;
+    right: -13%; }
   .signUp_newmem_box {
     text-align: center;
     background-color: white;
@@ -679,6 +684,14 @@ footer {
     font-size: 10px;
     margin: auto;
     display: block; }
+  .error3 {
+    width: 50px;
+    color: red;
+    font-size: 10px;
+    margin: auto;
+    display: block;
+    position: relative;
+    right: -5%; }
   .error5 {
     width: 50px;
     display: block;
@@ -718,7 +731,8 @@ footer {
     width: 50%;
     position: relative;
     margin: 15% auto 0 auto;
-    z-index: 1; }
+    z-index: 1;
+    font-size: 0; }
     .windmill img {
       width: 100%; }
   .fan {
@@ -726,7 +740,7 @@ footer {
     top: -20%;
     left: -16%;
     width: 140%;
-    animation: wind 1.25s linear infinite; }
+    animation: wind 5s linear infinite; }
     .fan img {
       width: 100%; }
   @keyframes wind {
@@ -747,6 +761,10 @@ footer {
   .confirm {
     position: relative;
     right: 14px; }
+    .confirm label {
+      position: absolute;
+      left: -3%;
+      top: 28%; }
   .tree {
     display: none; }
     .tree img {
@@ -790,7 +808,11 @@ footer {
   .sun {
     display: none; }
   .grassb {
-    display: none; } }
+    display: none; }
+  .sign_earth {
+    font-size: 0; }
+  .sign_up_dirt {
+    font-size: 0; } }
 
 @media all and (min-width: 768px) {
   .idbox {
@@ -817,6 +839,13 @@ footer {
     top: 35%;
     font-size: 10px; }
   .error2 {
+    width: 50px;
+    height: 25px;
+    position: absolute;
+    color: red;
+    top: 38%;
+    font-size: 10px; }
+  .error3 {
     width: 50px;
     height: 25px;
     position: absolute;
@@ -1038,7 +1067,8 @@ footer {
     width: 100%;
     height: 8px;
     bottom: 8%;
-    position: absolute; }
+    position: absolute;
+    font-size: 0; }
     .sign_up_dirt img {
       width: 100%;
       height: 80px; }

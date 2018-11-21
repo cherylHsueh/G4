@@ -403,8 +403,7 @@ header {
       border: 1px solid #fff;
       border-left: 6px solid #f4d66d;
       border-top: 3px solid #f4d66d;
-      margin: 0;
-      height: 100%; }
+      margin: 0; }
     .robot_container .robot_inputBlock button {
       display: inline-block;
       height: 100%;
@@ -426,7 +425,10 @@ header {
 
 #loginName, #spanLogin {
   margin-top: 5px;
-  margin-right: 20px; }
+  margin-right: 5px; }
+
+#spanLogin {
+  cursor: pointer; }
 
 @media only screen and (max-width: 767px) {
   .robot_container {
@@ -715,6 +717,10 @@ body {
 .homepage_animate {
   overflow: hidden; }
 
+.homepage_body {
+  position: absolute;
+  width: 100%; }
+
 .homepage_diy {
   width: 100%;
   background-image: url("../images/homepage/cloudBg.png"), linear-gradient(180deg, transparent 0%, transparent 30%, #fff 30%, #fff 100%);
@@ -830,6 +836,9 @@ body {
   .diy_pickFruit_leftItem:hover {
     transform: scale(1.2);
     transition: .8s; }
+
+.diy_start2 a:hover {
+  color: #5e4909; }
 
 .owl-nav {
   position: absolute;
@@ -1030,18 +1039,6 @@ body {
       cursor: pointer;
       position: relative;
       z-index: 4; }
-      .homepage_test_questionContainer .homepage_test_answerBlock h4:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 68%;
-        width: 0;
-        transition: .8s;
-        box-shadow: 0px 0px 0px 0px #fa5d42; }
-      .homepage_test_questionContainer .homepage_test_answerBlock h4:hover:after {
-        transition: .8s;
-        width: 77%;
-        box-shadow: 0px 0px 15px 6px #fa5d42; }
 
 #homepage_blog_ribbon {
   width: 100%;
@@ -1110,7 +1107,8 @@ body {
       position: relative; }
       .homepage_blog_platBlock .homepage_blog_personsBox div img {
         position: relative;
-        transition: 2s; }
+        transition: 2s;
+        cursor: pointer; }
     .homepage_blog_platBlock .homepage_blog_personsBox .homepage_blog_person1 {
       top: 0;
       margin-top: -15%; }
@@ -1126,11 +1124,11 @@ body {
 .homepage_blog_platBlock .homepage_blog_personsBox .homepage_blog_person-active {
   top: -30px;
   transform: scale(1.1);
-  transition: 2s; }
+  transition: 1s; }
 
 .homepage_blog_btnBlock {
   opacity: 0;
-  transition: 2s 2s;
+  transition: 2s 1s;
   margin: 4% 1%;
   float: right;
   display: flex;
@@ -1143,8 +1141,6 @@ body {
 
 .homepage_blog_papperBlock {
   opacity: 0;
-  bottom: -500px;
-  transition: bottom 2s 1s ,opacity 0s 1s;
   box-sizing: border-box;
   position: relative; }
   .homepage_blog_papperBlock .homepage_blog_plate {
@@ -1202,6 +1198,9 @@ body {
     float: right;
     padding: 1% 0; }
 
+footer {
+  display: none; }
+
 .footer_wrapper .footer_block {
   background-color: none;
   padding: 10px 0; }
@@ -1241,12 +1240,12 @@ body {
       display: none; }
     .homepage_animate .homepage_test_animatePic2 {
       width: 45%;
-      top: 20%;
+      top: 25%;
       left: -25%; }
     .homepage_animate .homepage_test_animatePic3 {
       width: 25%;
-      top: 20%;
-      left: 80%; }
+      top: 17%;
+      left: 91%; }
     .homepage_animate .homepage_test_animatePic4 {
       width: 37%;
       top: 42%;
@@ -1431,7 +1430,9 @@ body {
   .homepage_blog {
     height: 87vh; }
   .homepage_blog_papperBlock {
-    margin-top: 5%; }
+    margin-top: 5%;
+    bottom: -450px;
+    transition: bottom 1s .3s ,opacity 1s 0s; }
   .homepage_blog_titleBox {
     padding: 0px 25px; }
     .homepage_blog_titleBox .homepage_blog_fruit {
@@ -1652,11 +1653,11 @@ body {
     border: 5px solid #FFF;
     max-width: 400px;
     width: 80%;
-    height: 56%;
+    height: 54%;
     position: absolute;
     left: 8%;
     right: 8%;
-    top: 20%;
+    top: 24%;
     margin: 0 auto;
     border-radius: 10px;
     overflow: hidden;
@@ -1667,7 +1668,8 @@ body {
       border: none;
       font-weight: bold;
       font-size: 16px;
-      color: #6a3906; }
+      color: #6a3906;
+      text-align: center; }
     #homepage_about_content .homepage_about_content_box {
       width: 100%;
       height: 300%;
@@ -2149,6 +2151,18 @@ body {
       width: 12%;
       top: 20%;
       right: 11%; }
+  .homepage_test_answerBlock h4:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 68%;
+    width: 0;
+    transition: .8s;
+    box-shadow: 0px 0px 0px 0px #fa5d42; }
+  .homepage_test_answerBlock h4:hover:after {
+    transition: .8s;
+    width: 77%;
+    box-shadow: 0px 0px 15px 6px #fa5d42; }
   .homepage_about {
     position: relative; }
     .homepage_about .homepage_about_underGround #homepage_about_ground {
@@ -2358,6 +2372,7 @@ body {
       width: 100%;
       background: none;
       border: none;
+      text-align: center;
       font-weight: bold;
       font-size: 16px;
       color: #6a3906;
@@ -2749,7 +2764,9 @@ body {
     margin-left: 3.3333%;
     margin-top: -6%;
     padding: 2% 2% 5%;
-    width: 66.6666%; }
+    width: 66.6666%;
+    bottom: -750px;
+    transition: bottom 1s .3s ,opacity 1s 0s; }
     .homepage_blog_papperBlock .homepage_blog_plate {
       top: auto;
       bottom: -9%;
@@ -3091,7 +3108,8 @@ body {
       font-weight: bold;
       font-size: 16px;
       color: #6a3906;
-      cursor: pointer; }
+      cursor: pointer;
+      text-align: center; }
     #homepage_about_content .homepage_about_content_box {
       width: 100%;
       height: 300%;
@@ -3130,7 +3148,7 @@ body {
           color: #fff;
           font-size: 1vw;
           font-weight: bold;
-          line-height: 20px;
+          line-height: 26px;
           padding: 20px 20px;
           border: 2px solid #fff;
           border-radius: 10px; }

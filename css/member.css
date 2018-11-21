@@ -1,4 +1,51 @@
 @charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 .clearfix:after {
   display: block;
   content: '';
@@ -205,53 +252,6 @@ a {
   .common_btn_second:hover .common_btn_txt {
     color: #603813; }
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
-
-body {
-  line-height: 1; }
-
-ol, ul {
-  list-style: none; }
-
-blockquote, q {
-  quotes: none; }
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
 .menu h1.menu_logo, .ph_nav h1.phone_logo {
   font-size: 0; }
 
@@ -403,8 +403,7 @@ header {
       border: 1px solid #fff;
       border-left: 6px solid #f4d66d;
       border-top: 3px solid #f4d66d;
-      margin: 0;
-      height: 100%; }
+      margin: 0; }
     .robot_container .robot_inputBlock button {
       display: inline-block;
       height: 100%;
@@ -426,7 +425,10 @@ header {
 
 #loginName, #spanLogin {
   margin-top: 5px;
-  margin-right: 20px; }
+  margin-right: 5px; }
+
+#spanLogin {
+  cursor: pointer; }
 
 @media only screen and (max-width: 767px) {
   .robot_container {
@@ -666,7 +668,6 @@ footer {
     margin: auto; }
     .member_memberInfo_photo_box img {
       width: 100%;
-      border: 3px solid #aaa;
       border-radius: 50%; }
   .uploadBtn {
     position: relative;
@@ -789,9 +790,10 @@ footer {
       width: 90%;
       background-color: rgba(0, 0, 0, 0.5);
       position: fixed;
-      right: 0;
-      left: 0;
-      margin: 13% auto; }
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: auto; }
   .member_orderSearch_block_lightbox_box table {
     margin: auto; }
   .member_orderSearch_block_lightbox_title th {
@@ -805,7 +807,7 @@ footer {
     border: 1px solid #ccc;
     text-align: center; }
   .member_orderSearch_block_lightbox_picture img {
-    width: 42%;
+    width: 100%;
     vertical-align: middle;
     padding: 20%; }
   .member_coupon_title {
@@ -865,7 +867,6 @@ footer {
     border-radius: 100%;
     padding: 40px 0; }
     .member_memberInfo_photo_box img {
-      border: 3px solid #aaa;
       border-radius: 50%;
       width: 100%; }
   .uploadBtn {
