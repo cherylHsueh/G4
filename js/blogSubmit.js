@@ -18,12 +18,12 @@ function doFirst(){
     }
     
     //比例預設0.33333
-    $('#fruitratio1').text('0.333333');
-    $('#fruitratio2').text('0.333333');
-    $('#fruitratio3').text('0.333333');
-    $('#fruitRatio1').attr("value",'0.333333');
-    $('#fruitRatio2').attr("value",'0.333333');
-    $('#fruitRatio3').attr("value",'0.333333');
+    $('#fruitratio1').text('0.333');
+    $('#fruitratio2').text('0.333');
+    $('#fruitratio3').text('0.333');
+    $('#fruitRatio1').attr("value",'0.333');
+    $('#fruitRatio2').attr("value",'0.333');
+    $('#fruitRatio3').attr("value",'0.333');
 
 };
 

@@ -249,7 +249,7 @@ catch(PDOException $e){
         </div>
 
     </footer>
->
+
 </body>
 
 </html>

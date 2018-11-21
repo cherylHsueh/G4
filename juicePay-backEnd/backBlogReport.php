@@ -28,6 +28,11 @@ try {
     .content{
         width: 50%;
     }
+
+    .selector a:nth-child(5) li{
+    background-color: #F4D66D;
+    color:#9C7837;
+    }
 </style>
 
 <body>
@@ -48,7 +53,7 @@ try {
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>被檢舉文章</th>
+                            <th>被檢舉文章編號</th>
                             <th>被檢舉人名稱</th>
                             <th>檢舉內容</th>
                             <th>狀態</th>
