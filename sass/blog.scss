@@ -1609,7 +1609,7 @@ body {
 
     .blogIn_ButtonContainer {
         text-align: center;
-
+        overflow: hidden;
         a.common_btn {
             margin: 10% 1%;
         }
@@ -3546,6 +3546,7 @@ body {
     }
 
     .blogIn_ButtonContainer {
+        overflow: hidden;
         position: relative;
         // z-index: ;
         text-align: center;

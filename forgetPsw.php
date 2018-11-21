@@ -155,6 +155,7 @@
                 swal(xhr.responseText, "","success");
 				document.getElementById('memTel').value="";
 				document.getElementById('memForgetNewPsw').value="";
+                window.location='member.php';
                 }else{
                 swal(xhr.responseText, "","error");
                 }

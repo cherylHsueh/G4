@@ -22,7 +22,7 @@
  <?php
  try{
     require_once("../connectBooks.php");
-    require_once('../backNav.php'); 
+    require_once('backNav.php'); 
  ?>
         <div class="col-xl-10">
             <div class="container">

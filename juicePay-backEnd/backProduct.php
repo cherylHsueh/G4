@@ -12,6 +12,10 @@
 </head>
 
 <style>
+.displayimg img{
+    width:100px;
+}
+
 body .selector a:nth-child(4) li{
     background-color: #F4D66D;
     color:#9C7837;
@@ -19,9 +23,17 @@ body .selector a:nth-child(4) li{
 .pdimg{
     width:100px;
 }
-input{
-    border:none;
+input.info,textarea.info{
+    border:#26c029 2px solid;
+    border-radius: 10px;
+    padding:  0 10px;
+    background-color: transparent;
 }
+input,.newPd input ,.newPd textarea{
+    border:#ccc 1px solid;
+    border-radius: 0px;
+}
+
 </style>
 
 <body>
@@ -45,10 +57,11 @@ input{
                                 <tr class="newPd">
                                     <th>系列選擇</th>
                                     <td>
-                                    <label for="c1" style="display: block;"><input type="radio" name="newpdcate" value="1" id="c1"><p>美白系列</p></label>
-                                    <label for="c2" style="display: block;"><input type="radio" name="newpdcate" value="2" id="c2"><p>健康系列</p></label>
-                                    <label for="c3" style="display: block;"><input type="radio" name="newpdcate" value="3" id="c3"><p>補鐵系列</p></label>
-                                    <label for="c4" style="display: block;"><input type="radio" name="newpdcate" value="4" id="c4"><p>減肥系列</p></label>
+                                    <label for="c1"><p><input style="display: block;" type="radio" name="newpdcate" value="1" id="c1">美白系列</p></label>
+                                    <label for="c2"><p><input style="display: block;" type="radio" name="newpdcate" value="2" id="c2">健康系列</p></label>
+                                    <label for="c3"><p><input style="display: block;" type="radio" name="newpdcate" value="3" id="c3">補鐵系列</p></label>
+                                    <label for="c4"><p><input style="display: block;" type="radio" name="newpdcate" value="4" id="c4">減肥系列</p></label>
+                                    </td>
                                 </tr>
                                 <tr class="newPd">
                                     <th>價錢</th>
@@ -88,7 +101,7 @@ input{
                             <th>商品價格</th>
                             <th>商品敘述</th>
                             <th>商品圖片</th>
-                            <th>商品狀態</th>
+                            <th>狀態</th>
                             <th>商品詳情</th>
                             <th>上下架管理</th>
                         </tr>
@@ -106,12 +119,12 @@ try {
 
                 <tr>
                     <form action="backProductInfo.php" method="post" enctype="multipart/form-data" id="changeInfo<?php echo $prodRow['offPdNo'] ?>">
-                            <td><input calss="fruitNotRead" readonly　name="offPdNo" type="text" value="<?php echo $prodRow['offPdNo']?>"></td>
-                            <td><input calss="fruitNotRead" readonly　name="offPdName" type="text" value="<?php echo $prodRow['offPdName']?>"></td>
-                            <td><input calss="fruitNotRead" readonly　name="offCateNo" type="text" value="<?php echo $prodRow['offCateNo']?>"></td>
-                            <td><input calss="fruitNotRead" readonly　name="pdPrice" type="text" value="<?php echo $prodRow['pdPrice']?>"></td>
-                            <td><input calss="fruitNotRead ppinfo" readonly　name="offPdInfo" type="text" value="<?php echo $prodRow['offPdInfo']?>"></td>
-                            <td class="pdimg"><img src="../images/pd/<?php  echo $prodRow['offPdImg']?>"></td>
+                            <td><input class="fruitNotRead" name="offPdNo" type="text" value="<?php echo $prodRow['offPdNo']?>"></td>
+                            <td><input class="fruitNotRead" name="offPdName" type="text" value="<?php echo $prodRow['offPdName']?>"></td>
+                            <td><input class="fruitNotRead" name="offCateNo" type="text" value="<?php echo $prodRow['offCateNo']?>"></td>
+                            <td><input class="fruitNotRead" name="pdPrice" type="text" value="<?php echo $prodRow['pdPrice']?>"></td>
+                            <td><input class="fruitNotRead" name="offPdInfo" type="text" value="<?php echo $prodRow['offPdInfo']?>"></td>
+                            <td class="displayimg"><img src="../images/pd/<?php  echo $prodRow['offPdImg']?>"></td>
                     </form>
 
                             <td>
@@ -149,15 +162,6 @@ try {
 
 
                 </table>
-
-
-                <ul class="pagination justify-content-center">
-
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-
-                </ul>
             </div>
 
         </div>
@@ -187,7 +191,7 @@ try {
             this.removeAttribute('readonly');
         })
         $('.turnpdInfo').click(function(){
-        $('#changeInfo'+this.id).submit();
+            $('#changeInfo'+this.id).submit();
         })
 
     //水果上下架狀態改變
