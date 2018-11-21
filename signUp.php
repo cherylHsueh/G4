@@ -40,7 +40,7 @@
                 <label for="memId">帳號</label
                 ><input
                   type="text"
-                  placeholder="英文開頭及最六位數字"
+                  placeholder="英文開頭及六位數字"
                   id="memId"
                   class="inputform"
                   name="memId"
@@ -58,25 +58,26 @@
                 <label for="memPsw">密碼</label>
                 <input
                   type="password"
-                  placeholder="英文開頭及最六位數字"
+                  placeholder="英文開頭及六位數字"
                   name="memPsw"
                   id="memPsw"
                   class="inputform"
                 />
                 <span class="error2"></span>
               </div>
-              <!--
+           
                 <div class="confirm">
                   <label for="RememPsw">確認密碼</label>
                   <input
                     type="password"
-                    placeholder=""
+                    placeholder="請再輸入一次新密碼"
                     name="RememPsw"
                     id="RememPsw"
                     class="inputform"
                   />
+                  <span class="error3"></span>
                 </div>
-              -->
+            
               <div>
                 <label for="memName">姓名</label>
                 <input
@@ -213,6 +214,14 @@
               $(".error2").text("");
             } else {
               $(".error2").text("字數不符");
+              $(this).css("border-color", "red");
+            }
+          }),
+          $("#RememPsw").blur(function() {
+            if ($(this).val()==$("#memPsw").val()) {
+              $(".error3").text("");
+            } else {
+              $(".error3").text("密碼不同");
               $(this).css("border-color", "red");
             }
           }),
