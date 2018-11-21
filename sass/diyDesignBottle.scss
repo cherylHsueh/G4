@@ -520,10 +520,7 @@ body {
     }
   }
 }
-#diy_designBottle_diyImg {
-  position: absolute;
-  top:0;
-}  
+ 
 #diy_designBottle_dragText{
   position: absolute;
   left: 10px;
@@ -575,19 +572,12 @@ body {
       width: 100%;
     }
   }
-}
-#diy_designBottle_diyImg {
-  position: absolute;
-  top:0;
 }  
 #diy_designBottle_dragText{
   position: absolute;
   left: 10px;
   bottom:0;
 }
-// #diy_designBottle_botSvg{
-//   height: 420px;
-// }
 //行動版----------------------------------------------------------------------------
 @include rwd(mobile) {
   .diy_customizeBox {
@@ -701,9 +691,14 @@ body {
   #diy_designBottle_botSvg{
     width: 69px;
   }
-  svg{
+  svg{ 
     display: none;
   }
+  #diy_designBottle_diyImg {
+    position: absolute;
+    top:0;
+    left:-50%;
+  } 
 }
 //平板--------------------------------------------------------------------------------------------
 @include rwd(medium) {
