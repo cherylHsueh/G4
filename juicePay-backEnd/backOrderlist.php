@@ -14,6 +14,10 @@
     * {
         /* outline: 1px #f00 solid; */
     }
+    .selector a:nth-child(7) li{
+        background-color: #F4D66D;
+        color:#9C7837;
+    }
 </style>
 
 <body>
