@@ -11,6 +11,19 @@
     <link rel="stylesheet" href="css/backEnd.css">
 </head>
 
+<style>
+body .selector a:nth-child(4) li{
+    background-color: #F4D66D;
+    color:#9C7837;
+}
+.pdimg{
+    width:100px;
+}
+input{
+    border:none;
+}
+</style>
+
 <body>
     <div class="d-flex">
         <?php require_once('backNav.php'); 
@@ -29,13 +42,13 @@
                                     <th>商品名稱</th>
                                     <td><input type="text" name="pdName"></td>
                                 </tr>
-                                <tr class="newPd_status">
+                                <tr class="newPd">
                                     <th>系列選擇</th>
                                     <td>
-                                    <label for="c1" style="display: block;"><p><input type="radio" name="newpdcate" value="1" id="c1">美白系列</p></label>
-                                    <label for="c2" style="display: block;"><p><input type="radio" name="newpdcate" value="2" id="c2">健康系列</p></label>
-                                    <label for="c3" style="display: block;"><p><input type="radio" name="newpdcate" value="3" id="c3">補鐵系列</p></label>
-                                    <label for="c4"><p><input id="c4" type="radio" name="newpdcate" value="4" style="">減肥系列</p></label></td>
+                                    <label for="c1" style="display: block;"><input type="radio" name="newpdcate" value="1" id="c1"><p>美白系列</p></label>
+                                    <label for="c2" style="display: block;"><input type="radio" name="newpdcate" value="2" id="c2"><p>健康系列</p></label>
+                                    <label for="c3" style="display: block;"><input type="radio" name="newpdcate" value="3" id="c3"><p>補鐵系列</p></label>
+                                    <label for="c4" style="display: block;"><input type="radio" name="newpdcate" value="4" id="c4"><p>減肥系列</p></label>
                                 </tr>
                                 <tr class="newPd">
                                     <th>價錢</th>
@@ -93,12 +106,12 @@ try {
 
                 <tr>
                     <form action="backProductInfo.php" method="post" enctype="multipart/form-data" id="changeInfo<?php echo $prodRow['offPdNo'] ?>">
-                            <td><input calss="productNotRead" name="offPdNo" type="text" value="<?php echo $prodRow['offPdNo']?>"></td>
-                            <td><input calss="productNotRead" name="offPdName" type="text" value="<?php echo $prodRow['offPdName']?>"></td>
-                            <td><input calss="productNotRead" name="offCateNo" type="text" value="<?php echo $prodRow['offCateNo']?>"></td>
-                            <td><input calss="productNotRead" name="pdPrice" type="text" value="<?php echo $prodRow['pdPrice']?>"></td>
-                            <td><input calss="productNotRead" name="offPdInfo" type="text" value="<?php echo $prodRow['offPdInfo']?>"></td>
-                            <td><img src="../images/pd/<?php  echo $prodRow['offPdImg']?>"></td>
+                            <td><input calss="fruitNotRead" readonly　name="offPdNo" type="text" value="<?php echo $prodRow['offPdNo']?>"></td>
+                            <td><input calss="fruitNotRead" readonly　name="offPdName" type="text" value="<?php echo $prodRow['offPdName']?>"></td>
+                            <td><input calss="fruitNotRead" readonly　name="offCateNo" type="text" value="<?php echo $prodRow['offCateNo']?>"></td>
+                            <td><input calss="fruitNotRead" readonly　name="pdPrice" type="text" value="<?php echo $prodRow['pdPrice']?>"></td>
+                            <td><input calss="fruitNotRead ppinfo" readonly　name="offPdInfo" type="text" value="<?php echo $prodRow['offPdInfo']?>"></td>
+                            <td class="pdimg"><img src="../images/pd/<?php  echo $prodRow['offPdImg']?>"></td>
                     </form>
 
                             <td>
@@ -169,10 +182,10 @@ try {
             $('.newPdUp').hide();
         })
     //更改內容
-        // $('.productNotRead').click(function(){
-        // this.className+=' info';
-        // this.removeAttribute('readonly');
-        // })
+        $('.fruitNotRead').click(function(){
+            this.className+=' info';
+            this.removeAttribute('readonly');
+        })
         $('.turnpdInfo').click(function(){
         $('#changeInfo'+this.id).submit();
         })
