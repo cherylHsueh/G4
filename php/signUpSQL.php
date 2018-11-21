@@ -6,6 +6,7 @@ try{
 	require_once("../connectBooks.php");
 	$memId=$_POST["memId"];
 	$memPsw=$_POST["memPsw"];
+	$RememPsw=$_POST["RememPsw"];
 	$memImg='profile.png';
 	// $memImg=$_POST["memImg"];
 	$memName=$_POST["memName"];
@@ -14,12 +15,9 @@ try{
 	$idAccount = $pdo ->prepare($sql);
 	$idAccount ->bindValue(":memId",$memId);
 	$idAccount ->execute();
-	if(empty($memId)||empty($memPsw)||empty($memName)||empty($memTel)){
+	if(empty($memId)||empty($memPsw)||empty($memName)||empty($memTel)||$memPsw!=$RememPsw){
 		echo "註冊失敗";
-
-		// header('location:../signUp.php');
-
-
+		header('location:../signUp.php');
 	}else{
 
 	$sql = "insert into member(memId,memPsw,memImg,memName,memTel)values(:memId,:memPsw,:memImg,:memName,:memTel)";
