@@ -1,5 +1,5 @@
  <header>
-     <input type='checkbox' name=' id='hb_control'>
+     <input type='checkbox' name='' id='hb_control'>
         <nav>
             <svg preserveAspectRatio='none' id='svg-2' viewBox='0 0 100 80' enable-background='new 0 0 100 80'>
                 <animate dur='2s' attributeName='x' repeatCount='indefinite' from='0' to='100' xlink:href='#wave'></animate>

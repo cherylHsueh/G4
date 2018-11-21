@@ -162,6 +162,7 @@ footer {
         position: relative;
         margin: 15% auto 0 auto;
         z-index: 1;
+        font-size: 0;
         img {
             width: 100%;
         }
@@ -174,7 +175,7 @@ footer {
         img {
             width: 100%;
         }
-        animation: wind 1.25s linear infinite;
+        animation: wind 5s linear infinite;
     }
     @keyframes wind {
         0% {
@@ -262,6 +263,12 @@ footer {
     }
     .grassb {
         display: none;
+    }
+    .sign_earth{
+        font-size: 0;
+    }
+    .sign_up_dirt{
+        font-size: 0;
     }
 }
 // 桌機版
@@ -581,6 +588,7 @@ footer {
         height: 8px;
         bottom: 8%;
         position: absolute;
+        font-size: 0;
         img {
             width: 100%;
             height: 80px;

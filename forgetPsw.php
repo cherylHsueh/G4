@@ -6,22 +6,28 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/forgetPsw.css">
+    <link rel="stylesheet" href="css/loginFruit.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
     <title>忘記密碼</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/plugin/TweenMax.min.js"></script>
-
-    <script type="text/javascript" src="js/ScrollMagic/ScrollMagic.min.js"></script>
-
-    <script type="text/javascript" src="js/ScrollMagic/animation.gsap.min.js"></script>
-    <script type="text/javascript" src="js/ScrollMagic/debug.addIndicators.min.js"></script>
     <script src="js/global.js"></script>
+    <script src="js/plugin/sweetalert2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/plugin/TweenMax.min.js"></script>
+
+    <script src="js/plugin/scrollMagic/ScrollMagic.min.js"></script>
+    <script src="js/plugin/scrollMagic/animation.gsap.min.js"></script>
+    <script src="js/plugin/scrollMagic/debug.addIndicators.min.js"></script>
 </head>
 
 <body>
-<?php
+   <?php  
     require_once('php/nav.php');
-    require_once('connect.php');
-?>
+    // require_once("connectBooks.php");
+    // $sql = "select * from member";
+    // $memberForgetPsw = $pdo->query($sql);
+    // $forgetPswRow = $memberForgetPsw ->fetch(PDO::FETCH_ASSOC);
+    // echo $forgetPswRow ->memTel;
+   ?>
     <div class="nav_space"></div>
     <section>
         <div class="nav clearfix"></div>
@@ -83,14 +89,15 @@
 
                 <div class="forgetPsw_newPsw_box">
                     <h2>忘記密碼</h2>
+
                     <div class="psw_inner">
                         <div class="box_phone">
                             <span>手機:</span>
-                            <input type="text" name="memId">
+                            <input type="text" name="memTel" id="memTel">
                         </div>
                         <div class="box_psw">
                             <span>新密碼 :</span>
-                            <input type="text" name="memPsw">
+                            <input type="password" name="memForgetNewPsw" id="memForgetNewPsw">
                         </div>
                         <div class="psw_btn">
                             <button class="common_btn common_btn_first" type="submit" id="newpswsubmit" value="登入">
@@ -132,6 +139,72 @@
 
         </div>
     </footer>
+
+
+<script>
+	function changePsw(){ 
+		  //產生XMLHttpRequest物件
+		  xhr = new XMLHttpRequest();
+		  
+		  //註冊callback function 
+		  xhr.onreadystatechange = function (){
+			// console.log( xhr.readyState);
+			if( xhr.readyState == 4){//或是可以寫XMLHttpRequest.DONE
+              if( xhr.status == 200 ){ //server端有正確的執行成功
+                if(xhr.responseText.indexOf("密碼修改成功") !=-1){
+                swal(xhr.responseText, "","success");
+				document.getElementById('memTel').value="";
+				document.getElementById('memForgetNewPsw').value="";
+                }else{
+                swal(xhr.responseText, "","error");
+                }
+				
+			  }else{
+				  alert(xhr.status);
+			  }
+			}
+		  }
+		  //設定好所要連結的程式
+		  var url = "php/forgertPswModify.php";
+		  xhr.open("POST", url, true);
+		  xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+		  var data_info ="memForgetNewPsw="+document.getElementById('memForgetNewPsw').value + "&memTel="+document.getElementById('memTel').value;
+
+		  //送出資料
+		  xhr.send(data_info)
+	
+	}//function_checkOldPsw 
+
+	//ajax檢查手機是否輸入正確 
+	function checkTel(){
+    // var hiddenTel =document.getElementById('hiddenTel').value;
+	var memTel =document.getElementById('memTel').value;
+    var memForgetNewPsw = document.getElementById('memForgetNewPsw').value;
+    changePsw();
+    // if(hiddenTel != memTel ){
+	// 	swal("手機輸入錯誤", "","error");
+	// 	document.getElementById('memTel').value="";
+	//     document.getElementById('memForgetNewPsw').value="";
+	// }else{
+    //     changePsw();
+    // }
+
+	};
+
+	window.addEventListener("load",function(){
+		var submitBtn = document.querySelector('#newpswsubmit');
+		submitBtn.addEventListener('click',checkTel,false);
+	})
+	
+
+	 
+</script>	
+
+
+
+
+
+
 
 </body>
 
