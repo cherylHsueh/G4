@@ -748,6 +748,20 @@ path:hover {
     width: 100%;
   }
 }
+.about_taiwan_background_windmillFan{
+  width: 20%;
+  position: absolute;
+  left: 6%;
+  bottom: 25%;
+  z-index: 1;
+  img{
+    width: 100%;
+    animation: rotate 2s infinite linear;
+  }
+}
+
+
+
 // 小花
 .about_taiwan_background_grassflowr {
   width: 11%;
