@@ -12,11 +12,13 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>果然配註冊</title>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
     <link rel="stylesheet" href="css/signUp.css" />
     <link rel="stylesheet" href="css/loginFruit.css">
-    <script src="js/global.js"></script>
     <script src="js/plugin/jquery.min.js"></script>
+    <script src="js/plugin/sweetalert2.min.js"></script>
     <script src="https://unpkg.com/color-js@1.0.3/color.js"></script>
+    <script src="js/global.js"></script>
   </head>
 
   <body>
@@ -249,25 +251,32 @@
           if (xhr.status == 200) {
             if (xhr.responseText.indexOf("註冊失敗") != -1) {
               //回傳的資料中有not found
-              alert("註冊失敗");
+              swal({
+                    type: 'error',
+                    title: '註冊失敗哦～',
+                    text: '請輸入正確格式',
+                    });
               console.log("1");
             } else {
               //註冊成功
               console.log("2");
-              alert("註冊成功");
+              
               $id("memId").value = "";
               $id("memPsw").value = "";
               $id("RememPsw").value = "";
               $id("memName").value = "";
               $id("memTel").value = "";
 							$id("loginName").innerHTML = xhr.responseText;
-              $id("spanLogin").innerHTML="登出"
+              $id("spanLogin").innerHTML="登出";
+              swal({
+                    type: 'success',
+                    title: '註冊成功！!',
+                    text: '歡迎加入果然配～',
+                    });
               window.location.href='homepage.php';
-              // header('location:http://http://localhost/G4/index.php');
 
             }
           } else {
-            console.log("3");
             alert(xhr.statusText);
           }
         };

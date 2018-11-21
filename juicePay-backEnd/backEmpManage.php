@@ -22,12 +22,45 @@
  <?php
  try{
     require_once("../connectBooks.php");
-    require_once('backNav.php'); 
+    require_once('../backNav.php'); 
  ?>
         <div class="col-xl-10">
             <div class="container">
                 <div class="banner">
                     <img src="images/banner.png" alt="">
+                </div>
+                 <div class="newPdUpArea">
+                    <button id="showUpPd">新增管理員</button>
+                    <div class="newPdUp">
+                        <table class="table">
+                            <form action="backAddmanage.php" enctype="multipart/form-data" method="post" id="upForm">
+                                <tr class="newPd">
+                                    <th>員工帳號</th>
+                                    <td><input type="text" name="managerId"></td>
+                                </tr>
+                                <tr class="newPd">
+                                    <th>員工密碼</th>
+                                    <td><input type="text" name="managerPsw"></td>
+                                </tr>
+                               <tr class="newPd">
+                                    <th>職位</th>
+                                    <td><input type="text" name="position"></td>
+                                </tr>
+                                <tr class="newPd_status">
+                                    <th>權限狀態</th>
+                                    <td><p><input type="radio" name="manageStatus" value="1">有權</p>
+                                        <p><input type="radio" name="manageStatus" value="0" style="">停權</p></td>
+                                </tr>
+                                <tr class="newPd">
+                                    <td colspan="2">
+                                        <button type="submit">確認新增</button>
+                                        <button type="reset" id="cancle">取消上傳</button>
+                                    </td>
+                                </tr>
+                            </form>
+                        </table>
+                    </div>
+
                 </div>
                 <table class="table">
                     <thead>
@@ -35,7 +68,7 @@
                             <th>員工帳號</th>
                             <th>員工密碼</th>
                             <th>職位</th>
-                            <th>停權狀態</th>
+                            <th>權限狀態</th>
                             <th>權限管理</th>
                         </tr>
                     </thead>
@@ -97,7 +130,14 @@
 
     <script>
 
-
+//新增管理員
+        $('#showUpPd').click(function () {
+            $('.newPdUp').show();
+        });
+//取消上傳
+        $('#cancle').click(function(){
+            $('.newPdUp').hide();
+        })
 //停權有權狀態改變
         $('.changeStatus').click(function () {
             managerNo=this.id.split('_')[1];
