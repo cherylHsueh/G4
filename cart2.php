@@ -216,11 +216,25 @@
             if( loginStatus.innerHTML == "登入"){
                 showLoginForm();
             }
+            else if($('#receiver').val()==''){
+                swal({
+                    type: 'error',
+                    title: '沒有填寫收件人哦!',
+                    text: '請輸入收件人',
+                    })
+            }
             else if(phonerule.test($('#recePhone').val()) == false){
                     swal({
                     type: 'error',
                     title: '手機格式不對哦!',
                     text: '請輸入正確格式',
+                    })
+            }
+            else if($('#address').val() == ''){
+                    swal({
+                    type: 'error',
+                    title: '沒有輸入地址哦!',
+                    text: '請輸入地址',
                     })
             }
             else{
