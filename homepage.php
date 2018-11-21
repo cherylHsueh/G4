@@ -86,6 +86,7 @@ try{
             
 
         </section>
+        <div class="homepage_body">
 <!-- 果汁DIY -->
 <?php
     $sql1 = "select * from fruititem where fruitStatus=1";
@@ -515,7 +516,7 @@ echo '
                         <div class="homepage_blog_plate homepage_blog_plate1"><img src="images/tag',$j,'.png" alt=""></div>
                         <div class="homepage_blog_btnBlock">
 
-                                <a class="common_btn common_btn_first" href="blog.html">
+                                <a class="common_btn common_btn_first" href="blog.php">
                                     <span class="common_btn_txt">我要分享</span>
                                     <div class="common_btn_blobs">
                                         <div></div>
@@ -523,7 +524,7 @@ echo '
                                         <div></div>
                                     </div>
                                 </a>
-                                <a class="common_btn common_btn_second" href="blogSubmit.html">
+                                <a class="common_btn common_btn_second" href="blogSubmit.php">
                                     <span class="common_btn_txt">更多文章</span>
                                     <div class="common_btn_blobs">
                                         <div></div>
@@ -600,8 +601,7 @@ $j++;
                             <div class="homepage_about_step1 aaa">
                                 <img src="images/About_First step/aboutUs.png" alt="" id="homepage_about_step1Title">
                                 <p>
-                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp說到果汁，你會想到什麼呢？不外乎是加水、加糖、加香精的飲品，且多半是在夜市、路邊攤等處販售的，對吧？！
-                                    果然配有別於一般的市售果汁，消費者可以挑選3種水果還 能依照自己喜歡的比例做調整，果然配強調100%水果原汁，亦即不加水、不加糖、不加人工添加物的現作果汁。我們
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp果然配有別於一般的市售果汁，消費者可以挑選3種水果還能依照自己喜歡的比例做調整，果然配強調100%水果原汁，亦即不加水、不加糖、不加人工添加物的現作果汁。我們
                                     採用歐洲原裝進口設備，不需預先去皮、去籽，可將整顆水果丟入機器中，因此能完整保留水果的原味及營養。果然配期許喚起社會大眾對於飲食健康的覺醒，進而帶動一場劃時代的飲食革命。
                                     <!-- <a href="about.html">&nbsp看更多&nbsp <img src="images/About_Png/arrow.png" alt=""></a> -->
                                 </p>
@@ -652,7 +652,7 @@ $j++;
                     </div>
                     <div data-posx="37" class="aaa" style="left: 20%; opacity: 0;"></div>
                 </div>
-
+            </div>
                 <footer>
                     <div class="footer_wrapper">
                         <div class="footer_block clearfix">

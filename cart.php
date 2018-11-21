@@ -65,7 +65,7 @@
             </tr>
 
 <?php 
-if(isset($_SESSION["offPdName"]) == false || $_SESSION["offPdName"] == []){ //尚無購物資料
+if(isset($_SESSION["offPdName"]) == false || $_SESSION["offPdName"] == null){ //尚無購物資料
     echo "<tr><td id='noProduct'>尚無購物資料</td></tr>";
     $total=0;
 }else{

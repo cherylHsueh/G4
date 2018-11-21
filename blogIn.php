@@ -462,7 +462,7 @@ function $id(id){
 };
  function init(){
     $id("blogIn_Msg_BoxBtn").onclick = sendForm;
-    $id("blogIn_Msg_Content").onkeydown= keydown;
+    $id("blogIn_Msg_Content").onkeypress= keydown;
     };
  
  window.onload = init;
