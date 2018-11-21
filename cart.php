@@ -159,11 +159,16 @@ if(isset($_SESSION["offPdName"]) == false || $_SESSION["offPdName"] == null){ //
         if( loginStatus.innerHTML == "登入"){
             showLoginForm();
         }else if(document.getElementById('noProduct')){
-            swal({
-                    type: 'error',
-                    title: '您尚未買東西喔!',
-                    text: '歡迎至果然特調逛逛喔～',
-                    })
+
+
+            swal({ 
+            title: '您尚未買東西喔', 
+            text: '歡迎至果然特調逛逛喔～', 
+            type: 'warning',
+            confirmButtonColor: '#ffd700',
+            confirmButtonText: '<a href="product.php" style="font-color:#603813; font-weight:bold;">來去果然特調</a>', 
+            })
+
         }else{
             document.getElementById('myForm').submit();
         }
