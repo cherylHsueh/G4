@@ -5,6 +5,7 @@
 // * {
 //     outline: 1px solid #F00;
 // }
+
 * {
     color: #722a0a;
     text-decoration: none;
@@ -27,7 +28,6 @@ body {
 
 .action-button {
     padding: 10px 40px;
-    float: left;
     border-radius: 10px;
     font-family: 'Pacifico', cursive;
     color: #FFF;
@@ -57,93 +57,109 @@ body {
 
 @include rwd(mobile) {
     .gudie_animation_box {
-        position: relative;
         width: 100%;
         height: 100vh;
+        text-align: center;
 
         #waterMalon {
             position: absolute;
             width: 35%;
-            left: 31%;
-            bottom: -20%;
-            animation: waterMalonUp 4s ease 0s infinite alternate;
+            left: 33%;
+            bottom: 20%;
+            animation: waterMalonUp2 4s ease 0s infinite alternate;
             // animation: hideshow 6s ease infinite;
             // @include transition(all 600ms ceaser($Easing easeInBounce));
         }
 
         h1 {
             margin-top: -20%;
-            font-size: 40px;
+            font-size: 50px;
         }
 
         .gudie_bottonBox {
             width: 100%;
-            margin-top: 30%;
-            cursor: pointer;
+            margin-top: 20%;
+            // text-align: center;
 
-            .gudie_front {
-                display: inline-block;
-                // width: 200px;
-                // background-color: #3d9955;
-                // border-radius: 15px;
-                margin: 10% 10% 5% 30%;
-    
 
-                &:hover {
-                    transform: translate(0px, 5px);
-                    -webkit-transform: translate(0px, 5px);
-                    border-bottom: 1px solid #669644;
+            .gudie_botton01 {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                .gudie_front {
+                    // text-align: center;
+
+
+                    // width: 200px;
+                    // background-color: #3d9955;
+                    // border-radius: 15px;
+
+
+
+                    &:hover {
+                        transform: translate(0px, 5px);
+                        -webkit-transform: translate(0px, 5px);
+                        border-bottom: 1px solid #669644;
+                    }
+
+                    p {
+                        color: #FFF;
+                        font-size: 35px;
+                        padding: 10px;
+                        font-family: 微軟正黑體;
+                    }
                 }
+            }
 
-                p {
-                    color: #FFF;
-                    font-size: 35px;
-                    padding: 10px;
-                    font-family: 微軟正黑體;
+            .gudie_botton02 {
+                width: 100%;
+                margin: 10% auto 0 auto;
+                display: flex;
+                justify-content: center;
+
+                .gudie_rear {
+                    text-align: center;
+
+                    // width: 200px;
+                    // background-color: #3d9955;
+                    // border-radius: 15px;
+                    &:hover {
+                        transform: translate(0px, 5px);
+                        -webkit-transform: translate(0px, 5px);
+                        border-bottom: 1px solid #D1B358;
+                    }
+
+
+                    p {
+                        color: #FFF;
+                        font-size: 35px;
+                        padding: 10px;
+                        font-family: 微軟正黑體;
+                    }
                 }
             }
 
-            .gudie_rear {
-                display: inline-block;
-                margin: 10% 10% 5% 30%;
-
-                // width: 200px;
-                // background-color: #3d9955;
-                // border-radius: 15px;
-                &:hover {
-                    transform: translate(0px, 5px);
-                    -webkit-transform: translate(0px, 5px);
-                    border-bottom: 1px solid #D1B358;
-                }
-
-
-                p {
-                    color: #FFF;
-                    font-size: 35px;
-                    padding: 10px;
-                    font-family: 微軟正黑體;
-                }
-            }
         }
 
         .orange {
             position: absolute;
             right: -1%;
-            width: 25%;
-            animation: orangeUp 4s ease 0s infinite alternate;
+            width: 28%;
+            bottom: 20%;
+            animation: orangeUp2 4s ease 0s infinite alternate;
         }
 
         .banana {
             position: absolute;
             left: 3%;
             width: 25%;
-            animation: bananaUp 4s ease 0s infinite alternate;
+            bottom: 15%;
+            animation: bananaUp2 4s ease 0s infinite alternate;
         }
 
         .gudie_back {
-            position: absolute;
-            bottom: 0;
-            z-index: -1;
+            display: none;
         }
     }
 }
@@ -172,52 +188,62 @@ body {
 
         .gudie_bottonBox {
             width: 100%;
+            margin-top: 5%;
             cursor: pointer;
 
-            .gudie_front {
+            .gudie_botton01 {
+                width: 45%;
                 display: inline-block;
-                // width: 200px;
-                // background-color: #3d9955;
-                // border-radius: 15px;
-                margin-top: 5%;
-                margin-left: 25%;
-                margin-right: 25%;
+                .gudie_front {
+                    display: inline-block;
+                    // width: 200px;
+                    // background-color: #3d9955;
+                    // border-radius: 15px;
+                    margin-top: 5%;
+                    margin-left: 25%;
+                    margin-right: 25%;
 
-                &:hover {
-                    transform: translate(0px, 5px);
-                    -webkit-transform: translate(0px, 5px);
-                    border-bottom: 1px solid #669644;
+                    &:hover {
+                        transform: translate(0px, 5px);
+                        -webkit-transform: translate(0px, 5px);
+                        border-bottom: 1px solid #669644;
+                    }
+
+                    p {
+                        color: #FFF;
+                        font-size: 70px;
+                        padding: 10px;
+                        font-family: 微軟正黑體;
+                    }
                 }
+            }
+            .gudie_botton02 {
+                width: 45%;
+                display: inline-block;
 
-                p {
-                    color: #FFF;
-                    font-size: 70px;
-                    padding: 10px;
-                    font-family: 微軟正黑體;
+                .gudie_rear {
+                    display: inline-block;
+                    margin-top: 5%;
+
+                    // width: 200px;
+                    // background-color: #3d9955;
+                    // border-radius: 15px;
+                    &:hover {
+                        transform: translate(0px, 5px);
+                        -webkit-transform: translate(0px, 5px);
+                        border-bottom: 1px solid #D1B358;
+                    }
+
+
+                    p {
+                        color: #FFF;
+                        font-size: 70px;
+                        padding: 10px;
+                        font-family: 微軟正黑體;
+                    }
                 }
             }
 
-            .gudie_rear {
-                display: inline-block;
-                margin-top: 5%;
-
-                // width: 200px;
-                // background-color: #3d9955;
-                // border-radius: 15px;
-                &:hover {
-                    transform: translate(0px, 5px);
-                    -webkit-transform: translate(0px, 5px);
-                    border-bottom: 1px solid #D1B358;
-                }
-
-
-                p {
-                    color: #FFF;
-                    font-size: 70px;
-                    padding: 10px;
-                    font-family: 微軟正黑體;
-                }
-            }
         }
 
         .orange {
@@ -309,5 +335,71 @@ body {
 
     100% {
         bottom: 15%;
+    }
+}
+
+@keyframes waterMalonUp2 {
+    0% {
+        bottom: -5%;
+    }
+
+    25% {
+        bottom: -11%;
+    }
+
+    50% {
+        bottom: -5%;
+    }
+
+    75% {
+        bottom: -11%;
+    }
+
+    100% {
+        bottom: 20%;
+    }
+}
+
+@keyframes orangeUp2 {
+    0% {
+        bottom: 0%;
+    }
+
+    25% {
+        bottom: -5%;
+    }
+
+    50% {
+        bottom: 0%;
+    }
+
+    75% {
+        bottom: -5%;
+    }
+
+    100% {
+        bottom: 45%;
+    }
+}
+
+@keyframes bananaUp2 {
+    0% {
+        bottom: -5%;
+    }
+
+    25% {
+        bottom: -15%;
+    }
+
+    50% {
+        bottom: -5%;
+    }
+
+    75% {
+        bottom: -15%;
+    }
+
+    100% {
+        bottom: 30%;
     }
 }
