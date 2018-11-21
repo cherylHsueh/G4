@@ -88,7 +88,7 @@ footer{
 		margin:auto;
 			img{
 				width: 100%;
-				border:3px solid #aaa;
+				// border:3px solid #aaa;
 				border-radius:50%; 
 				
 			}
@@ -253,12 +253,12 @@ footer{
 	position: relative;
 	.member_orderSearch_block_lightbox_box{
 		width: 90%;
-		background-color:rgba(0,0,0,0.5); 
+		background-color: rgba(0, 0, 0, 0.5);
 		position: fixed;
-		right: 0;
-		left: 0;
-		margin: 13% auto;
-	
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		margin: auto;
 	}
 }
 
@@ -281,7 +281,7 @@ footer{
 }
 .member_orderSearch_block_lightbox_picture {
 	img{
-		width: 42%;
+		width: 100%;
 		vertical-align: middle;
 		padding: 20%;
 	}
@@ -361,7 +361,7 @@ footer{
 		border-radius: 100%;
 		padding: 40px 0;
 			img{
-				border:3px solid #aaa;
+				// border:3px solid #aaa;
 				border-radius:50%; 
 				width: 100%;
 			}
