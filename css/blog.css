@@ -1513,7 +1513,8 @@ body {
     margin: 0 3% 1%;
     background-color: #fefefe; }
   .blogIn_ButtonContainer {
-    text-align: center; }
+    text-align: center;
+    overflow: hidden; }
     .blogIn_ButtonContainer a.common_btn {
       margin: 10% 1%; }
   .umbrellaMandarin img {
@@ -2529,7 +2530,8 @@ body {
         background-color: #90A30B; }
   .blogIn_ButtonContainer {
     position: relative;
-    text-align: center; }
+    text-align: center;
+    overflow: hidden; }
     .blogIn_ButtonContainer a.common_btn {
       margin: 50px 20px; }
   .umbrellaMandarin img {
