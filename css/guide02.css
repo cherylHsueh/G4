@@ -270,7 +270,6 @@ body {
 
 .action-button {
   padding: 10px 40px;
-  float: left;
   border-radius: 10px;
   font-family: 'Pacifico', cursive;
   color: #FFF;
@@ -288,60 +287,64 @@ body {
 
 @media only screen and (max-width: 767px) {
   .gudie_animation_box {
-    position: relative;
     width: 100%;
-    height: 100vh; }
+    height: 100vh;
+    text-align: center; }
     .gudie_animation_box #waterMalon {
       position: absolute;
       width: 35%;
-      left: 31%;
-      bottom: -20%;
-      animation: waterMalonUp 4s ease 0s infinite alternate; }
+      left: 33%;
+      bottom: 20%;
+      animation: waterMalonUp2 4s ease 0s infinite alternate; }
     .gudie_animation_box h1 {
-      margin-top: -20%;
-      font-size: 40px; }
+      margin-top: -25%;
+      font-size: 50px; }
     .gudie_animation_box .gudie_bottonBox {
       width: 100%;
-      margin-top: 30%;
-      cursor: pointer; }
-      .gudie_animation_box .gudie_bottonBox .gudie_front {
-        display: inline-block;
-        margin: 10% 10% 5% 30%; }
-        .gudie_animation_box .gudie_bottonBox .gudie_front:hover {
+      margin-top: 10%; }
+      .gudie_animation_box .gudie_bottonBox .gudie_botton01 {
+        width: 100%;
+        display: flex;
+        justify-content: center; }
+        .gudie_animation_box .gudie_bottonBox .gudie_botton01 .gudie_front:hover {
           transform: translate(0px, 5px);
           -webkit-transform: translate(0px, 5px);
           border-bottom: 1px solid #669644; }
-        .gudie_animation_box .gudie_bottonBox .gudie_front p {
+        .gudie_animation_box .gudie_bottonBox .gudie_botton01 .gudie_front p {
           color: #FFF;
           font-size: 35px;
           padding: 10px;
           font-family: 微軟正黑體; }
-      .gudie_animation_box .gudie_bottonBox .gudie_rear {
-        display: inline-block;
-        margin: 10% 10% 5% 30%; }
-        .gudie_animation_box .gudie_bottonBox .gudie_rear:hover {
-          transform: translate(0px, 5px);
-          -webkit-transform: translate(0px, 5px);
-          border-bottom: 1px solid #D1B358; }
-        .gudie_animation_box .gudie_bottonBox .gudie_rear p {
-          color: #FFF;
-          font-size: 35px;
-          padding: 10px;
-          font-family: 微軟正黑體; }
+      .gudie_animation_box .gudie_bottonBox .gudie_botton02 {
+        width: 100%;
+        margin: 5% auto 0 auto;
+        display: flex;
+        justify-content: center; }
+        .gudie_animation_box .gudie_bottonBox .gudie_botton02 .gudie_rear {
+          text-align: center; }
+          .gudie_animation_box .gudie_bottonBox .gudie_botton02 .gudie_rear:hover {
+            transform: translate(0px, 5px);
+            -webkit-transform: translate(0px, 5px);
+            border-bottom: 1px solid #D1B358; }
+          .gudie_animation_box .gudie_bottonBox .gudie_botton02 .gudie_rear p {
+            color: #FFF;
+            font-size: 35px;
+            padding: 10px;
+            font-family: 微軟正黑體; }
     .gudie_animation_box .orange {
       position: absolute;
       right: -1%;
-      width: 25%;
-      animation: orangeUp 4s ease 0s infinite alternate; }
+      width: 28%;
+      bottom: 20%;
+      animation: orangeUp2 4s ease 0s infinite alternate; }
     .gudie_animation_box .banana {
       position: absolute;
       left: 3%;
       width: 25%;
-      animation: bananaUp 4s ease 0s infinite alternate; }
+      bottom: 15%;
+      animation: bananaUp2 4s ease 0s infinite alternate; }
     .gudie_animation_box .gudie_back {
-      position: absolute;
-      bottom: 0;
-      z-index: -1; } }
+      display: none; } }
 
 @media all and (min-width: 768px) {
   .gudie_animation_box {
@@ -359,33 +362,40 @@ body {
       font-size: 150px; }
     .gudie_animation_box .gudie_bottonBox {
       width: 100%;
+      margin-top: 5%;
       cursor: pointer; }
-      .gudie_animation_box .gudie_bottonBox .gudie_front {
-        display: inline-block;
-        margin-top: 5%;
-        margin-left: 25%;
-        margin-right: 25%; }
-        .gudie_animation_box .gudie_bottonBox .gudie_front:hover {
-          transform: translate(0px, 5px);
-          -webkit-transform: translate(0px, 5px);
-          border-bottom: 1px solid #669644; }
-        .gudie_animation_box .gudie_bottonBox .gudie_front p {
-          color: #FFF;
-          font-size: 70px;
-          padding: 10px;
-          font-family: 微軟正黑體; }
-      .gudie_animation_box .gudie_bottonBox .gudie_rear {
-        display: inline-block;
-        margin-top: 5%; }
-        .gudie_animation_box .gudie_bottonBox .gudie_rear:hover {
-          transform: translate(0px, 5px);
-          -webkit-transform: translate(0px, 5px);
-          border-bottom: 1px solid #D1B358; }
-        .gudie_animation_box .gudie_bottonBox .gudie_rear p {
-          color: #FFF;
-          font-size: 70px;
-          padding: 10px;
-          font-family: 微軟正黑體; }
+      .gudie_animation_box .gudie_bottonBox .gudie_botton01 {
+        width: 45%;
+        display: inline-block; }
+        .gudie_animation_box .gudie_bottonBox .gudie_botton01 .gudie_front {
+          display: inline-block;
+          margin-top: 5%;
+          margin-left: 25%;
+          margin-right: 25%; }
+          .gudie_animation_box .gudie_bottonBox .gudie_botton01 .gudie_front:hover {
+            transform: translate(0px, 5px);
+            -webkit-transform: translate(0px, 5px);
+            border-bottom: 1px solid #669644; }
+          .gudie_animation_box .gudie_bottonBox .gudie_botton01 .gudie_front p {
+            color: #FFF;
+            font-size: 70px;
+            padding: 10px;
+            font-family: 微軟正黑體; }
+      .gudie_animation_box .gudie_bottonBox .gudie_botton02 {
+        width: 45%;
+        display: inline-block; }
+        .gudie_animation_box .gudie_bottonBox .gudie_botton02 .gudie_rear {
+          display: inline-block;
+          margin-top: 5%; }
+          .gudie_animation_box .gudie_bottonBox .gudie_botton02 .gudie_rear:hover {
+            transform: translate(0px, 5px);
+            -webkit-transform: translate(0px, 5px);
+            border-bottom: 1px solid #D1B358; }
+          .gudie_animation_box .gudie_bottonBox .gudie_botton02 .gudie_rear p {
+            color: #FFF;
+            font-size: 70px;
+            padding: 10px;
+            font-family: 微軟正黑體; }
     .gudie_animation_box .orange {
       position: absolute;
       right: -1%;
@@ -436,3 +446,39 @@ body {
     bottom: -35%; }
   100% {
     bottom: 15%; } }
+
+@keyframes waterMalonUp2 {
+  0% {
+    bottom: -5%; }
+  25% {
+    bottom: -11%; }
+  50% {
+    bottom: -5%; }
+  75% {
+    bottom: -11%; }
+  100% {
+    bottom: 20%; } }
+
+@keyframes orangeUp2 {
+  0% {
+    bottom: 0%; }
+  25% {
+    bottom: -5%; }
+  50% {
+    bottom: 0%; }
+  75% {
+    bottom: -5%; }
+  100% {
+    bottom: 45%; } }
+
+@keyframes bananaUp2 {
+  0% {
+    bottom: -5%; }
+  25% {
+    bottom: -15%; }
+  50% {
+    bottom: -5%; }
+  75% {
+    bottom: -15%; }
+  100% {
+    bottom: 30%; } }

@@ -13,6 +13,10 @@ if( isset($_SESSION["offPdName"][$offPdNo]) == false){ //購物車中尚無此�
 	$_SESSION["quantity"][$offPdNo] = $_GET["quantity"];
 	$_SESSION["pdClassNo"][$offPdNo] = 0;
 	
+}else if( isset($_SESSION["offPdName"][$offPdNo]) == true){ //購物車中尚無此商品
+
+	$_SESSION["quantity"][$offPdNo] = $_GET["quantity"];
+   
 }
 
 

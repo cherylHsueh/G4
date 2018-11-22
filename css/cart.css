@@ -403,8 +403,7 @@ header {
       border: 1px solid #fff;
       border-left: 6px solid #f4d66d;
       border-top: 3px solid #f4d66d;
-      margin: 0;
-      height: 100%; }
+      margin: 0; }
     .robot_container .robot_inputBlock button {
       display: inline-block;
       height: 100%;
@@ -426,7 +425,10 @@ header {
 
 #loginName, #spanLogin {
   margin-top: 5px;
-  margin-right: 20px; }
+  margin-right: 5px; }
+
+#spanLogin {
+  cursor: pointer; }
 
 @media only screen and (max-width: 767px) {
   .robot_container {
@@ -876,6 +878,8 @@ footer {
           font-size: 1vw; } }
 
 @media all and (min-width: 768px) {
+  .footer_wrapper {
+    margin-top: 150px; }
   body {
     background-color: #a4ddfa; }
   .space {

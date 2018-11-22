@@ -403,8 +403,7 @@ header {
       border: 1px solid #fff;
       border-left: 6px solid #f4d66d;
       border-top: 3px solid #f4d66d;
-      margin: 0;
-      height: 100%; }
+      margin: 0; }
     .robot_container .robot_inputBlock button {
       display: inline-block;
       height: 100%;
@@ -426,7 +425,10 @@ header {
 
 #loginName, #spanLogin {
   margin-top: 5px;
-  margin-right: 20px; }
+  margin-right: 5px; }
+
+#spanLogin {
+  cursor: pointer; }
 
 @media only screen and (max-width: 767px) {
   .robot_container {
@@ -699,6 +701,9 @@ path:hover {
 .bounce {
   animation: bounce 0.5s infinite alternate;
   -webkit-animation: bounce 0.8s infinite alternate; }
+
+.signUp_section {
+  overflow: hidden; }
 
 @media only screen and (max-width: 767px) {
   .about_start_background_block {
@@ -1101,6 +1106,15 @@ path:hover {
     z-index: 1; }
     .about_taiwan_background_windmill img {
       width: 100%; }
+  .about_taiwan_background_windmillFan {
+    width: 20%;
+    position: absolute;
+    left: 6%;
+    bottom: 25%;
+    z-index: 1; }
+    .about_taiwan_background_windmillFan img {
+      width: 100%;
+      animation: rotate 2s infinite linear; }
   .about_taiwan_background_grassflowr {
     width: 11%;
     position: absolute;
@@ -1409,7 +1423,8 @@ path:hover {
     width: 6%;
     position: absolute;
     bottom: 42%;
-    left: 10%; }
+    left: 10%;
+    z-index: 5; }
     .about_start_content_bounce img {
       width: 100%;
       margin: 10% 0 0;
@@ -1565,7 +1580,8 @@ path:hover {
     width: 6%;
     max-width: 120px;
     right: 16%;
-    top: 20%; }
+    top: 20%;
+    z-index: 10; }
     .about_factory_content_factoryTitle img {
       margin: 10% 0 0;
       width: 100%; }
@@ -1925,15 +1941,17 @@ path:hover {
   .about_end_background_flowerpot {
     width: 10%;
     position: absolute;
-    bottom: 0%;
-    left: 0%; }
+    bottom: -1%;
+    left: 0%;
+    z-index: 10; }
     .about_end_background_flowerpot img {
       width: 100%; }
   .about_end_background_bounce {
     width: 6%;
     position: absolute;
     bottom: 35%;
-    left: 20%; }
+    left: 20%;
+    z-index: 10; }
     .about_end_background_bounce img {
       width: 100%;
       margin: 10% 0 0;

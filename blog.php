@@ -360,8 +360,8 @@ function keyPress(event){
                 </div>
                 <div class="blog_Forum_OptionLeftBox clearfix">
                   
-                    <a type="button" id="NewShare" class="blog_Forum_OptionLeftBox_NewShare" name="" >最新分享</a>
-                    <a type="button" id="HighScore" class="blog_Forum_OptionLeftBox_HighScore" name="" >最高評分</a>
+                    <a id="NewShare" class="blog_Forum_OptionLeftBox_NewShare" name="" >最新分享</a>
+                    <a id="HighScore" class="blog_Forum_OptionLeftBox_HighScore" name="" >最高評分</a>
                 </div>
                 </form>
             

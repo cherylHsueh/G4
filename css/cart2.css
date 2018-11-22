@@ -403,8 +403,7 @@ header {
       border: 1px solid #fff;
       border-left: 6px solid #f4d66d;
       border-top: 3px solid #f4d66d;
-      margin: 0;
-      height: 100%; }
+      margin: 0; }
     .robot_container .robot_inputBlock button {
       display: inline-block;
       height: 100%;
@@ -426,7 +425,10 @@ header {
 
 #loginName, #spanLogin {
   margin-top: 5px;
-  margin-right: 20px; }
+  margin-right: 5px; }
+
+#spanLogin {
+  cursor: pointer; }
 
 @media only screen and (max-width: 767px) {
   .robot_container {
@@ -719,7 +721,6 @@ body {
       padding: 10px; }
   .cart_fillInData_control {
     width: 80%;
-    height: 55vh;
     margin: 0 auto 1vh auto;
     border: 3px solid #6a3906;
     border-bottom-left-radius: 10px;
@@ -943,7 +944,6 @@ body {
     margin: 0 auto; }
   .cart_fillInData_control {
     width: 700px;
-    height: 500px;
     margin: 0 auto 20px auto;
     border: 3px solid #6a3906;
     border-bottom-left-radius: 10px;

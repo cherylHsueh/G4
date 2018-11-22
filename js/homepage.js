@@ -141,8 +141,9 @@ if(windowWidth>=1024){
             swal({
                 type: 'error',
                 title: '果汁已經滿了哦!',
-                confirmButtonText: '<a class="diy_start" href="diy.php">開始製作</a>',
-                confirmButtonColor: '#ffd700',
+                confirmButtonText: '<a>開始製作</a>',
+				confirmButtonColor: '#ffd700',
+				confirmButtonClass:'diy_start2',
                 showCancelButton: true,
                 cancelButtonColor: '#d33',
                 cancelButtonText: '取消',
@@ -150,7 +151,9 @@ if(windowWidth>=1024){
                 customClass: 'animated tada',
                 // text: 'Something went wrong!',
                 footer: '<p>開始製作您的專屬果汁</p>'
-            })
+			})
+			var diyButton2 = document.querySelector('.diy_start2');
+			diyButton2.addEventListener('click',diySubmit);
         }
     }
 //點選開始製作
@@ -366,7 +369,7 @@ if(windowWidth>=1024){
 	var ship = document.getElementById('homepageTestShip');
 	if(windowWidth<768){
 		var cloud2 = TweenMax.to('.homepage_test_animatePic2',2,{x:30});
-		var cloud3 = TweenMax.to('.homepage_test_animatePic3',2,{x:-60});
+		var cloud3 = TweenMax.to('.homepage_test_animatePic3',2,{x:-30});
 		var fruit5 = TweenMax.to('.homepage_test_animatePic5',2.5,{y:50});
 		var fruit8 = TweenMax.to('.homepage_test_animatePic8',3.5,{y:90});
 		var cloud4 = TweenMax.to('.homepage_test_animatePic4',2,{x:-60});
@@ -597,7 +600,9 @@ if(windowWidth>=1024){
 	
 
 //果粉私藏
-	header_blog();
+	if(windowWidth>768){
+		header_blog();
+	};
 	var sceneBlog =new ScrollMagic.Scene({
 		triggerElement:'#homepageBlog',
 		
@@ -643,7 +648,7 @@ if(windowWidth>=1024){
 		},3000);
 		setTimeout(function(){
 				document.querySelector('#blogPerson1').className+=" homepage_blog_person-active";
-			},6500);
+			},4500);
 	})
 	// .addIndicators({
     //     name: 'blog',

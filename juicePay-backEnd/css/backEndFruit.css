@@ -118,3 +118,7 @@ td.fruit_pic{
     border-radius: 7px;
     padding:2px;
 }
+.selector a:nth-child(2) li{
+    background-color: #F4D66D;
+    color:#9C7837;
+}

@@ -44,10 +44,12 @@ section div{
 }
 
  .pdItem{
+     display: flex;
+     align-items: center;
+     justify-content: center;
      overflow: hidden;
      background-color: $sky;
-     padding-top:250px;
-     padding-bottom: 200px;
+     height:100vh;
      text-align: left;
      position: relative;
      .wrapper{
@@ -124,6 +126,11 @@ section div{
 }
 
 @include rwd(mobile){
+    .pdItem{
+        display: block;
+        padding-top:150px;
+        padding-bottom:200px;
+    }
     .pdItem_imgBlock{
         padding: 10px;
     }
@@ -133,10 +140,6 @@ section div{
     .pdItem_textBlock{
         padding: 0 20px;
         text-align: center;
-    }
-    .pdItem{
-       padding-top:200px;
-       padding-bottom:100px;
     }
     .itemwrapper{
         padding:20px; 

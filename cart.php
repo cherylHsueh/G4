@@ -65,7 +65,7 @@
             </tr>
 
 <?php 
-if(isset($_SESSION["offPdName"]) == false || $_SESSION["offPdName"] == []){ //尚無購物資料
+if(isset($_SESSION["offPdName"]) == false || $_SESSION["offPdName"] == null){ //尚無購物資料
     echo "<tr><td id='noProduct'>尚無購物資料</td></tr>";
     $total=0;
 }else{
@@ -159,11 +159,16 @@ if(isset($_SESSION["offPdName"]) == false || $_SESSION["offPdName"] == []){ //�
         if( loginStatus.innerHTML == "登入"){
             showLoginForm();
         }else if(document.getElementById('noProduct')){
-            swal({
-                    type: 'error',
-                    title: '您尚未買東西喔!',
-                    text: '歡迎至果然特調逛逛喔～',
-                    })
+
+
+            swal({ 
+            title: '您尚未買東西喔', 
+            text: '歡迎至果然特調逛逛喔～', 
+            type: 'warning',
+            confirmButtonColor: '#ffd700',
+            confirmButtonText: '<a href="product.php" style="font-color:#603813; font-weight:bold;">來去果然特調</a>', 
+            })
+
         }else{
             document.getElementById('myForm').submit();
         }

@@ -403,8 +403,7 @@ header {
       border: 1px solid #fff;
       border-left: 6px solid #f4d66d;
       border-top: 3px solid #f4d66d;
-      margin: 0;
-      height: 100%; }
+      margin: 0; }
     .robot_container .robot_inputBlock button {
       display: inline-block;
       height: 100%;
@@ -426,7 +425,10 @@ header {
 
 #loginName, #spanLogin {
   margin-top: 5px;
-  margin-right: 20px; }
+  margin-right: 5px; }
+
+#spanLogin {
+  cursor: pointer; }
 
 @media only screen and (max-width: 767px) {
   .robot_container {
@@ -637,10 +639,12 @@ section div {
     left: -10%; } }
 
 .pdItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   background-color: #a4ddfa;
-  padding-top: 250px;
-  padding-bottom: 200px;
+  height: 100vh;
   text-align: left;
   position: relative; }
   .pdItem .wrapper {
@@ -705,6 +709,10 @@ section div {
   font-size: 18px; }
 
 @media only screen and (max-width: 767px) {
+  .pdItem {
+    display: block;
+    padding-top: 150px;
+    padding-bottom: 200px; }
   .pdItem_imgBlock {
     padding: 10px; }
   .pdItem_buyBlock {
@@ -712,9 +720,6 @@ section div {
   .pdItem_textBlock {
     padding: 0 20px;
     text-align: center; }
-  .pdItem {
-    padding-top: 200px;
-    padding-bottom: 100px; }
   .itemwrapper {
     padding: 20px; } }
 

@@ -202,7 +202,10 @@ body{
 .homepage_animate{
     overflow: hidden;
 }
-
+.homepage_body{
+    position: absolute;
+    width: 100%;
+}
 //第二屏
 .homepage_diy{
     width: 100%;
@@ -346,6 +349,12 @@ body{
         transition: .8s;
     }
 }
+
+//sweetalert
+.diy_start2 a:hover{
+    color:$mainfontcolor;
+}
+//輪播
 .owl-nav{
     position: absolute;
     left:10%;
@@ -576,20 +585,6 @@ body{
             cursor: pointer;
             position: relative;
             z-index: 4;
-            &:after{
-                content: '';
-                display: block;
-                position: absolute;
-                top: 68%;
-                width: 0;
-                transition: .8s;
-                box-shadow: 0px 0px 0px 0px #fa5d42;
-            }
-            &:hover:after{
-                transition: .8s;
-                width: 77%;
-                box-shadow: 0px 0px 15px 6px #fa5d42;
-            }
         }
         
     }
@@ -670,6 +665,7 @@ body{
             img{
             position: relative;
             transition: 2s;
+            cursor: pointer;
             }
         }
         .homepage_blog_person1{
@@ -692,12 +688,12 @@ body{
 .homepage_blog_platBlock .homepage_blog_personsBox .homepage_blog_person-active{
     top:-30px;
     transform: scale(1.1);
-    transition:2s;
+    transition:1s;
 }
 
 .homepage_blog_btnBlock{
     opacity: 0;
-    transition: 2s 2s;
+    transition: 2s 1s;
     margin: 4% 1%;
     float: right;
     display: flex;
@@ -711,8 +707,7 @@ body{
 }
 .homepage_blog_papperBlock{
     opacity: 0;
-    bottom:-500px;
-    transition: bottom 2s 1s ,opacity 0s 1s;
+
 
     box-sizing: border-box;
     position: relative;
@@ -783,6 +778,9 @@ body{
 
 
 //footer
+footer{
+    display: none;
+}
 .footer_wrapper .footer_block {
     background-color: none;
     padding: 10px 0;
@@ -838,14 +836,14 @@ body{
         }
         .homepage_test_animatePic2{
             width: 45%;
-            top:20%;
+            top:25%;
             left:-25%;
 
         }
         .homepage_test_animatePic3{
             width: 25%;
-            top:20%;
-            left:80%;
+            top:17%;
+            left:91%;
 
         }
         .homepage_test_animatePic4{
@@ -1113,6 +1111,8 @@ body{
     }
     .homepage_blog_papperBlock{
         margin-top:5%;
+        bottom:-450px;
+        transition: bottom 1s .3s ,opacity 1s 0s;
     }
     .homepage_blog_titleBox{
         padding:0px 25px;
@@ -1433,11 +1433,11 @@ body{
         border: 5px solid #FFF;
         max-width: 400px;
         width: 80%;
-        height: 56%;
+        height: 54%;
         position: absolute;
         left: 8%;
         right: 8%;
-        top: 20%;
+        top: 24%;
         margin: 0 auto;
         border-radius: 10px;
         overflow: hidden;
@@ -1450,6 +1450,7 @@ body{
             font-weight: bold;
             font-size: 16px;
             color: #6a3906;
+            text-align: center;
         }
 
         .homepage_about_content_box {
@@ -2139,6 +2140,24 @@ body{
             right:11%;
         }
     }
+    .homepage_test_answerBlock{
+        h4{
+            &:after{
+                content: '';
+                display: block;
+                position: absolute;
+                top: 68%;
+                width: 0;
+                transition: .8s;
+                box-shadow: 0px 0px 0px 0px #fa5d42;
+            }
+            &:hover:after{
+                transition: .8s;
+                width: 77%;
+                box-shadow: 0px 0px 15px 6px #fa5d42;
+            }
+        }
+    }
 //關於果然平板
     .homepage_about {
         position: relative;
@@ -2433,6 +2452,7 @@ body{
             width: 100%;
             background: none;
             border: none;
+            text-align: center;
             font-weight: bold;
             font-size: 16px;
             color: #6a3906;
@@ -3000,6 +3020,8 @@ body{
         margin-top:-6%;
         padding:2% 2% 5%;
         width: 66.6666%;
+        bottom:-750px;
+        transition: bottom 1s .3s ,opacity 1s 0s;
 
         // padding: 20px 25px 32px;
         .homepage_blog_plate{
@@ -3479,6 +3501,7 @@ body{
             font-size: 16px;
             color: #6a3906;
             cursor: pointer;
+            text-align: center;
         }
 
         .homepage_about_content_box {
@@ -3533,7 +3556,7 @@ body{
                     color: #fff;
                     font-size: 1vw;
                     font-weight: bold;
-                    line-height: 20px;
+                    line-height: 26px;
                     padding: 20px 20px;
                     border: 2px solid #fff;
                     border-radius: 10px;

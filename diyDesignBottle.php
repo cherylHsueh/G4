@@ -86,8 +86,8 @@ try{
 						<div class="diy_designBottle_textBlock cl-s-6 cl-md-12 cl-xl-12">
 							<form id="diy_designBottle_textForm" class="diy_designBottle_createTextBlock" name="textForm" method="_post">
 								<p>文字：</p>
-								<input type="text" name="e" class="diy_designBottle_textLength ">
-								<input type="button" value="新增文字" onclick="createText(this.form.e.value);">
+								<input type="text" name="e"  id="diy_designBottle_textKeyIn" class="diy_designBottle_textLength ">
+								<input type="button" value="新增文字" id="diy_designBottle_textSubmitBtn" onclick="createText(this.form.e.value);">
 							</form>
 						</div>
 					</div>

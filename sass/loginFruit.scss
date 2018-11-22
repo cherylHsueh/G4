@@ -11,6 +11,7 @@
   position: fixed;
   z-index: 4;
   display: none;
+  z-index: 30;
 }
 
 .lightbox_logo img {
@@ -27,10 +28,11 @@
   // padding: 5px 20px 0px 20px;
   padding: 5px 5px 0px 30px;
   position: fixed;
-  top: 50%;
+  top: 56%;
   left: 50%;
   border-radius: 30px;
   transform: translate(-50%, -50%);
+  z-index: 30px;
 
 }
 

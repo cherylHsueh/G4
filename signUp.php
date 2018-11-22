@@ -12,11 +12,13 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>果然配註冊</title>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
     <link rel="stylesheet" href="css/signUp.css" />
     <link rel="stylesheet" href="css/loginFruit.css">
-    <script src="js/global.js"></script>
     <script src="js/plugin/jquery.min.js"></script>
+    <script src="js/plugin/sweetalert2.min.js"></script>
     <script src="https://unpkg.com/color-js@1.0.3/color.js"></script>
+    <script src="js/global.js"></script>
   </head>
 
   <body>
@@ -35,12 +37,13 @@
               <form action="php/memAcountInsert.php" method="POST" id="signupform" onsubmit="return checkForm()">
             -->
             <h2>註冊</h2>
-            <form action="php/signUpSQL.php" id='myForm' method="post">
+            <!-- <form action="php/signUpSQL.php" id='myForm' method="post"> -->
+            <form>
               <div class="singUp_box_1">
                 <label for="memId">帳號</label
                 ><input
                   type="text"
-                  placeholder="英文開頭及最六位數字"
+                  placeholder="英文開頭及六位數字"
                   id="memId"
                   class="inputform"
                   name="memId"
@@ -58,25 +61,26 @@
                 <label for="memPsw">密碼</label>
                 <input
                   type="password"
-                  placeholder="英文開頭及最六位數字"
+                  placeholder="英文開頭及六位數字"
                   name="memPsw"
                   id="memPsw"
                   class="inputform"
                 />
                 <span class="error2"></span>
               </div>
-              <!--
+           
                 <div class="confirm">
                   <label for="RememPsw">確認密碼</label>
                   <input
                     type="password"
-                    placeholder=""
+                    placeholder="請再輸入一次新密碼"
                     name="RememPsw"
                     id="RememPsw"
                     class="inputform"
                   />
+                  <span class="error3"></span>
                 </div>
-              -->
+            
               <div>
                 <label for="memName">姓名</label>
                 <input
@@ -176,8 +180,6 @@
         <div class="footer_block clearfix">
           <div class="footer_rightBox">
             <div class="footer_rightContent">
-              <p class="desc">地址:桃園市中壢區中大路111號</p>
-              <p class="desc">電話:(03)49111853</p>
               <p class="copyright">Copyright © All Rights Reserved.</p>
             </div>
           </div>
@@ -218,6 +220,14 @@
               $(this).css("border-color", "red");
             }
           }),
+          $("#RememPsw").blur(function() {
+            if ($(this).val()==$("#memPsw").val()) {
+              $(".error3").text("");
+            } else {
+              $(".error3").text("密碼不同");
+              $(this).css("border-color", "red");
+            }
+          }),
           $("#memTel").blur(function() {
             if (telRule.test($(this).val())) {
               $(".error5").text("");
@@ -234,41 +244,50 @@
       }
 
       function signUpBtn() {
-        $id('myForm').submit();
+        // $id('myForm').submit();
         //=====使用Ajax 回server端,取回登入者姓名, 放到頁面上
-        // var xhr = new XMLHttpRequest();
-        // xhr.onload = function() {
-        //   if (xhr.status == 200) {
-        //     if (xhr.responseText.indexOf("註冊失敗") != -1) {
-        //       //回傳的資料中有not found
-        //       alert("註冊失敗");
-        //       console.log("1");
-        //     } else {
-        //       //註冊成功
-        //       console.log("2");
-        //       alert("註冊成功");
-        //       $id("memId").value = "";
-        //       $id("memPsw").value = "";
-        //       $id("memName").value = "";
-        //       $id("memTel").value = "";
-				// 			$id("loginName").innerHTML = xhr.responseText;
-        //       $id("spanLogin").innerHTML="登出"
-        //       // header('location:http://http://localhost/G4/index.php');
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function() {
+          if (xhr.status == 200) {
+            if (xhr.responseText.indexOf("註冊失敗") != -1) {
+              //回傳的資料中有not found
+              swal({
+                    type: 'error',
+                    title: '註冊失敗哦～',
+                    text: '請輸入正確格式',
+                    });
+              console.log("1");
+            } else {
+              //註冊成功
+              console.log("2");
+              
+              $id("memId").value = "";
+              $id("memPsw").value = "";
+              $id("RememPsw").value = "";
+              $id("memName").value = "";
+              $id("memTel").value = "";
+							$id("loginName").innerHTML = xhr.responseText;
+              $id("spanLogin").innerHTML="登出";
+              swal({
+                    type: 'success',
+                    title: '註冊成功！!',
+                    text: '歡迎加入果然配～',
+                    });
+              window.location.href='homepage.php';
 
-        //     }
-        //   } else {
-        //     console.log("3");
-        //     alert(xhr.status);
-        //   }
-        // };
+            }
+          } else {
+            alert(xhr.statusText);
+          }
+        };
 
-        // xhr.open("post","php/signUpAjax.php", true);
-        // xhr.setRequestHeader(
-        //   "content-type",
-        //   "application/x-www-form-urlencoded"
-        // );
-        // var data_info ="memId="+ $id("memId").value + "&memPsw=" + $id("memPsw").value +"&memName=" +$id("memName").value +"&memTel=" +$id("memTel").value;
-        // xhr.send(data_info);
+        xhr.open("post","php/signUpSQL.php", true);
+        xhr.setRequestHeader(
+          "content-type",
+          "application/x-www-form-urlencoded"
+        );
+        var data_info ="memId="+ $id("memId").value + "&memPsw=" + $id("memPsw").value +"&memName=" +$id("memName").value +"&memTel=" +$id("memTel").value+"&RememPsw=" +$id("RememPsw").value;
+        xhr.send(data_info);
       }
 
       function init() {

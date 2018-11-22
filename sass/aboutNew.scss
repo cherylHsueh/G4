@@ -196,7 +196,9 @@ path:hover {
   animation: bounce 0.5s infinite alternate;
   -webkit-animation: bounce 0.8s infinite alternate;
 }
-
+.signUp_section{
+  overflow: hidden;
+}
 @include rwd(mobile) {
   // .about_bigwrapper {
   //   width: 1600px;
@@ -746,6 +748,20 @@ path:hover {
     width: 100%;
   }
 }
+.about_taiwan_background_windmillFan{
+  width: 20%;
+  position: absolute;
+  left: 6%;
+  bottom: 25%;
+  z-index: 1;
+  img{
+    width: 100%;
+    animation: rotate 2s infinite linear;
+  }
+}
+
+
+
 // 小花
 .about_taiwan_background_grassflowr {
   width: 11%;
@@ -1162,6 +1178,7 @@ path:hover {
     position: absolute;
     bottom: 42%;
     left: 10%;
+    z-index: 5;
     img {
       width: 100%;
       margin: 10% 0 0;
@@ -1410,6 +1427,7 @@ path:hover {
     max-width: 120px;
     right: 16%;
     top: 20%;
+    z-index: 10;
     img {
       margin: 10% 0 0;
       width: 100%;
@@ -1883,8 +1901,9 @@ path:hover {
   .about_end_background_flowerpot {
     width: 10%;
     position: absolute;
-    bottom: 0%;
+    bottom: -1%;
     left: 0%;
+    z-index: 10;
     img {
       width: 100%;
     }
@@ -1895,6 +1914,7 @@ path:hover {
     position: absolute;
     bottom: 35%;
     left: 20%;
+    z-index: 10;
     img {
       width: 100%;
       margin: 10% 0 0;
