@@ -367,8 +367,6 @@ function keyPress(event){
             
 
 <script>
-//最新分享
-
 function $id(id){
   	return document.getElementById(id);
   }	
