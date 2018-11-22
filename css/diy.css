@@ -716,6 +716,7 @@ body {
         display: inline-block; }
   .diy_pickFruit_leftItem {
     max-width: 100px;
+    padding: 5px;
     border: 2px solid #593100;
     border-radius: 10px;
     background-color: #e9c9a5;
@@ -979,7 +980,8 @@ body {
   .diy_pickFruit_leftBlock {
     margin: 2% 0; }
     .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .diy_pickFruit_leftItem {
-      text-align: center; }
+      text-align: center;
+      padding: 5px; }
     .diy_pickFruit_leftBlock .diy_pickFruit_leftBox .fruitbgc {
       background-color: #c78132; }
   .diy_pickFruit_leftItem {
@@ -1091,13 +1093,13 @@ body {
     top: -10px; }
   .fruitnamef4 {
     left: -40px;
-    top: 80px; }
+    top: 70px; }
   .fruitnamef5 {
     left: 50px;
-    top: 80px; }
+    top: 70px; }
   .fruitnamef6 {
     left: 140px;
-    top: 80px; }
+    top: 70px; }
   .fruitnamef7 {
     left: -40px;
     top: 160px; }
@@ -1125,13 +1127,13 @@ body {
     top: -15px;
     left: 135px; }
   .fruitnameBoxf4 {
-    top: 75px;
+    top: 65px;
     left: -45px; }
   .fruitnameBoxf5 {
-    top: 75px;
+    top: 65px;
     left: 50px; }
   .fruitnameBoxf6 {
-    top: 75px;
+    top: 65px;
     left: 135px; }
   .fruitnameBoxf7 {
     top: 155px;
@@ -1291,27 +1293,27 @@ body {
     top: -10px; }
   .fruitnamef4 {
     left: -40px;
-    top: 80px; }
+    top: 70px; }
   .fruitnamef5 {
     left: 60px;
-    top: 80px; }
+    top: 70px; }
   .fruitnamef6 {
     left: 170px;
-    top: 80px; }
+    top: 70px; }
   .fruitnamef7 {
     left: -40px;
-    top: 170px; }
+    top: 140px; }
   .fruitnamef8 {
     left: 60px;
-    top: 170px; }
+    top: 140px; }
   .fruitnamef9 {
     left: 170px;
-    top: 170px; }
+    top: 140px; }
   .fruitnameBoxf1, .fruitnameBoxf2, .fruitnameBoxf3, .fruitnameBoxf4, .fruitnameBoxf5, .fruitnameBoxf6, .fruitnameBoxf7, .fruitnameBoxf8, .fruitnameBoxf9 {
     display: none;
     position: absolute;
     z-index: 1;
-    width: 75px;
+    width: 80px;
     height: 30px;
     border-radius: 10px;
     background-color: #89a024; }
@@ -1325,22 +1327,22 @@ body {
     top: -15px;
     left: 165px; }
   .fruitnameBoxf4 {
-    top: 75px;
+    top: 65px;
     left: -45px; }
   .fruitnameBoxf5 {
-    top: 75px;
+    top: 65px;
     left: 60px; }
   .fruitnameBoxf6 {
-    top: 75px;
+    top: 65px;
     left: 165px; }
   .fruitnameBoxf7 {
-    top: 165px;
+    top: 135px;
     left: -45px; }
   .fruitnameBoxf8 {
-    top: 165px;
+    top: 135px;
     left: 60px; }
   .fruitnameBoxf9 {
-    top: 165px;
+    top: 135px;
     left: 165px; }
   .diy_pickFruit_leftItem1 {
     position: relative; }

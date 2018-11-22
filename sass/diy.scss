@@ -206,7 +206,7 @@ body {
     // width: 33.33333%;
 
     max-width: 100px;
-    // margin: 0 0px 1% 1%;
+    padding: 5px;
     border: 2px solid #593100;
     border-radius: 10px;
     background-color: rgb(233, 201, 165);
@@ -605,6 +605,7 @@ body {
 
       .diy_pickFruit_leftItem {
         text-align: center;
+        padding: 5px;
 
         // .fruitnameBox {
         //   // display: none;
@@ -741,19 +742,19 @@ body {
 
   .fruitnamef4 {
     left: -40px;
-    top: 80px;
+    top: 70px;
     @extend %fruitname_medium;
   }
 
   .fruitnamef5 {
     left: 50px;
-    top: 80px;
+    top: 70px;
     @extend %fruitname_medium;
   }
 
   .fruitnamef6 {
     left: 140px;
-    top: 80px;
+    top: 70px;
     @extend %fruitname_medium;
   }
 
@@ -807,19 +808,19 @@ body {
   }
 
   .fruitnameBoxf4 {
-    top: 75px;
+    top: 65px;
     left: -45px;
     @extend %fruitbox_medium;
   }
 
   .fruitnameBoxf5 {
-    top: 75px;
+    top: 65px;
     left: 50px;
     @extend %fruitbox_medium;
   }
 
   .fruitnameBoxf6 {
-    top: 75px;
+    top: 65px;
     left: 135px;
     @extend %fruitbox_medium;
   }
@@ -1132,37 +1133,37 @@ body {
 
   .fruitnamef4 {
     left: -40px;
-    top: 80px;
+    top: 70px;
     @extend %fruitname;
   }
 
   .fruitnamef5 {
     left: 60px;
-    top: 80px;
+    top: 70px;
     @extend %fruitname;
   }
 
   .fruitnamef6 {
     left: 170px;
-    top: 80px;
+    top: 70px;
     @extend %fruitname;
   }
 
   .fruitnamef7 {
     left: -40px;
-    top: 170px;
+    top: 140px;
     @extend %fruitname;
   }
 
   .fruitnamef8 {
     left: 60px;
-    top: 170px;
+    top: 140px;
     @extend %fruitname;
   }
 
   .fruitnamef9 {
     left: 170px;
-    top: 170px;
+    top: 140px;
     @extend %fruitname;
   }
 
@@ -1173,7 +1174,7 @@ body {
     display: none;
     position: absolute;
     z-index: 1;
-    width: 75px;
+    width: 80px;
     height: 30px;
     border-radius: 10px;
     background-color: rgb(137, 160, 36);
@@ -1198,37 +1199,37 @@ body {
   }
 
   .fruitnameBoxf4 {
-    top: 75px;
+    top: 65px;
     left: -45px;
     @extend %fruitbox;
   }
 
   .fruitnameBoxf5 {
-    top: 75px;
+    top: 65px;
     left: 60px;
     @extend %fruitbox;
   }
 
   .fruitnameBoxf6 {
-    top: 75px;
+    top: 65px;
     left: 165px;
     @extend %fruitbox;
   }
 
   .fruitnameBoxf7 {
-    top: 165px;
+    top: 135px;
     left: -45px;
     @extend %fruitbox;
   }
 
   .fruitnameBoxf8 {
-    top: 165px;
+    top: 135px;
     left: 60px;
     @extend %fruitbox;
   }
 
   .fruitnameBoxf9 {
-    top: 165px;
+    top: 135px;
     left: 165px;
     @extend %fruitbox;
   }
